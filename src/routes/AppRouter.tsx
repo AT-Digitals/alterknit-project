@@ -1,9 +1,11 @@
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AlterknitHeader from "../AppHeader/AlterknitHeader";
 import LoginPage from "../LoginDetails/Login";
 import ResgidterEmail from "../LoginDetails/ResgisterEmail";
 import routes from "./routes";
+import LoginPage from "../Login-details/LoginPage";
 
 export default function AppRouter() {
   return (
@@ -13,6 +15,7 @@ export default function AppRouter() {
         <Route path={routes.LOGOUT} />
         <Route path={routes.ALTERKNIT_HEADER} element={<AlterknitHeader />} />
         <Route path={routes.ReEGISTER_EMAIL} element={<ResgidterEmail />} />
+         <Route path={routes.LOGIN} element={<LoginPage />} />
       </Routes>
     </Router>
   );
