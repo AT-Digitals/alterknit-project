@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
 import LoginForm from "./LoginForm";
-import background from "./assets/black-background.jpg";
 import LoginSection from "./LoginSection";
 
 export default function LoginPage() {

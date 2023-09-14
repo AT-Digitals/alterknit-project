@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Divider, Grid, Stack, Typography, styled } from "@mui/material";
+import { Box, Checkbox, Divider, Stack, Typography, styled } from "@mui/material";
 import CustomTextField from "../CommonComponent/CustomTextField";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link, NavLink } from "react-router-dom";
@@ -7,6 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
+import routes from "../routes/routes";
 
 const StyleNav = styled(NavLink)({
     ".active": {
@@ -19,8 +20,10 @@ export default function LoginForm() {
     return (
         <Stack direction="column" spacing={3}>
             <Box textAlign="left">
-                <Typography variant="h3" >Welcome to AlterKnit!</Typography>
-                <Typography variant="body2" >Please sign-in to your account and start the adventure</Typography>
+                <Stack direction="column" spacing={3} >
+                    <img src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo.svg" alt="image" width="60%" height="60%" />
+                    <Typography variant="h4" textAlign="left">Sign In</Typography>
+                </Stack>
             </Box>
             <CustomTextField label="Username or Email" required={false} sx={{
                 color: Colors.BLACK,
@@ -45,7 +48,7 @@ export default function LoginForm() {
             <CustomButton variant="contained" color={Colors.WHITE} bgColor={Colors.BLACK} sx={{ borderRadius: "5px" }} >Login</CustomButton>
             <Stack direction="row" alignItems="center" justifyContent="center" spacing={1}>
                 <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={""} >Create an account</StyleNav>
+                <Link to={routes.SIGNUP} >Sign Up</Link>
             </Stack>
 
             <Divider > OR</Divider>
