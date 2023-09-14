@@ -1,3 +1,4 @@
+
 import {
   Box,
   Checkbox,
@@ -20,6 +21,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { auth } from "../firebase";
 import routes from "../routes/routes";
 import { useState } from "react";
+
 
 const StyleNav = styled(NavLink)({
   ".active": {
@@ -58,7 +60,6 @@ export default function LoginForm() {
     e.preventDefault();
     try {
       await auth.sendPasswordResetEmail(email);
-
       console.log("Password reset email sent");
       setError("Password reset email sent");
       setIsDrawerOpen(true);
