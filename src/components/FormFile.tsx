@@ -1,7 +1,21 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import FormAddress from "./FormAddress";
+import { useState } from "react";
+
+
 
 export default function FormFile() {
+
+  const initialValues = { firstName: "", lastname: "", email: "", phone: ""}
+
+  const [name, setName] = useState(initialValues);
+
+  const handleChange = () => {
+    setName(initialValues);
+  }
+
+
+
     return (
         <Box display={"flex"} justifyContent={"space-around"}>
         <Box>
@@ -14,7 +28,7 @@ export default function FormFile() {
               ".MuiOutlinedInput-input": {
               width: "300px"
               },
-            }} id="outlined-basic" variant="outlined" placeholder="Enter your Name" /> 
+            }} id="outlined-basic" value={initialValues.firstName} onChange={handleChange}  variant="outlined" placeholder="Enter your Name" /> 
             </Box>
             <Box>
               <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>LAST NAME</Typography>
@@ -23,7 +37,7 @@ export default function FormFile() {
               ".MuiOutlinedInput-input": {
                 width: "300px"
               },
-            }} id="outlined-basic" variant="outlined" placeholder="Enter your Name" /> 
+            }} id="outlined-basic" value={initialValues.lastname} variant="outlined" placeholder="Enter your Name" /> 
             </Box>
             </Stack>
             <Stack margin={"30px"} direction="row"
@@ -36,7 +50,7 @@ export default function FormFile() {
               ".MuiOutlinedInput-input": {
               width: "300px"
               },
-            }} id="outlined-basic" variant="outlined" placeholder="Enter your Email ID" /> 
+            }} id="outlined-basic" value={initialValues.email} variant="outlined" placeholder="Enter your Email ID" /> 
             </Box>
             <Box>
               <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>PHONE NUMBER</Typography>
@@ -44,7 +58,7 @@ export default function FormFile() {
               ".MuiOutlinedInput-input": {
                 width: "300px"
               },
-            }} id="outlined-basic" type="number" variant="outlined" placeholder="Enter your Phone No" /> 
+            }} id="outlined-basic" value={initialValues.phone} type="number" variant="outlined" placeholder="Enter your Phone No" /> 
             </Box>
             </Stack>
              <Box margin={"30px"}>
