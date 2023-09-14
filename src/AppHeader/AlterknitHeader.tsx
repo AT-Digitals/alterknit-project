@@ -35,7 +35,7 @@ export default function AlterknitHeader() {
             direction="row"
           >
             {services.map((service, index) => (
-              <Link style={{ textDecoration: "none" }} to="">
+              <Link key={index} style={{ textDecoration: "none" }} to="">
                 <Typography color="GrayText" variant="h5" key={index}>
                   {service.trim()}
                 </Typography>
@@ -57,7 +57,7 @@ export default function AlterknitHeader() {
           </Link>
           <Link to={routes.LOGIN}>
             <Button variant="contained" style={{ backgroundColor: "black" }}>
-              Login
+              Logout
             </Button>
           </Link>
         </Stack>
