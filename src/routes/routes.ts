@@ -3,7 +3,7 @@ const LOGIN = "/login";
 const LOGOUT = "/logout";
 const HOME = "/home";
 const ALTERKNIT_HEADER = "/alterknit-header";
-const ReEGISTER_EMAIL = "/register";
+const REGISTER_EMAIL = "/register";
 const SIGNUP = "/sign-up";
 
 const routes = {
@@ -12,7 +12,7 @@ const routes = {
   LOGOUT,
   HOME,
   ALTERKNIT_HEADER,
-  ReEGISTER_EMAIL,
+  REGISTER_EMAIL,
   SIGNUP,
 };
 
