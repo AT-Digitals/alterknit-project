@@ -139,7 +139,7 @@ export default function LoginForm() {
                 spacing={1}
             >
                 <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={routes.REGISTER_EMAIL}>Create an account</StyleNav>
+                <StyleNav to={routes.SIGNUP}>Sign Up</StyleNav>
             </Stack>
 
             <Divider> OR</Divider>
