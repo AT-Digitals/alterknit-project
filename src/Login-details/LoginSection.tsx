@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import image from "./assets/alterknit-image.jpg";
+import image from "../assets/alterknit-image.jpg";
 
 export default function LoginSection() {
     return (

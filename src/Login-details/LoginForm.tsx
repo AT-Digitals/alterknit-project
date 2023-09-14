@@ -1,12 +1,12 @@
 import { Box, Button, Checkbox, Divider, Grid, Stack, Typography, styled } from "@mui/material";
-import CustomTextField from "./CustomTextField";
+import CustomTextField from "../CommonComponent/CustomTextField";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link, NavLink } from "react-router-dom";
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import Colors from "./Colors";
-import CustomButton from "./CustomButton";
+import Colors from "../CommonComponent/Colors";
+import CustomButton from "../CommonComponent/CustomButton";
 
 const StyleNav = styled(NavLink)({
     ".active": {
