@@ -1,7 +1,7 @@
-
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AlterknitHeader from "../AppHeader/AlterknitHeader";
+import LoginPage from "../Login-details/LoginPage";
 import ResgidterEmail from "../LoginDetails/ResgisterEmail";
 import routes from "./routes";
 import LoginPage from "../Login-details/LoginPage";
@@ -19,4 +19,4 @@ export default function AppRouter() {
             </Routes>
         </Router>
     );
-}
+
