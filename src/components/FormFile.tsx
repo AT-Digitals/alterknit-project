@@ -16,6 +16,7 @@ export default function FormFile() {
  const [phoneError, setPhoneError] = useState("");
  const [passage, setPassage] = useState("");
  const [passageError, setPassageError] = useState("");
+ 
 
 
  const PassageValidation = (name: string) => {
@@ -111,18 +112,70 @@ useEffect(() => {
     setLastName(lastName);
   }
 }, [firstname, lastName]);
+
   
 const handleSubmit = (e: any) => {
-  e.preventDefault()
-  const data = { 
-firstname: firstname,
-lastName: lastName,
-email: email,
-phone: phone,
+  e.preventDefault();
+
+  // Initialize error variables
+  let firstNameError = '';
+  let lastNameError = '';
+  let emailError = '';
+  let phoneError = '';
+  let passageError= '';
+
+  // Validate and set errors
+  if (!firstname) {
+    firstNameError = 'Firstname is required';
+  } else if (!FirstNameValidation(firstname)) {
+    firstNameError = 'Invalid firstname format';
   }
-  
-  console.log(data);
-}
+
+  if (!lastName) {
+    lastNameError = 'Lastname is required';
+  } else if (!LastNameValidation(lastName)) {
+    lastNameError = 'Invalid lastname format';
+  }
+
+  if (!email) {
+    emailError = 'Email is required';
+  } else if (!EmailValidation(email)) {
+    emailError = 'Invalid email format';
+  }
+
+  if (!phone) {
+    phoneError = 'Phone number is required';
+  } else if (!PhoneValidation(phone)) {
+    phoneError = 'Invalid phone number format';
+  }
+
+  if (!passage) {
+    passageError = 'Passage is required';
+  } else if (!PassageValidation(passage)) {
+    passageError = 'Invalid firstname format';
+  }
+
+  // Set the error state variables
+  setFirstNameError(firstNameError);
+  setLastNameError(lastNameError);
+  setEmailError(emailError);
+  setPhoneError(phoneError);
+  setPassageError(passageError);
+
+  // Check if all errors are empty (i.e., inputs are valid)
+  if (!firstNameError && !lastNameError && !emailError && !phoneError && !passageError) {
+    const data = {
+      firstname: firstname,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      passage: passage,
+    };
+
+    console.log(data);
+  }
+};
+
 
 
     return (
@@ -133,12 +186,15 @@ phone: phone,
                    spacing={3}>
                      <Box>
                    <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>FIRST NAME</Typography>
-                <CustomTextField  required={true}  sx={{
+                <CustomTextField  sx={{
               ".MuiOutlinedInput-input": {
               width: "300px"
               },
+              ".css-1wc848c-MuiFormHelperText-root": {
+                color: "red"
+              }
             }} id="outlined-basic"  error={firstname ? !!firstnameError : false}
-            helperText={firstnameError} value={firstname} onChange={setFirstName}  variant="outlined" placeholder="Enter your Name" /> 
+            helperText={firstnameError} value={firstname} onChange={setFirstName}  variant="outlined" placeholder="Enter Your First Name" /> 
             </Box>
             <Box>
               <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>LAST NAME</Typography>
@@ -147,8 +203,11 @@ phone: phone,
               ".MuiOutlinedInput-input": {
                 width: "300px"
               },
+              ".css-1wc848c-MuiFormHelperText-root": {
+                color: "red"
+              }
             }} id="outlined-basic" value={lastName} error={lastName ? !!lastnameError : false}
-            helperText={lastnameError} onChange={setLastName}  variant="outlined" placeholder="Enter your Name" /> 
+            helperText={lastnameError} onChange={setLastName}  variant="outlined" placeholder="Enter Your Last Name" /> 
             </Box>
             </Stack>
             <Stack margin={"30px"} direction="row"
@@ -161,8 +220,12 @@ phone: phone,
               ".MuiOutlinedInput-input": {
               width: "300px"
               },
+              ".css-1wc848c-MuiFormHelperText-root ": {
+                color: "red",
+              }
             }} id="outlined-basic" error={email ? !!emailError : false}
-            helperText={emailError} value={email} onChange={setEmail}  variant="outlined" placeholder="Enter your Email ID" /> 
+            helperText={emailError} value={email} onChange={setEmail}  variant="outlined" placeholder="Enter Your Email ID" />
+           
             </Box>
             <Box>
               <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>PHONE NUMBER</Typography>
@@ -170,8 +233,11 @@ phone: phone,
               ".MuiOutlinedInput-input": {
                 width: "300px"
               },
+              ".css-1wc848c-MuiFormHelperText-root": {
+                color: "red"
+              }
             }} id="outlined-basic" type="number" error={phone ? !!phoneError : false}
-            helperText={phoneError} value={phone} onChange={setPhone} variant="outlined" placeholder="Enter your Phone No" /> 
+            helperText={phoneError} value={phone} onChange={setPhone} variant="outlined" placeholder="Enter Your Phone No"  /> 
             </Box>
             </Stack>
              <Box margin={"30px"}>
@@ -183,6 +249,9 @@ phone: phone,
                 width: "650px",
                 marginBottom: "130px"
               },
+              ".css-1wc848c-MuiFormHelperText-root": {
+                color: "red"
+              }
             }} id="outlined-basic" value={passage} onChange={setPassage} error={passage ? !!passageError : false}
             helperText={passageError}  variant="outlined" placeholder="Please enter query..." /> 
             </Box>
