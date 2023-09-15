@@ -14,5 +14,11 @@ const firebaseConfig = {
   measurementId: "G-1874ENW03X",
 };
 const app = firebase.initializeApp(firebaseConfig);
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+const facebookProvider = new firebase.auth.FacebookAuthProvider();
+facebookProvider.addScope("email");
 export const auth = app.auth();
-export default app;
+// eslint-disable-next-line import/no-anonymous-default-export
+// export default {app,googleProvider};
+export { app, googleProvider, facebookProvider };
