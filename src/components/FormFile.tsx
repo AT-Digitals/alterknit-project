@@ -15,7 +15,6 @@ export default function FormFile() {
   const [phoneError, setPhoneError] = useState("");
   const [passage, setPassage] = useState("");
   const [passageError, setPassageError] = useState("");
-
   const PassageValidation = (name: string) => {
     if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
       setPassageError("");
@@ -25,17 +24,14 @@ export default function FormFile() {
       return false;
     }
   };
-
   useEffect(() => {
     if (passage) {
       PassageValidation(passage);
     }
-    // eslint-disable-next-line no-lone-blocks
     {
       setPassage(passage);
     }
   }, [passage]);
-
   const FirstNameValidation = (name: string) => {
     if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
       setFirstNameError("");
@@ -45,7 +41,6 @@ export default function FormFile() {
       return false;
     }
   };
-
   const LastNameValidation = (name: string) => {
     if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
       setLastNameError("");
@@ -55,7 +50,6 @@ export default function FormFile() {
       return false;
     }
   };
-
   const EmailValidation = (name: string) => {
     if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(name)) {
       setEmailError("");
@@ -65,7 +59,6 @@ export default function FormFile() {
       return false;
     }
   };
-
   const PhoneValidation = (name: string) => {
     if (/^\d{10}$/.test(name)) {
       setPhoneError("");
@@ -75,27 +68,22 @@ export default function FormFile() {
       return false;
     }
   };
-
   useEffect(() => {
     if (phone) {
       PhoneValidation(phone);
     }
-    // eslint-disable-next-line no-lone-blocks
     {
       setPhone(phone);
     }
   }, [phone]);
-
   useEffect(() => {
     if (email) {
       EmailValidation(email);
     }
-    // eslint-disable-next-line no-lone-blocks
     {
       setEmail(email);
     }
   }, [email]);
-
   useEffect(() => {
     if (firstname) {
       FirstNameValidation(firstname);
@@ -103,23 +91,68 @@ export default function FormFile() {
     if (lastName) {
       LastNameValidation(lastName);
     }
-    // eslint-disable-next-line no-lone-blocks
     {
       setFirstName(firstname);
       setLastName(lastName);
     }
   }, [firstname, lastName]);
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const data = {
-      firstname: firstname,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-    };
-
-    console.log(data);
+    // Initialize error variables
+    let firstNameError = "";
+    let lastNameError = "";
+    let emailError = "";
+    let phoneError = "";
+    let passageError = "";
+    // Validate and set errors
+    if (!firstname) {
+      firstNameError = "Firstname is required";
+    } else if (!FirstNameValidation(firstname)) {
+      firstNameError = "Invalid firstname format";
+    }
+    if (!lastName) {
+      lastNameError = "Lastname is required";
+    } else if (!LastNameValidation(lastName)) {
+      lastNameError = "Invalid lastname format";
+    }
+    if (!email) {
+      emailError = "Email is required";
+    } else if (!EmailValidation(email)) {
+      emailError = "Invalid email format";
+    }
+    if (!phone) {
+      phoneError = "Phone number is required";
+    } else if (!PhoneValidation(phone)) {
+      phoneError = "Invalid phone number format";
+    }
+    if (!passage) {
+      passageError = "Passage is required";
+    } else if (!PassageValidation(passage)) {
+      passageError = "Invalid firstname format";
+    }
+    // Set the error state variables
+    setFirstNameError(firstNameError);
+    setLastNameError(lastNameError);
+    setEmailError(emailError);
+    setPhoneError(phoneError);
+    setPassageError(passageError);
+    // Check if all errors are empty (i.e., inputs are valid)
+    if (
+      !firstNameError &&
+      !lastNameError &&
+      !emailError &&
+      !phoneError &&
+      !passageError
+    ) {
+      const data = {
+        firstname: firstname,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        passage: passage,
+      };
+      console.log(data);
+    }
   };
 
   return (
@@ -136,10 +169,12 @@ export default function FormFile() {
               FIRST NAME
             </Typography>
             <CustomTextField
-              required={true}
               sx={{
                 ".MuiOutlinedInput-input": {
                   width: "300px",
+                },
+                ".css-1wc848c-MuiFormHelperText-root": {
+                  color: "red",
                 },
               }}
               id="outlined-basic"
@@ -148,7 +183,7 @@ export default function FormFile() {
               value={firstname}
               onChange={setFirstName}
               variant="outlined"
-              placeholder="Enter your Name"
+              placeholder="Enter Your First Name"
             />
           </Box>
           <Box>
@@ -160,11 +195,13 @@ export default function FormFile() {
             >
               LAST NAME
             </Typography>
-
             <CustomTextField
               sx={{
                 ".MuiOutlinedInput-input": {
                   width: "300px",
+                },
+                ".css-1wc848c-MuiFormHelperText-root": {
+                  color: "red",
                 },
               }}
               id="outlined-basic"
@@ -173,7 +210,7 @@ export default function FormFile() {
               helperText={lastnameError}
               onChange={setLastName}
               variant="outlined"
-              placeholder="Enter your Name"
+              placeholder="Enter Your Last Name"
             />
           </Box>
         </Stack>
@@ -187,11 +224,13 @@ export default function FormFile() {
             >
               EMAIL ID
             </Typography>
-
             <CustomTextField
               sx={{
                 ".MuiOutlinedInput-input": {
                   width: "300px",
+                },
+                ".css-1wc848c-MuiFormHelperText-root ": {
+                  color: "red",
                 },
               }}
               id="outlined-basic"
@@ -200,7 +239,7 @@ export default function FormFile() {
               value={email}
               onChange={setEmail}
               variant="outlined"
-              placeholder="Enter your Email ID"
+              placeholder="Enter Your Email ID"
             />
           </Box>
           <Box>
@@ -217,6 +256,9 @@ export default function FormFile() {
                 ".MuiOutlinedInput-input": {
                   width: "300px",
                 },
+                ".css-1wc848c-MuiFormHelperText-root": {
+                  color: "red",
+                },
               }}
               id="outlined-basic"
               type="number"
@@ -225,7 +267,7 @@ export default function FormFile() {
               value={phone}
               onChange={setPhone}
               variant="outlined"
-              placeholder="Enter your Phone No"
+              placeholder="Enter Your Phone No"
             />
           </Box>
         </Stack>
@@ -239,12 +281,14 @@ export default function FormFile() {
           >
             WHAT DO YOU HAVE IN MIND
           </Typography>
-
           <CustomTextField
             sx={{
               ".MuiOutlinedInput-input": {
                 width: "650px",
                 marginBottom: "130px",
+              },
+              ".css-1wc848c-MuiFormHelperText-root": {
+                color: "red",
               },
             }}
             id="outlined-basic"
