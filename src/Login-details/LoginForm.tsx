@@ -173,7 +173,7 @@ export default function LoginForm() {
           <FacebookIcon style={{ color: "black" }} />
         </IconButton>
         <IconButton>
-          <TwitterIcon />
+          <TwitterIcon style={{ color: "black" }} />
         </IconButton>
       </Stack>
       {isDrawerOpen && (
