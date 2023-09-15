@@ -49,14 +49,23 @@ export default function AlterknitHeader() {
               textDecoration: "none",
               backgroundColor: "black",
               color: "white",
-              padding: "10px",
+              padding: "20px",
               borderRadius: 5,
             }}
           >
             Schedule your repair
           </Link>
           <Link to={routes.LOGIN}>
-            <Button variant="contained" style={{ backgroundColor: "black" }}>
+            <Button
+              fullWidth
+              variant="contained"
+              style={{
+                backgroundColor: "black",
+                textTransform: "capitalize",
+                width: 150,
+                height: 62,
+              }}
+            >
               Logout
             </Button>
           </Link>

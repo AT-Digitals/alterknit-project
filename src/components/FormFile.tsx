@@ -28,6 +28,7 @@ export default function FormFile() {
     if (passage) {
       PassageValidation(passage);
     }
+    // eslint-disable-next-line no-lone-blocks
     {
       setPassage(passage);
     }
@@ -72,6 +73,7 @@ export default function FormFile() {
     if (phone) {
       PhoneValidation(phone);
     }
+    // eslint-disable-next-line no-lone-blocks
     {
       setPhone(phone);
     }
@@ -80,6 +82,7 @@ export default function FormFile() {
     if (email) {
       EmailValidation(email);
     }
+    // eslint-disable-next-line no-lone-blocks
     {
       setEmail(email);
     }
@@ -91,6 +94,7 @@ export default function FormFile() {
     if (lastName) {
       LastNameValidation(lastName);
     }
+    // eslint-disable-next-line no-lone-blocks
     {
       setFirstName(firstname);
       setLastName(lastName);
