@@ -1,9 +1,37 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 
 import Alterknit from "./alterknit.png";
 import { Link } from "react-router-dom";
 import React from "react";
 import routes from "../routes/routes";
+
+const ServiceItem = styled(Link)`
+  text-decoration: none;
+  position: relative;
+
+  color: graytext; /* Default text color */
+
+  &:hover {
+    color: black; /* Change the text color on hover */
+  }
+
+  &:hover::before {
+    content: "•";
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    font-size: 40px;
+  }
+`;
 
 export default function AlterknitHeader() {
   const services = ["Services", "Our Story", "Portfolio", "Care", "Blog"];
@@ -35,11 +63,11 @@ export default function AlterknitHeader() {
             direction="row"
           >
             {services.map((service, index) => (
-              <Link key={index} style={{ textDecoration: "none" }} to="">
-                <Typography color="GrayText" variant="h5" key={index}>
+              <ServiceItem key={index} to="" className="service-item">
+                <Typography variant="h5" key={index}>
                   {service.trim()}
                 </Typography>
-              </Link>
+              </ServiceItem>
             ))}
           </Stack>
           <Link
@@ -49,14 +77,24 @@ export default function AlterknitHeader() {
               textDecoration: "none",
               backgroundColor: "black",
               color: "white",
-              padding: "10px",
+              padding: "20px",
               borderRadius: 5,
             }}
           >
             Schedule your repair
           </Link>
           <Link to={routes.LOGIN}>
-            <Button variant="contained" style={{ backgroundColor: "black" }}>
+            <Button
+              fullWidth
+              variant="contained"
+              style={{
+                backgroundColor: "black",
+                textTransform: "capitalize",
+                width: 150,
+                height: 62,
+                fontSize: "20px",
+              }}
+            >
               Logout
             </Button>
           </Link>
