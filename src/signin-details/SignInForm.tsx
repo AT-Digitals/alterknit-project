@@ -21,6 +21,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import routes from "../routes/routes";
 import { useState } from "react";
+import alterknitImage from "../assets/alterknit.png";
 
 const StyleNav = styled(NavLink)({
     ".active": {
@@ -94,12 +95,12 @@ export default function SignInForm() {
     };
     return (
         <Stack direction="column" spacing={3}>
-            <Box textAlign="left">
-                <Typography variant="h3">Welcome to AlterKnit!</Typography>
-                <Typography variant="body2">
-                    Please sign-in to your account and start the adventure
+            <Stack direction="column" spacing={3}>
+                <img src={alterknitImage} alt="logo" width="50%" height="50%" />
+                <Typography variant="h4" textAlign="left">
+                    Sign-In to your account
                 </Typography>
-            </Box>
+            </Stack>
             <CustomTextField
                 value={email}
                 label="Username or Email"
@@ -146,7 +147,7 @@ export default function SignInForm() {
                 sx={{ borderRadius: "5px" }}
                 onClick={handleSubmit}
             >
-                Login
+                Sign In
             </CustomButton>
             <Stack
                 direction="row"

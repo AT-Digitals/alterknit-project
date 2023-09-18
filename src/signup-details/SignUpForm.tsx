@@ -53,7 +53,7 @@ export default function SignUpForm() {
             height="60%"
           />
           <Typography variant="h4" textAlign="left">
-            Sign Up
+            Sign-Up to create an account
           </Typography>
         </Stack>
         <CustomTextField
