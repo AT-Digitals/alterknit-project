@@ -1,10 +1,10 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import FormAddress from "./FormAddress";
+import FormAddress from "../components/FormAddress";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import CustomTextField from "../CommonComponent/CustomTextField";
 import axios from "axios";
 
-export default function FormFile() {
+export default function ContactPage() {
 
 
   const [firstname, setFirstName] = useState("");
@@ -17,6 +17,7 @@ export default function FormFile() {
   const [phoneError, setPhoneError] = useState("");
   const [passage, setPassage] = useState("");
   const [passageError, setPassageError] = useState("");
+  const [name, setName] = useState("");
 
 
 
@@ -115,20 +116,36 @@ export default function FormFile() {
   }, [firstname, lastName]);
 
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    let result = await fetch(
+      'http://localhost:3001/items', {
+      method: "post",
+      body: JSON.stringify({ name, email }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    result = await result.json();
+    console.warn(result);
+    if (result) {
+      alert("Data saved succesfully");
+      setEmail("");
+      setName("");
+    }
 
-    let result = axios.post('http://localhost:3001/items', { firstname, passage, email, phone })
-      .then((response: { data: any; }) => {
-        console.log('Item added:', response.data);
-        setFirstName('');
-        setEmail('');
-        setPhone('');
-        setPassage('');
-      })
-      .catch((error: any) => {
-        console.error('Error adding item:', error);
-      });
+
+    // let result = axios.post('http://localhost:3001/items', { firstname, passage, email, phone })
+    //   .then((response: { data: any; }) => {
+    //     console.log('Item added:', response.data);
+    //     setFirstName('');
+    //     setEmail('');
+    //     setPhone('');
+    //     setPassage('');
+    //   })
+    //   .catch((error: any) => {
+    //     console.error('Error adding item:', error);
+    //   });
 
     // if(result) {
     //   alert("data")
@@ -211,7 +228,7 @@ export default function FormFile() {
                 color: "red"
               }
             }} id="outlined-basic" error={firstname ? !!firstnameError : false}
-              helperText={firstnameError} value={firstname} onChange={setFirstName} variant="outlined" placeholder="Enter Your First Name" />
+              helperText={firstnameError} value={name} onChange={setName} variant="outlined" placeholder="Enter Your First Name" />
           </Box>
           <Box>
             <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>LAST NAME</Typography>

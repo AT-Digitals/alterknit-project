@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import LoginForm from "./LoginForm";
+import LoginForm from "./SignInForm";
 import LoginSection from "./LoginSection";
 
-export default function LoginPage() {
+export default function SignInPage() {
   return (
     <Grid minHeight="100vh" container>
       <Grid

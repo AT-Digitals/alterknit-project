@@ -29,7 +29,7 @@ const StyleNav = styled(NavLink)({
     },
 });
 
-export default function LoginForm() {
+export default function SignInForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -139,7 +139,7 @@ export default function LoginForm() {
                 spacing={1}
             >
                 <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={routes.SIGNUP}>Sign Up</StyleNav>
+                <StyleNav to={routes.SIGN_UP}>Sign Up</StyleNav>
             </Stack>
 
             <Divider> OR</Divider>
