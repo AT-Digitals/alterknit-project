@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
-import LoginForm from "./SignInForm";
 import LoginSection from "./LoginSection";
+import SignInForm from "./SignInForm";
 
 export default function SignInPage() {
   return (
@@ -25,7 +25,7 @@ export default function SignInPage() {
         alignItems="center"
         justifyContent="center"
       >
-        <LoginForm />
+        <SignInForm />
       </Grid>
     </Grid>
   );

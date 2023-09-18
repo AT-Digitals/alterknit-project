@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import background from "../assets/alterknit-image.jpg";
-import SignUp from "./SignUp";
+import SignUpForm from "./SignUpForm";
 
 export default function SignUpPage() {
     return (
@@ -17,7 +17,7 @@ export default function SignUpPage() {
                 alignItems="center"
                 justifyContent="center"
             >
-                <SignUp />
+                <SignUpForm />
             </Grid>
         </Grid>
     );
