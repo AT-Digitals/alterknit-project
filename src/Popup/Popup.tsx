@@ -3,7 +3,7 @@ import { Box, DialogContent, DialogTitle } from "@mui/material";
 import CustomButton from "../CommonComponent/CustomButton";
 import Dialog from "@mui/material/Dialog";
 import React from "react";
-import alter from "./alterknit.png";
+import alter from "../assets/alterknit.png";
 
 interface ModalProps {
   isOpen: boolean;

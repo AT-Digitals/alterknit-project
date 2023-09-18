@@ -8,8 +8,9 @@ import { auth } from "../firebase";
 import routes from "../routes/routes";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import alterknitImage from "../assets/alterknit.png";
 
-export default function SignUp() {
+export default function SignUpForm() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +39,7 @@ export default function SignUp() {
   const handlePopupClose = () => {
     setIsDrawerOpen(false);
     if (error === "Your account details have been saved.") {
-      navigate(routes.LOGIN);
+      navigate(routes.SIGN_IN);
     }
   };
   return (
@@ -46,7 +47,7 @@ export default function SignUp() {
       <Stack direction="column" spacing={3}>
         <Stack direction="column" spacing={3}>
           <img
-            src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo.svg"
+            src={alterknitImage}
             alt="logo"
             width="60%"
             height="60%"
@@ -63,9 +64,9 @@ export default function SignUp() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -76,9 +77,9 @@ export default function SignUp() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -89,9 +90,9 @@ export default function SignUp() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -102,9 +103,9 @@ export default function SignUp() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
 

@@ -7,7 +7,7 @@ import {
   styled,
 } from "@mui/material";
 
-import Alterknit from "./alterknit.png";
+import Alterknit from "../assets/alterknit.png";
 import { Link } from "react-router-dom";
 import React from "react";
 import routes from "../routes/routes";
@@ -83,7 +83,7 @@ export default function AlterknitHeader() {
           >
             Schedule your repair
           </Link>
-          <Link to={routes.LOGIN}>
+          <Link to={routes.SIGN_IN}>
             <Button
               fullWidth
               variant="contained"

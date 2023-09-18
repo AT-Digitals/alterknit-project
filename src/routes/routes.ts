@@ -1,23 +1,21 @@
-
-
 const ROOT = "/";
-const LOGIN = "/login";
-const LOGOUT = "/logout";
+const SIGN_IN = "/sign-in";
+const SIGN_OUT = "/sign-out";
 const HOME = "/home";
 const ALTERKNIT_HEADER = "/alterknit-header";
 const REGISTER_EMAIL = "/register";
-const SIGNUP = "/sign-up";
-const FORMFILE = "/Contact-us"
+const SIGN_UP = "/sign-up";
+const CONTACT_US = "/contact-us"
 
 const routes = {
   ROOT,
-  LOGIN,
-  LOGOUT,
+  SIGN_IN,
+  SIGN_OUT,
   HOME,
   ALTERKNIT_HEADER,
   REGISTER_EMAIL,
-  SIGNUP,
-  FORMFILE,
+  SIGN_UP,
+  CONTACT_US,
 };
 
 export default routes;
