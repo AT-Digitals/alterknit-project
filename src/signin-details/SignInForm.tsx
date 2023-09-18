@@ -1,13 +1,14 @@
-
 import {
     Box,
     Checkbox,
     Divider,
+    IconButton,
     Stack,
     Typography,
     styled,
 } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { auth, facebookProvider, googleProvider } from "../firebase";
 
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
@@ -18,10 +19,8 @@ import { FirebaseError } from "firebase/app";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { auth } from "../firebase";
 import routes from "../routes/routes";
 import { useState } from "react";
-
 
 const StyleNav = styled(NavLink)({
     ".active": {
@@ -76,6 +75,23 @@ export default function SignInForm() {
         }
     };
 
+    const handleGoogleLogin = async () => {
+        try {
+            await auth.signInWithPopup(googleProvider);
+            navigate(routes.ALTERKNIT_HEADER);
+        } catch (error) {
+            console.error("Google login error:", error);
+        }
+    };
+    const handleFacebookLogin = async () => {
+        try {
+            await auth.signInWithPopup(facebookProvider);
+
+            navigate(routes.ALTERKNIT_HEADER);
+        } catch (error) {
+            console.error("Facebook login error:", error);
+        }
+    };
     return (
         <Stack direction="column" spacing={3}>
             <Box textAlign="left">
@@ -149,9 +165,15 @@ export default function SignInForm() {
                 justifyContent="center"
                 spacing={3}
             >
-                <GoogleIcon />
-                <FacebookIcon />
-                <TwitterIcon />
+                <IconButton onClick={handleGoogleLogin}>
+                    <GoogleIcon style={{ color: "black" }} />
+                </IconButton>
+                <IconButton onClick={handleFacebookLogin}>
+                    <FacebookIcon style={{ color: "black" }} />
+                </IconButton>
+                <IconButton>
+                    <TwitterIcon style={{ color: "black" }} />
+                </IconButton>
             </Stack>
             {isDrawerOpen && (
                 <CustomDialog

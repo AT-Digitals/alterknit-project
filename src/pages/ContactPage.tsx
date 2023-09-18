@@ -1,44 +1,27 @@
+
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import FormAddress from "../components/FormAddress";
-import { FormEvent, useCallback, useEffect, useState } from "react";
-import CustomTextField from "../CommonComponent/CustomTextField";
-import axios from "axios";
+import { useEffect, useState } from "react";
 
-export default function ContactPage() {
+const getPersonalDetails = {
+  firstname: "",
+  email: "",
+  phone: "",
+  passage: "",
+}
 
 
-  const [firstname, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+export default function FormFile() {
+
+  const [personalDetails, setPersonalDetails] = useState(getPersonalDetails);
   const [firstnameError, setFirstNameError] = useState("");
-  const [lastnameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-  const [passage, setPassage] = useState("");
-  const [passageError, setPassageError] = useState("");
-  const [name, setName] = useState("");
 
-
-
-  const PassageValidation = (name: string) => {
-    if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
-      setPassageError("");
-      return true;
-    } else {
-      setPassageError("Only allowed characters and space");
-      return false;
-    }
+  const residentDetails = {
+    personalDetails: personalDetails,
   };
 
-  useEffect(() => {
-    if (passage) {
-      PassageValidation(passage);
-    }
-    {
-      setPassage(passage);
-    }
-  }, [passage]);
+
 
 
   const FirstNameValidation = (name: string) => {
@@ -51,15 +34,6 @@ export default function ContactPage() {
     }
   };
 
-  const LastNameValidation = (name: string) => {
-    if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
-      setLastNameError("");
-      return true;
-    } else {
-      setLastNameError("Only allowed characters and space");
-      return false;
-    }
-  };
 
   const EmailValidation = (name: string) => {
     if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(name)) {
@@ -82,74 +56,45 @@ export default function ContactPage() {
   };
 
   useEffect(() => {
-    if (phone) {
-      PhoneValidation(phone);
+    if (personalDetails.phone) {
+      PhoneValidation(personalDetails.phone);
     }
-    {
-      setPhone(phone);
-    }
-  }, [phone]);
+    setPersonalDetails((personalDetails) => ({
+      ...personalDetails,
+      personalDetails: personalDetails.phone,
+    }));
+  }, [personalDetails.phone]);
 
   useEffect(() => {
-    if (email) {
-      EmailValidation(email);
+    if (personalDetails.email) {
+      EmailValidation(personalDetails.email);
     }
-    {
-      setEmail(email);
-    }
-  }, [email]);
-
-
+    setPersonalDetails((personalDetails) => ({
+      ...personalDetails,
+      personalDetails: personalDetails.email,
+    }));
+  }, [personalDetails.email]);
 
 
   useEffect(() => {
-    if (firstname) {
-      FirstNameValidation(firstname);
+    if (personalDetails.firstname) {
+      FirstNameValidation(personalDetails.firstname);
     }
-    if (lastName) {
-      LastNameValidation(lastName);
-    }
-    {
-      setFirstName(firstname);
-      setLastName(lastName);
-    }
-  }, [firstname, lastName]);
+
+    setPersonalDetails((personalDetails) => ({
+      ...personalDetails,
+      personalDetails: personalDetails.firstname,
+    }));
+  }, [personalDetails.firstname]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setPersonalDetails({ ...personalDetails, [name]: value })
+  };
 
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    let result = await fetch(
-      'http://localhost:3001/items', {
-      method: "post",
-      body: JSON.stringify({ name, email }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    result = await result.json();
-    console.warn(result);
-    if (result) {
-      alert("Data saved succesfully");
-      setEmail("");
-      setName("");
-    }
-
-
-    // let result = axios.post('http://localhost:3001/items', { firstname, passage, email, phone })
-    //   .then((response: { data: any; }) => {
-    //     console.log('Item added:', response.data);
-    //     setFirstName('');
-    //     setEmail('');
-    //     setPhone('');
-    //     setPassage('');
-    //   })
-    //   .catch((error: any) => {
-    //     console.error('Error adding item:', error);
-    //   });
-
-    // if(result) {
-    //   alert("data")
-    // }
 
     // Initialize error variables
     let firstNameError = '';
@@ -159,51 +104,41 @@ export default function ContactPage() {
     let passageError = '';
 
     // Validate and set errors
-    if (!firstname) {
-      firstNameError = 'Firstname is required';
-    } else if (!FirstNameValidation(firstname)) {
+    if (!personalDetails.firstname) {
+      firstNameError = 'Name is required';
+    } else if (!FirstNameValidation(personalDetails.firstname)) {
       firstNameError = 'Invalid firstname format';
     }
 
-    if (!lastName) {
-      lastNameError = 'Lastname is required';
-    } else if (!LastNameValidation(lastName)) {
-      lastNameError = 'Invalid lastname format';
-    }
 
-    if (!email) {
+    if (!personalDetails.email) {
       emailError = 'Email is required';
-    } else if (!EmailValidation(email)) {
+    } else if (!EmailValidation(personalDetails.email)) {
       emailError = 'Invalid email format';
     }
 
-    if (!phone) {
+    if (!personalDetails.phone) {
       phoneError = 'Phone number is required';
-    } else if (!PhoneValidation(phone)) {
+    } else if (!PhoneValidation(personalDetails.phone)) {
       phoneError = 'Invalid phone number format';
     }
 
-    if (!passage) {
-      passageError = 'Passage is required';
-    } else if (!PassageValidation(passage)) {
-      passageError = 'Invalid firstname format';
-    }
+    setPersonalDetails({
+      ...personalDetails,
+    });
 
     // Set the error state variables
     setFirstNameError(firstNameError);
-    setLastNameError(lastNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
-    setPassageError(passageError);
 
     // Check if all errors are empty (i.e., inputs are valid)
     if (!firstNameError && !lastNameError && !emailError && !phoneError && !passageError) {
       const data = {
-        firstname: firstname,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        passage: passage,
+        firstname: residentDetails.personalDetails.firstname,
+        email: residentDetails.personalDetails.email,
+        phone: residentDetails.personalDetails.phone,
+        passage: residentDetails.personalDetails.passage,
       };
 
       console.log(data);
@@ -211,73 +146,75 @@ export default function ContactPage() {
   };
 
 
-
   return (
-    <Box display={"flex"} justifyContent={"space-around"}>
+    <Box display={"flex"} justifyContent={"center"}>
+
       <Box>
+        <Typography marginTop={"20px"} borderBottom={"1px solid black"} textAlign={"center"} fontWeight={"bold"} fontSize={"32px"} color={"black"}>Contact us</Typography>
         <Stack margin={"30px"} direction="row"
           display="flex"
           spacing={3}>
           <Box>
-            <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>FIRST NAME</Typography>
-            <CustomTextField sx={{
+            <Typography marginLeft={"5px"} marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>NAME</Typography>
+            <TextField sx={{
               ".MuiOutlinedInput-input": {
-                width: "300px"
+                width: "650px"
               },
               ".css-1wc848c-MuiFormHelperText-root": {
                 color: "red"
-              }
-            }} id="outlined-basic" error={firstname ? !!firstnameError : false}
-              helperText={firstnameError} value={name} onChange={setName} variant="outlined" placeholder="Enter Your First Name" />
-          </Box>
-          <Box>
-            <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>LAST NAME</Typography>
-
-            <CustomTextField sx={{
-              ".MuiOutlinedInput-input": {
-                width: "300px"
               },
-              ".css-1wc848c-MuiFormHelperText-root": {
-                color: "red"
+              ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                border: "1px solid lightgray",
+                height: "50px",
+                fontSize: "14px",
               }
-            }} id="outlined-basic" value={lastName} error={lastName ? !!lastnameError : false}
-              helperText={lastnameError} onChange={setLastName} variant="outlined" placeholder="Enter Your Last Name" />
+            }} id="outlined-basic" error={personalDetails.firstname ? !!firstnameError : false}
+              helperText={firstnameError} name="firstname" value={personalDetails.firstname} onChange={handleInputChange} variant="outlined" placeholder="Enter Your Name" />
           </Box>
         </Stack>
-        <Stack margin={"30px"} direction="row"
-          display="flex"
+        <Stack margin={"30px"}
           spacing={3}>
           <Box>
-            <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>EMAIL ID</Typography>
+            <Typography marginLeft={"5px"} marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>EMAIL ID</Typography>
 
-            <CustomTextField sx={{
+            <TextField sx={{
               ".MuiOutlinedInput-input": {
-                width: "300px"
+                width: "650px"
               },
               ".css-1wc848c-MuiFormHelperText-root ": {
                 color: "red",
+              },
+              ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                border: "1px solid lightgray",
+                height: "50px",
+                fontSize: "14px",
               }
-            }} id="outlined-basic" error={email ? !!emailError : false}
-              helperText={emailError} value={email} onChange={setEmail} variant="outlined" placeholder="Enter Your Email ID" />
+            }} id="outlined-basic" error={personalDetails.email ? !!emailError : false}
+              helperText={emailError} name="email" value={personalDetails.email} onChange={handleInputChange} variant="outlined" placeholder="Enter Your Email ID" />
 
           </Box>
           <Box>
-            <Typography marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>PHONE NUMBER</Typography>
-            <CustomTextField sx={{
+            <Typography marginLeft={"5px"} marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>PHONE NUMBER</Typography>
+            <TextField sx={{
               ".MuiOutlinedInput-input": {
-                width: "300px"
+                width: "650px"
               },
               ".css-1wc848c-MuiFormHelperText-root": {
                 color: "red"
+              },
+              ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                border: "1px solid lightgray",
+                height: "50px",
+                fontSize: "14px",
               }
-            }} id="outlined-basic" type="number" error={phone ? !!phoneError : false}
-              helperText={phoneError} value={phone} onChange={setPhone} variant="outlined" placeholder="Enter Your Phone No" />
+            }} id="outlined-basic" type="number" error={personalDetails.phone ? !!phoneError : false}
+              helperText={phoneError} name="phone" value={personalDetails.phone} onChange={handleInputChange} variant="outlined" placeholder="Enter Your Phone No" />
           </Box>
         </Stack>
         <Box margin={"30px"}>
           <Typography margin={"0px 8px"} marginBottom={"12px"} fontSize={"16px"} color="black" fontWeight={"bold"}>WHAT DO YOU HAVE IN MIND</Typography>
 
-          <CustomTextField sx={{
+          <TextField sx={{
 
             ".MuiOutlinedInput-input": {
               width: "650px",
@@ -285,17 +222,25 @@ export default function ContactPage() {
             },
             ".css-1wc848c-MuiFormHelperText-root": {
               color: "red"
+            },
+            ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+              border: "1px solid lightgray"
             }
-          }} id="outlined-basic" value={passage} onChange={setPassage} error={passage ? !!passageError : false}
-            helperText={passageError} variant="outlined" placeholder="Please enter query..." />
+          }} id="outlined-basic" value={personalDetails.passage} onChange={handleInputChange}
+            name="passage" variant="outlined" placeholder="Please enter query..." />
         </Box>
-        <Box margin={"0px 290px"}>
+        <Box textAlign={"center"}>
           <Button sx={{
-            padding: "7px 50px"
+            boxShadow: `0px 2px 5px black`,
+            padding: "7px 60px",
+            background: "black",
+            ":hover": {
+              background: "black"
+            }
           }} variant="contained" onClick={handleSubmit}>Submit</Button>
         </Box>
       </Box>
-      <FormAddress />
     </Box>
   )
 }
+
