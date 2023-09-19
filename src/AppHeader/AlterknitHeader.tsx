@@ -1,25 +1,30 @@
 import {
   Box,
   Button,
-  Container,
+  IconButton,
+  Menu,
+  MenuItem,
   Stack,
   Typography,
   styled,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 
 import Alterknit from "../assets/alterknit.png";
+import AppContainer from "../component/AppContainer";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import routes from "../routes/routes";
 
 const ServiceItem = styled(Link)`
   text-decoration: none;
   position: relative;
-
-  color: graytext; /* Default text color */
+  color: graytext;
 
   &:hover {
-    color: black; /* Change the text color on hover */
+    color: black;
   }
 
   &:hover::before {
@@ -34,50 +39,113 @@ const ServiceItem = styled(Link)`
 `;
 
 export default function AlterknitHeader() {
-  const services = ["Services", "Our Story", "Portfolio", "Care", "Blog"];
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const services = [
+    { linkname: "Services", url: routes.HOME },
+    { linkname: "Our Story", url: routes.CONTACT_US },
+    { linkname: "Portfolio", url: routes.HOME },
+    { linkname: "Care", url: routes.HOME },
+    { linkname: "Blog", url: routes.BLOG_PAGE },
+  ];
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMenuOpen = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Box
       bgcolor={"white"}
       width="100%"
-      minHeight={136}
       borderBottom={"1px solid black"}
+      position="sticky"
+      top={0}
+      zIndex={100}
     >
-      <Container maxWidth={false} sx={{ maxWidth: 1440 }}>
+      <AppContainer>
         <Stack
-          pt={4.5}
-          direction={"row"}
-          justifyContent="space-around"
+          pt={isSmallScreen ? 3 : 4.5}
+          direction={isSmallScreen ? "column" : "row"}
+          justifyContent="space-between"
           alignItems="center"
-          spacing={5}
+          spacing={isSmallScreen ? 2 : 5}
         >
           <Box>
             <Link to={""}>
-              <img width={170} src={Alterknit} alt="alterknit" />
+              <img
+                width={isSmallScreen ? 120 : 170}
+                src={Alterknit}
+                alt="alterknit"
+              />
             </Link>
           </Box>
-          <Stack
-            whiteSpace="nowrap"
-            alignItems="center"
-            spacing={6}
-            direction="row"
-          >
-            {services.map((service, index) => (
-              <ServiceItem key={index} to="" className="service-item">
-                <Typography variant="h5" key={index}>
-                  {service.trim()}
-                </Typography>
-              </ServiceItem>
-            ))}
-          </Stack>
+          {isSmallScreen ? (
+            <Box>
+              <IconButton
+                aria-controls="mobile-menu"
+                aria-haspopup="true"
+                onClick={handleMenuOpen}
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="mobile-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+                style={{
+                  top: "60px",
+                }}
+              >
+                {services.map((service, index) => (
+                  <MenuItem key={index} onClick={handleMenuClose}>
+                    <ServiceItem to={service.url} className="service-item">
+                      <Typography variant="subtitle1" key={index}>
+                        {service.linkname}
+                      </Typography>
+                    </ServiceItem>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          ) : (
+            <Stack
+              whiteSpace="nowrap"
+              alignItems="center"
+              spacing={isSmallScreen ? 2 : 4}
+              direction={isSmallScreen ? "column" : "row"}
+            >
+              {services.map((service, index) => (
+                <MenuItem key={index} onClick={handleMenuClose}>
+                  <ServiceItem to={service.url} className="service-item">
+                    <Typography variant="subtitle1" key={index}>
+                      {service.linkname}
+                    </Typography>
+                  </ServiceItem>
+                </MenuItem>
+              ))}
+            </Stack>
+          )}
           <Link
             to={""}
             style={{
-              fontSize: "20px",
+              fontSize: isSmallScreen ? "16px" : "20px",
               textDecoration: "none",
               backgroundColor: "black",
               color: "white",
-              padding: "20px",
+              padding: "10px 20px",
               borderRadius: 5,
             }}
           >
@@ -90,16 +158,16 @@ export default function AlterknitHeader() {
               style={{
                 backgroundColor: "black",
                 textTransform: "capitalize",
-                width: 150,
-                height: 62,
-                fontSize: "20px",
+                width: isSmallScreen ? "120px" : "100px",
+                height: isSmallScreen ? "48px" : "40px",
+                fontSize: isSmallScreen ? "14px" : "20px",
               }}
             >
               Logout
             </Button>
           </Link>
         </Stack>
-      </Container>
+      </AppContainer>
     </Box>
   );
 }
