@@ -15,9 +15,12 @@ const StyledButton = styled(Button, {
     fontSize: 16,
     width: fullWidth ? "100%" : "auto",
     minWidth: 150,
-    "&.MuiButton-containedPrimary, &.MuiButton-containedPrimary:hover": {
+    "&.MuiButton-containedPrimary": {
         background: bgColor,
         border: "none",
+    },
+    "&.MuiButton-containedPrimary:hover": {
+        background: Colors.LINK
     },
     "&.MuiButton-outlinedPrimary": {
         boxShadow: "none",

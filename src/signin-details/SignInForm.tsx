@@ -94,13 +94,10 @@ export default function SignInForm() {
         }
     };
     return (
-        <Stack direction="column" spacing={3}>
-            <Stack direction="column" spacing={3}>
-                <img src={alterknitImage} alt="logo" width="50%" height="50%" />
-                <Typography variant="h4" textAlign="left">
-                    Sign-In to your account
-                </Typography>
-            </Stack>
+        <Stack direction="column" spacing={3} marginTop="100px">
+            <Typography variant="h4" textAlign="center">
+                Welcome back!
+            </Typography>
             <CustomTextField
                 value={email}
                 label="Username or Email"
@@ -131,12 +128,8 @@ export default function SignInForm() {
                 }}
             />
 
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" spacing={0.5} alignItems="center">
-                    <Checkbox />
-                    <Typography variant="body2">Remember me</Typography>
-                </Stack>
-                <Link onClick={handleReset} to={""} color={Colors.BLACK}>
+            <Stack direction="row" justifyContent="end" alignItems="center">
+                <Link onClick={handleReset} to={""} color={Colors.BLACK} style={{ textDecoration: "none", color: Colors.BLACK }}>
                     Forgot password?
                 </Link>
             </Stack>
@@ -156,10 +149,10 @@ export default function SignInForm() {
                 spacing={1}
             >
                 <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={routes.SIGN_UP}>Sign Up</StyleNav>
+                <StyleNav to={routes.SIGN_UP} style={{ textDecoration: "none", color: Colors.BLACK }}>Sign Up</StyleNav>
             </Stack>
 
-            <Divider> OR</Divider>
+            <Divider>or</Divider>
             <Stack
                 direction="row"
                 alignItems="center"
