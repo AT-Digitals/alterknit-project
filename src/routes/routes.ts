@@ -6,6 +6,7 @@ const ALTERKNIT_HEADER = "/alterknit-header";
 const REGISTER_EMAIL = "/register";
 const SIGN_UP = "/sign-up";
 const CONTACT_US = "/contact-us"
+const SUBSCRIBE = "/subscribe"
 
 const routes = {
   ROOT,
@@ -16,6 +17,7 @@ const routes = {
   REGISTER_EMAIL,
   SIGN_UP,
   CONTACT_US,
+  SUBSCRIBE,
 };
 
 export default routes;
