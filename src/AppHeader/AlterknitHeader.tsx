@@ -139,7 +139,7 @@ export default function AlterknitHeader() {
             </Stack>
           )}
           <Link
-            to={""}
+            to={routes.SCHEDULE_REPAIR}
             style={{
               fontSize: isSmallScreen ? "16px" : "20px",
               textDecoration: "none",
