@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 import AppContainer from "../../component/AppContainer";
+import { Link } from "react-router-dom";
 
 export default function BlogPage() {
   const theme = useTheme();
@@ -38,19 +39,21 @@ export default function BlogPage() {
             remarkable and underappreciated. Mending is…
           </Typography>
         </Box>
-        <Button
-          style={{
-            padding: "20px",
-            background: "#df7c6c",
-            alignItems: "flex-start",
-            maxWidth: 200,
-            color: "white",
-            marginBottom: 50,
-            marginLeft: 10,
-          }}
-        >
-          Continue reading
-        </Button>
+        <Link to="https://alterknitnewyork.com/threads-of-change-how-clothes-mending-impacts-sustainability">
+          <Button
+            style={{
+              padding: "20px",
+              background: "#df7c6c",
+              alignItems: "flex-start",
+              maxWidth: 200,
+              color: "white",
+              marginBottom: 50,
+              marginLeft: 10,
+            }}
+          >
+            Continue reading
+          </Button>
+        </Link>
       </Stack>
     </AppContainer>
   );

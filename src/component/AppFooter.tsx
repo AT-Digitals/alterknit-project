@@ -52,6 +52,7 @@ export default function AppFooter() {
                     className="service-item"
                   >
                     <Typography
+                      flexWrap={"wrap"}
                       fontSize={"16px"}
                       variant="h5"
                       key={index}
@@ -74,6 +75,7 @@ export default function AppFooter() {
                   fontSize={"16px"}
                   alignItems="center"
                   color={"#B2B2B2"}
+                  whiteSpace={"nowrap"}
                 >
                   212 473 6363
                 </Typography>
