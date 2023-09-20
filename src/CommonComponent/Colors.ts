@@ -31,6 +31,8 @@ const Colors = {
   LABEL_COLOR: "rgba(0, 23, 31, 0.5)",
   PRIMARY_BUTTON: "#BB9F5B",
   LINK: "#df7c6d",
+  HOME_BACKGROUND: "#f8f1eb",
+  Text_COLOR: "#575656",
 };
 
 export default Colors;
