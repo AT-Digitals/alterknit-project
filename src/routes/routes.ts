@@ -10,6 +10,7 @@ const TERM = "/terms"
 const SUBSCRIBE = "/subscribe"
 const BLOG_PAGE = "/blog";
 const SCHEDULE_REPAIR = "/schedule-repair";
+const FAQ = "faq-page";
 const routes = {
   ROOT,
   SIGN_IN,
@@ -23,6 +24,7 @@ const routes = {
   SUBSCRIBE,
   BLOG_PAGE,
   SCHEDULE_REPAIR,
+  FAQ,
 };
 
 export default routes;
