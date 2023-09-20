@@ -1,5 +1,4 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
 const getPersonalDetails = {
