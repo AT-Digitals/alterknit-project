@@ -6,6 +6,7 @@ const ALTERKNIT_HEADER = "/alterknit-header";
 const REGISTER_EMAIL = "/register";
 const SIGN_UP = "/sign-up";
 const CONTACT_US = "/contact-us"
+const TERM = "/terms"
 const SUBSCRIBE = "/subscribe"
 const BLOG_PAGE = "/blog";
 const SCHEDULE_REPAIR = "/schedule-repair";
@@ -18,6 +19,7 @@ const routes = {
   REGISTER_EMAIL,
   SIGN_UP,
   CONTACT_US,
+  TERM,
   SUBSCRIBE,
   BLOG_PAGE,
   SCHEDULE_REPAIR,
