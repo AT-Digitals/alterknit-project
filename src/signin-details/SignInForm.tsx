@@ -1,11 +1,10 @@
 import {
-    Box,
-    Checkbox,
-    Divider,
-    IconButton,
-    Stack,
-    Typography,
-    styled,
+  Checkbox,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+  styled,
 } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth, facebookProvider, googleProvider } from "../firebase";
@@ -19,88 +18,84 @@ import { FirebaseError } from "firebase/app";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import alterknitImage from "../assets/alterknit.png";
 import routes from "../routes/routes";
 import { useState } from "react";
-import alterknitImage from "../assets/alterknit.png";
 
 const StyleNav = styled(NavLink)({
-    ".active": {
-        color: Colors.BLACK,
-    },
+  ".active": {
+    color: Colors.BLACK,
+  },
 });
 
 export default function SignInForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    const navigate = useNavigate();
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
-            console.log(email + "" + password);
-            navigate(routes.ALTERKNIT_HEADER);
-        } catch (error) {
-            console.log(error);
-            if (error instanceof Error) {
-                setError("Could't find your alterknit Account");
-                setIsDrawerOpen(true);
-            }
-        }
-    };
-    const closeDrawer = () => {
-        setIsDrawerOpen(false);
-    };
+  const navigate = useNavigate();
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      console.log(email + "" + password);
+      navigate(routes.ROOT);
+    } catch (error) {
+      console.log(error);
+      if (error instanceof Error) {
+        setError("Could't find your alterknit Account");
+        setIsDrawerOpen(true);
+      }
+    }
+  };
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
 
-    const handleReset = async (
-        e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-    ) => {
-        e.preventDefault();
-        try {
-            await auth.sendPasswordResetEmail(email);
-            console.log("Password reset email sent");
-            setError("Password reset email sent");
-            setIsDrawerOpen(true);
-        } catch (error) {
-            if (error instanceof FirebaseError) {
-                console.error("Firebase Error:", error.code, error.message);
-                setError("Firebase Error: " + error.message);
-                setIsDrawerOpen(true);
-            } else {
-                console.error("Unknown Error:", error);
-                setError("Unknown Error");
-                setIsDrawerOpen(true);
-            }
-        }
-    };
+  const handleReset = async (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    try {
+      await auth.sendPasswordResetEmail(email);
+      console.log("Password reset email sent");
+      setError("Password reset email sent");
+      setIsDrawerOpen(true);
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        console.error("Firebase Error:", error.code, error.message);
+        setError("Firebase Error: " + error.message);
+        setIsDrawerOpen(true);
+      } else {
+        console.error("Unknown Error:", error);
+        setError("Unknown Error");
+        setIsDrawerOpen(true);
+      }
+    }
+  };
 
-    const handleGoogleLogin = async () => {
-        try {
-            await auth.signInWithPopup(googleProvider);
-            navigate(routes.ALTERKNIT_HEADER);
-        } catch (error) {
-            console.error("Google login error:", error);
-        }
-    };
-    const handleFacebookLogin = async () => {
-        try {
-            await auth.signInWithPopup(facebookProvider);
-
+  const handleGoogleLogin = async () => {
+    try {
+      await auth.signInWithPopup(googleProvider);
+      navigate(routes.ALTERKNIT_HEADER);
+    } catch (error) {
+      console.error("Google login error:", error);
+    }
+  };
+  const handleFacebookLogin = async () => {
+    try {
+      await auth.signInWithPopup(facebookProvider);
             navigate(routes.ALTERKNIT_HEADER);
         } catch (error) {
             console.error("Facebook login error:", error);
         }
     };
     return (
-        <Stack direction="column" spacing={3}>
-            <Stack direction="column" spacing={3}>
-                <img src={alterknitImage} alt="logo" width="50%" height="50%" />
-                <Typography variant="h4" textAlign="left">
-                    Sign-In to your account
-                </Typography>
-            </Stack>
+        <Stack direction="column" spacing={3} marginTop="100px">
+            <Typography variant="h4" textAlign="center">
+                Welcome back!
+            </Typography>
             <CustomTextField
                 value={email}
                 label="Username or Email"
@@ -131,12 +126,8 @@ export default function SignInForm() {
                 }}
             />
 
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" spacing={0.5} alignItems="center">
-                    <Checkbox />
-                    <Typography variant="body2">Remember me</Typography>
-                </Stack>
-                <Link onClick={handleReset} to={""} color={Colors.BLACK}>
+            <Stack direction="row" justifyContent="end" alignItems="center">
+                <Link onClick={handleReset} to={""} color={Colors.BLACK} style={{ textDecoration: "none", color: Colors.BLACK }}>
                     Forgot password?
                 </Link>
             </Stack>
@@ -156,10 +147,10 @@ export default function SignInForm() {
                 spacing={1}
             >
                 <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={routes.SIGN_UP}>Sign Up</StyleNav>
+                <StyleNav to={routes.SIGN_UP} style={{ textDecoration: "none", color: Colors.BLACK }}>Sign Up</StyleNav>
             </Stack>
 
-            <Divider> OR</Divider>
+            <Divider>or</Divider>
             <Stack
                 direction="row"
                 alignItems="center"
@@ -182,7 +173,7 @@ export default function SignInForm() {
                     onClose={closeDrawer}
                     message={error || ""}
                 />
-            )}
-        </Stack>
-    );
+            )} 
+        </Stack> 
+  );
 }
