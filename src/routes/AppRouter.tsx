@@ -5,11 +5,11 @@ import BlogPage from "../pages/Blog/BlogPage";
 import ContactPage from "../pages/ContactPage";
 import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import SignInPage from "../signin-details/SignInPage";
-import AppLayout from "../component/AppLayout";
 import SubscribePage from "../pages/SubscribePage";
 import HomePage from "../pages/HomePage";
 import SignUpPage from "../signup-details/SignUpPage";
 import routes from "./routes";
+import TermsCondition from "../pages/TermsCondition";
 
 export default function AppRouter() {
   return (
