@@ -7,9 +7,9 @@ export default function AppContainer(props: StackProps) {
       spacing={4}
       width="100%"
       alignItems="stretch"
-      maxWidth={1400}
+      maxWidth={1300}
       mx="auto"
-      py={1}
+      px={4}
       // px={{ xs: 2, sm: 3, md: 5 }}
       {...props}
     />

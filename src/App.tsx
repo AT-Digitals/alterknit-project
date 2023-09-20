@@ -1,12 +1,18 @@
 
 import './App.css';
 import AppRouter from './routes/AppRouter';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+  typography: {
+    fontFamily: `"Proxima Nova", sans-serif`,
+  },
+});
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <AppRouter />
-    </div>
+    </ThemeProvider>
   );
 }
 

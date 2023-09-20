@@ -17,6 +17,8 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import routes from "../routes/routes";
+import Colors from "../CommonComponent/Colors";
+import CustomButton from "../CommonComponent/CustomButton";
 
 const ServiceItem = styled(Link)`
   text-decoration: none;
@@ -71,6 +73,7 @@ export default function AlterknitHeader() {
       <AppContainer>
         <Stack
           pt={isSmallScreen ? 3 : 4.5}
+          pb={4}
           direction={isSmallScreen ? "column" : "row"}
           justifyContent="space-between"
           alignItems="center"
@@ -130,7 +133,7 @@ export default function AlterknitHeader() {
               {services.map((service, index) => (
                 <MenuItem key={index} onClick={handleMenuClose}>
                   <ServiceItem to={service.url} className="service-item">
-                    <Typography variant="subtitle1" key={index}>
+                    <Typography fontSize="21px" key={index}>
                       {service.linkname}
                     </Typography>
                   </ServiceItem>
@@ -138,34 +141,35 @@ export default function AlterknitHeader() {
               ))}
             </Stack>
           )}
-          <Link
-            to={routes.SCHEDULE_REPAIR}
-            style={{
-              fontSize: isSmallScreen ? "16px" : "20px",
-              textDecoration: "none",
-              backgroundColor: "black",
-              color: "white",
-              padding: "10px 20px",
-              borderRadius: 5,
-            }}
-          >
-            Schedule your repair
-          </Link>
-          <Link to={routes.SIGN_IN}>
-            <Button
-              fullWidth
-              variant="contained"
-              style={{
-                backgroundColor: "black",
-                textTransform: "capitalize",
-                width: isSmallScreen ? "120px" : "100px",
-                height: isSmallScreen ? "48px" : "40px",
-                fontSize: isSmallScreen ? "14px" : "20px",
-              }}
+          <Stack direction="row" spacing={3} alignItems="center">
+            <Link
+              to={routes.SCHEDULE_REPAIR}
+            // style={{
+            //   fontSize: isSmallScreen ? "16px" : "20px",
+
+            //   backgroundColor: "black",
+            //   color: "white",
+            //   padding: "16px 30px",
+            //   borderRadius: 5,
+            //   fontWeight: 600
+            // }}
             >
-              Logout
-            </Button>
-          </Link>
+              <CustomButton bgColor={Colors.BLACK} sx={{ borderRadius: "5px", fontSize: "20px", fontWeight: 600, padding: "15px 20px", textTransform: "none" }}>Schedule your repair</CustomButton>
+            </Link>
+            <Link to={routes.SIGN_IN}
+            // style={{
+            //   fontSize: isSmallScreen ? "16px" : "20px",
+            //   textDecoration: "none",
+            //   backgroundColor: "black",
+            //   color: "white",
+            //   padding: "16px 30px",
+            //   borderRadius: 5,
+            //   fontWeight: 600,
+            // }}
+            >
+              <CustomButton bgColor={Colors.BLACK} sx={{ borderRadius: "5px", fontSize: "20px", fontWeight: 600, padding: "15px 20px", textTransform: "none" }}>Logout</CustomButton>
+            </Link>
+          </Stack>
         </Stack>
       </AppContainer>
     </Box>
