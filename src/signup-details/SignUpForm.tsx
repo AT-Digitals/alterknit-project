@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Stack, Typography, styled } from "@mui/material";
 
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
@@ -6,7 +6,7 @@ import CustomDialog from "../Popup/Popup";
 import CustomTextField from "../CommonComponent/CustomTextField";
 import { auth } from "../firebase";
 import routes from "../routes/routes";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import alterknitImage from "../assets/alterknit.png";
 
@@ -35,6 +35,11 @@ export default function SignUpForm() {
       setIsDrawerOpen(true);
     }
   };
+  const StyleNav = styled(NavLink)({
+    ".active": {
+      color: Colors.BLACK,
+    },
+  });
 
   const handlePopupClose = () => {
     setIsDrawerOpen(false);
@@ -43,19 +48,11 @@ export default function SignUpForm() {
     }
   };
   return (
-    <Box>
+    <Box marginTop="100px">
       <Stack direction="column" spacing={3}>
-        <Stack direction="column" spacing={3}>
-          <img
-            src={alterknitImage}
-            alt="logo"
-            width="60%"
-            height="60%"
-          />
-          <Typography variant="h4" textAlign="left">
-            Sign-Up to create an account
-          </Typography>
-        </Stack>
+        <Typography variant="h4" textAlign="center">
+          Create your account
+        </Typography>
         <CustomTextField
           label="Username"
           required={false}
@@ -132,6 +129,16 @@ export default function SignUpForm() {
           message={error || ""}
         />
       )}
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        spacing={1}
+        marginY={3}
+      >
+        <Typography variant="body2">Already have an account? </Typography>
+        <StyleNav to={routes.SIGN_IN} style={{ textDecoration: "none", color: Colors.BLACK }}>Sign In</StyleNav>
+      </Stack>
     </Box>
   );
 }

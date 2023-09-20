@@ -1,5 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
 
 const getPersonalDetails = {
   firstname: "",
@@ -17,6 +18,7 @@ export default function FormFile() {
   const residentDetails = {
     personalDetails: personalDetails,
   };
+
 
   const FirstNameValidation = (name: string) => {
     if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
@@ -84,8 +86,43 @@ export default function FormFile() {
     setPersonalDetails({ ...personalDetails, [name]: value });
   };
 
-  const handleSubmit = (e: any) => {
+  const clearInputs = useCallback(() => {
+    setPersonalDetails(getPersonalDetails);
+  }, []);
+
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(personalDetails)
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
+    let result = await fetch(
+      'http://localhost:3001/items', {
+      method: "post",
+      body: JSON.stringify({ name: personalDetails.firstname, email: personalDetails.email, phone: personalDetails.phone, message: personalDetails.passage }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    // setPersonalDetails({ firstname: "", email: "", phone: "", passage: '' })
+    result = await result.json();
+    console.warn(result);
+    if (result) {
+      setPersonalDetails(getPersonalDetails)
+    }
 
     // Initialize error variables
     let firstNameError = "";
@@ -113,9 +150,6 @@ export default function FormFile() {
       phoneError = "Invalid phone number format";
     }
 
-    setPersonalDetails({
-      ...personalDetails,
-    });
 
     // Set the error state variables
     setFirstNameError(firstNameError);
@@ -143,174 +177,182 @@ export default function FormFile() {
 
   return (
     <Box display={"flex"} justifyContent={"center"}>
-      <Box>
-        <Typography
-          marginTop={"20px"}
-          borderBottom={"1px solid black"}
-          textAlign={"center"}
-          fontWeight={"bold"}
-          fontSize={"32px"}
-          color={"black"}
-        >
-          Contact us
-        </Typography>
-        <Stack margin={"30px"} direction="row" display="flex" spacing={3}>
-          <Box>
-            <Typography
-              marginLeft={"5px"}
-              marginBottom={"12px"}
-              fontSize={"16px"}
-              color="black"
-              fontWeight={"bold"}
-            >
-              NAME
-            </Typography>
-            <TextField
-              sx={{
-                ".MuiOutlinedInput-input": {
-                  width: "650px",
-                },
-                ".css-1wc848c-MuiFormHelperText-root": {
-                  color: "red",
-                },
-                ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
-                  border: "1px solid lightgray",
-                  height: "50px",
-                  fontSize: "14px",
-                },
-              }}
-              id="outlined-basic"
-              error={personalDetails.firstname ? !!firstnameError : false}
-              helperText={firstnameError}
-              name="firstname"
-              value={personalDetails.firstname}
-              onChange={handleInputChange}
-              variant="outlined"
-              placeholder="Enter Your Name"
-            />
-          </Box>
-        </Stack>
-        <Stack margin={"30px"} spacing={3}>
-          <Box>
-            <Typography
-              marginLeft={"5px"}
-              marginBottom={"12px"}
-              fontSize={"16px"}
-              color="black"
-              fontWeight={"bold"}
-            >
-              EMAIL ID
-            </Typography>
-
-            <TextField
-              sx={{
-                ".MuiOutlinedInput-input": {
-                  width: "650px",
-                },
-                ".css-1wc848c-MuiFormHelperText-root ": {
-                  color: "red",
-                },
-                ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
-                  border: "1px solid lightgray",
-                  height: "50px",
-                  fontSize: "14px",
-                },
-              }}
-              id="outlined-basic"
-              error={personalDetails.email ? !!emailError : false}
-              helperText={emailError}
-              name="email"
-              value={personalDetails.email}
-              onChange={handleInputChange}
-              variant="outlined"
-              placeholder="Enter Your Email ID"
-            />
-          </Box>
-          <Box>
-            <Typography
-              marginLeft={"5px"}
-              marginBottom={"12px"}
-              fontSize={"16px"}
-              color="black"
-              fontWeight={"bold"}
-            >
-              PHONE NUMBER
-            </Typography>
-            <TextField
-              sx={{
-                ".MuiOutlinedInput-input": {
-                  width: "650px",
-                },
-                ".css-1wc848c-MuiFormHelperText-root": {
-                  color: "red",
-                },
-                ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
-                  border: "1px solid lightgray",
-                  height: "50px",
-                  fontSize: "14px",
-                },
-              }}
-              id="outlined-basic"
-              type="number"
-              error={personalDetails.phone ? !!phoneError : false}
-              helperText={phoneError}
-              name="phone"
-              value={personalDetails.phone}
-              onChange={handleInputChange}
-              variant="outlined"
-              placeholder="Enter Your Phone No"
-            />
-          </Box>
-        </Stack>
-        <Box margin={"30px"}>
+      <form onSubmit={handleSubmit}>
+        <Box>
           <Typography
-            margin={"0px 8px"}
-            marginBottom={"12px"}
-            fontSize={"16px"}
-            color="black"
+            marginTop={"20px"}
+            borderBottom={"1px solid black"}
+            textAlign={"center"}
             fontWeight={"bold"}
+            fontSize={"32px"}
+            color={"black"}
           >
-            WHAT DO YOU HAVE IN MIND
+            Contact us
           </Typography>
+          <Stack margin={"30px"} direction="row" display="flex" spacing={3}>
+            <Box>
+              <Typography
+                marginLeft={"5px"}
+                marginBottom={"12px"}
+                fontSize={"16px"}
+                color="black"
+                fontWeight={"bold"}
+              >
+                NAME
+              </Typography>
+              <TextField
+                sx={{
+                  ".MuiOutlinedInput-input": {
+                    width: "650px",
+                  },
+                  ".css-1wc848c-MuiFormHelperText-root": {
+                    color: "red",
+                  },
+                  ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                    border: "1px solid lightgray",
+                    height: "50px",
+                    fontSize: "14px",
+                  },
+                }}
+                id="outlined-basic"
+                error={personalDetails.firstname ? !!firstnameError : false}
+                helperText={firstnameError}
+                name="firstname"
+                value={personalDetails.firstname}
+                onChange={handleInputChange}
+                variant="outlined"
+                placeholder="Enter Your Name"
+                required
+              />
+            </Box>
+          </Stack>
+          <Stack margin={"30px"} spacing={3}>
+            <Box>
+              <Typography
+                marginLeft={"5px"}
+                marginBottom={"12px"}
+                fontSize={"16px"}
+                color="black"
+                fontWeight={"bold"}
+              >
+                EMAIL ID
+              </Typography>
 
-          <TextField
-            sx={{
-              ".MuiOutlinedInput-input": {
-                width: "650px",
-                marginBottom: "130px",
-              },
-              ".css-1wc848c-MuiFormHelperText-root": {
-                color: "red",
-              },
-              ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
-                border: "1px solid lightgray",
-              },
-            }}
-            id="outlined-basic"
-            value={personalDetails.passage}
-            onChange={handleInputChange}
-            name="passage"
-            variant="outlined"
-            placeholder="Please enter query..."
-          />
-        </Box>
-        <Box textAlign={"center"}>
-          <Button
-            sx={{
-              boxShadow: `0px 2px 5px black`,
-              padding: "7px 60px",
-              background: "black",
-              ":hover": {
+              <TextField
+                sx={{
+                  ".MuiOutlinedInput-input": {
+                    width: "650px",
+                  },
+                  ".css-1wc848c-MuiFormHelperText-root ": {
+                    color: "red",
+                  },
+                  ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                    border: "1px solid lightgray",
+                    height: "50px",
+                    fontSize: "14px",
+                  },
+                }}
+                id="outlined-basic"
+                error={personalDetails.email ? !!emailError : false}
+                helperText={emailError}
+                name="email"
+                value={personalDetails.email}
+                onChange={handleInputChange}
+                variant="outlined"
+                placeholder="Enter Your Email ID"
+                required
+              />
+            </Box>
+            <Box>
+              <Typography
+                marginLeft={"5px"}
+                marginBottom={"12px"}
+                fontSize={"16px"}
+                color="black"
+                fontWeight={"bold"}
+              >
+                PHONE NUMBER
+              </Typography>
+              <TextField
+                sx={{
+                  ".MuiOutlinedInput-input": {
+                    width: "650px",
+                  },
+                  ".css-1wc848c-MuiFormHelperText-root": {
+                    color: "red",
+                  },
+                  ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                    border: "1px solid lightgray",
+                    height: "50px",
+                    fontSize: "14px",
+                  },
+                }}
+                id="outlined-basic"
+                type="number"
+                error={personalDetails.phone ? !!phoneError : false}
+                helperText={phoneError}
+                name="phone"
+                value={personalDetails.phone}
+                onChange={handleInputChange}
+                variant="outlined"
+                placeholder="Enter Your Phone No"
+                required
+              />
+            </Box>
+          </Stack>
+          <Box margin={"30px"}>
+            <Typography
+              margin={"0px 8px"}
+              marginBottom={"12px"}
+              fontSize={"16px"}
+              color="black"
+              fontWeight={"bold"}
+            >
+              WHAT DO YOU HAVE IN MIND
+            </Typography>
+
+            <TextField
+              sx={{
+                ".MuiOutlinedInput-input": {
+                  width: "650px",
+                  marginBottom: "130px",
+                },
+                ".css-1wc848c-MuiFormHelperText-root": {
+                  color: "red",
+                },
+                ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                  border: "1px solid lightgray",
+                },
+              }}
+              id="outlined-basic"
+              value={personalDetails.passage}
+              onChange={handleInputChange}
+              name="passage"
+              variant="outlined"
+              placeholder="Please enter query..."
+              required
+            />
+          </Box>
+          <Box textAlign={"center"}>
+            <Button
+              sx={{
+                boxShadow: `0px 2px 5px black`,
+                padding: "7px 60px",
                 background: "black",
-              },
-            }}
-            variant="contained"
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
+                ":hover": {
+                  background: "black",
+                },
+
+              }}
+              variant="contained"
+              type="submit"
+            // onClick={handleSubmit}
+            >
+              Send
+            </Button>
+          </Box>
         </Box>
-      </Box>
+      </form>
     </Box>
   );
 }
