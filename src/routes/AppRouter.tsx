@@ -10,6 +10,7 @@ import HomePage from "../pages/HomePage";
 import SignUpPage from "../signup-details/SignUpPage";
 import routes from "./routes";
 import TermsCondition from "../pages/TermsCondition";
+import FaqPage from "../pages/FaqPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 export default function AppRouter() {
@@ -26,6 +27,7 @@ export default function AppRouter() {
           <Route path={routes.SUBSCRIBE} element={<SubscribePage />} />
           <Route path={routes.BLOG_PAGE} element={<BlogPage />} />
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
+          <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
         </Route>
       </Routes>
