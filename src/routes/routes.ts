@@ -15,6 +15,7 @@ const PRIVACY = "/privacy-policy";
 const CARD = "/card-page";
 
 const FIXME = "/fixme";
+const SERVICE = "/service-header";
 const CREATION = '/box-creation';
 const routes = {
   ROOT,
@@ -33,6 +34,7 @@ const routes = {
   PRIVACY,
   CARD,
   FIXME,
+  SERVICE,
   CREATION,
 };
 

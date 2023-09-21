@@ -14,6 +14,7 @@ import FaqPage from "../pages/FaqPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CardPage from "../pages/CardPage";
 import routes from "./routes";
+import ServiceHeader from "../pages/ServiceHeader";
 import BoxCreation from "../pages/BoxCreation";
 
 export default function AppRouter() {
@@ -34,6 +35,7 @@ export default function AppRouter() {
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.CARD} element={<CardPage />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
+          <Route path={routes.SERVICE} element={<ServiceHeader />} />
           <Route path={routes.CREATION} element={<BoxCreation />} />
         </Route>
       </Routes>
