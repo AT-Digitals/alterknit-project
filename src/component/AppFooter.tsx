@@ -17,6 +17,7 @@ export default function AppFooter() {
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
     { name: "Partners", url: routes.ROOT },
+    { name: "Contact Us", url: routes.CONTACT_US },
   ];
 
   return (

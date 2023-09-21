@@ -70,7 +70,7 @@ export default function SignInForm() {
   const handleGoogleLogin = async () => {
     try {
       await auth.signInWithPopup(googleProvider);
-      navigate(routes.ALTERKNIT_HEADER);
+      navigate(routes.ROOT);
     } catch (error) {
       console.error("Google login error:", error);
     }
@@ -78,7 +78,7 @@ export default function SignInForm() {
   const handleFacebookLogin = async () => {
     try {
       await auth.signInWithPopup(facebookProvider);
-      navigate(routes.ALTERKNIT_HEADER);
+      navigate(routes.ROOT);
     } catch (error) {
       console.error("Facebook login error:", error);
     }
@@ -96,9 +96,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
         onChange={setEmail}
       />
@@ -112,9 +112,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
       />
 

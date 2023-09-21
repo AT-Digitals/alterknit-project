@@ -1,38 +1,45 @@
-import { Stack, Box, Typography, Grid } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
 
 export default function CustomSection() {
     return (
         <Stack
-            direction="row"
-            spacing={1}
+            direction="column"
             alignItems="center"
             justifyContent="space-between"
             maxWidth={1300}
-            margin="0 auto"
-            paddingX={10}
             paddingY={10}
+            pl={13}
+            pr={10}
         >
-            <Grid container columnSpacing={10}>
-                <Grid item xs={6}>
-                    <Typography fontSize="80px" fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase">
-                        We reap what we sew
-                    </Typography>
-                    <Typography fontSize="22px" marginY={3} color={Colors.Text_COLOR}>
-                        All of the fibers used in your repair are harvested and grafted from
-                        your garment itself.
-                    </Typography>
-                </Grid>
-                <Grid item xs={6}>
-                    <Typography fontSize="80px" fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase">
-                        custom jobs for all
-                    </Typography>
-                    <Typography fontSize="22px" marginY={3} color={Colors.Text_COLOR}>
-                        All of our repairs are performed by skilled human beings working
-                        with very tiny needles and really big magnifiers.
-                    </Typography>
-                </Grid>
-            </Grid>
+            <Stack direction="row" width={1300} spacing={3} justifyContent={"space-between"} alignItems="center">
+                <Typography
+                    fontSize="80px"
+                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                    fontWeight={400}
+                    textTransform="uppercase"
+                >
+                    We reap what we sew
+                </Typography>
+                <Typography
+                    fontSize="80px"
+                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                    fontWeight={400}
+                    textTransform="uppercase"
+                >
+                    custom jobs for all
+                </Typography>
+            </Stack>
+            <Stack direction="row" width={1300} justifyContent={"space-between"} alignItems="center">
+                <Typography fontSize="22px" mb={3} color={Colors.Text_COLOR} maxWidth={500}>
+                    All of the fibers used in your repair are harvested and grafted from
+                    your garment itself.
+                </Typography>
+                <Typography fontSize="22px" mr={3} color={Colors.Text_COLOR} maxWidth={500}>
+                    All of our repairs are performed by skilled human beings working
+                    with very tiny needles and really big magnifiers.
+                </Typography>
+            </Stack>
         </Stack>
-    )
+    );
 }
