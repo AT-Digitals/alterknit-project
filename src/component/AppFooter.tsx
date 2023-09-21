@@ -108,7 +108,7 @@ export default function AppFooter() {
                 marginLeft: isSmScreen ? "1rem" : "2rem",
                 marginRight: isSmScreen ? "1rem" : "2rem",
               }}
-              to={""}
+              to={routes.PRIVACY}
             >
               Privacy Policy
             </Link>
@@ -117,7 +117,7 @@ export default function AppFooter() {
                 fontSize: isSmScreen ? "16px" : "20px",
                 color: "#B2B2B2",
               }}
-              to={""}
+              to={routes.TERM}
             >
               Terms and Conditions
             </Link>
