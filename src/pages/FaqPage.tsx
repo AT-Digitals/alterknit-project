@@ -2,7 +2,8 @@ import { Box, Typography } from "@mui/material";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useState } from "react";
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-
+import TopImage from '../assets/services_faqs_bg_top.svg'; 
+import BottomImage from '../assets/services_faqs_bg_bottom.svg';
 
 export default function FaqPage() {
     const [showTextField, setShowTextField] = useState(true);
@@ -157,8 +158,13 @@ export default function FaqPage() {
     
 
     return (
-        <Box maxWidth={"1200px"} margin={"50px"}>
-        <Box marginTop={"30px"} display={"flex"} justifyContent={"center"}>
+      <>
+        <img src={TopImage} alt="top-image" />
+        <Box sx={{
+          backgroundColor: "#f8f1eb"
+        }} >
+        <Box maxWidth={"1200px"} margin={"0px 90px"}>
+        <Box  display={"flex"} justifyContent={"center"}>
             <Typography color={"black"} fontWeight={"bold"} fontSize={"45px"}>FAQ'S</Typography>
         </Box>
         <Box sx={{
@@ -394,5 +400,8 @@ export default function FaqPage() {
         <Typography color={"#575656"} fontWeight={"500"} fontSize={"20px"}>If after receiving your quote you decline service we return your items to you. You are responsible for all applicable delivery fees.</Typography>
         )}
         </Box>
+        </Box>
+        <img src={BottomImage} alt="bottom-image" />
+       </>
     )
 }
