@@ -1,11 +1,4 @@
-import {
-  Checkbox,
-  Divider,
-  IconButton,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Divider, IconButton, Stack, Typography, styled } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth, facebookProvider, googleProvider } from "../firebase";
 
@@ -18,7 +11,6 @@ import { FirebaseError } from "firebase/app";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import alterknitImage from "../assets/alterknit.png";
 import routes from "../routes/routes";
 import { useState } from "react";
 
@@ -86,94 +78,104 @@ export default function SignInForm() {
   const handleFacebookLogin = async () => {
     try {
       await auth.signInWithPopup(facebookProvider);
-            navigate(routes.ALTERKNIT_HEADER);
-        } catch (error) {
-            console.error("Facebook login error:", error);
-        }
-    };
-    return (
-        <Stack direction="column" spacing={3} marginTop="100px">
-            <Typography variant="h4" textAlign="center">
-                Welcome back!
-            </Typography>
-            <CustomTextField
-                value={email}
-                label="Username or Email"
-                required
-                type="email"
-                sx={{
-                    color: Colors.BLACK,
-                    ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                    {
-                        borderColor: `${Colors.BLACK} !important`,
-                    },
-                }}
-                onChange={setEmail}
-            />
-            <CustomTextField
-                value={password}
-                onChange={setPassword}
-                label="Password"
-                required
-                type="password"
-                endIcon={<VisibilityIcon />}
-                sx={{
-                    color: Colors.BLACK,
-                    ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                    {
-                        borderColor: `${Colors.BLACK} !important`,
-                    },
-                }}
-            />
+      navigate(routes.ALTERKNIT_HEADER);
+    } catch (error) {
+      console.error("Facebook login error:", error);
+    }
+  };
+  return (
+    <Stack direction="column" spacing={3} marginTop="100px">
+      <Typography variant="h4" textAlign="center">
+        Welcome back!
+      </Typography>
+      <CustomTextField
+        value={email}
+        label="Username or Email"
+        required
+        type="email"
+        sx={{
+          color: Colors.BLACK,
+          ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
+        }}
+        onChange={setEmail}
+      />
+      <CustomTextField
+        value={password}
+        onChange={setPassword}
+        label="Password"
+        required
+        type="password"
+        endIcon={<VisibilityIcon />}
+        sx={{
+          color: Colors.BLACK,
+          ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
+        }}
+      />
 
-            <Stack direction="row" justifyContent="end" alignItems="center">
-                <Link onClick={handleReset} to={""} color={Colors.BLACK} style={{ textDecoration: "none", color: Colors.BLACK }}>
-                    Forgot password?
-                </Link>
-            </Stack>
-            <CustomButton
-                variant="contained"
-                color={Colors.WHITE}
-                bgColor={Colors.BLACK}
-                sx={{ borderRadius: "5px" }}
-                onClick={handleSubmit}
-            >
-                Sign In
-            </CustomButton>
-            <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                spacing={1}
-            >
-                <Typography variant="body2">New on our platform?</Typography>
-                <StyleNav to={routes.SIGN_UP} style={{ textDecoration: "none", color: Colors.BLACK }}>Sign Up</StyleNav>
-            </Stack>
+      <Stack direction="row" justifyContent="end" alignItems="center">
+        <Link
+          onClick={handleReset}
+          to={""}
+          color={Colors.BLACK}
+          style={{ textDecoration: "none", color: Colors.BLACK }}
+        >
+          Forgot password?
+        </Link>
+      </Stack>
+      <CustomButton
+        variant="contained"
+        color={Colors.WHITE}
+        bgColor={Colors.BLACK}
+        sx={{ borderRadius: "5px" }}
+        onClick={handleSubmit}
+      >
+        Sign In
+      </CustomButton>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        spacing={1}
+      >
+        <Typography variant="body2">New on our platform?</Typography>
+        <StyleNav
+          to={routes.SIGN_UP}
+          style={{ textDecoration: "none", color: Colors.BLACK }}
+        >
+          Sign Up
+        </StyleNav>
+      </Stack>
 
-            <Divider>or</Divider>
-            <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                spacing={3}
-            >
-                <IconButton onClick={handleGoogleLogin}>
-                    <GoogleIcon style={{ color: "black" }} />
-                </IconButton>
-                <IconButton onClick={handleFacebookLogin}>
-                    <FacebookIcon style={{ color: "black" }} />
-                </IconButton>
-                <IconButton>
-                    <TwitterIcon style={{ color: "black" }} />
-                </IconButton>
-            </Stack>
-            {isDrawerOpen && (
-                <CustomDialog
-                    isOpen={isDrawerOpen}
-                    onClose={closeDrawer}
-                    message={error || ""}
-                />
-            )} 
-        </Stack> 
+      <Divider>or</Divider>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        spacing={3}
+      >
+        <IconButton onClick={handleGoogleLogin}>
+          <GoogleIcon style={{ color: "black" }} />
+        </IconButton>
+        <IconButton onClick={handleFacebookLogin}>
+          <FacebookIcon style={{ color: "black" }} />
+        </IconButton>
+        <IconButton>
+          <TwitterIcon style={{ color: "black" }} />
+        </IconButton>
+      </Stack>
+      {isDrawerOpen && (
+        <CustomDialog
+          isOpen={isDrawerOpen}
+          onClose={closeDrawer}
+          message={error || ""}
+        />
+      )}
+    </Stack>
   );
 }

@@ -3,15 +3,16 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
 import ContactPage from "../pages/ContactPage";
+import FaqPage from "../pages/FaqPage";
+import FixmePage from "../pages/FixmePage";
+import HomePage from "../pages/Home/HomePage";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import SignInPage from "../signin-details/SignInPage";
-import SubscribePage from "../pages/Home/SubscribePage";
-import HomePage from "../pages/Home/HomePage";
 import SignUpPage from "../signup-details/SignUpPage";
-import routes from "./routes";
+import SubscribePage from "../pages/Home/SubscribePage";
 import TermsCondition from "../pages/TermsCondition";
-import FaqPage from "../pages/FaqPage";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
+import routes from "./routes";
 
 export default function AppRouter() {
   return (
@@ -29,6 +30,7 @@ export default function AppRouter() {
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
           <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
+          <Route path={routes.FIXME} element={<FixmePage />} />
         </Route>
       </Routes>
     </Router>
