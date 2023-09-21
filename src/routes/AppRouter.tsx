@@ -15,9 +15,7 @@ import ServicePage from "../pages/Services/ServicePage";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
 import CarePage from "../pages/Care/CarePage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";
-import ServiceHeader from "../pages/Services/ServiceHeader";
-import BoxCreation from "../pages/Services/BoxCreation";
-import CardPage from "../pages/Services/CardPage";
+
 
 export default function AppRouter() {
   return (
@@ -38,7 +36,6 @@ export default function AppRouter() {
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
-          <Route path={routes.CRAE} element={<CarePage />} />
         </Route>
       </Routes>
     </Router>

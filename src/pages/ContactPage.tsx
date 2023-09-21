@@ -1,5 +1,5 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const getPersonalDetails = {
   firstname: "",
@@ -85,9 +85,6 @@ export default function FormFile() {
     setPersonalDetails({ ...personalDetails, [name]: value });
   };
 
-  const clearInputs = useCallback(() => {
-    setPersonalDetails(getPersonalDetails);
-  }, []);
 
 
   const handleSubmit = async (e: any) => {

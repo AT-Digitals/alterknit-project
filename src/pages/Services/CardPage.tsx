@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography, styled } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import ImageTop from "../../assets/services_services_bg_bottom.svg";
 import SpeakerImage from '../../assets/speaker.png';
 import StudioImage from '../../assets/studio.png';
@@ -6,7 +6,7 @@ import StudioImage from '../../assets/studio.png';
 export default function CardPage() {
     return (
         <>
-            <img src={ImageTop} alt="image-top" />
+            <img src={ImageTop} alt="top" />
             <Box display={"flex"} justifyContent={"center"} sx={{
                 backgroundColor: "#df7c6d",
             }}>
@@ -62,7 +62,7 @@ export default function CardPage() {
                 </Card>
             </Box>
             <Box>
-                <img src={SpeakerImage} alt="speaker-image" style={{
+                <img src={SpeakerImage} alt="speaker" style={{
                     width: "120px",
                     fontSize: "20px",
                     fontWeight: 400,
@@ -90,7 +90,7 @@ export default function CardPage() {
                     </Card>
                 </Box>
             </Box>
-            <img src={StudioImage} alt="studio-image" />
+            <img src={StudioImage} alt="studio" />
         </>
     )
 }

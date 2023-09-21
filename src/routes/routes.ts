@@ -16,7 +16,6 @@ const SERVICES = "/services";
 const PORTFOLIO = "/portfolio";
 const CARE = "/care";
 
-const CRAE = "/care";
 const routes = {
   ROOT,
   SIGN_IN,
@@ -34,7 +33,6 @@ const routes = {
   SERVICES,
   PORTFOLIO,
   CARE,
-  CRAE,
 };
 
 export default routes;

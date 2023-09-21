@@ -13,7 +13,7 @@ export default function AppFooter() {
     { name: "Services", url: routes.ROOT },
     { name: "Our Story", url: routes.ROOT },
     { name: "Portfolio", url: routes.ROOT },
-    { name: "Care", url: routes.CRAE },
+    { name: "Care", url: routes.CARE },
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
     { name: "Partners", url: routes.ROOT },
