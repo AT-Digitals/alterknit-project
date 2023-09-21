@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
+import CarePage from "../pages/Care/Care";
 import ContactPage from "../pages/ContactPage";
 import FixmePage from "../pages/FixmePage";
 import HomePage from "../pages/Home/HomePage";
@@ -35,6 +36,7 @@ export default function AppRouter() {
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.CARD} element={<CardPage />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
+          <Route path={routes.CRAE} element={<CarePage />} />
           <Route path={routes.SERVICE} element={<ServiceHeader />} />
           <Route path={routes.CREATION} element={<BoxCreation />} />
         </Route>

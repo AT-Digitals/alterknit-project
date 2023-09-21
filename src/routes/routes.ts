@@ -15,6 +15,7 @@ const PRIVACY = "/privacy-policy";
 const CARD = "/card-page";
 
 const FIXME = "/fixme";
+const CRAE = "/care";
 const SERVICE = "/service-header";
 const CREATION = '/box-creation';
 const routes = {
@@ -34,6 +35,7 @@ const routes = {
   PRIVACY,
   CARD,
   FIXME,
+  CRAE,
   SERVICE,
   CREATION,
 };
