@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4158aa0e.css",
+    "main.js": "/static/js/main.d6f8f470.js",
+    "static/js/787.48c70a5c.chunk.js": "/static/js/787.48c70a5c.chunk.js",
+    "static/media/alterknit-image.jpg": "/static/media/alterknit-image.f249da9056bfef557472.jpg",
+    "static/media/bug_01.png": "/static/media/bug_01.4fb0ec1e77d059fdd43a.png",
+    "static/media/bugs.png": "/static/media/bugs.e85c054150d28a186c9c.png",
+    "static/media/before_after.jpg": "/static/media/before_after.ace361d0bef2bd71efb2.jpg",
+    "static/media/BebasNeue-Regular.ttf": "/static/media/BebasNeue-Regular.12e3683f9192436a7be8.ttf",
+    "static/media/feature5.png": "/static/media/feature5.47fd55c065ce2bb07f0f.png",
+    "static/media/alterknit.png": "/static/media/alterknit.1e570fc7625958586215.png",
+    "static/media/bug_03.png": "/static/media/bug_03.10607278c130ff0e279a.png",
+    "static/media/home_services_bg_bottom.svg": "/static/media/home_services_bg_bottom.fbb82b7cf5b3d738989a35a8d26bed20.svg",
+    "static/media/home_services_bg_top.svg": "/static/media/home_services_bg_top.276f2f18de9fc4d35f15a34bdea977c8.svg",
+    "static/media/feature4.png": "/static/media/feature4.381937a6c466e2a4a5b5.png",
+    "index.html": "/index.html",
+    "main.4158aa0e.css.map": "/static/css/main.4158aa0e.css.map",
+    "main.d6f8f470.js.map": "/static/js/main.d6f8f470.js.map",
+    "787.48c70a5c.chunk.js.map": "/static/js/787.48c70a5c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4158aa0e.css",
+    "static/js/main.d6f8f470.js"
+  ]
+}

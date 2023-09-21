@@ -1,7 +1,27 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, styled } from "@mui/material";
 import Bug from "../../assets/bugs.png";
 import { Link } from "react-router-dom";
 import Alterknitimage from "../../assets/bug_03.png";
+import Colors from "../../CommonComponent/Colors";
+import CustomButton from "../../CommonComponent/CustomButton";
+
+
+const StyledButton = styled(CustomButton)({
+  position: "absolute",
+  top: "58%",
+  right: "40%",
+  borderRadius: "50%",
+  width: 135,
+  height: 135,
+  fontSize: "18px",
+  fontWeight: 400,
+  textTransform: "uppercase",
+  padding: "30px",
+  color: Colors.WHITE,
+  border: `6px solid ${Colors.WHITE} !important`,
+});
+
+
 
 export default function SubscribePage() {
   return (
@@ -21,32 +41,13 @@ export default function SubscribePage() {
           </Typography>
         </Typography>
         <Box marginLeft={"230px"} display={"flex"} justifyContent={"center"}>
-          <Box
-            sx={{
-              width: "100px",
-              height: "100px",
-              borderRadius: "100px",
-              backgroundColor: "black",
-              "&:hover": {
-                backgroundColor: "#df7c6d",
-              },
-            }}
-          >
-            <Typography
-              textAlign={"center"}
-              marginTop={"37px"}
-              fontWeight={"bold"}
-              lineHeight={"1.2"}
-              fontSize={"12px"}
-              color={"white"}
-            >
-              SCHEDULE A REPAIR
-            </Typography>
-          </Box>
+        <StyledButton sx={{ fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`, }} bgColor={Colors.BLACK}>Schedule a repair</StyledButton>
+           
+        
         </Box>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box marginTop={"30px"} display={"flex"} justifyContent={"center"}>
           <Link to={""}>
-            <img src={Alterknitimage} width={"590"} alt="bug1" />
+            <img src={Alterknitimage} width={"670"} alt="bug1" />
           </Link>
         </Box>
         <Box height={"24%"} display={"flex"} justifyContent={"space-between"}>

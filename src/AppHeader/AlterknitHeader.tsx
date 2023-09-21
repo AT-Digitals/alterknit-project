@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   IconButton,
   Menu,
   MenuItem,
@@ -13,12 +12,12 @@ import {
 
 import Alterknit from "../assets/alterknit.png";
 import AppContainer from "../component/AppContainer";
+import Colors from "../CommonComponent/Colors";
+import CustomButton from "../CommonComponent/CustomButton";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import routes from "../routes/routes";
-import Colors from "../CommonComponent/Colors";
-import CustomButton from "../CommonComponent/CustomButton";
 
 const ServiceItem = styled(Link)`
   text-decoration: none;
@@ -142,32 +141,33 @@ export default function AlterknitHeader() {
             </Stack>
           )}
           <Stack direction="row" spacing={3} alignItems="center">
-            <Link
-              to={routes.SCHEDULE_REPAIR}
-            // style={{
-            //   fontSize: isSmallScreen ? "16px" : "20px",
-
-            //   backgroundColor: "black",
-            //   color: "white",
-            //   padding: "16px 30px",
-            //   borderRadius: 5,
-            //   fontWeight: 600
-            // }}
-            >
-              <CustomButton bgColor={Colors.BLACK} sx={{ borderRadius: "5px", fontSize: "20px", fontWeight: 600, padding: "15px 20px", textTransform: "none" }}>Schedule your repair</CustomButton>
+            <Link to={routes.SCHEDULE_REPAIR}>
+              <CustomButton
+                bgColor={Colors.BLACK}
+                sx={{
+                  borderRadius: "5px",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  padding: "15px 20px",
+                  textTransform: "none",
+                }}
+              >
+                Schedule your repair
+              </CustomButton>
             </Link>
-            <Link to={routes.SIGN_IN}
-            // style={{
-            //   fontSize: isSmallScreen ? "16px" : "20px",
-            //   textDecoration: "none",
-            //   backgroundColor: "black",
-            //   color: "white",
-            //   padding: "16px 30px",
-            //   borderRadius: 5,
-            //   fontWeight: 600,
-            // }}
-            >
-              <CustomButton bgColor={Colors.BLACK} sx={{ borderRadius: "5px", fontSize: "20px", fontWeight: 600, padding: "15px 20px", textTransform: "none" }}>Logout</CustomButton>
+            <Link to={routes.SIGN_IN}>
+              <CustomButton
+                bgColor={Colors.BLACK}
+                sx={{
+                  borderRadius: "5px",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  padding: "15px 20px",
+                  textTransform: "none",
+                }}
+              >
+                Logout
+              </CustomButton>
             </Link>
           </Stack>
         </Stack>
