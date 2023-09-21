@@ -13,6 +13,7 @@ import SignUpPage from "../signup-details/SignUpPage";
 import SubscribePage from "../pages/Home/SubscribePage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import ServiceHeader from "../pages/ServiceHeader";
 
 export default function AppRouter() {
   return (
@@ -31,6 +32,7 @@ export default function AppRouter() {
           <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
+          <Route path={routes.SERVICE} element={<ServiceHeader />} />
         </Route>
       </Routes>
     </Router>
