@@ -1,8 +1,31 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 
-import AppContainer from "../../component/AppContainer";
+import { Link } from "react-router-dom";
+import React from "react";
+import routes from "../../routes/routes";
 
 export default function ScheduleReapir() {
+  const buttonStyle = {
+    backgroundColor: "white",
+    width: 220,
+    marginTop: "30px",
+    transition: "background-color 0.3s, color 0.3s",
+  };
+
+  const buttonHoverStyle = {
+    backgroundColor: "black",
+    color: "white",
+  };
+
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <Stack direction={"row"}>
       <Box
@@ -10,25 +33,26 @@ export default function ScheduleReapir() {
         justifyContent="center"
         alignItems="center"
         textAlign={"center"}
-        height="100vh"
         sx={{
           backgroundImage: `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/knitting.png')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          width: "65%",
-          //   padding: 2,
+          width: "67%",
           display: "flex",
           justifyContent: "center",
           position: "relative",
         }}
       >
         <Typography
+          minWidth={700}
           variant="h2"
+          fontWeight={"bold"}
           sx={{
-            fontFamily: "YourFontFamily", // Replace with your desired font family
-            fontSize: "7rem", // Adjust the font size as needed
-            lineHeight: "9rem", // Adjust the line height as needed
-            textAlign: "center", // Center align the text
+            fontFamily: "IndustrialGothicBannerStd, sans-serif",
+            fontSize: "10em",
+            lineHeight: "9rem",
+            textAlign: "center",
+            padding: "0 150px 0 5rem",
           }}
         >
           WELCOME TO REAL REPAIR.
@@ -52,14 +76,91 @@ export default function ScheduleReapir() {
         ></Box>
       </Box>
       <Box
-        width={"37%"}
+        width={"30%"}
         bgcolor={"#df7c6d"}
         color={"black"}
         textAlign={"center"}
         padding={"6rem 4rem 5rem 1rem"}
         position={"relative"}
       >
-        <Typography>we make it easy!</Typography>
+        <Typography variant="h3" fontWeight={600}>
+          WE MAKE IT EASY!
+        </Typography>
+        <Stack spacing={2} mt={2}>
+          <Typography fontSize={"20px"}>
+            Access our shipping portal to create your order!
+          </Typography>
+          <Typography fontSize={"20px"}>
+            A pre addressed shipping label and an order summary will come
+            straight to your inbox for you to use.
+          </Typography>
+        </Stack>
+        <Link to={routes.FIXME}>
+          <Button
+            style={
+              isHovered ? { ...buttonStyle, ...buttonHoverStyle } : buttonStyle
+            }
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Box minWidth={240}>
+              <Typography
+                fontSize="50px"
+                fontWeight={600}
+                color={isHovered ? "white" : "black"}
+              >
+                FIX ME!
+              </Typography>
+              <span
+                style={{
+                  color: isHovered ? "white" : "black",
+                  textTransform: "none",
+                  fontSize: "18px",
+                }}
+              >
+                Click here to start
+              </span>
+            </Box>
+          </Button>
+        </Link>
+
+        <Box mt={"50px"}>
+          <Typography
+            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+            fontWeight={600}
+            fontSize={"32px"}
+          >
+            ANY QUESTIONS?{" "}
+          </Typography>
+          <p
+            style={{
+              width: "240px",
+              fontSize: "10px",
+              margin: "0 auto",
+            }}
+          >
+            Be sure to visit our{" "}
+            <a
+              style={{ color: "black" }}
+              href="https://alterknitnewyork.com/services#faqs"
+            >
+              FAQ Section
+            </a>{" "}
+            on our Service page to find out all the answers to your questions.
+          </p>
+          <img
+            style={{
+              maxWidth: "260px",
+              position: "absolute",
+              right: 0,
+              bottom: 0,
+              marginBottom: "-30px",
+              pointerEvents: "none",
+            }}
+            src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bug_07.png"
+            alt="bug"
+          ></img>
+        </Box>
       </Box>
     </Stack>
   );
