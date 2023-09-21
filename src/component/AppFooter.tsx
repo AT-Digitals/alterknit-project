@@ -3,19 +3,20 @@ import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
 import { Link } from "react-router-dom";
+import routes from "../routes/routes";
 
 export default function AppFooter() {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
-    "Home",
-    "Services",
-    "Our Story",
-    "Portfolio",
-    "Care",
-    "Blog",
-    "Schedule Repair",
-    "Partners",
+    { name: "Home", url: routes.ROOT },
+    { name: "Services", url: routes.ROOT },
+    { name: "Our Story", url: routes.ROOT },
+    { name: "Portfolio", url: routes.ROOT },
+    { name: "Care", url: routes.ROOT },
+    { name: "Blog", url: routes.BLOG_PAGE },
+    { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
+    { name: "Partners", url: routes.ROOT },
   ];
 
   return (
@@ -48,7 +49,7 @@ export default function AppFooter() {
                   <Link
                     style={{ textDecoration: "none", color: "white" }}
                     key={index}
-                    to=""
+                    to={service.url}
                     className="service-item"
                   >
                     <Typography
@@ -58,7 +59,7 @@ export default function AppFooter() {
                       key={index}
                       color={"#B2B2B2"}
                     >
-                      {service.trim()}
+                      {service.name}
                     </Typography>
                   </Link>
                 ))}
@@ -107,7 +108,7 @@ export default function AppFooter() {
                 marginLeft: isSmScreen ? "1rem" : "2rem",
                 marginRight: isSmScreen ? "1rem" : "2rem",
               }}
-              to={""}
+              to={routes.PRIVACY}
             >
               Privacy Policy
             </Link>
@@ -116,7 +117,7 @@ export default function AppFooter() {
                 fontSize: isSmScreen ? "16px" : "20px",
                 color: "#B2B2B2",
               }}
-              to={""}
+              to={routes.TERM}
             >
               Terms and Conditions
             </Link>
