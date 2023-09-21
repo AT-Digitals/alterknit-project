@@ -4,16 +4,19 @@ import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
 import CarePage from "../pages/Care/Care";
 import ContactPage from "../pages/ContactPage";
-import FaqPage from "../pages/FaqPage";
 import FixmePage from "../pages/FixmePage";
 import HomePage from "../pages/Home/HomePage";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
 import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import SubscribePage from "../pages/Home/SubscribePage";
 import TermsCondition from "../pages/TermsCondition";
+import FaqPage from "../pages/FaqPage";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import CardPage from "../pages/CardPage";
 import routes from "./routes";
+import ServiceHeader from "../pages/ServiceHeader";
+import BoxCreation from "../pages/BoxCreation";
 
 export default function AppRouter() {
   return (
@@ -31,8 +34,11 @@ export default function AppRouter() {
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
           <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
+          <Route path={routes.CARD} element={<CardPage />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.CRAE} element={<CarePage />} />
+          <Route path={routes.SERVICE} element={<ServiceHeader />} />
+          <Route path={routes.CREATION} element={<BoxCreation />} />
         </Route>
       </Routes>
     </Router>

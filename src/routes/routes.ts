@@ -12,8 +12,12 @@ const BLOG_PAGE = "/blog";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const FAQ = "/faq-page";
 const PRIVACY = "/privacy-policy";
+const CARD = "/card-page";
+
 const FIXME = "/fixme";
 const CRAE = "/care";
+const SERVICE = "/service-header";
+const CREATION = '/box-creation';
 const routes = {
   ROOT,
   SIGN_IN,
@@ -29,8 +33,11 @@ const routes = {
   SCHEDULE_REPAIR,
   FAQ,
   PRIVACY,
+  CARD,
   FIXME,
   CRAE,
+  SERVICE,
+  CREATION,
 };
 
 export default routes;
