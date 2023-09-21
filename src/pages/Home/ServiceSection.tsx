@@ -20,11 +20,12 @@ const listItemStyle = {
 };
 
 const customMarkerStyle = {
-  minWidth: "15px", // Adjust the marker width as needed
-  minHeight: "15px", // Adjust the marker height as needed
-  backgroundColor: "black", // Adjust the marker color as needed
-  borderRadius: "50%", // Make it a circle or adjust as needed
-  marginRight: "10px", // Adjust the space between marker and text
+  minWidth: "15px",
+  minHeight: "15px",
+  backgroundColor: "black",
+  borderRadius: "50%",
+  marginRight: "10px",
+  marginBottom: "30px",
 };
 
 export default function ServiceSection() {
@@ -90,7 +91,7 @@ export default function ServiceSection() {
                 }}
               >
                 <ListItem style={listItemStyle}>
-                  <ListItemIcon>
+                  <ListItemIcon style={{ minWidth: 0 }}>
                     <div style={customMarkerStyle}></div>
                   </ListItemIcon>
                   <ListItemText>
@@ -102,7 +103,7 @@ export default function ServiceSection() {
                 </ListItem>
 
                 <ListItem style={listItemStyle}>
-                  <ListItemIcon>
+                  <ListItemIcon style={{ minWidth: 0 }}>
                     <div style={customMarkerStyle}></div>
                   </ListItemIcon>
                   <ListItemText>
@@ -113,7 +114,7 @@ export default function ServiceSection() {
                 </ListItem>
 
                 <ListItem style={listItemStyle}>
-                  <ListItemIcon>
+                  <ListItemIcon style={{ minWidth: 0 }}>
                     <div style={customMarkerStyle}></div>
                   </ListItemIcon>
                   <ListItemText>
