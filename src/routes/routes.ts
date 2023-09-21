@@ -12,6 +12,8 @@ const BLOG_PAGE = "/blog";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const FAQ = "/faq-page";
 const PRIVACY = "/privacy-policy";
+const CARD = "/card-page";
+
 const FIXME = "/fixme";
 const routes = {
   ROOT,
@@ -28,6 +30,7 @@ const routes = {
   SCHEDULE_REPAIR,
   FAQ,
   PRIVACY,
+  CARD,
   FIXME,
 };
 
