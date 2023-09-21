@@ -9,14 +9,14 @@ export default function AppFooter() {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
-    { linkname: "Home", url: routes.HOME },
-    { linkname: "Services", url: routes.ROOT },
-    { linkname: "Our Story", url: routes.CONTACT_US },
-    { linkname: "Portfolio", url: routes.HOME },
-    { linkname: "Care", url: routes.HOME },
-    { linkname: "Blog", url: routes.BLOG_PAGE },
-    { linkname: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
-    { linkname: "Partners", url: routes.HOME },
+    { name: "Home", url: routes.ROOT },
+    { name: "Services", url: routes.ROOT },
+    { name: "Our Story", url: routes.ROOT },
+    { name: "Portfolio", url: routes.ROOT },
+    { name: "Care", url: routes.ROOT },
+    { name: "Blog", url: routes.BLOG_PAGE },
+    { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
+    { name: "Partners", url: routes.ROOT },
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function AppFooter() {
                       key={index}
                       color={"#B2B2B2"}
                     >
-                      {service.linkname}
+                      {service.name}
                     </Typography>
                   </Link>
                 ))}
