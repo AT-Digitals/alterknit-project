@@ -12,6 +12,7 @@ import routes from "./routes";
 import TermsCondition from "../pages/TermsCondition";
 import FaqPage from "../pages/FaqPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import CardPage from "../pages/CardPage";
 
 export default function AppRouter() {
   return (
@@ -29,6 +30,7 @@ export default function AppRouter() {
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
           <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
+          <Route path={routes.CARD} element={<CardPage />} />
         </Route>
       </Routes>
     </Router>
