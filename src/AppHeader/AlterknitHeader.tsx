@@ -130,13 +130,11 @@ export default function AlterknitHeader() {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <MenuItem key={index} onClick={handleMenuClose}>
-                  <ServiceItem to={service.url} className="service-item">
-                    <Typography fontSize="21px" key={index}>
-                      {service.linkname}
-                    </Typography>
-                  </ServiceItem>
-                </MenuItem>
+                <ServiceItem to={service.url} className="service-item">
+                  <Typography fontSize="21px" key={index}>
+                    {service.linkname}
+                  </Typography>
+                </ServiceItem>
               ))}
             </Stack>
           )}

@@ -10,6 +10,7 @@ export default function ScheduleReapir() {
     width: 220,
     marginTop: "30px",
     transition: "background-color 0.3s, color 0.3s",
+    borderRadius: "20px",
   };
 
   const buttonHoverStyle = {

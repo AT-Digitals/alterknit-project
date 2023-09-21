@@ -13,7 +13,7 @@ export default function AppFooter() {
     { name: "Services", url: routes.ROOT },
     { name: "Our Story", url: routes.ROOT },
     { name: "Portfolio", url: routes.ROOT },
-    { name: "Care", url: routes.ROOT },
+    { name: "Care", url: routes.CRAE },
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
     { name: "Partners", url: routes.ROOT },
@@ -103,7 +103,7 @@ export default function AppFooter() {
             </Typography>
             <Link
               style={{
-                fontSize: isSmScreen ? "16px" : "20px",
+                fontSize: isSmScreen ? "16px" : "16px",
                 color: "#B2B2B2",
                 marginLeft: isSmScreen ? "1rem" : "2rem",
                 marginRight: isSmScreen ? "1rem" : "2rem",
@@ -114,7 +114,7 @@ export default function AppFooter() {
             </Link>
             <Link
               style={{
-                fontSize: isSmScreen ? "16px" : "20px",
+                fontSize: isSmScreen ? "16px" : "16px",
                 color: "#B2B2B2",
               }}
               to={routes.TERM}
