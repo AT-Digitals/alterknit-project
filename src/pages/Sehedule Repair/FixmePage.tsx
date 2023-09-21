@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-import AppContainer from "../component/AppContainer";
+import AppContainer from "../../component/AppContainer";
 
 export default function FixmePage() {
   const theme = useTheme();

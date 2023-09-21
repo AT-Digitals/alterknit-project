@@ -10,26 +10,26 @@ export default function BehindSection() {
                         component='video'
                         sx={{ borderRadius: "40px" }}
                         image={"https://alterknitnewyork.com/wp-content/themes/alterknit/assets/vid/01.mp4"}
-                        autoPlay
+                        autoPlay muted loop
                     /></Grid>
                 <Grid item xs={3}><CardMedia
                     component='video'
                     sx={{ borderRadius: "40px" }}
                     image="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/vid/02.mp4"
-                    autoPlay
+                    autoPlay muted loop
                 /></Grid>
 
                 <Grid item xs={3}><CardMedia
                     component='video'
                     sx={{ borderRadius: "40px" }}
                     image="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/vid/03.mp4"
-                    autoPlay
+                    autoPlay muted loop
                 /></Grid>
                 <Grid item xs={3}><CardMedia
                     component='video'
                     sx={{ borderRadius: "40px" }}
                     image="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/vid/04.mp4"
-                    autoPlay
+                    autoPlay muted loop
                 />
                 </Grid>
             </Grid>

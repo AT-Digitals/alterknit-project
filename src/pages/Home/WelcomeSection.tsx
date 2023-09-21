@@ -1,21 +1,26 @@
-import { Stack, Typography, Box, styled } from "@mui/material";
+import { Stack, Typography, Box, styled, Button } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
-import CustomButton from "../../CommonComponent/CustomButton";
 import bug from "../../assets/bug_01.png";
+import { Link } from "react-router-dom";
+import routes from "../../routes/routes";
 
-const StyledButton = styled(CustomButton)({
+const StyledButton = styled(Button)({
     position: "absolute",
-    top: "50%",
-    right: "32%",
+    right: "34%",
+    transform: `translate(${18}%, ${128}%)`,
     borderRadius: "50%",
     width: 180,
     height: 180,
-    fontSize: "20px",
     fontWeight: 400,
     textTransform: "uppercase",
     padding: "30px",
+    lineHeight: 1,
     color: Colors.WHITE,
     border: `6px solid ${Colors.WHITE} !important`,
+    backgroundColor: Colors.BLACK,
+    ":hover": {
+        backgroundColor: Colors.LINK,
+    },
 });
 
 export default function WelcomeSection() {
@@ -28,7 +33,7 @@ export default function WelcomeSection() {
             margin="0 auto"
             paddingBottom={4}
         >
-            <Stack direction="column" >
+            <Stack direction="column">
                 <Typography
                     sx={{
                         textTransform: "uppercase",
@@ -45,7 +50,17 @@ export default function WelcomeSection() {
                 </Typography>
             </Stack>
             <Box>
-                <StyledButton sx={{ fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`, }} bgColor={Colors.BLACK}>Schedule a repair</StyledButton>
+                <Link to={routes.SCHEDULE_REPAIR}>
+                    <StyledButton
+                        sx={{
+                            fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
+                            fontWeight: 400,
+                            fontSize: "30px",
+                        }}
+                    >
+                        Schedule a repair
+                    </StyledButton>
+                </Link>
                 <img src={bug} alt="bug-01" width="100%" height="100%" />
             </Box>
         </Stack>

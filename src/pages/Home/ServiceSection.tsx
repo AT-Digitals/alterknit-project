@@ -13,6 +13,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import bottomImage from "../../assets/home_services_bg_bottom.svg";
 import bugImage from "../../assets/bug_02.png";
 import topImage from "../../assets/home_services_bg_top.svg";
+import routes from "../../routes/routes";
+import { Link } from "react-router-dom";
 
 const listItemStyle = {
   fontSize: "22px",
@@ -24,7 +26,7 @@ const customMarkerStyle = {
   minHeight: "15px",
   backgroundColor: "black",
   borderRadius: "50%",
-  marginRight: "10px",
+  marginRight: "25px",
   marginBottom: "30px",
 };
 
@@ -44,43 +46,39 @@ export default function ServiceSection() {
           direction={"row"}
           justifyContent={"space-around"}
         >
-          <Box display={"flex"} position={"relative"} zIndex={1}>
+          <Box display={"flex"} position={"relative"} zIndex={1} >
             <Box
               alignItems={"flex-start"}
               flex={1}
               display={"flex"}
               flexDirection={"column"}
               justifyItems={"flex-start"}
+              pt={2}
             >
               <Typography
                 fontSize="80px"
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                 fontWeight={400}
                 textTransform="uppercase"
+                lineHeight={1}
               >
-                holes?
+                holes? <br /> we fix them
               </Typography>
-              <Typography
-                fontSize="80px"
-                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                fontWeight={400}
-                textTransform="uppercase"
-              >
-                we fix them
-              </Typography>
-              <CustomButton
-                bgColor={Colors.BLACK}
-                sx={{
-                  borderRadius: "5px",
-                  padding: "20px 30px",
-                  textTransform: "none",
-                  fontSize: "20px",
-                  marginTop: 2,
-                  fontWeight: "bold",
-                }}
-              >
-                See our Services
-              </CustomButton>
+              <Link to={routes.SERVICES}>
+                <CustomButton
+                  bgColor={Colors.BLACK}
+                  sx={{
+                    borderRadius: "5px",
+                    padding: "20px 30px",
+                    textTransform: "none",
+                    fontSize: "18px",
+                    marginTop: 2,
+                    fontWeight: 600,
+                  }}
+                >
+                  See our services
+                </CustomButton>
+              </Link>
             </Box>
 
             <Box flex={1} display={"flex"} flexDirection={"column"}>

@@ -43,10 +43,10 @@ export default function AlterknitHeader() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
-    { linkname: "Services", url: routes.HOME },
-    { linkname: "Our Story", url: routes.CONTACT_US },
-    { linkname: "Portfolio", url: routes.HOME },
-    { linkname: "Care", url: routes.HOME },
+    { linkname: "Services", url: routes.SERVICES },
+    { linkname: "Our Story", url: routes.OUR_STORY },
+    { linkname: "Portfolio", url: routes.PORTFOLIO },
+    { linkname: "Care", url: routes.CARE },
     { linkname: "Blog", url: routes.BLOG_PAGE },
   ];
 

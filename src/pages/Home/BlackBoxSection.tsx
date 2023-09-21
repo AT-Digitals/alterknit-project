@@ -19,6 +19,7 @@ export default function BlackBoxSection() {
                     textTransform="uppercase"
                     color={Colors.WHITE}
                     maxWidth="500px"
+                    lineHeight={1}
                 >
                     this will only hurt a little
                 </Typography>

@@ -2,6 +2,8 @@ import { Stack, Grid, Typography } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
 import CustomButton from "../../CommonComponent/CustomButton";
 import clothImage from "../../assets/before_after.jpg";
+import { Link } from "react-router-dom";
+import routes from "../../routes/routes";
 
 export default function ClothSection() {
     return (
@@ -18,7 +20,7 @@ export default function ClothSection() {
                     <img src={clothImage} alt="clothes" />
                 </Grid>
                 <Grid item xs={5}>
-                    <Typography fontSize="80px" fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase">
+                    <Typography fontSize="80px" lineHeight={1} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase">
                         don't settle for inferior solutions!
                     </Typography>
                     <Typography fontSize="1.3rem" lineHeight={1.5} marginY={3}>
@@ -26,18 +28,20 @@ export default function ClothSection() {
                         don't darn. We are the ultimate repair service and take care of
                         your clothing as if they are our own.
                     </Typography>
-                    <CustomButton
-                        bgColor={Colors.BLACK}
-                        sx={{
-                            borderRadius: "5px",
-                            padding: "20px 30px",
-                            textTransform: "none",
-                            fontSize: "20px",
-                            fontWeight: "bold"
-                        }}
-                    >
-                        Seeing is Believing
-                    </CustomButton>
+                    <Link to={routes.PORTFOLIO}>
+                        <CustomButton
+                            bgColor={Colors.BLACK}
+                            sx={{
+                                borderRadius: "5px",
+                                padding: "20px 30px",
+                                textTransform: "none",
+                                fontSize: "18px",
+                                fontWeight: 600
+                            }}
+                        >
+                            Seeing is Believing
+                        </CustomButton>
+                    </Link>
                 </Grid>
             </Grid>
         </Stack>
