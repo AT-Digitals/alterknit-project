@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
+import CarePage from "../pages/Care/Care";
 import ContactPage from "../pages/ContactPage";
 import FaqPage from "../pages/FaqPage";
 import FixmePage from "../pages/FixmePage";
@@ -31,6 +32,7 @@ export default function AppRouter() {
           <Route path={routes.FAQ} element={<FaqPage />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
+          <Route path={routes.CRAE} element={<CarePage />} />
         </Route>
       </Routes>
     </Router>

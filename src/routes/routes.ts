@@ -13,6 +13,7 @@ const SCHEDULE_REPAIR = "/schedule-repair";
 const FAQ = "/faq-page";
 const PRIVACY = "/privacy-policy";
 const FIXME = "/fixme";
+const CRAE = "/care";
 const routes = {
   ROOT,
   SIGN_IN,
@@ -29,6 +30,7 @@ const routes = {
   FAQ,
   PRIVACY,
   FIXME,
+  CRAE,
 };
 
 export default routes;
