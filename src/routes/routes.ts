@@ -15,6 +15,7 @@ const PRIVACY = "/privacy-policy";
 const CARD = "/card-page";
 
 const FIXME = "/fixme";
+const CREATION = '/box-creation';
 const routes = {
   ROOT,
   SIGN_IN,
@@ -32,6 +33,7 @@ const routes = {
   PRIVACY,
   CARD,
   FIXME,
+  CREATION,
 };
 
 export default routes;
