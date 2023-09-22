@@ -11,6 +11,7 @@ export default function CustomSection() {
             paddingY={10}
             pl={13}
             pr={10}
+            margin="0 auto"
         >
             <Stack direction="row" width={1300} spacing={3} justifyContent={"space-between"} alignItems="center">
                 <Typography

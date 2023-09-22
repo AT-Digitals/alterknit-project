@@ -15,6 +15,7 @@ import ServicePage from "../pages/Services/ServicePage";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
 import CarePage from "../pages/Care/CarePage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";
+import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 
 
 export default function AppRouter() {
@@ -32,10 +33,12 @@ export default function AppRouter() {
           <Route path={routes.CARE} element={<CarePage />} />
           <Route path={routes.BLOG_PAGE} element={<BlogPage />} />
           <Route path={routes.CONTACT_US} element={<ContactPage />} />
+          <Route path={routes.DOORTODOOR} element={<DoorToDoorPage />} />
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
+
         </Route>
       </Routes>
     </Router>

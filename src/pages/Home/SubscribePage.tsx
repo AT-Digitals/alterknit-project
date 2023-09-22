@@ -39,7 +39,7 @@ export default function SubscribePage() {
         >
           EXTEND THE LIFE OF THE <br />  CLOTHES YOU LOVE
         </Typography>
-        <Box marginTop={"30px"} marginBottom={15} display={"flex"} justifyContent={"center"}>
+        <Box marginTop={"30px"} marginBottom={20} display={"flex"} justifyContent={"center"}>
           <Link to={routes.SCHEDULE_REPAIR}>
             <StyledButton
               sx={{
@@ -49,7 +49,7 @@ export default function SubscribePage() {
               Schedule a repair
             </StyledButton>
           </Link>
-          <img src={Alterknitimage} width={"670"} alt="bug1" />
+          <img src={Alterknitimage} width={"650"} alt="bug1" />
         </Box>
         <Stack direction="row" justifyContent={"space-between"} pb={3} maxWidth={1300} margin="0 auto">
           <Link to={""}>
@@ -60,7 +60,7 @@ export default function SubscribePage() {
               marginTop={"100px"}
               color={"black"}
               fontWeight={400}
-              fontSize={"36px"}
+              fontSize={"34px"}
               textAlign={"center"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               lineHeight={1}
@@ -77,7 +77,7 @@ export default function SubscribePage() {
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
-                    width: "550px",
+                    width: "470px",
                     height: "40px",
                     border: "1px solid #df7c6d",
                   },

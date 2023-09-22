@@ -45,13 +45,13 @@ export default function ScheduleReapir() {
         }}
       >
         <Typography
-          minWidth={700}
+          // minWidth={700}
           variant="h2"
           fontWeight={"bold"}
           sx={{
             fontFamily: "IndustrialGothicBannerStd, sans-serif",
             fontSize: "10em",
-            lineHeight: "9rem",
+            lineHeight: 1,
             textAlign: "center",
             padding: "0 150px 0 5rem",
           }}
@@ -77,14 +77,14 @@ export default function ScheduleReapir() {
         ></Box>
       </Box>
       <Box
-        width={"30%"}
+        width={"35%"}
         bgcolor={"#df7c6d"}
         color={"black"}
         textAlign={"center"}
         padding={"6rem 4rem 5rem 1rem"}
         position={"relative"}
       >
-        <Typography variant="h3" fontWeight={600}>
+        <Typography variant="h3" fontSize="4rem" fontWeight={400} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
@@ -106,9 +106,12 @@ export default function ScheduleReapir() {
           >
             <Box minWidth={240}>
               <Typography
-                fontSize="50px"
-                fontWeight={600}
+                fontSize="4rem"
+                fontWeight={400}
                 color={isHovered ? "white" : "black"}
+                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                lineHeight={1}
+                pt={2}
               >
                 FIX ME!
               </Typography>
@@ -117,6 +120,7 @@ export default function ScheduleReapir() {
                   color: isHovered ? "white" : "black",
                   textTransform: "none",
                   fontSize: "18px",
+                  paddingBottom: "16px"
                 }}
               >
                 Click here to start
