@@ -7,6 +7,7 @@ const SIGN_UP = "/sign-up";
 const CONTACT_US = "/contact-us";
 const TERM = "/terms-and-conditions";
 const BLOG_PAGE = "/blog";
+const BLOG_PAGE_CONTENT = "/blog-content";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const PRIVACY = "/privacy-policy";
 
@@ -33,6 +34,7 @@ const routes = {
   SERVICES,
   PORTFOLIO,
   CARE,
+  BLOG_PAGE_CONTENT,
 };
 
 export default routes;
