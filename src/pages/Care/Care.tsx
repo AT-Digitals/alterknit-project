@@ -1,6 +1,7 @@
 import { Box, Typography, styled } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
+import HoverCard from "./CardContent";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useState } from "react";
 
@@ -296,7 +297,7 @@ export default function CarePage() {
         />
       </section>
       <section style={{ padding: "6rem 0 0 0" }}>
-        <Box width={"100%"} margin={"auto 0"} padding={"0 10rem"}>
+        <Box margin={"auto 0"} padding={"0 10rem"}>
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize={"80px"}
@@ -310,7 +311,9 @@ export default function CarePage() {
             flexWrap={"wrap"}
             gap={"6rem 9rem"}
             justifyContent={"center"}
-          ></Box>
+          >
+            <HoverCard />
+          </Box>
         </Box>
       </section>
     </Box>
