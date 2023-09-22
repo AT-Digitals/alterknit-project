@@ -46,7 +46,7 @@ export default function ServiceSection() {
           direction={"row"}
           maxWidth={1300}
           margin="0 auto"
-
+          justifyContent="center"
         >
           <Box
             alignItems={"flex-start"}
