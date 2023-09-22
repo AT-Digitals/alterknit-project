@@ -15,6 +15,7 @@ const OUR_STORY = "/our-story";
 const SERVICES = "/services";
 const PORTFOLIO = "/portfolio";
 const CARE = "/care";
+const HELP = "/help";
 
 const routes = {
   ROOT,
@@ -33,6 +34,7 @@ const routes = {
   SERVICES,
   PORTFOLIO,
   CARE,
+  HELP,
 };
 
 export default routes;
