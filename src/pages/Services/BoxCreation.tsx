@@ -8,9 +8,11 @@ export default function BoxCreation() {
   return (
     <>
       <Box>
-        <Typography lineHeight={"0.5"} margin={"35px 80px"} color={"black"} fontWeight={"bold"} fontSize={"45px"}>FACTORS WE CONSIDER<Typography color={"black"} fontWeight={"bold"} fontSize={"45px"}> WHEN EVALUATING</Typography></Typography>
-        <Stack margin={"0px 30px"} direction={"row"}>
-          <Box margin={"30px 50px"}>
+        <Box margin={"0px 150px"} paddingTop={"125px"}>
+        <Typography lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"5.5rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>FACTORS WE CONSIDER<Typography color={"black"} fontWeight={"400"} fontSize={"5.5rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}> WHEN EVALUATING</Typography></Typography>
+        </Box>
+        <Stack margin={"0px 95px"} direction={"row"}>
+          <Box margin={"30px 60px"}>
             <Card sx={{
               width: "530px",
               border: "1px solid black",
@@ -26,7 +28,7 @@ export default function BoxCreation() {
                 }} width={"110px"} alt="tape" />
               </CardContent>
               <Typography margin={"20px 40px"} color={"#7d7d7d"} fontWeight={"bold"} fontSize={"18px"}>01</Typography>
-              <Typography paddingBottom={"15px"} lineHeight={"1"} margin={"10px 35px"} color={"black"} fontWeight={"bold"} fontSize={"28px"}>SIZE AND EXTENT OF <Typography color={"black"} fontWeight={"bold"} fontSize={"28px"}>DAMAGE</Typography></Typography>
+              <Typography paddingBottom={"15px"} lineHeight={"0.5"} margin={"10px 40px"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SIZE AND EXTENT OF <Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>DAMAGE</Typography></Typography>
             </Card>
           </Box>
           <Box margin={"30px 0px"}>
@@ -45,12 +47,12 @@ export default function BoxCreation() {
                 }} width={"95px"} alt="yarn" />
               </CardContent>
               <Typography margin={"20px 42px"} color={"#7d7d7d"} fontWeight={"bold"} fontSize={"18px"}>02</Typography>
-              <Typography paddingBottom={"15px"} lineHeight={"1"} margin={"10px 37px"} color={"black"} fontWeight={"bold"} fontSize={"28px"}>DIFFICULTY HARVESTING YARN <Typography color={"black"} fontWeight={"bold"} fontSize={"28px"}>OR THREAD</Typography></Typography>
+              <Typography paddingBottom={"15px"} lineHeight={"0.5"} margin={"10px 40px"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>DIFFICULTY HARVESTING YARN <Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>OR THREAD</Typography></Typography>
             </Card>
           </Box>
         </Stack>
-        <Stack margin={"0px 30px"} direction={"row"}>
-          <Box margin={"30px 50px"}>
+        <Stack margin={"0px 95px"} direction={"row"}>
+          <Box margin={"30px 60px"}>
             <Card sx={{
               width: "530px",
               border: "1px solid black",
@@ -66,7 +68,7 @@ export default function BoxCreation() {
                 }} width={"110px"} alt="tape" />
               </CardContent>
               <Typography margin={"20px 40px"} color={"#7d7d7d"} fontWeight={"bold"} fontSize={"18px"}>03</Typography>
-              <Typography paddingBottom={"15px"} lineHeight={"1"} margin={"10px 35px"} color={"black"} fontWeight={"bold"} fontSize={"28px"}>LOCATION OF <Typography color={"black"} fontWeight={"bold"} fontSize={"28px"}>DAMAGE</Typography></Typography>
+              <Typography paddingBottom={"15px"} lineHeight={"0.5"} margin={"10px 40px"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>LOCATION OF <Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>DAMAGE</Typography></Typography>
             </Card>
           </Box>
           <Box margin={"30px 0px"}>
@@ -85,7 +87,7 @@ export default function BoxCreation() {
                 }} width={"95px"} alt="yarn" />
               </CardContent>
               <Typography margin={"20px 42px"} color={"#7d7d7d"} fontWeight={"bold"} fontSize={"18px"}>04</Typography>
-              <Typography paddingBottom={"15px"} lineHeight={"1"} margin={"10px 37px"} color={"black"} fontWeight={"bold"} fontSize={"28px"}>THICKNESS AND WEIGHT OF<Typography color={"black"} fontWeight={"bold"} fontSize={"28px"} marginLeft={"4px"} marginBottom={"11px"}>FABRIC</Typography></Typography>
+              <Typography paddingBottom={"15px"} lineHeight={"0.5"} margin={"10px 40px"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>THICKNESS AND WEIGHT OF<Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} marginLeft={"4px"} marginBottom={"11px"}>FABRIC</Typography></Typography>
             </Card>
           </Box>
         </Stack>
