@@ -7,7 +7,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
 import styled from "@emotion/styled";
-import { CSSProperties, useState } from "react";
 
 const StyleLink = styled(Link)({
   fontSize: "18px",
@@ -17,18 +16,16 @@ const StyleLink = styled(Link)({
   textUnderlineOffset: "5px",
   ":hover": {
     color: Colors.WHITE,
-  }
-})
+  },
+});
 const StyleLink1 = styled(Link)({
   textDecoration: "none",
   fontSize: "18px",
   color: "#B2B2B2",
   ":hover": {
     color: Colors.WHITE,
-  }
-})
-
-
+  },
+});
 
 export default function AppFooter() {
   const theme = useTheme();
@@ -83,9 +80,7 @@ export default function AppFooter() {
                 <StyleLink1 to="mailto:orders@alterknitnewyork.com">
                   orders@alterknitnewyork.com
                 </StyleLink1>
-                <StyleLink1 to="tel:+12124736363">
-                  212 473 6363
-                </StyleLink1>
+                <StyleLink1 to="tel:+12124736363">212 473 6363</StyleLink1>
               </Stack>
             </Stack>
           </Stack>
@@ -114,21 +109,13 @@ export default function AppFooter() {
             >
               AlterKnit New York 2023
             </Typography>
-            <StyleLink
-              to={routes.PRIVACY}
-            >
-              Privacy Policy
-            </StyleLink>
-            <StyleLink
-              to={routes.TERM}
-            >
-              Terms and Conditions
-            </StyleLink>
+            <StyleLink to={routes.PRIVACY}>Privacy Policy</StyleLink>
+            <StyleLink to={routes.TERM}>Terms and Conditions</StyleLink>
           </Stack>
-            <Box display={"flex"} marginLeft={"auto"} gap={"2rem"}>
-              <FacebookIcon style={{ color: "#B2B2B2" }} />
-              <InstagramIcon style={{ color: "#B2B2B2" }} />
-            </Box>
+          <Box display={"flex"} marginLeft={"auto"} gap={"2rem"}>
+            <FacebookIcon style={{ color: "#B2B2B2" }} />
+            <InstagramIcon style={{ color: "#B2B2B2" }} />
+          </Box>
         </AppContainer>
       </Box>
     </Box>
