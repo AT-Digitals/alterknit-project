@@ -2,11 +2,11 @@ import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
 import styled from "@emotion/styled";
+import Facebook from "../assets/fb.svg";
 
 const StyleLink = styled(Link)({
   fontSize: "18px",
@@ -86,8 +86,9 @@ export default function AppFooter() {
           </Stack>
         </AppContainer>
       </Box>
-      <Box p={isSmScreen ? "2rem" : "4rem"}>
-        <AppContainer>
+      <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1300} margin="0 auto">
+        {/* <AppContainer> */}
+        <Stack direction="row" spacing={35} px={5} alignItems="center" justifyContent="flex-end" >
           <Stack
             spacing={3}
             display="flex"
@@ -112,11 +113,12 @@ export default function AppFooter() {
             <StyleLink to={routes.PRIVACY}>Privacy Policy</StyleLink>
             <StyleLink to={routes.TERM}>Terms and Conditions</StyleLink>
           </Stack>
-          <Box display={"flex"} marginLeft={"auto"} gap={"2rem"}>
-            <FacebookIcon style={{ color: "#B2B2B2" }} />
-            <InstagramIcon style={{ color: "#B2B2B2" }} />
+          <Box display={"flex"} gap={"2rem"}>
+            <StyleLink1 to="https://www.facebook.com/AlterKnitNY/" target="_blank"> <img src={Facebook} alt="icon" width={10} height={20} /></StyleLink1>
+            <StyleLink1 to="https://www.instagram.com/alterknitnewyork/" target="_blank"><InstagramIcon /></StyleLink1>
           </Box>
-        </AppContainer>
+        </Stack>
+        {/* </AppContainer> */}
       </Box>
     </Box>
   );

@@ -13,7 +13,7 @@ export default function FormFile() {
   const [firstnameError, setFirstNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const residentDetails = {
     personalDetails: personalDetails,
   };
@@ -171,6 +171,13 @@ export default function FormFile() {
     }
   };
 
+  const handleImageChange = (event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedImage(file);
+    }
+  };
+
   return (
     <Box display={"flex"} justifyContent={"center"}>
       <form onSubmit={handleSubmit}>
@@ -185,6 +192,7 @@ export default function FormFile() {
           >
             Contact us
           </Typography>
+         
           <Stack margin={"30px"} direction="row" display="flex" spacing={3}>
             <Box>
               <Typography
@@ -199,7 +207,7 @@ export default function FormFile() {
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
-                    width: "650px",
+                    width: "350px",
                   },
                   ".css-1wc848c-MuiFormHelperText-root": {
                     color: "red",
@@ -221,7 +229,37 @@ export default function FormFile() {
                 required
               />
             </Box>
+            <Box>
+            <Button style={{
+              backgroundColor: "black",
+              marginLeft: "90px",
+              marginTop: "40px",
+              padding: "12px 40px",
+              letterSpacing: "2px",
+            }}
+             component="label"
+             variant="contained"
+            >
+            Click To Attach A Photo
+            <input
+            type="file"
+            hidden accept="image" onChange={handleImageChange}
+            />
+           </Button>
+          
+            </Box>
+            <Box>
+          {selectedImage && ( 
+          <img
+            src={URL.createObjectURL(selectedImage)}
+            alt="Selected"
+            style={{ width: "120px",
+          height: "100px", borderRadius: "50%" }}
+          />
+      )}
+      </Box>
           </Stack>
+        
           <Stack margin={"30px"} spacing={3}>
             <Box>
               <Typography
@@ -237,7 +275,7 @@ export default function FormFile() {
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
-                    width: "650px",
+                    width: "350px",
                   },
                   ".css-1wc848c-MuiFormHelperText-root ": {
                     color: "red",
@@ -272,7 +310,7 @@ export default function FormFile() {
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
-                    width: "650px",
+                    width: "350px",
                   },
                   ".css-1wc848c-MuiFormHelperText-root": {
                     color: "red",
@@ -310,7 +348,7 @@ export default function FormFile() {
             <TextField
               sx={{
                 ".MuiOutlinedInput-input": {
-                  width: "650px",
+                  width: "785px",
                   marginBottom: "130px",
                 },
                 ".css-1wc848c-MuiFormHelperText-root": {
@@ -335,6 +373,7 @@ export default function FormFile() {
                 boxShadow: `0px 2px 5px black`,
                 padding: "7px 60px",
                 background: "black",
+                marginBottom: "10px",
                 ":hover": {
                   background: "black",
                 },
@@ -347,6 +386,7 @@ export default function FormFile() {
               Send
             </Button>
           </Box>
+      
         </Box>
       </form>
     </Box>

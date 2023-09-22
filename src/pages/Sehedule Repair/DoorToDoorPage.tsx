@@ -2,13 +2,10 @@ import {
     Stack,
     Box,
     Typography,
-    Card,
     Button,
-    InputAdornment,
     TextField,
     styled,
 } from "@mui/material";
-import Divider from '@mui/material/Divider';
 import Colors from "../../CommonComponent/Colors";
 import background from "../../assets/bg_stage_header.svg";
 import CustomButton from "../../CommonComponent/CustomButton";
