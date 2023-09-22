@@ -16,7 +16,6 @@ const OUR_STORY = "/our-story";
 const SERVICES = "/services";
 const PORTFOLIO = "/portfolio";
 const CARE = "/care";
-const HELP = "/help";
 const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
 
@@ -37,7 +36,6 @@ const routes = {
   SERVICES,
   PORTFOLIO,
   CARE,
-  HELP,
   DOORTODOOR,
   SHIPIN,
   BLOG_PAGE_CONTENT,

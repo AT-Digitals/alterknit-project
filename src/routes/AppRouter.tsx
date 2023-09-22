@@ -16,7 +16,6 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
-import HelpPage from "../pages/Services/HelpPage";
 import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 
 export default function AppRouter() {
@@ -39,7 +38,6 @@ export default function AppRouter() {
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
-          <Route path={routes.HELP} element={<HelpPage />} />
           <Route
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}
