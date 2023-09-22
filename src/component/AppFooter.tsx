@@ -2,6 +2,8 @@ import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
 import styled from "@emotion/styled";
@@ -123,6 +125,10 @@ export default function AppFooter() {
               Terms and Conditions
             </StyleLink>
           </Stack>
+            <Box display={"flex"} marginLeft={"auto"} gap={"2rem"}>
+              <FacebookIcon style={{ color: "#B2B2B2" }} />
+              <InstagramIcon style={{ color: "#B2B2B2" }} />
+            </Box>
         </AppContainer>
       </Box>
     </Box>
