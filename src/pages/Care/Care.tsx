@@ -79,7 +79,7 @@ export default function CarePage() {
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
-          gap={"10rem"}
+          gap={"2rem"}
         >
           <Box
             maxWidth={900}
@@ -193,7 +193,10 @@ export default function CarePage() {
         <Box bgcolor={"#df7c6d"} paddingBottom={"10rem"}>
           <Box
             margin={"0 auto"}
-            padding={"0 10rem"}
+            sx={{
+              padding: { xs: "0", md: "0 10rem" },
+            }}
+            // padding={"0 10rem"}
             width={"100%"}
             maxWidth={1440}
           >
@@ -203,7 +206,20 @@ export default function CarePage() {
             >
               dear alterknit... (just asking)
             </Typography>
-            <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
+            <Box
+              mt={4}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"3rem"}
+              sx={{
+                "@media (max-width: 768px)": {
+                  flexDirection: "column-reverse",
+                  alignItems: "center",
+                  gap: "2rem",
+                  padding: "1rem",
+                },
+              }}
+            >
               {Notes.map((notes, index) => (
                 <Box
                   bgcolor={"#f8f1ec"}
@@ -320,7 +336,12 @@ export default function CarePage() {
         />
       </section>
       <section style={{ padding: "6rem 0 0 0" }}>
-        <Box margin={"auto 0"} padding={"0 10rem"}>
+        <Box
+          margin={"auto 0"}
+          sx={{
+            padding: { xs: "10px", md: "0 10rem" },
+          }}
+        >
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize={"80px"}
@@ -348,8 +369,13 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"5rem 10rem 4rem"}
+            padding={"5rem 2rem 4rem"}
             position={"relative"}
+            sx={{
+              "@media (max-width: 768px)": {
+                padding: "3rem 1rem",
+              },
+            }}
           >
             <img
               style={{
@@ -365,19 +391,29 @@ export default function CarePage() {
               loading="lazy"
             />
             <Typography
-              fontSize={"80px"}
-              lineHeight={"4rem"}
+              fontSize={"48px"}
+              lineHeight={"3rem"}
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={400}
+              sx={{
+                "@media (max-width: 768px)": {
+                  fontSize: "36px",
+                },
+              }}
             >
               IN ALTERKNIT WE TRUST
             </Typography>
             <Typography
-              fontSize={"19px"}
+              fontSize={"16px"}
               maxWidth={620}
               fontFamily={"Proxima Nova,sans-serif"}
               color={"#575656"}
+              sx={{
+                "@media (max-width: 768px)": {
+                  fontSize: "14px",
+                },
+              }}
             >
               We understand the trust in placing a treasured garment in our
               hands. We never judge how it happened or what it cost. Brand,
