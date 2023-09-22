@@ -6,6 +6,29 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
+import styled from "@emotion/styled";
+import { CSSProperties, useState } from "react";
+
+const StyleLink = styled(Link)({
+  fontSize: "18px",
+  color: "#787878",
+  // marginLeft: isSmScreen ? "1rem" : "2rem",
+  // marginRight: isSmScreen ? "1rem" : "2rem",
+  textUnderlineOffset: "5px",
+  ":hover": {
+    color: Colors.WHITE,
+  }
+})
+const StyleLink1 = styled(Link)({
+  textDecoration: "none",
+  fontSize: "18px",
+  color: "#B2B2B2",
+  ":hover": {
+    color: Colors.WHITE,
+  }
+})
+
+
 
 export default function AppFooter() {
   const theme = useTheme();
@@ -24,22 +47,24 @@ export default function AppFooter() {
 
   return (
     <Box bgcolor={Colors.BLACK}>
-      <Box borderBottom="1px solid white">
+      <Box borderBottom="1px solid #272727">
         <AppContainer color={Colors.WHITE}>
           <Stack
-            p={5}
+            px={5}
+            py={7}
             direction={isSmScreen ? "column" : "row"}
             justifyContent={isSmScreen ? "center" : "space-between"}
             alignItems="center"
           >
             <Stack>
-              <a href="https://alterknitnewyork.com">
-                {" "}
+              <a href={routes.ROOT}>
                 <img
                   src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo_white.svg"
                   alt="alterknit logo"
                   loading="lazy"
-                />{" "}
+                  width={200}
+                  height={40}
+                />
               </a>
             </Stack>
             <Stack
@@ -49,40 +74,18 @@ export default function AppFooter() {
             >
               <Stack spacing={3} direction={isSmScreen ? "column" : "row"}>
                 {services.map((service, index) => (
-                  <Link
-                    style={{ textDecoration: "none", color: "white" }}
-                    key={index}
-                    to={service.url}
-                    className="service-item"
-                  >
-                    <Typography
-                      flexWrap={"wrap"}
-                      fontSize={"16px"}
-                      variant="h5"
-                      key={index}
-                      color={"#B2B2B2"}
-                    >
-                      {service.name}
-                    </Typography>
-                  </Link>
+                  <StyleLink1 key={index} to={service.url}>
+                    {service.name}
+                  </StyleLink1>
                 ))}
               </Stack>
               <Stack direction="row" spacing={3}>
-                <Typography
-                  color={"#B2B2B2"}
-                  fontSize={"16px"}
-                  alignItems="center"
-                >
+                <StyleLink1 to="mailto:orders@alterknitnewyork.com">
                   orders@alterknitnewyork.com
-                </Typography>
-                <Typography
-                  fontSize={"16px"}
-                  alignItems="center"
-                  color={"#B2B2B2"}
-                  whiteSpace={"nowrap"}
-                >
+                </StyleLink1>
+                <StyleLink1 to="tel:+12124736363">
                   212 473 6363
-                </Typography>
+                </StyleLink1>
               </Stack>
             </Stack>
           </Stack>
@@ -90,41 +93,42 @@ export default function AppFooter() {
       </Box>
       <Box p={isSmScreen ? "2rem" : "4rem"}>
         <AppContainer>
-          <Box display="flex" alignItems="center">
-            <Box display={"flex"} marginLeft={"auto"} gap={"1rem"}>
-              <Typography
-                fontSize={isSmScreen ? "16px" : "20px"}
-                color={"#B2B2B2"}
-                textAlign="center"
-              >
-                Copyright AlterKnit New York 2023
-              </Typography>
-              <Link
-                style={{
-                  fontSize: isSmScreen ? "16px" : "16px",
-                  color: "#B2B2B2",
-                  marginLeft: isSmScreen ? "1rem" : "2rem",
-                  marginRight: isSmScreen ? "1rem" : "2rem",
-                }}
-                to={routes.PRIVACY}
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                style={{
-                  fontSize: isSmScreen ? "16px" : "16px",
-                  color: "#B2B2B2",
-                }}
-                to={routes.TERM}
-              >
-                Terms and Conditions
-              </Link>
-            </Box>
+          <Stack
+            spacing={3}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            direction="row"
+          >
+            <Typography
+              fontSize={isSmScreen ? "16px" : "18px"}
+              color={"#787878"}
+              textAlign="center"
+            >
+              Copyright
+            </Typography>
+            <Typography
+              fontSize={isSmScreen ? "16px" : "18px"}
+              color={"#787878"}
+              textAlign="center"
+            >
+              AlterKnit New York 2023
+            </Typography>
+            <StyleLink
+              to={routes.PRIVACY}
+            >
+              Privacy Policy
+            </StyleLink>
+            <StyleLink
+              to={routes.TERM}
+            >
+              Terms and Conditions
+            </StyleLink>
+          </Stack>
             <Box display={"flex"} marginLeft={"auto"} gap={"2rem"}>
               <FacebookIcon style={{ color: "#B2B2B2" }} />
               <InstagramIcon style={{ color: "#B2B2B2" }} />
             </Box>
-          </Box>
         </AppContainer>
       </Box>
     </Box>

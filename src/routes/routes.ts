@@ -16,6 +16,8 @@ const OUR_STORY = "/our-story";
 const SERVICES = "/services";
 const PORTFOLIO = "/portfolio";
 const CARE = "/care";
+const DOORTODOOR = "/door-to-door";
+const SHIPIN = "/ship-in";
 
 const routes = {
   ROOT,
@@ -34,6 +36,8 @@ const routes = {
   SERVICES,
   PORTFOLIO,
   CARE,
+  DOORTODOOR,
+  SHIPIN,
   BLOG_PAGE_CONTENT,
 };
 

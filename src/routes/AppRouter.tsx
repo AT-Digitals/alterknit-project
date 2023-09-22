@@ -16,6 +16,7 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 
 export default function AppRouter() {
   return (
@@ -32,6 +33,7 @@ export default function AppRouter() {
           <Route path={routes.CARE} element={<CarePage />} />
           <Route path={routes.BLOG_PAGE} element={<BlogPage />} />
           <Route path={routes.CONTACT_US} element={<ContactPage />} />
+          <Route path={routes.DOORTODOOR} element={<DoorToDoorPage />} />
           <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.TERM} element={<TermsCondition />} />
