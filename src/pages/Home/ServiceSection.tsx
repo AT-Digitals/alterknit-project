@@ -40,90 +40,91 @@ export default function ServiceSection() {
       }}
     >
       <img src={topImage} alt="top" />
-      <Box>
+      <Box bgcolor={Colors.HOME_BACKGROUND}>
         <Stack
-          bgcolor={"#f8f1eb"}
+          bgcolor={Colors.HOME_BACKGROUND}
           direction={"row"}
-          justifyContent={"space-around"}
+          maxWidth={1300}
+          margin="0 auto"
+          justifyContent="center"
         >
-          <Box display={"flex"} position={"relative"} zIndex={1} >
-            <Box
-              alignItems={"flex-start"}
-              flex={1}
-              display={"flex"}
-              flexDirection={"column"}
-              justifyItems={"flex-start"}
-              pt={2}
+          <Box
+            alignItems={"flex-start"}
+            flex={1}
+            display={"flex"}
+            flexDirection={"column"}
+            justifyItems={"flex-start"}
+            pt={2}
+            maxWidth={620}
+          >
+            <Typography
+              fontSize="80px"
+              fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+              fontWeight={400}
+              textTransform="uppercase"
+              lineHeight={1}
             >
-              <Typography
-                fontSize="80px"
-                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                fontWeight={400}
-                textTransform="uppercase"
-                lineHeight={1}
-              >
-                holes? <br /> we fix them
-              </Typography>
-              <Link to={routes.SERVICES}>
-                <CustomButton
-                  bgColor={Colors.BLACK}
-                  sx={{
-                    borderRadius: "5px",
-                    padding: "20px 30px",
-                    textTransform: "none",
-                    fontSize: "18px",
-                    marginTop: 2,
-                    fontWeight: 600,
-                  }}
-                >
-                  See our services
-                </CustomButton>
-              </Link>
-            </Box>
-
-            <Box flex={1} display={"flex"} flexDirection={"column"}>
-              <List
+              holes? <br /> we fix them
+            </Typography>
+            <Link to={routes.SERVICES}>
+              <CustomButton
+                bgColor={Colors.BLACK}
                 sx={{
-                  listStyleType: "disc",
-                  fontSize: "20px",
+                  borderRadius: "5px",
+                  padding: "20px 30px",
+                  textTransform: "none",
+                  fontSize: "18px",
+                  marginTop: 2,
+                  fontWeight: 600,
                 }}
               >
-                <ListItem style={listItemStyle}>
-                  <ListItemIcon style={{ minWidth: 0 }}>
-                    <div style={customMarkerStyle}></div>
-                  </ListItemIcon>
-                  <ListItemText>
-                    <Typography fontSize={"20px"}>
-                      We work with you to determine the scope of service you
-                      need.
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
+                See our services
+              </CustomButton>
+            </Link>
+          </Box>
 
-                <ListItem style={listItemStyle}>
-                  <ListItemIcon style={{ minWidth: 0 }}>
-                    <div style={customMarkerStyle}></div>
-                  </ListItemIcon>
-                  <ListItemText>
-                    <Typography fontSize={"20px"}>
-                      Our unmatched team works diligently to restore your items.
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
+          <Box flex={1} display={"flex"} flexDirection={"column"} maxWidth={450}>
+            <List
+              sx={{
+                listStyleType: "disc",
+                fontSize: "20px",
+              }}
+            >
+              <ListItem style={listItemStyle}>
+                <ListItemIcon style={{ minWidth: 0 }}>
+                  <div style={customMarkerStyle}></div>
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography fontSize={"20px"}>
+                    We work with you to determine the scope of service you
+                    need.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
 
-                <ListItem style={listItemStyle}>
-                  <ListItemIcon style={{ minWidth: 0 }}>
-                    <div style={customMarkerStyle}></div>
-                  </ListItemIcon>
-                  <ListItemText>
-                    <Typography fontSize={"20px"}>
-                      Your items come back to you repaired and ready to enjoy
-                      again.
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
-              </List>{" "}
-            </Box>
+              <ListItem style={listItemStyle}>
+                <ListItemIcon style={{ minWidth: 0 }}>
+                  <div style={customMarkerStyle}></div>
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography fontSize={"20px"}>
+                    Our unmatched team works diligently to restore your items.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+
+              <ListItem style={listItemStyle}>
+                <ListItemIcon style={{ minWidth: 0 }}>
+                  <div style={customMarkerStyle}></div>
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography fontSize={"20px"}>
+                    Your items come back to you repaired and ready to enjoy
+                    again.
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+            </List>{" "}
           </Box>
         </Stack>
       </Box>

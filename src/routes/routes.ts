@@ -7,6 +7,7 @@ const SIGN_UP = "/sign-up";
 const CONTACT_US = "/contact-us";
 const TERM = "/terms-and-conditions";
 const BLOG_PAGE = "/blog";
+const BLOG_PAGE_CONTENT = "/blog-content";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const PRIVACY = "/privacy-policy";
 
@@ -16,6 +17,8 @@ const SERVICES = "/services";
 const PORTFOLIO = "/portfolio";
 const CARE = "/care";
 const HELP = "/help";
+const DOORTODOOR = "/door-to-door";
+const SHIPIN = "/ship-in";
 
 const routes = {
   ROOT,
@@ -35,6 +38,9 @@ const routes = {
   PORTFOLIO,
   CARE,
   HELP,
+  DOORTODOOR,
+  SHIPIN,
+  BLOG_PAGE_CONTENT,
 };
 
 export default routes;

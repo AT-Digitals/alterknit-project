@@ -9,6 +9,7 @@ import {
 
 import AppContainer from "../../component/AppContainer";
 import { Link } from "react-router-dom";
+import routes from "../../routes/routes";
 
 export default function BlogPage() {
   const theme = useTheme();
@@ -17,12 +18,16 @@ export default function BlogPage() {
     <AppContainer>
       <Stack justifyContent={"flex-start"}>
         <Box p={2} mt={10} mb={5}>
-          <Typography variant="h4">
+          <Typography
+            fontFamily={'Proxima Nova",sans-serif'}
+            fontSize={"40px"}
+            variant="h4"
+          >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
           <img
             style={{
-              maxWidth: isSmallScreen ? "300px" : "500px",
+              maxWidth: isSmallScreen ? "300px" : "640px",
               height: isSmallScreen ? 200 : 277,
             }}
             src="https://alterknitnewyork.com/wp-content/uploads/2023/08/bug.png"
@@ -30,7 +35,7 @@ export default function BlogPage() {
             decoding="async"
             sizes="(max-width: 640px) 100vw, 640px"
           ></img>
-          <Typography maxWidth={1200} fontSize={"18px"}>
+          <Typography color={"#575656"} maxWidth={1140} fontSize={"18px"}>
             Mending clothes might seem like a distant memory in a world driven
             by fast fashion and disposable clothing. However, beneath the
             surface of this throwaway culture lies a profound opportunity for
@@ -39,16 +44,18 @@ export default function BlogPage() {
             remarkable and underappreciated. Mending is…
           </Typography>
         </Box>
-        <Link to="https://alterknitnewyork.com/threads-of-change-how-clothes-mending-impacts-sustainability">
+        <Link to={routes.BLOG_PAGE_CONTENT}>
           <Button
             style={{
-              padding: "20px",
+              padding: "10px 20px",
               background: "#df7c6c",
               alignItems: "flex-start",
               maxWidth: 200,
               color: "white",
               marginBottom: 50,
               marginLeft: 10,
+              textTransform: "none",
+              fontSize: "18px",
             }}
           >
             Continue reading
