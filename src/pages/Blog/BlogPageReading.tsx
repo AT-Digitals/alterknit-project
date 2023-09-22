@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 
 import AppContainer from "../../component/AppContainer";
+import routes from "../../routes/routes";
 
 export default function BlogPageReadingContent() {
   return (
@@ -361,7 +362,7 @@ export default function BlogPageReadingContent() {
             At{" "}
             <a
               style={{ color: "#575656" }}
-              href="https://alterknitnewyork.com/"
+              href={routes.ROOT}
             >
               <u>Alterknit</u>
             </a>
