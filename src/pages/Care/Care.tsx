@@ -191,15 +191,7 @@ export default function CarePage() {
           style={{ width: "100%", height: "auto" }}
         />
         <Box bgcolor={"#df7c6d"} paddingBottom={"10rem"}>
-          <Box
-            margin={"0 auto"}
-            sx={{
-              padding: { xs: "0", md: "0 10rem" },
-            }}
-            // padding={"0 10rem"}
-            width={"100%"}
-            maxWidth={1440}
-          >
+          <Box margin={"0 auto"} width={"100%"} maxWidth={1440}>
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
