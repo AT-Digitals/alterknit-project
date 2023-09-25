@@ -68,7 +68,7 @@ export default function CarePage() {
     <Box>
       <section
         style={{
-          padding: "13rem 0",
+          padding: "10rem 0",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -79,7 +79,7 @@ export default function CarePage() {
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
-          gap={"2rem"}
+          gap={"5rem"}
         >
           <Box
             maxWidth={900}
@@ -184,14 +184,20 @@ export default function CarePage() {
           </Box>
         </Box>
       </section>
-      <section style={{ display: "flex", flexDirection: "column" }}>
+      <section
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "6rem 0 0  0",
+        }}
+      >
         <img
           src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care_top.svg"
           alt="thems1"
           style={{ width: "100%", height: "auto" }}
         />
-        <Box bgcolor={"#df7c6d"} paddingBottom={"10rem"}>
-          <Box margin={"0 auto"} width={"100%"} maxWidth={1440}>
+        <Box bgcolor={"#df7c6d"} paddingBottom={"0 10rem"}>
+          <Box margin={"0 auto"} width={"100%"} maxWidth={1300}>
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
@@ -330,8 +336,9 @@ export default function CarePage() {
       <section style={{ padding: "6rem 0 0 0" }}>
         <Box
           margin={"auto 0"}
+          padding={"0 10rem"}
           sx={{
-            padding: { xs: "10px", md: "0 10rem" },
+            padding: { xs: "10px", md: "0 11rem" },
           }}
         >
           <Typography

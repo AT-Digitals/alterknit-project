@@ -18,7 +18,7 @@ const PORTFOLIO = "/portfolio";
 const CARE = "/care";
 const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
-
+const SHIP_IN_FIELDS = "/ship-in-fields";
 const routes = {
   ROOT,
   SIGN_IN,
@@ -39,6 +39,7 @@ const routes = {
   DOORTODOOR,
   SHIPIN,
   BLOG_PAGE_CONTENT,
+  SHIP_IN_FIELDS,
 };
 
 export default routes;
