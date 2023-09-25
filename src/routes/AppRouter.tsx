@@ -17,6 +17,7 @@ import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
 import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
+import PorfolioHeader from "../pages/Portfolio/PortfolioHeader";
 
 export default function AppRouter() {
   return (
@@ -38,6 +39,7 @@ export default function AppRouter() {
           <Route path={routes.FIXME} element={<FixmePage />} />
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
+          <Route path={routes.PORTFOLIO_HEADER} element={<PorfolioHeader />} />
           <Route
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}

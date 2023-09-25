@@ -18,6 +18,7 @@ const PORTFOLIO = "/portfolio";
 const CARE = "/care";
 const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
+const PORTFOLIO_HEADER = "/portfolio-header";
 
 const routes = {
   ROOT,
@@ -39,6 +40,7 @@ const routes = {
   DOORTODOOR,
   SHIPIN,
   BLOG_PAGE_CONTENT,
+  PORTFOLIO_HEADER,
 };
 
 export default routes;
