@@ -13,11 +13,13 @@ import PortfolioPage from "../pages/Portfolio/PortfolioPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import ServicePage from "../pages/Services/ServicePage";
-import ShipinFields from "../pages/Sehedule Repair/ShipIn-Fields";
+import ShipinFields from "../pages/Sehedule Repair/ship-in/ShipIn-Fields";
 import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import ShipInPage from "../pages/Sehedule Repair/ship-in/ShipInPage";
+import MoreDetailsPage from "../pages/Sehedule Repair/ship-in/MoreDetailsPage";
 
 export default function AppRouter() {
   return (
@@ -44,6 +46,8 @@ export default function AppRouter() {
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}
           />
+          <Route path={routes.SHIPIN} element={<ShipInPage />} />
+          <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} />
         </Route>
       </Routes>
     </Router>

@@ -1,8 +1,11 @@
 import { Box, TextField, Typography, styled } from "@mui/material";
 
-import AppContainer from "../../component/AppContainer";
-import CustomButton from "../../CommonComponent/CustomButton";
+import AppContainer from "../../../component/AppContainer";
+import CustomButton from "../../../CommonComponent/CustomButton";
 import { useState } from "react";
+import ShipCard from "./ShipCard";
+import routes from "../../../routes/routes";
+import { useNavigate } from "react-router-dom";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -67,6 +70,21 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     };
     console.log(data);
   };
+  const navigate = useNavigate();
+
+  const routeChange = () => {
+    let path = routes.MORE_DETAILS;
+    navigate(path);
+  }
+
+  const handleNextButtonClick = () => {
+    if (!formData) {
+      routeChange();
+    } else {
+      alert("Please select a service first");
+    }
+  };
+
 
   return (
     <Box>
@@ -215,27 +233,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                     }}
                   />
                 </Box>
-                <Box display={"flex"} gap={"2rem"} justifyContent="center">
-                  <CustomButton
-                    sx={{ borderRadius: "6px", maxWidth: 150, height: 50 }}
-                    color={isHovered ? "white" : "#df7c6d"}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    bgColor={isHovered ? "#df7c6d" : "#f8f1eb"}
-                  >
-                    Back
-                  </CustomButton>
-                  <CustomButton
-                    sx={{ borderRadius: "6px", maxWidth: 150, height: 50 }}
-                    color={isHovered1 ? "white" : "black"}
-                    onMouseEnter={handleMouseNextEnter}
-                    onMouseLeave={handleMouseNextLeave}
-                    bgColor={isHovered1 ? "#df7c6d" : "#f8f1eb"}
-                    type="submit"
-                  >
-                    Next
-                  </CustomButton>
-                </Box>
+                <ShipCard link={routes.SHIPIN} onClick={handleNextButtonClick} />
               </form>
             </Box>
           </AppContainer>

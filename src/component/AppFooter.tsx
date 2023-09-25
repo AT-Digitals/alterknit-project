@@ -27,14 +27,17 @@ const StyleLink1 = styled(Link)({
   },
 });
 
-export default function AppFooter() {
+interface footerProps {
+  activeTab: string;
+}
+export default function AppFooter({ activeTab }: footerProps) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
     { name: "Home", url: routes.ROOT },
-    { name: "Services", url: routes.ROOT },
-    { name: "Our Story", url: routes.ROOT },
-    { name: "Portfolio", url: routes.ROOT },
+    { name: "Services", url: routes.SERVICES },
+    { name: "Our Story", url: routes.OUR_STORY },
+    { name: "Portfolio", url: routes.PORTFOLIO },
     { name: "Care", url: routes.CARE },
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
@@ -71,7 +74,7 @@ export default function AppFooter() {
             >
               <Stack spacing={3} direction={isSmScreen ? "column" : "row"}>
                 {services.map((service, index) => (
-                  <StyleLink1 key={index} to={service.url}>
+                  <StyleLink1 key={index} to={service.url} >
                     {service.name}
                   </StyleLink1>
                 ))}
