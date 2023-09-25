@@ -19,6 +19,7 @@ const CARE = "/care";
 const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
 const MORE = "/more";
+const SHIP_IN_FIELDS = "/ship-in-fields";
 
 const routes = {
   ROOT,
@@ -41,6 +42,7 @@ const routes = {
   SHIPIN,
   BLOG_PAGE_CONTENT,
   MORE,
+  SHIP_IN_FIELDS,
 };
 
 export default routes;
