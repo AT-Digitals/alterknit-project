@@ -18,7 +18,6 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
-import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 
 export default function AppRouter() {
   return (
