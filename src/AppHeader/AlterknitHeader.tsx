@@ -39,7 +39,11 @@ const ServiceItem = styled(Link)`
   }
 `;
 
-export default function AlterknitHeader() {
+interface headerProps {
+  setActiveTab: (event: any) => void;
+}
+
+export default function AlterknitHeader({ setActiveTab }: headerProps) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
@@ -58,6 +62,10 @@ export default function AlterknitHeader() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleChange = (_event: any, newValue: any) => {
+    setActiveTab(newValue);
   };
 
   return (
@@ -130,7 +138,7 @@ export default function AlterknitHeader() {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <MenuItem key={index} onClick={handleMenuClose}>
+                <MenuItem key={index} onClick={handleMenuClose} onChange={(e) => handleChange(service.linkname, e)}>
                   <ServiceItem to={service.url} className="service-item">
                     <Typography fontSize="21px" key={index}>
                       {service.linkname}

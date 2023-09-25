@@ -47,6 +47,7 @@ export default function ServiceSection() {
           maxWidth={1300}
           margin="0 auto"
           justifyContent="center"
+          paddingY={8}
         >
           <Box
             alignItems={"flex-start"}

@@ -17,6 +17,8 @@ import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
 import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
+import ShipInPage from "../pages/Sehedule Repair/ship-in/ShipInPage";
+import MoreDetailsPage from "../pages/Sehedule Repair/ship-in/MoreDetailsPage";
 
 export default function AppRouter() {
   return (
@@ -42,6 +44,8 @@ export default function AppRouter() {
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}
           />
+          <Route path={routes.SHIPIN} element={<ShipInPage />} />
+          <Route path={routes.MORE} element={<MoreDetailsPage />} />
         </Route>
       </Routes>
     </Router>
