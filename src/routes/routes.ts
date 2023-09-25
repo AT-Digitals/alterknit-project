@@ -18,7 +18,7 @@ const PORTFOLIO = "/portfolio";
 const CARE = "/care";
 const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
-const MORE = "/more";
+const MORE_DETAILS = "/more";
 const SHIP_IN_FIELDS = "/ship-in-fields";
 
 const routes = {
@@ -41,7 +41,7 @@ const routes = {
   DOORTODOOR,
   SHIPIN,
   BLOG_PAGE_CONTENT,
-  MORE,
+  MORE_DETAILS,
   SHIP_IN_FIELDS,
 };
 

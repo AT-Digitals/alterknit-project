@@ -27,7 +27,7 @@ export default function ShipInPage() {
     const navigate = useNavigate();
 
     const routeChange = () => {
-        let path = routes.DOORTODOOR;
+        let path = routes.SHIP_IN_FIELDS;
         navigate(path);
     }
 
