@@ -18,6 +18,7 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 
 export default function AppRouter() {
   return (
@@ -40,7 +41,6 @@ export default function AppRouter() {
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.SHIP_IN_FIELDS} element={<ShipinFields />} />
-
           <Route
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}

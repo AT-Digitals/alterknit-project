@@ -1,0 +1,127 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import image1 from "../../assets/1679606179069_Vince.png"
+import { Stack, Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import image2 from "../../assets/1679606179069_Vince (1).png";
+
+export default function Cloth34Modal() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <img style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                }} onClick={handleOpen} src={image1} alt="imag1" />
+                
+      <Modal
+        open={open}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Stack sx={{
+            backgroundColor: "#f8f1eb",
+        }} padding={"10px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
+       
+         <Box sx={{
+                   width: "400px",
+                   height: "480px",
+                   display: "flex",
+                   flexDirection: "column",
+                   borderRadius: "30px",
+                   position: "relative",
+                   backgroundColor: "#df7c6d",
+                   padding: "7px",
+                   border: "0px solid white",
+                   
+                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
+                    <Box height={"480px"} sx={{
+                        backgroundColor: "white",
+                        borderTopLeftRadius: "30px",
+                        borderTopRightRadius: "30px",
+                        borderBottomLeftRadius: "30px",
+                    borderBottomRightRadius: "30px",
+                    }}>
+                <img style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    borderTopLeftRadius: "30px",
+                    borderTopRightRadius: "30px",
+                    borderBottomLeftRadius: "30px",
+                    borderBottomRightRadius: "30px",
+                    marginBottom: "11px",
+                }} src={image1} alt="imag1" />
+               
+                </Box>
+                <Box textAlign={"center"} marginTop={"-24px"} paddingBottom={"1rem"}>
+                <Typography style={{
+                    backgroundColor: "#df7c6d",
+                    display: "inline-block",
+                    margin: "0",
+                    borderRadius: "15px",
+                    width: "100px",
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
+                <Typography   color={"black"} fontSize={"1.3rem"}>CIRCLE</Typography>
+                </Box>
+                </Box>
+                <Box sx={{
+                   width: "400px",
+                   height: "480px",
+                   display: "flex",
+                   flexDirection: "column",
+                   borderRadius: "30px",
+                   position: "relative",
+                   backgroundColor: "#df7c6d",
+                   padding: "7px",
+                   border: "0px solid white",
+                   
+                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
+                    <Box height={"480px"} sx={{
+                        backgroundColor: "white",
+                        borderTopLeftRadius: "30px",
+                        borderTopRightRadius: "30px",
+                        borderBottomLeftRadius: "30px",
+                    borderBottomRightRadius: "30px",
+                    }}>
+                <img style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    borderTopLeftRadius: "30px",
+                    borderTopRightRadius: "30px",
+                    borderBottomLeftRadius: "30px",
+                    borderBottomRightRadius: "30px",
+                    marginBottom: "11px",
+                }} src={image2} alt="imag1" />
+               
+                </Box>
+                <Box textAlign={"center"} marginTop={"-24px"} paddingBottom={"1rem"}>
+                <Typography style={{
+                    backgroundColor: "#df7c6d",
+                    display: "inline-block",
+                    margin: "0",
+                    borderRadius: "15px",
+                    width: "100px",
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
+                <Typography   color={"black"} fontSize={"1.3rem"}>CIRCLE</Typography>
+                </Box>
+                </Box>
+                <CloseIcon style={{
+                    position: "absolute",
+                    marginLeft: "850px",
+                    fontSize: "25px",
+                    borderRadius: "17px",
+                    backgroundColor: "#df7c6d",
+                    padding: "5px 5px"
+                }} onClick={handleClose} />
+                </Stack>
+      </Modal>
+    </>
+  );
+}
