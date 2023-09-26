@@ -174,7 +174,6 @@ export default function ShipInPage() {
                 </Grid>
             </Grid>
             <ShipCard onClick={handleNextButtonClick} link={routes.FIXME} />
-            <RepairPage />
         </Stack>
     );
 }

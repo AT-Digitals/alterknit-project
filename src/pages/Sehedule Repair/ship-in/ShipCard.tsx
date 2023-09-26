@@ -19,12 +19,12 @@ const StyledButtom = styled(CustomButton)({
 });
 
 interface linkprops {
-    onClick?: () => void;
+    onClick?: (event: any) => void;
     link: string;
 }
 export default function ShipCard({ onClick, link }: linkprops) {
     return (
-        <Stack direction="row" spacing={10} margin="0 auto">
+        <Stack direction="row" spacing={10} margin="0 auto" alignItems="center" justifyContent="center" paddingY={8}>
             <Link to={link}>
                 <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} sx={{ paddingTop: "15px", paddingBottom: "15px" }}>
                     Back

@@ -20,6 +20,7 @@ const DOORTODOOR = "/door-to-door";
 const SHIPIN = "/ship-in";
 const MORE_DETAILS = "/more";
 const SHIP_IN_FIELDS = "/ship-in-fields";
+const REPAIR_PAGE = "/repair";
 
 const routes = {
   ROOT,
@@ -43,6 +44,7 @@ const routes = {
   BLOG_PAGE_CONTENT,
   MORE_DETAILS,
   SHIP_IN_FIELDS,
+  REPAIR_PAGE,
 };
 
 export default routes;
