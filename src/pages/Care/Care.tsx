@@ -68,7 +68,7 @@ export default function CarePage() {
     <Box>
       <section
         style={{
-          padding: "10rem 0",
+          padding: "6.5rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -87,11 +87,12 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"2.5rem 5rem"}
+            padding={"4rem 5.4rem"}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              variant="h3"
+              fontSize={"80px"}
+              fontWeight={400}
             >
               CARE THROUGH REPAIR
             </Typography>
@@ -138,7 +139,13 @@ export default function CarePage() {
             borderColor={"black"}
             color={"white"}
           >
-            <Typography variant="h3">WHERE WE STAND</Typography>
+            <Typography
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontSize={"80px"}
+              fontWeight={400}
+            >
+              WHERE WE STAND
+            </Typography>
             <p
               style={{
                 maxWidth: 690,
@@ -390,7 +397,7 @@ export default function CarePage() {
               loading="lazy"
             />
             <Typography
-              fontSize={"48px"}
+              fontSize={"80px"}
               lineHeight={"3rem"}
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -404,7 +411,7 @@ export default function CarePage() {
               IN ALTERKNIT WE TRUST
             </Typography>
             <Typography
-              fontSize={"16px"}
+              fontSize={"19px"}
               maxWidth={620}
               fontFamily={"Proxima Nova,sans-serif"}
               color={"#575656"}

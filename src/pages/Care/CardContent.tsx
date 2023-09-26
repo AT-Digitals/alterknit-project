@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import styled from "@emotion/styled";
@@ -12,7 +12,7 @@ const CardContainer = styled.div`
 const InnerCard = styled.div`
   position: relative;
   width: 300px;
-  height: 460px;
+  height: 400px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   transform: ${(props: { isFlipped: any }) =>
@@ -37,7 +37,7 @@ const CardFace = styled.div`
 
 const BackFace = styled(CardFace)`
   transform: rotateY(180deg);
-  background-color: #fff;
+  background-color: #f8f1eb;
   align-items: flex-end;
   border-radius: 40px;
 `;
@@ -82,14 +82,14 @@ const TotalCards = [
       "... under our belt to become master restorers. Chunky knit to the finest summer weight, we stitch it all!",
     cardImage:
       "https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/card_05.jpg",
-    cardsTitle: "10 MILLION STITCHES",
+    cardsTitle: "10 MILLION STITCHES...",
   },
   {
     cardDiscription:
       "of repair requests are on botched repairs (aren't you glad you found us first?)",
     cardImage:
       "https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/card_06.jpg",
-    cardsTitle: "ALMOST 40%",
+    cardsTitle: "ALMOST 40%...",
   },
 ];
 
@@ -105,44 +105,46 @@ function HoverCard() {
   };
 
   return (
-    <>
+    <Grid container spacing={8}>
       {TotalCards.map((cards, index) => (
-        <CardContainer
-          onMouseEnter={() => handleCardHover(index)}
-          onMouseLeave={handleCardLeave}
-        >
-          <InnerCard isFlipped={hoveredCard === index}>
-            <CardFace className="front">
-              <Box
-                borderRadius={"40px"}
-                bgcolor={"#df7c6d"}
-                display={"flex"}
-                flexDirection={"column"}
-              >
-                <CardImage src={cards.cardImage} alt="card" loading="lazy" />
-                <p style={{ fontSize: "16px", padding: "1rem" }}>
-                  {cards.cardDiscription}
-                </p>
-              </Box>
-            </CardFace>
-            <BackFace className="back">
-              <Box>
-                <Typography
-                  padding={3}
-                  lineHeight={1.1}
-                  textAlign={"left"}
-                  color={"#df7c6d"}
-                  fontSize={"75px"}
-                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+        <Grid item xs={12} md={4} key={index}>
+          <CardContainer
+            onMouseEnter={() => handleCardHover(index)}
+            onMouseLeave={handleCardLeave}
+          >
+            <InnerCard isFlipped={hoveredCard === index}>
+              <CardFace className="front">
+                <Box
+                  borderRadius={"40px"}
+                  bgcolor={"#df7c6d"}
+                  display={"flex"}
+                  flexDirection={"column"}
                 >
-                  {cards.cardsTitle}
-                </Typography>
-              </Box>
-            </BackFace>
-          </InnerCard>
-        </CardContainer>
+                  <CardImage src={cards.cardImage} alt="card" loading="lazy" />
+                  <p style={{ fontSize: "16px", padding: "1rem" }}>
+                    {cards.cardDiscription}
+                  </p>
+                </Box>
+              </CardFace>
+              <BackFace className="back">
+                <Box>
+                  <Typography
+                    padding={3}
+                    lineHeight={1.1}
+                    textAlign={"left"}
+                    color={"#df7c6d"}
+                    fontSize={"75px"}
+                    fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  >
+                    {cards.cardsTitle}
+                  </Typography>
+                </Box>
+              </BackFace>
+            </InnerCard>
+          </CardContainer>
+        </Grid>
       ))}
-    </>
+    </Grid>
   );
 }
 
