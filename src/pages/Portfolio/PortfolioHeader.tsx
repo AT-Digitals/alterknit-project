@@ -130,7 +130,6 @@ export default function PorfolioHeader() {
                     height: "100%",
                     objectFit: "cover"
                 }} src={image1} alt="imag1" />
-                <BasicModal />
                 </Box>
                 <Box sx={{
                     gridRowStart: "1",

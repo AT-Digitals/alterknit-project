@@ -179,8 +179,15 @@ export default function FormFile() {
   };
 
   return (
-    <Box display={"flex"} justifyContent={"center"}>
-      <form onSubmit={handleSubmit}>
+    <Box sx={{
+      backgroundColor: "#f8f1eb",
+    }} display={"flex"} justifyContent={"center"}>
+      <form style={{
+        backgroundColor: "antiquewhite",
+        borderRadius: "30px",
+        marginTop: "30px",
+        marginBottom: "30px",
+      }} onSubmit={handleSubmit}>
         <Box>
           <Typography
             marginTop={"20px"}
@@ -373,7 +380,7 @@ export default function FormFile() {
                 boxShadow: `0px 2px 5px black`,
                 padding: "7px 60px",
                 background: "black",
-                marginBottom: "10px",
+                marginBottom: "0px",
                 ":hover": {
                   background: "black",
                 },
