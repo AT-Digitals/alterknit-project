@@ -26,11 +26,11 @@ export default function Cloth8Modal() {
       >
         <Stack sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
        
-         <Box sx={{
-                   width: "400px",
-                   height: "480px",
+         <Box style={{
+                    width: "480px",
+                    height: "550px",
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -38,8 +38,9 @@ export default function Cloth8Modal() {
                    backgroundColor: "#df7c6d",
                    padding: "7px",
                    border: "0px solid white",
+                   marginTop: "-40px",
                    
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
+                }}   overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
                     <Box height={"480px"} sx={{
                         backgroundColor: "white",
                         borderTopLeftRadius: "30px",
@@ -66,13 +67,13 @@ export default function Cloth8Modal() {
                     margin: "0",
                     borderRadius: "15px",
                     width: "100px",
-                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>CIRCLE</Typography>
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
+                <Typography   color={"black"} fontSize={"1.3rem"}>J. CREW</Typography>
                 </Box>
                 </Box>
-                <Box sx={{
-                   width: "400px",
-                   height: "480px",
+                <Box style={{
+                    width: "480px",
+                    height: "550px",
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -80,8 +81,9 @@ export default function Cloth8Modal() {
                    backgroundColor: "#df7c6d",
                    padding: "7px",
                    border: "0px solid white",
+                   marginTop: "-40px",
                    
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
+                }}   overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
                     <Box height={"480px"} sx={{
                         backgroundColor: "white",
                         borderTopLeftRadius: "30px",
@@ -108,18 +110,21 @@ export default function Cloth8Modal() {
                     margin: "0",
                     borderRadius: "15px",
                     width: "100px",
-                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>CIRCLE</Typography>
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
+                <Typography   color={"black"} fontSize={"1.3rem"}>J. CREW</Typography>
                 </Box>
                 </Box>
+                <Box>
                 <CloseIcon style={{
                     position: "absolute",
-                    marginLeft: "850px",
+                    marginLeft: "-75px",
                     fontSize: "25px",
                     borderRadius: "17px",
                     backgroundColor: "#df7c6d",
-                    padding: "5px 5px"
+                    padding: "5px 5px",
+                    marginTop: "-48px",
                 }} onClick={handleClose} />
+                </Box>
                 </Stack>
       </Modal>
     </>
