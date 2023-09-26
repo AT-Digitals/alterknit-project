@@ -1,16 +1,35 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography, styled } from "@mui/material";
 import sweater from "../../../assets/sweater_guy.png";
 import Colors from "../../../CommonComponent/Colors";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
+import CustomButton from "../../../CommonComponent/CustomButton";
+import { Link } from "react-router-dom";
+import routes from "../../../routes/routes";
+
+const StyledButtom = styled(CustomButton)({
+    fontSize: "22px",
+    borderRadius: "8px",
+    padding: "10px 20px",
+    textTransform: "none",
+    boxShadow: "none",
+    width: "30px",
+    margin: "0px  auto 0px",
+    ":hover": {
+        color: Colors.WHITE,
+    },
+});
+
 
 export default function RepairPage() {
     return (
         <Stack
-            paddingY={5}
+            paddingY={6}
             maxWidth={1300}
             margin="0 auto"
             justifyContent="center"
             direction="column"
+            paddingX={3}
+            spacing={8}
         >
             <Stack direction="row" spacing={3}>
                 <img src={sweater} alt="" width={250} height={250} />
@@ -40,58 +59,167 @@ export default function RepairPage() {
                     }}
                 />
             </Stack>
-            <Stack direction="row" spacing={2}>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    Service Needed
-                </Typography>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    Brand
-                </Typography>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    Color
-                </Typography>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    Age of Garment
-                </Typography>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    # of Holes
-                </Typography>
-                <Typography
-                    paddingX={3}
-                    paddingY={1}
-                    sx={{ backgroundColor: Colors.HOME_BACKGROUND, borderRadius: "50px" }}
-                >
-                    Brief Description
-                </Typography>
+            <Stack direction="column" spacing={3} sx={{
+                overflowX: "scroll",
+                borderBottom: "1px solid #000",
+                paddingBottom: "1rem",
+                marginBottom: "3rem"
+            }}>
+                <Grid container columnGap={3}>
+                    <Grid item xs={2}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            Service Needed
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            Brand
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            Color
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            Age of Garment
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            # of Holes
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2.5}>
+                        {" "}
+                        <Typography
+                            paddingX={3}
+                            paddingY={1}
+                            textAlign="center"
+                            sx={{
+                                backgroundColor: Colors.HOME_BACKGROUND,
+                                borderRadius: "50px",
+                            }}
+                        >
+                            Brief Description
+                        </Typography>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid container columnGap={3} flexWrap="nowrap" mb={3}>
+                    <Grid item xs={2}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            hfghgj
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            hgjhgj
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            jhgjgj
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            jhg
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            jhgjg
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2.5}>
+                        <Typography textAlign="center" variant="body2" paddingX={3}>
+                            ghfhfh
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={0.5} textAlign="end">
+                        <DeleteIcon />
+                    </Grid>
+                </Grid>
             </Stack>
-            <Stack direction="row">
-                <Typography>1</Typography>
-                <Typography>1</Typography>
-                <Typography>1</Typography>
-                <Typography>1</Typography>
-                <Typography>1</Typography>
-                <Typography>1</Typography>
-                <DeleteIcon />
+            <Stack direction="row" spacing={8} alignItems="center" justifyContent="center">
+                <Link to={routes.MORE_DETAILS}>
+                    <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} sx={{ paddingTop: "15px", paddingBottom: "15px" }}>
+                        Back
+                    </StyledButtom>
+                </Link>
+                <Link to={routes.SHIP_IN_FIELDS}>
+                    <StyledButtom bgColor={"#f8f1eb"} color={Colors.BLACK} sx={{ paddingTop: "15px", paddingBottom: "15px", width: "270px" }}>
+                        Add Another Item
+                    </StyledButtom>
+                </Link>
+                <Link to={""}>
+                    <StyledButtom bgColor={"#f8f1eb"} color={Colors.BLACK} sx={{ paddingTop: "15px", paddingBottom: "15px", width: "270px" }}>
+                        Proceed to  Checkout
+                    </StyledButtom>
+                </Link>
             </Stack>
         </Stack>
     );

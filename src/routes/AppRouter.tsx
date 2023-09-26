@@ -21,6 +21,7 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import RepairPage from "../pages/Sehedule Repair/ship-in/RepairPage";
 
 export default function AppRouter() {
   return (
@@ -51,6 +52,7 @@ export default function AppRouter() {
           />
           <Route path={routes.SHIPIN} element={<ShipInPage />} />
           <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} />
+          <Route path={routes.REPAIR_PAGE} element={<RepairPage />} />
         </Route>
       </Routes>
     </Router>

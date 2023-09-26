@@ -3,8 +3,9 @@ import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
 import ShipCard from "./ShipCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import routes from "../../../routes/routes";
+import { useState } from "react";
 
 const StyledButton = styled(CustomButton)({
     fontWeight: 400,
@@ -46,15 +47,44 @@ const StyleButtonNew = styled(Button)({
     height: "200px",
     borderRadius: "30px",
     ":hover": {
-        backgroundColor: Colors.LINK
-    }
-})
-
+        backgroundColor: Colors.LINK,
+    },
+});
 
 export default function MoreDetailsPage() {
+    const [previousClean, setPreviousClean] = useState("");
+    const [latestClean, setLatestClean] = useState("");
+
+    const navigate = useNavigate();
+
+    const routeChange = () => {
+        let path = routes.REPAIR_PAGE;
+        navigate(path);
+    };
+
+    const handleNextButtonClick = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!previousClean) {
+            alert(
+                "INFORMATION REQUIRED:-\n Has this garment been previously repaired by a dry cleaner or another individual?"
+            );
+        } else if (!latestClean) {
+            alert("INFORMATION REQUIRED:-\n Has this grament been recently cleaned?");
+        } else {
+            routeChange();
+        }
+    };
+
     return (
-        <Stack gap={30}
-            sx={{ backgroundImage: `url(${bgmore})`, backgroundSize: "104%", backgroundPosition: "center" }} >
+        <Stack
+            gap={30}
+            sx={{
+                backgroundImage: `url(${bgmore})`,
+                backgroundSize: "104%",
+                backgroundPosition: "center",
+            }}
+        >
             <Stack
                 paddingY={5}
                 maxWidth={1300}
@@ -63,7 +93,6 @@ export default function MoreDetailsPage() {
                 direction="column"
                 spacing={3}
                 alignItems="center"
-
             >
                 <Typography
                     fontWeight={400}
@@ -81,8 +110,8 @@ export default function MoreDetailsPage() {
                     lineHeight={1}
                     maxWidth={900}
                 >
-                    8. has this garment been previously repaired by a dry cleaner or another
-                    individual?
+                    8. has this garment been previously repaired by a dry cleaner or
+                    another individual?
                 </Typography>
                 <Stack
                     direction="row"
@@ -92,17 +121,41 @@ export default function MoreDetailsPage() {
                     pt={2}
                     pb={2}
                 >
-                    <StyleButtonNew>Yes</StyleButtonNew>
-                    <StyleButtonNew>NO</StyleButtonNew>
+                    <StyleButtonNew
+                        value="yes"
+                        defaultChecked={previousClean === "yes"}
+                        onClick={() => setPreviousClean("yes")}
+                        style={{
+                            backgroundColor: previousClean === "yes"
+                                ? Colors.LINK
+                                : Colors.HOME_BACKGROUND,
+                        }}
+                    >
+                        Yes
+                    </StyleButtonNew>
+                    <StyleButtonNew
+                        value="no"
+                        style={{
+                            backgroundColor: previousClean === "no"
+                                ? Colors.LINK
+                                : Colors.HOME_BACKGROUND,
+                        }}
+                        defaultChecked={previousClean === "no"}
+                        onClick={() => setPreviousClean("no")}
+                    >
+                        NO
+                    </StyleButtonNew>
                 </Stack>
             </Stack>
-            <Stack paddingY={5}
+            <Stack
+                paddingY={5}
                 maxWidth={1300}
                 margin="0 auto"
                 justifyContent="center"
                 direction="column"
                 spacing={3}
-                alignItems="center" >
+                alignItems="center"
+            >
                 <Typography
                     fontWeight={400}
                     fontSize="3.5rem"
@@ -112,7 +165,7 @@ export default function MoreDetailsPage() {
                 >
                     9. has this garment been recently cleaned?
                 </Typography>
-                <Typography textAlign="center" maxWidth={850} >
+                <Typography textAlign="center" maxWidth={850}>
                     Cleaning will only make holes bigger and incur higher repair cost.
                     Please let us examine your garment first. If the garment has already
                     been cleaned before you found us, don't worry.
@@ -125,12 +178,36 @@ export default function MoreDetailsPage() {
                     pt={2}
                     pb={10}
                 >
-                    <StyleButtonNew>Yes</StyleButtonNew>
-                    <StyleButtonNew>NO</StyleButtonNew>
+                    <StyleButtonNew
+                        value="yes"
+                        defaultChecked={latestClean === "yes"}
+                        onClick={() => setLatestClean("yes")}
+                        style={{
+                            backgroundColor: latestClean === "yes"
+                                ? Colors.LINK
+                                : Colors.HOME_BACKGROUND,
+                        }}
+                    >
+                        Yes
+                    </StyleButtonNew>
+                    <StyleButtonNew
+                        value="no"
+                        defaultChecked={latestClean === "no"}
+                        onClick={() => setLatestClean("no")}
+                        style={{
+                            backgroundColor: latestClean === "no"
+                                ? Colors.LINK
+                                : Colors.HOME_BACKGROUND,
+                        }}
+                    >
+                        NO
+                    </StyleButtonNew>
                 </Stack>
-                <ShipCard link={routes.DOORTODOOR} />
+                <ShipCard
+                    link={routes.SHIP_IN_FIELDS}
+                    onClick={handleNextButtonClick}
+                />
             </Stack>
-
         </Stack>
     );
 }
