@@ -1,11 +1,10 @@
 import { Box, TextField, Typography, styled } from "@mui/material";
 
 import AppContainer from "../../../component/AppContainer";
-import CustomButton from "../../../CommonComponent/CustomButton";
-import { useState } from "react";
 import ShipCard from "./ShipCard";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -15,7 +14,7 @@ const CustomTextField = styled(TextField)`
     }
 
     input {
-      padding: 1.5rem;
+      padding: 2rem;
       background-color: #f8f1ec;
       border-radius: 30px;
       font-family: Proxima Nova, sans-serif;
@@ -38,23 +37,6 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     HowLong: "",
     brief: "",
   });
-  const [isHovered, setIsHovered] = useState(false);
-  const [isHovered1, setIsHovered1] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-  const handleMouseNextEnter = () => {
-    setIsHovered1(true);
-  };
-
-  const handleMouseNextLeave = () => {
-    setIsHovered1(false);
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -92,7 +74,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
       brief: formData.brief,
     };
     console.log(data);
-  }
+  };
 
 
   return (

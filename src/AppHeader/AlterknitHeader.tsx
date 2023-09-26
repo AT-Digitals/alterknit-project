@@ -64,10 +64,6 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
     setAnchorEl(null);
   };
 
-  const handleChange = (_event: any, newValue: any) => {
-    setActiveTab(newValue);
-  };
-
   return (
     <Box
       bgcolor={"white"}
@@ -138,13 +134,11 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <MenuItem key={index} onClick={handleMenuClose} onChange={(e) => handleChange(service.linkname, e)}>
-                  <ServiceItem to={service.url} className="service-item">
-                    <Typography fontSize="21px" key={index}>
-                      {service.linkname}
-                    </Typography>
-                  </ServiceItem>
-                </MenuItem>
+                <ServiceItem to={service.url} className="service-item">
+                  <Typography fontSize="21px" key={index}>
+                    {service.linkname}
+                  </Typography>
+                </ServiceItem>
               ))}
             </Stack>
           )}

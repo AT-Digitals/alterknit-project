@@ -1,9 +1,8 @@
 import { Stack, styled } from "@mui/material";
-import CustomButton from "../../../CommonComponent/CustomButton";
-import Colors from "../../../CommonComponent/Colors";
-import { Link } from "react-router-dom";
-import routes from "../../../routes/routes";
 
+import Colors from "../../../CommonComponent/Colors";
+import CustomButton from "../../../CommonComponent/CustomButton";
+import { Link } from "react-router-dom";
 
 const StyledButtom = styled(CustomButton)({
     fontSize: "20px",

@@ -1,11 +1,10 @@
 import { Button, Grid, Stack, Typography, styled } from "@mui/material";
+
 import Colors from "../../../CommonComponent/Colors";
-import CustomButton from "../../../CommonComponent/CustomButton";
 import ShipCard from "./ShipCard";
-import { useState } from "react";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
-import RepairPage from "./RepairPage";
+import { useState } from "react";
 
 const StyleButtonNew = styled(Button)({
     color: Colors.BLACK,
@@ -19,9 +18,9 @@ const StyleButtonNew = styled(Button)({
     borderRadius: "30px",
     lineHeight: 1,
     ":hover": {
-        backgroundColor: Colors.LINK
-    }
-})
+        backgroundColor: Colors.LINK,
+    },
+});
 
 export default function ShipInPage() {
     const navigate = useNavigate();
@@ -29,7 +28,7 @@ export default function ShipInPage() {
     const routeChange = () => {
         let path = routes.SHIP_IN_FIELDS;
         navigate(path);
-    }
+    };
 
     const [selectedButtons, setSelectedButtons] = useState<string[]>([]);
 

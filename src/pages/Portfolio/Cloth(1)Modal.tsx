@@ -17,21 +17,23 @@ export default function BasicModal() {
       <img style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover"
+                    objectFit: "cover",
                 }} onClick={handleOpen} src={image1} alt="imag1" />
                 
-      <Modal
+      <Modal style={{
+        border: "0",
+      }}
         open={open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Stack sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
        
-         <Box sx={{
-                   width: "400px",
-                   height: "480px",
+         <Box style={{
+                   width: "480px",
+                   height: "550px",
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -39,8 +41,9 @@ export default function BasicModal() {
                    backgroundColor: "#df7c6d",
                    padding: "7px",
                    border: "0px solid white",
+                   marginTop: "-40px",
                    
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
+                }}  overflow={"hidden"} border={"6px solid #df7c6d"}>
                     <Box height={"480px"} sx={{
                         backgroundColor: "white",
                         borderTopLeftRadius: "30px",
@@ -67,13 +70,13 @@ export default function BasicModal() {
                     margin: "0",
                     borderRadius: "15px",
                     width: "100px",
-                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
                 <Typography   color={"black"} fontSize={"1.3rem"}>H&M</Typography>
                 </Box>
                 </Box>
-                <Box sx={{
-                   width: "400px",
-                   height: "480px",
+                <Box style={{
+                   width: "480px",
+                   height: "550px",
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -81,6 +84,7 @@ export default function BasicModal() {
                    backgroundColor: "#df7c6d",
                    padding: "7px",
                    border: "0px solid white",
+                   marginTop: "-40px",
                    
                 }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
                     <Box height={"480px"} sx={{
@@ -109,18 +113,21 @@ export default function BasicModal() {
                     margin: "0",
                     borderRadius: "15px",
                     width: "100px",
-                }}  color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
+                }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
                 <Typography   color={"black"} fontSize={"1.3rem"}>H&M</Typography>
                 </Box>
                 </Box>
+                <Box>
                 <CloseIcon style={{
                     position: "absolute",
-                    marginLeft: "850px",
+                    marginLeft: "-75px",
                     fontSize: "25px",
                     borderRadius: "17px",
                     backgroundColor: "#df7c6d",
-                    padding: "5px 5px"
+                    padding: "5px 5px",
+                    marginTop: "-48px",
                 }} onClick={handleClose} />
+                </Box>
                 </Stack>
       </Modal>
     </>

@@ -19,10 +19,10 @@ export default function CardPage() {
                     <CardContent>
                         <Box marginTop={"13px"} display={"flex"} alignItems={"center"} justifyContent={"space-around"}>
                             <Typography marginTop={"45px"} lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>CAN I GET A <Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BALLPARK?</Typography> <Typography fontStyle={"italic"} color={"#575656"} fontWeight={"500"} fontSize={"20px"}>It's just one hole!</Typography></Typography>
-                            <Typography lineHeight={"1.3"} maxWidth={"676px"} color={"black"} fontWeight={"500"} fontSize={"20px"} fontFamily={`"Proxima Nova", sans-serif`}>We need to examine your entire item in our work studio because we have been doing this for a very long time and what might appear to you as a small hole could in reality be 17 small holes! So please let us do our job. Your garments' examination is complimentary.</Typography>
+                            <Typography lineHeight={"1.3"} maxWidth={"676px"} color={"black"} fontWeight={"500"} fontSize={"21px"} fontFamily={`"Proxima Nova", sans-serif`}>We need to examine your entire item in our work studio because we have been doing this for a very long time and what might appear to you as a small hole could in reality be 17 small holes! So please let us do our job. Your garments' examination is complimentary.</Typography>
                         </Box>
                         <Box display={"flex"} justifyContent={"right"}>
-                            <Typography marginBottom={"20px"} marginRight={"71px"} lineHeight={"1.3"} maxWidth={"676px"} marginTop={"30px"} color={"black"} fontWeight={"500"} fontSize={"20px"}>Our repair service starts at $45.00. Bear in mind that this is the minimum you can expect to pay for a repair. There are factors that go into the pricing that we simply cannot determine without a thorough exam. So we ask you for the opportunity to look at your items. Once we check the entire garment we will call you with pricing for your approval.</Typography>
+                            <Typography marginBottom={"20px"} marginRight={"50px"} fontFamily={`"Proxima Nova", sans-serif`} lineHeight={"1.3"} maxWidth={"706px"} marginTop={"30px"} color={"black"} fontWeight={"500"} fontSize={"21px"}>Our repair service starts at $45.00. Bear in mind that this is the minimum you can expect to pay for a repair. There are factors that go into the pricing that we simply cannot determine without a thorough exam. So we ask you for the opportunity to look at your items. Once we check the entire garment we will call you with pricing for your approval.</Typography>
                         </Box>
                     </CardContent>
                 </Card>
@@ -37,9 +37,9 @@ export default function CardPage() {
                     marginBottom: "60px",
                 }}>
                     <CardContent>
-                        <Box marginTop={"30px"} display={"flex"} alignItems={"center"} justifyContent={"space-around"}>
+                        <Box marginTop={"30px"} display={"flex"} alignItems={"center"} justifyContent={"space-evenly"}>
                             <Typography lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>WHERE ARE YOU<Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>LOCATED?</Typography> <Typography fontStyle={"italic"} color={"#575656"} fontWeight={"500"} fontSize={"20px"}>Queens, New York</Typography></Typography>
-                            <Typography fontFamily={`"Proxima Nova", sans-serif`} marginBottom={"20px"} lineHeight={"1.3"} maxWidth={"676px"} marginTop={"4px"} color={"black"} fontWeight={"500"} fontSize={"20px"}>Can I drop by? Our work studio is located in Astoria, Queens, New York. We know you would like to visit but due to the high intensity nature of the service we provide we do not accept walk-ins. All shipped in orders go to a secure package facility to ensure the safety of your items so you can feel confident that your order has been received.</Typography>
+                            <Typography fontFamily={`"Proxima Nova", sans-serif`} marginBottom={"20px"} lineHeight={"1.3"} maxWidth={"676px"} marginTop={"4px"} color={"black"} fontWeight={"500"} fontSize={"21px"}>Can I drop by? Our work studio is located in Astoria, Queens, New York. We know you would like to visit but due to the high intensity nature of the service we provide we do not accept walk-ins. All shipped in orders go to a secure package facility to ensure the safety of your items so you can feel confident that your order has been received.</Typography>
                         </Box>
                     </CardContent>
                 </Card>
@@ -54,9 +54,9 @@ export default function CardPage() {
                     marginBottom: "20px",
                 }}>
                     <CardContent>
-                        <Box marginTop={"30px"} display={"flex"} alignItems={"center"} justifyContent={"space-around"}>
+                        <Box marginTop={"30px"} display={"flex"} alignItems={"center"} justifyContent={"space-evenly"}>
                             <Typography marginTop={"20px"} lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>HOW LONG WILL<Typography color={"black"} fontWeight={"400"} fontSize={"3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>IT TAKE?</Typography> <Typography fontStyle={"italic"} color={"#575656"} fontWeight={"500"} fontSize={"20px"}>Typically 4-6 Weeks</Typography></Typography>
-                            <Typography fontFamily={`"Proxima Nova", sans-serif`} marginBottom={"20px"} lineHeight={"1.3"} maxWidth={"676px"} color={"black"} fontWeight={"500"} fontSize={"20px"}>We are working on a 4-6 week turnaround time. However, if you have an upcoming event, vacation, or you can't live without it, please let a team member know when they call you to go over your order. We offer a rush service for an additional fee.</Typography>
+                            <Typography fontFamily={`"Proxima Nova", sans-serif`} marginBottom={"20px"} lineHeight={"1.3"} maxWidth={"676px"} color={"black"} fontWeight={"500"} fontSize={"21px"}>We are working on a 4-6 week turnaround time. However, if you have an upcoming event, vacation, or you can't live without it, please let a team member know when they call you to go over your order. We offer a rush service for an additional fee.</Typography>
                         </Box>
                     </CardContent>
                 </Card>
