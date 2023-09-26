@@ -136,17 +136,19 @@ export default function OurStory() {
               <Box
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"4rem"}
+                p={"2rem"}
                 borderRadius={"20px"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
                   fontSize={"48px"}
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontWeight={400}
                 >
                   HONEST REPAIR
                 </Typography>
                 <Typography
+                  color={"#575656"}
                   fontSize={"16px"}
                   fontFamily={"Proxima Nova, sans-serif"}
                 >
@@ -164,7 +166,7 @@ export default function OurStory() {
               <Box
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"4rem"}
+                p={"2rem"}
                 borderRadius={"20px"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
@@ -175,6 +177,7 @@ export default function OurStory() {
                   INHERENTLY SUSTAINABLE
                 </Typography>
                 <Typography
+                  color={"#575656"}
                   fontSize={"16px"}
                   fontFamily={"Proxima Nova, sans-serif"}
                 >
@@ -193,7 +196,7 @@ export default function OurStory() {
               <Box
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"4rem"}
+                p={"2rem"}
                 borderRadius={"20px"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
@@ -205,8 +208,10 @@ export default function OurStory() {
                   NOW YOU SEE IT , <br /> NOW YOU DONT'T{" "}
                 </Typography>
                 <Typography
+                  mt={2}
                   fontSize={"16px"}
                   fontFamily={"Proxima Nova, sans-serif"}
+                  color={"#575656"}
                 >
                   Your favorite clothes mean a lot to you and we know how much
                   you love them. We also know how upsetting it can be when you
@@ -305,19 +310,29 @@ export default function OurStory() {
           >
             {InstagramBoxNavigation.map((items, index) => (
               <Box
+                key={index}
                 width={"100%"}
                 maxWidth={280}
                 borderRadius={"40px"}
                 overflow={"hidden"}
+                position="relative"
               >
                 <a href={items.link} target="_blank" rel="noreferrer">
-                  {" "}
                   <img
-                    style={{ width: "100%" }}
+                    style={{
+                      width: "100%",
+                      transition: "transform 0.3s",
+                    }}
                     src={items.Image}
                     alt="reel"
                     loading="lazy"
-                  />{" "}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
+                  />
                 </a>
               </Box>
             ))}
