@@ -1,11 +1,10 @@
 import { Box, TextField, Typography, styled } from "@mui/material";
 
 import AppContainer from "../../../component/AppContainer";
-import CustomButton from "../../../CommonComponent/CustomButton";
-import { useState } from "react";
 import ShipCard from "./ShipCard";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -15,7 +14,7 @@ const CustomTextField = styled(TextField)`
     }
 
     input {
-      padding: 1.5rem;
+      padding: 2rem;
       background-color: #f8f1ec;
       border-radius: 30px;
       font-family: Proxima Nova, sans-serif;
@@ -37,23 +36,6 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     HowLong: "",
     brief: "",
   });
-  const [isHovered, setIsHovered] = useState(false);
-  const [isHovered1, setIsHovered1] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-  const handleMouseNextEnter = () => {
-    setIsHovered1(true);
-  };
-
-  const handleMouseNextLeave = () => {
-    setIsHovered1(false);
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -75,7 +57,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
   const routeChange = () => {
     let path = routes.MORE_DETAILS;
     navigate(path);
-  }
+  };
 
   const handleNextButtonClick = () => {
     if (!formData) {
@@ -84,7 +66,6 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
       alert("Please select a service first");
     }
   };
-
 
   return (
     <Box>
@@ -116,13 +97,13 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
       <Box padding={"4rem 0 6rem 0"}>
         <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
           <AppContainer pl={0}>
-            <Box maxWidth={1440} padding={{ xs: "0 1rem", md: "0 10rem" }}>
+            <Box maxWidth={1440} padding={{ xs: "0 1rem" }}>
               <form
                 onSubmit={handleSubmit}
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "2rem",
+                  gap: "4rem",
                 }}
               >
                 <Box
@@ -211,9 +192,10 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                     textAlign={"center"}
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    lineHeight={"3rem"}
                   >
-                    5. BRIEF DESCRIPTION OF REPAIR NEEDED AND/OR ANY OTHER
-                    IMPORTANT INFORMATION FOR US*
+                    5. BRIEF DESCRIPTION OF REPAIR NEEDED AND/OR ANY <br />
+                    OTHER IMPORTANT INFORMATION FOR US*
                   </Typography>
                   <CustomTextField
                     value={formData.brief}
@@ -233,7 +215,10 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                     }}
                   />
                 </Box>
-                <ShipCard link={routes.SHIPIN} onClick={handleNextButtonClick} />
+                <ShipCard
+                  link={routes.SHIPIN}
+                  onClick={handleNextButtonClick}
+                />
               </form>
             </Box>
           </AppContainer>
