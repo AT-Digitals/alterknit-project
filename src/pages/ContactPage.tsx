@@ -183,7 +183,7 @@ export default function FormFile() {
     <Box width={"100%"} height={"900px"} sx={{
       backgroundColor: "#f8f1eb",
     }} display={"flex"} justifyContent={"center"}>
-      <img width={"100%"} src={image1} alt="image" />
+      <img width={"100%"} src={image1} alt="backgound" />
       <form style={{
         borderRadius: "50px",
         border: "5px solid #df7c6d",
@@ -204,7 +204,7 @@ export default function FormFile() {
           >
             Contact us
           </Typography>
-         
+
           <Stack margin={"30px"} direction="row" display="flex" spacing={3}>
             <Box>
               <Typography
@@ -242,36 +242,38 @@ export default function FormFile() {
               />
             </Box>
             <Box>
-            <Button style={{
-              backgroundColor: "black",
-              marginLeft: "90px",
-              marginTop: "40px",
-              padding: "12px 40px",
-              letterSpacing: "2px",
-            }}
-             component="label"
-             variant="contained"
-            >
-            Click To Attach A Photo
-            <input
-            type="file"
-            hidden accept="image" onChange={handleImageChange}
-            />
-           </Button>
-          
+              <Button style={{
+                backgroundColor: "black",
+                marginLeft: "90px",
+                marginTop: "40px",
+                padding: "12px 40px",
+                letterSpacing: "2px",
+              }}
+                component="label"
+                variant="contained"
+              >
+                Click To Attach A Photo
+                <input
+                  type="file"
+                  hidden accept="image" onChange={handleImageChange}
+                />
+              </Button>
+
             </Box>
             <Box>
-          {selectedImage && ( 
-          <img
-            src={URL.createObjectURL(selectedImage)}
-            alt="Selected"
-            style={{ width: "120px",
-          height: "100px", borderRadius: "50%" }}
-          />
-      )}
-      </Box>
+              {selectedImage && (
+                <img
+                  src={URL.createObjectURL(selectedImage)}
+                  alt="Selected"
+                  style={{
+                    width: "120px",
+                    height: "100px", borderRadius: "50%"
+                  }}
+                />
+              )}
+            </Box>
           </Stack>
-        
+
           <Stack margin={"30px"} spacing={3}>
             <Box>
               <Typography
@@ -398,7 +400,7 @@ export default function FormFile() {
               Send
             </Button>
           </Box>
-      
+
         </Box>
       </form>
     </Box>

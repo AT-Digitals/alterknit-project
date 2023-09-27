@@ -1,40 +1,11 @@
 import { Button, Stack, Typography, styled } from "@mui/material";
 import Colors from "../../../CommonComponent/Colors";
-import CustomButton from "../../../CommonComponent/CustomButton";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
 import ShipCard from "./ShipCard";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import routes from "../../../routes/routes";
 import { useState } from "react";
 
-const StyledButton = styled(CustomButton)({
-    fontWeight: 400,
-    fontSize: "1.5rem",
-    fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
-    padding: "30px",
-    width: "270px",
-    height: "200px",
-    borderRadius: "30px",
-    backgroundColor: Colors.HOME_BACKGROUND,
-    color: Colors.BLACK,
-    boxShadow: "none",
-    ":hover": {
-        backgroundColor: Colors.LINK,
-    },
-});
-
-const StyledButtom1 = styled(CustomButton)({
-    fontSize: "20px",
-    borderRadius: "8px",
-    padding: "10px 20px",
-    textTransform: "none",
-    boxShadow: "none",
-    width: "30px",
-    margin: "10px  auto 0px",
-    ":hover": {
-        color: Colors.WHITE,
-    },
-});
 
 const StyleButtonNew = styled(Button)({
     color: Colors.BLACK,

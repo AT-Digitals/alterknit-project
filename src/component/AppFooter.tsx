@@ -41,7 +41,7 @@ export default function AppFooter({ activeTab }: footerProps) {
     { name: "Care", url: routes.CARE },
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
-    { name: "Partners", url: routes.ROOT },
+    { name: "Partners", url: routes.PARTNER },
     { name: "Contact Us", url: routes.CONTACT_US },
   ];
 
