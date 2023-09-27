@@ -49,7 +49,7 @@ export default function MoreDetailsPage() {
 
     return (
         <Stack
-            gap={30}
+            gap={22}
             sx={{
                 backgroundImage: `url(${bgmore})`,
                 backgroundSize: "104%",
@@ -70,6 +70,7 @@ export default function MoreDetailsPage() {
                     fontSize="5rem"
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     textAlign="center"
+                    pb={2}
                 >
                     just a few more details...
                 </Typography>
@@ -99,7 +100,8 @@ export default function MoreDetailsPage() {
                         style={{
                             backgroundColor: previousClean === "yes"
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: previousClean === "yes" ? `scale(1.05)` : ""
                         }}
                     >
                         Yes
@@ -109,7 +111,8 @@ export default function MoreDetailsPage() {
                         style={{
                             backgroundColor: previousClean === "no"
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: previousClean === "no" ? `scale(1.05)` : ""
                         }}
                         defaultChecked={previousClean === "no"}
                         onClick={() => setPreviousClean("no")}
@@ -119,7 +122,8 @@ export default function MoreDetailsPage() {
                 </Stack>
             </Stack>
             <Stack
-                paddingY={5}
+                pb={5}
+                pt={10}
                 maxWidth={1300}
                 margin="0 auto"
                 justifyContent="center"
@@ -156,7 +160,8 @@ export default function MoreDetailsPage() {
                         style={{
                             backgroundColor: latestClean === "yes"
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: latestClean === "yes" ? `scale(1.05)` : ""
                         }}
                     >
                         Yes
@@ -168,7 +173,8 @@ export default function MoreDetailsPage() {
                         style={{
                             backgroundColor: latestClean === "no"
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: latestClean === "no" ? `scale(1.05)` : ""
                         }}
                     >
                         NO
