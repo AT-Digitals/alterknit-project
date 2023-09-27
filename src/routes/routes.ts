@@ -10,7 +10,7 @@ const BLOG_PAGE = "/blog";
 const BLOG_PAGE_CONTENT = "/blog-content";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const PRIVACY = "/privacy-policy";
-
+const PARTNER = "/partner-page";
 const FIXME = "/fixme";
 const OUR_STORY = "/our-story";
 const SERVICES = "/services";
@@ -47,6 +47,7 @@ const routes = {
   SHIP_IN_FIELDS,
   REPAIR_PAGE,
   DARN_IT,
+  PARTNER,
 };
 
 export default routes;

@@ -1,5 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import image1 from "../assets/bg_care.png";
 
 const getPersonalDetails = {
   firstname: "",
@@ -179,23 +180,27 @@ export default function FormFile() {
   };
 
   return (
-    <Box sx={{
+    <Box width={"100%"} height={"900px"} sx={{
       backgroundColor: "#f8f1eb",
     }} display={"flex"} justifyContent={"center"}>
+      <img width={"100%"} src={image1} alt="image" />
       <form style={{
-        backgroundColor: "antiquewhite",
-        borderRadius: "30px",
+        borderRadius: "50px",
+        border: "5px solid #df7c6d",
+        backgroundColor: "#f8f1eb",
         marginTop: "30px",
         marginBottom: "30px",
+        position: "absolute",
       }} onSubmit={handleSubmit}>
-        <Box>
+        <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
             borderBottom={"1px solid black"}
             textAlign={"center"}
-            fontWeight={"bold"}
-            fontSize={"32px"}
+            fontWeight={"500"}
+            fontSize={"3rem"}
             color={"black"}
+            fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           >
             Contact us
           </Typography>
@@ -380,7 +385,7 @@ export default function FormFile() {
                 boxShadow: `0px 2px 5px black`,
                 padding: "7px 60px",
                 background: "black",
-                marginBottom: "0px",
+                marginBottom: "30px",
                 ":hover": {
                   background: "black",
                 },
