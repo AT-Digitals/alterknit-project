@@ -23,6 +23,8 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import PartnerPage from "../pages/PartnerPage";
+
 
 export default function AppRouter() {
   return (
@@ -46,6 +48,7 @@ export default function AppRouter() {
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.SHIP_IN_FIELDS} element={<ShipinFields />} />
           <Route path={routes.DARN_IT} element={<DoorToDoor />} />
+          <Route path={routes.PARTNER} element={<PartnerPage />} />
 
           <Route
             path={routes.BLOG_PAGE_CONTENT}
