@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
+import { useEffect } from "react";
+
 const InstagramBoxNavigation = [
   {
     Image:
@@ -24,6 +26,9 @@ const InstagramBoxNavigation = [
 ];
 
 export default function OurStory() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section
