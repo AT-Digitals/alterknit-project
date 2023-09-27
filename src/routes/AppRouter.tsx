@@ -4,6 +4,7 @@ import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
 import BlogPageReadingContent from "../pages/Blog/BlogPageReading";
 import CarePage from "../pages/Care/CarePage";
+import CheckOut from "../pages/Sehedule Repair/ProcessToCheckOut/CheckOut";
 import ContactPage from "../pages/ContactPage";
 import DoorToDoor from "../pages/Sehedule Repair/door-to-door/DoorToDoor";
 import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
@@ -13,6 +14,7 @@ import MoreDetailsPage from "../pages/Sehedule Repair/ship-in/MoreDetailsPage";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import RepairPage from "../pages/Sehedule Repair/ship-in/RepairPage";
 import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import ServicePage from "../pages/Services/ServicePage";
 import ShipInPage from "../pages/Sehedule Repair/ship-in/ShipInPage";
@@ -21,7 +23,8 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
-import RepairPage from "../pages/Sehedule Repair/ship-in/RepairPage";
+import PartnerPage from "../pages/PartnerPage";
+
 
 export default function AppRouter() {
   return (
@@ -45,6 +48,7 @@ export default function AppRouter() {
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
           <Route path={routes.SHIP_IN_FIELDS} element={<ShipinFields />} />
           <Route path={routes.DARN_IT} element={<DoorToDoor />} />
+          <Route path={routes.PARTNER} element={<PartnerPage />} />
 
           <Route
             path={routes.BLOG_PAGE_CONTENT}
@@ -53,6 +57,7 @@ export default function AppRouter() {
           <Route path={routes.SHIPIN} element={<ShipInPage />} />
           <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} />
           <Route path={routes.REPAIR_PAGE} element={<RepairPage />} />
+          <Route path={routes.CHECK_OUT} element={<CheckOut />} />
         </Route>
       </Routes>
     </Router>
