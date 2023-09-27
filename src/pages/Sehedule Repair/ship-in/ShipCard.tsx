@@ -5,9 +5,9 @@ import CustomButton from "../../../CommonComponent/CustomButton";
 import { Link } from "react-router-dom";
 
 const StyledButtom = styled(CustomButton)({
-    fontSize: "20px",
+    fontSize: "22px",
     borderRadius: "8px",
-    padding: "10px 20px",
+    padding: "13px 20px",
     textTransform: "none",
     boxShadow: "none",
     width: "30px",
@@ -23,9 +23,9 @@ interface linkprops {
 }
 export default function ShipCard({ onClick, link }: linkprops) {
     return (
-        <Stack direction="row" spacing={10} margin="0 auto" alignItems="center" justifyContent="center" paddingY={8}>
+        <Stack direction="row" spacing={10} margin="0 auto" alignItems="center" justifyContent="center" paddingY={2}>
             <Link to={link}>
-                <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} sx={{ paddingTop: "15px", paddingBottom: "15px" }}>
+                <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} >
                     Back
                 </StyledButtom>
             </Link>

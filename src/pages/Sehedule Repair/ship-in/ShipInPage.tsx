@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const StyleButtonNew = styled(Button)({
+
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
     fontWeight: 400,
@@ -21,6 +22,15 @@ const StyleButtonNew = styled(Button)({
         backgroundColor: Colors.LINK,
     },
 });
+
+// const selectStyle = {
+//     backgoundColor: Colors.LINK,
+//     transform: `scale(1.05)`,
+// }
+
+// const unSelectStyle = {
+//     backgoundColor: Colors.LINK,
+// }
 
 export default function ShipInPage() {
     const navigate = useNavigate();
@@ -42,7 +52,17 @@ export default function ShipInPage() {
         }
     };
 
-    const handleNextButtonClick = () => {
+    const handleNextButtonClick = async (e: any) => {
+        e.preventDefault();
+
+        let result = await fetch(
+            'http://localhost:3001/service-item', {
+            method: "post",
+            body: JSON.stringify([selectedButtons]),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
         if (selectedButtons.length > 0) {
             routeChange();
         } else {
@@ -90,7 +110,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("reweaving for knits")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("reweaving for knits") ? `scale(1.05)` : ""
                         }}
                     >
                         reknitting for knits
@@ -102,7 +123,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("reweaving for suits")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("reweaving for suits") ? `scale(1.05)` : ""
                         }}
                     >
                         reweaving for suits
@@ -114,7 +136,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("knit alteration")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("knit alteration") ? `scale(1.05)` : ""
                         }}
                     >
                         knit alteration
@@ -126,7 +149,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("other fabric repair")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("other fabric repair") ? `scale(1.05)` : ""
                         }}
                     >
                         other fabric repair
@@ -137,7 +161,9 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("cleaning")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("cleaning") ? `scale(1.05)` : ""
+
                         }} >cleaning</StyleButtonNew>
                 </Grid>
                 <Grid item xs={3}>
@@ -146,7 +172,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("restyling")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("restyling") ? `scale(1.05)` : ""
                         }} >
                         restyling
                     </StyleButtonNew>
@@ -156,7 +183,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("de-pilling")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("de-pilling") ? `scale(1.05)` : ""
                         }}>
                         de-pilling
                     </StyleButtonNew>
@@ -166,7 +194,8 @@ export default function ShipInPage() {
                         style={{
                             backgroundColor: selectedButtons.includes("custom knit work")
                                 ? Colors.LINK
-                                : Colors.HOME_BACKGROUND,
+                                : "",
+                            transform: selectedButtons.includes("custom knit work") ? `scale(1.05)` : ""
                         }} >
                         custom knit work
                     </StyleButtonNew>
@@ -176,3 +205,5 @@ export default function ShipInPage() {
         </Stack>
     );
 }
+
+
