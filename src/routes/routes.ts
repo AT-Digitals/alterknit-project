@@ -22,6 +22,7 @@ const MORE_DETAILS = "/more";
 const SHIP_IN_FIELDS = "/ship-in-fields";
 const REPAIR_PAGE = "/repair";
 const DARN_IT = "/darn-it";
+const CHECK_OUT = "/check-out";
 
 const routes = {
   ROOT,
@@ -47,6 +48,7 @@ const routes = {
   SHIP_IN_FIELDS,
   REPAIR_PAGE,
   DARN_IT,
+  CHECK_OUT,
 };
 
 export default routes;
