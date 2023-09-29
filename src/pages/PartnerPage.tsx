@@ -5,8 +5,207 @@ import image2 from "../assets/bg-bottom.svg";
 import image3 from "../assets/logo-3d.png";
 import image4 from "../assets/banner.jpg";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+
+const getPersonalDetails = {
+    firstname: "",
+    company: "",
+    email: "",
+    phone: "",
+  };
 
 export default function PartnerPage() {
+
+    const [personalDetails, setPersonalDetails] = useState(getPersonalDetails);
+    const [firstnameError, setFirstNameError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [phoneError, setPhoneError] = useState("");
+    const [companyError, setCompanyError] = useState("");
+
+    const residentDetails = {
+        personalDetails: personalDetails,
+      };
+
+
+      const FirstNameValidation = (name: string) => {
+        if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
+          setFirstNameError("");
+          return true;
+        } else {
+          setFirstNameError("Only allowed characters and space");
+          return false;
+        }
+      };
+    
+      const EmailValidation = (name: string) => {
+        if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(name)) {
+          setEmailError("");
+          return true;
+        } else {
+          setEmailError("Please include an '@' in the email");
+          return false;
+        }
+      };
+    
+      const PhoneValidation = (name: string) => {
+        if (/^\d{10}$/.test(name)) {
+          setPhoneError("");
+          return true;
+        } else {
+          setPhoneError("Phone number must have 10 digits");
+          return false;
+        }
+      };
+
+      const CompanyValidation = (name: string) => {
+        if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
+            setCompanyError("");
+          return true;
+        } else {
+            setCompanyError("Only allowed characters and space");
+          return false;
+        }
+      };
+    
+      useEffect(() => {
+        if (personalDetails.phone) {
+          PhoneValidation(personalDetails.phone);
+        }
+        setPersonalDetails((personalDetails) => ({
+          ...personalDetails,
+          personalDetails: personalDetails.phone,
+        }));
+      }, [personalDetails.phone]);
+    
+      useEffect(() => {
+        if (personalDetails.email) {
+          EmailValidation(personalDetails.email);
+        }
+        setPersonalDetails((personalDetails) => ({
+          ...personalDetails,
+          personalDetails: personalDetails.email,
+        }));
+      }, [personalDetails.email]);
+    
+      useEffect(() => {
+        if (personalDetails.firstname) {
+          FirstNameValidation(personalDetails.firstname);
+        }
+    
+        setPersonalDetails((personalDetails) => ({
+          ...personalDetails,
+          personalDetails: personalDetails.firstname,
+        }));
+      }, [personalDetails.firstname]);
+
+      useEffect(() => {
+        if (personalDetails.company) {
+            CompanyValidation(personalDetails.company);
+        }
+    
+        setPersonalDetails((personalDetails) => ({
+          ...personalDetails,
+          personalDetails: personalDetails.company,
+        }));
+      }, [personalDetails.company]);
+    
+      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setPersonalDetails({ ...personalDetails, [name]: value });
+      };
+
+
+      const handleSubmit = async (e: any) => {
+        e.preventDefault();
+    
+        try {
+          const response = await fetch('/submit-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(personalDetails)
+          });
+    
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+    
+        let result = await fetch(
+          'http://localhost:3001/items', {
+          method: "post",
+          body: JSON.stringify({ name: personalDetails.firstname, email: personalDetails.email, phone: personalDetails.phone, company: personalDetails.company }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        // setPersonalDetails({ firstname: "", email: "", phone: "", company: '' })
+        result = await result.json();
+        console.warn(result);
+        if (result) {
+          setPersonalDetails(getPersonalDetails)
+        }
+    
+        // Initialize error variables
+        let firstNameError = "";
+        let lastNameError = "";
+        let emailError = "";
+        let phoneError = "";
+        let companyError = "";
+    
+        // Validate and set errors
+        if (!personalDetails.firstname) {
+          firstNameError = "Name is required";
+        } else if (!FirstNameValidation(personalDetails.firstname)) {
+          firstNameError = "Invalid firstname format";
+        }
+    
+        if (!personalDetails.email) {
+          emailError = "Email is required";
+        } else if (!EmailValidation(personalDetails.email)) {
+          emailError = "Invalid email format";
+        }
+    
+        if (!personalDetails.phone) {
+          phoneError = "Phone number is required";
+        } else if (!PhoneValidation(personalDetails.phone)) {
+          phoneError = "Invalid phone number format";
+        }
+
+        if (!personalDetails.company) {
+            companyError = "Invalid company format";
+          } else if (!CompanyValidation(personalDetails.company)) {
+            companyError = "Invalid company format";
+          }
+    
+    
+        // Set the error state variables
+        setFirstNameError(firstNameError);
+        setEmailError(emailError);
+        setPhoneError(phoneError);
+        setCompanyError(companyError);
+        // Check if all errors are empty (i.e., inputs are valid)
+        if (
+          !firstNameError &&
+          !companyError &&
+          !emailError &&
+          !phoneError 
+          
+        ) {
+          const data = {
+            firstname: residentDetails.personalDetails.firstname,
+            email: residentDetails.personalDetails.email,
+            phone: residentDetails.personalDetails.phone,
+            company: residentDetails.personalDetails.company,
+          };
+    
+          console.log(data);
+        }
+      };
+
     return (
         <Box sx={{
             backgroundColor: "#f8f1eb",
@@ -36,9 +235,7 @@ export default function PartnerPage() {
                     position: "relative",
                     zIndex: "3",
                 }} width={"100%"} maxWidth={"1140px"}>
-                    <Typography marginTop={"-26px"} marginLeft={"225px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>WHAT WE CAN DO<Typography fontSize={"3rem"} style={{
-                        fontFamily: "Jaceline",
-                    }}>for you!</Typography></Typography>
+                    <Typography  marginTop={"-26px"} marginLeft={"225px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>WHAT WE CAN DO<Typography fontFamily={`'Fuggles', cursive`} fontSize={"3rem"}>for you!</Typography></Typography>
                 </Box>
                 <Box sx={{
                     position: "relative",
@@ -173,7 +370,7 @@ export default function PartnerPage() {
                     <Typography textAlign={"center"} color={"black"} fontWeight={"600"} fontSize={"6rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BECOME A PARTNER</Typography>
                     <Typography fontFamily={`"Proxima Nova", sans-serif`} lineHeight={"1.5"} color={"black"} fontWeight={"200"} maxWidth={"590px"} textAlign={"center"} fontSize={"23px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
                 </Box>
-                <form style={{
+                <form onSubmit={handleSubmit} style={{
                     marginTop: "50px",
                 }}>
                     <Stack display={"flex"} justifyContent={"center"} spacing={12} marginBottom={"40px"} direction={"row"}>
@@ -184,11 +381,19 @@ export default function PartnerPage() {
                                     width: "600px",
                                     padding: "6px 0px",
                                 },
+                                ".css-1vf0mvf-MuiFormHelperText-root": {
+                                    color: "#d32f2f",
+                                  },
                             }}
                                 required
                                 id="standard-required"
-                                defaultValue="First & LastName"
+                                placeholder="First & LastName"
                                 variant="standard"
+                                error={personalDetails.firstname ? !!firstnameError : false}
+                                helperText={firstnameError}
+                                name="firstname"
+                                value={personalDetails.firstname}
+                                onChange={handleInputChange}
                             />
                         </Box>
                         <Box>
@@ -197,12 +402,20 @@ export default function PartnerPage() {
                                     fontSize: "1.6rem",
                                     width: "600px",
                                     padding: "6px 0px",
-                                }
+                                },
+                                ".css-1vf0mvf-MuiFormHelperText-root": {
+                                    color: "#d32f2f",
+                                  },
                             }}
                                 required
                                 id="standard-required"
-                                defaultValue="Company"
+                                placeholder="Company"
                                 variant="standard"
+                                error={personalDetails.company ? !!companyError : false}
+                                helperText={companyError}
+                                value={personalDetails.company}
+                                onChange={handleInputChange}
+                                name="company"
                             />
                         </Box>
                     </Stack>
@@ -214,11 +427,19 @@ export default function PartnerPage() {
                                     width: "600px",
                                     padding: "6px 0px",
                                 },
+                                ".css-1vf0mvf-MuiFormHelperText-root": {
+                                    color: "#d32f2f",
+                                  },
                             }}
                                 required
                                 id="standard-required"
-                                defaultValue="E-mail Address"
+                                placeholder="E-mail Address"
                                 variant="standard"
+                                error={personalDetails.email ? !!emailError : false}
+                                helperText={emailError}
+                                name="email"
+                                value={personalDetails.email}
+                                onChange={handleInputChange}
                             />
                         </Box>
                         <Box>
@@ -227,12 +448,21 @@ export default function PartnerPage() {
                                     fontSize: "1.6rem",
                                     width: "600px",
                                     padding: "6px 0px",
-                                }
+                                },
+                                ".css-1vf0mvf-MuiFormHelperText-root": {
+                                    color: "#d32f2f",
+                                  },
                             }}
                                 required
                                 id="standard-required"
-                                defaultValue="Phone Number"
+                                placeholder="Phone Number"
                                 variant="standard"
+                                type="number"
+                                error={personalDetails.phone ? !!phoneError : false}
+                                helperText={phoneError}
+                                name="phone"
+                                value={personalDetails.phone}
+                                onChange={handleInputChange}
                             />
                         </Box>
                     </Stack>
@@ -246,7 +476,7 @@ export default function PartnerPage() {
                             fontSize: "19px",
                             width: "100%",
                             maxWidth: "640px",
-                        }}>Submit</Button>
+                        }} type="submit">Submit</Button>
                     </Box>
                     <Typography paddingTop={"15px"} paddingBottom={"100px"} textAlign={"center"} color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
                         textDecoration: "none",

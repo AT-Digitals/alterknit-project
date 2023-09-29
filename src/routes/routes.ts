@@ -23,6 +23,7 @@ const SHIP_IN_FIELDS = "/ship-in-fields";
 const REPAIR_PAGE = "/repair";
 const DARN_IT = "/darn-it";
 const CHECK_OUT = "/check-out";
+const LAST_STEP = "/last-step";
 
 const routes = {
   ROOT,
@@ -50,6 +51,7 @@ const routes = {
   DARN_IT,
   PARTNER,
   CHECK_OUT,
+  LAST_STEP,
 };
 
 export default routes;

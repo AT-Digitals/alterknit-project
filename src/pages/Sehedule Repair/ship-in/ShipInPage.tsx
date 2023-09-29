@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const StyleButtonNew = styled(Button)({
-
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
     fontWeight: 400,
@@ -22,15 +21,6 @@ const StyleButtonNew = styled(Button)({
         backgroundColor: Colors.LINK,
     },
 });
-
-// const selectStyle = {
-//     backgoundColor: Colors.LINK,
-//     transform: `scale(1.05)`,
-// }
-
-// const unSelectStyle = {
-//     backgoundColor: Colors.LINK,
-// }
 
 export default function ShipInPage() {
     const navigate = useNavigate();
@@ -116,7 +106,9 @@ export default function ShipInPage() {
                             backgroundColor: selectedButtons.includes("reweaving for knits")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("reweaving for knits") ? `scale(1.05)` : ""
+                            transform: selectedButtons.includes("reweaving for knits")
+                                ? `scale(1.05)`
+                                : "",
                         }}
                     >
                         reknitting for knits
@@ -129,7 +121,9 @@ export default function ShipInPage() {
                             backgroundColor: selectedButtons.includes("reweaving for suits")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("reweaving for suits") ? `scale(1.05)` : ""
+                            transform: selectedButtons.includes("reweaving for suits")
+                                ? `scale(1.05)`
+                                : "",
                         }}
                     >
                         reweaving for suits
@@ -142,7 +136,9 @@ export default function ShipInPage() {
                             backgroundColor: selectedButtons.includes("knit alteration")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("knit alteration") ? `scale(1.05)` : ""
+                            transform: selectedButtons.includes("knit alteration")
+                                ? `scale(1.05)`
+                                : "",
                         }}
                     >
                         knit alteration
@@ -155,21 +151,28 @@ export default function ShipInPage() {
                             backgroundColor: selectedButtons.includes("other fabric repair")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("other fabric repair") ? `scale(1.05)` : ""
+                            transform: selectedButtons.includes("other fabric repair")
+                                ? `scale(1.05)`
+                                : "",
                         }}
                     >
                         other fabric repair
                     </StyleButtonNew>
                 </Grid>
                 <Grid item xs={3}>
-                    <StyleButtonNew onClick={() => handleButtonClick("cleaning")}
+                    <StyleButtonNew
+                        onClick={() => handleButtonClick("cleaning")}
                         style={{
                             backgroundColor: selectedButtons.includes("cleaning")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("cleaning") ? `scale(1.05)` : ""
-
-                        }} >cleaning</StyleButtonNew>
+                            transform: selectedButtons.includes("cleaning")
+                                ? `scale(1.05)`
+                                : "",
+                        }}
+                    >
+                        cleaning
+                    </StyleButtonNew>
                 </Grid>
                 <Grid item xs={3}>
                     <StyleButtonNew
@@ -178,30 +181,41 @@ export default function ShipInPage() {
                             backgroundColor: selectedButtons.includes("restyling")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("restyling") ? `scale(1.05)` : ""
-                        }} >
+                            transform: selectedButtons.includes("restyling")
+                                ? `scale(1.05)`
+                                : "",
+                        }}
+                    >
                         restyling
                     </StyleButtonNew>
                 </Grid>
                 <Grid item xs={3}>
-                    <StyleButtonNew onClick={() => handleButtonClick("de-pilling")}
+                    <StyleButtonNew
+                        onClick={() => handleButtonClick("de-pilling")}
                         style={{
                             backgroundColor: selectedButtons.includes("de-pilling")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("de-pilling") ? `scale(1.05)` : ""
-                        }}>
+                            transform: selectedButtons.includes("de-pilling")
+                                ? `scale(1.05)`
+                                : "",
+                        }}
+                    >
                         de-pilling
                     </StyleButtonNew>
                 </Grid>
                 <Grid item xs={3}>
-                    <StyleButtonNew onClick={() => handleButtonClick("custom knit work")}
+                    <StyleButtonNew
+                        onClick={() => handleButtonClick("custom knit work")}
                         style={{
                             backgroundColor: selectedButtons.includes("custom knit work")
                                 ? Colors.LINK
                                 : "",
-                            transform: selectedButtons.includes("custom knit work") ? `scale(1.05)` : ""
-                        }} >
+                            transform: selectedButtons.includes("custom knit work")
+                                ? `scale(1.05)`
+                                : "",
+                        }}
+                    >
                         custom knit work
                     </StyleButtonNew>
                 </Grid>
@@ -210,5 +224,3 @@ export default function ShipInPage() {
         </Stack>
     );
 }
-
-

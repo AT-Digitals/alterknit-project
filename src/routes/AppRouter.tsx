@@ -10,8 +10,10 @@ import DoorToDoor from "../pages/Sehedule Repair/door-to-door/DoorToDoor";
 import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
 import FixmePage from "../pages/Sehedule Repair/FixmePage";
 import HomePage from "../pages/Home/HomePage";
+import LastStep from "../pages/Sehedule Repair/ship-in/Last step/LastStep";
 import MoreDetailsPage from "../pages/Sehedule Repair/ship-in/MoreDetailsPage";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
+import PartnerPage from "../pages/PartnerPage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import RepairPage from "../pages/Sehedule Repair/ship-in/RepairPage";
@@ -23,8 +25,6 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
-import PartnerPage from "../pages/PartnerPage";
-
 
 export default function AppRouter() {
   return (
@@ -58,6 +58,7 @@ export default function AppRouter() {
           <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} />
           <Route path={routes.REPAIR_PAGE} element={<RepairPage />} />
           <Route path={routes.CHECK_OUT} element={<CheckOut />} />
+          <Route path={routes.LAST_STEP} element={<LastStep />} />
         </Route>
       </Routes>
     </Router>
