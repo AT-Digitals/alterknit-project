@@ -13,6 +13,7 @@ import { ChangeEvent, useState } from "react";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "../ship-in/ShipCard";
 import routes from "../../../routes/routes";
+import { useNavigate } from "react-router-dom";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -160,6 +161,10 @@ export default function CheckOut() {
       ...prevData,
       [name as string]: value,
     }));
+  };
+  const navigate = useNavigate();
+  const handleNextClick = () => {
+    navigate(routes.LAST_STEP);
   };
 
   return (
@@ -376,7 +381,7 @@ export default function CheckOut() {
             NO
           </StyleButtonNew>
         </Stack>
-        <ShipCard link={routes.REPAIR_PAGE} />
+        <ShipCard link={routes.REPAIR_PAGE} onClick={handleNextClick} />
 
         <img
           style={{ maxWidth: "1220px", margin: "4rem 0" }}
