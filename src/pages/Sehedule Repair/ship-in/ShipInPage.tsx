@@ -55,10 +55,15 @@ export default function ShipInPage() {
     const handleNextButtonClick = async (e: any) => {
         e.preventDefault();
 
+        const selectedList = {
+            value: selectedButtons,
+        }
+        console.log("sfsg", selectedList);
+
         let result = await fetch(
             'http://localhost:3001/service-item', {
             method: "post",
-            body: JSON.stringify([selectedButtons]),
+            body: JSON.stringify({ services: selectedButtons }),
             headers: {
                 'Content-Type': 'application/json'
             }

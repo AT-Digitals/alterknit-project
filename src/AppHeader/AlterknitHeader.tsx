@@ -134,7 +134,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <ServiceItem to={service.url} className="service-item">
+                <ServiceItem to={service.url} key={index} className="service-item">
                   <Typography fontSize="21px" key={index}>
                     {service.linkname}
                   </Typography>

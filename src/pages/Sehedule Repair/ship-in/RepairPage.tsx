@@ -6,6 +6,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
 import sweater from "../../../assets/sweater_guy.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -20,7 +22,28 @@ const StyledButtom = styled(CustomButton)({
   },
 });
 
+interface Data {
+  color: string;
+  visibleHoles: string;
+  brand: string;
+  howLong: string;
+  brief: string;
+}
+
 export default function RepairPage() {
+
+  const [data, setData] = useState<Data[]>([]);
+
+  console.log("gfhgfj", data);
+
+  useEffect(() => {
+    // Make a GET request to your API
+    fetch('http://localhost:3001/service-details')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   return (
     <Stack
       paddingY={6}
@@ -185,41 +208,43 @@ export default function RepairPage() {
             ></Typography>
           </Grid>
         </Grid>
-        <Grid container columnGap={3} flexWrap="nowrap" mb={3}>
-          <Grid item xs={2}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              hfghgj
-            </Typography>
+        {data.map((serviceItem, index) => (
+          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
+            <Grid item xs={2} >
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                hfghgj
+              </Typography>
+            </Grid>
+            <Grid item xs={1}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceItem.brand}
+              </Typography>
+            </Grid>
+            <Grid item xs={1}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceItem.color}
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceItem.howLong}
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceItem.visibleHoles}
+              </Typography>
+            </Grid>
+            <Grid item xs={2.5}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceItem.brief}
+              </Typography>
+            </Grid>
+            <Grid item xs={0.5} textAlign="end">
+              <DeleteIcon />
+            </Grid>
           </Grid>
-          <Grid item xs={1}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              hgjhgj
-            </Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              jhgjgj
-            </Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              jhg
-            </Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              jhgjg
-            </Typography>
-          </Grid>
-          <Grid item xs={2.5}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              ghfhfh
-            </Typography>
-          </Grid>
-          <Grid item xs={0.5} textAlign="end">
-            <DeleteIcon />
-          </Grid>
-        </Grid>
+        ))}
       </Stack>
       <Stack
         direction="row"

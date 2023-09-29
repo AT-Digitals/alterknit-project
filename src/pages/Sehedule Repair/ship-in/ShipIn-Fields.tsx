@@ -49,7 +49,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     navigate(path);
   };
 
-  const handleNextButtonClick = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formData.color) {
@@ -67,9 +67,24 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     } else {
       routeChange();
     }
+
+    let result = await fetch(
+      'http://localhost:3001/service-details', {
+      method: "post",
+      body: JSON.stringify({
+        color: formData.color,
+        visibleHoles: formData.howMany,
+        brand: formData.brand,
+        howLong: formData.HowLong,
+        brief: formData.brief,
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     const data = {
       color: formData.color,
-      howMany: formData.howMany,
+      HowMany: formData.howMany,
       brand: formData.brand,
       HowLong: formData.HowLong,
       brief: formData.brief,
