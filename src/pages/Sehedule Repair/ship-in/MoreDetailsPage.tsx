@@ -33,8 +33,26 @@ export default function MoreDetailsPage() {
         navigate(path);
     };
 
-    const handleNextButtonClick = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        let result = await fetch(
+            'http://localhost:3001/more-details', {
+            method: "post",
+            body: JSON.stringify({
+                previous: previousClean,
+                latest: latestClean,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const values = {
+            previous: previousClean,
+            recent: latestClean,
+        }
+        console.log("data", values);
 
         if (!previousClean) {
             alert(

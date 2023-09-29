@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const User = require("../models/Item");
 const Service = require("../models/Service");
+const ServiceDetails = require("../models/ServiceItem");
+const MoreDetails = require("../models/MoreDetails");
 
 const dotenv = require("dotenv");
+const ServiceItem = require("../models/Service");
 dotenv.config();
 
 const app = express();
@@ -34,6 +37,49 @@ app.post("/items", async (req, resp) => {
       console.log(result);
     } else {
       console.log("Contact details already saved");
+    }
+  } catch (e) {
+    resp.send("Something Went Wrong");
+  }
+});
+
+app.get("/service-details", async (req, res) => {
+  try {
+    const data = await ServiceDetails.find();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.post("/service-details", async (req, resp) => {
+  try {
+    const user = new ServiceDetails(req.body);
+    let result = await user.save();
+    result = result.toObject();
+    if (result) {
+      delete result.password;
+      resp.send(req.body);
+      console.log(result);
+    } else {
+      console.log("service details saved successfully");
+    }
+  } catch (e) {
+    resp.send("Something Went Wrong");
+  }
+});
+
+app.post("/more-details", async (req, resp) => {
+  try {
+    const user = new MoreDetails(req.body);
+    let result = await user.save();
+    result = result.toObject();
+    if (result) {
+      delete result.password;
+      resp.send(req.body);
+      console.log(result);
+    } else {
+      console.log("service details saved successfully");
     }
   } catch (e) {
     resp.send("Something Went Wrong");
