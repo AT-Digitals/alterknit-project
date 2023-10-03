@@ -164,7 +164,7 @@ export default function PorfolioHeader() {
                     />
                 </Box>
             </Box>
-            <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"}>
+            <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"} marginTop={"-79px"}>
                 <Box
                     width={"100%"}
                     maxWidth={"1440px"}

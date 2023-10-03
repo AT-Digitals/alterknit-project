@@ -370,7 +370,7 @@ export default function PartnerPage() {
             </section>
             <section>
                 <Box padding={"2rem 0"}>
-                    <Typography textAlign={"center"} color={"black"} fontWeight={"600"} fontSize={"6rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BECOME A PARTNER</Typography>
+                    <Typography textAlign={"center"} color={"black"} fontWeight={"600"} fontSize={"6rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
                     <Typography fontFamily={`"Proxima Nova", sans-serif`} lineHeight={"1.5"} color={"black"} fontWeight={"500"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
                 </Box>
                 <form onSubmit={handleSubmit} style={{
