@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 import { useEffect } from "react";
+import Colors from "../../CommonComponent/Colors";
 
 const InstagramBoxNavigation = [
   {
@@ -50,20 +51,21 @@ export default function OurStory() {
           padding={"0 10rem"}
         >
           <Box
-            bgcolor={"white"}
+            bgcolor={Colors.HOME_BACKGROUND}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"2rem 15rem "}
+            padding={"2rem 10rem "}
           >
             <Typography
-              lineHeight={"4rem"}
+              lineHeight={1}
               textAlign={"center"}
               margin={"0 auto"}
-              fontSize={"70px"}
+              fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
+              padding={3}
             >
               we built this company on the promise of providing the best quality
               repair available.

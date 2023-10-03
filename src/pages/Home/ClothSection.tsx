@@ -23,7 +23,7 @@ export default function ClothSection() {
                     <Typography fontSize="80px" lineHeight={1} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={500} >
                         don't settle for inferior solutions!
                     </Typography>
-                    <Typography fontSize="1.3rem" lineHeight={1.5} marginY={3}>
+                    <Typography fontSize="1.3rem" lineHeight={1.5} mt={3} mb={4} maxWidth={420}>
                         Alterknit is the home of invisible repair. We don't patch and we
                         don't darn. We are the ultimate repair service and take care of
                         your clothing as if they are our own.
