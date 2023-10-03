@@ -45,13 +45,14 @@ export default function LastStep() {
           bgcolor={"#f8f1ec"}
           display={"flex"}
           flexDirection={"column"}
-          padding={"6rem 0 2rem 0"}
+          padding={"4rem 0 2rem 0"}
         >
           <Box margin={"0 auto"} textAlign={"center"} maxWidth={900}>
             <Typography
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
+              textTransform="lowercase"
             >
               ONE LAST STEP...
             </Typography>
@@ -63,7 +64,7 @@ export default function LastStep() {
         ></img>
       </Box>
 
-      <Box>
+      <Box marginTop="6rem">
         <Box
           sx={{
             backgroundImage: `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_last_step.svg')`,
@@ -76,7 +77,7 @@ export default function LastStep() {
             display={"flex"}
             flexDirection={"column"}
             alignItems={"center"}
-            gap={"40rem"}
+            gap={"30rem"}
             maxWidth={780}
             width={"100%"}
             margin={"0 auto"}
@@ -237,6 +238,7 @@ export default function LastStep() {
                   textTransform: "lowercase",
                   fontSize: "44px",
                   lineHeight: "4.5rem",
+                  fontWeight: 500,
                   flex: 1,
                   textDecoration: "underline",
                 }}
@@ -276,6 +278,7 @@ export default function LastStep() {
                   textTransform: "lowercase",
                   fontSize: "44px",
                   lineHeight: "4.5rem",
+                  fontWeight: 500,
                   flex: 1,
                   textDecoration: "underline",
                 }}

@@ -17,6 +17,8 @@ export default function BeforeText({ label }: BeforeTextProps) {
         fontFamily: "IndustrialGothicBannerStd",
         lineHeight: "4.5rem",
         transformOrigin: "left",
+        fontWeight: 500,
+        textTransform: "lowercase"
       }}
     >
       {label}

@@ -16,12 +16,11 @@ export default function BlogPage() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <AppContainer>
-      <Stack justifyContent={"flex-start"}>
-        <Box p={2} mt={10} mb={5}>
+      <Stack justifyContent={"flex-start"} paddingY={6}>
+        <Box p={2} mb={3}>
           <Typography
-            fontFamily={'Proxima Nova",sans-serif'}
             fontSize={"40px"}
-            variant="h4"
+            fontWeight={400}
           >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>

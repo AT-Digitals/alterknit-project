@@ -158,7 +158,6 @@ export default function MoreDetailsPage() {
                         fontSize="3rem"
                         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                         textAlign="center"
-                        lineHeight={1}
                         textTransform={"lowercase"}
                     >
                         9. has this garment been recently cleaned?

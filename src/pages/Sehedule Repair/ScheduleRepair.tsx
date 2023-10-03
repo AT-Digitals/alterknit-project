@@ -82,7 +82,7 @@ export default function ScheduleReapir() {
         bgcolor={"#df7c6d"}
         color={"black"}
         textAlign={"center"}
-        padding={"6rem 4rem 5rem 1rem"}
+        padding={"4rem 4rem 5rem 1rem"}
         position={"relative"}
       >
         <Typography variant="h3" fontSize="60px" fontWeight={500} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>
