@@ -12,18 +12,18 @@ import {
 } from "@mui/material";
 
 import AppContainer from "../../component/AppContainer";
+import Colors from "../../CommonComponent/Colors";
 import { Link } from "react-router-dom";
 import routes from "../../routes/routes";
-import Colors from "../../CommonComponent/Colors";
 
 const StyleCard = styled(Card)({
   maxWidth: 590,
   borderRadius: "50px",
   height: "100%",
   ":hover": {
-    border: `5px solid ${Colors.LINK}`
-  }
-})
+    border: `5px solid ${Colors.LINK}`,
+  },
+});
 
 export default function FixmePage() {
   const theme = useTheme();
@@ -31,7 +31,12 @@ export default function FixmePage() {
   return (
     <Box marginY={10}>
       <Stack mb={5} spacing={5} alignItems={"center"}>
-        <Typography fontWeight={400} fontSize="5.5rem" variant={isSmScreen ? "h4" : "h3"} fontFamily={"IndustrialGothicBannerStd, sans-serif"}>
+        <Typography
+          fontWeight={500}
+          fontSize="5.5rem"
+          variant={isSmScreen ? "h4" : "h3"}
+          fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+        >
           WHICH OPTION WORKS BEST FOR YOU?{" "}
         </Typography>
         <AppContainer>
@@ -53,7 +58,7 @@ export default function FixmePage() {
                       alignItems={"center"}
                     >
                       <Typography
-                        fontWeight="bold"
+                        fontWeight={500}
                         variant={isSmScreen ? "h4" : "h3"}
                         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                         fontSize="3rem"
@@ -81,10 +86,10 @@ export default function FixmePage() {
                         variant="body2"
                         style={{ textAlign: "center", maxWidth: 350 }}
                       >
-                        Available from all 50 states. You will receive a pre-paid
-                        shipping label via email and an order summary to print out
-                        and include with your item(s). If you are international,
-                        please contact us.
+                        Available from all 50 states. You will receive a
+                        pre-paid shipping label via email and an order summary
+                        to print out and include with your item(s). If you are
+                        international, please contact us.
                       </Typography>
                     </CardContent>
                   </StyleCard>
@@ -101,7 +106,7 @@ export default function FixmePage() {
                       alignItems={"center"}
                     >
                       <Typography
-                        fontWeight="bold"
+                        fontWeight={500}
                         variant={isSmScreen ? "h4" : "h3"}
                         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                         fontSize="3rem"
@@ -129,8 +134,8 @@ export default function FixmePage() {
                         variant="body2"
                         style={{ textAlign: "center", maxWidth: 300 }}
                       >
-                        Same day pick up service is available in <b>SELECT</b> zip
-                        codes within the 5 boroughs of NYC from{" "}
+                        Same day pick up service is available in <b>SELECT</b>{" "}
+                        zip codes within the 5 boroughs of NYC from{" "}
                         <b>24HR RESIDENTIAL</b> doorman buildings.
                       </Typography>
                     </CardContent>

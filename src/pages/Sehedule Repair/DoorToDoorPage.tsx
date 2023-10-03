@@ -45,7 +45,7 @@ export default function DoorToDoorPage() {
         >
           <Typography
             textTransform="capitalize"
-            fontWeight="bold"
+            fontWeight={500}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize="5rem"
             color={Colors.LINK}
@@ -95,7 +95,7 @@ export default function DoorToDoorPage() {
             <img src={Hello} alt="hello" width={200} height={90} />
             <Typography
               textTransform="capitalize"
-              fontWeight="bold"
+              fontWeight={500}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize="6rem"
             >
@@ -105,7 +105,7 @@ export default function DoorToDoorPage() {
           <Typography
             width={500}
             textTransform="capitalize"
-            fontWeight={400}
+            fontWeight={500}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize="2.5rem"
             lineHeight={1}

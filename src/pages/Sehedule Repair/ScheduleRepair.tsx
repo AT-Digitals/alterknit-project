@@ -47,7 +47,7 @@ export default function ScheduleReapir() {
         <Typography
           // minWidth={700}
           variant="h2"
-          fontWeight={"bold"}
+          fontWeight={500}
           sx={{
             fontFamily: "IndustrialGothicBannerStd, sans-serif",
             fontSize: "10em",
@@ -84,7 +84,12 @@ export default function ScheduleReapir() {
         padding={"6rem 4rem 5rem 1rem"}
         position={"relative"}
       >
-        <Typography variant="h3" fontSize="4rem" fontWeight={400} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>
+        <Typography
+          variant="h3"
+          fontSize="4rem"
+          fontWeight={400}
+          fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+        >
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
@@ -120,7 +125,7 @@ export default function ScheduleReapir() {
                   color: isHovered ? "white" : "black",
                   textTransform: "none",
                   fontSize: "18px",
-                  paddingBottom: "16px"
+                  paddingBottom: "16px",
                 }}
               >
                 Click here to start
