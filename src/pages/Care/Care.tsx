@@ -93,6 +93,7 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               CARE THROUGH REPAIR
             </Typography>
@@ -143,6 +144,7 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               WHERE WE STAND
             </Typography>
@@ -354,6 +356,7 @@ export default function CarePage() {
             fontSize={"80px"}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
+            textTransform={"lowercase"}
           >
             HEY,DID YOU KNOW...
           </Typography>

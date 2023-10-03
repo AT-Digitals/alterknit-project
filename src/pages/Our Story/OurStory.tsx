@@ -48,16 +48,16 @@ export default function OurStory() {
       >
         <Box
           width={"100%"}
-          maxWidth={"900px"}
+          maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={isXsScreen ? "0 1rem" : "0 2rem"}
+          padding={isXsScreen ? "0 1rem" : "0 10rem"}
         >
           <Box
-            bgcolor={"white"}
+            bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={isXsScreen ? "1rem" : "2rem 1rem"}
+            padding={"6rem 15rem"}
             textAlign="center"
           >
             <Typography
@@ -87,6 +87,7 @@ export default function OurStory() {
               position={"relative"}
               zIndex={1}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               WE STAND BY THAT COMMITMENT 100%
             </Typography>
@@ -133,6 +134,7 @@ export default function OurStory() {
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               ABOUT OUR SERVICES
             </Typography>
