@@ -181,7 +181,8 @@ export default function CheckOut() {
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
-              fontWeight={400}
+              fontWeight={500}
+              textTransform={"lowercase"}
             >
               ALMOST DONE...
             </Typography>
@@ -219,6 +220,8 @@ export default function CheckOut() {
               padding={"2rem"}
               borderRadius={"30px"}
               fontSize={"42px"}
+              fontWeight={500}
+              textTransform={"lowercase"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             >
               SHIPING INFORMATION
@@ -229,6 +232,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 FIRST NAME
               </Typography>
@@ -242,6 +247,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 LAST NAME
               </Typography>
@@ -255,6 +262,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 STREET ADDRESS
               </Typography>
@@ -274,6 +283,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 CITY
               </Typography>
@@ -289,6 +300,8 @@ export default function CheckOut() {
                 <Typography
                   fontSize={"45px"}
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   STATE
                 </Typography>
@@ -314,6 +327,8 @@ export default function CheckOut() {
                 <Typography
                   fontSize={"45px"}
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   ZIP CODE
                 </Typography>
@@ -329,6 +344,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 PHONE NUMBER
               </Typography>
@@ -342,6 +359,8 @@ export default function CheckOut() {
               <Typography
                 fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
               >
                 E-MAIL ADDRESS
               </Typography>
@@ -354,10 +373,12 @@ export default function CheckOut() {
           </Box>
         </Box>
       </Box>
-      <Box mt={5} textAlign={"center"} mb={"10rem"}>
+      <Box mt={5} textAlign={"center"}>
         <Typography
           fontSize={"42px"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+          fontWeight={500}
+          textTransform={"lowercase"}
         >
           IS YOUR BILLIN ADDRESS THE SAME AS YOUR SHIPPING ADDRESS?
         </Typography>

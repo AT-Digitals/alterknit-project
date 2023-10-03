@@ -77,12 +77,10 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
         <Stack
           pt={isSmallScreen ? 3 : 4.5}
           pb={4}
-          ml={5}
           direction={isSmallScreen ? "column" : "row"}
           justifyContent="space-between"
           alignItems="center"
           spacing={isSmallScreen ? 2 : 5}
-          maxWidth={1400}
         >
           <Box>
             <Link to={""}>
@@ -132,7 +130,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
             <Stack
               whiteSpace="nowrap"
               alignItems="center"
-              spacing={isSmallScreen ? 2 : 6}
+              spacing={isSmallScreen ? 2 : 4}
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
