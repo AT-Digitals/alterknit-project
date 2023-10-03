@@ -7,7 +7,8 @@ const SIGN_UP = "/sign-up";
 const CONTACT_US = "/contact-us";
 const TERM = "/terms-and-conditions";
 const BLOG_PAGE = "/blog";
-const BLOG_PAGE_CONTENT = "/blog-content";
+const BLOG_PAGE_CONTENT =
+  "/threads-of-change-how-clothes-mending-impacts-sustainability/";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const PRIVACY = "/privacy-policy";
 const PARTNER = "/partner-page";

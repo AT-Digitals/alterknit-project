@@ -28,7 +28,7 @@ export default function BlackBoxSection() {
                     lineHeight={1.5}
                     marginY={3}
                     color={Colors.WHITE}
-                    maxWidth="400px"
+                    maxWidth="450px"
                     marginRight={6}
                 >
                     Parting with your darlings is painful, but they are in good hands.

@@ -8,7 +8,7 @@ export default function DoorToDoor() {
       margin={"0 auto"}
       padding={"0 10rem"}
       pt={"2rem"}
-      pb={"2rem"}
+      pb={"6rem"}
     >
       <DarnIt />
     </Box>

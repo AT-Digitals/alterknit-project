@@ -1,6 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import { useEffect } from "react";
+import Colors from "../../CommonComponent/Colors";
 
 const InstagramBoxNavigation = [
   {
@@ -66,6 +67,7 @@ export default function OurStory() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
+              padding={3}
             >
               We built this company on the promise of providing the best quality
               repair available.
