@@ -17,16 +17,16 @@ export default function CustomSection() {
                 <Typography
                     fontSize="80px"
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                    fontWeight={400}
-                    textTransform="uppercase"
+                    fontWeight={500}
+                    textTransform="lowercase"
                 >
                     We reap what we sew
                 </Typography>
                 <Typography
                     fontSize="80px"
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                    fontWeight={400}
-                    textTransform="uppercase"
+                    fontWeight={500}
+
                 >
                     custom jobs for all
                 </Typography>

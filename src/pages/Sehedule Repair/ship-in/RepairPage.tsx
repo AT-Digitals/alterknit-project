@@ -58,10 +58,11 @@ export default function RepairPage() {
         <img src={sweater} alt="" width={250} height={250} />
         <Box>
           <Typography
-            fontWeight={400}
+            fontWeight={500}
             fontSize="5rem"
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textAlign="center"
+            textTransform={"lowercase"}
           >
             repair cart review
           </Typography>
@@ -92,7 +93,7 @@ export default function RepairPage() {
           marginBottom: "3rem",
         }}
       >
-        <Grid container columnGap={3}>
+        <Grid container columnGap={3} pb={2}>
           <Grid item xs={2}>
             {" "}
             <Typography
@@ -256,7 +257,7 @@ export default function RepairPage() {
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.LINK}
-            sx={{ paddingTop: "15px", paddingBottom: "15px" }}
+
           >
             Back
           </StyledButtom>
@@ -265,7 +266,7 @@ export default function RepairPage() {
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ paddingTop: "15px", paddingBottom: "15px", width: "270px" }}
+            sx={{ width: "270px" }}
           >
             Add Another Item
           </StyledButtom>
@@ -274,7 +275,7 @@ export default function RepairPage() {
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ paddingTop: "15px", paddingBottom: "15px", width: "270px" }}
+            sx={{ width: "270px", fontWeight: "bold" }}
           >
             Proceed to Checkout
           </StyledButtom>

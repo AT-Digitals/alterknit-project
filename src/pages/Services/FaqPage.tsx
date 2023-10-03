@@ -5,7 +5,6 @@ import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import Top from "../../assets/services_faqs_bg_top.svg";
 import Bottom from "../../assets/services_faqs_bg_bottom.svg";
 
-
 const StyledBox = styled(Box)`
   cursor: pointer; /* Add cursor pointer to indicate clickability */
   &:hover {
@@ -18,7 +17,6 @@ const StyledBox = styled(Box)`
     }
   }
 `;
-
 
 const Notes = [
   {
@@ -36,13 +34,11 @@ const Notes = [
 const Notes1 = [
   {
     title: "Can You Get Stains Out?",
-    paragraph:
-      "Yes we can.",
+    paragraph: "Yes we can.",
   },
   {
     title: "I Have A Torn Neckline — Can You Reattach It?",
-    paragraph:
-      "Yes, this is a very common repair.",
+    paragraph: "Yes, this is a very common repair.",
   },
 ];
 
@@ -54,16 +50,14 @@ const Notes2 = [
   },
   {
     title: "What Brands Do You Repair?",
-    paragraph:
-      "If you love it we fix it! All brands are welcome.",
+    paragraph: "If you love it we fix it! All brands are welcome.",
   },
 ];
 
 const Notes3 = [
   {
     title: "Can You Get Stains Out?",
-    paragraph:
-      "Yes we can.",
+    paragraph: "Yes we can.",
   },
   {
     title: "Can I Get A Repair Estimate Before I Submit My Order?",
@@ -96,7 +90,6 @@ const Notes5 = [
       "If after receiving your quote you decline service we return your items to you. You are responsible for all applicable delivery fees.",
   },
 ];
-
 
 export default function FaqPage() {
   const [openNoteIndex, setOpenNoteIndex] = useState(null);
@@ -162,278 +155,333 @@ export default function FaqPage() {
     <>
       <img src={Top} alt="top-file" />
       <Box bgcolor={"#f8f1eb"}>
-      <Typography textAlign={"center"} color={"black"} fontWeight={"500"} fontSize={"5rem"}  fontFamily={"IndustrialGothicBannerStd, sans-serif"}>
-              FAQ'S
-            </Typography>
-          <Box margin={"0 auto"} padding={"0 10rem"}>
-            <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
-              {Notes.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+        <Typography
+          textAlign={"center"}
+          color={"black"}
+          fontWeight={"500"}
+          fontSize={"5rem"}
+          fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+          textTransform={"lowercase"}
+        >
+          FAQ'S
+        </Typography>
+        <Box margin={"0 auto"} padding={"0 10rem"}>
+          <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
+            {Notes.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                       fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"2rem"}
-                      color={"black"}
-                      fontWeight={"500"}
-                      textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }} />}
-                  </StyledBox>
-                  {openNoteIndex === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-              {Notes1.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+                </StyledBox>
+                {openNoteIndex === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
+            {Notes1.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick1(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick1(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                      fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"2rem"}
-                      color={"black"}
-                      fontWeight={"500"}
-                      textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }}  />}
-                  </StyledBox>
-                  {openNote1Index === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-              {Notes2.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+                </StyledBox>
+                {openNote1Index === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
+            {Notes2.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick2(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick2(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                       fontFamily={`"Proxima Nova", sans-serif`}
-                       fontSize={"2rem"}
-                       color={"black"}
-                       fontWeight={"500"}
-                       textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }}  />}
-                  </StyledBox>
-                  {openNote2Index === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-              {Notes3.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+                </StyledBox>
+                {openNote2Index === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
+            {Notes3.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick3(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick3(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                      fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"2rem"}
-                      color={"black"}
-                      fontWeight={"500"}
-                      textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }}  />}
-                  </StyledBox>
-                  {openNote3Index === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-              {Notes4.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+                </StyledBox>
+                {openNote3Index === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
+            {Notes4.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick4(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick4(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                      fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"2rem"}
-                      color={"black"}
-                      fontWeight={"500"}
-                      textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }}  />}
-                  </StyledBox>
-                  {openNote4Index === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-              {Notes5.map((notes, index) => (
-                <Box
-                  bgcolor={"#f8f1ec"}
-                  borderRadius={"24px"}
-                  p={" 1rem 0rem"}
+                </StyledBox>
+                {openNote4Index === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
+            {Notes5.map((notes, index) => (
+              <Box
+                bgcolor={"#f8f1ec"}
+                borderRadius={"24px"}
+                p={" 1rem 0rem"}
+                alignItems={"center"}
+                key={index}
+              >
+                <StyledBox
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  onClick={() => handleAddIconClick5(index)}
                   alignItems={"center"}
-                  key={index}
+                  borderBottom={"2px solid black"}
+                  paddingBottom={"25px"}
                 >
-                  <StyledBox
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    onClick={() => handleAddIconClick5(index)}
-                    alignItems={"center"}
-                    borderBottom={"2px solid black"}
-                    paddingBottom={"25px"}
-                  >
-                    <Typography
-                     fontFamily={`"Proxima Nova", sans-serif`}
-                     fontSize={"2rem"}
-                     color={"black"}
-                     fontWeight={"500"}
-                     textTransform={"capitalize"}
-                    >
-                      {notes.title}
-                    </Typography>
-                    {openNoteIndex === index ? <RemoveCircleIcon style={{
-                       fontSize: "42px",
-                    }}  /> : <AddCircleIcon style={{
-                       fontSize: "42px",
-                    }}  />}
-                  </StyledBox>
-                  {openNote5Index === index && (
-                    <Typography
+                  <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                      fontSize={"21px"}
-                      color={"#575656"}
-                      paddingTop={"15px"}
-                      paddingRight={"8rem"}
-                    >
-                      {notes.paragraph}
-                    </Typography>
+                    fontSize={"2rem"}
+                    color={"black"}
+                    fontWeight={"500"}
+                    textTransform={"capitalize"}
+                  >
+                    {notes.title}
+                  </Typography>
+                  {openNoteIndex === index ? (
+                    <RemoveCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
+                  ) : (
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "42px",
+                      }}
+                    />
                   )}
-                </Box>
-              ))}
-            </Box>
+                </StyledBox>
+                {openNote5Index === index && (
+                  <Typography
+                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontSize={"21px"}
+                    color={"#575656"}
+                    paddingTop={"15px"}
+                    paddingRight={"8rem"}
+                  >
+                    {notes.paragraph}
+                  </Typography>
+                )}
+              </Box>
+            ))}
           </Box>
         </Box>
+      </Box>
       <img src={Bottom} alt="bottom file" />
     </>
   );

@@ -31,7 +31,7 @@ export default function FixmePage() {
   return (
     <Box marginY={10}>
       <Stack mb={5} spacing={5} alignItems={"center"}>
-        <Typography fontWeight={400} fontSize="5.5rem" variant={isSmScreen ? "h4" : "h3"} fontFamily={"IndustrialGothicBannerStd, sans-serif"}>
+        <Typography fontWeight={500} fontSize="80px" textTransform={"lowercase"} variant={isSmScreen ? "h4" : "h3"} fontFamily={"IndustrialGothicBannerStd, sans-serif"}>
           WHICH OPTION WORKS BEST FOR YOU?{" "}
         </Typography>
         <AppContainer>
@@ -41,7 +41,7 @@ export default function FixmePage() {
             direction={"row"}
             spacing={4}
           >
-            <Grid container spacing={3}>
+            <Grid container spacing={3} justifyContent="center" alignItems="center">
               <Grid pt={0} item xs={12} sm={6}>
                 <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}>
                   <StyleCard>
@@ -53,15 +53,16 @@ export default function FixmePage() {
                       alignItems={"center"}
                     >
                       <Typography
-                        fontWeight="bold"
+                        fontWeight="500"
                         variant={isSmScreen ? "h4" : "h3"}
                         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                         fontSize="3rem"
+                        textTransform={"lowercase"}
                       >
                         SHIP IN
                       </Typography>
                       <CardMedia
-                        sx={{ width: 80 }}
+                        sx={{ width: 70 }}
                         component="img"
                         src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_package.png"
                         alt="package"
@@ -101,15 +102,16 @@ export default function FixmePage() {
                       alignItems={"center"}
                     >
                       <Typography
-                        fontWeight="bold"
+                        fontWeight="500"
                         variant={isSmScreen ? "h4" : "h3"}
                         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                         fontSize="3rem"
+                        textTransform={"lowercase"}
                       >
                         DOOR TO DOOR{" "}
                       </Typography>
                       <CardMedia
-                        sx={{ width: 80 }}
+                        sx={{ width: 70 }}
                         component="img"
                         src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
                         alt="package"

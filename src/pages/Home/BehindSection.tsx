@@ -3,7 +3,7 @@ import { Stack, Typography, Grid, CardMedia } from "@mui/material";
 export default function BehindSection() {
     return (
         <Stack maxWidth={1300} margin="0 auto" paddingY={13}>
-            <Typography marginBottom={8} fontSize="80px" fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase" textAlign="center">behind the scenes</Typography>
+            <Typography marginBottom={8} fontSize="80px" fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={500} textAlign="center">behind the scenes</Typography>
             <Grid container spacing={5}>
                 <Grid item xs={3}>
                     <CardMedia

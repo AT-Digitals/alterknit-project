@@ -113,9 +113,10 @@ export default function HelpPage() {
       <Typography
         textAlign={"center"}
         color={"black"}
-        fontWeight={"500"}
-        fontSize={"5rem"}
+        fontWeight={500}
+        fontSize={"80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+        textTransform={"lowercase"}
       >
         HOW WE CAN HELP
       </Typography>
@@ -139,10 +140,10 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3.5rem"}
+                  fontSize={"3rem"}
                   color={"black"}
                   fontWeight={"500"}
-                  textTransform={"capitalize"}
+                  textTransform={"lowercase"}
                 >
                   {notes.title}
                 </Typography>
@@ -191,10 +192,10 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3.5rem"}
+                  fontSize={"3rem"}
                   color={"black"}
                   fontWeight={"500"}
-                  textTransform={"capitalize"}
+                  textTransform={"lowercase"}
                 >
                   {notes.title}
                 </Typography>
@@ -243,10 +244,10 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3.5rem"}
+                  fontSize={"3rem"}
                   color={"black"}
                   fontWeight={"500"}
-                  textTransform={"capitalize"}
+                  textTransform={"lowercase"}
                 >
                   {notes.title}
                 </Typography>
@@ -295,10 +296,10 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3.5rem"}
+                  fontSize={"3rem"}
                   color={"black"}
                   fontWeight={"500"}
-                  textTransform={"capitalize"}
+                  textTransform={"lowercase"}
                 >
                   {notes.title}
                 </Typography>

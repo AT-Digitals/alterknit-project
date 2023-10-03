@@ -21,8 +21,10 @@ export default function ServiceHeader() {
                     }}
                     position={"absolute"}
                     color={"black"}
-                    fontSize={"5rem"}
+                    fontSize={"80px"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
                 >
                     HAPPINESS 100% GUARANTEED
                 </Typography>

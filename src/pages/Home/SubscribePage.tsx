@@ -34,8 +34,9 @@ export default function SubscribePage() {
           textAlign={"center"}
           fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           color={"black"}
-          fontSize={"50px"}
-          fontWeight={400}
+          fontSize={"48px"}
+          fontWeight={500}
+          textTransform="lowercase"
         >
           EXTEND THE LIFE OF THE <br />  CLOTHES YOU LOVE
         </Typography>
@@ -43,7 +44,7 @@ export default function SubscribePage() {
           <Link to={routes.SCHEDULE_REPAIR}>
             <StyledButton
               sx={{
-                fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`,
+                fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`, fontWeight: 500, textTransform: "lowercase",
               }}
             >
               Schedule a repair
@@ -59,11 +60,12 @@ export default function SubscribePage() {
             <Typography
               marginTop={"100px"}
               color={"black"}
-              fontWeight={400}
-              fontSize={"34px"}
+              fontWeight={500}
+              fontSize={"32px"}
               textAlign={"center"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               lineHeight={1}
+              textTransform="lowercase"
             >
               JOIN OUR MAILING LIST & GET 10% OF YOUR FIRST REPAIRED ORDER <br />  WITH US*
               <Box display={"flex"} justifyContent={"center"} mt={1}>
