@@ -130,7 +130,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
             <Stack
               whiteSpace="nowrap"
               alignItems="center"
-              spacing={isSmallScreen ? 2 : 4}
+              spacing={isSmallScreen ? 2 : 6}
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
@@ -139,7 +139,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   key={index}
                   className="service-item"
                 >
-                  <Typography fontSize="21px" key={index}>
+                  <Typography fontSize="22px" key={index}>
                     {service.linkname}
                   </Typography>
                 </ServiceItem>
@@ -158,7 +158,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   borderRadius: "5px",
                   fontSize: "20px",
                   fontWeight: 600,
-                  padding: "15px 20px",
+                  padding: "16px 30px",
                   textTransform: "none",
                   whiteSpace: "nowrap",
                 }}
@@ -173,7 +173,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   borderRadius: "5px",
                   fontSize: "20px",
                   fontWeight: 600,
-                  padding: "15px 20px",
+                  padding: "16px 30px",
                   textTransform: "none",
                 }}
               >
