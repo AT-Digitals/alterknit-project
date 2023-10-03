@@ -150,13 +150,13 @@ export default function HelpPage() {
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 )}
@@ -202,13 +202,13 @@ export default function HelpPage() {
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 )}
@@ -254,13 +254,13 @@ export default function HelpPage() {
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 )}
@@ -306,13 +306,13 @@ export default function HelpPage() {
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "42px",
+                      fontSize: "62px",
                     }}
                   />
                 )}

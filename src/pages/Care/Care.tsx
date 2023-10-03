@@ -93,6 +93,7 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               CARE THROUGH REPAIR
             </Typography>
@@ -143,6 +144,7 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               WHERE WE STAND
             </Typography>
@@ -277,6 +279,8 @@ export default function CarePage() {
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                   fontSize={"48px"}
                   color={"#df7c6d"}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   WHEN BAD THINGS HAPPEN TO GOOD SWEATERS
                 </Typography>
@@ -313,6 +317,8 @@ export default function CarePage() {
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                       fontSize={"48px"}
                       color={"black"}
+                      fontWeight={500}
+                      textTransform={"lowercase"}
                     >
                       {notes.title}
                     </Typography>
@@ -354,6 +360,7 @@ export default function CarePage() {
             fontSize={"80px"}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
+            textTransform={"lowercase"}
           >
             HEY,DID YOU KNOW...
           </Typography>
@@ -404,6 +411,7 @@ export default function CarePage() {
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
+              textTransform={"lowercase"}
               sx={{
                 "@media (max-width: 768px)": {
                   fontSize: "36px",

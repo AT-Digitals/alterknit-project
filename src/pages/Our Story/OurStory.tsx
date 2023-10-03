@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import { useEffect } from "react";
 import Colors from "../../CommonComponent/Colors";
@@ -30,6 +30,9 @@ export default function OurStory() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isLgScreen = useMediaQuery("(min-width:961px)");
   return (
     <>
       <section
@@ -39,7 +42,7 @@ export default function OurStory() {
           alignItems: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          padding: "15rem 0",
+          padding: isXsScreen ? "5rem 0" : "15rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
@@ -48,26 +51,25 @@ export default function OurStory() {
           width={"100%"}
           maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={"0 10rem"}
+          padding={isXsScreen ? "0 1rem" : "0 10rem"}
         >
           <Box
-            bgcolor={Colors.HOME_BACKGROUND}
+            bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"2rem 10rem "}
+            padding={"6rem 15rem"}
+            textAlign="center"
           >
             <Typography
-              lineHeight={1}
-              textAlign={"center"}
-              margin={"0 auto"}
-              fontSize={"80px"}
+              lineHeight={isLgScreen ? "4rem" : "2rem"}
+              fontSize={isLgScreen ? "70px" : "40px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
               padding={3}
             >
-              we built this company on the promise of providing the best quality
+              We built this company on the promise of providing the best quality
               repair available.
             </Typography>
           </Box>
@@ -87,6 +89,7 @@ export default function OurStory() {
               position={"relative"}
               zIndex={1}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               WE STAND BY THAT COMMITMENT 100%
             </Typography>
@@ -133,6 +136,7 @@ export default function OurStory() {
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
+              textTransform={"lowercase"}
             >
               ABOUT OUR SERVICES
             </Typography>

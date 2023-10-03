@@ -185,9 +185,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -195,13 +195,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
@@ -237,9 +237,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -247,13 +247,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
@@ -289,9 +289,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -299,13 +299,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
@@ -341,9 +341,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -351,13 +351,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
@@ -393,9 +393,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -403,13 +403,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
@@ -445,9 +445,9 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"2rem"}
+                    fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontWeight={"600"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -455,13 +455,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "42px",
+                        fontSize: "62px",
                       }}
                     />
                   )}
