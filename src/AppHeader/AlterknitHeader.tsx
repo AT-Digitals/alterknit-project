@@ -73,116 +73,118 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
       top={0}
       zIndex={100}
     >
-      <Stack
-        pt={isSmallScreen ? 3 : 4.5}
-        pb={4}
-        ml={5}
-        direction={isSmallScreen ? "column" : "row"}
-        justifyContent="space-between"
-        alignItems="center"
-        spacing={isSmallScreen ? 2 : 5}
-        maxWidth={1400}
-      >
-        <Box>
-          <Link to={""}>
-            <img
-              width={isSmallScreen ? 120 : 170}
-              src={Alterknit}
-              alt="alterknit"
-            />
-          </Link>
-        </Box>
-        {isSmallScreen ? (
+      <AppContainer>
+        <Stack
+          pt={isSmallScreen ? 3 : 4.5}
+          pb={4}
+          ml={5}
+          direction={isSmallScreen ? "column" : "row"}
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={isSmallScreen ? 2 : 5}
+          maxWidth={1400}
+        >
           <Box>
-            <IconButton
-              aria-controls="mobile-menu"
-              aria-haspopup="true"
-              onClick={handleMenuOpen}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="mobile-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              style={{
-                top: "60px",
-              }}
+            <Link to={""}>
+              <img
+                width={isSmallScreen ? 120 : 170}
+                src={Alterknit}
+                alt="alterknit"
+              />
+            </Link>
+          </Box>
+          {isSmallScreen ? (
+            <Box>
+              <IconButton
+                aria-controls="mobile-menu"
+                aria-haspopup="true"
+                onClick={handleMenuOpen}
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="mobile-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+                style={{
+                  top: "60px",
+                }}
+              >
+                {services.map((service, index) => (
+                  <MenuItem key={index} onClick={handleMenuClose}>
+                    <ServiceItem to={service.url} className="service-item">
+                      <Typography variant="subtitle1" key={index}>
+                        {service.linkname}
+                      </Typography>
+                    </ServiceItem>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          ) : (
+            <Stack
+              whiteSpace="nowrap"
+              alignItems="center"
+              spacing={isSmallScreen ? 2 : 6}
+              direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <MenuItem key={index} onClick={handleMenuClose}>
-                  <ServiceItem to={service.url} className="service-item">
-                    <Typography variant="subtitle1" key={index}>
-                      {service.linkname}
-                    </Typography>
-                  </ServiceItem>
-                </MenuItem>
+                <ServiceItem
+                  to={service.url}
+                  key={index}
+                  className="service-item"
+                >
+                  <Typography fontSize="21px" key={index}>
+                    {service.linkname}
+                  </Typography>
+                </ServiceItem>
               ))}
-            </Menu>
-          </Box>
-        ) : (
+            </Stack>
+          )}
           <Stack
-            whiteSpace="nowrap"
-            alignItems="center"
-            spacing={isSmallScreen ? 2 : 4}
             direction={isSmallScreen ? "column" : "row"}
+            spacing={3}
+            alignItems="center"
           >
-            {services.map((service, index) => (
-              <ServiceItem
-                to={service.url}
-                key={index}
-                className="service-item"
+            <Link to={routes.SCHEDULE_REPAIR}>
+              <CustomButton
+                bgColor={Colors.BLACK}
+                sx={{
+                  borderRadius: "5px",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  padding: "15px 20px",
+                  textTransform: "none",
+                  whiteSpace: "nowrap",
+                }}
               >
-                <Typography fontSize="21px" key={index}>
-                  {service.linkname}
-                </Typography>
-              </ServiceItem>
-            ))}
+                Schedule your repair
+              </CustomButton>
+            </Link>
+            <Link to={routes.SIGN_IN}>
+              <CustomButton
+                bgColor={Colors.BLACK}
+                sx={{
+                  borderRadius: "5px",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  padding: "15px 20px",
+                  textTransform: "none",
+                }}
+              >
+                Logout
+              </CustomButton>
+            </Link>
           </Stack>
-        )}
-        <Stack
-          direction={isSmallScreen ? "column" : "row"}
-          spacing={3}
-          alignItems="center"
-        >
-          <Link to={routes.SCHEDULE_REPAIR}>
-            <CustomButton
-              bgColor={Colors.BLACK}
-              sx={{
-                borderRadius: "5px",
-                fontSize: "20px",
-                fontWeight: 600,
-                padding: "15px 20px",
-                textTransform: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Schedule your repair
-            </CustomButton>
-          </Link>
-          <Link to={routes.SIGN_IN}>
-            <CustomButton
-              bgColor={Colors.BLACK}
-              sx={{
-                borderRadius: "5px",
-                fontSize: "20px",
-                fontWeight: 600,
-                padding: "15px 20px",
-                textTransform: "none",
-              }}
-            >
-              Logout
-            </CustomButton>
-          </Link>
         </Stack>
-      </Stack>
+      </AppContainer>
     </Box>
   );
 }
