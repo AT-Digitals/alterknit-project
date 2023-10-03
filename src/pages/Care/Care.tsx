@@ -280,6 +280,7 @@ export default function CarePage() {
                   fontSize={"48px"}
                   color={"#df7c6d"}
                   fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   WHEN BAD THINGS HAPPEN TO GOOD SWEATERS
                 </Typography>
@@ -317,6 +318,7 @@ export default function CarePage() {
                       fontSize={"48px"}
                       color={"black"}
                       fontWeight={500}
+                      textTransform={"lowercase"}
                     >
                       {notes.title}
                     </Typography>
