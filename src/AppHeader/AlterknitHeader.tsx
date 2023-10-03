@@ -134,7 +134,11 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <ServiceItem to={service.url} key={index} className="service-item">
+                <ServiceItem
+                  to={service.url}
+                  key={index}
+                  className="service-item"
+                >
                   <Typography fontSize="21px" key={index}>
                     {service.linkname}
                   </Typography>
@@ -142,7 +146,11 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               ))}
             </Stack>
           )}
-          <Stack direction="row" spacing={3} alignItems="center">
+          <Stack
+            direction={isSmallScreen ? "column" : "row"}
+            spacing={3}
+            alignItems="center"
+          >
             <Link to={routes.SCHEDULE_REPAIR}>
               <CustomButton
                 bgColor={Colors.BLACK}
@@ -152,6 +160,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   fontWeight: 600,
                   padding: "15px 20px",
                   textTransform: "none",
+                  whiteSpace: "nowrap",
                 }}
               >
                 Schedule your repair
