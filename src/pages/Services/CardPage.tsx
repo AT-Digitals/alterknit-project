@@ -16,7 +16,7 @@ export default function CardPage() {
             >
                 <Card
                     style={{
-                        width: 1190,
+                        width: 1140,
                         marginBottom: "60px",
                         border: "1px solid white",
                         borderRadius: "20px",
@@ -24,10 +24,10 @@ export default function CardPage() {
                 >
                     <CardContent>
                         <Box
-                            marginTop={"13px"}
+                            margin={"13px 43px"}
                             display={"flex"}
                             alignItems={"center"}
-                            justifyContent={"space-around"}
+                            justifyContent={"space-between"}
                         >
                             <Typography
                                 marginTop={"45px"}
@@ -64,6 +64,7 @@ export default function CardPage() {
                                 fontWeight={"500"}
                                 fontSize={"21px"}
                                 fontFamily={`"Proxima Nova", sans-serif`}
+                                marginRight={"37px"}
                             >
                                 We need to examine your entire item in our work studio because
                                 we have been doing this for a very long time and what might
@@ -104,7 +105,7 @@ export default function CardPage() {
             >
                 <Card
                     style={{
-                        width: 1190,
+                        width: 1140,
                         border: "1px solid white",
                         borderRadius: "20px",
                         marginBottom: "60px",
@@ -112,10 +113,10 @@ export default function CardPage() {
                 >
                     <CardContent>
                         <Box
-                            marginTop={"30px"}
+                            margin={"30px 43px"}
                             display={"flex"}
                             alignItems={"center"}
-                            justifyContent={"space-evenly"}
+                            justifyContent={"space-between"}
                         >
                             <Typography
                                 lineHeight={"0.5"}
@@ -153,6 +154,7 @@ export default function CardPage() {
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"21px"}
+                                marginRight={"37px"}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -174,7 +176,7 @@ export default function CardPage() {
             >
                 <Card
                     style={{
-                        width: 1190,
+                        width: 1140,
                         border: "1px solid white",
                         borderRadius: "20px",
                         marginBottom: "20px",
@@ -182,10 +184,10 @@ export default function CardPage() {
                 >
                     <CardContent>
                         <Box
-                            marginTop={"30px"}
+                            margin={"30px 43px"}
                             display={"flex"}
                             alignItems={"center"}
-                            justifyContent={"space-evenly"}
+                            justifyContent={"space-between"}
                         >
                             <Typography
                                 marginTop={"20px"}
@@ -223,6 +225,7 @@ export default function CardPage() {
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"21px"}
+                                marginRight={"37px"}
                             >
                                 We are working on a 4-6 week turnaround time. However, if you
                                 have an upcoming event, vacation, or you can't live without it,
@@ -243,7 +246,7 @@ export default function CardPage() {
                         fontWeight: 400,
                         textTransform: "uppercase",
                         position: "absolute",
-                        marginLeft: "140px",
+                        marginLeft: "165px",
                     }}
                 />
                 <Box
@@ -255,7 +258,7 @@ export default function CardPage() {
                 >
                     <Card
                         style={{
-                            width: 1190,
+                            width: 1140,
                             border: "1px solid white",
                             borderRadius: "20px",
                             marginBottom: "150px",
@@ -263,7 +266,7 @@ export default function CardPage() {
                         }}
                     >
                         <CardContent>
-                            <Box margin={"35px 30px"}>
+                            <Box margin={"37px 30px"}>
                                 <Typography
                                     lineHeight={"0.5"}
                                     color={"black"}

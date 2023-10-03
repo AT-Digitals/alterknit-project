@@ -34,7 +34,7 @@ export default function BoxCreation() {
           <Box margin={"30px 60px"}>
             <Card
               sx={{
-                width: "530px",
+                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
                 borderRadius: "35px",
@@ -89,7 +89,7 @@ export default function BoxCreation() {
           <Box margin={"30px 0px"}>
             <Card
               sx={{
-                width: "530px",
+                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
                 borderRadius: "35px",
@@ -146,7 +146,7 @@ export default function BoxCreation() {
           <Box margin={"30px 60px"}>
             <Card
               sx={{
-                width: "530px",
+                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
                 borderRadius: "35px",
@@ -201,7 +201,7 @@ export default function BoxCreation() {
           <Box margin={"30px 0px"}>
             <Card
               sx={{
-                width: "530px",
+                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
                 borderRadius: "35px",
