@@ -1,4 +1,4 @@
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
@@ -21,6 +21,14 @@ const StyleLink = styled(Link)({
     color: Colors.WHITE,
   },
 });
+const StyleLink1 = styled(Link)({
+  color: "#787878",
+
+  textUnderlineOffset: "5px",
+  "&:hover": {
+    color: Colors.WHITE,
+  },
+});
 
 export default function AppFooter({ activeTab }: footerProps) {
   const theme = useTheme();
@@ -34,6 +42,7 @@ export default function AppFooter({ activeTab }: footerProps) {
     { name: "Blog", url: routes.BLOG_PAGE },
     { name: "Schedule Repair", url: routes.SCHEDULE_REPAIR },
     { name: "Partners", url: routes.PARTNER },
+    { name: "Contact us", url: routes.CONTACT_US },
   ];
 
   return (
@@ -100,104 +109,73 @@ export default function AppFooter({ activeTab }: footerProps) {
                       listStyleType: "none",
                     }}
                   >
-                    <a
-                      style={{
-                        fontFamily: "Proxima Nova, sans-serif",
-                        color: "#787878",
-                        textDecoration: "none",
-                      }}
-                      href="mailto:orders@alterknitnewyork.com"
-                    >
+                    <StyleLink to="mailto:orders@alterknitnewyork.com">
                       {" "}
                       orders@alterknitnewyork.com
-                    </a>
+                    </StyleLink>
                   </li>
                   <li
                     style={{
                       listStyleType: "none",
                     }}
                   >
-                    <a
-                      style={{
-                        fontFamily: "Proxima Nova, sans-serif",
-                        color: "#787878",
-                        textDecoration: "none",
-                      }}
-                      href="tel:+12124736363"
-                    >
-                      {" "}
-                      212 473 6363
-                    </a>
+                    <StyleLink to="tel:+12124736363"> 212 473 6363</StyleLink>
                   </li>
                 </ul>
               </Stack>
             </Stack>
           </Stack>
         </Box>
-        <Box padding={"4rem 0 3rem 0"} color={"#787878"}>
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            width={"100%"}
-            maxWidth={1440}
-            justifyContent={"space-around"}
-            flexWrap={"wrap"}
-            margin={"0 auto"}
-            gap={"2rem"}
+      </AppContainer>
+      <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1300} margin="0 auto">
+        <Stack
+          direction="row"
+          spacing={35}
+          px={5}
+          alignItems="center"
+          justifyContent="flex-end"
+        >
+          <Stack
+            spacing={3}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            direction="row"
           >
-            <Box
-              fontFamily="Proxima Nova, sans-serif"
-              fontSize={"17px"}
-              gap={"1.6rem"}
-              display={"flex"}
-              flexWrap={"wrap"}
-              justifyContent={"center"}
-              marginLeft={"unset"}
+            <Typography
+              fontSize={isSmScreen ? "16px" : "18px"}
+              color={"#787878"}
+              textAlign="center"
+            >
+              Copyright
+            </Typography>
+            <Typography
+              fontSize={isSmScreen ? "16px" : "18px"}
+              color={"#787878"}
+              textAlign="center"
+            >
+              AlterKnit New York 2023
+            </Typography>
+            <StyleLink1 to={routes.PRIVACY}>Privacy Policy</StyleLink1>
+            <StyleLink1 to={routes.TERM}>Terms and Conditions</StyleLink1>
+          </Stack>
+          <Box display={"flex"} gap={"2rem"}>
+            <StyleLink1
+              to="https://www.facebook.com/AlterKnitNY/"
+              target="_blank"
             >
               {" "}
-              <span>Copyright</span> <span>AlterKnit New York 2023</span>{" "}
-              <a
-                style={{ color: "#787878" }}
-                href="https://alterknitnewyork.com/privacy-policy"
-              >
-                Privacy Policy
-              </a>{" "}
-              <a
-                style={{ color: "#787878" }}
-                href="https://alterknitnewyork.com/terms-and-conditions"
-              >
-                Terms and Conditions
-              </a>{" "}
-            </Box>
-
-            <Box gap={"2rem"} display="flex" justifyContent="flex-end">
-              <a
-                href="https://www.facebook.com/AlterKnitNY/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {" "}
-                <FacebookIcon
-                  style={{
-                    color: "#787878",
-                  }}
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/alterknitnewyork/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <InstagramIcon
-                  style={{
-                    color: "#787878",
-                  }}
-                />
-              </a>
-            </Box>
+              <FacebookIcon />
+            </StyleLink1>
+            <StyleLink1
+              to="https://www.instagram.com/alterknitnewyork/"
+              target="_blank"
+            >
+              <InstagramIcon />
+            </StyleLink1>
           </Box>
-        </Box>
-      </AppContainer>
+        </Stack>
+      </Box>
     </Box>
   );
 }
