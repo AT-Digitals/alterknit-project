@@ -47,10 +47,11 @@ export default function ScheduleReapir() {
         <Typography
           // minWidth={700}
           variant="h2"
-          fontWeight={500}
+          fontWeight={"500"}
+          textTransform={"lowercase"}
           sx={{
             fontFamily: "IndustrialGothicBannerStd, sans-serif",
-            fontSize: "10em",
+            fontSize: "9.5em",
             lineHeight: 1,
             textAlign: "center",
             padding: "0 150px 0 5rem",
@@ -84,19 +85,14 @@ export default function ScheduleReapir() {
         padding={"6rem 4rem 5rem 1rem"}
         position={"relative"}
       >
-        <Typography
-          variant="h3"
-          fontSize="4rem"
-          fontWeight={400}
-          fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-        >
+        <Typography variant="h3" fontSize="60px" fontWeight={500} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
           <Typography fontSize={"20px"}>
             Access our shipping portal to create your order!
           </Typography>
-          <Typography fontSize={"20px"}>
+          <Typography fontSize={"20px"} lineHeight={1}>
             A pre addressed shipping label and an order summary will come
             straight to your inbox for you to use.
           </Typography>
@@ -109,14 +105,14 @@ export default function ScheduleReapir() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Box minWidth={240}>
+            <Box minWidth={280} pt={2} pb={1}>
               <Typography
                 fontSize="4rem"
-                fontWeight={400}
+                fontWeight={500}
                 color={isHovered ? "white" : "black"}
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                 lineHeight={1}
-                pt={2}
+                textTransform={"lowercase"}
               >
                 FIX ME!
               </Typography>
@@ -125,7 +121,6 @@ export default function ScheduleReapir() {
                   color: isHovered ? "white" : "black",
                   textTransform: "none",
                   fontSize: "18px",
-                  paddingBottom: "16px",
                 }}
               >
                 Click here to start
@@ -137,8 +132,9 @@ export default function ScheduleReapir() {
         <Box mt={"50px"}>
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontWeight={600}
+            fontWeight={500}
             fontSize={"32px"}
+            textTransform={"lowercase"}
           >
             ANY QUESTIONS?{" "}
           </Typography>

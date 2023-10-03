@@ -15,10 +15,10 @@ export default function BlackBoxSection() {
                 <Typography
                     fontSize="80px"
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                    fontWeight={400}
-                    textTransform="uppercase"
+                    fontWeight={500}
+                    // textTransform="uppercase"
                     color={Colors.WHITE}
-                    maxWidth="500px"
+                    maxWidth="470px"
                     lineHeight={1}
                 >
                     this will only hurt a little

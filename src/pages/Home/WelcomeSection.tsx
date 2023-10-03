@@ -9,8 +9,8 @@ const StyledButton = styled(Button)({
     right: "34%",
     transform: `translate(${18}%, ${128}%)`,
     borderRadius: "50%",
-    width: 180,
-    height: 180,
+    width: 190,
+    height: 190,
     fontWeight: 400,
     textTransform: "uppercase",
     padding: "30px",
@@ -36,8 +36,7 @@ export default function WelcomeSection() {
             <Stack direction="column">
                 <Typography
                     sx={{
-                        textTransform: "uppercase",
-                        fontWeight: 400,
+                        fontWeight: 500,
                         fontSize: "80px",
                         fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
                     }}
@@ -54,8 +53,9 @@ export default function WelcomeSection() {
                     <StyledButton
                         sx={{
                             fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
-                            fontWeight: 400,
-                            fontSize: "30px",
+                            fontWeight: 500,
+                            fontSize: "32px",
+                            textTransform: "lowercase",
                         }}
                     >
                         Schedule a repair

@@ -15,8 +15,10 @@ export default function DarnIt() {
       position={"relative"}
     >
       <Typography
-        fontSize={"100px"}
+        fontSize={"80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+        fontWeight={500}
+        textTransform={"lowercase"}
       >
         DARN IT!
       </Typography>
@@ -24,10 +26,12 @@ export default function DarnIt() {
         borderTop={"1px solid #333"}
         textAlign={"center"}
         fontSize={"42px"}
+        fontWeight={500}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         borderBottom={"1px solid #333"}
         paddingBottom={"35px"}
         paddingTop={"35px"}
+        textTransform={"lowercase"}
       >
         AT THIS TIME WE DO NOT OFFER DOOR TO <br /> DOOR SERVICE IN YOUR AREA
       </Typography>

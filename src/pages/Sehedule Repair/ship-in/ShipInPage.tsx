@@ -9,7 +9,7 @@ import { useState } from "react";
 const StyleButtonNew = styled(Button)({
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
-    fontWeight: 400,
+    fontWeight: 500,
     fontSize: "2.5rem",
     fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
     padding: "30px",
@@ -17,6 +17,7 @@ const StyleButtonNew = styled(Button)({
     height: "200px",
     borderRadius: "30px",
     lineHeight: 1,
+    textTransform: "lowercase",
     ":hover": {
         backgroundColor: Colors.LINK,
     },
@@ -50,10 +51,12 @@ export default function ShipInPage() {
         }
         console.log("sfsg", selectedList);
 
+        const stringifiedArray = JSON.stringify(selectedButtons);
+
         let result = await fetch(
             'http://localhost:3001/service-item', {
             method: "post",
-            body: JSON.stringify({ services: selectedButtons }),
+            body: stringifiedArray,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -67,17 +70,18 @@ export default function ShipInPage() {
 
     return (
         <Stack
-            paddingY={5}
+            paddingY={6}
             maxWidth={1300}
             margin="0 auto"
             justifyContent="center"
             direction="column"
         >
             <Typography
-                fontWeight={400}
-                fontSize="5rem"
+                fontWeight={500}
+                fontSize="80px"
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 textAlign="center"
+                textTransform={"lowercase"}
             >
                 let's start with your first item!
             </Typography>

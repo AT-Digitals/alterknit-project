@@ -61,8 +61,8 @@ export default function ServiceSection() {
             <Typography
               fontSize="80px"
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-              fontWeight={400}
-              textTransform="uppercase"
+              fontWeight={500}
+
               lineHeight={1}
             >
               holes? <br /> we fix them

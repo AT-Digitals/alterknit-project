@@ -98,7 +98,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
         bgcolor={"#f8f1ec"}
         display={"flex"}
         flexDirection={"column"}
-        padding={"4rem 0 0 0"}
+        padding={"3rem 0 0 0"}
       >
         <Box
           maxWidth={1440}
@@ -107,8 +107,10 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
         >
           <Typography
             textAlign={"center"}
-            fontSize={{ xs: "40px", md: "70px" }}
+            fontSize={{ xs: "40px", md: "80px" }}
+            fontWeight={500}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+            textTransform={"lowercase"}
           >
             WE'VE SEEN IT ALL, BUT WE HAVE TO ASK
           </Typography>
@@ -119,7 +121,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
         alt="background"
         style={{ width: "100%" }}
       />
-      <Box padding={"4rem 0 6rem 0"}>
+      <Box padding={"6rem 0 2rem 0"}>
         <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
           <AppContainer pl={0}>
             <Box maxWidth={1440} padding={{ xs: "0 1rem" }}>
@@ -138,7 +140,10 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                 >
                   <Typography
                     fontSize={{ xs: "28px", md: "45px" }}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    marginBottom={3}
                   >
                     1. WHAT COLOR IS YOUR GARMENT?*
                   </Typography>
@@ -158,6 +163,9 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                   <Typography
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
+                    marginBottom={3}
                   >
                     2. HOW MANY VISIBLE HOLES ARE THERE?*
                   </Typography>
@@ -177,6 +185,9 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                   <Typography
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
+                    marginBottom={3}
                   >
                     3. WHAT BRAND IS YOUR GARMENT?*
                   </Typography>
@@ -196,6 +207,9 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                   <Typography
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
+                    marginBottom={3}
                   >
                     4. HOW LONG HAVE YOU OWNED THIS GARMENT?*
                   </Typography>
@@ -217,6 +231,10 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
                     textAlign={"center"}
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    fontWeight={500}
+                    textTransform={"lowercase"}
+                    lineHeight={1}
+                    marginBottom={4}
                   >
                     5. BRIEF DESCRIPTION OF REPAIR NEEDED AND/OR ANY <br />{" "}
                     OTHER IMPORTANT INFORMATION FOR US*

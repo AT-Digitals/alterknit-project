@@ -20,7 +20,7 @@ export default function ClothSection() {
                     <img src={clothImage} alt="clothes" />
                 </Grid>
                 <Grid item xs={5}>
-                    <Typography fontSize="80px" lineHeight={1} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={400} textTransform="uppercase">
+                    <Typography fontSize="80px" lineHeight={1} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} fontWeight={500} >
                         don't settle for inferior solutions!
                     </Typography>
                     <Typography fontSize="1.3rem" lineHeight={1.5} marginY={3}>

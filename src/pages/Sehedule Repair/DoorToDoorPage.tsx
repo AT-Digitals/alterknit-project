@@ -44,8 +44,8 @@ export default function DoorToDoorPage() {
           margin="0 auto"
         >
           <Typography
-            textTransform="capitalize"
-            fontWeight={500}
+            textTransform={"lowercase"}
+            fontWeight="500"
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize="5rem"
             color={Colors.LINK}
@@ -94,8 +94,8 @@ export default function DoorToDoorPage() {
           <Box sx={{ textAlign: "center" }}>
             <img src={Hello} alt="hello" width={200} height={90} />
             <Typography
-              textTransform="capitalize"
-              fontWeight={500}
+              textTransform={"lowercase"}
+              fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize="6rem"
             >
@@ -104,7 +104,7 @@ export default function DoorToDoorPage() {
           </Box>
           <Typography
             width={500}
-            textTransform="capitalize"
+            textTransform={"lowercase"}
             fontWeight={500}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize="2.5rem"

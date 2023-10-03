@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, styled } from "@mui/material";
+import { Box, Button, Stack, Typography, styled } from "@mui/material";
 import Colors from "../../../CommonComponent/Colors";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
 import ShipCard from "./ShipCard";
@@ -10,13 +10,14 @@ import { useState } from "react";
 const StyleButtonNew = styled(Button)({
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
-    fontWeight: 400,
+    fontWeight: 500,
     fontSize: "2.5rem",
     fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
     padding: "30px",
     width: "270px",
     height: "200px",
     borderRadius: "30px",
+    textTransform: "lowercase",
     ":hover": {
         backgroundColor: Colors.LINK,
     },
@@ -75,7 +76,7 @@ export default function MoreDetailsPage() {
             }}
         >
             <Stack
-                paddingY={5}
+                paddingY={6}
                 maxWidth={1300}
                 margin="0 auto"
                 justifyContent="center"
@@ -84,32 +85,34 @@ export default function MoreDetailsPage() {
                 alignItems="center"
             >
                 <Typography
-                    fontWeight={400}
+                    fontWeight={500}
                     fontSize="5rem"
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                    textTransform={"lowercase"}
                     textAlign="center"
-                    pb={2}
+                    pb={3}
                 >
                     just a few more details...
                 </Typography>
                 <Typography
-                    fontWeight={400}
-                    fontSize="3.5rem"
+                    fontWeight={500}
+                    fontSize="3rem"
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     textAlign="center"
                     lineHeight={1}
                     maxWidth={900}
+                    textTransform={"lowercase"}
                 >
                     8. has this garment been previously repaired by a dry cleaner or
                     another individual?
                 </Typography>
                 <Stack
                     direction="row"
-                    spacing={5}
+                    spacing={6}
                     alignItems="center"
                     justifyContent="center"
-                    pt={2}
-                    pb={2}
+                    pt={3}
+                    pb={3}
                 >
                     <StyleButtonNew
                         value="yes"
@@ -149,27 +152,30 @@ export default function MoreDetailsPage() {
                 spacing={3}
                 alignItems="center"
             >
-                <Typography
-                    fontWeight={400}
-                    fontSize="3.5rem"
-                    fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                    textAlign="center"
-                    lineHeight={1}
-                >
-                    9. has this garment been recently cleaned?
-                </Typography>
-                <Typography textAlign="center" maxWidth={850}>
-                    Cleaning will only make holes bigger and incur higher repair cost.
-                    Please let us examine your garment first. If the garment has already
-                    been cleaned before you found us, don't worry.
-                </Typography>
+                <Box>
+                    <Typography
+                        fontWeight={500}
+                        fontSize="3rem"
+                        fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                        textAlign="center"
+                        lineHeight={1}
+                        textTransform={"lowercase"}
+                    >
+                        9. has this garment been recently cleaned?
+                    </Typography>
+                    <Typography textAlign="center" maxWidth={750} fontSize="16px">
+                        Cleaning will only make holes bigger and incur higher repair cost.
+                        Please let us examine your garment first. If the garment has already
+                        been cleaned before you found us, don't worry.
+                    </Typography>
+                </Box>
                 <Stack
                     direction="row"
-                    spacing={5}
+                    spacing={6}
                     alignItems="center"
                     justifyContent="center"
-                    pt={2}
-                    pb={10}
+                    pt={3}
+                    pb={6}
                 >
                     <StyleButtonNew
                         value="yes"
