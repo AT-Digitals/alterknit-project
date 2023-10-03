@@ -99,23 +99,23 @@ export default function PorfolioHeader() {
         <Box width={"100%"} maxWidth={"1440px"} margin={"0 auto"} padding={"0 10rem"}>
         <Box position={"relative"}>
             <Box padding={"8rem 0 14rem 0"} maxWidth={"620px"} position={"relative"} zIndex={"1"}>
-        <Typography  lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"5.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SEEING IS BELEIVING</Typography>
-          <Typography margin={"50px 2px"} color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`}>Don't think we can fix what you've got?<Typography color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`} paddingTop={"5px"}>Check out our gallery of before and afters to see what magic we can work on any garment in any condition.</Typography></Typography>  
+        <Typography marginLeft={"-25px"} lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"5.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SEEING IS BELEIVING</Typography>
+          <Typography margin={"50px -25px"} color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`}>Don't think we can fix what you've got?<Typography color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`} paddingTop={"5px"}>Check out our gallery of before and afters to see what magic we can work on any garment in any condition.</Typography></Typography>  
           <Link to={routes.SCHEDULE_REPAIR} style={{ textDecoration: "none" }}>
-          <StyledTypography lineHeight={"0"} color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>REPAIR IT WITH A CLICK. WE DARE YOu</StyledTypography>
+          <StyledTypography marginLeft={"-25px"} lineHeight={"0"} color={"black"} fontWeight={"400"} fontSize={"40px"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>REPAIR IT WITH A CLICK. WE DARE YOu</StyledTypography>
           </Link>
           </Box>
             <img style={{
                 marginRight: "-69px",
                 marginTop: "-79px",
                 top: 0,
-                right: 237,
+                right: "235px",
                 position: "absolute",
                 maxWidth: "840px",
             }} src={Bug} width={"100%"} alt="bug-image" />
         </Box>
         </Box>
-        <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"}>
+        <Box position={"relative"} z-zIndex={"1"} marginTop={"-88px"} marginBottom={"-5rem"}>
         <Box width={"100%"} maxWidth={"1440px"} margin={"0 auto"} padding={"0 10rem"}>
             <Stack marginBottom={"20px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
                 <Box sx={{
