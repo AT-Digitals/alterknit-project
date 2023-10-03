@@ -47,11 +47,11 @@ export default function AppFooter({ activeTab }: footerProps) {
 
   return (
     <Box bgcolor={Colors.BLACK}>
-      <AppContainer>
-        <Box borderBottom="1px solid #272727">
+      <Box borderBottom="1px solid #272727">
+        <AppContainer>
           <Stack
-            px={5}
-            py={7}
+            px={3}
+            py={3}
             direction={isSmScreen ? "column" : "row"}
             justifyContent={isSmScreen ? "center" : "space-between"}
             alignItems="center"
@@ -125,8 +125,9 @@ export default function AppFooter({ activeTab }: footerProps) {
               </Stack>
             </Stack>
           </Stack>
-        </Box>
-      </AppContainer>
+        </AppContainer>
+      </Box>
+
       <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1300} margin="0 auto">
         <Stack
           direction="row"

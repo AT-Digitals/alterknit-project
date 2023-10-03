@@ -279,6 +279,7 @@ export default function CarePage() {
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                   fontSize={"48px"}
                   color={"#df7c6d"}
+                  fontWeight={500}
                 >
                   WHEN BAD THINGS HAPPEN TO GOOD SWEATERS
                 </Typography>
@@ -315,6 +316,7 @@ export default function CarePage() {
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                       fontSize={"48px"}
                       color={"black"}
+                      fontWeight={500}
                     >
                       {notes.title}
                     </Typography>
@@ -407,6 +409,7 @@ export default function CarePage() {
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
+              textTransform={"lowercase"}
               sx={{
                 "@media (max-width: 768px)": {
                   fontSize: "36px",
