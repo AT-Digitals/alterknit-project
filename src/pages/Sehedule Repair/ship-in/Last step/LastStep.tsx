@@ -51,7 +51,7 @@ export default function LastStep() {
             <Typography
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontWeight={400}
+              fontWeight={500}
             >
               ONE LAST STEP...
             </Typography>

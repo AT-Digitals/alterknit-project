@@ -92,7 +92,7 @@ export default function CarePage() {
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
-              fontWeight={400}
+              fontWeight={500}
             >
               CARE THROUGH REPAIR
             </Typography>
@@ -142,7 +142,7 @@ export default function CarePage() {
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
-              fontWeight={400}
+              fontWeight={500}
             >
               WHERE WE STAND
             </Typography>
@@ -208,6 +208,7 @@ export default function CarePage() {
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
+              fontWeight={500}
             >
               dear alterknit... (just asking)
             </Typography>
@@ -352,6 +353,7 @@ export default function CarePage() {
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontSize={"80px"}
             lineHeight={"1.25rem 0"}
+            fontWeight={500}
           >
             HEY,DID YOU KNOW...
           </Typography>
@@ -401,7 +403,7 @@ export default function CarePage() {
               lineHeight={"3rem"}
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontWeight={400}
+              fontWeight={500}
               sx={{
                 "@media (max-width: 768px)": {
                   fontSize: "36px",
