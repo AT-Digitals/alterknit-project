@@ -10,7 +10,7 @@ export default function ServiceHeader() {
                 <Typography
                     border={"4px dashed black"}
                     sx={{
-                        backgroundColor: "white",
+                        backgroundColor: "#f8f1ec",
                         borderRadius: "45px",
                         border: "4px dashed black",
                         width: "100%",
