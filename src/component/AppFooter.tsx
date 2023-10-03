@@ -1,5 +1,6 @@
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 
+import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -27,22 +28,21 @@ export default function AppFooter({ activeTab }: footerProps) {
       <Box borderBottom="1px solid #272727">
         <Stack
           px={5}
-          py={7}
+          py={5}
           direction={isSmScreen ? "column" : "row"}
           justifyContent={isSmScreen ? "center" : "space-between"}
           alignItems="center"
+          maxWidth={1400}
         >
-          <Stack>
-            <a href={routes.ROOT}>
-              <img
-                src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo_white.svg"
-                alt="alterknit logo"
-                loading="lazy"
-                width={200}
-                height={40}
-              />
-            </a>
-          </Stack>
+          <a href={routes.ROOT}>
+            <img
+              src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo_white.svg"
+              alt="alterknit logo"
+              loading="lazy"
+              width={200}
+              height={40}
+            />
+          </a>
           <Stack
             padding={"4rem 0 3rem 0"}
             spacing={3}

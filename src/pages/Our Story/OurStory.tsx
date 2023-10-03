@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import { useEffect } from "react";
 
@@ -29,6 +29,9 @@ export default function OurStory() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isLgScreen = useMediaQuery("(min-width:961px)");
   return (
     <>
       <section
@@ -38,34 +41,33 @@ export default function OurStory() {
           alignItems: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          padding: "15rem 0",
+          padding: isXsScreen ? "5rem 0" : "15rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
       >
         <Box
           width={"100%"}
-          maxWidth={"1440px"}
+          maxWidth={"900px"}
           margin={"0 auto"}
-          padding={"0 10rem"}
+          padding={isXsScreen ? "0 1rem" : "0 2rem"}
         >
           <Box
             bgcolor={"white"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"2rem 15rem "}
+            padding={isXsScreen ? "1rem" : "2rem 1rem"}
+            textAlign="center"
           >
             <Typography
-              lineHeight={"4rem"}
-              textAlign={"center"}
-              margin={"0 auto"}
-              fontSize={"70px"}
+              lineHeight={isLgScreen ? "4rem" : "2rem"}
+              fontSize={isLgScreen ? "70px" : "40px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
             >
-              we built this company on the promise of providing the best quality
+              We built this company on the promise of providing the best quality
               repair available.
             </Typography>
           </Box>
