@@ -13,10 +13,10 @@ export default function ServiceHeader() {
                         backgroundColor: "white",
                         borderRadius: "45px",
                         border: "4px dashed black",
-                        width: "1010px",
-                        height: "151px",
+                        width: "100%",
+                        maxWidth:"1010px",
                         textAlign: "center",
-                        paddingTop: "37px",
+                        padding: "35px 30px",
                         marginTop: "270px",
                     }}
                     position={"absolute"}

@@ -100,7 +100,7 @@ export default function PorfolioHeader() {
         <Box position={"relative"}>
             <Box padding={"8rem 0 14rem 0"} maxWidth={"620px"} position={"relative"} zIndex={"1"}>
         <Typography  lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"5.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SEEING IS BELEIVING</Typography>
-          <Typography margin={"50px 2px"} color={"#575656"} fontWeight={"500"} fontSize={"1.3rem"} fontFamily={`"Proxima Nova", sans-serif`}>Don't think we can fix what you've got?<Typography color={"#575656"} fontWeight={"500"} fontSize={"1.3rem"} fontFamily={`"Proxima Nova", sans-serif`} paddingTop={"5px"}>Check out our gallery of before and afters to see what magic we can work on any garment in any condition.</Typography></Typography>  
+          <Typography margin={"50px 2px"} color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`}>Don't think we can fix what you've got?<Typography color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`} paddingTop={"5px"}>Check out our gallery of before and afters to see what magic we can work on any garment in any condition.</Typography></Typography>  
           <Link to={routes.SCHEDULE_REPAIR} style={{ textDecoration: "none" }}>
           <StyledTypography lineHeight={"0"} color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>REPAIR IT WITH A CLICK. WE DARE YOu</StyledTypography>
           </Link>

@@ -62,7 +62,7 @@ export default function OurStory() {
               margin={"0 auto"}
               fontSize={"70px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontWeight={400}
+              fontWeight={500}
               textTransform={"lowercase"}
             >
               we built this company on the promise of providing the best quality
@@ -84,6 +84,7 @@ export default function OurStory() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               position={"relative"}
               zIndex={1}
+              fontWeight={500}
             >
               WE STAND BY THAT COMMITMENT 100%
             </Typography>
@@ -129,6 +130,7 @@ export default function OurStory() {
               mb={"8rem"}
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontWeight={500}
             >
               ABOUT OUR SERVICES
             </Typography>

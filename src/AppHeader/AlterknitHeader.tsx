@@ -142,7 +142,11 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               ))}
             </Stack>
           )}
-          <Stack direction="row" spacing={3} alignItems="center">
+          <Stack
+            direction={isSmallScreen ? "column" : "row"}
+            spacing={3}
+            alignItems="center"
+          >
             <Link to={routes.SCHEDULE_REPAIR}>
               <CustomButton
                 bgColor={Colors.BLACK}
@@ -152,6 +156,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   fontWeight: 600,
                   padding: "16px 30px",
                   textTransform: "none",
+                  whiteSpace: "nowrap",
                 }}
               >
                 Schedule your repair
