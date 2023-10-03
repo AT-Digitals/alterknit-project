@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
-import { useEffect } from "react";
 import Colors from "../../CommonComponent/Colors";
+import { useEffect } from "react";
 
 const InstagramBoxNavigation = [
   {
@@ -58,7 +58,7 @@ export default function OurStory() {
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"6rem 15rem"}
+            padding={"6rem 10rem"}
             textAlign="center"
           >
             <Typography
