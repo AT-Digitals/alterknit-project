@@ -180,10 +180,11 @@ export default function FormFile() {
   };
 
   return (
-    <Box width={"100%"} height={"900px"} sx={{
+    <Box width={"100%"} height={"900px"} style={{
       backgroundColor: "#f8f1eb",
+      backgroundImage: `url(http://localhost:3000/static/media/bg_care.6dc86b6266e6071b1a63.png)`,
+      backgroundSize: "cover",
     }} display={"flex"} justifyContent={"center"}>
-      <img width={"100%"} src={image1} alt="backgound" />
       <form style={{
         borderRadius: "50px",
         border: "5px solid #df7c6d",

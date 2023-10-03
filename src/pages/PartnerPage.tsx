@@ -234,13 +234,18 @@ export default function PartnerPage() {
                 <Box sx={{
                     position: "relative",
                     zIndex: "3",
-                }} width={"100%"} maxWidth={"1140px"}>
-                    <Typography  marginTop={"-26px"} marginLeft={"225px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>WHAT WE CAN DO<Typography fontFamily={`'Fuggles', cursive`} fontSize={"3rem"}>for you!</Typography></Typography>
+                }} width={"100%"} maxWidth={"1230px"}>
+                    <Typography  marginTop={"-179px"} marginLeft={"313px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>WHAT WE CAN DO<Typography style={{
+                      marginLeft: "33px",
+                      marginTop: "-75px",
+                      wordSpacing: "-65px",
+
+                    }} fontFamily={`"Jaceline", sans-serif`} fontSize={"22rem"}>for you!</Typography></Typography>
                 </Box>
                 <Box sx={{
                     position: "relative",
                     zIndex: "2",
-                    marginTop: "103px",
+                    marginTop: "-73px",
                     marginLeft: "5px",
                 }} display={"flex"} flexDirection={"column"} alignItems={"center"} gap={"25px"}>
                     <Card style={{
@@ -254,7 +259,7 @@ export default function PartnerPage() {
                     }}>
                         <CardContent>
                             <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PREMIUM SOLUTIONS</Typography>
-                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>to your customer restored and ready to wear.</Typography></Typography>
+                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}  fontFamily={`"Proxima Nova", sans-serif`}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>to your customer restored and ready to wear.</Typography></Typography>
                         </CardContent>
                     </Card>
                     <Card style={{
@@ -268,7 +273,7 @@ export default function PartnerPage() {
                     }}>
                         <CardContent>
                             <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SERVICE SIMPLIFIED</Typography>
-                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>we handle everything from logistics to customer service.</Typography></Typography>
+                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}  fontFamily={`"Proxima Nova", sans-serif`}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>we handle everything from logistics to customer service.</Typography></Typography>
                         </CardContent>
                     </Card>
                     <Card style={{
@@ -282,7 +287,7 @@ export default function PartnerPage() {
                     }}>
                         <CardContent>
                             <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>CUSTOMER RETENTION</Typography>
-                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>and comes back to you for their next purchase.</Typography></Typography>
+                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}  fontFamily={`"Proxima Nova", sans-serif`}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>and comes back to you for their next purchase.</Typography></Typography>
                         </CardContent>
                     </Card>
                     <Card style={{
@@ -296,7 +301,7 @@ export default function PartnerPage() {
                     }}>
                         <CardContent>
                             <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>ADDITIONAL REVENUE</Typography>
-                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your service offering.</Typography></Typography>
+                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"} fontFamily={`"Proxima Nova", sans-serif`}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your service offering.</Typography></Typography>
                         </CardContent>
                     </Card>
                     <Card style={{
@@ -310,7 +315,7 @@ export default function PartnerPage() {
                     }}>
                         <CardContent>
                             <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>FULLY SCALABLE</Typography>
-                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your needs.</Typography></Typography>
+                            <Typography color={"black"} fontWeight={"500"} fontSize={"15px"}  fontFamily={`"Proxima Nova", sans-serif`}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your needs.</Typography></Typography>
                         </CardContent>
                     </Card>
                     <Card style={{
@@ -336,9 +341,7 @@ export default function PartnerPage() {
                 }} />
             </section>
             <section>
-                <Typography marginBottom={"60px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PARTNER WITH THE<Typography fontSize={"3rem"} style={{
-                    fontFamily: "Jaceline",
-                }}>best</Typography>
+                <Typography marginBottom={"-105px"} marginTop={"-170px"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PARTNER WITH THE<Typography fontSize={"20rem"} fontFamily={`"Jaceline", sans-serif`} marginLeft={"18px"}>best</Typography>
                     <img src={image3} width={"100%"} alt="logo" style={{
                         maxWidth: "124px",
                     }} />
@@ -360,7 +363,7 @@ export default function PartnerPage() {
                             borderRadius: "21px",
                             padding: "50px 80px"
                         }}>
-                            <Typography color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}>If you're currently running a repair program or looking to get started offering repairs and alterations, we're here to help provide you with a custom solution to get your customers into their favorite garments. Each garment that comes to us is returned both visually and structurally to its original condition. You close the loop and we close the holes.</Typography>
+                            <Typography color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}  fontFamily={`"Proxima Nova", sans-serif`}>If you're currently running a repair program or looking to get started offering repairs and alterations, we're here to help provide you with a custom solution to get your customers into their favorite garments. Each garment that comes to us is returned both visually and structurally to its original condition. You close the loop and we close the holes.</Typography>
                         </CardContent>
                     </Card>
                 </Box>
@@ -368,7 +371,7 @@ export default function PartnerPage() {
             <section>
                 <Box padding={"2rem 0"}>
                     <Typography textAlign={"center"} color={"black"} fontWeight={"600"} fontSize={"6rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BECOME A PARTNER</Typography>
-                    <Typography fontFamily={`"Proxima Nova", sans-serif`} lineHeight={"1.5"} color={"black"} fontWeight={"200"} maxWidth={"590px"} textAlign={"center"} fontSize={"23px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
+                    <Typography fontFamily={`"Proxima Nova", sans-serif`} lineHeight={"1.5"} color={"black"} fontWeight={"500"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
                 </Box>
                 <form onSubmit={handleSubmit} style={{
                     marginTop: "50px",
