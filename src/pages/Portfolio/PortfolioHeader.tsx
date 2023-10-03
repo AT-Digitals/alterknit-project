@@ -82,573 +82,1022 @@ import Cloth33Modal from "./Cloth(37)Modal";
 import Cloth34Modal from "./Cloth(38)Modal";
 import Cloth35Modal from "./Cloth(39)Modal";
 
-
-
-const StyledTypography= styled(Typography)({
+const StyledTypography = styled(Typography)({
     ":hover": {
-       color: "#df7c6d",
+        color: "#df7c6d",
     },
-})
-
+});
 
 export default function PorfolioHeader() {
-
-
     return (
         <>
-        <Box width={"100%"} maxWidth={"1440px"} margin={"0 auto"} padding={"0 10rem"}>
-        <Box position={"relative"}>
-            <Box padding={"8rem 0 14rem 0"} maxWidth={"620px"} position={"relative"} zIndex={"1"}>
-        <Typography  lineHeight={"0.5"} color={"black"} fontWeight={"400"} fontSize={"5.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SEEING IS BELEIVING</Typography>
-          <Typography margin={"50px 2px"} color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`}>Don't think we can fix what you've got?<Typography color={"#575656"} fontWeight={"500"} fontSize={"22px"} fontFamily={`"Proxima Nova", sans-serif`} paddingTop={"5px"}>Check out our gallery of before and afters to see what magic we can work on any garment in any condition.</Typography></Typography>  
-          <Link to={routes.SCHEDULE_REPAIR} style={{ textDecoration: "none" }}>
-          <StyledTypography lineHeight={"0"} color={"black"} fontWeight={"400"} fontSize={"2.3rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>REPAIR IT WITH A CLICK. WE DARE YOu</StyledTypography>
-          </Link>
-          </Box>
-            <img style={{
-                marginRight: "-69px",
-                marginTop: "-79px",
-                top: 0,
-                right: 237,
-                position: "absolute",
-                maxWidth: "840px",
-            }} src={Bug} width={"100%"} alt="bug-image" />
-        </Box>
-        </Box>
-        <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"}>
-        <Box width={"100%"} maxWidth={"1440px"} margin={"0 auto"} padding={"0 10rem"}>
-            <Stack marginBottom={"20px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "3",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <BasicModal />
-                <img style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"
-                }} src={image1} alt="imag1" />
+            <Box
+                width={"100%"}
+                maxWidth={"1440px"}
+                margin={"0 auto"}
+                padding={"0 10rem"}
+            >
+                <Box position={"relative"}>
+                    <Box
+                        padding={"8rem 0 14rem 0"}
+                        maxWidth={"620px"}
+                        position={"relative"}
+                        zIndex={"1"}
+                    >
+                        <Typography
+                            lineHeight={"0.5"}
+                            color={"black"}
+                            fontWeight={"500"}
+                            fontSize={"80px"}
+                            fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                            textTransform="lowercase"
+                        >
+                            SEEING IS BELEIVING
+                        </Typography>
+                        <Typography
+                            margin={"50px 2px"}
+                            color={"#575656"}
+                            fontWeight={"500"}
+                            fontSize={"22px"}
+                            fontFamily={`"Proxima Nova", sans-serif`}
+                        >
+                            Don't think we can fix what you've got?
+                            <Typography
+                                color={"#575656"}
+                                fontWeight={"500"}
+                                fontSize={"22px"}
+                                fontFamily={`"Proxima Nova", sans-serif`}
+                                paddingTop={"5px"}
+                            >
+                                Check out our gallery of before and afters to see what magic we
+                                can work on any garment in any condition.
+                            </Typography>
+                        </Typography>
+                        <Link
+                            to={routes.SCHEDULE_REPAIR}
+                            style={{ textDecoration: "none" }}
+                        >
+                            <StyledTypography
+                                lineHeight={"0"}
+                                color={"black"}
+                                fontWeight={"500"}
+                                fontSize={"2.3rem"}
+                                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                                textTransform="lowercase"
+                            >
+                                REPAIR IT WITH A CLICK. WE DARE YOu
+                            </StyledTypography>
+                        </Link>
+                    </Box>
+                    <img
+                        style={{
+                            marginRight: "-69px",
+                            marginTop: "-79px",
+                            top: 0,
+                            right: 237,
+                            position: "absolute",
+                            maxWidth: "840px",
+                        }}
+                        src={Bug}
+                        width={"100%"}
+                        alt="bug-image"
+                    />
                 </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "2",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <BaseModal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image2} alt="imag2" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "3",
-                    gridRowEnd: "5",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                <Cloth1Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image3} alt="imag3" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "2",
-                    gridRowEnd: "4",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <ClothModal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image4} alt="imag4" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "4",
-                    gridColumnStart: "5",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                     <BasisModal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image5} alt="imag5" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "4",
-                    gridRowEnd: "5",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth2Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image6} alt="imag6" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "4",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth3Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image7} alt="imag7" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "4",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth4Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image8} alt="imag8" />
-                </Box>
-            </Stack>
-            <Stack marginBottom={"20px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "3",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth5Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image9} alt="image9" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "2",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth6Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image10} alt="image10" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "3",
-                    gridRowEnd: "5",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth9Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image11} alt="image11" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "2",
-                    gridRowEnd: "4",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth8Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image12} alt="image12" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "4",
-                    gridColumnStart: "5",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth7Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image13} alt="image13" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "4",
-                    gridRowEnd: "5",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth10Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image14} alt="image14" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "4",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth11Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image15} alt="image15" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "4",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth12Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image16} alt="image16" />
-                </Box>
-            </Stack>
-            <Stack marginBottom={"20px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
-            <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "3",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth13Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image17} alt="image17" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "2",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth14Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image18} alt="image18" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "4",
-                    gridColumnStart: "5",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth15Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image19} alt="image19" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "2",
-                    gridRowEnd: "4",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth16Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image20} alt="image20" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "3",
-                    gridRowEnd: "5",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth17Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image21} alt="image21" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "4",
-                    gridRowEnd: "5",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth18Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image22} alt="image22" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "4",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth19Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image23} alt="image23" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "4",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth20Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image24} alt="image24" />
-                </Box>
-            </Stack>
-            <Stack marginBottom={"20px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
-            <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "3",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth21Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image25} alt="image25" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "2",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth22Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image26} alt="image26" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "4",
-                    gridColumnStart: "5",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth23Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image27} alt="image27" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "2",
-                    gridRowEnd: "4",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth25Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image28} alt="image28" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "3",
-                    gridRowEnd: "5",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth24Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image29} alt="image29" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "4",
-                    gridRowEnd: "5",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth26Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image30} alt="image30" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "4",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth27Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image31} alt="image31" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "4",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth26Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image32} alt="image32" />
-                </Box>
-            </Stack>
-            <Stack marginBottom={"80px"} height={"1525px"} gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"} gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"} display={"grid"} gap={"20px"}>
-            <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "3",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth28Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image33} alt="image33" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "2",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth29Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image34} alt="image34" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "1",
-                    gridRowEnd: "4",
-                    gridColumnStart: "5",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth30Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image35} alt="image35" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "2",
-                    gridRowEnd: "4",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "5",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth31Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image36} alt="image36" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "3",
-                    gridRowEnd: "5",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "3",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth32Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image37} alt="image37" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "4",
-                    gridRowEnd: "5",
-                    gridColumnStart: "3",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth33Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image38} alt="image38" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "1",
-                    gridColumnEnd: "4",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth34Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image39} alt="image39" />
-                </Box>
-                <Box sx={{
-                    gridRowStart: "5",
-                    gridRowEnd: "7",
-                    gridColumnStart: "4",
-                    gridColumnEnd: "6",
-                }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
-                    <Cloth35Modal />
-                <img style={{
-                     width: "100%",
-                     height: "100%",
-                    objectFit: "cover",
-                }} src={image40} alt="image40" />
-                </Box>
-            </Stack>
             </Box>
-        </Box>
+            <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"}>
+                <Box
+                    width={"100%"}
+                    maxWidth={"1440px"}
+                    margin={"0 auto"}
+                    padding={"0 10rem"}
+                >
+                    <Stack
+                        marginBottom={"20px"}
+                        height={"1525px"}
+                        gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        display={"grid"}
+                        gap={"20px"}
+                    >
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "3",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <BasicModal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image1}
+                                alt="imag1"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "2",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <BaseModal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image2}
+                                alt="imag2"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "3",
+                                gridRowEnd: "5",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth1Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image3}
+                                alt="imag3"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "2",
+                                gridRowEnd: "4",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <ClothModal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image4}
+                                alt="imag4"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "4",
+                                gridColumnStart: "5",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <BasisModal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image5}
+                                alt="imag5"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "4",
+                                gridRowEnd: "5",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth2Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image6}
+                                alt="imag6"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "4",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth3Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image7}
+                                alt="imag7"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "4",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth4Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image8}
+                                alt="imag8"
+                            />
+                        </Box>
+                    </Stack>
+                    <Stack
+                        marginBottom={"20px"}
+                        height={"1525px"}
+                        gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        display={"grid"}
+                        gap={"20px"}
+                    >
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "3",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth5Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image9}
+                                alt="image9"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "2",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth6Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image10}
+                                alt="image10"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "3",
+                                gridRowEnd: "5",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth9Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image11}
+                                alt="image11"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "2",
+                                gridRowEnd: "4",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth8Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image12}
+                                alt="image12"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "4",
+                                gridColumnStart: "5",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth7Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image13}
+                                alt="image13"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "4",
+                                gridRowEnd: "5",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth10Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image14}
+                                alt="image14"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "4",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth11Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image15}
+                                alt="image15"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "4",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth12Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image16}
+                                alt="image16"
+                            />
+                        </Box>
+                    </Stack>
+                    <Stack
+                        marginBottom={"20px"}
+                        height={"1525px"}
+                        gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        display={"grid"}
+                        gap={"20px"}
+                    >
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "3",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth13Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image17}
+                                alt="image17"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "2",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth14Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image18}
+                                alt="image18"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "4",
+                                gridColumnStart: "5",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth15Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image19}
+                                alt="image19"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "2",
+                                gridRowEnd: "4",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth16Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image20}
+                                alt="image20"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "3",
+                                gridRowEnd: "5",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth17Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image21}
+                                alt="image21"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "4",
+                                gridRowEnd: "5",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth18Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image22}
+                                alt="image22"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "4",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth19Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image23}
+                                alt="image23"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "4",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth20Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image24}
+                                alt="image24"
+                            />
+                        </Box>
+                    </Stack>
+                    <Stack
+                        marginBottom={"20px"}
+                        height={"1525px"}
+                        gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        display={"grid"}
+                        gap={"20px"}
+                    >
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "3",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth21Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image25}
+                                alt="image25"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "2",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth22Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image26}
+                                alt="image26"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "4",
+                                gridColumnStart: "5",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth23Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image27}
+                                alt="image27"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "2",
+                                gridRowEnd: "4",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth25Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image28}
+                                alt="image28"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "3",
+                                gridRowEnd: "5",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth24Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image29}
+                                alt="image29"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "4",
+                                gridRowEnd: "5",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth26Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image30}
+                                alt="image30"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "4",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth27Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image31}
+                                alt="image31"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "4",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth26Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image32}
+                                alt="image32"
+                            />
+                        </Box>
+                    </Stack>
+                    <Stack
+                        marginBottom={"80px"}
+                        height={"1525px"}
+                        gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
+                        display={"grid"}
+                        gap={"20px"}
+                    >
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "3",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth28Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image33}
+                                alt="image33"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "2",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth29Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image34}
+                                alt="image34"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "1",
+                                gridRowEnd: "4",
+                                gridColumnStart: "5",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth30Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image35}
+                                alt="image35"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "2",
+                                gridRowEnd: "4",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "5",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth31Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image36}
+                                alt="image36"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "3",
+                                gridRowEnd: "5",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "3",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth32Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image37}
+                                alt="image37"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "4",
+                                gridRowEnd: "5",
+                                gridColumnStart: "3",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth33Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image38}
+                                alt="image38"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "1",
+                                gridColumnEnd: "4",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth34Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image39}
+                                alt="image39"
+                            />
+                        </Box>
+                        <Box
+                            sx={{
+                                gridRowStart: "5",
+                                gridRowEnd: "7",
+                                gridColumnStart: "4",
+                                gridColumnEnd: "6",
+                            }}
+                            overflow={"hidden"}
+                            border={"6px solid #df7c6d"}
+                            borderRadius={"20px"}
+                        >
+                            <Cloth35Modal />
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={image40}
+                                alt="image40"
+                            />
+                        </Box>
+                    </Stack>
+                </Box>
+            </Box>
         </>
-    )
+    );
 }
