@@ -15,6 +15,7 @@ import AppContainer from "../../component/AppContainer";
 import Colors from "../../CommonComponent/Colors";
 import { Link } from "react-router-dom";
 import routes from "../../routes/routes";
+import { useEffect } from "react";
 
 const StyleCard = styled(Card)({
   maxWidth: 590,
@@ -28,10 +29,19 @@ const StyleCard = styled(Card)({
 export default function FixmePage() {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Box marginY={10}>
       <Stack mb={5} spacing={5} alignItems={"center"}>
-        <Typography fontWeight={500} fontSize="80px" textTransform={"lowercase"} variant={isSmScreen ? "h4" : "h3"} fontFamily={"IndustrialGothicBannerStd, sans-serif"}>
+        <Typography
+          fontWeight={500}
+          fontSize="80px"
+          textTransform={"lowercase"}
+          variant={isSmScreen ? "h4" : "h3"}
+          fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+        >
           WHICH OPTION WORKS BEST FOR YOU?{" "}
         </Typography>
         <AppContainer>
@@ -41,7 +51,12 @@ export default function FixmePage() {
             direction={"row"}
             spacing={4}
           >
-            <Grid container spacing={3} justifyContent="center" alignItems="center">
+            <Grid
+              container
+              spacing={3}
+              justifyContent="center"
+              alignItems="center"
+            >
               <Grid pt={0} item xs={12} sm={6}>
                 <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}>
                   <StyleCard>
