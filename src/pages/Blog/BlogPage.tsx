@@ -10,18 +10,38 @@ import {
 import AppContainer from "../../component/AppContainer";
 import { Link } from "react-router-dom";
 import routes from "../../routes/routes";
+import styled from "@emotion/styled";
+import { useEffect } from "react";
+
+const StyledButton = styled.button`
+  padding: 10px 20px;
+  background: #df7c6c;
+  max-width: 200px;
+  color: white;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  text-transform: none;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #f58977;
+  }
+`;
 
 export default function BlogPage() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <AppContainer>
       <Stack justifyContent={"flex-start"} paddingY={6}>
         <Box p={2} mb={3}>
-          <Typography
-            fontSize={"40px"}
-            fontWeight={400}
-          >
+          <Typography fontSize={"40px"} fontWeight={400}>
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
           <img
@@ -44,21 +64,7 @@ export default function BlogPage() {
           </Typography>
         </Box>
         <Link to={routes.BLOG_PAGE_CONTENT}>
-          <Button
-            style={{
-              padding: "10px 20px",
-              background: "#df7c6c",
-              alignItems: "flex-start",
-              maxWidth: 200,
-              color: "white",
-              marginBottom: 50,
-              marginLeft: 10,
-              textTransform: "none",
-              fontSize: "18px",
-            }}
-          >
-            Continue reading
-          </Button>
+          <StyledButton>Continue reading</StyledButton>
         </Link>
       </Stack>
     </AppContainer>

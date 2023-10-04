@@ -103,7 +103,6 @@ export default function AppFooter({ activeTab }: footerProps) {
                     display: "flex",
                     gap: "1rem",
                     padding: 0,
-                    marginTop: "20px",
                   }}
                 >
                   <li

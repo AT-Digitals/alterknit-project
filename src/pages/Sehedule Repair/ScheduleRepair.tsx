@@ -61,9 +61,8 @@ export default function ScheduleReapir() {
         </Typography>
         <Box
           sx={{
-            backgroundImage: `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_left.svg')`,
+            backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_left.svg')`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
             backgroundPositionX: "right",
             width: 150,
             height: "100%",
@@ -85,7 +84,13 @@ export default function ScheduleReapir() {
         padding={"4rem 4rem 5rem 1rem"}
         position={"relative"}
       >
-        <Typography variant="h3" fontSize="60px" fontWeight={500} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>
+        <Typography
+          variant="h3"
+          fontSize="60px"
+          fontWeight={500}
+          fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+          textTransform={"lowercase"}
+        >
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
@@ -105,7 +110,7 @@ export default function ScheduleReapir() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Box minWidth={280} pt={2} pb={1}>
+            <Box minWidth={280} p={"10px"}>
               <Typography
                 fontSize="4rem"
                 fontWeight={500}
