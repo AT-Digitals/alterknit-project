@@ -46,8 +46,10 @@ export default function ServiceSection() {
           direction={"row"}
           maxWidth={1300}
           margin="0 auto"
-          justifyContent="center"
+          justifyContent="space-around"
           paddingY={8}
+          paddingX={15}
+
         >
           <Box
             alignItems={"flex-start"}
@@ -56,13 +58,12 @@ export default function ServiceSection() {
             flexDirection={"column"}
             justifyItems={"flex-start"}
             pt={2}
-            maxWidth={620}
+            maxWidth={350}
           >
             <Typography
               fontSize="80px"
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               fontWeight={500}
-
               lineHeight={1}
             >
               holes? <br /> we fix them
@@ -74,9 +75,10 @@ export default function ServiceSection() {
                   borderRadius: "5px",
                   padding: "20px 30px",
                   textTransform: "none",
-                  fontSize: "18px",
+                  fontSize: "20px",
                   marginTop: 2,
                   fontWeight: 600,
+                  fontFamily: `"ProximaNovaSemibold", sans-serif !important`,
                 }}
               >
                 See our services
@@ -84,7 +86,12 @@ export default function ServiceSection() {
             </Link>
           </Box>
 
-          <Box flex={1} display={"flex"} flexDirection={"column"} maxWidth={450}>
+          <Box
+            flex={1}
+            display={"flex"}
+            flexDirection={"column"}
+            maxWidth={450}
+          >
             <List
               sx={{
                 listStyleType: "disc",
@@ -96,9 +103,13 @@ export default function ServiceSection() {
                   <div style={customMarkerStyle}></div>
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography fontSize={"20px"}>
-                    We work with you to determine the scope of service you
-                    need.
+                  <Typography
+                    lineHeight={1.3}
+                    fontSize={"22px"}
+                    fontWeight={500}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  >
+                    We work with you to determine the scope of service you need.
                   </Typography>
                 </ListItemText>
               </ListItem>
@@ -108,7 +119,12 @@ export default function ServiceSection() {
                   <div style={customMarkerStyle}></div>
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography fontSize={"20px"}>
+                  <Typography
+                    lineHeight={1.3}
+                    fontSize={"22px"}
+                    fontWeight={500}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  >
                     Our unmatched team works diligently to restore your items.
                   </Typography>
                 </ListItemText>
@@ -119,7 +135,12 @@ export default function ServiceSection() {
                   <div style={customMarkerStyle}></div>
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography fontSize={"20px"}>
+                  <Typography
+                    lineHeight={1.3}
+                    fontSize={"22px"}
+                    fontWeight={500}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  >
                     Your items come back to you repaired and ready to enjoy
                     again.
                   </Typography>
