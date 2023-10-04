@@ -16,7 +16,7 @@ import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
+import React, { useState } from "react";
 import routes from "../routes/routes";
 
 const ServiceItem = styled(Link)`
@@ -39,6 +39,16 @@ const ServiceItem = styled(Link)`
   }
 `;
 
+const StyledButton = styled(CustomButton)({
+  borderRadius: "5px",
+  fontSize: "22px",
+  fontWeight: 600,
+  padding: "16px 30px",
+  textTransform: "none",
+  whiteSpace: "nowrap",
+  fontFamily: `"ProximaNovaSemibold", sans-serif !important`,
+})
+
 interface headerProps {
   setActiveTab: (event: any) => void;
 }
@@ -60,8 +70,15 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
     setAnchorEl(event.currentTarget);
   };
 
+
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
   };
 
   return (
@@ -139,7 +156,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                   key={index}
                   className="service-item"
                 >
-                  <Typography fontSize="22px" key={index}>
+                  <Typography fontSize="22px" key={index} fontFamily={`"ProximaNovaRegular", sans-serif`} fontWeight={400}>
                     {service.linkname}
                   </Typography>
                 </ServiceItem>
@@ -152,33 +169,20 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
             alignItems="center"
           >
             <Link to={routes.SCHEDULE_REPAIR}>
-              <CustomButton
+              <StyledButton
                 bgColor={Colors.BLACK}
-                sx={{
-                  borderRadius: "5px",
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  padding: "16px 30px",
-                  textTransform: "none",
-                  whiteSpace: "nowrap",
-                }}
+                onClick={handleClick}
+                style={{ backgroundColor: isSelected ? Colors.LINK : Colors.BLACK }}
               >
                 Schedule your repair
-              </CustomButton>
+              </StyledButton>
             </Link>
             <Link to={routes.SIGN_IN}>
-              <CustomButton
+              <StyledButton
                 bgColor={Colors.BLACK}
-                sx={{
-                  borderRadius: "5px",
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  padding: "16px 30px",
-                  textTransform: "none",
-                }}
               >
                 Logout
-              </CustomButton>
+              </StyledButton>
             </Link>
           </Stack>
         </Stack>

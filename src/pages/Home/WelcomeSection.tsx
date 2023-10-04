@@ -43,7 +43,13 @@ export default function WelcomeSection() {
                 >
                     welcome to real repair
                 </Typography>
-                <Typography fontSize="22px" color={Colors.Text_COLOR}>
+                <Typography
+                    fontSize="22px"
+                    color={Colors.Text_COLOR}
+                    lineHeight={1.3}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontWeight={500}
+                >
                     We save the clothing that you, your tailor, <br /> or dry cleaner
                     can't.
                 </Typography>

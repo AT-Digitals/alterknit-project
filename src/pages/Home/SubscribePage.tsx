@@ -8,15 +8,14 @@ import routes from "../../routes/routes";
 const StyledButton = styled(Button)({
   position: "absolute",
   left: "52%",
-  transform: `translate(${-20}%, ${-35}%)`,
+  transform: `translate(${-20}%, ${-42}%)`,
   borderRadius: "50%",
-  width: 140,
-  height: 140,
+  width: 110,
+  height: 110,
   fontSize: "19px",
   fontWeight: 400,
   textTransform: "uppercase",
   lineHeight: 1,
-  padding: "30px",
   color: Colors.WHITE,
   border: `6px solid ${Colors.WHITE} !important`,
   backgroundColor: Colors.BLACK,
@@ -108,10 +107,10 @@ export default function SubscribePage() {
               </Button>
             </Box>
             <Typography
-              color={"black"}
               fontSize={"14px"}
               textAlign={"center"}
               marginTop={"20px"}
+              fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500} color="#575656"
             >
               *Code must be applied at check out. Please check your email!
             </Typography>

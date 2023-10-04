@@ -59,6 +59,7 @@ export default function CustomButton({
                 fontWeight="inherit"
                 fontSize="inherit"
                 component="div"
+                fontFamily="inherit"
             >
                 {props.children}
             </Typography>

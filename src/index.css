@@ -38,6 +38,27 @@ body {
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: "ProximaNovaRegular";
+  src: local("ProximaNovaRegular"),
+    url("./assets/Proxima\ Nova\ Regular.ttf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNovaMedium";
+  src: local("ProximaNovaMedium"),
+    url("./assets/Proxima\ Nova\ Medium\ Regular.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNovaSemibold";
+  src: local("ProximaNovaSemibold"),
+    url("./assets/Proxima\ Nova\ Semibold.ttf") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

@@ -18,7 +18,7 @@ export default function HomePage() {
       <Stack direction="column" spacing={2} width="100%">
         <Divider sx={{ borderColor: Colors.BLACK }} />
         <Marquee>
-          <Typography fontSize="20px" color={Colors.BLACK} fontWeight={600}>
+          <Typography fontSize="22px" color={Colors.BLACK} fontWeight={600} fontFamily={`"ProximaNovaSemibold", sans-serif`}>
             Invisible Repair - Reweaving - Reknitting - Knit Alteration -
             Restyling - Custom Knit - Moth Hole Repair - Cleaning - Depilling -
             Invisible Repair - Reweaving - Reknitting - Knit Alteration -
