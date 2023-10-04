@@ -182,8 +182,8 @@ export default function FormFile() {
   return (
     <Box width={"100%"} height={"900px"} style={{
       backgroundColor: "#f8f1eb",
-      backgroundImage: `url(http://localhost:3000/static/media/bg_care.6dc86b6266e6071b1a63.png)`,
-      backgroundSize: "cover",
+      backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
+      backgroundSize: "contain",
     }} display={"flex"} justifyContent={"center"}>
       <form style={{
         borderRadius: "50px",
@@ -202,7 +202,7 @@ export default function FormFile() {
             fontSize={"3rem"}
             color={"black"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-            textTransform="lowercase"
+            textTransform={"lowercase"}
           >
             Contact us
           </Typography>
