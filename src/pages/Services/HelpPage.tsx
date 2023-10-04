@@ -109,7 +109,7 @@ export default function HelpPage() {
   };
 
   return (
-    <Box bgcolor={"#f8f1eb"} paddingY={8}>
+    <Box bgcolor={"#f8f1eb"} paddingTop={"40px"} paddingBottom={"95px"}>
       <Typography
         textAlign={"center"}
         color={"black"}
@@ -125,8 +125,8 @@ export default function HelpPage() {
           {Notes.map((notes, index) => (
             <Box
               bgcolor={"#f8f1ec"}
+              marginTop={"-10px"}
               borderRadius={"24px"}
-              p={" 1rem 0rem"}
               alignItems={"center"}
               key={index}
             >
@@ -178,7 +178,7 @@ export default function HelpPage() {
             <Box
               bgcolor={"#f8f1ec"}
               borderRadius={"24px"}
-              p={" 1rem 0rem"}
+              marginTop={"-10px"}
               alignItems={"center"}
               key={index}
             >
@@ -230,7 +230,7 @@ export default function HelpPage() {
             <Box
               bgcolor={"#f8f1ec"}
               borderRadius={"24px"}
-              p={" 1rem 0rem"}
+              marginTop={"-10px"}
               alignItems={"center"}
               key={index}
             >
@@ -282,7 +282,7 @@ export default function HelpPage() {
             <Box
               bgcolor={"#f8f1ec"}
               borderRadius={"24px"}
-              p={" 1rem 0rem"}
+              marginTop={"-10px"}
               alignItems={"center"}
               key={index}
             >

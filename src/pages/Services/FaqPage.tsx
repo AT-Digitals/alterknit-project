@@ -166,12 +166,12 @@ export default function FaqPage() {
           FAQ'S
         </Typography>
         <Box margin={"0 auto"} padding={"0 10rem"}>
-          <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
+          <Box marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
             {Notes.map((notes, index) => (
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >
@@ -223,7 +223,7 @@ export default function FaqPage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >
@@ -275,7 +275,7 @@ export default function FaqPage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >
@@ -327,7 +327,7 @@ export default function FaqPage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >
@@ -379,7 +379,7 @@ export default function FaqPage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >
@@ -431,7 +431,7 @@ export default function FaqPage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 0rem"}
+                marginTop={"-10px"}
                 alignItems={"center"}
                 key={index}
               >

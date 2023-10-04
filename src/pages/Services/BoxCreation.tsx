@@ -24,20 +24,20 @@ export default function BoxCreation() {
               fontSize={"80px"}
               textTransform={"lowercase"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+              marginBottom={"20px"}
             >
               {" "}
               WHEN EVALUATING
             </Typography>
           </Typography>
         </Box>
-        <Stack margin={"0px 95px"} direction={"row"}>
-          <Box margin={"30px 60px"}>
+        <Stack margin={"0px 95px"} direction={"row"} paddingBottom={"65px"}>
+          <Box margin={"30px 60px"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
-                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
-                borderRadius: "35px",
+                borderRadius: "42px",
               }}
             >
               <CardContent
@@ -49,7 +49,8 @@ export default function BoxCreation() {
                 <img
                   src={Tape}
                   style={{
-                    margin: "10px 0px",
+                    margin: "10px -12px",
+                    paddingBottom: "15px"
                   }}
                   width={"110px"}
                   alt="tape"
@@ -64,7 +65,7 @@ export default function BoxCreation() {
                 01
               </Typography>
               <Typography
-                paddingBottom={"15px"}
+                paddingBottom={"10px"}
                 lineHeight={"0.5"}
                 margin={"10px 40px"}
                 color={"black"}
@@ -86,13 +87,12 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Box>
-          <Box margin={"30px 0px"}>
+          <Box margin={"30px 0px"}  width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
-                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
-                borderRadius: "35px",
+                borderRadius: "42px",
               }}
             >
               <CardContent
@@ -104,7 +104,8 @@ export default function BoxCreation() {
                 <img
                   src={Yarn}
                   style={{
-                    margin: "10px 0px",
+                    margin: "10px -12px",
+                    paddingBottom: "15px"
                   }}
                   width={"95px"}
                   alt="yarn"
@@ -143,13 +144,12 @@ export default function BoxCreation() {
           </Box>
         </Stack>
         <Stack margin={"0px 95px"} direction={"row"}>
-          <Box margin={"30px 60px"}>
+          <Box margin={"30px 60px"}  width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
-                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
-                borderRadius: "35px",
+                borderRadius: "42px",
               }}
             >
               <CardContent
@@ -161,7 +161,8 @@ export default function BoxCreation() {
                 <img
                   src={dress}
                   style={{
-                    margin: "10px 0px",
+                    margin: "10px -12px",
+                    paddingBottom: "15px"
                   }}
                   width={"110px"}
                   alt="tape"
@@ -198,13 +199,12 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Box>
-          <Box margin={"30px 0px"}>
+          <Box margin={"30px 0px"}  width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
-                width: "590px",
                 border: "1px solid black",
                 backgroundColor: "#f8f1eb",
-                borderRadius: "35px",
+                borderRadius: "42px",
               }}
             >
               <CardContent
@@ -216,7 +216,8 @@ export default function BoxCreation() {
                 <img
                   src={weight}
                   style={{
-                    margin: "10px 0px",
+                    margin: "15px -12px",
+                    paddingBottom: "15px"
                   }}
                   width={"95px"}
                   alt="yarn"
@@ -231,7 +232,7 @@ export default function BoxCreation() {
                 04
               </Typography>
               <Typography
-                paddingBottom={"15px"}
+                paddingBottom={"4px"}
                 lineHeight={"0.5"}
                 margin={"10px 40px"}
                 color={"black"}

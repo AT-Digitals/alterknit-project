@@ -7,7 +7,7 @@ export default function CardPage() {
     return (
         <>
             <img src={ImageTop} alt="top" />
-            <Box
+            <Box paddingTop={"56px"}
                 display={"flex"}
                 justifyContent={"center"}
                 sx={{
@@ -22,9 +22,11 @@ export default function CardPage() {
                         borderRadius: "20px",
                     }}
                 >
-                    <CardContent>
+                    <CardContent style={{
+                        paddingTop: "25px",
+                    }}>
                         <Box
-                            margin={"13px 43px"}
+                            margin={"5px 43px"}
                             display={"flex"}
                             alignItems={"center"}
                             justifyContent={"space-between"}
@@ -53,8 +55,9 @@ export default function CardPage() {
                                     color={"#575656"}
                                     fontWeight={"500"}
                                     fontSize={"20px"}
+                                    textTransform={"initial"}
                                 >
-                                    It's just one hole!
+                                   It's just one hole!
                                 </Typography>
                             </Typography>
                             <Typography
@@ -75,12 +78,11 @@ export default function CardPage() {
                         </Box>
                         <Box display={"flex"} justifyContent={"right"}>
                             <Typography
-                                marginBottom={"20px"}
-                                marginRight={"50px"}
+                                marginBottom={"36px"}
+                                marginRight={"48px"}
                                 fontFamily={`"Proxima Nova", sans-serif`}
                                 lineHeight={"1.3"}
                                 maxWidth={"706px"}
-                                marginTop={"30px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"21px"}
@@ -113,7 +115,8 @@ export default function CardPage() {
                 >
                     <CardContent>
                         <Box
-                            margin={"30px 43px"}
+                            margin={"47px 43px"}
+                            marginBottom={"20px"}
                             display={"flex"}
                             alignItems={"center"}
                             justifyContent={"space-between"}
@@ -141,6 +144,7 @@ export default function CardPage() {
                                     color={"#575656"}
                                     fontWeight={"500"}
                                     fontSize={"20px"}
+                                    textTransform={"capitalize"}
                                 >
                                     Queens, New York
                                 </Typography>
@@ -149,12 +153,11 @@ export default function CardPage() {
                                 fontFamily={`"Proxima Nova", sans-serif`}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
-                                maxWidth={"676px"}
+                                maxWidth={"714px"}
                                 marginTop={"4px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"21px"}
-                                marginRight={"37px"}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -182,7 +185,9 @@ export default function CardPage() {
                         marginBottom: "20px",
                     }}
                 >
-                    <CardContent>
+                    <CardContent style={{
+                        paddingTop: "32px",
+                    }}>
                         <Box
                             margin={"30px 43px"}
                             display={"flex"}
@@ -213,6 +218,7 @@ export default function CardPage() {
                                     color={"#575656"}
                                     fontWeight={"500"}
                                     fontSize={"20px"}
+                                    textTransform={"capitalize"}
                                 >
                                     Typically 4-6 Weeks
                                 </Typography>
@@ -265,7 +271,9 @@ export default function CardPage() {
                             marginTop: "40px",
                         }}
                     >
-                        <CardContent>
+                        <CardContent style={{
+                            paddingBottom: "5px",
+                        }}>
                             <Box margin={"37px 30px"}>
                                 <Typography
                                     lineHeight={"0.5"}
