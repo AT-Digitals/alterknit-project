@@ -14,7 +14,8 @@ interface footerProps {
 
 const StyleLink = styled(Link)({
   color: "#787878",
-
+  fontSize: "18px",
+  fontFamily: "Proxima Nova,sans-serif",
   textUnderlineOffset: "5px",
   textDecoration: "none",
   "&:hover": {
@@ -23,7 +24,8 @@ const StyleLink = styled(Link)({
 });
 const StyleLink1 = styled(Link)({
   color: "#787878",
-
+  fontSize: "18px",
+  fontFamily: "Proxima Nova,sans-serif",
   textUnderlineOffset: "5px",
   "&:hover": {
     color: Colors.WHITE,
@@ -66,7 +68,7 @@ export default function AppFooter({ activeTab }: footerProps) {
               />
             </a>
             <Stack
-              padding={"4rem 0 3rem 0"}
+              paddingTop={"15px"}
               spacing={3}
               alignItems={isSmScreen ? "center" : "end"}
               textAlign={isSmScreen ? "center" : "end"}
@@ -128,7 +130,7 @@ export default function AppFooter({ activeTab }: footerProps) {
         </AppContainer>
       </Box>
 
-      <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1300} margin="0 auto">
+      <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1340} margin="0 auto">
         <Stack
           direction="row"
           spacing={35}
@@ -145,6 +147,7 @@ export default function AppFooter({ activeTab }: footerProps) {
           >
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
+              fontFamily={"Proxima Nova,sans-serif"}
               color={"#787878"}
               textAlign="center"
             >
@@ -152,6 +155,7 @@ export default function AppFooter({ activeTab }: footerProps) {
             </Typography>
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
+              fontFamily={"Proxima Nova,sans-serif"}
               color={"#787878"}
               textAlign="center"
             >
