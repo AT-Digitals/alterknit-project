@@ -26,7 +26,7 @@ const StyledButton = styled(Button)({
 
 export default function SubscribePage() {
   return (
-    <Box margin={"50px 30px"} display={"flex"} justifyContent={"center"}>
+    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
       <Box width={"100%"} marginTop={"40px"}>
         <Typography
           lineHeight={1}
@@ -99,7 +99,7 @@ export default function SubscribePage() {
                   textTransform: "capitalize",
                   fontSize: "20px",
                   ":hover": {
-                    backgroundColor: "#df7c6d",
+                    backgroundColor: "#f58977",
                   }
                 }}
               >

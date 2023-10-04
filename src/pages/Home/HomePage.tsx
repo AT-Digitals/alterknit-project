@@ -10,8 +10,12 @@ import Marquee from "react-fast-marquee";
 import ServiceSection from "./ServiceSection";
 import SubscribePage from "./SubscribePage";
 import WelcomeSection from "./WelcomeSection";
+import { useEffect } from "react";
 
 export default function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Stack>
       <WelcomeSection />
