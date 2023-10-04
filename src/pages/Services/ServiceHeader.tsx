@@ -17,7 +17,7 @@ export default function ServiceHeader() {
                         maxWidth:"1010px",
                         textAlign: "center",
                         padding: "35px 30px",
-                        marginTop: "270px",
+                        marginTop: "225px",
                     }}
                     position={"absolute"}
                     color={"black"}

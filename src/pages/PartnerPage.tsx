@@ -1,11 +1,27 @@
 import float from "../assets/logo-flat.png";
 import image1 from "../assets/bg-top (1).svg";
-import { Box, Button, Card, CardContent, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Stack, TextField, Typography, styled } from "@mui/material";
 import image2 from "../assets/bg-bottom.svg";
 import image3 from "../assets/logo-3d.png";
 import image4 from "../assets/banner.jpg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+const CustomTextField = styled(TextField) ({
+  ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
+    fontSize: "1.6rem",
+    width: "600px",
+    padding: "6px 0px",
+},
+".css-1vf0mvf-MuiFormHelperText-root": {
+    color: "#d32f2f",
+  },
+  ".css-1x51dt5-MuiInputBase-input-MuiInput-input::-webkit-input-placeholder":{
+    color: "#0a0a0a",
+    opacity: "1.42",
+  }
+  })
+;
 
 
 const getPersonalDetails = {
@@ -378,16 +394,7 @@ export default function PartnerPage() {
                 }}>
                     <Stack display={"flex"} justifyContent={"center"} spacing={12} marginBottom={"40px"} direction={"row"}>
                         <Box>
-                            <TextField sx={{
-                                ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
-                                    fontSize: "1.6rem",
-                                    width: "600px",
-                                    padding: "6px 0px",
-                                },
-                                ".css-1vf0mvf-MuiFormHelperText-root": {
-                                    color: "#d32f2f",
-                                  },
-                            }}
+                            <CustomTextField
                                 required
                                 id="standard-required"
                                 placeholder="First & LastName"
@@ -400,16 +407,7 @@ export default function PartnerPage() {
                             />
                         </Box>
                         <Box>
-                            <TextField sx={{
-                                ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
-                                    fontSize: "1.6rem",
-                                    width: "600px",
-                                    padding: "6px 0px",
-                                },
-                                ".css-1vf0mvf-MuiFormHelperText-root": {
-                                    color: "#d32f2f",
-                                  },
-                            }}
+                            <CustomTextField
                                 required
                                 id="standard-required"
                                 placeholder="Company"
@@ -424,16 +422,7 @@ export default function PartnerPage() {
                     </Stack>
                     <Stack display={"flex"} justifyContent={"center"} spacing={12} marginBottom={"40px"} direction={"row"}>
                         <Box>
-                            <TextField sx={{
-                                ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
-                                    fontSize: "1.6rem",
-                                    width: "600px",
-                                    padding: "6px 0px",
-                                },
-                                ".css-1vf0mvf-MuiFormHelperText-root": {
-                                    color: "#d32f2f",
-                                  },
-                            }}
+                            <CustomTextField
                                 required
                                 id="standard-required"
                                 placeholder="E-mail Address"
@@ -446,16 +435,7 @@ export default function PartnerPage() {
                             />
                         </Box>
                         <Box>
-                            <TextField sx={{
-                                ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
-                                    fontSize: "1.6rem",
-                                    width: "600px",
-                                    padding: "6px 0px",
-                                },
-                                ".css-1vf0mvf-MuiFormHelperText-root": {
-                                    color: "#d32f2f",
-                                  },
-                            }}
+                            <CustomTextField
                                 required
                                 id="standard-required"
                                 placeholder="Phone Number"
@@ -470,7 +450,7 @@ export default function PartnerPage() {
                         </Box>
                     </Stack>
                     <Box paddingTop={"15px"} display={"flex"} justifyContent={"center"} margin={"2rem 0"} >
-                        <Button style={{
+                        <Button sx={{
                             backgroundColor: "#df7c6d",
                             borderRadius: "6px",
                             color: "#fff",
@@ -479,6 +459,9 @@ export default function PartnerPage() {
                             fontSize: "19px",
                             width: "100%",
                             maxWidth: "640px",
+                            ":hover": {
+                              backgroundColor: "#f58977",
+                            }
                         }} type="submit">Submit</Button>
                     </Box>
                     <Typography paddingTop={"15px"} paddingBottom={"100px"} textAlign={"center"} color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#6b7177"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
