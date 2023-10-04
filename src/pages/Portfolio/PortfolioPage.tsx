@@ -1,12 +1,16 @@
+import PorfolioHeader from "./PortfolioHeader";
 import { Stack } from "@mui/material";
 import SubscribePage from "../Home/SubscribePage";
-import PorfolioHeader from "./PortfolioHeader";
+import { useEffect } from "react";
 
 export default function PortfolioPage() {
-    return (
-        <Stack>
-            <PorfolioHeader />
-            <SubscribePage />
-        </Stack>
-    )
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <Stack>
+      <PorfolioHeader />
+      <SubscribePage />
+    </Stack>
+  );
 }

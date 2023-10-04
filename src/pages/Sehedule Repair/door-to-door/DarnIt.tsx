@@ -1,6 +1,29 @@
 import { Box, Typography } from "@mui/material";
 
 import routes from "../../../routes/routes";
+import styled from "@emotion/styled";
+
+const LinkWrapper = styled.div`
+  margin-top: 40px;
+`;
+
+const StyledLink = styled.a`
+  display: inline-block;
+  line-height: 50px;
+  padding: 0px 20px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  height: 50px;
+  background: #df7c6d;
+  font-size: 18px;
+  transition: background 0.3s, color 0.3s;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+`;
 
 export default function DarnIt() {
   return (
@@ -36,25 +59,9 @@ export default function DarnIt() {
       >
         AT THIS TIME WE DO NOT OFFER DOOR TO <br /> DOOR SERVICE IN YOUR AREA
       </Typography>
-      <Box mt={"40px"}>
-        <a
-          href={routes.FIXME}
-          style={{
-            display: "inline-block",
-            lineHeight: "50px",
-            padding: "0px 20px",
-            color: "white",
-            cursor: "pointer",
-            textDecoration: "none",
-            height: "50px",
-            background: "#df7c6d",
-            fontSize: "18px"
-          }}
-          color="'#df7c6d"
-        >
-          OK! I will ship it
-        </a>
-      </Box>
+      <LinkWrapper>
+        <StyledLink href={routes.FIXME}>OK! I will ship it</StyledLink>
+      </LinkWrapper>
       <img
         style={{
           position: "absolute",

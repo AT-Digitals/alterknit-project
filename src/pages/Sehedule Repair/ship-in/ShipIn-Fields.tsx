@@ -1,10 +1,10 @@
 import { Box, TextField, Typography, styled } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
 import ShipCard from "./ShipCard";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -68,8 +68,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
       routeChange();
     }
 
-    let result = await fetch(
-      'http://localhost:3001/service-details', {
+    let result = await fetch("http://localhost:3001/service-details", {
       method: "post",
       body: JSON.stringify({
         color: formData.color,
@@ -79,9 +78,9 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
         brief: formData.brief,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
     const data = {
       color: formData.color,
       HowMany: formData.howMany,
@@ -91,7 +90,9 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
     };
     console.log(data);
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Box>
       <Box
