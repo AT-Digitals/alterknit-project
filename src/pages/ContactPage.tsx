@@ -1,8 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import image1 from "../assets/bg_care.png";
-
 const getPersonalDetails = {
   firstname: "",
   email: "",
