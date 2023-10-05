@@ -107,7 +107,7 @@ export default function FormFile() {
     }
 
     let result = await fetch(
-      'http://localhost:3001/items', {
+      'https://alterknit-backend.onrender.com/items', {
       method: "post",
       body: JSON.stringify({ name: personalDetails.firstname, email: personalDetails.email, phone: personalDetails.phone, message: personalDetails.passage }),
       headers: {
