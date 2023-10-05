@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import AppContainer from "../../component/AppContainer";
 import { Link } from "react-router-dom";
@@ -42,7 +35,12 @@ export default function BlogPage() {
     <AppContainer>
       <Stack justifyContent={"flex-start"} paddingY={6}>
         <Box p={2} mb={3}>
-          <Typography fontSize={"40px"} fontWeight={400}>
+          <Typography
+            fontSize={"40px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            color={"#0f0d0d"}
+            fontWeight={400}
+          >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
           <img
@@ -55,7 +53,12 @@ export default function BlogPage() {
             decoding="async"
             sizes="(max-width: 640px) 100vw, 640px"
           ></img>
-          <Typography color={"#575656"} maxWidth={1140} fontSize={"18px"}>
+          <Typography
+            color={"#575656"}
+            maxWidth={1400}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontSize={"20px"}
+          >
             Mending clothes might seem like a distant memory in a world driven
             by fast fashion and disposable clothing. However, beneath the
             surface of this throwaway culture lies a profound opportunity for
