@@ -1,6 +1,5 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
-import Colors from "../../CommonComponent/Colors";
 import { useEffect } from "react";
 
 const InstagramBoxNavigation = [
@@ -85,19 +84,20 @@ export default function OurStory() {
           >
             <Typography
               fontSize={"80px"}
-              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               position={"relative"}
               zIndex={1}
               fontWeight={500}
               textTransform={"lowercase"}
             >
-              WE STAND BY THAT COMMITMENT 100%
+              WE STAND BY THAT COMMITMENT 100%.
             </Typography>
             <Typography
               position={"relative"}
               zIndex={1}
               fontSize={"22px"}
-              fontFamily={"Proxima Nova, sans-serif"}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              color={"#575656"}
             >
               We fix clothing that other companies turn away. And if we can't
               fix it to our standards, we tell you. Your happiness and
@@ -155,15 +155,16 @@ export default function OurStory() {
               >
                 <Typography
                   fontSize={"48px"}
-                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontWeight={400}
+                  fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   HONEST REPAIR
                 </Typography>
                 <Typography
                   color={"#575656"}
-                  fontSize={"16px"}
-                  fontFamily={"Proxima Nova, sans-serif"}
+                  fontSize="16px"
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
                 >
                   In order to make good on that promise to you, we have spent
                   decades honing our craft and assembling a team of highly
@@ -185,14 +186,16 @@ export default function OurStory() {
               >
                 <Typography
                   fontSize={"48px"}
-                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   INHERENTLY SUSTAINABLE
                 </Typography>
                 <Typography
                   color={"#575656"}
-                  fontSize={"16px"}
-                  fontFamily={"Proxima Nova, sans-serif"}
+                  fontSize="16px"
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
                 >
                   We are also dedicated to doing our part to lessen the impact
                   of consumption on our planet's environment and resources. You
@@ -214,17 +217,18 @@ export default function OurStory() {
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
-                  lineHeight={"0.9"}
+                  lineHeight={"1"}
                   fontSize={"48px"}
-                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                  fontWeight={500}
+                  textTransform={"lowercase"}
                 >
                   NOW YOU SEE IT , <br /> NOW YOU DONT'T{" "}
                 </Typography>
                 <Typography
                   mt={2}
                   fontSize={"16px"}
-                  fontFamily={"Proxima Nova, sans-serif"}
-                  color={"#575656"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
                 >
                   Your favorite clothes mean a lot to you and we know how much
                   you love them. We also know how upsetting it can be when you
@@ -248,13 +252,15 @@ export default function OurStory() {
           <Box maxWidth={1200} m={"0 auto"} textAlign={"center"}>
             <Typography
               fontSize={"80px"}
-              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontFamily={`'IndustrialGothicBannerStd', sans-serif`}
+              fontWeight={500}
+              textTransform={"lowercase"}
             >
               A MESSAGE FROM ALTERKNIT
             </Typography>
             <Typography
-              fontSize={"22px"}
-              fontFamily={"Proxima Nova, sans-serif"}
+              fontSize="22px"
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
               color={"#575656"}
             >
@@ -267,8 +273,8 @@ export default function OurStory() {
               repairs being made on mass market knit and woven fabrics.
             </Typography>
             <Typography
-              fontSize={"22px"}
-              fontFamily={"Proxima Nova, sans-serif"}
+              fontSize="22px"
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
               color={"#575656"}
             >
@@ -294,7 +300,7 @@ export default function OurStory() {
               <em
                 style={{
                   fontSize: "22px",
-                  fontFamily: "Proxima Nova, sans-serif",
+                  fontFamily: `"ProximaNovaMedium", sans-serif`,
                   color: "#575656",
                 }}
               >

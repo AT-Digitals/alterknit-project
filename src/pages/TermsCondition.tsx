@@ -1,6 +1,12 @@
 import { Box, Typography } from "@mui/material";
 
+import { useEffect } from "react";
+
 export default function TermsCondition() {
+ useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+ 
     return (
         <>
             <Box width={"100%"} mb={5}>

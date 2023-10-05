@@ -38,7 +38,7 @@ export default function MoreDetailsPage() {
         e.preventDefault();
 
         let result = await fetch(
-            'http://localhost:3001/more-details', {
+            'https://alterknit-backend.onrender.com/more-details', {
             method: "post",
             body: JSON.stringify({
                 previous: previousClean,

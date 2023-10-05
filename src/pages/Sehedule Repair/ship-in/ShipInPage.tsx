@@ -53,7 +53,7 @@ export default function ShipInPage() {
 
     const stringifiedArray = JSON.stringify(selectedButtons);
 
-    let result = await fetch("http://localhost:3001/service-item", {
+    let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
       method: "post",
       body: stringifiedArray,
       headers: {

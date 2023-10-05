@@ -42,14 +42,6 @@ const BackFace = styled(CardFace)`
   border-radius: 40px;
 `;
 
-const CardImage = styled.img`
-  border-radius: 40px;
-  border: 8px solid #df7c6d;
-  max-width: 100%; /* Ensure the image fits within the container */
-  max-height: 100%; /* Ensure the image fits within the container */
-  object-fit: cover;
-`;
-
 const TotalCards = [
   {
     cardDiscription:
@@ -120,8 +112,17 @@ function HoverCard() {
                   display={"flex"}
                   flexDirection={"column"}
                 >
-                  <CardImage src={cards.cardImage} alt="card" loading="lazy" />
-                  <p style={{ fontSize: "16px", padding: "1rem" }}>
+                  <img
+                    height={400}
+                    src={cards.cardImage}
+                    alt="card"
+                    loading="lazy"
+                    style={{
+                      border: "8px solid #df7c6d",
+                      borderRadius: "40px",
+                    }}
+                  />
+                  <p style={{ fontSize: "16px", padding: "10px" }}>
                     {cards.cardDiscription}
                   </p>
                 </Box>

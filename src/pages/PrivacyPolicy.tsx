@@ -1,6 +1,11 @@
 import { Box, Typography } from "@mui/material";
 
+import { useEffect } from "react";
+
 export default function PrivacyPolicy() {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     return (
         <>
             <Box width={"100%"}>
@@ -567,4 +572,5 @@ export default function PrivacyPolicy() {
             </Box>
         </>
     );
+
 }

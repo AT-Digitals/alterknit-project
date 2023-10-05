@@ -38,7 +38,7 @@ export default function RepairPage() {
 
   useEffect(() => {
     // Make a GET request to your API
-    fetch('http://localhost:3001/service-details')
+    fetch('https://alterknit-backend.onrender.com/service-details')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));

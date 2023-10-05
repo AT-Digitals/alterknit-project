@@ -1,6 +1,5 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import image1 from "../assets/bg_care.png";
 
 const getPersonalDetails = {
   firstname: "",
@@ -18,7 +17,6 @@ export default function FormFile() {
   const residentDetails = {
     personalDetails: personalDetails,
   };
-
 
   const FirstNameValidation = (name: string) => {
     if (/^[a-zA-Z\s]{1,40}$/.test(name)) {
@@ -86,39 +84,43 @@ export default function FormFile() {
     setPersonalDetails({ ...personalDetails, [name]: value });
   };
 
-
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/send-email', {
-        method: 'POST',
+      const response = await fetch("/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(personalDetails)
+        body: JSON.stringify(personalDetails),
       });
 
       const data = await response.json();
       console.log(data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
 
+
     let result = await fetch(
-      'http://localhost:3001/items', {
+      'https://alterknit-backend.onrender.com/items', {
       method: "post",
-      body: JSON.stringify({ name: personalDetails.firstname, email: personalDetails.email, phone: personalDetails.phone, message: personalDetails.passage }),
+      body: JSON.stringify({
+        name: personalDetails.firstname,
+        email: personalDetails.email,
+        phone: personalDetails.phone,
+        message: personalDetails.passage,
+      }),
       headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
     // setPersonalDetails({ firstname: "", email: "", phone: "", passage: '' })
     result = await result.json();
     console.warn(result);
     if (result) {
-      setPersonalDetails(getPersonalDetails)
+      setPersonalDetails(getPersonalDetails);
     }
 
     // Initialize error variables
@@ -146,7 +148,6 @@ export default function FormFile() {
     } else if (!PhoneValidation(personalDetails.phone)) {
       phoneError = "Invalid phone number format";
     }
-
 
     // Set the error state variables
     setFirstNameError(firstNameError);
@@ -179,20 +180,33 @@ export default function FormFile() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Box width={"100%"} height={"900px"} style={{
-      backgroundColor: "#f8f1eb",
-      backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
-      backgroundSize: "contain",
-    }} display={"flex"} justifyContent={"center"}>
-      <form style={{
-        borderRadius: "50px",
-        border: "5px solid #df7c6d",
+    <Box
+      width={"100%"}
+      height={"900px"}
+      style={{
         backgroundColor: "#f8f1eb",
-        marginTop: "30px",
-        marginBottom: "30px",
-        position: "absolute",
-      }} onSubmit={handleSubmit}>
+        backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
+        backgroundSize: "contain",
+      }}
+      display={"flex"}
+      justifyContent={"center"}
+    >
+      <form
+        style={{
+          borderRadius: "50px",
+          border: "5px solid #df7c6d",
+          backgroundColor: "#f8f1eb",
+          marginTop: "30px",
+          marginBottom: "30px",
+          position: "absolute",
+        }}
+        onSubmit={handleSubmit}
+      >
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
@@ -244,23 +258,25 @@ export default function FormFile() {
               />
             </Box>
             <Box>
-              <Button style={{
-                backgroundColor: "black",
-                marginLeft: "90px",
-                marginTop: "40px",
-                padding: "12px 40px",
-                letterSpacing: "2px",
-              }}
+              <Button
+                style={{
+                  backgroundColor: "black",
+                  marginLeft: "90px",
+                  marginTop: "40px",
+                  padding: "12px 40px",
+                  letterSpacing: "2px",
+                }}
                 component="label"
                 variant="contained"
               >
                 Click To Attach A Photo
                 <input
                   type="file"
-                  hidden accept="image" onChange={handleImageChange}
+                  hidden
+                  accept="image"
+                  onChange={handleImageChange}
                 />
               </Button>
-
             </Box>
             <Box>
               {selectedImage && (
@@ -269,7 +285,8 @@ export default function FormFile() {
                   alt="Selected"
                   style={{
                     width: "120px",
-                    height: "100px", borderRadius: "50%"
+                    height: "100px",
+                    borderRadius: "50%",
                   }}
                 />
               )}
@@ -393,16 +410,14 @@ export default function FormFile() {
                 ":hover": {
                   background: "black",
                 },
-
               }}
               variant="contained"
               type="submit"
-            // onClick={handleSubmit}
+              // onClick={handleSubmit}
             >
               Send
             </Button>
           </Box>
-
         </Box>
       </form>
     </Box>

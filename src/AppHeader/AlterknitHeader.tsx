@@ -9,6 +9,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import React, { useState } from "react";
 
 import Alterknit from "../assets/alterknit.png";
 import AppContainer from "../component/AppContainer";
@@ -16,10 +17,29 @@ import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import React, { useState } from "react";
 import routes from "../routes/routes";
 
 const ServiceItem = styled(Link)`
+  text-decoration: none;
+  position: relative;
+  color: graytext;
+
+  &:hover {
+    color: black;
+  }
+
+  &:hover::before {
+    content: "•";
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    font-size: 40px;
+  }
+`;
+
+const HeaderLink = styled("a")`
   text-decoration: none;
   position: relative;
   color: graytext;
@@ -47,7 +67,7 @@ const StyledButton = styled(CustomButton)({
   textTransform: "none",
   whiteSpace: "nowrap",
   fontFamily: `"ProximaNovaSemibold", sans-serif !important`,
-})
+});
 
 interface headerProps {
   setActiveTab: (event: any) => void;
@@ -70,7 +90,6 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
     setAnchorEl(event.currentTarget);
   };
 
-
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
@@ -79,6 +98,10 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
 
   const handleClick = () => {
     setIsSelected(!isSelected);
+  };
+  const handleReloadClick = () => {
+    window.location.reload();
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -151,15 +174,20 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               direction={isSmallScreen ? "column" : "row"}
             >
               {services.map((service, index) => (
-                <ServiceItem
-                  to={service.url}
+                <HeaderLink
+                  href={service.url}
+                  onClick={handleReloadClick}
                   key={index}
                   className="service-item"
                 >
-                  <Typography fontSize="22px" key={index} fontFamily={`"ProximaNovaRegular", sans-serif`} fontWeight={400}>
+                  <Typography
+                    fontSize="22px"
+                    fontFamily={`"ProximaNovaRegular", sans-serif`}
+                    fontWeight={400}
+                  >
                     {service.linkname}
                   </Typography>
-                </ServiceItem>
+                </HeaderLink>
               ))}
             </Stack>
           )}
@@ -172,17 +200,15 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               <StyledButton
                 bgColor={Colors.BLACK}
                 onClick={handleClick}
-                style={{ backgroundColor: isSelected ? Colors.LINK : Colors.BLACK }}
+                style={{
+                  backgroundColor: isSelected ? Colors.LINK : Colors.BLACK,
+                }}
               >
                 Schedule your repair
               </StyledButton>
             </Link>
             <Link to={routes.SIGN_IN}>
-              <StyledButton
-                bgColor={Colors.BLACK}
-              >
-                Logout
-              </StyledButton>
+              <StyledButton bgColor={Colors.BLACK}>Logout</StyledButton>
             </Link>
           </Stack>
         </Stack>
