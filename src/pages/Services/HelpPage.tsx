@@ -163,8 +163,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNoteIndex === index && (
                 <Typography
-                  fontFamily={`"Proxima Nova", sans-serif`}
-                  fontSize={"21px"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}
@@ -215,8 +215,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNote1Index === index && (
                 <Typography
-                  fontFamily={`"Proxima Nova", sans-serif`}
-                  fontSize={"21px"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}
@@ -267,8 +267,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNote2Index === index && (
                 <Typography
-                  fontFamily={`"Proxima Nova", sans-serif`}
-                  fontSize={"21px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}
@@ -319,8 +319,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNote3Index === index && (
                 <Typography
-                  fontFamily={`"Proxima Nova", sans-serif`}
-                  fontSize={"21px"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}

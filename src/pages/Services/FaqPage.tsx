@@ -184,10 +184,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                     fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -208,8 +208,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNoteIndex === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -236,10 +236,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                      fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -260,8 +260,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote1Index === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -288,10 +288,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -312,8 +312,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote2Index === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -340,10 +340,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -364,8 +364,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote3Index === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -392,10 +392,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -416,8 +416,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote4Index === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"} 
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -444,10 +444,10 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontSize={"32px"}
                     color={"black"}
-                    fontWeight={"600"}
+                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
@@ -468,8 +468,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote5Index === index && (
                   <Typography
-                    fontFamily={`"Proxima Nova", sans-serif`}
-                    fontSize={"21px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}

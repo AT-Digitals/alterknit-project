@@ -118,15 +118,15 @@ export default function PorfolioHeader() {
                             margin={"50px 2px"}
                             color={"#575656"}
                             fontWeight={"500"}
+                            fontFamily={`"ProximaNovaMedium", sans-serif`}
                             fontSize={"22px"}
-                            fontFamily={`"Proxima Nova", sans-serif`}
                         >
                             Don't think we can fix what you've got?
                             <Typography
                                 color={"#575656"}
                                 fontWeight={"500"}
+                                fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={"22px"}
-                                fontFamily={`"Proxima Nova", sans-serif`}
                                 paddingTop={"5px"}
                             >
                                 Check out our gallery of before and afters to see what magic we
