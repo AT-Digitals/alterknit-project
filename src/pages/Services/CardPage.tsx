@@ -65,8 +65,8 @@ export default function CardPage() {
                                 maxWidth={"676px"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"21px"}
-                                fontFamily={`"Proxima Nova", sans-serif`}
+                                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                fontSize={"22px"}
                                 marginRight={"37px"}
                             >
                                 We need to examine your entire item in our work studio because
@@ -80,12 +80,12 @@ export default function CardPage() {
                             <Typography
                                 marginBottom={"36px"}
                                 marginRight={"48px"}
-                                fontFamily={`"Proxima Nova", sans-serif`}
                                 lineHeight={"1.3"}
                                 maxWidth={"706px"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"21px"}
+                                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                fontSize={"22px"}
                             >
                                 Our repair service starts at $45.00. Bear in mind that this is
                                 the minimum you can expect to pay for a repair. There are
@@ -150,14 +150,14 @@ export default function CardPage() {
                                 </Typography>
                             </Typography>
                             <Typography
-                                fontFamily={`"Proxima Nova", sans-serif`}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
                                 maxWidth={"714px"}
                                 marginTop={"4px"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"21px"}
+                                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                fontSize={"22px"}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -224,13 +224,13 @@ export default function CardPage() {
                                 </Typography>
                             </Typography>
                             <Typography
-                                fontFamily={`"Proxima Nova", sans-serif`}
+                                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                fontSize={"22px"}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
                                 maxWidth={"676px"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"21px"}
                                 marginRight={"37px"}
                             >
                                 We are working on a 4-6 week turnaround time. However, if you
@@ -299,19 +299,20 @@ export default function CardPage() {
                                     </Typography>{" "}
                                 </Typography>
                                 <Typography
-                                    fontFamily={`"Proxima Nova", sans-serif`}
                                     margin={"20px 0px"}
                                     lineHeight={"1.3"}
                                     maxWidth={"975px"}
                                     color={"black"}
                                     fontWeight={"500"}
-                                    fontSize={"20px"}
+                                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                    fontSize={"22px"}
                                 >
                                     Repair quotes are based on the time and required solution.
                                     <Typography
                                         color={"black"}
                                         fontWeight={"500"}
-                                        fontSize={"20px"}
+                                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                                        fontSize={"22px"}
                                     >
                                         Estimates are for labor only and do not include material
                                         costs, shipping/delivery fees, or additional services. Every

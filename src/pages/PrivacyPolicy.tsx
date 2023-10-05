@@ -19,8 +19,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Your privacy is important to us. Accordingly, we have developed this
                         Privacy Policy to describe your privacy rights regarding our
@@ -44,8 +44,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         By using AlterKnit New York and any of its related applications,
                         services and tools, and/or registering for an AlterKnit New York
@@ -75,8 +75,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         From time to time, it may be necessary for us to review and revise
                         this Privacy Policy. We reserve the right to update this Privacy
@@ -101,8 +101,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We may offer you the ability to connect with our site, or use our
                         applications, services, and tools using a mobile device, either
@@ -133,8 +133,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         The AlterKnit New York website is a general audience website, and it
                         and its related applications, services, and tools are not intended
@@ -156,8 +156,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         You can browse our site without telling us who you are or revealing
                         any personal information about yourself. This information is
@@ -185,8 +185,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         When you visit our site, use our applications, services, and tools,
                         or interact with our content, we may automatically collect
@@ -214,8 +214,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We collect and store any information you enter on our site or you
                         provide to us in context of using our site, applications, services
@@ -258,8 +258,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Our primary purpose in collecting personal information is to provide
                         you with access to our site and/or use of our services, applications
@@ -299,8 +299,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We do not sell or rent your personal information to third parties
                         for their marketing purposes without your explicit consent. We may
@@ -324,8 +324,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We may disclose personal information to respond to legal
                         requirements, enforce our policies, respond to claims that your
@@ -389,8 +389,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         When you visit or interact with our site, services, applications,
                         messaging (such as email), and tools, we or our authorized service
@@ -412,8 +412,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We and our customers do not tolerate spam. To report AlterKnit New
                         York-related spam or spoof emails to AlterKnit New York, please
@@ -438,8 +438,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We store and process your personal information on our computers.
                         Some of the information gathered (such as the email list) will be
@@ -466,8 +466,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We retain information as long as it is necessary and relevant for
                         our operations. In addition, we may retain personal information from
@@ -490,8 +490,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Except as otherwise expressly included in this Privacy Policy, this
                         document addresses only the use and disclosure of information we
@@ -517,8 +517,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Despite any precautions we take, the Internet is not a 100% secure
                         environment, and we therefore cannot ensure or warrant the security
@@ -544,8 +544,8 @@ export default function PrivacyPolicy() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We are committed to conducting our business in accordance with these
                         principles in order to ensure that the confidentiality of personal

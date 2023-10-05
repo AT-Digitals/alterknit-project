@@ -41,8 +41,8 @@ export default function OurStory() {
           justifyContent: "center",
           alignItems: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          padding: isXsScreen ? "5rem 0" : "15rem 0",
+          backgroundSize: "contain",
+          padding: "15rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
@@ -51,19 +51,19 @@ export default function OurStory() {
           width={"100%"}
           maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={isXsScreen ? "0 1rem" : "0 10rem"}
+          padding={isXsScreen ? "0 1rem" : "0 13rem"}
         >
           <Box
             bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"6rem 10rem"}
+            padding={"3rem 8rem"}
             textAlign="center"
           >
             <Typography
-              lineHeight={isLgScreen ? "4rem" : "2rem"}
-              fontSize={isLgScreen ? "70px" : "40px"}
+              lineHeight={isLgScreen ? "1" : "2rem"}
+              fontSize={isLgScreen ? "78px" : "40px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}

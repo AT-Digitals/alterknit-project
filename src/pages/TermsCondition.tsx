@@ -19,8 +19,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         These terms and conditions (“Terms and Conditions”) govern your use
                         of AlterKnit New York (“AlterKnit New York,” “we” or “us”) services
@@ -47,7 +47,7 @@ export default function TermsCondition() {
                     >
                         CHANGES TO TERMS AND CONDITIONS
                     </Typography>
-                    <Typography color={"#575656"} fontWeight={"500"} fontSize={"22px"}>
+                    <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`} fontSize={"22px"}>
                         You can review the most current version of the Terms and Conditions
                         at any time on this page. We reserve the right from time to time,
                         with or without notice to you, to change these Terms and Conditions
@@ -74,8 +74,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Any personally identifying information submitted on the Site is
                         subject to our Privacy Policy, the terms of which are incorporated
@@ -96,8 +96,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         You accept the terms and conditions associated with AlterKnit New
                         York’s repair service. By requesting service you acknowledge that
@@ -140,8 +140,9 @@ export default function TermsCondition() {
                         <Typography
                             marginTop={"50px"}
                             color={"#575656"}
-                            fontWeight={"500"}
-                            fontSize={"20px"}
+                            fontWeight={"bold"}
+                            fontFamily={`"ProximaNovaMedium", sans-serif`}
+                            fontSize={"22px"}
                         >
                             Garment repair services – loss
                         </Typography>
@@ -149,7 +150,8 @@ export default function TermsCondition() {
                             marginTop={"50px"}
                             color={"#575656"}
                             fontWeight={"500"}
-                            fontSize={"20px"}
+                            fontFamily={`"ProximaNovaMedium", sans-serif`}
+                            fontSize={"22px"}
                         >
                             If we determine that we are responsible for the loss of an item
                             submitted for repair or alteration we will refund 30% of the
@@ -177,8 +179,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We may offer a clothes cleaning service by providing users with
                         pickup, cleaning, and delivery of their clothes. We are not
@@ -215,8 +217,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Customer hereby authorizes AlterKnit New York to perform all
                         services (including repair, replacement and/or addition of all
@@ -240,8 +242,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         As an added convenience to our customers, we do not take inventory
                         when picking up garments and we do not require a signed delivery
@@ -267,8 +269,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We must receive notice of a claim due to damage (visible or
                         concealed), or shortage within 48 Hours after delivery of the
@@ -309,8 +311,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         In the case that items were either unrepairable or service was
                         declined upon receiving estimation, you will have six months to pick
@@ -332,8 +334,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Deliveries or pick-ups that require multiple attempts, excessively
                         long wait times or address street is unaccessible without prior
@@ -356,8 +358,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         We may offer products for purchase through our Site via an online
                         store. By agreeing to these Terms of Conditions, you represent that
@@ -384,8 +386,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Cleaning value of up to $35. Valid for first time customers only.
                         Offer valid on first fixed sweater only. Coats jackets, pants,
@@ -407,8 +409,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
-                        fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                     >
                         Knit NY, LLC (“we”, “our”, “us” or “Sponsor”) may, from time to
                         time, offer individuals (“you”) the opportunity to earn rewards (the
@@ -483,8 +485,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Certain products may be available exclusively online through the
                         Site. These products may have limited quantities and are subject to
@@ -511,8 +513,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Some featured items may be available only in limited quantities or
                         only while supplies last. Once an item is out of stock, we will
@@ -539,8 +541,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Occasionally there may be information on our site or in the Service
                         that contains typographical errors, inaccuracies or omissions that
@@ -571,8 +573,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         You are responsible for, and agree to pay promptly, all charges to
                         your account, including applicable taxes and purchases by you or
@@ -601,8 +603,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         Any comments, suggestions, ideas, materials and other submissions
                         (“User Comments”) that you send to AlterKnit New York are provided
@@ -637,8 +639,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         When you access a non-AlterKnit New York website, please realize
                         that it is independent of us. Linking to any off-site pages is at
@@ -663,8 +665,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         All Site content, design, text, graphics, and interfaces; the
                         collection, selection, and arrangement thereof; and all software are
@@ -695,8 +697,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         You agree not to engage in unacceptable use of the AlterKnit New
                         York services or Site, which includes, without limitation, use of
@@ -724,7 +726,8 @@ export default function TermsCondition() {
                             marginTop={"45px"}
                             color={"#575656"}
                             fontWeight={"500"}
-                            fontSize={"20px"}
+                            fontFamily={`"ProximaNovaMedium", sans-serif`}
+                            fontSize={"22px"}
                         >
                             WARRANTY DISCLAIMER. YOU EXPRESSLY AGREE THAT USE OF THE ALTERKNIT
                             NEW YORK SERVICES, THE SITE, AND THE INTERNET IS ENTIRELY AT YOUR
@@ -775,8 +778,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         The material in the Site is provided for lawful purposes only.
                         AlterKnit New York controls and operates this Site from New York,
@@ -799,8 +802,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
-                        fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                     >
                         If any portion of this Agreement is held invalid or unenforceable,
                         that portion shall be construed as nearly as possible to reflect the
@@ -824,8 +827,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         This Agreement shall be governed by the laws of the State of New
                         York without regard to its conflict of laws rules. You expressly
@@ -854,8 +857,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         You agree to defend, indemnify, and hold all AlterKnit New York
                         Parties harmless from any and all suits, actions, legal or
@@ -878,8 +881,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         The obligations and liabilities of the parties incurred prior to the
                         termination date shall survive the termination of this agreement for
@@ -908,8 +911,8 @@ export default function TermsCondition() {
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontSize={"22px"}
-                        fontFamily={`"Proxima Nova", sans-serif`}
                     >
                         The failure of us to exercise or enforce any right or provision of
                         these Terms of Service shall not constitute a waiver of such right
