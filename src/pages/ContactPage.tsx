@@ -102,7 +102,9 @@ export default function FormFile() {
       console.error("Error:", error);
     }
 
-    let result = await fetch("http://localhost:3001/items", {
+
+    let result = await fetch(
+      'https://alterknit-backend.onrender.com/items', {
       method: "post",
       body: JSON.stringify({
         name: personalDetails.firstname,

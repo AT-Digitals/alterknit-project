@@ -68,7 +68,7 @@ export default function ShipinFields({ Ishoverd }: HoverProps) {
       routeChange();
     }
 
-    let result = await fetch("http://localhost:3001/service-details", {
+    let result = await fetch("https://alterknit-backend.onrender.com/service-details", {
       method: "post",
       body: JSON.stringify({
         color: formData.color,
