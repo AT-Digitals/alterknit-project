@@ -20,9 +20,10 @@ const StyledButtom = styled(CustomButton)({
 
 interface linkprops {
   onClick?: (event: any) => void;
-  link: string;
+  // link?: string;
+  onChange?: () => void;
 }
-export default function ShipCard({ onClick, link }: linkprops) {
+export default function ShipCard({ onClick, onChange }: linkprops) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -35,11 +36,11 @@ export default function ShipCard({ onClick, link }: linkprops) {
       justifyContent="center"
       paddingY={2}
     >
-      <Link to={link}>
-        <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK}>
-          Back
-        </StyledButtom>
-      </Link>
+
+      <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} onClick={onChange}>
+        Back
+      </StyledButtom>
+
       <StyledButtom bgColor={"#f8f1eb"} color={Colors.BLACK} onClick={onClick}>
         Next
       </StyledButtom>

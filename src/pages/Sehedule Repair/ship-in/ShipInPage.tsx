@@ -23,7 +23,12 @@ const StyleButtonNew = styled(Button)({
   },
 });
 
-export default function ShipInPage() {
+interface shipinprops {
+  nextStep: () => void;
+  prevStep: () => void;
+}
+
+export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
   const navigate = useNavigate();
 
   const routeChange = () => {
@@ -51,6 +56,8 @@ export default function ShipInPage() {
     };
     console.log("sfsg", selectedList);
 
+
+
     const stringifiedArray = JSON.stringify(selectedButtons);
 
     let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
@@ -61,7 +68,7 @@ export default function ShipInPage() {
       },
     });
     if (selectedButtons.length > 0) {
-      routeChange();
+      nextStep();
     } else {
       alert("Please select a service first");
     }
@@ -226,7 +233,7 @@ export default function ShipInPage() {
           </StyleButtonNew>
         </Grid>
       </Grid>
-      <ShipCard onClick={handleNextButtonClick} link={routes.FIXME} />
+      <ShipCard onClick={handleNextButtonClick} onChange={prevStep} />
     </Stack>
   );
 }

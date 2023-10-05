@@ -4,6 +4,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Link,
   Stack,
   Typography,
   styled,
@@ -13,9 +14,9 @@ import {
 
 import AppContainer from "../../component/AppContainer";
 import Colors from "../../CommonComponent/Colors";
-import { Link } from "react-router-dom";
 import routes from "../../routes/routes";
 import { useEffect } from "react";
+import CustomButton from "../../CommonComponent/CustomButton";
 
 const StyleCard = styled(Card)({
   maxWidth: 590,
@@ -26,7 +27,11 @@ const StyleCard = styled(Card)({
   },
 });
 
-export default function FixmePage() {
+interface shipinprops {
+  nextStep: () => void;
+}
+
+export default function FixmePage({ nextStep }: shipinprops) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
@@ -58,7 +63,8 @@ export default function FixmePage() {
               alignItems="center"
             >
               <Grid pt={0} item xs={12} sm={6}>
-                <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}>
+                <Link onClick={nextStep} sx={{ textDecoration: "none" }}>
+                  {/* <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}> */}
                   <StyleCard>
                     <Stack
                       gap={2}
@@ -105,54 +111,55 @@ export default function FixmePage() {
                     </CardContent>
                   </StyleCard>
                 </Link>
+                {/* </Link> */}
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}>
-                  <StyleCard>
-                    <Stack
-                      gap={2}
-                      style={{ background: "#f8f1eb" }}
-                      p={3}
-                      direction={"column"}
-                      alignItems={"center"}
+                {/* <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}> */}
+                <StyleCard>
+                  <Stack
+                    gap={2}
+                    style={{ background: "#f8f1eb" }}
+                    p={3}
+                    direction={"column"}
+                    alignItems={"center"}
+                  >
+                    <Typography
+                      fontWeight={500}
+                      variant={isSmScreen ? "h4" : "h3"}
+                      fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                      fontSize="3rem"
+                      textTransform={"lowercase"}
                     >
-                      <Typography
-                        fontWeight={500}
-                        variant={isSmScreen ? "h4" : "h3"}
-                        fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                        fontSize="3rem"
-                        textTransform={"lowercase"}
-                      >
-                        DOOR TO DOOR{" "}
-                      </Typography>
-                      <CardMedia
-                        sx={{ width: 70 }}
-                        component="img"
-                        src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
-                        alt="package"
-                      />
-                    </Stack>
-                    <CardContent
-                      sx={{
-                        backgroundColor: "#df7c6d",
-                        padding: 5,
-                        height: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                      className="foot"
+                      DOOR TO DOOR{" "}
+                    </Typography>
+                    <CardMedia
+                      sx={{ width: 70 }}
+                      component="img"
+                      src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
+                      alt="package"
+                    />
+                  </Stack>
+                  <CardContent
+                    sx={{
+                      backgroundColor: "#df7c6d",
+                      padding: 5,
+                      height: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                    className="foot"
+                  >
+                    <Typography
+                      variant="body2"
+                      style={{ textAlign: "center", maxWidth: 300 }}
                     >
-                      <Typography
-                        variant="body2"
-                        style={{ textAlign: "center", maxWidth: 300 }}
-                      >
-                        Same day pick up service is available in <b>SELECT</b>{" "}
-                        zip codes within the 5 boroughs of NYC from{" "}
-                        <b>24HR RESIDENTIAL</b> doorman buildings.
-                      </Typography>
-                    </CardContent>
-                  </StyleCard>
-                </Link>
+                      Same day pick up service is available in <b>SELECT</b>{" "}
+                      zip codes within the 5 boroughs of NYC from{" "}
+                      <b>24HR RESIDENTIAL</b> doorman buildings.
+                    </Typography>
+                  </CardContent>
+                </StyleCard>
+                {/* </Link> */}
               </Grid>
             </Grid>
           </Stack>

@@ -3,8 +3,13 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import React from "react";
 import routes from "../../routes/routes";
+import CustomButton from "../../CommonComponent/CustomButton";
 
-export default function ScheduleReapir() {
+interface shipinprops {
+  nextStep: () => void;
+}
+
+export default function ScheduleReapir({ nextStep }: shipinprops) {
   const buttonStyle = {
     backgroundColor: "white",
     width: 220,
@@ -102,37 +107,38 @@ export default function ScheduleReapir() {
             straight to your inbox for you to use.
           </Typography>
         </Stack>
-        <Link to={routes.FIXME}>
-          <Button
-            style={
-              isHovered ? { ...buttonStyle, ...buttonHoverStyle } : buttonStyle
-            }
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Box minWidth={280} p={"10px"}>
-              <Typography
-                fontSize="4rem"
-                fontWeight={500}
-                color={isHovered ? "white" : "black"}
-                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                lineHeight={1}
-                textTransform={"lowercase"}
-              >
-                FIX ME!
-              </Typography>
-              <span
-                style={{
-                  color: isHovered ? "white" : "black",
-                  textTransform: "none",
-                  fontSize: "18px",
-                }}
-              >
-                Click here to start
-              </span>
-            </Box>
-          </Button>
-        </Link>
+        {/* <Link to={routes.FIXME}> */}
+        <Button
+          style={
+            isHovered ? { ...buttonStyle, ...buttonHoverStyle } : buttonStyle
+          }
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={nextStep}
+        >
+          <Box minWidth={280} p={"10px"}>
+            <Typography
+              fontSize="4rem"
+              fontWeight={500}
+              color={isHovered ? "white" : "black"}
+              fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+              lineHeight={1}
+              textTransform={"lowercase"}
+            >
+              FIX ME!
+            </Typography>
+            <span
+              style={{
+                color: isHovered ? "white" : "black",
+                textTransform: "none",
+                fontSize: "18px",
+              }}
+            >
+              Click here to start
+            </span>
+          </Box>
+        </Button>
+        {/* </Link> */}
 
         <Box mt={"50px"}>
           <Typography

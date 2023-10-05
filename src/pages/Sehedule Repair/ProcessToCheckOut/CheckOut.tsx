@@ -402,7 +402,7 @@ export default function CheckOut() {
             NO
           </StyleButtonNew>
         </Stack>
-        <ShipCard link={routes.REPAIR_PAGE} onClick={handleNextClick} />
+        <ShipCard onClick={handleNextClick} />
 
         <img
           style={{ maxWidth: "1220px", margin: "4rem 0" }}

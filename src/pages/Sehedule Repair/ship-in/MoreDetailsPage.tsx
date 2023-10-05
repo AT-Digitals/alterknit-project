@@ -204,7 +204,7 @@ export default function MoreDetailsPage() {
                     </StyleButtonNew>
                 </Stack>
                 <ShipCard
-                    link={routes.SHIP_IN_FIELDS}
+
                     onClick={handleNextButtonClick}
                 />
             </Stack>
