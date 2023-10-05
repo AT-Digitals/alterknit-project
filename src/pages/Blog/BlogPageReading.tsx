@@ -7,21 +7,23 @@ export default function BlogPageReadingContent() {
   return (
     <section style={{ padding: "5rem 0" }}>
       <AppContainer>
-        <Stack maxWidth={1230}>
+        <Stack maxWidth={1260}>
           <Typography
             fontSize={"38px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
             fontWeight={500}
+            color={"#0f0d0d"}
           >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
           <Typography
+            mt={"30px"}
             color={"#575656"}
-            m={"0 0 2rem 0"}
+            m={"10px 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Mending clothes might seem like a distant memory in a world driven
             by fast fashion and disposable clothing. However, beneath the
@@ -36,18 +38,19 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             The Fast Fashion Conundrum
           </Typography>
 
           <Typography
             color={"#575656"}
-            m={"0 0 2rem 0"}
+            m={"10px 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Fast fashion, characterized by its rapid production and consumption
             cycle, has become a norm in contemporary society. Consumers are
@@ -70,18 +73,19 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Mending: A Sustainable Solution{" "}
           </Typography>
 
           <Typography
             color={"#575656"}
-            m={"0 0 2rem 0"}
+            m={"10px 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Clothes mending is a simple yet powerful practice that holds the key
             to significant positive impacts on sustainability. In a world
@@ -93,9 +97,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Reduced Resource Consumption{" "}
           </Typography>
@@ -105,7 +110,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Producing new clothing items consumes vast resources, including
             water, energy, and raw materials. By mending clothing instead of
@@ -116,9 +121,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Extended Garment Lifespan
           </Typography>
@@ -128,7 +134,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Mending clothes allows us to extend the life of our garments like
             knitwear, suit, sweater, etc. Rather than tossing out items with
@@ -139,9 +145,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Waste Reduction
           </Typography>
@@ -151,7 +158,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             The fashion industry generates immense amounts of waste, from
             offcuts during production to discarded clothing in landfills.
@@ -162,9 +169,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Mitigation Of Textile Waste
           </Typography>
@@ -174,7 +182,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Textile waste is a significant challenge, as synthetic fibers can
             take hundreds of years to decompose, and natural fibers also
@@ -184,9 +192,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Promotion Of Mindful Consumption
           </Typography>
@@ -196,7 +205,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Clothes mending encourages us to rethink our relationship with
             clothing. Instead of seeing garments as disposable items, we start
@@ -206,9 +215,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Local Economy Support
           </Typography>
@@ -218,7 +228,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             The resurgence of mending creates opportunities at the local level
             by creating job opportunities. As people seek mending services
@@ -228,9 +238,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Resistance To Throwaway Culture
           </Typography>
@@ -240,7 +251,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             The prevalence of fast fashion has cultivated a throwaway culture,
             where garments are discarded after minimal use. Repair challenges
@@ -250,9 +261,10 @@ export default function BlogPageReadingContent() {
           </Typography>
 
           <Typography
-            fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontSize={"28px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Awareness And Advocacy
           </Typography>
@@ -262,7 +274,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             As more individuals embrace clothes mending, awareness about
             sustainable fashion practices grows. People who restore often become
@@ -273,8 +285,9 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             The Mending Movement
           </Typography>
@@ -284,7 +297,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             The resurgence of clothes mending is not a coincidence but a
             response to the urgent need for sustainable alternatives. The
@@ -294,8 +307,9 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Social Media Platforms
           </Typography>
@@ -305,7 +319,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Instagram, TikTok, and Pinterest have become hubs for sharing
             mending techniques, tips, and success stories. Hashtags like
@@ -316,8 +330,9 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Collaborations With Fashion Brands
           </Typography>
@@ -327,7 +342,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Many fashion brands recognize the value of mending and
             sustainability. Collaborations between mending experts and brands
@@ -339,6 +354,7 @@ export default function BlogPageReadingContent() {
             fontSize={"30px"}
             fontFamily={"Proxima Nova,sans-serif"}
             textTransform={"capitalize"}
+            color={"#0f0d0d"}
           >
             Conclusion
           </Typography>
@@ -348,7 +364,7 @@ export default function BlogPageReadingContent() {
             m={"0 0 2rem 0"}
             fontWeight={"normal"}
             fontSize={"20px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
           >
             Mending clothes is a timeless and sustainable practice in fashion,
             where trends come and go rapidly. By choosing to mend rather than
@@ -360,10 +376,7 @@ export default function BlogPageReadingContent() {
 
           <p style={{ color: "#575656", fontSize: "20px" }}>
             At{" "}
-            <a
-              style={{ color: "#575656" }}
-              href={routes.ROOT}
-            >
+            <a style={{ color: "#575656" }} href={routes.ROOT}>
               <u>Alterknit</u>
             </a>
             , we are committed to restoring your clothes to new. We provide

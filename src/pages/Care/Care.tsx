@@ -97,13 +97,21 @@ export default function CarePage() {
             >
               CARE THROUGH REPAIR
             </Typography>
-            <p style={{ color: "#575656", fontSize: "19px" }}>
+            <p
+              style={{
+                color: "#575656",
+                fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
+                marginTop: "-6px",
+              }}
+            >
               Care is at the core of everything we do here at Alterknit.
             </p>
             <p
               style={{
                 maxWidth: 690,
                 fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
                 marginBottom: "2.5rem",
                 color: "#575656",
@@ -118,6 +126,7 @@ export default function CarePage() {
                 color: "#575656",
                 maxWidth: 690,
                 fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
                 marginBottom: "2.5rem",
               }}
@@ -152,6 +161,7 @@ export default function CarePage() {
               style={{
                 maxWidth: 690,
                 fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
                 marginBottom: "2.5rem",
                 color: "white",
@@ -167,6 +177,7 @@ export default function CarePage() {
               style={{
                 maxWidth: 690,
                 fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
                 marginBottom: "2.5rem",
                 color: "white",
@@ -180,6 +191,7 @@ export default function CarePage() {
               style={{
                 maxWidth: 690,
                 fontSize: "19px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
                 marginBottom: "2.5rem",
                 color: "white",
@@ -246,6 +258,8 @@ export default function CarePage() {
                     <Typography
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                       fontSize={"48px"}
+                      fontWeight={500}
+                      textTransform={"lowercase"}
                       color={"black"}
                     >
                       {notes.title}
@@ -258,9 +272,9 @@ export default function CarePage() {
                   </StyledBox>
                   {openNoteIndex === index && (
                     <Typography
-                      fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                      fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontSize={"22px"}
-                      color={"black"}
+                      color={"#575656"}
                     >
                       {notes.paragraph}
                     </Typography>
@@ -285,9 +299,9 @@ export default function CarePage() {
                   WHEN BAD THINGS HAPPEN TO GOOD SWEATERS
                 </Typography>
                 <Typography
-                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
                   fontSize={"22px"}
-                  color={"black"}
+                  color={"#575656"}
                 >
                   We've seen it all over here and fixed it too: your favorite
                   office cardigan caught in a desk chair wheel with blown out
@@ -330,9 +344,9 @@ export default function CarePage() {
                   </StyledBox>
                   {openNote1Index === index && (
                     <Typography
-                      fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                      fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontSize={"22px"}
-                      color={"black"}
+                      color={"#575656"}
                     >
                       {notes.paragraph}
                     </Typography>
@@ -384,7 +398,7 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"5rem 2rem 4rem"}
+            padding={"5rem 6rem 4rem 6rem"}
             position={"relative"}
             sx={{
               "@media (max-width: 768px)": {
@@ -423,7 +437,8 @@ export default function CarePage() {
             <Typography
               fontSize={"19px"}
               maxWidth={620}
-              fontFamily={"Proxima Nova,sans-serif"}
+              mt={5}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
               color={"#575656"}
               sx={{
                 "@media (max-width: 768px)": {
