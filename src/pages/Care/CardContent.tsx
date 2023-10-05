@@ -122,7 +122,9 @@ function HoverCard() {
                       borderRadius: "40px",
                     }}
                   />
-                  <p style={{ fontSize: "16px" }}>{cards.cardDiscription}</p>
+                  <p style={{ fontSize: "16px", padding: "10px" }}>
+                    {cards.cardDiscription}
+                  </p>
                 </Box>
               </CardFace>
               <BackFace className="back">
