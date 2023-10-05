@@ -324,7 +324,7 @@ export default function PartnerPage() {
             <CardContent>
 
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PREMIUM SOLUTIONS</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>to your customer restored and ready to wear.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>to your customer restored and ready to wear.</Typography></Typography>
             </CardContent>
           </Card>
           <Card
@@ -340,7 +340,7 @@ export default function PartnerPage() {
           >
             <CardContent>
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SERVICE SIMPLIFIED</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>we handle everything from logistics to customer service.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>we handle everything from logistics to customer service.</Typography></Typography>
             </CardContent>
           </Card>
           <Card
@@ -357,7 +357,7 @@ export default function PartnerPage() {
             <CardContent>
 
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>CUSTOMER RETENTION</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>and comes back to you for their next purchase.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>and comes back to you for their next purchase.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -375,7 +375,7 @@ export default function PartnerPage() {
             <CardContent>
 
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>ADDITIONAL REVENUE</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your service offering.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your service offering.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -393,7 +393,7 @@ export default function PartnerPage() {
             <CardContent>
 
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>FULLY SCALABLE</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your needs.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>your needs.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -410,7 +410,7 @@ export default function PartnerPage() {
           >
             <CardContent>
               <Typography lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SUSTAINABLE BY DEFAULT</Typography>
-              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>We're proud to give garments a second chance while<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>maintaining sustainability in our practices.</Typography></Typography>
+              <Typography color={"#000000"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We're proud to give garments a second chance while<Typography color={"black"} fontWeight={"500"} fontSize={"15px"}>maintaining sustainability in our practices.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -473,10 +473,9 @@ export default function PartnerPage() {
 
               padding: "50px 80px"
             }}>
-              <Typography color={"#6b7177"} fontWeight={"500"} fontSize={"16px"}  fontFamily={`"ProximaNovaMedium", sans-serif`}>If you're currently running a repair program or looking to get started offering repairs and alterations, we're here to help provide you with a custom solution to get your customers into their favorite garments. Each garment that comes to us is returned both visually and structurally to its original condition. You close the loop and we close the holes.</Typography>
+            <Typography color={"#6b7177"} fontWeight={"500"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>If you're currently running a repair program or looking to get started offering repairs and alterations, we're here to help provide you with a custom solution to get your customers into their favorite garments. Each garment that comes to us is returned both visually and structurally to its original condition. You close the loop and we close the holes.</Typography>
 
-            
-            </CardContent>
+
           </Card>
         </Box>
       </section>
@@ -505,10 +504,10 @@ export default function PartnerPage() {
               <TextField sx={{
                 width: "600px",
                 "& input::placeholder": {
-                   opacity: "1.42",
+                  opacity: "1.42",
                 },
               }}
-                inputProps={{style: {fontSize: 24, padding:"6px 0px", color: "#0a0a0a", paddingBottom: "13px"}}} // font size of input text
+                inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
                 id="standard-required"
                 placeholder="First & LastName"
@@ -525,9 +524,9 @@ export default function PartnerPage() {
                 width: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
-               },
+                },
               }}
-                inputProps={{style: {fontSize: 24, padding:"6px 0px", color: "#0a0a0a", paddingBottom: "13px"}}} // font size of input text
+                inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
                 id="standard-required"
                 placeholder="Company"
@@ -552,9 +551,9 @@ export default function PartnerPage() {
                 width: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
-               },
+                },
               }}
-                inputProps={{style: {fontSize: 24, padding:"6px 0px", color: "#0a0a0a", paddingBottom: "13px"}}} // font size of input text
+                inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
                 id="standard-required"
                 placeholder="E-mail Address"
@@ -571,9 +570,9 @@ export default function PartnerPage() {
                 width: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
-               },
+                },
               }}
-                inputProps={{style: {fontSize: 24, padding:"6px 0px", color: "#0a0a0a", paddingBottom: "13px"}}} // font size of input text
+                inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
                 id="standard-required"
                 placeholder="Phone Number"
