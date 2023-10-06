@@ -26,8 +26,8 @@ const StyledButton = styled(Button)({
 
 export default function SubscribePage() {
   return (
-    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"} pt={8} pb={5}>
-      <Box width={"100%"} marginTop={"40px"}>
+    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
+      <Box width={"100%"} marginTop={"90px"}>
         <Typography
           lineHeight={1}
           textAlign={"center"}

@@ -9,6 +9,7 @@ export default function BoxCreation() {
     <>
       <Box sx={{
         backgroundColor: "#fff",
+        marginBottom: "80px",
       }}>
         <Box margin={"0px 150px"} paddingTop={"125px"}>
           <Typography

@@ -13,6 +13,16 @@ const StyledTableCell = styled.td`
   font-weight: 600;
   font-family: "ProximaNovaSemibold", sans-serif;
 `;
+const StyledTr = styled.tr`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+`;
+const StyledTr2 = styled.tr`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+`;
 
 const StyledTableCellValue = styled.td`
   vertical-align: top;
@@ -79,7 +89,7 @@ export default function LastStep() {
             display={"flex"}
             flexDirection={"column"}
             alignItems={"center"}
-            gap={"30rem"}
+            gap={"20rem"}
             maxWidth={780}
             width={"100%"}
             margin={"0 auto"}
@@ -136,30 +146,36 @@ export default function LastStep() {
                 }}
               >
                 <tbody>
-                  <tr>
-                    <StyledTableCell>Service Needed</StyledTableCell>
-                    <StyledTableCellValue>restyling</StyledTableCellValue>
-                  </tr>
-                  <tr>
-                    <StyledTableCell>Brand</StyledTableCell>
-                    <StyledTableCellValue>kjb</StyledTableCellValue>
-                  </tr>
-                  <tr>
-                    <StyledTableCell>Color</StyledTableCell>
-                    <StyledTableCellValue>hjbjk</StyledTableCellValue>
-                  </tr>
-                  <tr>
-                    <StyledTableCell>Age of Garment</StyledTableCell>
-                    <StyledTableCellValue>jhvjh</StyledTableCellValue>
-                  </tr>
-                  <tr>
-                    <StyledTableCell># of Holes</StyledTableCell>
-                    <StyledTableCellValue>hjvk</StyledTableCellValue>
-                  </tr>
-                  <tr>
-                    <StyledTableCell>Brief Description</StyledTableCell>
-                    <StyledTableCellValue>jhbj</StyledTableCellValue>
-                  </tr>
+                  <div
+                    style={{
+                      marginTop: "-30px",
+                    }}
+                  >
+                    <StyledTr>
+                      <StyledTableCell>Service Needed</StyledTableCell>
+                      <StyledTableCellValue>restyling</StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCell>Brand</StyledTableCell>
+                      <StyledTableCellValue>kjb</StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCell>Color</StyledTableCell>
+                      <StyledTableCellValue>hjbjk</StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCell>Age of Garment</StyledTableCell>
+                      <StyledTableCellValue>jhvjh</StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCell># of Holes</StyledTableCell>
+                      <StyledTableCellValue>hjvk</StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCell>Brief Description</StyledTableCell>
+                      <StyledTableCellValue>jhbj</StyledTableCellValue>
+                    </StyledTr>
+                  </div>
                 </tbody>
               </table>
               <BeforeText label="Order Summary" />
@@ -169,7 +185,7 @@ export default function LastStep() {
               border={"5px solid #df7c6d"}
               borderRadius={"20px"}
               position={"relative"}
-              padding={"2rem 2rem 2rem 2rem"}
+              padding={"3rem 2rem 2rem 2rem"}
             >
               <a href={routes.CHECK_OUT}>
                 <img
@@ -200,26 +216,26 @@ export default function LastStep() {
                   <col style={{ width: "150px" }} />
                 </colgroup>
                 <tbody>
-                  <tr>
+                  <StyledTr2>
                     <StyledTableCell>Name</StyledTableCell>
                     <StyledTableCellValue>restyling</StyledTableCellValue>
-                  </tr>
-                  <tr>
+                  </StyledTr2>
+                  <StyledTr2>
                     <StyledTableCell>Address</StyledTableCell>
                     <StyledTableCellValue>kjb</StyledTableCellValue>
-                  </tr>
-                  <tr>
+                  </StyledTr2>
+                  <StyledTr2>
                     <StyledTableCell>Phone Number</StyledTableCell>
                     <StyledTableCellValue>hjbjk</StyledTableCellValue>
-                  </tr>
-                  <tr>
+                  </StyledTr2>
+                  <StyledTr2>
                     <StyledTableCell>E-Mail Address</StyledTableCell>
                     <StyledTableCellValue>jhvjh</StyledTableCellValue>
-                  </tr>
-                  <tr>
+                  </StyledTr2>
+                  <StyledTr2>
                     <StyledTableCell>Order Type</StyledTableCell>
                     <StyledTableCellValue>hjvk</StyledTableCellValue>
-                  </tr>
+                  </StyledTr2>
                 </tbody>
               </table>
               <BeforeText label="Delivery Information" />

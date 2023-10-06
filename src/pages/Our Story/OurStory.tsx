@@ -41,7 +41,7 @@ export default function OurStory() {
           alignItems: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-          padding: "15rem 0",
+          padding: "9.5rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
