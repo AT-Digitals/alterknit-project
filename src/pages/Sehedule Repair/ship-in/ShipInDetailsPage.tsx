@@ -10,6 +10,34 @@ import RepairPage from "./RepairPage";
 import CheckOut from "../ProcessToCheckOut/CheckOut";
 import LastStep from "./Last step/LastStep";
 
+interface AppState {
+    services: {
+        name: string[];
+    };
+    service_details: {
+        color: string;
+        visible_holes: string;
+        brand: string;
+        howMany: string;
+        brief: string;
+    };
+    more_details: {
+        previous_service: string;
+        latest_service: string;
+    };
+    shipin_details: {
+        firstName: string;
+        lastName: string;
+        streetAddress: string;
+        city: string;
+        state: string;
+        zipcode: string;
+        phone_number: string;
+        email: string;
+        sameAddress: string;
+    };
+}
+
 export default function ShipInDetailsPage() {
     //   const [serviceDetails, setServiceDetails] = useState({
     //     step: 1,
@@ -50,9 +78,62 @@ export default function ShipInDetailsPage() {
     //     setServiceDetails({ ...serviceDetails, [name]: value });
     //   }
 
+
+
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedOption1, setSelectedOption1] = useState(null);
+
+    const [serviceDetails, setServiceDetails] = useState<AppState>({
+        services: {
+            name: [],
+        },
+        service_details: {
+            color: "",
+            visible_holes: "",
+            brand: "",
+            howMany: "",
+            brief: "",
+        },
+        more_details: {
+            previous_service: "",
+            latest_service: "",
+        },
+        shipin_details: {
+            firstName: "",
+            lastName: "",
+            streetAddress: "",
+            city: "",
+            state: "",
+            zipcode: "",
+            phone_number: "",
+            email: "",
+            sameAddress: "",
+        },
+    });
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setServiceDetails(prevState => ({
+            ...prevState,
+            services: {
+                ...prevState.services,
+                [name]: value,
+            },
+            service_details: {
+                ...prevState.service_details,
+                [name]: value,
+            },
+            more_details: {
+                ...prevState.more_details,
+                [name]: value,
+            },
+            shipin_details: {
+                ...prevState.shipin_details,
+                [name]: value,
+            }
+        }));
+    };
 
     const nextStep = (option: any) => {
         setSelectedOption(option);

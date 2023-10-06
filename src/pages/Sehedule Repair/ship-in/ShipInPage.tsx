@@ -28,6 +28,7 @@ interface shipinprops {
   prevStep: () => void;
 }
 
+
 export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
   const navigate = useNavigate();
 
