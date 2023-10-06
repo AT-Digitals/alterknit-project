@@ -242,19 +242,7 @@ export default function CardPage() {
                     </CardContent>
                 </Card>
             </Box>
-            <Box>
-                <img
-                    src={SpeakerImage}
-                    alt="speaker"
-                    style={{
-                        width: "120px",
-                        fontSize: "20px",
-                        fontWeight: 400,
-                        textTransform: "uppercase",
-                        position: "absolute",
-                        marginLeft: "165px",
-                    }}
-                />
+               
                 <Box
                     display={"flex"}
                     justifyContent={"center"}
@@ -262,6 +250,17 @@ export default function CardPage() {
                         backgroundColor: "#df7c6d",
                     }}
                 >
+                    <Box>
+                     <img
+                    src={SpeakerImage}
+                    alt="speaker"
+                    style={{
+                        maxWidth: "120px",
+                       position: "absolute",
+                       marginLeft: "-26px",
+                    }}
+                />
+                </Box>
                     <Card
                         style={{
                             width: 1140,
@@ -269,6 +268,7 @@ export default function CardPage() {
                             borderRadius: "20px",
                             marginBottom: "150px",
                             marginTop: "40px",
+                           
                         }}
                     >
                         <CardContent style={{
@@ -326,7 +326,6 @@ export default function CardPage() {
                             </Box>
                         </CardContent>
                     </Card>
-                </Box>
             </Box>
             <img src={StudioImage} alt="studio" />
         </>
