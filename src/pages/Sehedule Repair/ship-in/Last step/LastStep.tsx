@@ -100,7 +100,7 @@ export default function LastStep() {
               borderRadius={"20px"}
               maxWidth={"780px"}
               position={"relative"}
-              padding={"2rem 2rem 2rem 2rem"}
+              padding={"3rem"}
             >
               <a href={routes.SHIPIN}>
                 <img
@@ -185,7 +185,7 @@ export default function LastStep() {
               border={"5px solid #df7c6d"}
               borderRadius={"20px"}
               position={"relative"}
-              padding={"3rem 2rem 2rem 2rem"}
+              padding={"3rem 2rem 3rem 3rem"}
             >
               <a href={routes.CHECK_OUT}>
                 <img
