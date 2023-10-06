@@ -10,8 +10,11 @@ import {
 } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 
+import AppContainer from "../../../component/AppContainer";
+import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "../ship-in/ShipCard";
+import StateOptions from "./StateOptions";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
 
@@ -96,60 +99,6 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
     setSelectedOption("NO");
   };
 
-  const stateOptions = [
-    "Alabama",
-    "Alaska",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "District Of Columbia",
-    "Florida",
-    "Georgia",
-    "Hawaii",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Maine",
-    "Maryland",
-    "Massachusetts",
-    "Michigan",
-    "Minnesota",
-    "Mississippi",
-    "Missouri",
-    "Montana",
-    "Nebraska",
-    "Nevada",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "New York",
-    "North Carolina",
-    "North Dakota",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Pennsylvania",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "Utah",
-    "Vermont",
-    "Virginia",
-    "Washington",
-    "West Virginia",
-    "Wisconsin",
-    "Wyoming",
-  ];
-
   const handleTextInputChange = (
     e: ChangeEvent<HTMLInputElement | { name: string; value: unknown }>
   ) => {
@@ -208,7 +157,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
         ></img>
       </Box>
       <Box mb={3} padding={"5rem 0 0 0"}>
-        <Box maxWidth={1440} margin={"0 auto"} padding={"0 10rem"}>
+        <Box maxWidth={1440} margin={"0 auto"}>
           <Box
             display={"flex"}
             flexWrap={"wrap"}
@@ -231,7 +180,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               SHIPING INFORMATION
             </Typography>
           </Box>
-          <Box gap={"2rem"} display={"flex"} flexDirection={"column"}>
+          <AppContainer maxWidth={1300}>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
               <Typography
                 fontSize={"45px"}
@@ -320,7 +269,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
                   value={formData.state}
                   onChange={handleSelectChange}
                 >
-                  {stateOptions.map((option) => (
+                  {StateOptions.map((option) => (
                     <MenuItem key={option} value={option}>
                       {option}
                     </MenuItem>
@@ -374,7 +323,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
                 onChange={handleTextInputChange}
               />
             </Box>
-          </Box>
+          </AppContainer>
         </Box>
       </Box>
       <Box
@@ -413,6 +362,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
             NO
           </StyleButtonNew>
         </Stack>
+        {selectedOption === "NO" ? <BillingForm /> : null}
         <div
           style={{
             marginTop: "5rem",
