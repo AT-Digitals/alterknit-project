@@ -132,7 +132,7 @@ export default function BillingForm() {
             LAST NAME
           </Typography>
           <CustomTextField
-            name="lasttName"
+            name="lastName"
             value={formdata.lastName}
             onChange={handleTextInputChange}
           />
