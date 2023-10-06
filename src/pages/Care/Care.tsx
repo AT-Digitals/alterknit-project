@@ -72,7 +72,7 @@ export default function CarePage() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
+          backgroundImage: `url(' https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
         }}
       >
         <Box
@@ -227,6 +227,7 @@ export default function CarePage() {
               dear alterknit... (just asking)
             </Typography>
             <Box
+              mb={"6rem"}
               mt={4}
               display={"flex"}
               flexDirection={"column"}
@@ -244,7 +245,7 @@ export default function CarePage() {
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 3.5rem"}
+                  p={" 1rem 1.5rem"}
                   alignItems={"center"}
                   key={index}
                   maxWidth={1240}
@@ -285,7 +286,7 @@ export default function CarePage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 3.5rem"}
+                p={" 1rem 1.5rem"}
                 alignItems={"center"}
                 maxWidth={1240}
               >
@@ -316,7 +317,7 @@ export default function CarePage() {
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 3.5rem"}
+                  p={" 1rem 1.5rem"}
                   alignItems={"center"}
                   key={index}
                   maxWidth={1240}
@@ -357,11 +358,11 @@ export default function CarePage() {
           </Box>
         </Box>
         <img
-          src="	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care_bottom.svg"
+          src=" https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care_bottom.svg"
           alt="thems1"
         />
       </section>
-      <section style={{ padding: "6rem 0 0 0" }}>
+      <section style={{ padding: "3rem 0 0 0" }}>
         <Box
           margin={"auto 0"}
           padding={"0 10rem"}

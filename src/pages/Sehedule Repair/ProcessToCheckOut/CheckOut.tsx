@@ -169,7 +169,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
   };
   const navigate = useNavigate();
   const handleNextClick = () => {
-    nextStep('last-step');
+    nextStep("last-step");
   };
 
   return (
@@ -192,8 +192,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               ALMOST DONE...
             </Typography>
             <Typography
-              margin={"1rem 0 2rem 0"}
-              lineHeight={"1.8rem"}
+              lineHeight={"1.3rem"}
               fontSize={"16px"}
               fontFamily={"Proxima Nova,sans serif"}
             >
@@ -378,7 +377,14 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
           </Box>
         </Box>
       </Box>
-      <Box mt={5} textAlign={"center"}>
+      <Box
+        mt={5}
+        display={"flex"}
+        flexDirection={"column"}
+        gap={"1rem"}
+        alignItems={"center"}
+        textAlign={"center"}
+      >
         <Typography
           fontSize={"42px"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -407,8 +413,13 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
             NO
           </StyleButtonNew>
         </Stack>
-        <ShipCard onClick={handleNextClick} onChange={prevStep} />
-
+        <div
+          style={{
+            marginTop: "5rem",
+          }}
+        >
+          <ShipCard onClick={handleNextClick} />
+        </div>
         <img
           style={{ maxWidth: "1220px", margin: "4rem 0" }}
           src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/guaranteed_happiness.png"
