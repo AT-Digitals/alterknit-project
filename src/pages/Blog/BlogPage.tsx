@@ -68,7 +68,13 @@ export default function BlogPage() {
           </Typography>
         </Box>
         <Link to={routes.BLOG_PAGE_CONTENT}>
-          <StyledButton>Continue reading</StyledButton>
+          <StyledButton
+            style={{
+              fontFamily: `"ProximaNovaMedium", sans-serif`,
+            }}
+          >
+            Continue reading
+          </StyledButton>
         </Link>
       </Stack>
     </AppContainer>

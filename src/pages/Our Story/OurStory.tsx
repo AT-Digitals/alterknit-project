@@ -132,7 +132,7 @@ export default function OurStory() {
           <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
             <Typography
               textAlign={"center"}
-              mb={"8rem"}
+              mb={"3rem"}
               fontSize={"80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
