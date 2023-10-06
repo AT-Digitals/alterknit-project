@@ -67,10 +67,12 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textAlign="center"
             textTransform={"lowercase"}
+            lineHeight={1.3}
           >
             repair cart review
           </Typography>
-          <Typography textAlign="center">
+          <Typography textAlign="center" maxWidth={700} fontSize="16px" fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}>
             This is the preview of all current repairs in the order. Please make
             sure all information is correct and any missing information is
             filled in to the best of your ability. We look forward to receiving
@@ -107,6 +109,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               Service Needed
@@ -126,6 +130,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               Brand
@@ -145,6 +151,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               Color
@@ -164,6 +172,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               Age of Garment
@@ -183,6 +193,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               # of Holes
@@ -202,6 +214,8 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
               sx={{
                 backgroundColor: Colors.HOME_BACKGROUND,
                 borderRadius: "50px",
+                fontFamily: `"ProximaNovaRegular", sans-serif`,
+                fontWeight: 400,
               }}
             >
               Brief Description
@@ -270,7 +284,11 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ width: "270px" }}
+            sx={{
+              width: "270px", fontFamily: `"ProximaNovaRegular", sans-serif`,
+              fontWeight: 400,
+            }}
+
           >
             Add Another Item
           </StyledButtom>
@@ -279,7 +297,7 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ width: "270px", fontWeight: "bold" }}
+            sx={{ width: "270px", fontWeight: 600, fontFamily: `"ProximaNovaSemibold", sans-serif` }}
           >
             Proceed to Checkout
           </StyledButtom>

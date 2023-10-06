@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import routes from "../../routes/routes";
 import CustomButton from "../../CommonComponent/CustomButton";
+import Colors from "../../CommonComponent/Colors";
 
 interface shipinprops {
   nextStep: (value: any) => void;
@@ -11,7 +12,7 @@ interface shipinprops {
 
 export default function ScheduleReapir({ nextStep }: shipinprops) {
   const buttonStyle = {
-    backgroundColor: "white",
+    backgroundColor: Colors.HOME_BACKGROUND,
     width: 220,
     marginTop: "30px",
     transition: "background-color 0.3s, color 0.3s",
@@ -91,7 +92,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
         bgcolor={"#df7c6d"}
         color={"black"}
         textAlign={"center"}
-        padding={"4rem 4rem 5rem 1rem"}
+        padding={"4rem 4rem 3rem 1rem"}
         position={"relative"}
       >
         <Typography
@@ -122,8 +123,9 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onClick={nextStep}
+
         >
-          <Box minWidth={290} p={"15px 20px 5px"}>
+          <Box minWidth={290} p={"15px 20px 5px"} >
             <Typography
               fontSize="60px"
               fontWeight={500}
@@ -149,7 +151,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
         </Button>
         {/* </Link> */}
 
-        <Box mt={"50px"}>
+        <Box mt={"70px"}>
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
@@ -163,11 +165,16 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
               width: "240px",
               fontSize: "10px",
               margin: "0 auto",
+              fontFamily: `"ProximaNovaMedium", sans-serif`,
+              fontWeight: 500
             }}
           >
             Be sure to visit our{" "}
             <a
-              style={{ color: "black" }}
+              style={{
+                color: "black", fontFamily: `"ProximaNovaMedium", sans-serif`,
+                fontWeight: 500
+              }}
               href="https://alterknitnewyork.com/services#faqs"
             >
               FAQ Section
