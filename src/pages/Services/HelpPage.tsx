@@ -1,7 +1,8 @@
 import { Box, Typography, styled } from "@mui/material";
+
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { useState } from "react";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import { useState } from "react";
 
 const StyledBox = styled(Box)`
   cursor: pointer; /* Add cursor pointer to indicate clickability */
@@ -163,7 +164,7 @@ export default function HelpPage() {
               </StyledBox>
               {openNoteIndex === index && (
                 <Typography
-                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
                   fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
@@ -199,7 +200,7 @@ export default function HelpPage() {
                 >
                   {notes.title}
                 </Typography>
-                {openNoteIndex === index ? (
+                {openNote1Index === index ? (
                   <RemoveCircleIcon
                     style={{
                       fontSize: "62px",
@@ -215,8 +216,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNote1Index === index && (
                 <Typography
-                fontFamily={`"ProximaNovaMedium", sans-serif`}
-                fontSize={"22px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}
@@ -251,7 +252,7 @@ export default function HelpPage() {
                 >
                   {notes.title}
                 </Typography>
-                {openNoteIndex === index ? (
+                {openNote2Index === index ? (
                   <RemoveCircleIcon
                     style={{
                       fontSize: "62px",
@@ -303,7 +304,7 @@ export default function HelpPage() {
                 >
                   {notes.title}
                 </Typography>
-                {openNoteIndex === index ? (
+                {openNote3Index === index ? (
                   <RemoveCircleIcon
                     style={{
                       fontSize: "62px",
@@ -319,8 +320,8 @@ export default function HelpPage() {
               </StyledBox>
               {openNote3Index === index && (
                 <Typography
-                fontFamily={`"ProximaNovaMedium", sans-serif`}
-                fontSize={"22px"}
+                  fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  fontSize={"22px"}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
                   paddingRight={"8rem"}
