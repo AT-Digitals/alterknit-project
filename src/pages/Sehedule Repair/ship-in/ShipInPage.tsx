@@ -5,6 +5,7 @@ import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
 import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
+import ServiceDetailsState from "./ServiceDetailsState";
 
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
@@ -26,9 +27,12 @@ const StyleButtonNew = styled(Button)({
 interface shipinprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
+  serviceDetails: ServiceDetailsState;
+  setServiceDetails: (serviceDetails: ServiceDetailsState) => void
 }
 
-export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
+
+export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServiceDetails }: shipinprops) {
   const navigate = useNavigate();
 
   const routeChange = () => {
@@ -36,7 +40,7 @@ export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
     navigate(path);
   };
 
-  const [selectedButtons, setSelectedButtons] = useState<string[]>([]);
+  const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
 
   const handleButtonClick = (buttonIndex: string) => {
     if (selectedButtons.includes(buttonIndex)) {
