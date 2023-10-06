@@ -1,12 +1,12 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import routes from "../../routes/routes";
 import CustomButton from "../../CommonComponent/CustomButton";
 
 interface shipinprops {
-  nextStep: () => void;
+  nextStep: (value: any) => void;
 }
 
 export default function ScheduleReapir({ nextStep }: shipinprops) {
@@ -32,6 +32,11 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Stack direction={"row"}>
       <Box
@@ -99,10 +104,12 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
-          <Typography fontSize={"20px"}>
+          <Typography fontSize={"20px"} fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}>
             Access our shipping portal to create your order!
           </Typography>
-          <Typography fontSize={"20px"} lineHeight={1}>
+          <Typography fontSize={"20px"} lineHeight={1} fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500} >
             A pre addressed shipping label and an order summary will come
             straight to your inbox for you to use.
           </Typography>
@@ -116,9 +123,9 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           onMouseLeave={handleMouseLeave}
           onClick={nextStep}
         >
-          <Box minWidth={280} p={"10px"}>
+          <Box minWidth={290} p={"15px 20px 5px"}>
             <Typography
-              fontSize="4rem"
+              fontSize="60px"
               fontWeight={500}
               color={isHovered ? "white" : "black"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
@@ -132,6 +139,8 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
                 color: isHovered ? "white" : "black",
                 textTransform: "none",
                 fontSize: "18px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
+                fontWeight: 500
               }}
             >
               Click here to start

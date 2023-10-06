@@ -33,6 +33,7 @@ const Colors = {
   LINK: "#df7c6d",
   HOME_BACKGROUND: "#f8f1eb",
   Text_COLOR: "#575656",
+  BLACK_TEXT: "#575656",
 };
 
 export default Colors;

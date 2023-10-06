@@ -26,7 +26,7 @@ const StyledButton = styled(Button)({
 
 export default function SubscribePage() {
   return (
-    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
+    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"} pt={8} pb={5}>
       <Box width={"100%"} marginTop={"40px"}>
         <Typography
           lineHeight={1}
@@ -110,7 +110,7 @@ export default function SubscribePage() {
               fontSize={"14px"}
               textAlign={"center"}
               marginTop={"20px"}
-              fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500} color="#575656"
+              fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500} color={Colors.BLACK_TEXT}
             >
               *Code must be applied at check out. Please check your email!
             </Typography>

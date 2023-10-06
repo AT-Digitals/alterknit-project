@@ -69,7 +69,12 @@ const StyleButtonNew = styled(Button)({
   },
 });
 
-export default function CheckOut() {
+interface Checkoutprops {
+  nextStep: (value: any) => void;
+  prevStep: () => void;
+}
+
+export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -164,7 +169,7 @@ export default function CheckOut() {
   };
   const navigate = useNavigate();
   const handleNextClick = () => {
-    navigate(routes.LAST_STEP);
+    nextStep('last-step');
   };
 
   return (
@@ -402,7 +407,7 @@ export default function CheckOut() {
             NO
           </StyleButtonNew>
         </Stack>
-        <ShipCard onClick={handleNextClick} />
+        <ShipCard onClick={handleNextClick} onChange={prevStep} />
 
         <img
           style={{ maxWidth: "1220px", margin: "4rem 0" }}

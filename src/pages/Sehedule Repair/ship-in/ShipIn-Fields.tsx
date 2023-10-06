@@ -26,7 +26,7 @@ const CustomTextField = styled(TextField)`
 
 interface HoverProps {
   Ishoverd?: boolean;
-  nextStep: () => void;
+  nextStep: (value: any) => void;
   prevStep: () => void;
 }
 
@@ -67,7 +67,7 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
         "INFORMATION REQUIRED:-\n Brief description of repair needed and/or any other important imformaton for us"
       );
     } else {
-      nextStep();
+      nextStep('ship-in-fields');
     }
 
     let result = await fetch("https://alterknit-backend.onrender.com/service-details", {

@@ -24,7 +24,7 @@ const StyleButtonNew = styled(Button)({
 });
 
 interface shipinprops {
-  nextStep: () => void;
+  nextStep: (value: any) => void;
   prevStep: () => void;
 }
 
@@ -68,7 +68,7 @@ export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
       },
     });
     if (selectedButtons.length > 0) {
-      nextStep();
+      nextStep('ship-in');
     } else {
       alert("Please select a service first");
     }
@@ -98,6 +98,8 @@ export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
         textAlign="center"
         maxWidth={670}
         margin="0 auto"
+        fontFamily={`"ProximaNovaMedium", sans-serif`}
+        fontWeight={500}
         sx={{
           padding: "15px 20px",
           border: `5px solid ${Colors.LINK}`,
@@ -108,7 +110,8 @@ export default function ShipInPage({ nextStep, prevStep }: shipinprops) {
         You will be able to add as many items as you like and to select multiple
         services per item.
       </Typography>
-      <Typography variant="body1" textAlign="center" pt={10}>
+      <Typography variant="body1" textAlign="center" pt={10} fontFamily={`"ProximaNovaMedium", sans-serif`}
+        fontWeight={500}>
         Please choose at least one service
       </Typography>
       <Grid container rowGap={5} paddingX={3} pb={5} pt={2}>

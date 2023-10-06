@@ -23,7 +23,12 @@ const StyleButtonNew = styled(Button)({
     },
 });
 
-export default function MoreDetailsPage() {
+interface moreprops {
+    nextStep: (value: any) => void;
+    prevStep: () => void;
+}
+
+export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
     const [previousClean, setPreviousClean] = useState("");
     const [latestClean, setLatestClean] = useState("");
 
@@ -62,7 +67,7 @@ export default function MoreDetailsPage() {
         } else if (!latestClean) {
             alert("INFORMATION REQUIRED:-\n Has this grament been recently cleaned?");
         } else {
-            routeChange();
+            nextStep("repair");
         }
     };
 
@@ -204,7 +209,7 @@ export default function MoreDetailsPage() {
                     </StyleButtonNew>
                 </Stack>
                 <ShipCard
-
+                    onChange={prevStep}
                     onClick={handleNextButtonClick}
                 />
             </Stack>

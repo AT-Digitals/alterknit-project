@@ -1,9 +1,8 @@
-import { Box, Grid, Stack, Typography, styled } from "@mui/material";
+import { Box, Grid, Link, Stack, Typography, styled } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Link } from "react-router-dom";
 import routes from "../../../routes/routes";
 import sweater from "../../../assets/sweater_guy.png";
 import { useEffect, useState } from "react";
@@ -30,7 +29,12 @@ interface Data {
   brief: string;
 }
 
-export default function RepairPage() {
+interface repairprops {
+  nextStep: (value: any) => void;
+  prevStep: () => void;
+}
+
+export default function RepairPage({ nextStep, prevStep }: repairprops) {
 
   const [data, setData] = useState<Data[]>([]);
 
@@ -253,7 +257,7 @@ export default function RepairPage() {
         alignItems="center"
         justifyContent="center"
       >
-        <Link to={routes.MORE_DETAILS}>
+        <Link onClick={prevStep}>
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.LINK}
@@ -262,7 +266,7 @@ export default function RepairPage() {
             Back
           </StyledButtom>
         </Link>
-        <Link to={routes.SHIP_IN_FIELDS}>
+        <Link >
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
@@ -271,7 +275,7 @@ export default function RepairPage() {
             Add Another Item
           </StyledButtom>
         </Link>
-        <Link to={routes.CHECK_OUT}>
+        <Link onClick={nextStep}>
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}

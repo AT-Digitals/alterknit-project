@@ -28,10 +28,11 @@ const StyleCard = styled(Card)({
 });
 
 interface shipinprops {
-  nextStep: () => void;
+  nextStep: (value: any) => void;
+  secondNextStep: (value: any) => void;
 }
 
-export default function FixmePage({ nextStep }: shipinprops) {
+export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
@@ -102,6 +103,8 @@ export default function FixmePage({ nextStep }: shipinprops) {
                       <Typography
                         variant="body2"
                         style={{ textAlign: "center", maxWidth: 350 }}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        fontWeight={500}
                       >
                         Available from all 50 states. You will receive a
                         pre-paid shipping label via email and an order summary
@@ -114,52 +117,55 @@ export default function FixmePage({ nextStep }: shipinprops) {
                 {/* </Link> */}
               </Grid>
               <Grid item xs={12} sm={6}>
-                {/* <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}> */}
-                <StyleCard>
-                  <Stack
-                    gap={2}
-                    style={{ background: "#f8f1eb" }}
-                    p={3}
-                    direction={"column"}
-                    alignItems={"center"}
-                  >
-                    <Typography
-                      fontWeight={500}
-                      variant={isSmScreen ? "h4" : "h3"}
-                      fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                      fontSize="3rem"
-                      textTransform={"lowercase"}
+                <Link onClick={secondNextStep} sx={{ textDecoration: "none" }}>
+                  {/* <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}> */}
+                  <StyleCard>
+                    <Stack
+                      gap={2}
+                      style={{ background: "#f8f1eb" }}
+                      p={3}
+                      direction={"column"}
+                      alignItems={"center"}
                     >
-                      DOOR TO DOOR{" "}
-                    </Typography>
-                    <CardMedia
-                      sx={{ width: 70 }}
-                      component="img"
-                      src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
-                      alt="package"
-                    />
-                  </Stack>
-                  <CardContent
-                    sx={{
-                      backgroundColor: "#df7c6d",
-                      padding: 5,
-                      height: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                    className="foot"
-                  >
-                    <Typography
-                      variant="body2"
-                      style={{ textAlign: "center", maxWidth: 300 }}
+                      <Typography
+                        fontWeight={500}
+                        variant={isSmScreen ? "h4" : "h3"}
+                        fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                        fontSize="3rem"
+                        textTransform={"lowercase"}
+                      >
+                        DOOR TO DOOR{" "}
+                      </Typography>
+                      <CardMedia
+                        sx={{ width: 70 }}
+                        component="img"
+                        src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
+                        alt="package"
+                      />
+                    </Stack>
+                    <CardContent
+                      sx={{
+                        backgroundColor: "#df7c6d",
+                        padding: 5,
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                      className="foot"
                     >
-                      Same day pick up service is available in <b>SELECT</b>{" "}
-                      zip codes within the 5 boroughs of NYC from{" "}
-                      <b>24HR RESIDENTIAL</b> doorman buildings.
-                    </Typography>
-                  </CardContent>
-                </StyleCard>
-                {/* </Link> */}
+                      <Typography
+                        variant="body2"
+                        style={{ textAlign: "center", maxWidth: 350 }}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        fontWeight={500}
+                      >
+                        Same day pick up service is available in <b>SELECT</b>{" "}
+                        zip codes within the 5 boroughs of NYC from{" "}
+                        <b>24HR RESIDENTIAL</b> doorman buildings.
+                      </Typography>
+                    </CardContent>
+                  </StyleCard>
+                </Link>
               </Grid>
             </Grid>
           </Stack>
