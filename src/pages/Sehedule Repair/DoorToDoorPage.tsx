@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Link,
   Stack,
   TextField,
   Typography,
@@ -11,7 +12,6 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Colors from "../../CommonComponent/Colors";
 import CustomButton from "../../CommonComponent/CustomButton";
 import Hello from "../../assets/hello.jpg";
-import { Link } from "react-router-dom";
 import background from "../../assets/bg_stage_header.svg";
 import logo from "../../assets/moskitooz-scedule.png";
 import routes from "../../routes/routes";
@@ -29,7 +29,13 @@ const StyledButtom = styled(CustomButton)({
   },
 });
 
-export default function DoorToDoorPage() {
+interface doorpageprops {
+  nextStep: (value: any) => void;
+  prevStep: () => void;
+}
+
+
+export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
   return (
     <Stack direction="column">
       <Stack sx={{ backgroundColor: Colors.HOME_BACKGROUND }}>
@@ -146,7 +152,7 @@ export default function DoorToDoorPage() {
               variant="outlined"
               placeholder="Enter your ZIP code"
             ></TextField>
-            <Link to={routes.DARN_IT}>
+            <Link onClick={nextStep}>
               <Button
                 sx={{
                   backgroundColor: Colors.BLACK,
@@ -179,7 +185,7 @@ export default function DoorToDoorPage() {
         />
       </Stack>
       <Link
-        to={routes.FIXME}
+        onClick={prevStep}
         style={{ marginLeft: "auto", marginRight: "auto" }}
       >
         <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK}>

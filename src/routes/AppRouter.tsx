@@ -25,6 +25,7 @@ import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
+import ShipInDetailsPage from "../pages/Sehedule Repair/ship-in/ShipInDetailsPage";
 
 export default function AppRouter() {
   return (
@@ -41,23 +42,23 @@ export default function AppRouter() {
           <Route path={routes.CARE} element={<CarePage />} />
           <Route path={routes.BLOG_PAGE} element={<BlogPage />} />
           <Route path={routes.CONTACT_US} element={<ContactPage />} />
-          <Route path={routes.DOORTODOOR} element={<DoorToDoorPage />} />
-          <Route path={routes.SCHEDULE_REPAIR} element={<ScheduleReapir />} />
-          <Route path={routes.FIXME} element={<FixmePage />} />
+          {/* <Route path={routes.DOORTODOOR} element={<DoorToDoorPage />} /> */}
+          <Route path={routes.SCHEDULE_REPAIR} element={<ShipInDetailsPage />} />
+          {/* <Route path={routes.FIXME} element={<FixmePage />} /> */}
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
-          <Route path={routes.SHIP_IN_FIELDS} element={<ShipinFields />} />
-          <Route path={routes.DARN_IT} element={<DoorToDoor />} />
+          {/* <Route path={routes.SHIP_IN_FIELDS} element={<ShipinFields />} /> */}
+          {/* <Route path={routes.DARN_IT} element={<DoorToDoor />} /> */}
           <Route path={routes.PARTNER} element={<PartnerPage />} />
-
+          {/* <Route path={routes.SHIPIN} element={<ShipInDetailsPage />} /> */}
           <Route
             path={routes.BLOG_PAGE_CONTENT}
             element={<BlogPageReadingContent />}
           />
-          <Route path={routes.SHIPIN} element={<ShipInPage />} />
-          <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} />
-          <Route path={routes.REPAIR_PAGE} element={<RepairPage />} />
-          <Route path={routes.CHECK_OUT} element={<CheckOut />} />
+
+          {/* <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} /> */}
+          {/* <Route path={routes.REPAIR_PAGE} element={<RepairPage />} /> */}
+          {/* <Route path={routes.CHECK_OUT} element={<CheckOut />} /> */}
           <Route path={routes.LAST_STEP} element={<LastStep />} />
         </Route>
       </Routes>

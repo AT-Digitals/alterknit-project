@@ -4,6 +4,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Link,
   Stack,
   Typography,
   styled,
@@ -13,9 +14,9 @@ import {
 
 import AppContainer from "../../component/AppContainer";
 import Colors from "../../CommonComponent/Colors";
-import { Link } from "react-router-dom";
 import routes from "../../routes/routes";
 import { useEffect } from "react";
+import CustomButton from "../../CommonComponent/CustomButton";
 
 const StyleCard = styled(Card)({
   maxWidth: 590,
@@ -26,7 +27,12 @@ const StyleCard = styled(Card)({
   },
 });
 
-export default function FixmePage() {
+interface shipinprops {
+  nextStep: (value: any) => void;
+  secondNextStep: (value: any) => void;
+}
+
+export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
@@ -58,7 +64,8 @@ export default function FixmePage() {
               alignItems="center"
             >
               <Grid pt={0} item xs={12} sm={6}>
-                <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}>
+                <Link onClick={nextStep} sx={{ textDecoration: "none" }}>
+                  {/* <Link to={routes.SHIPIN} style={{ textDecoration: "none" }}> */}
                   <StyleCard>
                     <Stack
                       gap={2}
@@ -96,6 +103,8 @@ export default function FixmePage() {
                       <Typography
                         variant="body2"
                         style={{ textAlign: "center", maxWidth: 350 }}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        fontWeight={500}
                       >
                         Available from all 50 states. You will receive a
                         pre-paid shipping label via email and an order summary
@@ -105,9 +114,11 @@ export default function FixmePage() {
                     </CardContent>
                   </StyleCard>
                 </Link>
+                {/* </Link> */}
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}>
+                <Link onClick={secondNextStep} sx={{ textDecoration: "none" }}>
+                  {/* <Link to={routes.DOORTODOOR} style={{ textDecoration: "none" }}> */}
                   <StyleCard>
                     <Stack
                       gap={2}
@@ -144,7 +155,9 @@ export default function FixmePage() {
                     >
                       <Typography
                         variant="body2"
-                        style={{ textAlign: "center", maxWidth: 300 }}
+                        style={{ textAlign: "center", maxWidth: 350 }}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        fontWeight={500}
                       >
                         Same day pick up service is available in <b>SELECT</b>{" "}
                         zip codes within the 5 boroughs of NYC from{" "}
