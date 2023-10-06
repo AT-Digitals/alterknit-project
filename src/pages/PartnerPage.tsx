@@ -280,9 +280,10 @@ export default function PartnerPage() {
             justifyContent={"center"}
             alignItems={"center"}
             color={"black"}
-            fontWeight={"400"}
+            fontWeight={"500"}
             fontSize={"5.2rem"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+            textTransform={"lowercase"}
           >
             WHAT WE CAN DO
             <Typography
@@ -458,8 +459,8 @@ export default function PartnerPage() {
         </Typography>
         <img src={image4} width={"100%"} alt="banner" />
         <Box
-          marginBottom={"30px"}
-          marginTop={"59px"}
+          marginBottom={"90px"}
+          marginTop={"-190px"}
           display={"flex"}
           justifyContent={"center"}
         >
@@ -485,8 +486,8 @@ export default function PartnerPage() {
       </section>
       <section>
         <Box padding={"2rem 0"}>
-          <Typography textAlign={"center"} color={"black"} fontWeight={"600"} fontSize={"6rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
-          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} paddingLeft={"14px"} paddingTop={"5px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
+          <Typography textAlign={"center"} color={"black"} fontWeight={"500"} fontSize={"100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
+          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} paddingTop={"5px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
         </Box>
         <form
           onSubmit={handleSubmit}
