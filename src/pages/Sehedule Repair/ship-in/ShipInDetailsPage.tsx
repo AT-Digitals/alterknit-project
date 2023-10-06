@@ -9,34 +9,7 @@ import DoorToDoor from "../door-to-door/DoorToDoor";
 import RepairPage from "./RepairPage";
 import CheckOut from "../ProcessToCheckOut/CheckOut";
 import LastStep from "./Last step/LastStep";
-
-interface AppState {
-    services: {
-        name: string[];
-    };
-    service_details: {
-        color: string;
-        visible_holes: string;
-        brand: string;
-        howMany: string;
-        brief: string;
-    };
-    more_details: {
-        previous_service: string;
-        latest_service: string;
-    };
-    shipin_details: {
-        firstName: string;
-        lastName: string;
-        streetAddress: string;
-        city: string;
-        state: string;
-        zipcode: string;
-        phone_number: string;
-        email: string;
-        sameAddress: string;
-    };
-}
+import ServiceDetailsState from "./ServiceDetailsState";
 
 export default function ShipInDetailsPage() {
     //   const [serviceDetails, setServiceDetails] = useState({
@@ -64,7 +37,7 @@ export default function ShipInDetailsPage() {
 
     //   const nextStep = () => {
     //     const { step } = serviceDetails;
-    //     setServiceDetails({ step: step + 1,  
+    //     setServiceDetails({ step: step + 1,
     //         serviceType: "",
     //         color: "",
     //         visibleholes: "",
@@ -78,13 +51,11 @@ export default function ShipInDetailsPage() {
     //     setServiceDetails({ ...serviceDetails, [name]: value });
     //   }
 
-
-
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedOption1, setSelectedOption1] = useState(null);
 
-    const [serviceDetails, setServiceDetails] = useState<AppState>({
+    const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
         services: {
             name: [],
         },
@@ -114,7 +85,7 @@ export default function ShipInDetailsPage() {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        setServiceDetails(prevState => ({
+        setServiceDetails((prevState) => ({
             ...prevState,
             services: {
                 ...prevState.services,
@@ -131,7 +102,7 @@ export default function ShipInDetailsPage() {
             shipin_details: {
                 ...prevState.shipin_details,
                 [name]: value,
-            }
+            },
         }));
     };
 
@@ -139,7 +110,6 @@ export default function ShipInDetailsPage() {
         setSelectedOption(option);
         setSelectedOption1(option);
         setStep(step + 1);
-
     };
 
     const prevStep = () => {
@@ -149,25 +119,34 @@ export default function ShipInDetailsPage() {
         setStep(step - 1);
     };
 
+    console.log("select", serviceDetails);
+
     switch (step) {
         case 1:
-            return (
-                <ScheduleReapir nextStep={nextStep} />
-            )
+            return <ScheduleReapir nextStep={nextStep} />;
         case 2:
             return (
-                <FixmePage nextStep={() => nextStep('ship-in')} secondNextStep={() => nextStep('door-to-door')} />
-            )
+                <FixmePage
+                    nextStep={() => nextStep("ship-in")}
+                    secondNextStep={() => nextStep("door-to-door")}
+                />
+            );
         case 3:
             return (
                 <>
-                    {selectedOption === "ship-in" && step === 3 &&
-                        <ShipInPage nextStep={nextStep} prevStep={prevStep} />
-                    }
-                    {selectedOption === "door-to-door" && step === 3 &&
-                        <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />}
+                    {selectedOption === "ship-in" && step === 3 && (
+                        <ShipInPage
+                            nextStep={nextStep}
+                            prevStep={prevStep}
+                            serviceDetails={serviceDetails}
+                            setServiceDetails={setServiceDetails}
+                        />
+                    )}
+                    {selectedOption === "door-to-door" && step === 3 && (
+                        <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />
+                    )}
                 </>
-            )
+            );
 
         case 4:
             return (
@@ -178,23 +157,15 @@ export default function ShipInDetailsPage() {
                     {/* {selectedOption === "door-to-door" && selectedOption1 === 'new yorkers' && step === 4 && */}
                     {/* <DoorToDoor /> */}
                 </>
-            )
+            );
         case 5:
-            return (
-                <MoreDetailsPage nextStep={nextStep} prevStep={prevStep} />
-            )
+            return <MoreDetailsPage nextStep={nextStep} prevStep={prevStep} />;
         case 6:
-            return (
-                <RepairPage nextStep={nextStep} prevStep={prevStep} />
-            )
+            return <RepairPage nextStep={nextStep} prevStep={prevStep} />;
         case 7:
-            return (
-                <CheckOut nextStep={nextStep} prevStep={prevStep} />
-            )
+            return <CheckOut nextStep={nextStep} prevStep={prevStep} />;
         case 8:
-            return (
-                <LastStep />
-            )
+            return <LastStep />;
         default:
             return null;
     }
