@@ -62,7 +62,7 @@ export default function ShipInDetailsPage() {
     };
 
     const prevStep = () => {
-        if (step === 3) {
+        if (step === 4) {
             setSelectedOption(null); // Reset selectedOption when going back
         }
         setStep(step - 1);
