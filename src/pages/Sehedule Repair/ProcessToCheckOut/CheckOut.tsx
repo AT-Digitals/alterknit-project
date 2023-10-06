@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 
+import AppContainer from "../../../component/AppContainer";
 import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "../ship-in/ShipCard";
@@ -156,7 +157,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
         ></img>
       </Box>
       <Box mb={3} padding={"5rem 0 0 0"}>
-        <Box maxWidth={1440} margin={"0 auto"} padding={"0 10rem"}>
+        <Box maxWidth={1440} margin={"0 auto"}>
           <Box
             display={"flex"}
             flexWrap={"wrap"}
@@ -179,7 +180,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               SHIPING INFORMATION
             </Typography>
           </Box>
-          <Box gap={"2rem"} display={"flex"} flexDirection={"column"}>
+          <AppContainer maxWidth={1300}>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
               <Typography
                 fontSize={"45px"}
@@ -322,7 +323,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
                 onChange={handleTextInputChange}
               />
             </Box>
-          </Box>
+          </AppContainer>
         </Box>
       </Box>
       <Box
