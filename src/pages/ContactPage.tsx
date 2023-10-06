@@ -226,6 +226,7 @@ export default function FormFile() {
             color={"black"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
             textTransform={"lowercase"}
+            letterSpacing={"2px"}
           >
             Contact us
           </Typography>
