@@ -123,7 +123,7 @@ export default function ShipinFields({
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textTransform={"lowercase"}
           >
-            WE'VE SEEN IT ALL, BUT WE HAVE TO ASK
+            WE'VE SEEN IT ALL, BUT WE HAVE TO ASK...
           </Typography>
         </Box>
       </Box>
