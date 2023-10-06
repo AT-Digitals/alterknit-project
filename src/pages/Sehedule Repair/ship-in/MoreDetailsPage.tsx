@@ -167,7 +167,8 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
                     >
                         9. has this garment been recently cleaned?
                     </Typography>
-                    <Typography textAlign="center" maxWidth={750} fontSize="16px">
+                    <Typography textAlign="center" maxWidth={750} fontSize="16px" lineHeight={1.2} fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        fontWeight={500}>
                         Cleaning will only make holes bigger and incur higher repair cost.
                         Please let us examine your garment first. If the garment has already
                         been cleaned before you found us, don't worry.

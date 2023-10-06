@@ -11,6 +11,7 @@ const StyledTableCell = styled.td`
   color: black;
   width: 150px;
   font-weight: 600;
+  font-family: "ProximaNovaSemibold", sans-serif;
 `;
 const StyledTr = styled.tr`
   display: flex;
@@ -27,6 +28,8 @@ const StyledTableCellValue = styled.td`
   vertical-align: top;
   word-wrap: break-word;
   width: 150px;
+  font-weight: 400;
+  font-family: "ProximaNovaRegular", sans-serif;
 `;
 
 const StyledButton = styled(CustomButton)({
@@ -122,10 +125,13 @@ export default function LastStep() {
                       marginLeft: "22px",
                       background: "#df7c6d",
                       color: "white",
-                      padding: "10px 20px",
+                      padding: "5px 20px",
                       border: "none",
                       borderRadius: "5px",
                       cursor: "pointer",
+                      fontSize: "14px",
+                      fontFamily: `"ProximaNovaMedium", sans-serif`,
+                      fontWeight: 500,
                     }}
                   >
                     ITEM 1
@@ -268,7 +274,8 @@ export default function LastStep() {
             </Box>
             <Typography
               fontSize={"16px"}
-              fontFamily={"Proxima Nova,sans-serif "}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontWeight={500}
             >
               By checking this box, you agree to our{" "}
               <a
@@ -277,8 +284,11 @@ export default function LastStep() {
                   textDecoration: "underline",
                   textUnderlineOffset: "5px",
                   transition: "color .35s ease-in-out",
+                  fontFamily: `"ProximaNovaMedium", sans-serif`,
+                  fontWeight: 500,
                 }}
                 href={routes.TERM}
+                target="_blank"
               >
                 terms and conditions
               </a>
@@ -308,7 +318,8 @@ export default function LastStep() {
             </Box>
             <Typography
               fontSize={"16px"}
-              fontFamily={"Proxima Nova,sans-serif "}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontWeight={500}
             >
               By checking this box, you agree to sign up for our newsletter.
             </Typography>
@@ -327,12 +338,13 @@ export default function LastStep() {
                     border: "1px solid black",
                     borderRadius: "6px",
                     outline: 0,
-                    padding: "1rem",
-                    fontFamily: "Proxima Nova,sans-serif",
+                    padding: "8px",
+                    fontFamily: `"ProximaNovaSemibold", sans-serif`,
                     fontWeight: 600,
                     fontSize: "18px",
                     width: "100%",
                     maxWidth: "270px",
+                    height: "35px",
                   }}
                 />
                 <StyledButton
@@ -340,6 +352,8 @@ export default function LastStep() {
                     background: "#df7c6d",
                     textTransform: "capitalize",
                     color: "black",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
+                    fontWeight: 500
                   }}
                 >
                   Check Validity
@@ -349,7 +363,7 @@ export default function LastStep() {
           </Box>
         </Box>
       </Box>
-      <Box mb={10} mt={10} textAlign={"center"}>
+      <Box mb={6} mt={10} textAlign={"center"}>
         <StyledButton
           style={{
             background: "#df7c6d",
@@ -357,8 +371,10 @@ export default function LastStep() {
             width: 160,
             height: 50,
             fontSize: "22px",
-            fontFamily: "Proxima Nova,sans-serif",
+            fontFamily: `"ProximaNovaMedium", sans-serif`,
             textTransform: "capitalize",
+            fontWeight: 500,
+            padding: "30px 40px "
           }}
         >
           Submit

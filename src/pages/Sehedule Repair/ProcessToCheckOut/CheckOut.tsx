@@ -59,13 +59,14 @@ const CustomSelect = styled(Select)`
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
   backgroundColor: Colors.HOME_BACKGROUND,
-  fontWeight: 400,
-  fontSize: "2.5rem",
+  fontWeight: 500,
+  fontSize: "3rem",
   fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
   padding: "30px",
   width: "270px",
   height: "200px",
   borderRadius: "30px",
+  textTransform: "lowercase",
   lineHeight: 1,
   ":hover": {
     backgroundColor: Colors.LINK,
@@ -129,7 +130,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
           textAlign={"center"}
           display={"flex"}
           flexDirection={"column"}
-          padding={"2rem 0 0 0"}
+          padding={"2.5rem 0 1rem 0"}
         >
           <Box maxWidth={750} padding={"0 10rem "} margin={"0 auto"}>
             <Typography
@@ -137,13 +138,15 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               fontSize={"80px"}
               fontWeight={500}
               textTransform={"lowercase"}
+              lineHeight={1.3}
             >
               ALMOST DONE...
             </Typography>
             <Typography
-              lineHeight={"1.3rem"}
+              lineHeight={1.3}
               fontSize={"16px"}
-              fontFamily={"Proxima Nova,sans serif"}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontWeight={500}
             >
               You've chosen our ship-in option for your order. Please fill out
               the form below with accuracy to ensure your garment gets safely to
@@ -172,7 +175,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               width={"100%"}
               padding={"2rem"}
               borderRadius={"30px"}
-              fontSize={"42px"}
+              fontSize={"50px"}
               fontWeight={500}
               textTransform={"lowercase"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -335,12 +338,13 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
         textAlign={"center"}
       >
         <Typography
-          fontSize={"42px"}
+          fontSize={"48px"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           fontWeight={500}
           textTransform={"lowercase"}
+
         >
-          IS YOUR BILLIN ADDRESS THE SAME AS YOUR SHIPPING ADDRESS?
+          IS YOUR BILLING ADDRESS THE SAME AS YOUR SHIPPING ADDRESS?
         </Typography>
         <Stack justifyContent={"center"} direction={"row"} spacing={5}>
           <StyleButtonNew

@@ -17,8 +17,9 @@ const CustomTextField = styled(TextField)`
       padding: 2rem;
       background-color: #f8f1ec;
       border-radius: 30px;
-      font-family: Proxima Nova, sans-serif;
-      font-size: 16px;
+      font-family: "ProximaNovaSemibold", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
       border: none !important;
     }
   }
@@ -30,7 +31,11 @@ interface HoverProps {
   prevStep: () => void;
 }
 
-export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProps) {
+export default function ShipinFields({
+  Ishoverd,
+  nextStep,
+  prevStep,
+}: HoverProps) {
   const [formData, setFormData] = useState({
     color: "",
     howMany: "",
@@ -67,22 +72,25 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
         "INFORMATION REQUIRED:-\n Brief description of repair needed and/or any other important imformaton for us"
       );
     } else {
-      nextStep('ship-in-fields');
+      nextStep("ship-in-fields");
     }
 
-    let result = await fetch("https://alterknit-backend.onrender.com/service-details", {
-      method: "post",
-      body: JSON.stringify({
-        color: formData.color,
-        visibleHoles: formData.howMany,
-        brand: formData.brand,
-        howLong: formData.HowLong,
-        brief: formData.brief,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let result = await fetch(
+      "https://alterknit-backend.onrender.com/service-details",
+      {
+        method: "post",
+        body: JSON.stringify({
+          color: formData.color,
+          visibleHoles: formData.howMany,
+          brand: formData.brand,
+          howLong: formData.HowLong,
+          brief: formData.brief,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = {
       color: formData.color,
       HowMany: formData.howMany,
@@ -101,7 +109,7 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
         bgcolor={"#f8f1ec"}
         display={"flex"}
         flexDirection={"column"}
-        padding={"3rem 0 0 0"}
+        padding={"2rem 0 0 0"}
       >
         <Box
           maxWidth={1440}
@@ -156,6 +164,13 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
                     onChange={handleChange}
                     fullWidth
                     placeholder="I know I can buy a new one, but I love this green color."
+                    sx={{
+                      "& input::placeholder": {
+                        fontSize: "20px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      },
+                    }}
                   />
                 </Box>
                 <Box
@@ -178,6 +193,13 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
                     onChange={handleChange}
                     fullWidth
                     placeholder="I see three holes around the collar of the shirt."
+                    sx={{
+                      "& input::placeholder": {
+                        fontSize: "20px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      },
+                    }}
                   />
                 </Box>
                 <Box
@@ -200,6 +222,13 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
                     name="brand"
                     fullWidth
                     placeholder="All brands are welcome!"
+                    sx={{
+                      "& input::placeholder": {
+                        fontSize: "20px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      },
+                    }}
                   />
                 </Box>
                 <Box
@@ -223,6 +252,13 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
                     fullWidth
                     placeholder="Since before the internet..."
                     variant="outlined"
+                    sx={{
+                      "& input::placeholder": {
+                        fontSize: "20px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      },
+                    }}
                   />
                 </Box>
                 <Box
@@ -252,18 +288,21 @@ export default function ShipinFields({ Ishoverd, nextStep, prevStep }: HoverProp
                     placeholder="i.e. My grandmother made this for me, I got married in this suit, please fix my baby blanket even though I'm now 38, I bought this second-hand and I found a hole, or I just love it and can't live without it!"
                     variant="outlined"
                     sx={{
+                      "& input::placeholder": {
+                        fontSize: "20px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      },
                       padding: "1rem",
                       backgroundColor: "#f8f1ec",
                       borderRadius: "30px",
-                      fontFamily: "Proxima Nova, sans-serif",
-                      fontSize: "30px",
+                      fontFamily: `"ProximaNovaSemibold", sans-serif !important`,
+                      fontWeight: 600,
+                      fontSize: "22px !important",
                     }}
                   />
                 </Box>
-                <ShipCard
-                  onClick={handleNextButtonClick}
-                  onChange={prevStep}
-                />
+                <ShipCard onClick={handleNextButtonClick} onChange={prevStep} />
               </form>
             </Box>
           </AppContainer>

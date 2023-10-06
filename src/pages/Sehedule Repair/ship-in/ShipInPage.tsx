@@ -83,11 +83,12 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
 
   return (
     <Stack
-      paddingY={6}
+      pt={7}
       maxWidth={1300}
       margin="0 auto"
       justifyContent="center"
       direction="column"
+      pb={4}
     >
       <Typography
         fontWeight={500}
@@ -95,6 +96,7 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         textAlign="center"
         textTransform={"lowercase"}
+        lineHeight={1.2}
       >
         let's start with your first item!
       </Typography>
