@@ -1,5 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const getPersonalDetails = {
   firstname: "",
@@ -14,6 +15,8 @@ export default function FormFile() {
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showDeleteIcon, setShowDeleteIcon] = useState(false);
+
   const residentDetails = {
     personalDetails: personalDetails,
   };
@@ -177,7 +180,13 @@ export default function FormFile() {
     const file = event.target.files[0];
     if (file) {
       setSelectedImage(file);
+      setShowDeleteIcon(true);
     }
+  };
+
+  const handleImageDelete = () => {
+    setSelectedImage(null);
+    setShowDeleteIcon(false);
   };
 
   useEffect(() => {
@@ -228,7 +237,8 @@ export default function FormFile() {
                 marginBottom={"12px"}
                 fontSize={"16px"}
                 color="black"
-                fontWeight={"bold"}
+                fontWeight={"500"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
               >
                 NAME
               </Typography>
@@ -244,6 +254,7 @@ export default function FormFile() {
                     border: "1px solid lightgray",
                     height: "50px",
                     fontSize: "14px",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
                   },
                 }}
                 id="outlined-basic"
@@ -259,12 +270,17 @@ export default function FormFile() {
             </Box>
             <Box>
               <Button
-                style={{
-                  backgroundColor: "black",
+                sx={{
+                  backgroundColor: "#df7c6d",
+                  color: "#fff",
                   marginLeft: "90px",
+                  fontFamily: `"ProximaNovaMedium", sans-serif`,
                   marginTop: "40px",
                   padding: "12px 40px",
                   letterSpacing: "2px",
+                  ":hover": {
+                    backgroundColor: "#f58977",
+                  },
                 }}
                 component="label"
                 variant="contained"
@@ -278,7 +294,7 @@ export default function FormFile() {
                 />
               </Button>
             </Box>
-            <Box>
+            <Box display={"flex"} alignItems={"center"}>
               {selectedImage && (
                 <img
                   src={URL.createObjectURL(selectedImage)}
@@ -289,6 +305,12 @@ export default function FormFile() {
                     borderRadius: "50%",
                   }}
                 />
+                
+              )}
+              {showDeleteIcon && (
+              <DeleteIcon style={{
+                color: "#df7c6d",
+              }} onClick={handleImageDelete} />
               )}
             </Box>
           </Stack>
@@ -300,7 +322,8 @@ export default function FormFile() {
                 marginBottom={"12px"}
                 fontSize={"16px"}
                 color="black"
-                fontWeight={"bold"}
+                fontWeight={"500"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
               >
                 EMAIL ID
               </Typography>
@@ -317,6 +340,7 @@ export default function FormFile() {
                     border: "1px solid lightgray",
                     height: "50px",
                     fontSize: "14px",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
                   },
                 }}
                 id="outlined-basic"
@@ -336,7 +360,8 @@ export default function FormFile() {
                 marginBottom={"12px"}
                 fontSize={"16px"}
                 color="black"
-                fontWeight={"bold"}
+                fontWeight={"500"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
               >
                 PHONE NUMBER
               </Typography>
@@ -352,6 +377,7 @@ export default function FormFile() {
                     border: "1px solid lightgray",
                     height: "50px",
                     fontSize: "14px",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
                   },
                 }}
                 id="outlined-basic"
@@ -373,7 +399,8 @@ export default function FormFile() {
               marginBottom={"12px"}
               fontSize={"16px"}
               color="black"
-              fontWeight={"bold"}
+              fontWeight={"500"}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
             >
               WHAT DO YOU HAVE IN MIND
             </Typography>
@@ -403,12 +430,15 @@ export default function FormFile() {
           <Box textAlign={"center"}>
             <Button
               sx={{
-                boxShadow: `0px 2px 5px black`,
+                backgroundColor: "#df7c6d",
+                color: "#fff",
                 padding: "7px 60px",
-                background: "black",
                 marginBottom: "30px",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
+                textTransform: "capitalize",
+                fontSize: "18px",
                 ":hover": {
-                  background: "black",
+                  backgroundColor: "#f58977",
                 },
               }}
               variant="contained"

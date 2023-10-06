@@ -153,7 +153,9 @@ export default function FaqPage() {
 
   return (
     <>
-      <img src={Top} alt="top-file" />
+      <img style={{
+         backgroundColor: "#fff",
+      }} src={Top} alt="top-file" />
       <Box bgcolor={"#f8f1eb"}>
         <Typography
           textAlign={"center"}

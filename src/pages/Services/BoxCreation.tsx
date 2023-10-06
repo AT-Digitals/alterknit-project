@@ -7,7 +7,9 @@ import dress from "../../assets/damage.png";
 export default function BoxCreation() {
   return (
     <>
-      <Box>
+      <Box sx={{
+        backgroundColor: "#fff",
+      }}>
         <Box margin={"0px 150px"} paddingTop={"125px"}>
           <Typography
             lineHeight={"0.5"}

@@ -15,10 +15,11 @@ const firebaseConfig = {
 };
 const app = firebase.initializeApp(firebaseConfig);
 const googleProvider = new firebase.auth.GoogleAuthProvider();
-
 const facebookProvider = new firebase.auth.FacebookAuthProvider();
+const twitterProvider = new firebase.auth.TwitterAuthProvider();
+
 facebookProvider.addScope("email");
 export const auth = app.auth();
 // eslint-disable-next-line import/no-anonymous-default-export
 // export default {app,googleProvider};
-export { app, googleProvider, facebookProvider };
+export { app, googleProvider, facebookProvider, twitterProvider };
