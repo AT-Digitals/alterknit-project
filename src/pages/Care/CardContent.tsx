@@ -5,30 +5,32 @@ import styled from "@emotion/styled";
 
 const CardContainer = styled.div`
   perspective: 1000px;
-  width: 300px;
+  width: 100%;
+  height: 450px;
   position: relative;
+  max-width: 340px;
 `;
 
 const InnerCard = styled.div`
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   transform: ${(props: { isFlipped: any }) =>
     props.isFlipped ? "rotateY(0deg)" : " rotateY(180deg)"};
+  margin-bottom: 20px;
 `;
 
 const CardFace = styled.div`
   width: 100%;
-  height: 100%; /* Set the height to 100% to match the back face */
+  height: 100%;
   position: absolute;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 20px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -40,6 +42,7 @@ const BackFace = styled(CardFace)`
   background-color: #f8f1eb;
   align-items: flex-end;
   border-radius: 40px;
+  display: flex;
 `;
 
 const TotalCards = [
@@ -111,35 +114,41 @@ function HoverCard() {
                   bgcolor={"#df7c6d"}
                   display={"flex"}
                   flexDirection={"column"}
+                  height={"100%"}
                 >
                   <img
-                    height={400}
+                    height={340}
                     src={cards.cardImage}
                     alt="card"
                     loading="lazy"
                     style={{
                       border: "8px solid #df7c6d",
-                      borderRadius: "40px",
+                      borderTopLeftRadius: "40px",
+                      borderTopRightRadius: "40px",
                     }}
                   />
-                  <p style={{ fontSize: "16px", padding: "10px" }}>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      padding: "0 2rem 0 2rem",
+                      fontFamily: `"Proxima Nova",sans-serif`,
+                    }}
+                  >
                     {cards.cardDiscription}
                   </p>
                 </Box>
               </CardFace>
               <BackFace className="back">
-                <Box>
-                  <Typography
-                    padding={3}
-                    lineHeight={1.1}
-                    textAlign={"left"}
-                    color={"#df7c6d"}
-                    fontSize={"75px"}
-                    fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  >
-                    {cards.cardsTitle}
-                  </Typography>
-                </Box>
+                <Typography
+                  padding={3}
+                  lineHeight={1.1}
+                  textAlign={"left"}
+                  color={"#df7c6d"}
+                  fontSize={"75px"}
+                  fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                >
+                  {cards.cardsTitle}
+                </Typography>
               </BackFace>
             </InnerCard>
           </CardContainer>

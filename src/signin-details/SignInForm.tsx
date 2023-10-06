@@ -1,6 +1,11 @@
 import { Divider, IconButton, Stack, Typography, styled } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { auth, facebookProvider, googleProvider } from "../firebase";
+import {
+  auth,
+  facebookProvider,
+  googleProvider,
+  twitterProvider,
+} from "../firebase";
 
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
@@ -75,12 +80,21 @@ export default function SignInForm() {
       console.error("Google login error:", error);
     }
   };
+
   const handleFacebookLogin = async () => {
     try {
       await auth.signInWithPopup(facebookProvider);
       navigate(routes.ROOT);
     } catch (error) {
       console.error("Facebook login error:", error);
+    }
+  };
+  const handleTwitterLogin = async () => {
+    try {
+      await auth.signInWithPopup(twitterProvider);
+      navigate(routes.ROOT);
+    } catch (error) {
+      console.error("twitter login error:", error);
     }
   };
   return (
@@ -96,9 +110,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-          {
-            borderColor: `${Colors.BLACK} !important`,
-          },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
         }}
         onChange={setEmail}
       />
@@ -112,9 +126,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-          {
-            borderColor: `${Colors.BLACK} !important`,
-          },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
         }}
       />
 
@@ -165,7 +179,7 @@ export default function SignInForm() {
         <IconButton onClick={handleFacebookLogin}>
           <FacebookIcon style={{ color: "black" }} />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={handleTwitterLogin}>
           <TwitterIcon style={{ color: "black" }} />
         </IconButton>
       </Stack>

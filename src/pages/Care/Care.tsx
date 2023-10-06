@@ -379,7 +379,7 @@ export default function CarePage() {
             HEY,DID YOU KNOW...
           </Typography>
           <Box
-            p={"8rem 0"}
+            p={"4rem 0"}
             display={"flex"}
             flexWrap={"wrap"}
             gap={"6rem 9rem"}
