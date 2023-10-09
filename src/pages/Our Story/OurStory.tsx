@@ -75,7 +75,7 @@ export default function OurStory() {
         </Box>
       </section>
       <section>
-        <Box p={"7rem 0 0 0"}>
+        <Box p={"4rem 0 0 0"}>
           <Box
             width={"90%"}
             maxWidth={1160}
@@ -165,6 +165,7 @@ export default function OurStory() {
                   color={"#575656"}
                   fontSize="16px"
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  lineHeight={1.2}
                 >
                   In order to make good on that promise to you, we have spent
                   decades honing our craft and assembling a team of highly
@@ -196,6 +197,7 @@ export default function OurStory() {
                   color={"#575656"}
                   fontSize="16px"
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  lineHeight={1.2}
                 >
                   We are also dedicated to doing our part to lessen the impact
                   of consumption on our planet's environment and resources. You
@@ -227,8 +229,10 @@ export default function OurStory() {
                 </Typography>
                 <Typography
                   mt={2}
+                  color={"#575656"}
                   fontSize={"16px"}
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
+                  lineHeight={1.2}
                 >
                   Your favorite clothes mean a lot to you and we know how much
                   you love them. We also know how upsetting it can be when you
@@ -247,7 +251,7 @@ export default function OurStory() {
           loading="lazy"
         ></img>
       </section>
-      <section style={{ padding: "10rem 0" }}>
+      <section style={{ padding: "6rem 0" }}>
         <Box width={"100%"} maxWidth={"1440px"} m={"0 auto"}>
           <Box maxWidth={1200} m={"0 auto"} textAlign={"center"}>
             <Typography
@@ -263,6 +267,7 @@ export default function OurStory() {
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
               color={"#575656"}
+              lineHeight={1.2}
             >
               Alterknit launched officially in 2009 with a mini website
               advertising hand finishing and repairs on primarily hand knitted
@@ -277,6 +282,7 @@ export default function OurStory() {
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
               color={"#575656"}
+              lineHeight={1.2}
             >
               We have set a high bar for Alterknit. It is our commitment to
               being the best at what we do that is reflected in the beautiful
@@ -326,6 +332,7 @@ export default function OurStory() {
             flexWrap={"wrap"}
             justifyContent={"center"}
             gap={"4rem"}
+            mt={"-3rem"}
           >
             {InstagramBoxNavigation.map((items, index) => (
               <Box
