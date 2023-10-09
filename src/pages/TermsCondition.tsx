@@ -1003,6 +1003,7 @@ export default function TermsCondition() {
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
+                        mb={10}
                     >
                         The failure of us to exercise or enforce any right or provision of
                         these Terms of Service shall not constitute a waiver of such right

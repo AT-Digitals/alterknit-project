@@ -196,7 +196,7 @@ export default function FormFile() {
   return (
     <Box
       width={"100%"}
-      height={"900px"}
+      height={"970px"}
       style={{
         backgroundColor: "#f8f1eb",
         backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
@@ -210,7 +210,7 @@ export default function FormFile() {
           borderRadius: "50px",
           border: "5px solid #df7c6d",
           backgroundColor: "#f8f1eb",
-          marginTop: "30px",
+          marginTop: "60px",
           marginBottom: "30px",
           position: "absolute",
         }}
