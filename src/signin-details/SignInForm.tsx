@@ -1,4 +1,4 @@
-import { Divider, IconButton, Stack, Typography, styled } from "@mui/material";
+import { Divider, IconButton, InputAdornment, Stack, Typography, styled } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -18,6 +18,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import routes from "../routes/routes";
 import { useState } from "react";
+import Visibility from "@mui/icons-material/Visibility";
+import { VisibilityOff } from "@mui/icons-material";
 
 const StyleNav = styled(NavLink)({
   ".active": {
@@ -97,6 +99,14 @@ export default function SignInForm() {
       console.error("twitter login error:", error);
     }
   };
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+  };
   return (
     <Stack direction="column" spacing={3} marginTop="100px">
       <Typography variant="h4" textAlign="center">
@@ -110,9 +120,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
         onChange={setEmail}
       />
@@ -121,14 +131,22 @@ export default function SignInForm() {
         onChange={setPassword}
         label="Password"
         required
-        type="password"
-        endIcon={<VisibilityIcon />}
+        type={showPassword ? 'text' : 'password'}
+        endIcon={
+          <IconButton
+            aria-label="toggle password visibility"
+            onMouseDown={handleClickShowPassword}
+            onMouseUp={handleMouseDownPassword}
+          >
+            {showPassword ? <VisibilityOff /> : <Visibility />}
+          </IconButton>
+        }
         sx={{
           color: Colors.BLACK,
           ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
       />
 

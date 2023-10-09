@@ -34,38 +34,40 @@ interface shipinprops {
 
 export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServiceDetails }: shipinprops) {
 
-  const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
+  // const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
 
-  const handleButtonClick = (buttonIndex: string) => {
-    if (selectedButtons.includes(buttonIndex)) {
-      setSelectedButtons(
-        selectedButtons.filter((index) => index !== buttonIndex)
-      );
-    } else {
-      setSelectedButtons([...selectedButtons, buttonIndex]);
-    }
-  };
+  // const handleButtonClick = (buttonIndex: string) => {
+  //   if (selectedButtons.includes(buttonIndex)) {
+  //     setSelectedButtons(
+  //       selectedButtons.filter((index) => index !== buttonIndex)
+  //     );
+  //   } else {
+  //     setSelectedButtons([...selectedButtons, buttonIndex]);
+  //   }
+  // };
+
+
 
   const handleNextButtonClick = async (e: any) => {
     e.preventDefault();
 
     const selectedList = {
-      value: selectedButtons,
+      value: serviceDetails.services.name,
     };
     console.log("sfsg", selectedList);
 
 
 
-    const stringifiedArray = JSON.stringify(selectedButtons);
+    // const stringifiedArray = JSON.stringify(selectedButtons);
 
-    let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
-      method: "post",
-      body: stringifiedArray,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (selectedButtons.length > 0) {
+    // let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
+    //   method: "post",
+    //   body: stringifiedArray,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    if (serviceDetails.services.name.length > 0) {
       nextStep();
     } else {
       alert("Please select a service first");
@@ -119,10 +121,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for knits")}
             style={{
-              backgroundColor: selectedButtons.includes("reweaving for knits")
+              backgroundColor: serviceDetails.services.name.includes("reweaving for knits")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("reweaving for knits")
+              transform: serviceDetails.services.name.includes("reweaving for knits")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -134,10 +136,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for suits")}
             style={{
-              backgroundColor: selectedButtons.includes("reweaving for suits")
+              backgroundColor: serviceDetails.services.name.includes("reweaving for suits")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("reweaving for suits")
+              transform: serviceDetails.services.name.includes("reweaving for suits")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -149,10 +151,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("knit alteration")}
             style={{
-              backgroundColor: selectedButtons.includes("knit alteration")
+              backgroundColor: serviceDetails.services.name.includes("knit alteration")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("knit alteration")
+              transform: serviceDetails.services.name.includes("knit alteration")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -164,10 +166,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("other fabric repair")}
             style={{
-              backgroundColor: selectedButtons.includes("other fabric repair")
+              backgroundColor: serviceDetails.services.name.includes("other fabric repair")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("other fabric repair")
+              transform: serviceDetails.services.name.includes("other fabric repair")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -179,10 +181,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("cleaning")}
             style={{
-              backgroundColor: selectedButtons.includes("cleaning")
+              backgroundColor: serviceDetails.services.name.includes("cleaning")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("cleaning")
+              transform: serviceDetails.services.name.includes("cleaning")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -194,10 +196,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("restyling")}
             style={{
-              backgroundColor: selectedButtons.includes("restyling")
+              backgroundColor: serviceDetails.services.name.includes("restyling")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("restyling")
+              transform: serviceDetails.services.name.includes("restyling")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -209,10 +211,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("de-pilling")}
             style={{
-              backgroundColor: selectedButtons.includes("de-pilling")
+              backgroundColor: serviceDetails.services.name.includes("de-pilling")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("de-pilling")
+              transform: serviceDetails.services.name.includes("de-pilling")
                 ? `scale(1.05)`
                 : "",
             }}
@@ -224,10 +226,10 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
           <StyleButtonNew
             onClick={() => handleButtonClick("custom knit work")}
             style={{
-              backgroundColor: selectedButtons.includes("custom knit work")
+              backgroundColor: serviceDetails.services.name.includes("custom knit work")
                 ? Colors.LINK
                 : "",
-              transform: selectedButtons.includes("custom knit work")
+              transform: serviceDetails.services.name.includes("custom knit work")
                 ? `scale(1.05)`
                 : "",
             }}

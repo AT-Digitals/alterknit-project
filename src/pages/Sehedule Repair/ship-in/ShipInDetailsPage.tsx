@@ -111,13 +111,11 @@ export default function ShipInDetailsPage() {
     };
 
     const prevStep = () => {
-        if (step === 4 && selectedOption === "door-to-door") {
-            setStep(2); // Go back to Step 2 if Option 2 was selected
-        } else {
-            setStep(step - 1);
+        if (step === 4) {
+            setSelectedOption(""); // Reset selectedOption when going back
         }
+        setStep(step - 1);
     };
-
     const selectOption = (option: string) => {
         setSelectedOption(option);
         nextStep();
@@ -127,7 +125,6 @@ export default function ShipInDetailsPage() {
             setStep(4);
         }
     };
-
 
     console.log("select", serviceDetails);
 
@@ -144,7 +141,7 @@ export default function ShipInDetailsPage() {
         case 3:
             return (
                 <>
-                    {selectedOption === "ship-in" && (
+                    {selectedOption === "ship-in" && step === 3 && (
                         <ShipInPage
                             nextStep={nextStep}
                             prevStep={prevStep}
@@ -152,7 +149,7 @@ export default function ShipInDetailsPage() {
                             setServiceDetails={setServiceDetails}
                         />
                     )}
-                    {selectedOption === "door-to-door" && (
+                    {selectedOption === "door-to-door" && step === 3 && (
                         <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />
                     )}
                 </>
@@ -161,12 +158,11 @@ export default function ShipInDetailsPage() {
         case 4:
             return (
                 <>
-                    {selectedOption === "ship-in" &&
-                        <ShipinFields nextStep={nextStep} prevStep={prevStep} />
-                    }
-                    {selectedOption === "door-to-door" &&
-                        <DoorToDoor prevStep={prevStep} />
-                    }
+                    {/* {selectedOption === "ship-in" && step === 4 && */}
+                    <ShipinFields nextStep={nextStep} prevStep={prevStep} />
+
+                    {/* {selectedOption === "door-to-door" && selectedOption1 === 'new yorkers' && step === 4 && */}
+                    {/* <DoorToDoor /> */}
                 </>
             );
         case 5:

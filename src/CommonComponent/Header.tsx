@@ -10,8 +10,6 @@ export default function Header() {
                 width="15%"
                 height="15%"
             />
-            <Divider orientation="vertical" variant="middle" flexItem />
-            <Typography variant="h4">Developed for Online Stitching</Typography>
         </Stack>
     )
 }
