@@ -1,22 +1,26 @@
-import { Box, CircularProgress, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
-import CustomDialog from "../Popup/Popup";
 import CustomTextField from "../CommonComponent/CustomTextField";
 import { auth } from "../firebase";
 import routes from "../routes/routes";
-import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import alterknitImage from "../assets/alterknit.png";
 
 export default function SignUpForm() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState("");
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -32,7 +36,7 @@ export default function SignUpForm() {
       setError("Can't create user");
     } finally {
       setIsLoading(false);
-      setIsDrawerOpen(true);
+      navigate(routes.ROOT);
     }
   };
   const StyleNav = styled(NavLink)({
@@ -41,12 +45,6 @@ export default function SignUpForm() {
     },
   });
 
-  const handlePopupClose = () => {
-    setIsDrawerOpen(false);
-    if (error === "Your account details have been saved.") {
-      navigate(routes.SIGN_IN);
-    }
-  };
   return (
     <Box marginTop="100px">
       <Stack direction="column" spacing={3}>
@@ -61,9 +59,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+              {
+                borderColor: `${Colors.BLACK} !important`,
+              },
           }}
         />
         <CustomTextField
@@ -74,9 +72,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+              {
+                borderColor: `${Colors.BLACK} !important`,
+              },
           }}
         />
         <CustomTextField
@@ -87,9 +85,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+              {
+                borderColor: `${Colors.BLACK} !important`,
+              },
           }}
         />
         <CustomTextField
@@ -100,9 +98,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+              {
+                borderColor: `${Colors.BLACK} !important`,
+              },
           }}
         />
 
@@ -120,15 +118,7 @@ export default function SignUpForm() {
           Sign Up
         </CustomButton>
       </Stack>
-      {isLoading ? (
-        <CircularProgress color="success" />
-      ) : (
-        <CustomDialog
-          isOpen={isDrawerOpen}
-          onClose={handlePopupClose}
-          message={error || ""}
-        />
-      )}
+      {isLoading ? <CircularProgress color="success" /> : null}
       <Stack
         direction="row"
         alignItems="center"
@@ -137,7 +127,12 @@ export default function SignUpForm() {
         marginY={3}
       >
         <Typography variant="body2">Already have an account? </Typography>
-        <StyleNav to={routes.SIGN_IN} style={{ textDecoration: "none", color: Colors.BLACK }}>Sign In</StyleNav>
+        <StyleNav
+          to={routes.SIGN_IN}
+          style={{ textDecoration: "none", color: Colors.BLACK }}
+        >
+          Sign In
+        </StyleNav>
       </Stack>
     </Box>
   );

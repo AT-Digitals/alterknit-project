@@ -15,6 +15,7 @@ import Hello from "../../assets/hello.jpg";
 import background from "../../assets/bg_stage_header.svg";
 import logo from "../../assets/moskitooz-scedule.png";
 import routes from "../../routes/routes";
+import { useState } from "react";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "20px",
@@ -34,8 +35,25 @@ interface doorpageprops {
   prevStep: () => void;
 }
 
-
 export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
+  const [zipCode, setZipCode] = useState("");
+  const [error, setError] = useState("");
+  const handleChange = (event: any) => {
+    setZipCode(event.target.value);
+  };
+  const validZipCodeRegex = /^\d{5}(-\d{4})?$/;
+
+  const handleZipcodeValidate = () => {
+    if (!zipCode) {
+      setError("ZIP code cannot be empty");
+    } else if (!validZipCodeRegex.test(zipCode)) {
+      setError("Invalid ZIP code format");
+    } else {
+      setError("");
+      console.log("Valid ZIP code:", zipCode);
+      nextStep(routes.DARN_IT);
+    }
+  };
   return (
     <Stack direction="column">
       <Stack sx={{ backgroundColor: Colors.HOME_BACKGROUND }}>
@@ -153,25 +171,27 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               }}
               variant="outlined"
               placeholder="Enter your ZIP code"
+              onChange={handleChange}
+              error={!!error}
+              helperText={error}
             ></TextField>
-            <Link onClick={nextStep}>
-              <Button
-                sx={{
+            <Button
+              onClick={handleZipcodeValidate}
+              sx={{
+                backgroundColor: Colors.BLACK,
+                border: `1px solid ${Colors.BLACK}`,
+                color: "white",
+                padding: "10px 10px",
+                borderRadius: "0",
+                textTransform: "capitalize",
+                fontSize: "20px",
+                ":hover": {
                   backgroundColor: Colors.BLACK,
-                  border: `1px solid ${Colors.BLACK}`,
-                  color: "white",
-                  padding: "10px 10px",
-                  borderRadius: "0",
-                  textTransform: "capitalize",
-                  fontSize: "20px",
-                  ":hover": {
-                    backgroundColor: Colors.BLACK,
-                  },
-                }}
-              >
-                <ArrowForwardIcon />
-              </Button>
-            </Link>
+                },
+              }}
+            >
+              <ArrowForwardIcon />
+            </Button>
           </Box>
         </Stack>
         <img
