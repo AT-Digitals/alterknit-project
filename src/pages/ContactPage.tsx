@@ -40,15 +40,24 @@ export default function FormFile() {
       return false;
     }
   };
+  
 
   const PhoneValidation = (name: string) => {
-    if (/^\d{10}$/.test(name)) {
+    const cleanedPhoneNumber = name.replace(/\D/g, "");
+    if (/^1\d{10}$/.test(cleanedPhoneNumber)) {
       setPhoneError("");
       return true;
-    } else {
-      setPhoneError("Phone number must have 10 digits");
-      return false;
     }
+  
+    // Check for Indian phone numbers (country code +91)
+    if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
+      setPhoneError("");
+      return true;
+    }
+  
+    // For any other input, show an error
+    setPhoneError("Invalid phone number");
+    return false;
   };
 
   useEffect(() => {
@@ -248,8 +257,8 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-1wc848c-MuiFormHelperText-root": {
-                    color: "red",
+                  ".css-bn26lx-MuiFormHelperText-root": {
+                    color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
                     border: "1px solid lightgray",
@@ -269,6 +278,7 @@ export default function FormFile() {
                 required
               />
             </Box>
+            <Stack direction={"row"} spacing={2}>
             <Box>
               <Button
                 sx={{
@@ -295,7 +305,7 @@ export default function FormFile() {
                 />
               </Button>
             </Box>
-            <Box display={"flex"} alignItems={"center"}>
+            <Box marginTop={"9px"} display={"flex"} alignItems={"center"}>
               {selectedImage && (
                 <img
                   src={URL.createObjectURL(selectedImage)}
@@ -314,6 +324,7 @@ export default function FormFile() {
               }} onClick={handleImageDelete} />
               )}
             </Box>
+            </Stack>
           </Stack>
 
           <Stack margin={"30px"} spacing={3}>
@@ -334,8 +345,8 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-1wc848c-MuiFormHelperText-root ": {
-                    color: "red",
+                  ".css-bn26lx-MuiFormHelperText-root": {
+                    color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
                     border: "1px solid lightgray",
@@ -371,8 +382,8 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-1wc848c-MuiFormHelperText-root": {
-                    color: "red",
+                  ".css-bn26lx-MuiFormHelperText-root": {
+                    color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
                     border: "1px solid lightgray",
@@ -425,7 +436,6 @@ export default function FormFile() {
               name="passage"
               variant="outlined"
               placeholder="Please enter query..."
-              required
             />
           </Box>
           <Box textAlign={"center"}>
@@ -446,7 +456,7 @@ export default function FormFile() {
               type="submit"
               // onClick={handleSubmit}
             >
-              Send
+              Submit
             </Button>
           </Box>
         </Box>
