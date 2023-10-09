@@ -316,12 +316,12 @@ export default function FormFile() {
                     borderRadius: "50%",
                   }}
                 />
-                
+
               )}
               {showDeleteIcon && (
-              <DeleteIcon style={{
-                color: "#df7c6d",
-              }} onClick={handleImageDelete} />
+                <DeleteIcon style={{
+                  color: "#df7c6d",
+                }} onClick={handleImageDelete} />
               )}
             </Box>
             </Stack>
@@ -454,7 +454,7 @@ export default function FormFile() {
               }}
               variant="contained"
               type="submit"
-              // onClick={handleSubmit}
+            // onClick={handleSubmit}
             >
               Submit
             </Button>

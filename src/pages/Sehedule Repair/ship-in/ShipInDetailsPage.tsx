@@ -106,6 +106,8 @@ export default function ShipInDetailsPage() {
         }));
     };
 
+    const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
+
     const nextStep = () => {
         setStep(step + 1);
     };
@@ -148,8 +150,8 @@ export default function ShipInDetailsPage() {
                         <ShipInPage
                             nextStep={nextStep}
                             prevStep={prevStep}
-                            serviceDetails={serviceDetails}
-                            setServiceDetails={setServiceDetails}
+                            selectedButtons={selectedButtons}
+                            setSelectedButtons={setSelectedButtons}
                         />
                     )}
                     {selectedOption === "door-to-door" && (

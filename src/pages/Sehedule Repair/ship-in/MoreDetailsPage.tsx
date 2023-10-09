@@ -42,17 +42,17 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
     const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        let result = await fetch(
-            'https://alterknit-backend.onrender.com/more-details', {
-            method: "post",
-            body: JSON.stringify({
-                previous: previousClean,
-                latest: latestClean,
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        // let result = await fetch(
+        //     'https://alterknit-backend.onrender.com/more-details', {
+        //     method: "post",
+        //     body: JSON.stringify({
+        //         previous: previousClean,
+        //         latest: latestClean,
+        //     }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
 
         const values = {
             previous: previousClean,

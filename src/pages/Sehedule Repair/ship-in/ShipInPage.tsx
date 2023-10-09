@@ -27,14 +27,14 @@ const StyleButtonNew = styled(Button)({
 interface shipinprops {
   nextStep: () => void;
   prevStep: () => void;
-  serviceDetails: ServiceDetailsState;
-  setServiceDetails: (serviceDetails: ServiceDetailsState) => void
+  selectedButtons: string[];
+  setSelectedButtons: (text: string[]) => void
 }
 
 
-export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServiceDetails }: shipinprops) {
+export default function ShipInPage({ nextStep, prevStep, selectedButtons, setSelectedButtons }: shipinprops) {
 
-  const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
+  // const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
 
   const handleButtonClick = (buttonIndex: string) => {
     if (selectedButtons.includes(buttonIndex)) {
@@ -56,15 +56,15 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
 
 
 
-    const stringifiedArray = JSON.stringify(selectedButtons);
+    // const stringifiedArray = JSON.stringify(selectedButtons);
 
-    let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
-      method: "post",
-      body: stringifiedArray,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
+    //   method: "post",
+    //   body: stringifiedArray,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
     if (selectedButtons.length > 0) {
       nextStep();
     } else {
