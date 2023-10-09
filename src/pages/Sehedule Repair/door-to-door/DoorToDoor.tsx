@@ -1,7 +1,11 @@
 import { Box } from "@mui/material";
 import DarnIt from "./DarnIt";
 
-export default function DoorToDoor() {
+interface DoorProps {
+  prevStep: () => void;
+}
+
+export default function DoorToDoor({ prevStep }: DoorProps) {
   return (
     <Box
       maxWidth={1200}
@@ -10,7 +14,7 @@ export default function DoorToDoor() {
       pt={"2rem"}
       pb={"6rem"}
     >
-      <DarnIt />
+      <DarnIt prevStep={prevStep} />
     </Box>
   );
 }

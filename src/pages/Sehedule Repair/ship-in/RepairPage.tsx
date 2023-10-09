@@ -32,9 +32,10 @@ interface Data {
 interface repairprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
+  addItem: () => void;
 }
 
-export default function RepairPage({ nextStep, prevStep }: repairprops) {
+export default function RepairPage({ nextStep, prevStep, addItem }: repairprops) {
 
   const [data, setData] = useState<Data[]>([]);
 
@@ -280,7 +281,7 @@ export default function RepairPage({ nextStep, prevStep }: repairprops) {
             Back
           </StyledButtom>
         </Link>
-        <Link >
+        <Link onClick={addItem} >
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}

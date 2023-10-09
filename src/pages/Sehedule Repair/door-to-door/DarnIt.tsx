@@ -25,7 +25,12 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function DarnIt() {
+interface DoorProps {
+  prevStep: () => void;
+}
+
+
+export default function DarnIt({ prevStep }: DoorProps) {
   return (
     <Box
       mt={"2rem"}
@@ -60,7 +65,7 @@ export default function DarnIt() {
         AT THIS TIME WE DO NOT OFFER DOOR TO <br /> DOOR SERVICE IN YOUR AREA
       </Typography>
       <LinkWrapper>
-        <StyledLink href={routes.FIXME}>OK! I will ship it</StyledLink>
+        <StyledLink onClick={prevStep}>OK! I will ship it</StyledLink>
       </LinkWrapper>
       <img
         style={{
