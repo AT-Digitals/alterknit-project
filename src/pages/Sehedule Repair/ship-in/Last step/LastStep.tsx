@@ -38,6 +38,22 @@ const StyledButton = styled(CustomButton)({
     backgroundColor: "#f58977",
   },
 });
+const StyledInput = styled.input`
+  border: 1px solid black;
+  border-radius: 6px;
+  outline: 0;
+  padding: 8px;
+  font-family: "ProximaNovaSemibold", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  width: 100%;
+  max-width: 270px;
+  height: 35px;
+
+  &::placeholder {
+    color: #999999;
+  }
+`;
 
 export default function LastStep() {
   const [isChecked, setIsChecked] = useState(false);
@@ -333,21 +349,7 @@ export default function LastStep() {
               gap={"1.5rem"}
             >
               <Box width={"100%"} display={"flex"} gap={"30px"}>
-                <input
-                  placeholder="Apply coupon code"
-                  style={{
-                    border: "1px solid black",
-                    borderRadius: "6px",
-                    outline: 0,
-                    padding: "8px",
-                    fontFamily: `"ProximaNovaSemibold", sans-serif`,
-                    fontWeight: 600,
-                    fontSize: "18px",
-                    width: "100%",
-                    maxWidth: "270px",
-                    height: "35px",
-                  }}
-                />
+                <StyledInput placeholder="Apply coupon code" />
                 <StyledButton
                   style={{
                     background: "#df7c6d",
