@@ -289,6 +289,7 @@ export default function LastStep() {
                 }}
                 href={routes.TERM}
                 target="_blank"
+                rel="noreferrer"
               >
                 terms and conditions
               </a>
@@ -353,7 +354,7 @@ export default function LastStep() {
                     textTransform: "capitalize",
                     color: "black",
                     fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    fontWeight: 500
+                    fontWeight: 500,
                   }}
                 >
                   Check Validity
@@ -374,7 +375,7 @@ export default function LastStep() {
             fontFamily: `"ProximaNovaMedium", sans-serif`,
             textTransform: "capitalize",
             fontWeight: 500,
-            padding: "30px 40px "
+            padding: "30px 40px ",
           }}
         >
           Submit

@@ -87,13 +87,14 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"4rem 5.4rem"}
+            padding={"1rem 5.4rem"}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
               textTransform={"lowercase"}
+              mt={"1rem"}
             >
               CARE THROUGH REPAIR
             </Typography>
@@ -245,7 +246,7 @@ export default function CarePage() {
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 1.5rem"}
+                  p={" 1rem 2rem"}
                   alignItems={"center"}
                   key={index}
                   maxWidth={1240}
@@ -276,6 +277,8 @@ export default function CarePage() {
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontSize={"22px"}
                       color={"#575656"}
+                      maxWidth={"76%"}
+                      padding={"1rem 0 2rem 0"}
                     >
                       {notes.paragraph}
                     </Typography>
@@ -286,7 +289,7 @@ export default function CarePage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 1.5rem"}
+                p={" 1rem 2rem"}
                 alignItems={"center"}
                 maxWidth={1240}
               >
@@ -303,6 +306,9 @@ export default function CarePage() {
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
                   fontSize={"22px"}
                   color={"#575656"}
+                  p={"1rem 0 1rem 0"}
+                  mt={"-1rem"}
+                  maxWidth={"76%"}
                 >
                   We've seen it all over here and fixed it too: your favorite
                   office cardigan caught in a desk chair wheel with blown out
@@ -317,7 +323,7 @@ export default function CarePage() {
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 1.5rem"}
+                  p={" 1rem 2rem"}
                   alignItems={"center"}
                   key={index}
                   maxWidth={1240}
@@ -348,6 +354,8 @@ export default function CarePage() {
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontSize={"22px"}
                       color={"#575656"}
+                      maxWidth={"76%"}
+                      padding={"1rem 0 2rem 0"}
                     >
                       {notes.paragraph}
                     </Typography>

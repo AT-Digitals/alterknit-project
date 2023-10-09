@@ -37,9 +37,8 @@ export default function BlogPage() {
         <Box p={2} mb={3}>
           <Typography
             fontSize={"40px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             color={"#0f0d0d"}
-            fontWeight={400}
           >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
