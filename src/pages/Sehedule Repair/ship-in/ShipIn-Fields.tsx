@@ -27,7 +27,7 @@ const CustomTextField = styled(TextField)`
 
 interface HoverProps {
   Ishoverd?: boolean;
-  nextStep: (value: any) => void;
+  nextStep: () => void;
   prevStep: () => void;
 }
 
@@ -72,7 +72,7 @@ export default function ShipinFields({
         "INFORMATION REQUIRED:-\n Brief description of repair needed and/or any other important imformaton for us"
       );
     } else {
-      nextStep("ship-in-fields");
+      nextStep();
     }
 
     let result = await fetch(

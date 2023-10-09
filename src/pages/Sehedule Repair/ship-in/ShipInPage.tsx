@@ -25,7 +25,7 @@ const StyleButtonNew = styled(Button)({
 });
 
 interface shipinprops {
-  nextStep: (value: any) => void;
+  nextStep: () => void;
   prevStep: () => void;
   serviceDetails: ServiceDetailsState;
   setServiceDetails: (serviceDetails: ServiceDetailsState) => void
@@ -33,12 +33,6 @@ interface shipinprops {
 
 
 export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServiceDetails }: shipinprops) {
-  const navigate = useNavigate();
-
-  const routeChange = () => {
-    let path = routes.SHIP_IN_FIELDS;
-    navigate(path);
-  };
 
   const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
 
@@ -72,7 +66,7 @@ export default function ShipInPage({ nextStep, prevStep, serviceDetails, setServ
       },
     });
     if (selectedButtons.length > 0) {
-      nextStep('ship-in');
+      nextStep();
     } else {
       alert("Please select a service first");
     }

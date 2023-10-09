@@ -52,7 +52,7 @@ export default function ShipInDetailsPage() {
     //   }
 
     const [step, setStep] = useState(1);
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState("");
     const [selectedOption1, setSelectedOption1] = useState(null);
 
     const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
@@ -106,18 +106,28 @@ export default function ShipInDetailsPage() {
         }));
     };
 
-    const nextStep = (option: any) => {
-        setSelectedOption(option);
-        setSelectedOption1(option);
+    const nextStep = () => {
         setStep(step + 1);
     };
 
     const prevStep = () => {
-        if (step === 4) {
-            setSelectedOption(null); // Reset selectedOption when going back
+        if (step === 4 && selectedOption === "door-to-door") {
+            setStep(2); // Go back to Step 2 if Option 2 was selected
+        } else {
+            setStep(step - 1);
         }
-        setStep(step - 1);
     };
+
+    const selectOption = (option: string) => {
+        setSelectedOption(option);
+        nextStep();
+    };
+    const addItem = () => {
+        if (selectedOption === "ship-in") {
+            setStep(4);
+        }
+    };
+
 
     console.log("select", serviceDetails);
 
@@ -127,14 +137,14 @@ export default function ShipInDetailsPage() {
         case 2:
             return (
                 <FixmePage
-                    nextStep={() => nextStep("ship-in")}
-                    secondNextStep={() => nextStep("door-to-door")}
+                    nextStep={() => selectOption("ship-in")}
+                    secondNextStep={() => selectOption("door-to-door")}
                 />
             );
         case 3:
             return (
                 <>
-                    {selectedOption === "ship-in" && step === 3 && (
+                    {selectedOption === "ship-in" && (
                         <ShipInPage
                             nextStep={nextStep}
                             prevStep={prevStep}
@@ -142,7 +152,7 @@ export default function ShipInDetailsPage() {
                             setServiceDetails={setServiceDetails}
                         />
                     )}
-                    {selectedOption === "door-to-door" && step === 3 && (
+                    {selectedOption === "door-to-door" && (
                         <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />
                     )}
                 </>
@@ -151,17 +161,18 @@ export default function ShipInDetailsPage() {
         case 4:
             return (
                 <>
-                    {/* {selectedOption === "ship-in" && step === 4 && */}
-                    <ShipinFields nextStep={nextStep} prevStep={prevStep} />
-
-                    {/* {selectedOption === "door-to-door" && selectedOption1 === 'new yorkers' && step === 4 && */}
-                    {/* <DoorToDoor /> */}
+                    {selectedOption === "ship-in" &&
+                        <ShipinFields nextStep={nextStep} prevStep={prevStep} />
+                    }
+                    {selectedOption === "door-to-door" &&
+                        <DoorToDoor prevStep={prevStep} />
+                    }
                 </>
             );
         case 5:
             return <MoreDetailsPage nextStep={nextStep} prevStep={prevStep} />;
         case 6:
-            return <RepairPage nextStep={nextStep} prevStep={prevStep} />;
+            return <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} />;
         case 7:
             return <CheckOut nextStep={nextStep} prevStep={prevStep} />;
         case 8:

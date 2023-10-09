@@ -44,7 +44,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
           alignItems="center"
           justifyContent="center"
           paddingX={10}
-          paddingY={5}
+          paddingY={7}
           width="100%"
           maxWidth={1300}
           margin="0 auto"
@@ -67,7 +67,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             width={780}
             mb={2}
             mt={1}
-            lineHeight={1.5}
+            lineHeight={1.2}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
           >
             Delivery is complimentary from 24 hr. residential doorman buildings
             in Manhattan when you use our service. In the event that we are
@@ -97,7 +99,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             borderRadius: "30px",
           }}
         >
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ textAlign: "center" }} lineHeight={0}>
             <img src={Hello} alt="hello" width={200} height={90} />
             <Typography
               textTransform={"lowercase"}
@@ -127,8 +129,8 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             door to door service!
           </Typography>
           <Typography
-            fontFamily="Proxima Nova"
-            fontWeight={100}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
             textAlign="center"
             pt={2}
           >

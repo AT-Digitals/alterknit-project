@@ -15,7 +15,8 @@ interface footerProps {
 const StyleLink = styled(Link)({
   color: "#787878",
   fontSize: "18px",
-  fontFamily: "Proxima Nova,sans-serif",
+  fontFamily: `"ProximaNovaRegular", sans-serif`,
+  fontWeight: 400,
   textUnderlineOffset: "5px",
   textDecoration: "none",
   "&:hover": {
@@ -25,8 +26,9 @@ const StyleLink = styled(Link)({
 const StyleLink1 = styled(Link)({
   color: "#787878",
   fontSize: "18px",
-  fontFamily: "Proxima Nova,sans-serif",
   textUnderlineOffset: "5px",
+  fontFamily: `"ProximaNovaRegular", sans-serif`,
+  fontWeight: 400,
   "&:hover": {
     color: Colors.WHITE,
   },
@@ -146,7 +148,8 @@ export default function AppFooter({ activeTab }: footerProps) {
           >
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
-              fontFamily={"Proxima Nova,sans-serif"}
+              fontFamily={`"ProximaNovaRegular", sans-serif`}
+              fontWeight={400}
               color={"#787878"}
               textAlign="center"
             >
@@ -154,9 +157,10 @@ export default function AppFooter({ activeTab }: footerProps) {
             </Typography>
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
-              fontFamily={"Proxima Nova,sans-serif"}
               color={"#787878"}
               textAlign="center"
+              fontFamily={`"ProximaNovaRegular", sans-serif`}
+              fontWeight={400}
             >
               AlterKnit New York 2023
             </Typography>
