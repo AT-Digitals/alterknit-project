@@ -38,7 +38,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -73,7 +73,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -98,7 +98,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -122,7 +122,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -146,7 +146,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -170,7 +170,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -193,7 +193,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -216,7 +216,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -239,7 +239,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -262,7 +262,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"28px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -285,7 +285,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -307,7 +307,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -330,7 +330,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >
@@ -352,7 +352,7 @@ export default function BlogPageReadingContent() {
 
           <Typography
             fontSize={"30px"}
-            fontFamily={"Proxima Nova,sans-serif"}
+            fontFamily={"ProximaNovaRegular,sans-serif"}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
           >

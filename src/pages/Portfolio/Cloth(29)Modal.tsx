@@ -68,7 +68,7 @@ export default function Cloth25Modal() {
                     borderRadius: "15px",
                     width: "100px",
                 }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>REFORMATION</Typography>
+                <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>REFORMATION</Typography>
                 </Box>
                 </Box>
                 <Box style={{
@@ -111,7 +111,7 @@ export default function Cloth25Modal() {
                     borderRadius: "15px",
                     width: "100px",
                 }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>REFORMATION</Typography>
+                <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>REFORMATION</Typography>
                 </Box>
                 </Box>
                 <Box>

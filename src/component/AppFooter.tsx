@@ -23,6 +23,7 @@ const StyleLink = styled(Link)({
     color: Colors.WHITE,
   },
 });
+
 const StyleLink1 = styled(Link)({
   color: "#787878",
   fontSize: "18px",

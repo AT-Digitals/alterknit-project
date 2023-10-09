@@ -71,7 +71,7 @@ export default function BasicModal() {
                     borderRadius: "15px",
                     width: "100px",
                 }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>BEFORE</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>H&M</Typography>
+                <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>H&M</Typography>
                 </Box>
                 </Box>
                 <Box style={{
@@ -114,7 +114,7 @@ export default function BasicModal() {
                     borderRadius: "15px",
                     width: "100px",
                 }}  color={"black"} fontWeight={"400"} fontSize={"2.1rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>AFTER</Typography>
-                <Typography   color={"black"} fontSize={"1.3rem"}>H&M</Typography>
+                <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>H&M</Typography>
                 </Box>
                 </Box>
                 <Box>

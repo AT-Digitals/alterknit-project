@@ -616,7 +616,7 @@ export default function PrivacyPolicy() {
                             fontWeight={"500"}
                             fontSize={"20px"}
                             fontStyle={"italic"}
-                            mb={10}
+                            mb={16}
                         >
                             Last updated February 25, 2022.
                         </Typography>
