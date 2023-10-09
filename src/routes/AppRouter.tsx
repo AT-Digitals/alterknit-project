@@ -4,28 +4,19 @@ import AppLayout from "../component/AppLayout";
 import BlogPage from "../pages/Blog/BlogPage";
 import BlogPageReadingContent from "../pages/Blog/BlogPageReading";
 import CarePage from "../pages/Care/CarePage";
-import CheckOut from "../pages/Sehedule Repair/ProcessToCheckOut/CheckOut";
 import ContactPage from "../pages/ContactPage";
-import DoorToDoor from "../pages/Sehedule Repair/door-to-door/DoorToDoor";
-import DoorToDoorPage from "../pages/Sehedule Repair/DoorToDoorPage";
-import FixmePage from "../pages/Sehedule Repair/FixmePage";
 import HomePage from "../pages/Home/HomePage";
 import LastStep from "../pages/Sehedule Repair/ship-in/Last step/LastStep";
-import MoreDetailsPage from "../pages/Sehedule Repair/ship-in/MoreDetailsPage";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
 import PartnerPage from "../pages/PartnerPage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
-import RepairPage from "../pages/Sehedule Repair/ship-in/RepairPage";
-import ScheduleReapir from "../pages/Sehedule Repair/ScheduleRepair";
 import ServicePage from "../pages/Services/ServicePage";
-import ShipInPage from "../pages/Sehedule Repair/ship-in/ShipInPage";
-import ShipinFields from "../pages/Sehedule Repair/ship-in/ShipIn-Fields";
+import ShipInDetailsPage from "../pages/Sehedule Repair/ship-in/ShipInDetailsPage";
 import SignInPage from "../signin-details/SignInPage";
 import SignUpPage from "../signup-details/SignUpPage";
 import TermsCondition from "../pages/TermsCondition";
 import routes from "./routes";
-import ShipInDetailsPage from "../pages/Sehedule Repair/ship-in/ShipInDetailsPage";
 
 export default function AppRouter() {
   return (
@@ -43,7 +34,10 @@ export default function AppRouter() {
           <Route path={routes.BLOG_PAGE} element={<BlogPage />} />
           <Route path={routes.CONTACT_US} element={<ContactPage />} />
           {/* <Route path={routes.DOORTODOOR} element={<DoorToDoorPage />} /> */}
-          <Route path={routes.SCHEDULE_REPAIR} element={<ShipInDetailsPage />} />
+          <Route
+            path={routes.SCHEDULE_REPAIR}
+            element={<ShipInDetailsPage />}
+          />
           {/* <Route path={routes.FIXME} element={<FixmePage />} /> */}
           <Route path={routes.TERM} element={<TermsCondition />} />
           <Route path={routes.PRIVACY} element={<PrivacyPolicy />} />
