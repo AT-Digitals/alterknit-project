@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
 import ShipCard from "./ShipCard";
-import routes from "../../../routes/routes";
-import { useNavigate } from "react-router-dom";
+
+// import routes from "../../../routes/routes";
+// import { useNavigate } from "react-router-dom";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -49,12 +50,12 @@ export default function ShipinFields({
     setFormData({ ...formData, [name]: value });
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const routeChange = () => {
-    let path = routes.MORE_DETAILS;
-    navigate(path);
-  };
+  // const routeChange = () => {
+  //   let path = routes.MORE_DETAILS;
+  //   navigate(path);
+  // };
 
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -288,10 +289,19 @@ export default function ShipinFields({
                     placeholder="i.e. My grandmother made this for me, I got married in this suit, please fix my baby blanket even though I'm now 38, I bought this second-hand and I found a hole, or I just love it and can't live without it!"
                     variant="outlined"
                     sx={{
-                      "& input::placeholder": {
+                      "& ::placeholder": {
                         fontSize: "20px",
-                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontFamily: `"ProximaNovaSemibold", sans-serif`,
                         fontWeight: 500,
+                        paddingLeft: "1rem",
+                        paddingRight: "1rem",
+                      },
+                      "& .MuiOutlinedInput-input": {
+                        fontSize: "22px",
+                        fontFamily: `"ProximaNovaSemibold", sans-serif`,
+                        fontWeight: 500,
+                        paddingLeft: "1rem",
+                        paddingRight: "1rem",
                       },
                       padding: "1rem",
                       backgroundColor: "#f8f1ec",
