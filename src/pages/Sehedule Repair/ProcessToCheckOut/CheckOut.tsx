@@ -15,8 +15,6 @@ import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "../ship-in/ShipCard";
 import StateOptions from "./StateOptions";
-import routes from "../../../routes/routes";
-import { useNavigate } from "react-router-dom";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -117,9 +115,25 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
       [name as string]: value,
     }));
   };
-  const navigate = useNavigate();
-  const handleNextClick = () => {
-    nextStep();
+  const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formData.firstName) {
+      alert(" Please enter shipping first name.");
+    } else if (!formData.lastName) {
+      alert("Please enter shipping last name.");
+    } else if (!formData.streetAddress) {
+      alert("Please enter shipping street address.");
+    } else if (!formData.city) {
+      alert("Please enter shipping city.");
+    } else if (!formData.zipCode) {
+      alert("Please enter shipping zip code.");
+    } else if (!formData.phoneNumber) {
+      alert("Please enter shipping phone number.");
+    } else if (!formData.emailAddress) {
+      alert("Please enter shipping e-mail address.");
+    } else {
+      nextStep();
+    }
   };
 
   return (
@@ -342,7 +356,6 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           fontWeight={500}
           textTransform={"lowercase"}
-
         >
           IS YOUR BILLING ADDRESS THE SAME AS YOUR SHIPPING ADDRESS?
         </Typography>

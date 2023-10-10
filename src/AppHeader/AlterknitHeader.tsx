@@ -9,13 +9,13 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 import Alterknit from "../assets/alterknit.png";
 import AppContainer from "../component/AppContainer";
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import routes from "../routes/routes";
 
@@ -102,6 +102,29 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
   const handleReloadClick = () => {
     window.location.reload();
     window.scrollTo(0, 0);
+  };
+
+  const navigate = useNavigate();
+
+  function clearCaches() {
+    if ("caches" in window) {
+      caches.keys().then(function (cacheNames) {
+        cacheNames.forEach(function (cacheName) {
+          caches.delete(cacheName);
+          console.log(cacheName, "cacheName");
+        });
+      });
+    }
+  }
+
+  const handleLogout = async () => {
+    try {
+      navigate(routes.ROOT);
+      clearCaches();
+      console.log("cleared catches");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   return (
@@ -207,9 +230,11 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                 Schedule your repair
               </StyledButton>
             </Link>
-            <Link to={routes.ROOT}>
-              <StyledButton bgColor={Colors.BLACK}>Logout</StyledButton>
-            </Link>
+            {/* <Link to={routes.ROOT}> */}
+            <StyledButton onClick={handleLogout} bgColor={Colors.BLACK}>
+              Logout
+            </StyledButton>
+            {/* </Link> */}
           </Stack>
         </Stack>
       </AppContainer>

@@ -1,11 +1,8 @@
 import { Button, Grid, Stack, Typography, styled } from "@mui/material";
-import { useEffect, useState } from "react";
 
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
-import routes from "../../../routes/routes";
-import { useNavigate } from "react-router-dom";
-import ServiceDetailsState from "./ServiceDetailsState";
+import { useEffect } from "react";
 
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
@@ -28,12 +25,15 @@ interface shipinprops {
   nextStep: () => void;
   prevStep: () => void;
   selectedButtons: string[];
-  setSelectedButtons: (text: string[]) => void
+  setSelectedButtons: (text: string[]) => void;
 }
 
-
-export default function ShipInPage({ nextStep, prevStep, selectedButtons, setSelectedButtons }: shipinprops) {
-
+export default function ShipInPage({
+  nextStep,
+  prevStep,
+  selectedButtons,
+  setSelectedButtons,
+}: shipinprops) {
   // const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
 
   const handleButtonClick = (buttonIndex: string) => {
@@ -53,8 +53,6 @@ export default function ShipInPage({ nextStep, prevStep, selectedButtons, setSel
       value: selectedButtons,
     };
     console.log("sfsg", selectedList);
-
-
 
     // const stringifiedArray = JSON.stringify(selectedButtons);
 
@@ -110,8 +108,13 @@ export default function ShipInPage({ nextStep, prevStep, selectedButtons, setSel
         You will be able to add as many items as you like and to select multiple
         services per item.
       </Typography>
-      <Typography variant="body1" textAlign="center" pt={10} fontFamily={`"ProximaNovaMedium", sans-serif`}
-        fontWeight={500}>
+      <Typography
+        variant="body1"
+        textAlign="center"
+        pt={10}
+        fontFamily={`"ProximaNovaMedium", sans-serif`}
+        fontWeight={500}
+      >
         Please choose at least one service
       </Typography>
       <Grid container rowGap={5} paddingX={3} pb={5} pt={2}>
