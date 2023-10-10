@@ -1,4 +1,4 @@
-import { Box, Grid, Link, Stack, Typography, styled } from "@mui/material";
+import { Box, Grid, IconButton, Link, Stack, Typography, styled } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
@@ -34,7 +34,7 @@ interface repairprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
   addItem: () => void;
-  serviceDetails: ServiceDetailsState;
+  serviceDetails: ServiceDetailsState[];
 }
 
 export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails }: repairprops) {
@@ -230,41 +230,43 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
             ></Typography>
           </Grid>
         </Grid>
-        <Grid container columnGap={3} flexWrap="nowrap" mb={3} >
-          <Grid item xs={2} >
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.services}
-            </Typography>
+        {serviceDetails.map((serviceData, index) => (
+          <Grid container columnGap={3} flexWrap="nowrap" mb={3} >
+            <Grid item xs={2} >
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.services}
+              </Typography>
+            </Grid>
+            <Grid item xs={1}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.service_details.brand}
+              </Typography>
+            </Grid>
+            <Grid item xs={1}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.service_details.color}
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.service_details.howMany}
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.service_details.visible_holes}
+              </Typography>
+            </Grid>
+            <Grid item xs={2.5}>
+              <Typography textAlign="center" variant="body2" paddingX={3}>
+                {serviceData.service_details.brief}
+              </Typography>
+            </Grid>
+            <Grid item xs={0.5} textAlign="end">
+              <IconButton><DeleteIcon /></IconButton>
+            </Grid>
           </Grid>
-          <Grid item xs={1}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.service_details.brand}
-            </Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.service_details.color}
-            </Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.service_details.howMany}
-            </Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.service_details.visible_holes}
-            </Typography>
-          </Grid>
-          <Grid item xs={2.5}>
-            <Typography textAlign="center" variant="body2" paddingX={3}>
-              {serviceDetails.service_details.brief}
-            </Typography>
-          </Grid>
-          <Grid item xs={0.5} textAlign="end">
-            <DeleteIcon />
-          </Grid>
-        </Grid>
+        ))}
       </Stack>
       <Stack
         direction="row"

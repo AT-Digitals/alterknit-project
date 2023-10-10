@@ -82,6 +82,8 @@ export default function ShipInDetailsPage() {
         },
     });
 
+    const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([])
+
 
     const [selectedButtons, setSelectedButtons] = useState(
         serviceDetails.services
@@ -95,6 +97,7 @@ export default function ShipInDetailsPage() {
     const [shipInformation, setShipInformation] = useState(serviceDetails.shipin_details);
 
     const nextStep = () => {
+        //setServiceData([...serviceData, serviceDetails]);
         setServiceDetails({
             services: selectedButtons,
             service_details: serviceFormData,
@@ -103,6 +106,13 @@ export default function ShipInDetailsPage() {
         });
         setStep(step + 1);
         console.log("select", serviceDetails);
+
+        //   if (serviceDetails) {
+        //     items[index ?? 0] = serviceRequest;
+        //   } else {
+        //     items.push(serviceRequest);
+        //   }
+
     };
 
     const prevStep = () => {
@@ -119,8 +129,19 @@ export default function ShipInDetailsPage() {
     };
     const addItem = () => {
         if (selectedOption === "ship-in") {
-            setStep(4);
+            setServiceData([...serviceData, serviceDetails])
+            setSelectedButtons([]);
+            setServiceFormData({
+                color: "",
+                howMany: "",
+                visible_holes: "",
+                brief: "",
+                brand: ""
+            });
+            setMoreDetails({ previous_service: "", latest_service: "" });
+            setStep(3);
         }
+
     };
 
 
@@ -179,7 +200,7 @@ export default function ShipInDetailsPage() {
             );
         case 6:
             return (
-                <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} serviceDetails={serviceDetails} />
+                <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} serviceDetails={serviceData} />
             );
         case 7:
             return <CheckOut nextStep={nextStep} prevStep={prevStep} shipInformation={shipInformation} setShipInformation={setShipInformation} />;
