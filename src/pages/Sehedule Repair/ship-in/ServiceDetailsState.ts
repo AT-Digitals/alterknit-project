@@ -1,18 +1,10 @@
+import moreDetails from "./moreDetails";
+import serviceDetails from "./serviceDetails";
+
 interface ServiceDetailsState {
-  services: {
-    name: string[];
-  };
-  service_details: {
-    color: string;
-    visible_holes: string;
-    brand: string;
-    howMany: string;
-    brief: string;
-  };
-  more_details: {
-    previous_service: string;
-    latest_service: string;
-  };
+  services: string[];
+  service_details: serviceDetails;
+  more_details: moreDetails;
   shipin_details: {
     firstName: string;
     lastName: string;
@@ -23,6 +15,7 @@ interface ServiceDetailsState {
     phone_number: string;
     email: string;
     sameAddress: string;
+    apartment: string;
   };
 }
 

@@ -1,4 +1,4 @@
-import { Box, Grid, Link, Stack, Typography, styled } from "@mui/material";
+import { Box, Grid, IconButton, Link, Stack, Typography, styled } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
@@ -7,6 +7,7 @@ import routes from "../../../routes/routes";
 import sweater from "../../../assets/sweater_guy.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ServiceDetailsState from "./ServiceDetailsState";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -33,21 +34,22 @@ interface repairprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
   addItem: () => void;
+  serviceDetails: ServiceDetailsState[];
 }
 
-export default function RepairPage({ nextStep, prevStep, addItem }: repairprops) {
+export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails }: repairprops) {
 
   const [data, setData] = useState<Data[]>([]);
 
   console.log("gfhgfj", data);
 
-  useEffect(() => {
-    // Make a GET request to your API
-    fetch('https://alterknit-backend.onrender.com/service-details')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  // useEffect(() => {
+  //   // Make a GET request to your API
+  //   fetch('https://alterknit-backend.onrender.com/service-details')
+  //     .then(response => response.json())
+  //     .then(data => setData(data))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
 
   return (
     <Stack
@@ -228,40 +230,40 @@ export default function RepairPage({ nextStep, prevStep, addItem }: repairprops)
             ></Typography>
           </Grid>
         </Grid>
-        {data.map((serviceItem, index) => (
-          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
+        {serviceDetails.map((serviceData, index) => (
+          <Grid container columnGap={3} flexWrap="nowrap" mb={3} >
             <Grid item xs={2} >
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                hfghgj
+                {serviceData.services}
               </Typography>
             </Grid>
             <Grid item xs={1}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.brand}
+                {serviceData.service_details.brand}
               </Typography>
             </Grid>
             <Grid item xs={1}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.color}
+                {serviceData.service_details.color}
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.howLong}
+                {serviceData.service_details.howMany}
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.visibleHoles}
+                {serviceData.service_details.visible_holes}
               </Typography>
             </Grid>
             <Grid item xs={2.5}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.brief}
+                {serviceData.service_details.brief}
               </Typography>
             </Grid>
             <Grid item xs={0.5} textAlign="end">
-              <DeleteIcon />
+              <IconButton><DeleteIcon /></IconButton>
             </Grid>
           </Grid>
         ))}

@@ -56,9 +56,7 @@ export default function ShipInDetailsPage() {
     const [selectedOption1, setSelectedOption1] = useState(null);
 
     const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
-        services: {
-            name: [],
-        },
+        services: [],
         service_details: {
             color: "",
             visible_holes: "",
@@ -80,36 +78,41 @@ export default function ShipInDetailsPage() {
             phone_number: "",
             email: "",
             sameAddress: "",
+            apartment: "",
         },
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setServiceDetails((prevState) => ({
-            ...prevState,
-            services: {
-                ...prevState.services,
-                [name]: value,
-            },
-            service_details: {
-                ...prevState.service_details,
-                [name]: value,
-            },
-            more_details: {
-                ...prevState.more_details,
-                [name]: value,
-            },
-            shipin_details: {
-                ...prevState.shipin_details,
-                [name]: value,
-            },
-        }));
-    };
+    const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([])
 
-    const [selectedButtons, setSelectedButtons] = useState(serviceDetails.services.name);
+
+    const [selectedButtons, setSelectedButtons] = useState(
+        serviceDetails.services
+    );
+
+    const [serviceFormData, setServiceFormData] = useState(
+        serviceDetails.service_details
+    );
+
+    const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
+    const [shipInformation, setShipInformation] = useState(serviceDetails.shipin_details);
 
     const nextStep = () => {
+        //setServiceData([...serviceData, serviceDetails]);
+        setServiceDetails({
+            services: selectedButtons,
+            service_details: serviceFormData,
+            more_details: moreDetails,
+            shipin_details: shipInformation,
+        });
         setStep(step + 1);
+        console.log("select", serviceDetails);
+
+        //   if (serviceDetails) {
+        //     items[index ?? 0] = serviceRequest;
+        //   } else {
+        //     items.push(serviceRequest);
+        //   }
+
     };
 
     const prevStep = () => {
@@ -126,12 +129,22 @@ export default function ShipInDetailsPage() {
     };
     const addItem = () => {
         if (selectedOption === "ship-in") {
-            setStep(4);
+            setServiceData([...serviceData, serviceDetails])
+            setSelectedButtons([]);
+            setServiceFormData({
+                color: "",
+                howMany: "",
+                visible_holes: "",
+                brief: "",
+                brand: ""
+            });
+            setMoreDetails({ previous_service: "", latest_service: "" });
+            setStep(3);
         }
+
     };
 
 
-    console.log("select", serviceDetails);
 
     switch (step) {
         case 1:
@@ -163,20 +176,34 @@ export default function ShipInDetailsPage() {
         case 4:
             return (
                 <>
-                    {selectedOption === "ship-in" &&
-                        <ShipinFields nextStep={nextStep} prevStep={prevStep} />
-                    }
-                    {selectedOption === "door-to-door" &&
+                    {selectedOption === "ship-in" && (
+                        <ShipinFields
+                            nextStep={nextStep}
+                            prevStep={prevStep}
+                            serviceFormData={serviceFormData}
+                            setServiceFormData={setServiceFormData}
+                        />
+                    )}
+                    {selectedOption === "door-to-door" && (
                         <DoorToDoor prevStep={prevStep} />
-                    }
+                    )}
                 </>
             );
         case 5:
-            return <MoreDetailsPage nextStep={nextStep} prevStep={prevStep} />;
+            return (
+                <MoreDetailsPage
+                    nextStep={nextStep}
+                    prevStep={prevStep}
+                    moreDetails={moreDetails}
+                    setMoreDetails={setMoreDetails}
+                />
+            );
         case 6:
-            return <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} />;
+            return (
+                <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} serviceDetails={serviceData} />
+            );
         case 7:
-            return <CheckOut nextStep={nextStep} prevStep={prevStep} />;
+            return <CheckOut nextStep={nextStep} prevStep={prevStep} shipInformation={shipInformation} setShipInformation={setShipInformation} />;
         case 8:
             return <LastStep />;
         default:
