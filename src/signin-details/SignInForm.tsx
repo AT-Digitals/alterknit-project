@@ -1,4 +1,11 @@
-import { Divider, IconButton, Stack, Typography, styled } from "@mui/material";
+import {
+  CircularProgress,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -31,10 +38,20 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      setIsDrawerOpen(true);
+      return;
+    }
+
+    setIsLoading(true);
     try {
       await auth.signInWithEmailAndPassword(email, password);
       console.log(email + "" + password);
@@ -42,11 +59,15 @@ export default function SignInForm() {
     } catch (error) {
       console.log(error);
       if (error instanceof Error) {
-        setError("Could't find your alterknit Account");
+        setError("Couldn't find your alterknit Account");
         setIsDrawerOpen(true);
+        setPassword("");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
+
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
@@ -77,8 +98,15 @@ export default function SignInForm() {
     try {
       await auth.signInWithPopup(googleProvider);
       navigate(routes.HOME);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Google login error:", error);
+      if (error.code === "auth/popup-closed-by-user") {
+        setError("Google login popup was closed by the user.");
+        setIsDrawerOpen(true);
+      } else {
+        setError("An error occurred during Google login.");
+        setIsDrawerOpen(true);
+      }
     }
   };
 
@@ -150,6 +178,11 @@ export default function SignInForm() {
             },
         }}
       />
+      {isLoading ? (
+        <CircularProgress
+          style={{ textAlign: "center", alignItems: "center", color: "black" }}
+        />
+      ) : null}
 
       <Stack direction="row" justifyContent="end" alignItems="center">
         <Link
