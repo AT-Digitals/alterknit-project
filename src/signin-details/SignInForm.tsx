@@ -1,4 +1,11 @@
-import { Divider, IconButton, InputAdornment, Stack, Typography, styled } from "@mui/material";
+import {
+  CircularProgress,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -15,11 +22,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { FirebaseError } from "firebase/app";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import routes from "../routes/routes";
-import { useState } from "react";
 import Visibility from "@mui/icons-material/Visibility";
 import { VisibilityOff } from "@mui/icons-material";
+import routes from "../routes/routes";
+import { useState } from "react";
 
 const StyleNav = styled(NavLink)({
   ".active": {
@@ -32,22 +38,36 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      setIsDrawerOpen(true);
+      return;
+    }
+
+    setIsLoading(true);
     try {
       await auth.signInWithEmailAndPassword(email, password);
       console.log(email + "" + password);
-      navigate(routes.ROOT);
+      navigate(routes.HOME);
     } catch (error) {
       console.log(error);
       if (error instanceof Error) {
-        setError("Could't find your alterknit Account");
+        setError("Couldn't find your alterknit Account");
         setIsDrawerOpen(true);
+        setPassword("");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
+
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
@@ -77,16 +97,23 @@ export default function SignInForm() {
   const handleGoogleLogin = async () => {
     try {
       await auth.signInWithPopup(googleProvider);
-      navigate(routes.ROOT);
-    } catch (error) {
+      navigate(routes.HOME);
+    } catch (error: any) {
       console.error("Google login error:", error);
+      if (error.code === "auth/popup-closed-by-user") {
+        setError("Google login popup was closed by the user.");
+        setIsDrawerOpen(true);
+      } else {
+        setError("An error occurred during Google login.");
+        setIsDrawerOpen(true);
+      }
     }
   };
 
   const handleFacebookLogin = async () => {
     try {
       await auth.signInWithPopup(facebookProvider);
-      navigate(routes.ROOT);
+      navigate(routes.HOME);
     } catch (error) {
       console.error("Facebook login error:", error);
     }
@@ -94,7 +121,7 @@ export default function SignInForm() {
   const handleTwitterLogin = async () => {
     try {
       await auth.signInWithPopup(twitterProvider);
-      navigate(routes.ROOT);
+      navigate(routes.HOME);
     } catch (error) {
       console.error("twitter login error:", error);
     }
@@ -104,7 +131,9 @@ export default function SignInForm() {
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     event.preventDefault();
   };
   return (
@@ -120,9 +149,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-          {
-            borderColor: `${Colors.BLACK} !important`,
-          },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
         }}
         onChange={setEmail}
       />
@@ -131,7 +160,7 @@ export default function SignInForm() {
         onChange={setPassword}
         label="Password"
         required
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? "text" : "password"}
         endIcon={
           <IconButton
             aria-label="toggle password visibility"
@@ -144,11 +173,16 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-          {
-            borderColor: `${Colors.BLACK} !important`,
-          },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
         }}
       />
+      {isLoading ? (
+        <CircularProgress
+          style={{ textAlign: "center", alignItems: "center", color: "black" }}
+        />
+      ) : null}
 
       <Stack direction="row" justifyContent="end" alignItems="center">
         <Link
