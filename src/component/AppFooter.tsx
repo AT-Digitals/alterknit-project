@@ -61,7 +61,7 @@ export default function AppFooter({ activeTab }: footerProps) {
             justifyContent={isSmScreen ? "center" : "space-between"}
             alignItems="center"
           >
-            <a href={routes.ROOT}>
+            <a href={routes.HOME}>
               <img
                 src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo_white.svg"
                 alt="alterknit logo"

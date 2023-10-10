@@ -36,7 +36,7 @@ export default function SignUpForm() {
       setError("Can't create user");
     } finally {
       setIsLoading(false);
-      navigate(routes.ROOT);
+      navigate(routes.HOME);
     }
   };
   const StyleNav = styled(NavLink)({
@@ -128,7 +128,7 @@ export default function SignUpForm() {
       >
         <Typography variant="body2">Already have an account? </Typography>
         <StyleNav
-          to={routes.SIGN_IN}
+          to={routes.ROOT}
           style={{ textDecoration: "none", color: Colors.BLACK }}
         >
           Sign In

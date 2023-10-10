@@ -123,7 +123,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
           spacing={isSmallScreen ? 2 : 5}
         >
           <Box>
-            <Link to={""}>
+            <Link to={routes.HOME}>
               <img
                 width={isSmallScreen ? 120 : 170}
                 src={Alterknit}
@@ -207,7 +207,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
                 Schedule your repair
               </StyledButton>
             </Link>
-            <Link to={routes.SIGN_IN}>
+            <Link to={routes.ROOT}>
               <StyledButton bgColor={Colors.BLACK}>Logout</StyledButton>
             </Link>
           </Stack>

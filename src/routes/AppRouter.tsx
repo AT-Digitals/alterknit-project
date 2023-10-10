@@ -23,10 +23,13 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route path={routes.SIGN_UP} element={<SignUpPage />} />
-        <Route path={routes.SIGN_IN} element={<SignInPage />} />
+        {/* <Route path={routes.SIGN_IN} element={<SignInPage />} /> */}
         <Route path={routes.SIGN_OUT} />
+        <Route path={routes.ROOT} element={<SignInPage />} />
+
         <Route path={routes.ROOT} element={<AppLayout />}>
-          <Route path={routes.ROOT} element={<HomePage />} />
+          <Route path={routes.HOME} element={<HomePage />} />
+
           <Route path={routes.SERVICES} element={<ServicePage />} />
           <Route path={routes.OUR_STORY} element={<OurStoryPage />} />
           <Route path={routes.PORTFOLIO} element={<PortfolioPage />} />
