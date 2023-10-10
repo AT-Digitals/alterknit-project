@@ -73,23 +73,38 @@ const StyleButtonNew = styled(Button)({
   },
 });
 
+interface shipInformationProps {
+  firstName: string;
+  lastName: string;
+  streetAddress: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  phone_number: string;
+  email: string;
+  sameAddress: string;
+  apartment: string;
+}
+
 interface Checkoutprops {
   nextStep: () => void;
   prevStep: () => void;
+  shipInformation: shipInformationProps;
+  setShipInformation: (data: shipInformationProps) => void;
 }
 
-export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    streetAddress: "",
-    apartment: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    emailAddress: "",
-  });
+export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   streetAddress: "",
+  //   apartment: "",
+  //   city: "",
+  //   state: "",
+  //   zipCode: "",
+  //   phoneNumber: "",
+  //   emailAddress: "",
+  // });
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleYesClick = () => {
@@ -104,15 +119,15 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
     e: ChangeEvent<HTMLInputElement | { name: string; value: unknown }>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setShipInformation({
+      ...shipInformation,
       [name]: value,
-    }));
+    });
   };
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setSelectedOption((prevData: any) => ({
       ...prevData,
       [name as string]: value,
     }));
@@ -195,7 +210,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="firstName"
-                value={formData.firstName}
+                value={shipInformation.firstName}
                 onChange={handleTextInputChange}
               />
             </Box>
@@ -210,7 +225,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="lastName"
-                value={formData.lastName}
+                value={shipInformation.lastName}
                 onChange={handleTextInputChange}
               />
             </Box>
@@ -225,13 +240,13 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="streetAddress"
-                value={formData.streetAddress}
+                value={shipInformation.streetAddress}
                 onChange={handleTextInputChange}
               />
               <CustomTextField
                 name="apartmentSuite"
                 placeholder="Apartment/Suite"
-                value={formData.apartment}
+                value={shipInformation.apartment}
                 onChange={handleTextInputChange}
               />
             </Box>
@@ -246,7 +261,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="city"
-                value={formData.city}
+                value={shipInformation.city}
                 onChange={handleTextInputChange}
               />
             </Box>
@@ -269,7 +284,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
                     borderRadius: "30px",
                   }}
                   name="state"
-                  value={formData.state}
+                  value={shipInformation.state}
                   onChange={handleSelectChange}
                 >
                   {StateOptions.map((option) => (
@@ -291,7 +306,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
                 <CustomTextField
                   style={{ width: "100%" }}
                   name="zipCode"
-                  value={formData.zipCode}
+                  value={shipInformation.zipcode}
                   onChange={handleTextInputChange}
                 />
               </Box>
@@ -307,7 +322,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="phoneNumber"
-                value={formData.phoneNumber}
+                value={shipInformation.phone_number}
                 onChange={handleTextInputChange}
               />
             </Box>
@@ -322,7 +337,7 @@ export default function CheckOut({ nextStep, prevStep }: Checkoutprops) {
               </Typography>
               <CustomTextField
                 name="emailAddress"
-                value={formData.emailAddress}
+                value={shipInformation.email}
                 onChange={handleTextInputChange}
               />
             </Box>

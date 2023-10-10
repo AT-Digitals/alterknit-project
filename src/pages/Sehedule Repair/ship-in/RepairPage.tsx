@@ -7,6 +7,7 @@ import routes from "../../../routes/routes";
 import sweater from "../../../assets/sweater_guy.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ServiceDetailsState from "./ServiceDetailsState";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -33,21 +34,22 @@ interface repairprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
   addItem: () => void;
+  serviceDetails: ServiceDetailsState;
 }
 
-export default function RepairPage({ nextStep, prevStep, addItem }: repairprops) {
+export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails }: repairprops) {
 
   const [data, setData] = useState<Data[]>([]);
 
   console.log("gfhgfj", data);
 
-  useEffect(() => {
-    // Make a GET request to your API
-    fetch('https://alterknit-backend.onrender.com/service-details')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  // useEffect(() => {
+  //   // Make a GET request to your API
+  //   fetch('https://alterknit-backend.onrender.com/service-details')
+  //     .then(response => response.json())
+  //     .then(data => setData(data))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
 
   return (
     <Stack
@@ -228,43 +230,41 @@ export default function RepairPage({ nextStep, prevStep, addItem }: repairprops)
             ></Typography>
           </Grid>
         </Grid>
-        {data.map((serviceItem, index) => (
-          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
-            <Grid item xs={2} >
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                hfghgj
-              </Typography>
-            </Grid>
-            <Grid item xs={1}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.brand}
-              </Typography>
-            </Grid>
-            <Grid item xs={1}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.color}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.howLong}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.visibleHoles}
-              </Typography>
-            </Grid>
-            <Grid item xs={2.5}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceItem.brief}
-              </Typography>
-            </Grid>
-            <Grid item xs={0.5} textAlign="end">
-              <DeleteIcon />
-            </Grid>
+        <Grid container columnGap={3} flexWrap="nowrap" mb={3} >
+          <Grid item xs={2} >
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.services}
+            </Typography>
           </Grid>
-        ))}
+          <Grid item xs={1}>
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.service_details.brand}
+            </Typography>
+          </Grid>
+          <Grid item xs={1}>
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.service_details.color}
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.service_details.howMany}
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.service_details.visible_holes}
+            </Typography>
+          </Grid>
+          <Grid item xs={2.5}>
+            <Typography textAlign="center" variant="body2" paddingX={3}>
+              {serviceDetails.service_details.brief}
+            </Typography>
+          </Grid>
+          <Grid item xs={0.5} textAlign="end">
+            <DeleteIcon />
+          </Grid>
+        </Grid>
       </Stack>
       <Stack
         direction="row"

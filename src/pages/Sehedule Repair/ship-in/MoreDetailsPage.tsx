@@ -5,6 +5,8 @@ import ShipCard from "./ShipCard";
 import { useNavigate } from "react-router-dom";
 import routes from "../../../routes/routes";
 import { useState } from "react";
+import ServiceDetailsState from "./ServiceDetailsState";
+import moreDetails from "./moreDetails";
 
 
 const StyleButtonNew = styled(Button)({
@@ -23,21 +25,22 @@ const StyleButtonNew = styled(Button)({
     },
 });
 
+
 interface moreprops {
     nextStep: (value: any) => void;
     prevStep: () => void;
+    moreDetails: moreDetails;
+    setMoreDetails: (data: moreDetails) => void;
 }
 
-export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
-    const [previousClean, setPreviousClean] = useState("");
-    const [latestClean, setLatestClean] = useState("");
+export default function MoreDetailsPage({ nextStep, prevStep, moreDetails, setMoreDetails }: moreprops) {
+    // const [previousClean, setPreviousClean] = useState("");
+    // const [latestClean, setLatestClean] = useState("");
 
-    const navigate = useNavigate();
-
-    const routeChange = () => {
-        let path = routes.REPAIR_PAGE;
-        navigate(path);
+    const handleOptionClick = (optionType: 'previous_service' | 'latest_service', option: string) => {
+        setMoreDetails({ ...moreDetails, [optionType]: option });
     };
+
 
     const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -55,16 +58,16 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
         // })
 
         const values = {
-            previous: previousClean,
-            recent: latestClean,
+            previous: moreDetails.previous_service,
+            recent: moreDetails.latest_service,
         }
         console.log("data", values);
 
-        if (!previousClean) {
+        if (!moreDetails.previous_service) {
             alert(
                 "INFORMATION REQUIRED:-\n Has this garment been previously repaired by a dry cleaner or another individual?"
             );
-        } else if (!latestClean) {
+        } else if (!moreDetails.latest_service) {
             alert("INFORMATION REQUIRED:-\n Has this grament been recently cleaned?");
         } else {
             nextStep("repair");
@@ -121,13 +124,13 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
                 >
                     <StyleButtonNew
                         value="yes"
-                        defaultChecked={previousClean === "yes"}
-                        onClick={() => setPreviousClean("yes")}
+                        defaultChecked={moreDetails.previous_service === "yes"}
+                        onClick={() => handleOptionClick("previous_service", "yes")}
                         style={{
-                            backgroundColor: previousClean === "yes"
+                            backgroundColor: moreDetails.previous_service === "yes"
                                 ? Colors.LINK
                                 : "",
-                            transform: previousClean === "yes" ? `scale(1.05)` : ""
+                            transform: moreDetails.previous_service === "yes" ? `scale(1.05)` : ""
                         }}
                     >
                         Yes
@@ -135,13 +138,13 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
                     <StyleButtonNew
                         value="no"
                         style={{
-                            backgroundColor: previousClean === "no"
+                            backgroundColor: moreDetails.previous_service === "no"
                                 ? Colors.LINK
                                 : "",
-                            transform: previousClean === "no" ? `scale(1.05)` : ""
+                            transform: moreDetails.previous_service === "no" ? `scale(1.05)` : ""
                         }}
-                        defaultChecked={previousClean === "no"}
-                        onClick={() => setPreviousClean("no")}
+                        defaultChecked={moreDetails.previous_service === "no"}
+                        onClick={() => handleOptionClick("previous_service", "no")}
                     >
                         NO
                     </StyleButtonNew>
@@ -184,26 +187,26 @@ export default function MoreDetailsPage({ nextStep, prevStep }: moreprops) {
                 >
                     <StyleButtonNew
                         value="yes"
-                        defaultChecked={latestClean === "yes"}
-                        onClick={() => setLatestClean("yes")}
+                        defaultChecked={moreDetails.latest_service === "yes"}
+                        onClick={() => handleOptionClick("latest_service", "yes")}
                         style={{
-                            backgroundColor: latestClean === "yes"
+                            backgroundColor: moreDetails.latest_service === "yes"
                                 ? Colors.LINK
                                 : "",
-                            transform: latestClean === "yes" ? `scale(1.05)` : ""
+                            transform: moreDetails.latest_service === "yes" ? `scale(1.05)` : ""
                         }}
                     >
                         Yes
                     </StyleButtonNew>
                     <StyleButtonNew
                         value="no"
-                        defaultChecked={latestClean === "no"}
-                        onClick={() => setLatestClean("no")}
+                        defaultChecked={moreDetails.latest_service === "no"}
+                        onClick={() => handleOptionClick("latest_service", "no")}
                         style={{
-                            backgroundColor: latestClean === "no"
+                            backgroundColor: moreDetails.latest_service === "no"
                                 ? Colors.LINK
                                 : "",
-                            transform: latestClean === "no" ? `scale(1.05)` : ""
+                            transform: moreDetails.latest_service === "no" ? `scale(1.05)` : ""
                         }}
                     >
                         NO

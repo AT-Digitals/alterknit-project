@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
 import ShipCard from "./ShipCard";
+import serviceDetails from "./serviceDetails";
 
 // import routes from "../../../routes/routes";
 // import { useNavigate } from "react-router-dom";
@@ -30,24 +31,28 @@ interface HoverProps {
   Ishoverd?: boolean;
   nextStep: () => void;
   prevStep: () => void;
+  serviceFormData: serviceDetails;
+  setServiceFormData: (service: serviceDetails) => void;
 }
 
 export default function ShipinFields({
   Ishoverd,
   nextStep,
   prevStep,
+  serviceFormData,
+  setServiceFormData,
 }: HoverProps) {
-  const [formData, setFormData] = useState({
-    color: "",
-    howMany: "",
-    brand: "",
-    HowLong: "",
-    brief: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   color: "",
+  //   howMany: "",
+  //   brand: "",
+  //   HowLong: "",
+  //   brief: "",
+  // });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setServiceFormData({ ...serviceFormData, [name]: value });
   };
 
   // const navigate = useNavigate();
@@ -60,15 +65,15 @@ export default function ShipinFields({
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formData.color) {
+    if (!serviceFormData.color) {
       alert("INFORMATION REQUIRED:-\n what color is your garment?");
-    } else if (!formData.howMany) {
+    } else if (!serviceFormData.visible_holes) {
       alert("INFORMATION REQUIRED:-\n How many visible holes are there");
-    } else if (!formData.brand) {
+    } else if (!serviceFormData.brand) {
       alert("INFORMATION REQUIRED:-\n What brand is your garment");
-    } else if (!formData.HowLong) {
+    } else if (!serviceFormData.howMany) {
       alert("INFORMATION REQUIRED:-\n How long have you owned this garment?");
-    } else if (!formData.brief) {
+    } else if (!serviceFormData.brief) {
       alert(
         "INFORMATION REQUIRED:-\n Brief description of repair needed and/or any other important imformaton for us"
       );
@@ -81,25 +86,25 @@ export default function ShipinFields({
       {
         method: "post",
         body: JSON.stringify({
-          color: formData.color,
-          visibleHoles: formData.howMany,
-          brand: formData.brand,
-          howLong: formData.HowLong,
-          brief: formData.brief,
+          color: serviceFormData.color,
+          visibleHoles: serviceFormData.visible_holes,
+          brand: serviceFormData.brand,
+          howLong: serviceFormData.howMany,
+          brief: serviceFormData.brief,
         }),
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
-    const data = {
-      color: formData.color,
-      HowMany: formData.howMany,
-      brand: formData.brand,
-      HowLong: formData.HowLong,
-      brief: formData.brief,
-    };
-    console.log(data);
+    // const data = {
+    //   color: formData.color,
+    //   HowMany: formData.howMany,
+    //   brand: formData.brand,
+    //   HowLong: formData.HowLong,
+    //   brief: formData.brief,
+    // };
+    // console.log(data);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -160,7 +165,7 @@ export default function ShipinFields({
                     1. WHAT COLOR IS YOUR GARMENT?*
                   </Typography>
                   <CustomTextField
-                    value={formData.color}
+                    value={serviceFormData.color}
                     name="color"
                     onChange={handleChange}
                     fullWidth
@@ -189,8 +194,8 @@ export default function ShipinFields({
                     2. HOW MANY VISIBLE HOLES ARE THERE?*
                   </Typography>
                   <CustomTextField
-                    value={formData.howMany}
-                    name="howMany"
+                    value={serviceFormData.visible_holes}
+                    name="visible_holes"
                     onChange={handleChange}
                     fullWidth
                     placeholder="I see three holes around the collar of the shirt."
@@ -218,7 +223,7 @@ export default function ShipinFields({
                     3. WHAT BRAND IS YOUR GARMENT?*
                   </Typography>
                   <CustomTextField
-                    value={formData.brand}
+                    value={serviceFormData.brand}
                     onChange={handleChange}
                     name="brand"
                     fullWidth
@@ -247,8 +252,8 @@ export default function ShipinFields({
                     4. HOW LONG HAVE YOU OWNED THIS GARMENT?*
                   </Typography>
                   <CustomTextField
-                    name="HowLong"
-                    value={formData.HowLong}
+                    name="howMany"
+                    value={serviceFormData.howMany}
                     onChange={handleChange}
                     fullWidth
                     placeholder="Since before the internet..."
@@ -280,7 +285,7 @@ export default function ShipinFields({
                     OTHER IMPORTANT INFORMATION FOR US*
                   </Typography>
                   <CustomTextField
-                    value={formData.brief}
+                    value={serviceFormData.brief}
                     onChange={handleChange}
                     name="brief"
                     fullWidth
