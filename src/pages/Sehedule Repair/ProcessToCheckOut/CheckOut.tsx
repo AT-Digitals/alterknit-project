@@ -92,17 +92,17 @@ interface Checkoutprops {
 }
 
 export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
-  // const [formData, setFormData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   streetAddress: "",
-  //   apartment: "",
-  //   city: "",
-  //   state: "",
-  //   zipCode: "",
-  //   phoneNumber: "",
-  //   emailAddress: "",
-  // });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    streetAddress: "",
+    apartment: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    phoneNumber: "",
+    emailAddress: "",
+  });
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleYesClick = () => {
