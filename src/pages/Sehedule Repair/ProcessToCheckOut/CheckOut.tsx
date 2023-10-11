@@ -92,23 +92,18 @@ interface Checkoutprops {
   setShipInformation: (data: shipInformationProps) => void;
 }
 
-export default function CheckOut({
-  nextStep,
-  prevStep,
-  shipInformation,
-  setShipInformation,
-}: Checkoutprops) {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    streetAddress: "",
-    apartment: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    emailAddress: "",
-  });
+export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   streetAddress: "",
+  //   apartment: "",
+  //   city: "",
+  //   state: "",
+  //   zipCode: "",
+  //   phoneNumber: "",
+  //   emailAddress: "",
+  // });
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleYesClick = () => {
@@ -142,27 +137,20 @@ export default function CheckOut({
 
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.firstName) {
-      setError(" Please enter shipping first name.");
-      setIsDrawerOpen(true);
-    } else if (!formData.lastName) {
-      setError("Please enter shipping last name.");
-      setIsDrawerOpen(true);
-    } else if (!formData.streetAddress) {
-      setError("Please enter shipping street address.");
-      setIsDrawerOpen(true);
-    } else if (!formData.city) {
-      setError("Please enter shipping city.");
-      setIsDrawerOpen(true);
-    } else if (!formData.zipCode) {
-      setError("Please enter shipping zip code.");
-      setIsDrawerOpen(true);
-    } else if (!formData.phoneNumber) {
-      setError("Please enter shipping phone number.");
-      setIsDrawerOpen(true);
-    } else if (!formData.emailAddress) {
-      setError("Please enter shipping e-mail address.");
-      setIsDrawerOpen(true);
+    if (!shipInformation.firstName) {
+      alert(" Please enter shipping first name.");
+    } else if (!shipInformation.lastName) {
+      alert("Please enter shipping last name.");
+    } else if (!shipInformation.streetAddress) {
+      alert("Please enter shipping street address.");
+    } else if (!shipInformation.city) {
+      alert("Please enter shipping city.");
+    } else if (!shipInformation.zipcode) {
+      alert("Please enter shipping zip code.");
+    } else if (!shipInformation.phone_number) {
+      alert("Please enter shipping phone number.");
+    } else if (!shipInformation.email) {
+      alert("Please enter shipping e-mail address.");
     } else {
       nextStep();
     }
@@ -338,7 +326,7 @@ export default function CheckOut({
                 </Typography>
                 <CustomTextField
                   style={{ width: "100%" }}
-                  name="zipCode"
+                  name="zipcode"
                   value={shipInformation.zipcode}
                   onChange={handleTextInputChange}
                 />
@@ -354,7 +342,7 @@ export default function CheckOut({
                 PHONE NUMBER
               </Typography>
               <CustomTextField
-                name="phoneNumber"
+                name="phone_number"
                 value={shipInformation.phone_number}
                 onChange={handleTextInputChange}
               />
@@ -369,7 +357,7 @@ export default function CheckOut({
                 E-MAIL ADDRESS
               </Typography>
               <CustomTextField
-                name="emailAddress"
+                name="email"
                 value={shipInformation.email}
                 onChange={handleTextInputChange}
               />

@@ -41,17 +41,14 @@ interface repairprops {
   prevStep: () => void;
   addItem: () => void;
   serviceDetails: ServiceDetailsState[];
+  onDelete: (index: number) => void;
 }
 
-export default function RepairPage({
-  nextStep,
-  prevStep,
-  addItem,
-  serviceDetails,
-}: repairprops) {
-  const [data, setData] = useState<Data[]>([]);
+export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails, onDelete }: repairprops) {
 
-  console.log("gfhgfj", data);
+  // const [data, setData] = useState<Data[]>([]);
+
+  // console.log("gfhgfj", data);
 
   // useEffect(() => {
   //   // Make a GET request to your API
@@ -60,6 +57,20 @@ export default function RepairPage({
   //     .then(data => setData(data))
   //     .catch(error => console.error('Error fetching data:', error));
   // }, []);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+
+  const handleDeleteClick = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleDeleteConfirmed = () => {
+    //onDelete();
+    setShowDeleteConfirmation(false);
+  };
+
+  const handleDeleteCancelled = () => {
+    setShowDeleteConfirmation(false);
+  };
 
   return (
     <Stack
@@ -246,10 +257,10 @@ export default function RepairPage({
           </Grid>
         </Grid>
         {serviceDetails.map((serviceData, index) => (
-          <Grid container columnGap={3} flexWrap="nowrap" mb={3}>
-            <Grid item xs={2}>
+          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
+            <Grid item xs={2} >
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.services}
+                {serviceData.services.join(", ")}
               </Typography>
             </Grid>
             <Grid item xs={1}>
@@ -278,9 +289,7 @@ export default function RepairPage({
               </Typography>
             </Grid>
             <Grid item xs={0.5} textAlign="end">
-              <IconButton>
-                <DeleteIcon />
-              </IconButton>
+              <IconButton onClick={() => onDelete(index)}><DeleteIcon /></IconButton>
             </Grid>
           </Grid>
         ))}
