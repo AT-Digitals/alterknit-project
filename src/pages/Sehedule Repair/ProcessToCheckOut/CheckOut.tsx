@@ -13,6 +13,7 @@ import { ChangeEvent, useState } from "react";
 import AppContainer from "../../../component/AppContainer";
 import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
+import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "../ship-in/ShipCard";
 import StateOptions from "./StateOptions";
 
@@ -130,6 +131,10 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
       [name as string]: value,
     }));
   };
+
+  const [error, setError] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!shipInformation.firstName) {
@@ -150,7 +155,9 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
       nextStep();
     }
   };
-
+  const handleCloseModal = () => {
+    setIsDrawerOpen(false);
+  };
   return (
     <>
       <Box>
@@ -408,6 +415,11 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
           alt="guaranteed happiness"
         ></img>
       </Box>
+      <CustomDialog
+        isOpen={isDrawerOpen}
+        onClose={handleCloseModal}
+        message={error}
+      />
     </>
   );
 }

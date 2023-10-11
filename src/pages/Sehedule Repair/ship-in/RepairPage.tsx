@@ -1,13 +1,19 @@
-import { Box, Grid, IconButton, Link, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Grid,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import routes from "../../../routes/routes";
-import sweater from "../../../assets/sweater_guy.png";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import ServiceDetailsState from "./ServiceDetailsState";
+import sweater from "../../../assets/sweater_guy.png";
+import { useState } from "react";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -89,8 +95,13 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           >
             repair cart review
           </Typography>
-          <Typography textAlign="center" maxWidth={700} fontSize="16px" fontFamily={`"ProximaNovaMedium", sans-serif`}
-            fontWeight={500}>
+          <Typography
+            textAlign="center"
+            maxWidth={700}
+            fontSize="16px"
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
+          >
             This is the preview of all current repairs in the order. Please make
             sure all information is correct and any missing information is
             filled in to the best of your ability. We look forward to receiving
@@ -290,23 +301,19 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
         justifyContent="center"
       >
         <Link onClick={prevStep}>
-          <StyledButtom
-            bgColor={"#f8f1eb"}
-            color={Colors.LINK}
-
-          >
+          <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK}>
             Back
           </StyledButtom>
         </Link>
-        <Link onClick={addItem} >
+        <Link onClick={addItem}>
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
             sx={{
-              width: "270px", fontFamily: `"ProximaNovaRegular", sans-serif`,
+              width: "270px",
+              fontFamily: `"ProximaNovaRegular", sans-serif`,
               fontWeight: 400,
             }}
-
           >
             Add Another Item
           </StyledButtom>
@@ -315,7 +322,11 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ width: "270px", fontWeight: 600, fontFamily: `"ProximaNovaSemibold", sans-serif` }}
+            sx={{
+              width: "270px",
+              fontWeight: 600,
+              fontFamily: `"ProximaNovaSemibold", sans-serif`,
+            }}
           >
             Proceed to Checkout
           </StyledButtom>
