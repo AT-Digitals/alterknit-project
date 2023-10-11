@@ -1,6 +1,20 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Box, Button, Modal, Stack, TextField, Typography } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
+import emailjs from '@emailjs/browser';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '1px solid #fff',
+  boxShadow: 24,
+  p: 4,
+};
 
 const getPersonalDetails = {
   firstname: "",
@@ -16,6 +30,12 @@ export default function FormFile() {
   const [phoneError, setPhoneError] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [showDeleteIcon, setShowDeleteIcon] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const residentDetails = {
     personalDetails: personalDetails,
@@ -96,8 +116,18 @@ export default function FormFile() {
     setPersonalDetails({ ...personalDetails, [name]: value });
   };
 
+  const form = useRef(null);
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsModalOpen(true);
+    emailjs.sendForm('service_cley6kp', 'template_dbri1ch', e.target, '4ay7qWc-8EIGRlwMC')
+    .then((result) => {
+        console.log(result.text);
+        console.log("message sent");
+    }, (error) => {
+        console.log(error.text);
+    });
 
     try {
       const response = await fetch("/send-email", {
@@ -223,8 +253,37 @@ export default function FormFile() {
           marginBottom: "30px",
           position: "absolute",
         }}
+        ref={form}
         onSubmit={handleSubmit}
       >
+         <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box display={"flex"} justifyContent={"center"}>
+         <CheckCircleOutlineIcon style={{
+          fontSize: "35px",
+          color: "green",
+         }} />
+         </Box>
+         <Box display={"flex"} justifyContent={"center"}>
+          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+           Email Sent Successfully!
+          </Typography>
+          </Box>
+          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+            <Button style={{
+              height: "30px",
+              backgroundColor: "green",
+              color: "white",
+              marginTop: "10px",
+            }} onClick={closeModal}>OK</Button>
+          </Box>
+        </Box>
+      </Modal>
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
@@ -305,7 +364,7 @@ export default function FormFile() {
                 />
               </Button>
             </Box>
-            <Box marginTop={"9px"} display={"flex"} alignItems={"center"}>
+            <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
               {selectedImage && (
                 <img
                   src={URL.createObjectURL(selectedImage)}
