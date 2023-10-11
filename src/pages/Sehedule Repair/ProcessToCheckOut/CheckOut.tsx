@@ -13,6 +13,7 @@ import { ChangeEvent, useState } from "react";
 import AppContainer from "../../../component/AppContainer";
 import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
+import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "../ship-in/ShipCard";
 import StateOptions from "./StateOptions";
 
@@ -91,7 +92,12 @@ interface Checkoutprops {
   setShipInformation: (data: shipInformationProps) => void;
 }
 
-export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
+export default function CheckOut({
+  nextStep,
+  prevStep,
+  shipInformation,
+  setShipInformation,
+}: Checkoutprops) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -130,27 +136,40 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
       [name as string]: value,
     }));
   };
+
+  const [error, setError] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.firstName) {
-      alert(" Please enter shipping first name.");
+      setError(" Please enter shipping first name.");
+      setIsDrawerOpen(true);
     } else if (!formData.lastName) {
-      alert("Please enter shipping last name.");
+      setError("Please enter shipping last name.");
+      setIsDrawerOpen(true);
     } else if (!formData.streetAddress) {
-      alert("Please enter shipping street address.");
+      setError("Please enter shipping street address.");
+      setIsDrawerOpen(true);
     } else if (!formData.city) {
-      alert("Please enter shipping city.");
+      setError("Please enter shipping city.");
+      setIsDrawerOpen(true);
     } else if (!formData.zipCode) {
-      alert("Please enter shipping zip code.");
+      setError("Please enter shipping zip code.");
+      setIsDrawerOpen(true);
     } else if (!formData.phoneNumber) {
-      alert("Please enter shipping phone number.");
+      setError("Please enter shipping phone number.");
+      setIsDrawerOpen(true);
     } else if (!formData.emailAddress) {
-      alert("Please enter shipping e-mail address.");
+      setError("Please enter shipping e-mail address.");
+      setIsDrawerOpen(true);
     } else {
       nextStep();
     }
   };
-
+  const handleCloseModal = () => {
+    setIsDrawerOpen(false);
+  };
   return (
     <>
       <Box>
@@ -408,6 +427,11 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
           alt="guaranteed happiness"
         ></img>
       </Box>
+      <CustomDialog
+        isOpen={isDrawerOpen}
+        onClose={handleCloseModal}
+        message={error}
+      />
     </>
   );
 }
