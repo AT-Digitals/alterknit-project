@@ -2,7 +2,6 @@ import { Stack, styled } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const StyledButtom = styled(CustomButton)({
@@ -36,7 +35,6 @@ export default function ShipCard({ onClick, onChange }: linkprops) {
       justifyContent="center"
       paddingY={2}
     >
-
       <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK} onClick={onChange}>
         Back
       </StyledButtom>
