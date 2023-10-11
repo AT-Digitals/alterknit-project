@@ -1,17 +1,25 @@
-import { Box, Button, Modal, Stack, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Modal,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import DeleteIcon from '@mui/icons-material/Delete';
-import emailjs from '@emailjs/browser';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import alterknitImage from '../assets/alterknit.png'
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import DeleteIcon from "@mui/icons-material/Delete";
+import emailjs from "@emailjs/browser";
+
 const style = {
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '1px solid #fff',
+  bgcolor: "background.paper",
+  border: "1px solid #fff",
   boxShadow: 24,
   p: 4,
 };
@@ -31,7 +39,6 @@ export default function FormFile() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showDeleteIcon, setShowDeleteIcon] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -60,7 +67,6 @@ export default function FormFile() {
       return false;
     }
   };
-  
 
   const PhoneValidation = (name: string) => {
     const cleanedPhoneNumber = name.replace(/\D/g, "");
@@ -68,13 +74,13 @@ export default function FormFile() {
       setPhoneError("");
       return true;
     }
-  
+
     // Check for Indian phone numbers (country code +91)
     if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
       setPhoneError("");
       return true;
     }
-  
+
     // For any other input, show an error
     setPhoneError("Invalid phone number");
     return false;
@@ -348,51 +354,53 @@ export default function FormFile() {
               />
             </Box>
             <Stack direction={"row"} spacing={2}>
-            <Box>
-              <Button
-                sx={{
-                  backgroundColor: "#df7c6d",
-                  color: "#fff",
-                  marginLeft: "90px",
-                  fontFamily: `"ProximaNovaMedium", sans-serif`,
-                  marginTop: "40px",
-                  padding: "12px 40px",
-                  letterSpacing: "2px",
-                  ":hover": {
-                    backgroundColor: "#f58977",
-                  },
-                }}
-                component="label"
-                variant="contained"
-              >
-                Click To Attach A Photo
-                <input
-                  type="file"
-                  hidden
-                  accept="image"
-                  onChange={handleImageChange}
-                />
-              </Button>
-            </Box>
-            <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
-              {selectedImage && (
-                <img
-                  src={URL.createObjectURL(selectedImage)}
-                  alt="Selected"
-                  style={{
-                    width: "120px",
-                    height: "100px",
-                    borderRadius: "50%",
+              <Box>
+                <Button
+                  sx={{
+                    backgroundColor: "#df7c6d",
+                    color: "#fff",
+                    marginLeft: "90px",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
+                    marginTop: "40px",
+                    padding: "12px 40px",
+                    letterSpacing: "2px",
+                    ":hover": {
+                      backgroundColor: "#f58977",
+                    },
                   }}
-                />
-
-              )}
-              {showDeleteIcon && (
-                <DeleteIcon style={{
-                  color: "#df7c6d",
-                }} onClick={handleImageDelete} />
-              )}
-            </Box>
+                  component="label"
+                  variant="contained"
+                >
+                  Click To Attach A Photo
+                  <input
+                    type="file"
+                    hidden
+                    accept="image"
+                    onChange={handleImageChange}
+                  />
+                </Button>
+              </Box>
+              <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
+                {selectedImage && (
+                  <img
+                    src={URL.createObjectURL(selectedImage)}
+                    alt="Selected"
+                    style={{
+                      width: "120px",
+                      height: "100px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                )}
+                {showDeleteIcon && (
+                  <DeleteIcon
+                    style={{
+                      color: "#df7c6d",
+                    }}
+                    onClick={handleImageDelete}
+                  />
+                )}
+              </Box>
             </Stack>
           </Stack>
 
@@ -523,7 +531,7 @@ export default function FormFile() {
               }}
               variant="contained"
               type="submit"
-            // onClick={handleSubmit}
+              // onClick={handleSubmit}
             >
               Submit
             </Button>

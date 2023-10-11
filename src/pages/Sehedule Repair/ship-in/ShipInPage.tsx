@@ -1,8 +1,9 @@
 import { Button, Grid, Stack, Typography, styled } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import Colors from "../../../CommonComponent/Colors";
+import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "./ShipCard";
-import { useEffect } from "react";
 
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
@@ -46,6 +47,9 @@ export default function ShipInPage({
     }
   };
 
+  const [error, setError] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const handleNextButtonClick = async (e: any) => {
     e.preventDefault();
 
@@ -66,12 +70,17 @@ export default function ShipInPage({
     if (selectedButtons.length > 0) {
       nextStep();
     } else {
-      alert("Please select a service first");
+      setError("Please select a service first");
+      setIsDrawerOpen(true);
     }
   };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleCloseModal = () => {
+    setIsDrawerOpen(false);
+  };
 
   return (
     <Stack
@@ -240,6 +249,11 @@ export default function ShipInPage({
         </Grid>
       </Grid>
       <ShipCard onClick={handleNextButtonClick} onChange={prevStep} />
+      <CustomDialog
+        isOpen={isDrawerOpen}
+        onClose={handleCloseModal}
+        message={error}
+      />
     </Stack>
   );
 }

@@ -1,13 +1,20 @@
-import { Box, Grid, IconButton, Link, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Grid,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import routes from "../../../routes/routes";
-import sweater from "../../../assets/sweater_guy.png";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
+import sweater from "../../../assets/sweater_guy.png";
+import { useState } from "react";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -22,26 +29,32 @@ const StyledButtom = styled(CustomButton)({
   },
 });
 
-interface Data {
-  color: string;
-  visibleHoles: string;
-  brand: string;
-  howLong: string;
-  brief: string;
-}
+// interface Data {
+//   color: string;
+//   visibleHoles: string;
+//   brand: string;
+//   howLong: string;
+//   brief: string;
+// }
 
 interface repairprops {
   nextStep: (value: any) => void;
   prevStep: () => void;
   addItem: () => void;
   serviceDetails: ServiceDetailsState[];
+  onDelete: (index: number) => void;
 }
 
-export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails }: repairprops) {
+export default function RepairPage({
+  nextStep,
+  prevStep,
+  addItem,
+  serviceDetails,
+  onDelete,
+}: repairprops) {
+  // const [data, setData] = useState<Data[]>([]);
 
-  const [data, setData] = useState<Data[]>([]);
-
-  console.log("gfhgfj", data);
+  // console.log("gfhgfj", data);
 
   // useEffect(() => {
   //   // Make a GET request to your API
@@ -50,6 +63,20 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
   //     .then(data => setData(data))
   //     .catch(error => console.error('Error fetching data:', error));
   // }, []);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+
+  const handleDeleteClick = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleDeleteConfirmed = (index: any) => {
+    onDelete(index);
+    setShowDeleteConfirmation(false);
+  };
+
+  const handleDeleteCancelled = () => {
+    setShowDeleteConfirmation(false);
+  };
 
   return (
     <Stack
@@ -74,8 +101,13 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           >
             repair cart review
           </Typography>
-          <Typography textAlign="center" maxWidth={700} fontSize="16px" fontFamily={`"ProximaNovaMedium", sans-serif`}
-            fontWeight={500}>
+          <Typography
+            textAlign="center"
+            maxWidth={700}
+            fontSize="16px"
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
+          >
             This is the preview of all current repairs in the order. Please make
             sure all information is correct and any missing information is
             filled in to the best of your ability. We look forward to receiving
@@ -231,10 +263,10 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           </Grid>
         </Grid>
         {serviceDetails.map((serviceData, index) => (
-          <Grid container columnGap={3} flexWrap="nowrap" mb={3} >
-            <Grid item xs={2} >
+          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
+            <Grid item xs={2}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.services}
+                {serviceData.services.join(", ")}
               </Typography>
             </Grid>
             <Grid item xs={1}>
@@ -263,7 +295,9 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
               </Typography>
             </Grid>
             <Grid item xs={0.5} textAlign="end">
-              <IconButton><DeleteIcon /></IconButton>
+              <IconButton onClick={handleDeleteClick}>
+                <DeleteIcon />
+              </IconButton>
             </Grid>
           </Grid>
         ))}
@@ -275,23 +309,19 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
         justifyContent="center"
       >
         <Link onClick={prevStep}>
-          <StyledButtom
-            bgColor={"#f8f1eb"}
-            color={Colors.LINK}
-
-          >
+          <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK}>
             Back
           </StyledButtom>
         </Link>
-        <Link onClick={addItem} >
+        <Link onClick={addItem}>
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
             sx={{
-              width: "270px", fontFamily: `"ProximaNovaRegular", sans-serif`,
+              width: "270px",
+              fontFamily: `"ProximaNovaRegular", sans-serif`,
               fontWeight: 400,
             }}
-
           >
             Add Another Item
           </StyledButtom>
@@ -300,12 +330,31 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
-            sx={{ width: "270px", fontWeight: 600, fontFamily: `"ProximaNovaSemibold", sans-serif` }}
+            sx={{
+              width: "270px",
+              fontWeight: 600,
+              fontFamily: `"ProximaNovaSemibold", sans-serif`,
+            }}
           >
             Proceed to Checkout
           </StyledButtom>
         </Link>
       </Stack>
+      <DeletePopup
+        showDeleteConfirmation={showDeleteConfirmation}
+        handleDeleteCancelled={handleDeleteCancelled}
+        handleDeleteConfirmed={handleDeleteConfirmed}
+      />
+      {/* <Dialog open={showDeleteConfirmation} onClose={handleDeleteCancelled}>
+        <DialogTitle>Confirm Delete</DialogTitle>
+        <DialogContent>
+          Are you sure you want to delete this item?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDeleteCancelled}>Cancel</Button>
+          <Button onClick={handleDeleteConfirmed}>Delete</Button>
+        </DialogActions>
+      </Dialog> */}
     </Stack>
   );
 }
