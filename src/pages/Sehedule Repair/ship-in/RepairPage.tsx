@@ -69,7 +69,7 @@ export default function RepairPage({
     setShowDeleteConfirmation(true);
   };
 
-  const handleDeleteConfirmed = (index: any) => {
+  const handleDeleteConfirmed = (index: number) => {
     onDelete(index);
     setShowDeleteConfirmation(false);
   };
