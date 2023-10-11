@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-
+import alterknitImage from '../assets/alterknit.png'
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 import emailjs from "@emailjs/browser";
@@ -126,57 +126,43 @@ export default function FormFile() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setIsModalOpen(true);
-    emailjs
-      .sendForm(
-        "service_cley6kp",
-        "template_dbri1ch",
-        e.target,
-        "4ay7qWc-8EIGRlwMC"
-      )
-      .then(
-        (result: any) => {
-          console.log(result.text);
-          console.log("message sent");
-        },
-        (error: any) => {
-          console.log(error.text);
-        }
-      );
+    
 
-    try {
-      const response = await fetch("/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(personalDetails),
-      });
+    // try {
+    //   const response = await fetch("/send-email", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(personalDetails),
+    //   });
 
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    //   const data = await response.json();
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error("Error:", error);
+    // }
 
-    let result = await fetch("https://alterknit-backend.onrender.com/items", {
-      method: "post",
-      body: JSON.stringify({
-        name: personalDetails.firstname,
-        email: personalDetails.email,
-        phone: personalDetails.phone,
-        message: personalDetails.passage,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    // setPersonalDetails({ firstname: "", email: "", phone: "", passage: '' })
-    result = await result.json();
-    console.warn(result);
-    if (result) {
-      setPersonalDetails(getPersonalDetails);
-    }
+
+    // let result = await fetch(
+    //   'https://alterknit-backend.onrender.com/items', {
+    //   method: "post",
+    //   body: JSON.stringify({
+    //     name: personalDetails.firstname,
+    //     email: personalDetails.email,
+    //     phone: personalDetails.phone,
+    //     message: personalDetails.passage,
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    // // setPersonalDetails({ firstname: "", email: "", phone: "", passage: '' })
+    // result = await result.json();
+    // console.warn(result);
+    // if (result) {
+    //   setPersonalDetails(getPersonalDetails);
+    // }
 
     // Initialize error variables
     let firstNameError = "";
@@ -208,6 +194,20 @@ export default function FormFile() {
     setFirstNameError(firstNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
+
+    if (!firstNameError && !emailError && !phoneError) {
+      setIsModalOpen(true);
+  
+      emailjs.sendForm('service_cley6kp', 'template_dbri1ch', e.target, '4ay7qWc-8EIGRlwMC')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+      }, (error) => {
+          console.log(error.text);
+      });
+    } else {
+      // Handle the case where there are validation errors (e.g., show error messages).
+    }
 
     // Check if all errors are empty (i.e., inputs are valid)
     if (
@@ -269,45 +269,37 @@ export default function FormFile() {
         ref={form}
         onSubmit={handleSubmit}
       >
-        <Modal
-          open={isModalOpen}
-          onClose={closeModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Box display={"flex"} justifyContent={"center"}>
-              <CheckCircleOutlineIcon
-                style={{
-                  fontSize: "35px",
-                  color: "green",
-                }}
-              />
-            </Box>
-            <Box display={"flex"} justifyContent={"center"}>
-              <Typography
-                fontSize={"20px"}
-                id="modal-modal-description"
-                sx={{ mt: 2 }}
-              >
-                Email Sent Successfully!
-              </Typography>
-            </Box>
-            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-              <Button
-                style={{
-                  height: "30px",
-                  backgroundColor: "green",
-                  color: "white",
-                  marginTop: "10px",
-                }}
-                onClick={closeModal}
-              >
-                OK
-              </Button>
-            </Box>
+         <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box display={"flex"} justifyContent={"center"}>
+          <img
+                src={alterknitImage}
+                alt="logo"
+                width="30%"
+                height="15%"
+            />
+         </Box>
+         <Box display={"flex"} justifyContent={"center"}>
+      
+          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+           Email Sent Successfully!
+          </Typography>
           </Box>
-        </Modal>
+          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+            <Button style={{
+              height: "30px",
+              backgroundColor: "black",
+              color: "white",
+              marginTop: "10px",
+            }} onClick={closeModal}>OK</Button>
+          </Box>
+        </Box>
+      </Modal>
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
