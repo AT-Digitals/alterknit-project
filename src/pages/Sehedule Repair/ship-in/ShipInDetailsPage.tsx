@@ -12,8 +12,6 @@ import ShipinFields from "./ShipIn-Fields";
 import { useState } from "react";
 
 export default function ShipInDetailsPage() {
-
-
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState("");
 
@@ -44,7 +42,6 @@ export default function ShipInDetailsPage() {
         },
     });
 
-
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
     const [selectedButtons, setSelectedButtons] = useState(
@@ -70,13 +67,8 @@ export default function ShipInDetailsPage() {
         // if (indexValue !== -1) {
         //     serviceData.splice(indexValue, 1);
         // }
-
     };
-
-
-    let newArray = [...serviceData];
-
-
+    const newArray = serviceData;
 
     const nextStep = () => {
         setServiceDetails({
@@ -85,13 +77,25 @@ export default function ShipInDetailsPage() {
             more_details: moreDetails,
             shipin_details: shipInformation,
         });
-        serviceData.push(serviceDetails);
-        setStep(step + 1);
+        if (
+            serviceDetails.services.length > 0 &&
+            serviceDetails.service_details.color !== "" &&
+            serviceDetails.service_details.brand !== "" &&
+            serviceDetails.service_details.brief !== "" &&
+            serviceDetails.service_details.howMany !== "" &&
+            serviceDetails.service_details.visible_holes !== ""
+            // !serviceDetails.more_details.latest_service &&
+            // !serviceDetails.more_details.previous_service
+        ) {
+            serviceData.push(serviceDetails);
+            setStep(step + 1);
+        } else {
+            setStep(step + 1);
+        }
+
         console.log("select", serviceDetails);
-
     };
-
-
+    console.log("service", serviceData);
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
             setStep(2); // Go back to Step 2 if Option 2 was selected
@@ -106,7 +110,6 @@ export default function ShipInDetailsPage() {
     };
     const addItem = () => {
         if (selectedOption === "ship-in") {
-            setServiceData([...serviceData, serviceDetails]);
             setSelectedButtons([]);
             setServiceFormData({
                 color: "",
@@ -117,6 +120,9 @@ export default function ShipInDetailsPage() {
             });
             setMoreDetails({ previous_service: "", latest_service: "" });
             setStep(3);
+        } else if (serviceData.length !== 0) {
+            newArray.push(serviceDetails);
+            setStep(3)
         }
     };
 
@@ -178,7 +184,7 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     addItem={addItem}
-                    serviceDetails={serviceData}
+                    serviceDetails={newArray}
                     onDelete={deleteFormData}
                 />
             );
@@ -196,5 +202,4 @@ export default function ShipInDetailsPage() {
         default:
             return null;
     }
-};
-
+}
