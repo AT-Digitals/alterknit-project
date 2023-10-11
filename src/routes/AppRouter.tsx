@@ -56,7 +56,7 @@ export default function AppRouter() {
           {/* <Route path={routes.MORE_DETAILS} element={<MoreDetailsPage />} /> */}
           {/* <Route path={routes.REPAIR_PAGE} element={<RepairPage />} /> */}
           {/* <Route path={routes.CHECK_OUT} element={<CheckOut />} /> */}
-          <Route path={routes.LAST_STEP} element={<LastStep />} />
+          {/* <Route path={routes.LAST_STEP} element={<LastStep />} /> */}
         </Route>
       </Routes>
     </Router>
