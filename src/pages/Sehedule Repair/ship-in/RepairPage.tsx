@@ -11,6 +11,7 @@ import {
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
 import sweater from "../../../assets/sweater_guy.png";
 import { useState } from "react";
@@ -28,13 +29,13 @@ const StyledButtom = styled(CustomButton)({
   },
 });
 
-interface Data {
-  color: string;
-  visibleHoles: string;
-  brand: string;
-  howLong: string;
-  brief: string;
-}
+// interface Data {
+//   color: string;
+//   visibleHoles: string;
+//   brand: string;
+//   howLong: string;
+//   brief: string;
+// }
 
 interface repairprops {
   nextStep: (value: any) => void;
@@ -44,8 +45,13 @@ interface repairprops {
   onDelete: (index: number) => void;
 }
 
-export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails, onDelete }: repairprops) {
-
+export default function RepairPage({
+  nextStep,
+  prevStep,
+  addItem,
+  serviceDetails,
+  onDelete,
+}: repairprops) {
   // const [data, setData] = useState<Data[]>([]);
 
   // console.log("gfhgfj", data);
@@ -63,8 +69,8 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
     setShowDeleteConfirmation(true);
   };
 
-  const handleDeleteConfirmed = () => {
-    //onDelete();
+  const handleDeleteConfirmed = (index: any) => {
+    onDelete(index);
     setShowDeleteConfirmation(false);
   };
 
@@ -258,7 +264,7 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
         </Grid>
         {serviceDetails.map((serviceData, index) => (
           <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
-            <Grid item xs={2} >
+            <Grid item xs={2}>
               <Typography textAlign="center" variant="body2" paddingX={3}>
                 {serviceData.services.join(", ")}
               </Typography>
@@ -289,7 +295,9 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
               </Typography>
             </Grid>
             <Grid item xs={0.5} textAlign="end">
-              <IconButton onClick={() => onDelete(index)}><DeleteIcon /></IconButton>
+              <IconButton onClick={handleDeleteClick}>
+                <DeleteIcon />
+              </IconButton>
             </Grid>
           </Grid>
         ))}
@@ -332,6 +340,21 @@ export default function RepairPage({ nextStep, prevStep, addItem, serviceDetails
           </StyledButtom>
         </Link>
       </Stack>
+      <DeletePopup
+        showDeleteConfirmation={showDeleteConfirmation}
+        handleDeleteCancelled={handleDeleteCancelled}
+        handleDeleteConfirmed={handleDeleteConfirmed}
+      />
+      {/* <Dialog open={showDeleteConfirmation} onClose={handleDeleteCancelled}>
+        <DialogTitle>Confirm Delete</DialogTitle>
+        <DialogContent>
+          Are you sure you want to delete this item?
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDeleteCancelled}>Cancel</Button>
+          <Button onClick={handleDeleteConfirmed}>Delete</Button>
+        </DialogActions>
+      </Dialog> */}
     </Stack>
   );
 }

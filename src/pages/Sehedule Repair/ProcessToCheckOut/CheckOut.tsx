@@ -92,7 +92,12 @@ interface Checkoutprops {
   setShipInformation: (data: shipInformationProps) => void;
 }
 
-export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
+export default function CheckOut({
+  nextStep,
+  prevStep,
+  shipInformation,
+  setShipInformation,
+}: Checkoutprops) {
   // const [formData, setFormData] = useState({
   //   firstName: "",
   //   lastName: "",
@@ -138,19 +143,26 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!shipInformation.firstName) {
-      alert(" Please enter shipping first name.");
+      setError(" Please enter shipping first name.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.lastName) {
-      alert("Please enter shipping last name.");
+      setError("Please enter shipping last name.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.streetAddress) {
-      alert("Please enter shipping street address.");
+      setError("Please enter shipping street address.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.city) {
-      alert("Please enter shipping city.");
+      setError("Please enter shipping city.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.zipcode) {
-      alert("Please enter shipping zip code.");
+      setError("Please enter shipping zip code.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.phone_number) {
-      alert("Please enter shipping phone number.");
+      setError("Please enter shipping phone number.");
+      setIsDrawerOpen(true);
     } else if (!shipInformation.email) {
-      alert("Please enter shipping e-mail address.");
+      setError("Please enter shipping e-mail address.");
+      setIsDrawerOpen(true);
     } else {
       nextStep();
     }
