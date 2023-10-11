@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
 import CustomButton from "../../../../CommonComponent/CustomButton";
+import ServiceDetailsState from "../ServiceDetailsState";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
@@ -54,8 +55,10 @@ const StyledInput = styled.input`
     color: #999999;
   }
 `;
-
-export default function LastStep() {
+interface LaststepProps {
+  serviceDetails: ServiceDetailsState[];
+}
+export default function LastStep({ serviceDetails }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -167,30 +170,46 @@ export default function LastStep() {
                       marginTop: "-30px",
                     }}
                   >
-                    <StyledTr>
-                      <StyledTableCell>Service Needed</StyledTableCell>
-                      <StyledTableCellValue>restyling</StyledTableCellValue>
-                    </StyledTr>
-                    <StyledTr>
-                      <StyledTableCell>Brand</StyledTableCell>
-                      <StyledTableCellValue>kjb</StyledTableCellValue>
-                    </StyledTr>
-                    <StyledTr>
-                      <StyledTableCell>Color</StyledTableCell>
-                      <StyledTableCellValue>hjbjk</StyledTableCellValue>
-                    </StyledTr>
-                    <StyledTr>
-                      <StyledTableCell>Age of Garment</StyledTableCell>
-                      <StyledTableCellValue>jhvjh</StyledTableCellValue>
-                    </StyledTr>
-                    <StyledTr>
-                      <StyledTableCell># of Holes</StyledTableCell>
-                      <StyledTableCellValue>hjvk</StyledTableCellValue>
-                    </StyledTr>
-                    <StyledTr>
-                      <StyledTableCell>Brief Description</StyledTableCell>
-                      <StyledTableCellValue>jhbj</StyledTableCellValue>
-                    </StyledTr>
+                    {serviceDetails.map((serviceData, index) => (
+                      <>
+                        <StyledTr>
+                          <StyledTableCell>Service Needed</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.services}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brand</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.service_details.brand}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Color</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.service_details.color}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Age of Garment</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.service_details.howMany}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell># of Holes</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.service_details.visible_holes}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brief Description</StyledTableCell>
+                          <StyledTableCellValue>
+                            {serviceData.service_details.brief}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                      </>
+                    ))}
                   </div>
                 </tbody>
               </table>
@@ -232,26 +251,38 @@ export default function LastStep() {
                   <col style={{ width: "150px" }} />
                 </colgroup>
                 <tbody>
-                  <StyledTr2>
-                    <StyledTableCell>Name</StyledTableCell>
-                    <StyledTableCellValue>restyling</StyledTableCellValue>
-                  </StyledTr2>
-                  <StyledTr2>
-                    <StyledTableCell>Address</StyledTableCell>
-                    <StyledTableCellValue>kjb</StyledTableCellValue>
-                  </StyledTr2>
-                  <StyledTr2>
-                    <StyledTableCell>Phone Number</StyledTableCell>
-                    <StyledTableCellValue>hjbjk</StyledTableCellValue>
-                  </StyledTr2>
-                  <StyledTr2>
-                    <StyledTableCell>E-Mail Address</StyledTableCell>
-                    <StyledTableCellValue>jhvjh</StyledTableCellValue>
-                  </StyledTr2>
-                  <StyledTr2>
-                    <StyledTableCell>Order Type</StyledTableCell>
-                    <StyledTableCellValue>hjvk</StyledTableCellValue>
-                  </StyledTr2>
+                  {serviceDetails.map((serviceData, index) => (
+                    <>
+                      <StyledTr2>
+                        <StyledTableCell>Name</StyledTableCell>
+                        <StyledTableCellValue>
+                          {serviceData.shipin_details.firstName}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCell>Address</StyledTableCell>
+                        <StyledTableCellValue>
+                          {serviceData.shipin_details.streetAddress}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCell>Phone Number</StyledTableCell>
+                        <StyledTableCellValue>
+                          {serviceData.shipin_details.phone_number}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCell>E-Mail Address</StyledTableCell>
+                        <StyledTableCellValue>
+                          {serviceData.shipin_details.email}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCell>Order Type</StyledTableCell>
+                        <StyledTableCellValue>shipin</StyledTableCellValue>
+                      </StyledTr2>
+                    </>
+                  ))}
                 </tbody>
               </table>
               <BeforeText label="Delivery Information" />

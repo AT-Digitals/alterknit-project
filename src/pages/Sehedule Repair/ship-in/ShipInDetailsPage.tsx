@@ -42,6 +42,7 @@ export default function ShipInDetailsPage() {
         },
     });
 
+
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
     const [selectedButtons, setSelectedButtons] = useState(
@@ -198,7 +199,7 @@ export default function ShipInDetailsPage() {
                 />
             );
         case 8:
-            return <LastStep />;
+            return <LastStep serviceDetails={serviceData} />;
         default:
             return null;
     }
