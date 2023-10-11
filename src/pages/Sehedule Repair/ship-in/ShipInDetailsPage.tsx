@@ -1,15 +1,15 @@
-import { useState } from "react";
+import CheckOut from "../ProcessToCheckOut/CheckOut";
+import DoorToDoor from "../door-to-door/DoorToDoor";
+import DoorToDoorPage from "../DoorToDoorPage";
+import FixmePage from "../FixmePage";
+import LastStep from "./Last step/LastStep";
+import MoreDetailsPage from "./MoreDetailsPage";
+import RepairPage from "./RepairPage";
+import ScheduleReapir from "../ScheduleRepair";
+import ServiceDetailsState from "./ServiceDetailsState";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
-import MoreDetailsPage from "./MoreDetailsPage";
-import ScheduleReapir from "../ScheduleRepair";
-import FixmePage from "../FixmePage";
-import DoorToDoorPage from "../DoorToDoorPage";
-import DoorToDoor from "../door-to-door/DoorToDoor";
-import RepairPage from "./RepairPage";
-import CheckOut from "../ProcessToCheckOut/CheckOut";
-import LastStep from "./Last step/LastStep";
-import ServiceDetailsState from "./ServiceDetailsState";
+import { useState } from "react";
 
 export default function ShipInDetailsPage() {
 
@@ -43,6 +43,7 @@ export default function ShipInDetailsPage() {
             apartment: "",
         },
     });
+
 
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
@@ -89,7 +90,6 @@ export default function ShipInDetailsPage() {
         console.log("select", serviceDetails);
 
     };
-
 
 
     const prevStep = () => {
@@ -196,4 +196,5 @@ export default function ShipInDetailsPage() {
         default:
             return null;
     }
-}
+};
+
