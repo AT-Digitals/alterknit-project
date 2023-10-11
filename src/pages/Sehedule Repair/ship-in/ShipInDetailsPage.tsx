@@ -12,48 +12,10 @@ import LastStep from "./Last step/LastStep";
 import ServiceDetailsState from "./ServiceDetailsState";
 
 export default function ShipInDetailsPage() {
-    //   const [serviceDetails, setServiceDetails] = useState({
-    //     step: 1,
-    //     serviceType: "",
-    //     color: "",
-    //     visibleholes: "",
-    //     brand: "",
-    //     howMany: "",
-    //     brief: "",
-    //   });
 
-    //   const prevStep = () => {
-    //     const { step } = serviceDetails;
-    //     setServiceDetails({
-    //       step: step - 1,
-    //       serviceType: "",
-    //       color: "",
-    //       visibleholes: "",
-    //       brand: "",
-    //       howMany: "",
-    //       brief: "",
-    //     });
-    //   };
-
-    //   const nextStep = () => {
-    //     const { step } = serviceDetails;
-    //     setServiceDetails({ step: step + 1,
-    //         serviceType: "",
-    //         color: "",
-    //         visibleholes: "",
-    //         brand: "",
-    //         howMany: "",
-    //         brief: "", });
-    //   }
-
-    //   const handleChange =  (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     const { name, value } = e.target;
-    //     setServiceDetails({ ...serviceDetails, [name]: value });
-    //   }
 
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState("");
-    const [selectedOption1, setSelectedOption1] = useState(null);
 
     const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
         services: [],
@@ -111,24 +73,24 @@ export default function ShipInDetailsPage() {
     };
 
 
-    let newArray = [...serviceData, serviceDetails];
+    let newArray = [...serviceData];
+
+
 
     const nextStep = () => {
-        // 
         setServiceDetails({
             services: selectedButtons,
             service_details: serviceFormData,
             more_details: moreDetails,
             shipin_details: shipInformation,
         });
-        // if (step === 5) {
-        //     setServiceData([...serviceData, serviceDetails]);
-        //     setStep(6);
-        // }
+        serviceData.push(serviceDetails);
         setStep(step + 1);
         console.log("select", serviceDetails);
 
     };
+
+
 
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
@@ -216,7 +178,7 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     addItem={addItem}
-                    serviceDetails={newArray}
+                    serviceDetails={serviceData}
                     onDelete={deleteFormData}
                 />
             );
