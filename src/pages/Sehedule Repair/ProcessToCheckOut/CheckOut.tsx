@@ -92,17 +92,17 @@ interface Checkoutprops {
 }
 
 export default function CheckOut({ nextStep, prevStep, shipInformation, setShipInformation }: Checkoutprops) {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    streetAddress: "",
-    apartment: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    emailAddress: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   streetAddress: "",
+  //   apartment: "",
+  //   city: "",
+  //   state: "",
+  //   zipCode: "",
+  //   phoneNumber: "",
+  //   emailAddress: "",
+  // });
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleYesClick = () => {
@@ -132,19 +132,19 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
   };
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.firstName) {
+    if (!shipInformation.firstName) {
       alert(" Please enter shipping first name.");
-    } else if (!formData.lastName) {
+    } else if (!shipInformation.lastName) {
       alert("Please enter shipping last name.");
-    } else if (!formData.streetAddress) {
+    } else if (!shipInformation.streetAddress) {
       alert("Please enter shipping street address.");
-    } else if (!formData.city) {
+    } else if (!shipInformation.city) {
       alert("Please enter shipping city.");
-    } else if (!formData.zipCode) {
+    } else if (!shipInformation.zipcode) {
       alert("Please enter shipping zip code.");
-    } else if (!formData.phoneNumber) {
+    } else if (!shipInformation.phone_number) {
       alert("Please enter shipping phone number.");
-    } else if (!formData.emailAddress) {
+    } else if (!shipInformation.email) {
       alert("Please enter shipping e-mail address.");
     } else {
       nextStep();
@@ -319,7 +319,7 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
                 </Typography>
                 <CustomTextField
                   style={{ width: "100%" }}
-                  name="zipCode"
+                  name="zipcode"
                   value={shipInformation.zipcode}
                   onChange={handleTextInputChange}
                 />
@@ -335,7 +335,7 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
                 PHONE NUMBER
               </Typography>
               <CustomTextField
-                name="phoneNumber"
+                name="phone_number"
                 value={shipInformation.phone_number}
                 onChange={handleTextInputChange}
               />
@@ -350,7 +350,7 @@ export default function CheckOut({ nextStep, prevStep, shipInformation, setShipI
                 E-MAIL ADDRESS
               </Typography>
               <CustomTextField
-                name="emailAddress"
+                name="email"
                 value={shipInformation.email}
                 onChange={handleTextInputChange}
               />

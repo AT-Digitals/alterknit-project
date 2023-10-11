@@ -82,8 +82,7 @@ export default function ShipInDetailsPage() {
         },
     });
 
-    const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([])
-
+    const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
     const [selectedButtons, setSelectedButtons] = useState(
         serviceDetails.services
@@ -94,24 +93,40 @@ export default function ShipInDetailsPage() {
     );
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
-    const [shipInformation, setShipInformation] = useState(serviceDetails.shipin_details);
+    const [shipInformation, setShipInformation] = useState(
+        serviceDetails.shipin_details
+    );
+
+    const deleteFormData = (index: number) => {
+        setServiceData((prevData) => prevData.filter((_, i) => i !== index));
+        // const indexValue = serviceData.findIndex((data) => {
+        //     console.log("data", data)
+        //     return data === serviceDetails;
+        // });
+        // console.log("index", indexValue)
+        // if (indexValue !== -1) {
+        //     serviceData.splice(indexValue, 1);
+        // }
+
+    };
+
+
+    let newArray = [...serviceData, serviceDetails];
 
     const nextStep = () => {
-        //setServiceData([...serviceData, serviceDetails]);
+        // 
         setServiceDetails({
             services: selectedButtons,
             service_details: serviceFormData,
             more_details: moreDetails,
             shipin_details: shipInformation,
         });
+        // if (step === 5) {
+        //     setServiceData([...serviceData, serviceDetails]);
+        //     setStep(6);
+        // }
         setStep(step + 1);
         console.log("select", serviceDetails);
-
-        //   if (serviceDetails) {
-        //     items[index ?? 0] = serviceRequest;
-        //   } else {
-        //     items.push(serviceRequest);
-        //   }
 
     };
 
@@ -129,22 +144,19 @@ export default function ShipInDetailsPage() {
     };
     const addItem = () => {
         if (selectedOption === "ship-in") {
-            setServiceData([...serviceData, serviceDetails])
+            setServiceData([...serviceData, serviceDetails]);
             setSelectedButtons([]);
             setServiceFormData({
                 color: "",
                 howMany: "",
                 visible_holes: "",
                 brief: "",
-                brand: ""
+                brand: "",
             });
             setMoreDetails({ previous_service: "", latest_service: "" });
             setStep(3);
         }
-
     };
-
-
 
     switch (step) {
         case 1:
@@ -200,10 +212,23 @@ export default function ShipInDetailsPage() {
             );
         case 6:
             return (
-                <RepairPage nextStep={nextStep} prevStep={prevStep} addItem={addItem} serviceDetails={serviceData} />
+                <RepairPage
+                    nextStep={nextStep}
+                    prevStep={prevStep}
+                    addItem={addItem}
+                    serviceDetails={newArray}
+                    onDelete={deleteFormData}
+                />
             );
         case 7:
-            return <CheckOut nextStep={nextStep} prevStep={prevStep} shipInformation={shipInformation} setShipInformation={setShipInformation} />;
+            return (
+                <CheckOut
+                    nextStep={nextStep}
+                    prevStep={prevStep}
+                    shipInformation={shipInformation}
+                    setShipInformation={setShipInformation}
+                />
+            );
         case 8:
             return <LastStep />;
         default:
