@@ -29,17 +29,27 @@ export default function ShipInDetailsPage() {
             latest_service: "",
         },
         shipin_details: {
-            firstName: "",
-            lastName: "",
-            streetAddress: "",
-            city: "",
-            state: "",
-            zipcode: "",
-            phone_number: "",
-            email: "",
-            sameAddress: "",
-            apartment: "",
-        },
+            ShipInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+                phone_number: "",
+                email: "",
+                sameAddress: "",
+                apartment: "",
+            },
+            BillInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+            },
+        }
     });
 
 
@@ -54,9 +64,26 @@ export default function ShipInDetailsPage() {
     );
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
-    const [shipInformation, setShipInformation] = useState(
+    const [shipDetails, setShipDetails] = useState(
         serviceDetails.shipin_details
     );
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setShipDetails((prevState: { ShipInformation: any; BillInformation: any; }) => ({
+            ...prevState,
+            ShipInformation: {
+                ...prevState.ShipInformation,
+                [name]: value,
+            },
+            BillInformation: {
+                ...prevState.BillInformation,
+                [name]: value,
+            },
+
+        })
+        )
+    };
 
     const deleteFormData = (index: number) => {
         setServiceData((prevData) => prevData.filter((_, i) => i !== index));
@@ -69,14 +96,14 @@ export default function ShipInDetailsPage() {
         //     serviceData.splice(indexValue, 1);
         // }
     };
-    const newArray = serviceData;
+
 
     const nextStep = () => {
         setServiceDetails({
             services: selectedButtons,
             service_details: serviceFormData,
             more_details: moreDetails,
-            shipin_details: shipInformation,
+            shipin_details: shipDetails,
         });
         if (
             serviceDetails.services.length > 0 &&
@@ -85,18 +112,18 @@ export default function ShipInDetailsPage() {
             serviceDetails.service_details.brief !== "" &&
             serviceDetails.service_details.howMany !== "" &&
             serviceDetails.service_details.visible_holes !== ""
-            // !serviceDetails.more_details.latest_service &&
-            // !serviceDetails.more_details.previous_service
         ) {
             serviceData.push(serviceDetails);
             setStep(step + 1);
         } else {
             setStep(step + 1);
         }
-
-        console.log("select", serviceDetails);
     };
-    console.log("service", serviceData);
+
+    const uniqueData = serviceData.filter((obj, index) => {
+        return index === serviceData.findIndex(o => obj.services === o.services);
+    });
+
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
             setStep(2); // Go back to Step 2 if Option 2 was selected
@@ -121,9 +148,6 @@ export default function ShipInDetailsPage() {
             });
             setMoreDetails({ previous_service: "", latest_service: "" });
             setStep(3);
-        } else if (serviceData.length !== 0) {
-            newArray.push(serviceDetails);
-            setStep(3)
         }
     };
 
@@ -185,7 +209,7 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     addItem={addItem}
-                    serviceDetails={newArray}
+                    serviceDetails={uniqueData}
                     onDelete={deleteFormData}
                 />
             );
@@ -194,8 +218,8 @@ export default function ShipInDetailsPage() {
                 <CheckOut
                     nextStep={nextStep}
                     prevStep={prevStep}
-                    shipInformation={shipInformation}
-                    setShipInformation={setShipInformation}
+                    shipDetails={shipDetails}
+                    setShipDetails={handleInputChange}
                 />
             );
         case 8:

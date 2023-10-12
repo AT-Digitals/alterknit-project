@@ -16,6 +16,7 @@ import Colors from "../../../CommonComponent/Colors";
 import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "../ship-in/ShipCard";
 import StateOptions from "./StateOptions";
+import ShipInDetails from "../ship-in/ShipInDetails";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -72,31 +73,31 @@ const StyleButtonNew = styled(Button)({
   },
 });
 
-interface shipInformationProps {
-  firstName: string;
-  lastName: string;
-  streetAddress: string;
-  city: string;
-  state: string;
-  zipcode: string;
-  phone_number: string;
-  email: string;
-  sameAddress: string;
-  apartment: string;
-}
+// interface shipInformationProps {
+//   firstName: string;
+//   lastName: string;
+//   streetAddress: string;
+//   city: string;
+//   state: string;
+//   zipcode: string;
+//   phone_number: string;
+//   email: string;
+//   sameAddress: string;
+//   apartment: string;
+// }
 
 interface Checkoutprops {
   nextStep: () => void;
   prevStep: () => void;
-  shipInformation: shipInformationProps;
-  setShipInformation: (data: shipInformationProps) => void;
+  shipDetails: ShipInDetails;
+  setShipDetails: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function CheckOut({
   nextStep,
   prevStep,
-  shipInformation,
-  setShipInformation,
+  shipDetails,
+  setShipDetails,
 }: Checkoutprops) {
   // const [formData, setFormData] = useState({
   //   firstName: "",
@@ -119,15 +120,6 @@ export default function CheckOut({
     setSelectedOption("NO");
   };
 
-  const handleTextInputChange = (
-    e: ChangeEvent<HTMLInputElement | { name: string; value: unknown }>
-  ) => {
-    const { name, value } = e.target;
-    setShipInformation({
-      ...shipInformation,
-      [name]: value,
-    });
-  };
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
@@ -142,25 +134,25 @@ export default function CheckOut({
 
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!shipInformation.firstName) {
+    if (!shipDetails.ShipInformation.firstName) {
       setError(" Please enter shipping first name.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.lastName) {
+    } else if (!shipDetails.ShipInformation.lastName) {
       setError("Please enter shipping last name.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.streetAddress) {
+    } else if (!shipDetails.ShipInformation.streetAddress) {
       setError("Please enter shipping street address.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.city) {
+    } else if (!shipDetails.ShipInformation.city) {
       setError("Please enter shipping city.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.zipcode) {
+    } else if (!shipDetails.ShipInformation.zipcode) {
       setError("Please enter shipping zip code.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.phone_number) {
+    } else if (!shipDetails.ShipInformation.phone_number) {
       setError("Please enter shipping phone number.");
       setIsDrawerOpen(true);
-    } else if (!shipInformation.email) {
+    } else if (!shipDetails.ShipInformation.email) {
       setError("Please enter shipping e-mail address.");
       setIsDrawerOpen(true);
     } else {
@@ -243,8 +235,8 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="firstName"
-                value={shipInformation.firstName}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.firstName}
+                onChange={setShipDetails}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -258,8 +250,8 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="lastName"
-                value={shipInformation.lastName}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.lastName}
+                onChange={setShipDetails}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -273,14 +265,14 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="streetAddress"
-                value={shipInformation.streetAddress}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.streetAddress}
+                onChange={setShipDetails}
               />
               <CustomTextField
                 name="apartmentSuite"
                 placeholder="Apartment/Suite"
-                value={shipInformation.apartment}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.apartment}
+                onChange={setShipDetails}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -294,8 +286,8 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="city"
-                value={shipInformation.city}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.city}
+                onChange={setShipDetails}
               />
             </Box>
 
@@ -317,7 +309,7 @@ export default function CheckOut({
                     borderRadius: "30px",
                   }}
                   name="state"
-                  value={shipInformation.state}
+                  value={shipDetails.ShipInformation.state}
                   onChange={handleSelectChange}
                 >
                   {StateOptions.map((option) => (
@@ -339,8 +331,8 @@ export default function CheckOut({
                 <CustomTextField
                   style={{ width: "100%" }}
                   name="zipcode"
-                  value={shipInformation.zipcode}
-                  onChange={handleTextInputChange}
+                  value={shipDetails.ShipInformation.zipcode}
+                  onChange={setShipDetails}
                 />
               </Box>
             </Stack>
@@ -355,8 +347,8 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="phone_number"
-                value={shipInformation.phone_number}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.phone_number}
+                onChange={setShipDetails}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -370,8 +362,8 @@ export default function CheckOut({
               </Typography>
               <CustomTextField
                 name="email"
-                value={shipInformation.email}
-                onChange={handleTextInputChange}
+                value={shipDetails.ShipInformation.email}
+                onChange={setShipDetails}
               />
             </Box>
           </AppContainer>
@@ -413,7 +405,7 @@ export default function CheckOut({
             NO
           </StyleButtonNew>
         </Stack>
-        {selectedOption === "NO" ? <BillingForm /> : null}
+        {selectedOption === "NO" ? <BillingForm billInformation={shipDetails} setBillInformation={setShipDetails} /> : null}
         <div
           style={{
             marginTop: "5rem",
@@ -435,3 +427,5 @@ export default function CheckOut({
     </>
   );
 }
+
+
