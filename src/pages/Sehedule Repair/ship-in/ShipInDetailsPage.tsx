@@ -10,6 +10,7 @@ import ServiceDetailsState from "./ServiceDetailsState";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { useState } from "react";
+import serviceDetails from "./serviceDetails";
 
 export default function ShipInDetailsPage() {
     const [step, setStep] = useState(1);
@@ -85,17 +86,7 @@ export default function ShipInDetailsPage() {
         )
     };
 
-    const deleteFormData = (index: number) => {
-        setServiceData((prevData) => prevData.filter((_, i) => i !== index));
-        // const indexValue = serviceData.findIndex((data) => {
-        //     console.log("data", data)
-        //     return data === serviceDetails;
-        // });
-        // console.log("index", indexValue)
-        // if (indexValue !== -1) {
-        //     serviceData.splice(indexValue, 1);
-        // }
-    };
+
 
 
     const nextStep = () => {
@@ -115,14 +106,25 @@ export default function ShipInDetailsPage() {
         ) {
             serviceData.push(serviceDetails);
             setStep(step + 1);
+
+        } else if (serviceData) {
+            const uniqueData = serviceData.filter((obj: { services: string[]; }, index: number) => {
+                return index === serviceData.findIndex(o => obj.services === o.services)
+            });
+            setServiceData(uniqueData);
+            setStep(step + 1);
         } else {
             setStep(step + 1);
         }
+        console.log("before", serviceData);
     };
 
-    const uniqueData = serviceData.filter((obj, index) => {
-        return index === serviceData.findIndex(o => obj.services === o.services);
-    });
+    console.log("after", serviceData);
+
+    // const uniqueData = serviceData.filter((obj, index) => {
+    //     return index === serviceData.findIndex(o => obj.services === o.services)
+    // });
+
 
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
@@ -150,6 +152,13 @@ export default function ShipInDetailsPage() {
             setStep(3);
         }
     };
+
+    const deleteFormData = (index: number) => {
+        const newArray = serviceData.splice(index, 1);
+        setServiceData(newArray);
+
+    };
+
 
     switch (step) {
         case 1:
@@ -209,7 +218,7 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     addItem={addItem}
-                    serviceDetails={uniqueData}
+                    serviceDetails={serviceData}
                     onDelete={deleteFormData}
                 />
             );
