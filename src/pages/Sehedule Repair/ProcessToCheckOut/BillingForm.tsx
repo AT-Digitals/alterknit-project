@@ -11,6 +11,7 @@ import { ChangeEvent, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
 import StateOptions from "./StateOptions";
+import ShipInDetails from "../ship-in/ShipInDetails";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -51,7 +52,12 @@ const CustomSelect = styled(Select)`
   }
 `;
 
-export default function BillingForm() {
+interface BillProps {
+  billInformation: ShipInDetails;
+  setBillInformation: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function BillingForm({ billInformation, setBillInformation }: BillProps) {
   const [formdata, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -62,15 +68,6 @@ export default function BillingForm() {
     zipCode: "",
   });
 
-  const handleTextInputChange = (
-    e: ChangeEvent<HTMLInputElement | { name: string; value: unknown }>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
@@ -118,8 +115,8 @@ export default function BillingForm() {
           </Typography>
           <CustomTextField
             name="firstName"
-            value={formdata.firstName}
-            onChange={handleTextInputChange}
+            value={billInformation.BillInformation.firstName}
+            onChange={setBillInformation}
           />
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -133,8 +130,8 @@ export default function BillingForm() {
           </Typography>
           <CustomTextField
             name="lastName"
-            value={formdata.lastName}
-            onChange={handleTextInputChange}
+            value={billInformation.BillInformation.lastName}
+            onChange={setBillInformation}
           />
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -148,8 +145,8 @@ export default function BillingForm() {
           </Typography>
           <CustomTextField
             name="streetAddress"
-            value={formdata.streetAddress}
-            onChange={handleTextInputChange}
+            value={billInformation.BillInformation.streetAddress}
+            onChange={setBillInformation}
           />
           <CustomTextField
             name="apartmentSuite"
@@ -167,8 +164,8 @@ export default function BillingForm() {
           </Typography>
           <CustomTextField
             name="city"
-            value={formdata.city}
-            onChange={handleTextInputChange}
+            value={billInformation.BillInformation.city}
+            onChange={setBillInformation}
           />
         </Box>
 
@@ -212,8 +209,8 @@ export default function BillingForm() {
             <CustomTextField
               style={{ width: "100%" }}
               name="zipCode"
-              value={formdata.zipCode}
-              onChange={handleTextInputChange}
+              value={billInformation.BillInformation.zipcode}
+              onChange={setBillInformation}
             />
           </Box>
         </Stack>

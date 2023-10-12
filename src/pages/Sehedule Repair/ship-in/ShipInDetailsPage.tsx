@@ -29,17 +29,27 @@ export default function ShipInDetailsPage() {
             latest_service: "",
         },
         shipin_details: {
-            firstName: "",
-            lastName: "",
-            streetAddress: "",
-            city: "",
-            state: "",
-            zipcode: "",
-            phone_number: "",
-            email: "",
-            sameAddress: "",
-            apartment: "",
-        },
+            ShipInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+                phone_number: "",
+                email: "",
+                sameAddress: "",
+                apartment: "",
+            },
+            BillInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+            },
+        }
     });
 
 
@@ -54,9 +64,26 @@ export default function ShipInDetailsPage() {
     );
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
-    const [shipInformation, setShipInformation] = useState(
+    const [shipDetails, setShipDetails] = useState(
         serviceDetails.shipin_details
     );
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setShipDetails((prevState: { ShipInformation: any; BillInformation: any; }) => ({
+            ...prevState,
+            ShipInformation: {
+                ...prevState.ShipInformation,
+                [name]: value,
+            },
+            BillInformation: {
+                ...prevState.BillInformation,
+                [name]: value,
+            },
+
+        })
+        )
+    };
 
     const deleteFormData = (index: number) => {
         setServiceData((prevData) => prevData.filter((_, i) => i !== index));
@@ -76,7 +103,7 @@ export default function ShipInDetailsPage() {
             services: selectedButtons,
             service_details: serviceFormData,
             more_details: moreDetails,
-            shipin_details: shipInformation,
+            shipin_details: shipDetails,
         });
         if (
             serviceDetails.services.length > 0 &&
@@ -191,8 +218,8 @@ export default function ShipInDetailsPage() {
                 <CheckOut
                     nextStep={nextStep}
                     prevStep={prevStep}
-                    shipInformation={shipInformation}
-                    setShipInformation={setShipInformation}
+                    shipDetails={shipDetails}
+                    setShipDetails={handleInputChange}
                 />
             );
         case 8:

@@ -256,25 +256,25 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
                       <StyledTr2>
                         <StyledTableCell>Name</StyledTableCell>
                         <StyledTableCellValue>
-                          {serviceData.shipin_details.firstName}
+                          {serviceData.shipin_details.ShipInformation.firstName}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>Address</StyledTableCell>
                         <StyledTableCellValue>
-                          {serviceData.shipin_details.streetAddress}
+                          {serviceData.shipin_details.ShipInformation.streetAddress}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>Phone Number</StyledTableCell>
                         <StyledTableCellValue>
-                          {serviceData.shipin_details.phone_number}
+                          {serviceData.shipin_details.ShipInformation.phone_number}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>E-Mail Address</StyledTableCell>
                         <StyledTableCellValue>
-                          {serviceData.shipin_details.email}
+                          {serviceData.shipin_details.ShipInformation.email}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
