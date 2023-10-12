@@ -1,9 +1,8 @@
 import { Button, Grid, Stack, Typography, styled } from "@mui/material";
-import { useEffect, useState } from "react";
 
 import Colors from "../../../CommonComponent/Colors";
-import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "./ShipCard";
+import { useEffect } from "react";
 
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
@@ -47,9 +46,6 @@ export default function ShipInPage({
     }
   };
 
-  const [error, setError] = useState("");
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   const handleNextButtonClick = async (e: any) => {
     e.preventDefault();
 
@@ -58,29 +54,15 @@ export default function ShipInPage({
     };
     console.log("sfsg", selectedList);
 
-    // const stringifiedArray = JSON.stringify(selectedButtons);
-
-    // let result = await fetch("https://alterknit-backend.onrender.com/service-item", {
-    //   method: "post",
-    //   body: stringifiedArray,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
     if (selectedButtons.length > 0) {
       nextStep();
     } else {
-      setError("Please select a service first");
-      setIsDrawerOpen(true);
+      alert("Please select a service first");
     }
   };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleCloseModal = () => {
-    setIsDrawerOpen(false);
-  };
 
   return (
     <Stack
@@ -249,11 +231,6 @@ export default function ShipInPage({
         </Grid>
       </Grid>
       <ShipCard onClick={handleNextButtonClick} onChange={prevStep} />
-      <CustomDialog
-        isOpen={isDrawerOpen}
-        onClose={handleCloseModal}
-        message={error}
-      />
     </Stack>
   );
 }
