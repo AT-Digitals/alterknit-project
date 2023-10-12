@@ -69,7 +69,7 @@ export default function ShipInDetailsPage() {
         //     serviceData.splice(indexValue, 1);
         // }
     };
-    const newArray = serviceData;
+
 
     const nextStep = () => {
         setServiceDetails({
@@ -85,18 +85,18 @@ export default function ShipInDetailsPage() {
             serviceDetails.service_details.brief !== "" &&
             serviceDetails.service_details.howMany !== "" &&
             serviceDetails.service_details.visible_holes !== ""
-            // !serviceDetails.more_details.latest_service &&
-            // !serviceDetails.more_details.previous_service
         ) {
             serviceData.push(serviceDetails);
             setStep(step + 1);
         } else {
             setStep(step + 1);
         }
-
-        console.log("select", serviceDetails);
     };
-    console.log("service", serviceData);
+
+    const uniqueData = serviceData.filter((obj, index) => {
+        return index === serviceData.findIndex(o => obj.services === o.services);
+    });
+
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
             setStep(2); // Go back to Step 2 if Option 2 was selected
@@ -121,9 +121,6 @@ export default function ShipInDetailsPage() {
             });
             setMoreDetails({ previous_service: "", latest_service: "" });
             setStep(3);
-        } else if (serviceData.length !== 0) {
-            newArray.push(serviceDetails);
-            setStep(3)
         }
     };
 
@@ -185,7 +182,7 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     addItem={addItem}
-                    serviceDetails={newArray}
+                    serviceDetails={uniqueData}
                     onDelete={deleteFormData}
                 />
             );
