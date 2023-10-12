@@ -70,7 +70,7 @@ export default function ShipinFields({
     e.preventDefault();
 
     if (!serviceFormData.color) {
-      setError("INFORMATION REQUIRED:-\n what color is your garment?");
+      setError("INFORMATION REQUIRED:-\n What color is your garment?");
       setIsDrawerOpen(true);
     } else if (!serviceFormData.visible_holes) {
       setError("INFORMATION REQUIRED:-\n How many visible holes are there");
@@ -109,14 +109,6 @@ export default function ShipinFields({
         },
       }
     );
-    // const data = {
-    //   color: formData.color,
-    //   HowMany: formData.howMany,
-    //   brand: formData.brand,
-    //   HowLong: formData.HowLong,
-    //   brief: formData.brief,
-    // };
-    // console.log(data);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
