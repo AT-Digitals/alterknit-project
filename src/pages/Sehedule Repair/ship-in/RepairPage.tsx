@@ -269,7 +269,7 @@ export default function RepairPage({
           </Grid>
         </Grid>
         {serviceDetails.map((serviceData, index) => (
-          <>
+          <Typography key={index}>
             <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
               <Grid item xs={2}>
                 <Typography textAlign="center" variant="body2" paddingX={3}>
@@ -312,7 +312,7 @@ export default function RepairPage({
               handleDeleteCancelled={handleDeleteCancelled}
               handleDeleteConfirmed={() => handleDeleteConfirmed(index)}
             />
-          </>
+          </Typography>
         ))}
       </Stack>
       <Stack
