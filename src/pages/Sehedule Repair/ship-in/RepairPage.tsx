@@ -10,6 +10,7 @@ import {
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
+import CustomDialog from "../../../Popup/Popup";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
@@ -52,17 +53,6 @@ export default function RepairPage({
   serviceDetails,
   onDelete,
 }: repairprops) {
-  // const [data, setData] = useState<Data[]>([]);
-
-  // console.log("gfhgfj", data);
-
-  // useEffect(() => {
-  //   // Make a GET request to your API
-  //   fetch('https://alterknit-backend.onrender.com/service-details')
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .catch(error => console.error('Error fetching data:', error));
-  // }, []);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const handleDeleteClick = () => {
@@ -76,6 +66,22 @@ export default function RepairPage({
 
   const handleDeleteCancelled = () => {
     setShowDeleteConfirmation(false);
+  };
+  const [error, setError] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const isServiceDetailsEmpty = serviceDetails.length === 0;
+
+  const handleProceedToCheckout = () => {
+    if (isServiceDetailsEmpty) {
+      setError("Your cart is empty. Please add an item first.");
+      setIsDrawerOpen(true);
+    } else {
+      nextStep("check-out");
+    }
+  };
+  const handleCloseModal = () => {
+    setIsDrawerOpen(false);
   };
 
   return (
@@ -263,43 +269,50 @@ export default function RepairPage({
           </Grid>
         </Grid>
         {serviceDetails.map((serviceData, index) => (
-          <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
-            <Grid item xs={2}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.services.join(", ")}
-              </Typography>
+          <>
+            <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
+              <Grid item xs={2}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.services.join(", ")}
+                </Typography>
+              </Grid>
+              <Grid item xs={1}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.service_details.brand}
+                </Typography>
+              </Grid>
+              <Grid item xs={1}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.service_details.color}
+                </Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.service_details.howMany}
+                </Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.service_details.visible_holes}
+                </Typography>
+              </Grid>
+              <Grid item xs={2.5}>
+                <Typography textAlign="center" variant="body2" paddingX={3}>
+                  {serviceData.service_details.brief}
+                </Typography>
+              </Grid>
+              <Grid item xs={0.5} textAlign="end">
+                <IconButton onClick={handleDeleteClick}>
+                  <DeleteIcon style={{ color: "black" }} />
+                </IconButton>
+              </Grid>
             </Grid>
-            <Grid item xs={1}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.service_details.brand}
-              </Typography>
-            </Grid>
-            <Grid item xs={1}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.service_details.color}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.service_details.howMany}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.service_details.visible_holes}
-              </Typography>
-            </Grid>
-            <Grid item xs={2.5}>
-              <Typography textAlign="center" variant="body2" paddingX={3}>
-                {serviceData.service_details.brief}
-              </Typography>
-            </Grid>
-            <Grid item xs={0.5} textAlign="end">
-              <IconButton onClick={handleDeleteClick}>
-                <DeleteIcon />
-              </IconButton>
-            </Grid>
-          </Grid>
+            <DeletePopup
+              showDeleteConfirmation={showDeleteConfirmation}
+              handleDeleteCancelled={handleDeleteCancelled}
+              handleDeleteConfirmed={() => handleDeleteConfirmed(index)}
+            />
+          </>
         ))}
       </Stack>
       <Stack
@@ -326,7 +339,7 @@ export default function RepairPage({
             Add Another Item
           </StyledButtom>
         </Link>
-        <Link onClick={nextStep}>
+        <Link onClick={handleProceedToCheckout}>
           <StyledButtom
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
@@ -340,21 +353,11 @@ export default function RepairPage({
           </StyledButtom>
         </Link>
       </Stack>
-      <DeletePopup
-        showDeleteConfirmation={showDeleteConfirmation}
-        handleDeleteCancelled={handleDeleteCancelled}
-        handleDeleteConfirmed={handleDeleteConfirmed}
+      <CustomDialog
+        isOpen={isDrawerOpen}
+        onClose={handleCloseModal}
+        message={error}
       />
-      {/* <Dialog open={showDeleteConfirmation} onClose={handleDeleteCancelled}>
-        <DialogTitle>Confirm Delete</DialogTitle>
-        <DialogContent>
-          Are you sure you want to delete this item?
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleDeleteCancelled}>Cancel</Button>
-          <Button onClick={handleDeleteConfirmed}>Delete</Button>
-        </DialogActions>
-      </Dialog> */}
     </Stack>
   );
 }
