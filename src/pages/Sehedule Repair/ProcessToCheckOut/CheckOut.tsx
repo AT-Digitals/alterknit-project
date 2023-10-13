@@ -13,10 +13,9 @@ import { ChangeEvent, useState } from "react";
 import AppContainer from "../../../component/AppContainer";
 import BillingForm from "./BillingForm";
 import Colors from "../../../CommonComponent/Colors";
-import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "../ship-in/ShipCard";
-import StateOptions from "./StateOptions";
 import ShipInDetails from "../ship-in/ShipInDetails";
+import StateOptions from "./StateOptions";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -99,18 +98,18 @@ export default function CheckOut({
   shipDetails,
   setShipDetails,
 }: Checkoutprops) {
-  // const [formData, setFormData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   streetAddress: "",
-  //   apartment: "",
-  //   city: "",
-  //   state: "",
-  //   zipCode: "",
-  //   phoneNumber: "",
-  //   emailAddress: "",
-  // });
+  const initialErrors = {
+    firstName: "",
+    lastName: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    phone_number: "",
+    email: "",
+  };
   const [selectedOption, setSelectedOption] = useState("");
+  const [error, setError] = useState(initialErrors);
 
   const handleYesClick = () => {
     setSelectedOption("YES");
@@ -120,7 +119,6 @@ export default function CheckOut({
     setSelectedOption("NO");
   };
 
-
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
     setSelectedOption((prevData: any) => ({
@@ -129,39 +127,39 @@ export default function CheckOut({
     }));
   };
 
-  const [error, setError] = useState("");
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const newErrors = { ...initialErrors };
+
     if (!shipDetails.ShipInformation.firstName) {
-      setError(" Please enter shipping first name.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.lastName) {
-      setError("Please enter shipping last name.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.streetAddress) {
-      setError("Please enter shipping street address.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.city) {
-      setError("Please enter shipping city.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.zipcode) {
-      setError("Please enter shipping zip code.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.phone_number) {
-      setError("Please enter shipping phone number.");
-      setIsDrawerOpen(true);
-    } else if (!shipDetails.ShipInformation.email) {
-      setError("Please enter shipping e-mail address.");
-      setIsDrawerOpen(true);
-    } else {
+      newErrors.firstName = "Please enter shipping first name.";
+    }
+    if (!shipDetails.ShipInformation.lastName) {
+      newErrors.lastName = "Please enter shipping last name.";
+    }
+    if (!shipDetails.ShipInformation.streetAddress) {
+      newErrors.streetAddress = "Please enter shipping street address.";
+    }
+    if (!shipDetails.ShipInformation.city) {
+      newErrors.city = "Please enter shipping city.";
+    }
+    if (!shipDetails.ShipInformation.zipcode) {
+      newErrors.zipcode = "Please enter shipping zip code.";
+    }
+    if (!shipDetails.ShipInformation.phone_number) {
+      newErrors.phone_number = "Please enter shipping phone number.";
+    }
+    if (!shipDetails.ShipInformation.email) {
+      newErrors.email = "Please enter shipping e-mail address.";
+    }
+
+    setError(newErrors);
+
+    if (Object.values(newErrors).every((error) => error === "")) {
       nextStep();
     }
   };
-  const handleCloseModal = () => {
-    setIsDrawerOpen(false);
-  };
+
   return (
     <>
       <Box>
@@ -237,6 +235,8 @@ export default function CheckOut({
                 name="firstName"
                 value={shipDetails.ShipInformation.firstName}
                 onChange={setShipDetails}
+                error={!!error.firstName}
+                helperText={error.firstName}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -252,6 +252,8 @@ export default function CheckOut({
                 name="lastName"
                 value={shipDetails.ShipInformation.lastName}
                 onChange={setShipDetails}
+                error={!!error.lastName}
+                helperText={error.lastName}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -267,6 +269,8 @@ export default function CheckOut({
                 name="streetAddress"
                 value={shipDetails.ShipInformation.streetAddress}
                 onChange={setShipDetails}
+                error={!!error.streetAddress}
+                helperText={error.streetAddress}
               />
               <CustomTextField
                 name="apartmentSuite"
@@ -288,6 +292,8 @@ export default function CheckOut({
                 name="city"
                 value={shipDetails.ShipInformation.city}
                 onChange={setShipDetails}
+                error={!!error.city}
+                helperText={error.city}
               />
             </Box>
 
@@ -311,6 +317,7 @@ export default function CheckOut({
                   name="state"
                   value={shipDetails.ShipInformation.state}
                   onChange={handleSelectChange}
+                  error={!!error.state}
                 >
                   {StateOptions.map((option) => (
                     <MenuItem key={option} value={option}>
@@ -333,6 +340,8 @@ export default function CheckOut({
                   name="zipcode"
                   value={shipDetails.ShipInformation.zipcode}
                   onChange={setShipDetails}
+                  error={!!error.zipcode}
+                  helperText={error.zipcode}
                 />
               </Box>
             </Stack>
@@ -349,6 +358,8 @@ export default function CheckOut({
                 name="phone_number"
                 value={shipDetails.ShipInformation.phone_number}
                 onChange={setShipDetails}
+                error={!!error.phone_number}
+                helperText={error.phone_number}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -364,6 +375,8 @@ export default function CheckOut({
                 name="email"
                 value={shipDetails.ShipInformation.email}
                 onChange={setShipDetails}
+                error={!!error.email}
+                helperText={error.email}
               />
             </Box>
           </AppContainer>
@@ -405,7 +418,12 @@ export default function CheckOut({
             NO
           </StyleButtonNew>
         </Stack>
-        {selectedOption === "NO" ? <BillingForm billInformation={shipDetails} setBillInformation={setShipDetails} /> : null}
+        {selectedOption === "NO" ? (
+          <BillingForm
+            billInformation={shipDetails}
+            setBillInformation={setShipDetails}
+          />
+        ) : null}
         <div
           style={{
             marginTop: "5rem",
@@ -419,13 +437,6 @@ export default function CheckOut({
           alt="guaranteed happiness"
         ></img>
       </Box>
-      <CustomDialog
-        isOpen={isDrawerOpen}
-        onClose={handleCloseModal}
-        message={error}
-      />
     </>
   );
 }
-
-
