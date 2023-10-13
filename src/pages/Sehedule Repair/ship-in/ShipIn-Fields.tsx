@@ -1,10 +1,10 @@
 import { Box, TextField, Typography, styled } from "@mui/material";
-import { useEffect, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
-import CustomDialog from "../../../Popup/Popup";
+import React from "react";
 import ShipCard from "./ShipCard";
 import serviceDetails from "./serviceDetails";
+import { useEffect } from "react";
 
 // import routes from "../../../routes/routes";
 // import { useNavigate } from "react-router-dom";
@@ -43,53 +43,60 @@ export default function ShipinFields({
   serviceFormData,
   setServiceFormData,
 }: HoverProps) {
-  // const [formData, setFormData] = useState({
-  //   color: "",
-  //   howMany: "",
-  //   brand: "",
-  //   HowLong: "",
-  //   brief: "",
-  // });
+  const initialErrors = {
+    color: "",
+    visible_holes: "",
+    brand: "",
+    howMany: "",
+    brief: "",
+  };
+  const [errors, setErrors] = React.useState(initialErrors);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setServiceFormData({ ...serviceFormData, [name]: value });
+    setErrors((prevErrors: any) => ({
+      ...prevErrors,
+      [name]: "",
+    }));
   };
-
-  // const navigate = useNavigate();
-
-  // const routeChange = () => {
-  //   let path = routes.MORE_DETAILS;
-  //   navigate(path);
-  // };
-
-  const [error, setError] = useState("");
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log("fields", serviceFormData);
+    let hasError = false;
+    const newErrors = { ...initialErrors };
+
     if (!serviceFormData.color) {
-      setError("INFORMATION REQUIRED:-\n What color is your garment?");
-      setIsDrawerOpen(true);
-    } else if (!serviceFormData.visible_holes) {
-      setError("INFORMATION REQUIRED:-\n How many visible holes are there");
-      setIsDrawerOpen(true);
-    } else if (!serviceFormData.brand) {
-      setError("INFORMATION REQUIRED:-\n What brand is your garment");
-      setIsDrawerOpen(true);
-    } else if (!serviceFormData.howMany) {
-      setError(
-        "INFORMATION REQUIRED:-\n How long have you owned this garment?"
-      );
-      setIsDrawerOpen(true);
-    } else if (!serviceFormData.brief) {
-      setError(
-        "INFORMATION REQUIRED:-\n Brief description of repair needed and/or any other important imformaton for us"
-      );
-      setIsDrawerOpen(true);
-    } else {
+      newErrors.color = "INFORMATION REQUIRED: What color is your garment?";
+      hasError = true;
+    }
+    if (!serviceFormData.visible_holes) {
+      newErrors.visible_holes =
+        "INFORMATION REQUIRED: How many visible holes are there?";
+      hasError = true;
+    }
+
+    if (!serviceFormData.brand) {
+      newErrors.brand = "INFORMATION REQUIRED: What brand is your garment?";
+      hasError = true;
+    }
+
+    if (!serviceFormData.howMany) {
+      newErrors.howMany =
+        "INFORMATION REQUIRED: How long you've owned this garment?";
+      hasError = true;
+    }
+
+    if (!serviceFormData.brief) {
+      newErrors.brief = "INFORMATION REQUIRED: Brief description is required";
+      hasError = true;
+    }
+
+    setErrors(newErrors);
+
+    if (!hasError) {
       nextStep();
     }
 
@@ -115,9 +122,6 @@ export default function ShipinFields({
     window.scrollTo(0, 0);
   }, []);
 
-  const handlCloseModal = () => {
-    setIsDrawerOpen(false);
-  };
   return (
     <>
       <Box>
@@ -187,6 +191,8 @@ export default function ShipinFields({
                           fontWeight: 500,
                         },
                       }}
+                      error={!!errors.color}
+                      helperText={errors.color}
                     />
                   </Box>
                   <Box
@@ -216,6 +222,8 @@ export default function ShipinFields({
                           fontWeight: 500,
                         },
                       }}
+                      error={!!errors.visible_holes}
+                      helperText={errors.visible_holes}
                     />
                   </Box>
                   <Box
@@ -245,6 +253,8 @@ export default function ShipinFields({
                           fontWeight: 500,
                         },
                       }}
+                      error={!!errors.brand}
+                      helperText={errors.brand}
                     />
                   </Box>
                   <Box
@@ -275,6 +285,8 @@ export default function ShipinFields({
                           fontWeight: 500,
                         },
                       }}
+                      error={!!errors.howMany}
+                      helperText={errors.howMany}
                     />
                   </Box>
                   <Box
@@ -325,6 +337,8 @@ export default function ShipinFields({
                         fontWeight: 600,
                         fontSize: "22px !important",
                       }}
+                      error={!!errors.brief}
+                      helperText={errors.brief}
                     />
                   </Box>
                   <ShipCard
@@ -337,11 +351,11 @@ export default function ShipinFields({
           </Box>
         </Box>
       </Box>
-      <CustomDialog
+      {/* <CustomDialog
         isOpen={isDrawerOpen}
         onClose={handlCloseModal}
         message={error}
-      />
+      /> */}
     </>
   );
 }

@@ -1,11 +1,9 @@
 import { Box, Button, Stack, Typography, styled } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
-import CustomDialog from "../../../Popup/Popup";
 import ShipCard from "./ShipCard";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
 import moreDetails from "./moreDetails";
-import { useState } from "react";
 
 const StyleButtonNew = styled(Button)({
   color: Colors.BLACK,
@@ -36,10 +34,6 @@ export default function MoreDetailsPage({
   moreDetails,
   setMoreDetails,
 }: moreprops) {
-  // const [previousClean, setPreviousClean] = useState("");
-  // const [latestClean, setLatestClean] = useState("");
-  const [error, setError] = useState("");
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const handleOptionClick = (
     optionType: "previous_service" | "latest_service",
     option: string
@@ -57,22 +51,14 @@ export default function MoreDetailsPage({
     console.log("data", values);
 
     if (!moreDetails.previous_service) {
-      setError(
+      alert(
         "INFORMATION REQUIRED:-\n Has this garment been previously repaired by a dry cleaner or another individual?"
       );
-      setIsDrawerOpen(true);
     } else if (!moreDetails.latest_service) {
-      setError(
-        "INFORMATION REQUIRED:-\n Has this grament been recently cleaned?"
-      );
-      setIsDrawerOpen(true);
+      alert("INFORMATION REQUIRED:-\n Has this grament been recently cleaned?");
     } else {
       nextStep("repair");
     }
-  };
-
-  const handleCloseModal = () => {
-    setIsDrawerOpen(false);
   };
 
   return (
@@ -223,11 +209,6 @@ export default function MoreDetailsPage({
           <ShipCard onChange={prevStep} onClick={handleNextButtonClick} />
         </Stack>
       </Stack>
-      <CustomDialog
-        isOpen={isDrawerOpen}
-        message={error}
-        onClose={handleCloseModal}
-      />
     </>
   );
 }
