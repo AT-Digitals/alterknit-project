@@ -64,6 +64,7 @@ export default function ShipinFields({
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    console.log("fields", serviceFormData);
     let hasError = false;
     const newErrors = { ...initialErrors };
 

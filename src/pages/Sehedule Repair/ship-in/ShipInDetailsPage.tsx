@@ -89,6 +89,8 @@ export default function ShipInDetailsPage() {
 
 
 
+
+
     const nextStep = () => {
         setServiceDetails({
             services: selectedButtons,
@@ -113,7 +115,10 @@ export default function ShipInDetailsPage() {
             });
             setServiceData(uniqueData);
             setStep(step + 1);
-        } else {
+        } else if (step === 5) {
+            setStep(step + 1);
+        }
+        else {
             setStep(step + 1);
         }
         console.log("before", serviceData);
@@ -154,9 +159,14 @@ export default function ShipInDetailsPage() {
     };
 
     const deleteFormData = (index: number) => {
-        const newArray = serviceData.splice(index, 1);
-        setServiceData(newArray);
+        // console.log("name", index);
+        if (index !== -1) {
+            let newArray = serviceData.splice(index, 1);
+            return setServiceData(newArray);
+        }
 
+        // const updatedItems = serviceData.filter(item => item.id !== index);
+        // setServiceData(updatedItems);
     };
 
 
