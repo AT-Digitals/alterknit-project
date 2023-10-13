@@ -69,6 +69,7 @@ export default function ShipinFields({
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    console.log("fields", serviceFormData);
     if (!serviceFormData.color) {
       setError("INFORMATION REQUIRED:-\n What color is your garment?");
       setIsDrawerOpen(true);
