@@ -29,6 +29,7 @@ const getPersonalDetails = {
   email: "",
   phone: "",
   passage: "",
+  selectedImage: "",
 };
 
 export default function FormFile() {
@@ -126,43 +127,6 @@ export default function FormFile() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    
-
-    // try {
-    //   const response = await fetch("/send-email", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(personalDetails),
-    //   });
-
-    //   const data = await response.json();
-    //   console.log(data);
-    // } catch (error) {
-    //   console.error("Error:", error);
-    // }
-
-
-    // let result = await fetch(
-    //   'https://alterknit-backend.onrender.com/items', {
-    //   method: "post",
-    //   body: JSON.stringify({
-    //     name: personalDetails.firstname,
-    //     email: personalDetails.email,
-    //     phone: personalDetails.phone,
-    //     message: personalDetails.passage,
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    // // setPersonalDetails({ firstname: "", email: "", phone: "", passage: '' })
-    // result = await result.json();
-    // console.warn(result);
-    // if (result) {
-    //   setPersonalDetails(getPersonalDetails);
-    // }
 
     // Initialize error variables
     let firstNameError = "";
@@ -197,7 +161,6 @@ export default function FormFile() {
 
     if (!firstNameError && !emailError && !phoneError) {
       setIsModalOpen(true);
-  
       emailjs.sendForm('service_cley6kp', 'template_dbri1ch', e.target, '4ay7qWc-8EIGRlwMC')
       .then((result) => {
           console.log(result.text);
@@ -222,6 +185,7 @@ export default function FormFile() {
         email: residentDetails.personalDetails.email,
         phone: residentDetails.personalDetails.phone,
         passage: residentDetails.personalDetails.passage,
+        selectedImage: residentDetails.personalDetails.selectedImage,
       };
 
       console.log(data);
@@ -233,6 +197,10 @@ export default function FormFile() {
     if (file) {
       setSelectedImage(file);
       setShowDeleteIcon(true);
+      setPersonalDetails({
+        ...personalDetails,
+        selectedImage: file,
+      });
     }
   };
 
@@ -268,6 +236,7 @@ export default function FormFile() {
         }}
         ref={form}
         onSubmit={handleSubmit}
+        encType="multipart/form-data"
       >
          <Modal
         open={isModalOpen}
@@ -375,6 +344,7 @@ export default function FormFile() {
                   <input
                     type="file"
                     hidden
+                    name="selectedImage"
                     accept="image"
                     onChange={handleImageChange}
                   />
