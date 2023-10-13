@@ -18,5 +18,6 @@ export default interface ShipInDetails {
     city: string;
     state: string;
     zipcode: string;
+    apartment: string;
   };
 }

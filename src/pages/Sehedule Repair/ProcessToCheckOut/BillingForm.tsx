@@ -54,7 +54,7 @@ const CustomSelect = styled(Select)`
 
 interface BillProps {
   billInformation: ShipInDetails;
-  setBillInformation: (e: ChangeEvent<HTMLInputElement>) => void;
+  setBillInformation: (field: keyof ShipInDetails['BillInformation'], value: string | number) => void;
 }
 
 export default function BillingForm({ billInformation, setBillInformation }: BillProps) {
@@ -67,6 +67,11 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
     state: "",
     zipCode: "",
   });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setBillInformation(name as keyof ShipInDetails['BillInformation'], value);
+  }
 
 
   const handleSelectChange = (e: any) => {
@@ -116,7 +121,7 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
           <CustomTextField
             name="firstName"
             value={billInformation.BillInformation.firstName}
-            onChange={setBillInformation}
+            onChange={handleChange}
           />
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -131,7 +136,7 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
           <CustomTextField
             name="lastName"
             value={billInformation.BillInformation.lastName}
-            onChange={setBillInformation}
+            onChange={handleChange}
           />
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -146,11 +151,13 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
           <CustomTextField
             name="streetAddress"
             value={billInformation.BillInformation.streetAddress}
-            onChange={setBillInformation}
+            onChange={handleChange}
           />
           <CustomTextField
-            name="apartmentSuite"
+            name="apartment"
             placeholder="Apartment/Suite"
+            value={billInformation.BillInformation.apartment}
+            onChange={handleChange}
           />
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -165,7 +172,7 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
           <CustomTextField
             name="city"
             value={billInformation.BillInformation.city}
-            onChange={setBillInformation}
+            onChange={handleChange}
           />
         </Box>
 
@@ -187,7 +194,7 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
                 borderRadius: "30px",
               }}
               name="state"
-              value={formdata.state}
+              value={billInformation.BillInformation.state}
               onChange={handleSelectChange}
             >
               {StateOptions.map((option: any) => (
@@ -208,9 +215,9 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
             </Typography>
             <CustomTextField
               style={{ width: "100%" }}
-              name="zipCode"
+              name="zipcode"
               value={billInformation.BillInformation.zipcode}
-              onChange={setBillInformation}
+              onChange={handleChange}
             />
           </Box>
         </Stack>

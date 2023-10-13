@@ -89,7 +89,8 @@ interface Checkoutprops {
   nextStep: () => void;
   prevStep: () => void;
   shipDetails: ShipInDetails;
-  setShipDetails: (e: ChangeEvent<HTMLInputElement>) => void;
+  setShipDetails: (field: keyof ShipInDetails['ShipInformation'], value: string | number) => void;
+  setBillDetails: (field: keyof ShipInDetails['BillInformation'], value: string | number) => void;
 }
 
 export default function CheckOut({
@@ -97,6 +98,7 @@ export default function CheckOut({
   prevStep,
   shipDetails,
   setShipDetails,
+  setBillDetails
 }: Checkoutprops) {
   const initialErrors = {
     firstName: "",
@@ -108,7 +110,7 @@ export default function CheckOut({
     phone_number: "",
     email: "",
   };
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("YES");
   const [error, setError] = useState(initialErrors);
 
   const handleYesClick = () => {
@@ -118,6 +120,13 @@ export default function CheckOut({
   const handleNoClick = () => {
     setSelectedOption("NO");
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setShipDetails(name as keyof ShipInDetails['ShipInformation'], value);
+  }
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
@@ -158,6 +167,24 @@ export default function CheckOut({
     if (Object.values(newErrors).every((error) => error === "")) {
       nextStep();
     }
+  };
+
+  const PhoneValidation = (name: string) => {
+    const cleanedPhoneNumber = name.replace(/\D/g, "");
+    if (/^1\d{10}$/.test(cleanedPhoneNumber)) {
+      setPhoneError("");
+      return true;
+    }
+
+    // Check for Indian phone numbers (country code +91)
+    if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
+      setPhoneError("");
+      return true;
+    }
+
+    // For any other input, show an error
+    setPhoneError("Invalid phone number");
+    return false;
   };
 
   return (
@@ -234,7 +261,7 @@ export default function CheckOut({
               <CustomTextField
                 name="firstName"
                 value={shipDetails.ShipInformation.firstName}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.firstName}
                 helperText={error.firstName}
               />
@@ -251,7 +278,7 @@ export default function CheckOut({
               <CustomTextField
                 name="lastName"
                 value={shipDetails.ShipInformation.lastName}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.lastName}
                 helperText={error.lastName}
               />
@@ -268,15 +295,15 @@ export default function CheckOut({
               <CustomTextField
                 name="streetAddress"
                 value={shipDetails.ShipInformation.streetAddress}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.streetAddress}
                 helperText={error.streetAddress}
               />
               <CustomTextField
-                name="apartmentSuite"
+                name="apartment"
                 placeholder="Apartment/Suite"
                 value={shipDetails.ShipInformation.apartment}
-                onChange={setShipDetails}
+                onChange={handleChange}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -291,7 +318,7 @@ export default function CheckOut({
               <CustomTextField
                 name="city"
                 value={shipDetails.ShipInformation.city}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.city}
                 helperText={error.city}
               />
@@ -339,7 +366,7 @@ export default function CheckOut({
                   style={{ width: "100%" }}
                   name="zipcode"
                   value={shipDetails.ShipInformation.zipcode}
-                  onChange={setShipDetails}
+                  onChange={handleChange}
                   error={!!error.zipcode}
                   helperText={error.zipcode}
                 />
@@ -357,7 +384,7 @@ export default function CheckOut({
               <CustomTextField
                 name="phone_number"
                 value={shipDetails.ShipInformation.phone_number}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.phone_number}
                 helperText={error.phone_number}
               />
@@ -374,7 +401,7 @@ export default function CheckOut({
               <CustomTextField
                 name="email"
                 value={shipDetails.ShipInformation.email}
-                onChange={setShipDetails}
+                onChange={handleChange}
                 error={!!error.email}
                 helperText={error.email}
               />
@@ -421,7 +448,7 @@ export default function CheckOut({
         {selectedOption === "NO" ? (
           <BillingForm
             billInformation={shipDetails}
-            setBillInformation={setShipDetails}
+            setBillInformation={setBillDetails}
           />
         ) : null}
         <div
