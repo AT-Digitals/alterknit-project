@@ -119,8 +119,7 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
               borderRadius={"20px"}
               maxWidth={"780px"}
               position={"relative"}
-              padding={"3rem"}
-            >
+              padding={"3rem"}>
               <a href={routes.SHIPIN}>
                 <img
                   style={{
@@ -137,41 +136,41 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
                   title="edit"
                 />
               </a>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                <li style={{ display: "inline" }}>
-                  <button
+              {serviceDetails.map((serviceData, index) => (
+                <>
+                  <ul style={{ listStyle: "none", padding: 0 }}>
+                    <li style={{ display: "inline" }}>
+                      <button
+                        style={{
+                          marginLeft: "22px",
+                          background: "#df7c6d",
+                          color: "white",
+                          padding: "5px 20px",
+                          border: "none",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                          fontSize: "14px",
+                          fontFamily: `"ProximaNovaMedium", sans-serif`,
+                          fontWeight: 500,
+                        }}
+                      >
+                        ITEM {index + 1}
+                      </button>
+                    </li>
+                  </ul>
+                  <table
                     style={{
-                      marginLeft: "22px",
-                      background: "#df7c6d",
-                      color: "white",
-                      padding: "5px 20px",
-                      border: "none",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      fontFamily: `"ProximaNovaMedium", sans-serif`,
-                      fontWeight: 500,
+                      width: "100%",
+                      borderSpacing: "2rem",
+                      tableLayout: "fixed",
                     }}
                   >
-                    ITEM 1
-                  </button>
-                </li>
-              </ul>
-              <table
-                style={{
-                  width: "100%",
-                  borderSpacing: "2rem",
-                  tableLayout: "fixed",
-                }}
-              >
-                <tbody>
-                  <div
-                    style={{
-                      marginTop: "-30px",
-                    }}
-                  >
-                    {serviceDetails.map((serviceData, index) => (
-                      <>
+                    <tbody>
+                      <div
+                        style={{
+                          marginTop: "-30px",
+                        }}
+                      >
                         <StyledTr>
                           <StyledTableCell>Service Needed</StyledTableCell>
                           <StyledTableCellValue>
@@ -208,13 +207,15 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
                             {serviceData.service_details.brief}
                           </StyledTableCellValue>
                         </StyledTr>
-                      </>
-                    ))}
-                  </div>
-                </tbody>
-              </table>
+
+                      </div>
+                    </tbody>
+                  </table>
+                </>
+              ))}
               <BeforeText label="Order Summary" />
             </Box>
+
             <Box
               bgcolor={"#f8f1ec"}
               border={"5px solid #df7c6d"}

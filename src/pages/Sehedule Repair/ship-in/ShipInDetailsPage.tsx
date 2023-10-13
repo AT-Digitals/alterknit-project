@@ -11,6 +11,7 @@ import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { useState } from "react";
 import serviceDetails from "./serviceDetails";
+import ShipInDetails from "./ShipInDetails";
 
 export default function ShipInDetailsPage() {
     const [step, setStep] = useState(1);
@@ -49,10 +50,10 @@ export default function ShipInDetailsPage() {
                 city: "",
                 state: "",
                 zipcode: "",
+                apartment: "",
             },
-        }
+        },
     });
-
 
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
@@ -65,31 +66,41 @@ export default function ShipInDetailsPage() {
     );
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
-    const [shipDetails, setShipDetails] = useState(
-        serviceDetails.shipin_details
-    );
+    const [shipDetails, setShipDetails] = useState(serviceDetails.shipin_details);
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setShipDetails((prevState: { ShipInformation: any; BillInformation: any; }) => ({
+    const handleObject1Change = (field: keyof ShipInDetails['ShipInformation'], value: string | number) => {
+        setShipDetails(prevState => ({
             ...prevState,
             ShipInformation: {
                 ...prevState.ShipInformation,
-                [name]: value,
-            },
+                [field]: value
+            }
+        }));
+    }
+    const handleObject2Change = (field: keyof ShipInDetails['BillInformation'], value: string | number) => {
+        setShipDetails(prevState => ({
+            ...prevState,
             BillInformation: {
                 ...prevState.BillInformation,
-                [name]: value,
-            },
+                [field]: value
+            }
+        }));
+    }
 
-        })
-        )
+    console.log("shipindetails", shipDetails)
+    const data = {
+        services: selectedButtons,
+        service_details: serviceFormData,
+        more_details: moreDetails,
+        shipin_details: shipDetails,
     };
+    console.log("datafdsfsf", data);
 
-
-
-
-
+    const filteredPeople = serviceData.filter((item) => item.more_details.latest_service !== "" && item.more_details.previous_service !== "");
+    // console.log("fileter", filteredPeople);
+    const finalArray = serviceData.filter((item) => item.shipin_details.ShipInformation.firstName !== "");
+    console.log("final", finalArray);
+    const newArray = [...filteredPeople];
 
     const nextStep = () => {
         setServiceDetails({
@@ -98,6 +109,13 @@ export default function ShipInDetailsPage() {
             more_details: moreDetails,
             shipin_details: shipDetails,
         });
+
+        const existingItemIndex = serviceData.findIndex(item =>
+            item.services === serviceDetails.services
+            // item.service_details === serviceDetails.service_details 
+            // item.more_details === serviceDetails.more_details 
+        );
+
         if (
             serviceDetails.services.length > 0 &&
             serviceDetails.service_details.color !== "" &&
@@ -105,31 +123,39 @@ export default function ShipInDetailsPage() {
             serviceDetails.service_details.brief !== "" &&
             serviceDetails.service_details.howMany !== "" &&
             serviceDetails.service_details.visible_holes !== ""
+            // serviceDetails.more_details.latest_service !== "" &&
+            // serviceDetails.more_details.previous_service !== ""
         ) {
-            serviceData.push(serviceDetails);
+            serviceData.push(data);
             setStep(step + 1);
-
         } else if (serviceData) {
-            const uniqueData = serviceData.filter((obj: { services: string[]; }, index: number) => {
-                return index === serviceData.findIndex(o => obj.services === o.services)
-            });
+            const uniqueData = serviceData.filter(
+                (obj: { services: string[], service_details: {} }, index: number) => {
+                    return (
+                        index === serviceData.findIndex((o) => obj.services === o.services)
+                    );
+                }
+            );
             setServiceData(uniqueData);
+            console.log("table", serviceData);
             setStep(step + 1);
-        } else if (step === 5) {
+        } else if (step === 6 && serviceData) {
+            setServiceData([...filteredPeople]);
+            setStep(step + 1);
+        } else if (step === 7 && serviceData) {
+            setServiceData([...finalArray]);
             setStep(step + 1);
         }
-        else {
-            setStep(step + 1);
-        }
-        console.log("before", serviceData);
+        // console.log("before", serviceData);
     };
 
     console.log("after", serviceData);
 
+
+
     // const uniqueData = serviceData.filter((obj, index) => {
     //     return index === serviceData.findIndex(o => obj.services === o.services)
     // });
-
 
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
@@ -164,11 +190,11 @@ export default function ShipInDetailsPage() {
             let newArray = serviceData.splice(index, 1);
             return setServiceData(newArray);
         }
+        //setServiceData(serviceData.filter(item => item.id !== index));
 
         // const updatedItems = serviceData.filter(item => item.id !== index);
         // setServiceData(updatedItems);
     };
-
 
     switch (step) {
         case 1:
@@ -238,11 +264,12 @@ export default function ShipInDetailsPage() {
                     nextStep={nextStep}
                     prevStep={prevStep}
                     shipDetails={shipDetails}
-                    setShipDetails={handleInputChange}
+                    setShipDetails={handleObject1Change}
+                    setBillDetails={handleObject2Change}
                 />
             );
         case 8:
-            return <LastStep serviceDetails={serviceData} />;
+            return <LastStep serviceDetails={finalArray} />;
         default:
             return null;
     }
