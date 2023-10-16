@@ -7,11 +7,11 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { ChangeEvent, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
-import StateOptions from "./StateOptions";
 import ShipInDetails from "../ship-in/ShipInDetails";
+import StateOptions from "./StateOptions";
+import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -54,10 +54,16 @@ const CustomSelect = styled(Select)`
 
 interface BillProps {
   billInformation: ShipInDetails;
-  setBillInformation: (field: keyof ShipInDetails['BillInformation'], value: string | number) => void;
+  setBillInformation: (
+    field: keyof ShipInDetails["BillInformation"],
+    value: string | number
+  ) => void;
 }
 
-export default function BillingForm({ billInformation, setBillInformation }: BillProps) {
+export default function BillingForm({
+  billInformation,
+  setBillInformation,
+}: BillProps) {
   const [formdata, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -70,9 +76,8 @@ export default function BillingForm({ billInformation, setBillInformation }: Bil
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setBillInformation(name as keyof ShipInDetails['BillInformation'], value);
-  }
-
+    setBillInformation(name as keyof ShipInDetails["BillInformation"], value);
+  };
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;

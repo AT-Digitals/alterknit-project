@@ -8,7 +8,6 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { ChangeEvent, useState } from "react";
 
 import AppContainer from "../../../component/AppContainer";
 import BillingForm from "./BillingForm";
@@ -16,6 +15,7 @@ import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "../ship-in/ShipCard";
 import ShipInDetails from "../ship-in/ShipInDetails";
 import StateOptions from "./StateOptions";
+import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -72,25 +72,18 @@ const StyleButtonNew = styled(Button)({
   },
 });
 
-// interface shipInformationProps {
-//   firstName: string;
-//   lastName: string;
-//   streetAddress: string;
-//   city: string;
-//   state: string;
-//   zipcode: string;
-//   phone_number: string;
-//   email: string;
-//   sameAddress: string;
-//   apartment: string;
-// }
-
 interface Checkoutprops {
   nextStep: () => void;
   prevStep: () => void;
   shipDetails: ShipInDetails;
-  setShipDetails: (field: keyof ShipInDetails['ShipInformation'], value: string | number) => void;
-  setBillDetails: (field: keyof ShipInDetails['BillInformation'], value: string | number) => void;
+  setShipDetails: (
+    field: keyof ShipInDetails["ShipInformation"],
+    value: string | number
+  ) => void;
+  setBillDetails: (
+    field: keyof ShipInDetails["BillInformation"],
+    value: string | number
+  ) => void;
 }
 
 export default function CheckOut({
@@ -98,7 +91,7 @@ export default function CheckOut({
   prevStep,
   shipDetails,
   setShipDetails,
-  setBillDetails
+  setBillDetails,
 }: Checkoutprops) {
   const initialErrors = {
     firstName: "",
@@ -123,10 +116,11 @@ export default function CheckOut({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setShipDetails(name as keyof ShipInDetails['ShipInformation'], value);
-  }
+    setShipDetails(name as keyof ShipInDetails["ShipInformation"], value);
+  };
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [zipcodeError, setZipcodeError] = useState("");
 
   const handleSelectChange = (e: any) => {
     const { name, value } = e.target;
@@ -171,20 +165,49 @@ export default function CheckOut({
 
   const PhoneValidation = (name: string) => {
     const cleanedPhoneNumber = name.replace(/\D/g, "");
-    if (/^1\d{10}$/.test(cleanedPhoneNumber)) {
+    if (
+      /^\d{10}$|^\d{3}[-.]?\d{3}[-.]?\d{4}$|^\(\d{3}\)\s?\d{3}[-.]?\d{4}$/.test(
+        cleanedPhoneNumber
+      )
+    ) {
       setPhoneError("");
       return true;
     }
 
-    // Check for Indian phone numbers (country code +91)
-    if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
-      setPhoneError("");
-      return true;
-    }
-
-    // For any other input, show an error
     setPhoneError("Invalid phone number");
     return false;
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setShipDetails(name as keyof ShipInDetails["ShipInformation"], value);
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!emailPattern.test(value)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const validateZIPCode = (value: any) => {
+    const validZipCodeRegex = /^\d{5}(-\d{4})?$/;
+    return validZipCodeRegex.test(value);
+  };
+
+  const handleZipcodeChange = (e: any) => {
+    const { name, value } = e.target;
+    setShipDetails(name as keyof ShipInDetails["ShipInformation"], value);
+    if (!validateZIPCode(value)) {
+      setZipcodeError("Invalid ZIP code");
+    } else {
+      setZipcodeError("");
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setShipDetails(name as keyof ShipInDetails["ShipInformation"], value);
+    PhoneValidation(value);
   };
 
   return (
@@ -366,9 +389,9 @@ export default function CheckOut({
                   style={{ width: "100%" }}
                   name="zipcode"
                   value={shipDetails.ShipInformation.zipcode}
-                  onChange={handleChange}
-                  error={!!error.zipcode}
-                  helperText={error.zipcode}
+                  onChange={handleZipcodeChange}
+                  error={!!error.zipcode || !!zipcodeError}
+                  helperText={error.zipcode || zipcodeError}
                 />
               </Box>
             </Stack>
@@ -384,9 +407,9 @@ export default function CheckOut({
               <CustomTextField
                 name="phone_number"
                 value={shipDetails.ShipInformation.phone_number}
-                onChange={handleChange}
-                error={!!error.phone_number}
-                helperText={error.phone_number}
+                onChange={handlePhoneChange}
+                error={!!error.phone_number || !!phoneError}
+                helperText={error.phone_number || phoneError}
               />
             </Box>
             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
@@ -401,9 +424,9 @@ export default function CheckOut({
               <CustomTextField
                 name="email"
                 value={shipDetails.ShipInformation.email}
-                onChange={handleChange}
-                error={!!error.email}
-                helperText={error.email}
+                onChange={handleEmailChange}
+                error={!!error.email || !!emailError}
+                helperText={error.email || emailError}
               />
             </Box>
           </AppContainer>
