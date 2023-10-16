@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import alterknitImage from '../assets/alterknit.png'
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+
 import DeleteIcon from "@mui/icons-material/Delete";
+import alterknitImage from "../assets/alterknit.png";
 import emailjs from "@emailjs/browser";
 
 const style = {
@@ -158,11 +158,16 @@ export default function FormFile() {
     setFirstNameError(firstNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
-    
 
     if (!firstNameError && !emailError && !phoneError) {
       // If there are no validation errors, proceed with sending the email
-      emailjs.sendForm('service_cley6kp', 'template_dbri1ch', e.target, '4ay7qWc-8EIGRlwMC')
+      emailjs
+        .sendForm(
+          "service_cley6kp",
+          "template_dbri1ch",
+          e.target,
+          "4ay7qWc-8EIGRlwMC"
+        )
         .then((result) => {
           console.log(result.text);
           console.log("message sent");
@@ -184,7 +189,6 @@ export default function FormFile() {
     } else {
       // Handle the case where there are validation errors (e.g., show error messages).
     }
-  
 
     setSelectedImage(null);
     setShowDeleteIcon(false);
@@ -211,7 +215,7 @@ export default function FormFile() {
 
   const handleImageChange = (event: any) => {
     const selectedImage = event.target.files[0];
-  if (selectedImage) {
+    if (selectedImage) {
       setSelectedImage(selectedImage);
       setShowDeleteIcon(true);
       setPersonalDetails({
@@ -255,37 +259,40 @@ export default function FormFile() {
         onSubmit={handleSubmit}
         encType="multipart/form-data"
       >
-         <Modal
-        open={isModalOpen}
-        onClose={closeModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Box display={"flex"} justifyContent={"center"}>
-          <img
-                src={alterknitImage}
-                alt="logo"
-                width="30%"
-                height="15%"
-            />
-         </Box>
-         <Box display={"flex"} justifyContent={"center"}>
-      
-          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
-           Email Sent Successfully!
-          </Typography>
+        <Modal
+          open={isModalOpen}
+          onClose={closeModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Box display={"flex"} justifyContent={"center"}>
+              <img src={alterknitImage} alt="logo" width="30%" height="15%" />
+            </Box>
+            <Box display={"flex"} justifyContent={"center"}>
+              <Typography
+                fontSize={"20px"}
+                id="modal-modal-description"
+                sx={{ mt: 2 }}
+              >
+                Email Sent Successfully!
+              </Typography>
+            </Box>
+            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+              <Button
+                style={{
+                  height: "30px",
+                  backgroundColor: "black",
+                  color: "white",
+                  marginTop: "10px",
+                }}
+                onClick={closeModal}
+              >
+                OK
+              </Button>
+            </Box>
           </Box>
-          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-            <Button style={{
-              height: "30px",
-              backgroundColor: "black",
-              color: "white",
-              marginTop: "10px",
-            }} onClick={closeModal}>OK</Button>
-          </Box>
-        </Box>
-      </Modal>
+        </Modal>
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
