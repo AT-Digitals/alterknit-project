@@ -9,9 +9,9 @@ import ScheduleReapir from "../ScheduleRepair";
 import ServiceDetailsState from "./ServiceDetailsState";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
-import { useState } from "react";
-import serviceDetails from "./serviceDetails";
+import { useEffect, useState } from "react";
 import ShipInDetails from "./ShipInDetails";
+import ServiceType from "./ServiceType";
 
 export default function ShipInDetailsPage() {
     const [step, setStep] = useState(1);
@@ -30,32 +30,11 @@ export default function ShipInDetailsPage() {
             previous_service: "",
             latest_service: "",
         },
-        shipin_details: {
-            ShipInformation: {
-                firstName: "",
-                lastName: "",
-                streetAddress: "",
-                city: "",
-                state: "",
-                zipcode: "",
-                phone_number: "",
-                email: "",
-                sameAddress: "",
-                apartment: "",
-            },
-            BillInformation: {
-                firstName: "",
-                lastName: "",
-                streetAddress: "",
-                city: "",
-                state: "",
-                zipcode: "",
-                apartment: "",
-            },
-        },
     });
 
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
+
+    const [finalData, setFinalData] = useState<ServiceType[]>([]);
 
     const [selectedButtons, setSelectedButtons] = useState(
         serviceDetails.services
@@ -66,100 +45,135 @@ export default function ShipInDetailsPage() {
     );
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
-    const [shipDetails, setShipDetails] = useState(serviceDetails.shipin_details);
 
-    const handleObject1Change = (field: keyof ShipInDetails['ShipInformation'], value: string | number) => {
-        setShipDetails(prevState => ({
+    const [shipDetails, setShipDetails] = useState<ShipInDetails>({
+        ShipInformation: {
+            firstName: "",
+            lastName: "",
+            streetAddress: "",
+            city: "",
+            state: "",
+            zipcode: "",
+            phone_number: "",
+            email: "",
+            sameAddress: "",
+            apartment: "",
+        },
+        BillInformation: {
+            firstName: "",
+            lastName: "",
+            streetAddress: "",
+            city: "",
+            state: "",
+            zipcode: "",
+            apartment: "",
+        },
+    },);
+
+    const [status, setStatus] = useState(false);
+
+    const handleObject1Change = (
+        field: keyof ShipInDetails["ShipInformation"],
+        value: string | number
+    ) => {
+        setShipDetails((prevState) => ({
             ...prevState,
             ShipInformation: {
                 ...prevState.ShipInformation,
-                [field]: value
-            }
+                [field]: value,
+            },
         }));
-    }
-    const handleObject2Change = (field: keyof ShipInDetails['BillInformation'], value: string | number) => {
-        setShipDetails(prevState => ({
+    };
+    const handleObject2Change = (
+        field: keyof ShipInDetails["BillInformation"],
+        value: string | number
+    ) => {
+        setShipDetails((prevState) => ({
             ...prevState,
             BillInformation: {
                 ...prevState.BillInformation,
-                [field]: value
-            }
+                [field]: value,
+            },
         }));
-    }
+    };
 
-    console.log("shipindetails", shipDetails)
+    // console.log("shipindetails", shipDetails);
     const data = {
         services: selectedButtons,
         service_details: serviceFormData,
         more_details: moreDetails,
-        shipin_details: shipDetails,
     };
-    console.log("datafdsfsf", data);
 
-    const filteredPeople = serviceData.filter((item) => item.more_details.latest_service !== "" && item.more_details.previous_service !== "");
-    // console.log("fileter", filteredPeople);
-    const finalArray = serviceData.filter((item) => item.shipin_details.ShipInformation.firstName !== "");
-    console.log("final", finalArray);
-    const newArray = [...filteredPeople];
+
+
+
+    const updateLastElement = () => {
+        setServiceData(prevArray => {
+            if (prevArray.length > 0) {
+                const updatedArray = [...prevArray];
+                const lastElement = updatedArray[updatedArray.length - 1];
+                lastElement.services = selectedButtons;
+                lastElement.service_details = serviceFormData;
+                lastElement.more_details = moreDetails;
+                return updatedArray;
+            } else {
+                return prevArray;
+            }
+        });
+    };
+
+    // const datavalue: ServiceType = {
+    //     serviceTypes: {},
+    //     shipin_Details: shipDetails,
+    // }
+
+    // const final = finalData.push(datavalue);
+
 
     const nextStep = () => {
-        setServiceDetails({
-            services: selectedButtons,
-            service_details: serviceFormData,
-            more_details: moreDetails,
-            shipin_details: shipDetails,
-        });
-
-        const existingItemIndex = serviceData.findIndex(item =>
-            item.services === serviceDetails.services
-            // item.service_details === serviceDetails.service_details 
-            // item.more_details === serviceDetails.more_details 
-        );
-
-        if (
-            serviceDetails.services.length > 0 &&
-            serviceDetails.service_details.color !== "" &&
-            serviceDetails.service_details.brand !== "" &&
-            serviceDetails.service_details.brief !== "" &&
-            serviceDetails.service_details.howMany !== "" &&
-            serviceDetails.service_details.visible_holes !== ""
-            // serviceDetails.more_details.latest_service !== "" &&
-            // serviceDetails.more_details.previous_service !== ""
-        ) {
-            serviceData.push(data);
-            setStep(step + 1);
-        } else if (serviceData) {
-            const uniqueData = serviceData.filter(
-                (obj: { services: string[], service_details: {} }, index: number) => {
-                    return (
-                        index === serviceData.findIndex((o) => obj.services === o.services)
-                    );
-                }
-            );
-            setServiceData(uniqueData);
-            console.log("table", serviceData);
-            setStep(step + 1);
-        } else if (step === 6 && serviceData) {
-            setServiceData([...filteredPeople]);
-            setStep(step + 1);
-        } else if (step === 7 && serviceData) {
-            setServiceData([...finalArray]);
+        if (!status) {
+            if (
+                data.services.length > 0 &&
+                data.service_details.color !== "" &&
+                data.service_details.brand !== "" &&
+                data.service_details.brief !== "" &&
+                data.service_details.howMany !== "" &&
+                data.service_details.visible_holes !== "" &&
+                data.more_details.latest_service !== "" &&
+                data.more_details.previous_service !== ""
+            ) {
+                serviceData.push(data);
+                setStep(step + 1);
+            } else if (serviceData) {
+                const uniqueData = serviceData.filter(
+                    (obj: { services: string[]; service_details: {} }, index: number) => {
+                        return (
+                            index === serviceData.findIndex((o) => obj.services === o.services)
+                        );
+                    }
+                );
+                setServiceData(uniqueData);
+                setStep(step + 1);
+            } else {
+                setStep(step + 1);
+            }
+        } else {
+            updateLastElement();
             setStep(step + 1);
         }
-        // console.log("before", serviceData);
     };
+    console.log("before", serviceData);
 
-    console.log("after", serviceData);
-
-
-
-    // const uniqueData = serviceData.filter((obj, index) => {
+    // const DataItem = serviceData.filter((obj, index) => {
     //     return index === serviceData.findIndex(o => obj.services === o.services)
     // });
 
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
             setStep(2); // Go back to Step 2 if Option 2 was selected
+        } else if (step === 6) {
+            setStatus(true);
+            setStep(step - 1);
         } else {
             setStep(step - 1);
         }
@@ -185,11 +199,12 @@ export default function ShipInDetailsPage() {
     };
 
     const deleteFormData = (index: number) => {
-        // console.log("name", index);
+        console.log("index", index);
         if (index !== -1) {
             let newArray = serviceData.splice(index, 1);
-            return setServiceData(newArray);
+            console.log("delete", serviceData);
         }
+
         //setServiceData(serviceData.filter(item => item.id !== index));
 
         // const updatedItems = serviceData.filter(item => item.id !== index);
@@ -269,7 +284,7 @@ export default function ShipInDetailsPage() {
                 />
             );
         case 8:
-            return <LastStep serviceDetails={finalArray} />;
+            return <LastStep serviceDetails={serviceData} shipInDetails={shipDetails} />;
         default:
             return null;
     }
