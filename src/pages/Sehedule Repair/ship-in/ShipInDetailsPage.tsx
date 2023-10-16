@@ -193,6 +193,14 @@ export default function ShipInDetailsPage() {
         }
     };
 
+    const itemEditClick = () => {
+        setStep(6);
+    }
+
+    const DetailsEditClick = () => {
+        setStep(7);
+    }
+
 
     const selectOption = (option: string) => {
         setSelectedOption(option);
@@ -299,7 +307,7 @@ export default function ShipInDetailsPage() {
                 />
             );
         case 8:
-            return <LastStep serviceDetails={serviceData} shipInDetails={shipDetails} />;
+            return <LastStep serviceDetails={serviceData} shipInDetails={shipDetails} itemEditClick={itemEditClick} detailsEditClick={DetailsEditClick} />;
         default:
             return null;
     }

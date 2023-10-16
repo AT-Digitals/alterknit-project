@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
@@ -57,10 +57,13 @@ const StyledInput = styled.input`
 interface LaststepProps {
   serviceDetails: ServiceDetailsState[];
   shipInDetails: ShipInDetails;
+  detailsEditClick: () => void;
+  itemEditClick: () => void;
 }
 
-export default function LastStep({ serviceDetails, shipInDetails }: LaststepProps) {
+export default function LastStep({ serviceDetails, shipInDetails, detailsEditClick, itemEditClick }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
+
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -128,7 +131,7 @@ export default function LastStep({ serviceDetails, shipInDetails }: LaststepProp
               position={"relative"}
               padding={"3rem"}
             >
-              <a href={routes.SHIPIN}>
+              <Button onClick={itemEditClick}>
                 <img
                   style={{
                     width: "24px",
@@ -143,7 +146,7 @@ export default function LastStep({ serviceDetails, shipInDetails }: LaststepProp
                   alt="edit icon"
                   title="edit"
                 />
-              </a>
+              </Button>
 
               <ul style={{ listStyle: "none", padding: 0 }}>
                 {serviceDetails.map((serviceData, index) => (
@@ -250,7 +253,7 @@ export default function LastStep({ serviceDetails, shipInDetails }: LaststepProp
               position={"relative"}
               padding={"3rem 2rem 3rem 3rem"}
             >
-              <a href={routes.CHECK_OUT}>
+              <Button onClick={detailsEditClick}>
                 <img
                   style={{
                     width: "24px",
@@ -265,7 +268,7 @@ export default function LastStep({ serviceDetails, shipInDetails }: LaststepProp
                   alt="edit icon"
                   title="edit"
                 />
-              </a>
+              </Button>
 
               <table
                 style={{
