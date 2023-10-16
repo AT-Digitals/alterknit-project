@@ -158,19 +158,36 @@ export default function FormFile() {
     setFirstNameError(firstNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
+    
 
     if (!firstNameError && !emailError && !phoneError) {
-      setIsModalOpen(true);
+      // If there are no validation errors, proceed with sending the email
       emailjs.sendForm('service_cley6kp', 'template_dbri1ch', e.target, '4ay7qWc-8EIGRlwMC')
-      .then((result) => {
+        .then((result) => {
           console.log(result.text);
           console.log("message sent");
-      }, (error) => {
+          // Clear the form fields or reset the form state as needed
+          // For example, if you're using React with state:
+          setPersonalDetails({
+            firstname: "",
+            email: "",
+            phone: "",
+            passage: "",
+            selectedImage: "", // Assuming it's a file input
+          });
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
           console.log(error.text);
-      });
+          // Handle email sending error if needed
+        });
     } else {
       // Handle the case where there are validation errors (e.g., show error messages).
     }
+  
+
+    setSelectedImage(null);
+    setShowDeleteIcon(false);
 
     // Check if all errors are empty (i.e., inputs are valid)
     if (
@@ -193,13 +210,13 @@ export default function FormFile() {
   };
 
   const handleImageChange = (event: any) => {
-    const file = event.target.files[0];
-    if (file) {
-      setSelectedImage(file);
+    const selectedImage = event.target.files[0];
+  if (selectedImage) {
+      setSelectedImage(selectedImage);
       setShowDeleteIcon(true);
       setPersonalDetails({
         ...personalDetails,
-        selectedImage: file,
+        selectedImage: selectedImage,
       });
     }
   };
