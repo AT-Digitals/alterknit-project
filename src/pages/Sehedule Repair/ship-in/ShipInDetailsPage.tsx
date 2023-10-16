@@ -7,15 +7,18 @@ import MoreDetailsPage from "./MoreDetailsPage";
 import RepairPage from "./RepairPage";
 import ScheduleReapir from "../ScheduleRepair";
 import ServiceDetailsState from "./ServiceDetailsState";
+import ShipInDetails from "./ShipInDetails";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { useEffect, useState } from "react";
 import ShipInDetails from "./ShipInDetails";
 import ServiceType from "./ServiceType";
 
+
 export default function ShipInDetailsPage() {
-    const [step, setStep] = useState(1);
-    const [selectedOption, setSelectedOption] = useState("");
+  const [step, setStep] = useState(1);
+  const [selectedOption, setSelectedOption] = useState("");
+
 
     const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
         services: [],
@@ -32,7 +35,8 @@ export default function ShipInDetailsPage() {
         },
     });
 
-    const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
+  const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
+
 
     const [finalData, setFinalData] = useState<ServiceType[]>([]);
 
@@ -40,9 +44,10 @@ export default function ShipInDetailsPage() {
         serviceDetails.services
     );
 
-    const [serviceFormData, setServiceFormData] = useState(
-        serviceDetails.service_details
-    );
+  const [serviceFormData, setServiceFormData] = useState(
+    serviceDetails.service_details
+  );
+
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
 
@@ -129,6 +134,7 @@ export default function ShipInDetailsPage() {
 
     // const final = finalData.push(datavalue);
 
+  console.log("after", serviceData);
 
     const nextStep = () => {
         if (!status) {
@@ -179,24 +185,25 @@ export default function ShipInDetailsPage() {
         }
     };
 
-    const selectOption = (option: string) => {
-        setSelectedOption(option);
-        nextStep();
-    };
-    const addItem = () => {
-        if (selectedOption === "ship-in") {
-            setSelectedButtons([]);
-            setServiceFormData({
-                color: "",
-                howMany: "",
-                visible_holes: "",
-                brief: "",
-                brand: "",
-            });
-            setMoreDetails({ previous_service: "", latest_service: "" });
-            setStep(3);
-        }
-    };
+
+  const selectOption = (option: string) => {
+    setSelectedOption(option);
+    nextStep();
+  };
+  const addItem = () => {
+    if (selectedOption === "ship-in") {
+      setSelectedButtons([]);
+      setServiceFormData({
+        color: "",
+        howMany: "",
+        visible_holes: "",
+        brief: "",
+        brand: "",
+      });
+      setMoreDetails({ previous_service: "", latest_service: "" });
+      setStep(3);
+    }
+  };
 
     const deleteFormData = (index: number) => {
         console.log("index", index);
@@ -206,37 +213,37 @@ export default function ShipInDetailsPage() {
         }
 
         //setServiceData(serviceData.filter(item => item.id !== index));
+ 
+    // const updatedItems = serviceData.filter(item => item.id !== index);
+    // setServiceData(updatedItems);
+  };
 
-        // const updatedItems = serviceData.filter(item => item.id !== index);
-        // setServiceData(updatedItems);
-    };
-
-    switch (step) {
-        case 1:
-            return <ScheduleReapir nextStep={nextStep} />;
-        case 2:
-            return (
-                <FixmePage
-                    nextStep={() => selectOption("ship-in")}
-                    secondNextStep={() => selectOption("door-to-door")}
-                />
-            );
-        case 3:
-            return (
-                <>
-                    {selectedOption === "ship-in" && (
-                        <ShipInPage
-                            nextStep={nextStep}
-                            prevStep={prevStep}
-                            selectedButtons={selectedButtons}
-                            setSelectedButtons={setSelectedButtons}
-                        />
-                    )}
-                    {selectedOption === "door-to-door" && (
-                        <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />
-                    )}
-                </>
-            );
+  switch (step) {
+    case 1:
+      return <ScheduleReapir nextStep={nextStep} />;
+    case 2:
+      return (
+        <FixmePage
+          nextStep={() => selectOption("ship-in")}
+          secondNextStep={() => selectOption("door-to-door")}
+        />
+      );
+    case 3:
+      return (
+        <>
+          {selectedOption === "ship-in" && (
+            <ShipInPage
+              nextStep={nextStep}
+              prevStep={prevStep}
+              selectedButtons={selectedButtons}
+              setSelectedButtons={setSelectedButtons}
+            />
+          )}
+          {selectedOption === "door-to-door" && (
+            <DoorToDoorPage nextStep={nextStep} prevStep={prevStep} />
+          )}
+        </>
+      );
 
         case 4:
             return (
@@ -288,4 +295,5 @@ export default function ShipInDetailsPage() {
         default:
             return null;
     }
+
 }

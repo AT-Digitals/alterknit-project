@@ -39,44 +39,26 @@ interface doorpageprops {
 export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
   const [zipCode, setZipCode] = useState("");
   const [error, setError] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (event: any) => {
     setZipCode(event.target.value);
   };
-  // const validZipCodeRegex = /^\d{5}(-\d{4})?$/;
 
-  // const XLSX = require("xlsx");
+  const validZipCodeRegex = /^\d{5}(-\d{4})?$/;
 
   const handleZipcodeValidate = () => {
     if (!zipCode) {
       setError("ZIP code cannot be empty");
       setIsModalOpen(true);
+    } else if (!validZipCodeRegex.test(zipCode)) {
+      setError("Invalid ZIP code format");
+      setIsModalOpen(true);
+    } else {
+      setError("");
+      console.log("Valid ZIP code:", zipCode);
+      nextStep(routes.DARN_IT);
     }
-    // Load the Excel file
-    // const workbook = XLSX.readFile("valid_zip_codes.xlsx");
-
-    // Assuming the ZIP codes are in the first sheet (you can adjust this as needed)
-    //const sheetName = workbook.SheetNames[0];
-    //const worksheet = workbook.Sheets[sheetName];
-
-    // Convert the worksheet to an array of objects
-    //const data = XLSX.utils.sheet_to_json(worksheet);
-
-    // Check if the entered ZIP code is in the list of valid ZIP codes
-    // const isValid = data.some(
-    //   (row: { ZipCode: string }) => row.ZipCode === zipCode
-    // );
-
-    //     if (!isValid) {
-    //       setError("Invalid ZIP code");
-    //       setIsModalOpen(true);
-    //     } else {
-    //       setError("");
-    //       console.log("Valid ZIP code:", zipCode);
-    //       nextStep(routes.DARN_IT);
-    //     }
-    //   }
   };
   const closeModal = () => {
     setIsModalOpen(false);
