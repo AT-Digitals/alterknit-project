@@ -1,9 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-
-import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
-import routes from "../../routes/routes";
-import CustomButton from "../../CommonComponent/CustomButton";
+
 import Colors from "../../CommonComponent/Colors";
 
 interface shipinprops {
@@ -105,12 +102,19 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           WE MAKE IT EASY!
         </Typography>
         <Stack spacing={2} mt={2}>
-          <Typography fontSize={"20px"} fontFamily={`"ProximaNovaMedium", sans-serif`}
-            fontWeight={500}>
+          <Typography
+            fontSize={"20px"}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
+          >
             Access our shipping portal to create your order!
           </Typography>
-          <Typography fontSize={"20px"} lineHeight={1} fontFamily={`"ProximaNovaMedium", sans-serif`}
-            fontWeight={500} >
+          <Typography
+            fontSize={"20px"}
+            lineHeight={1}
+            fontFamily={`"ProximaNovaMedium", sans-serif`}
+            fontWeight={500}
+          >
             A pre addressed shipping label and an order summary will come
             straight to your inbox for you to use.
           </Typography>
@@ -123,9 +127,8 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onClick={nextStep}
-
         >
-          <Box minWidth={290} p={"15px 20px 5px"} >
+          <Box minWidth={290} p={"15px 20px 5px"}>
             <Typography
               fontSize="60px"
               fontWeight={500}
@@ -142,7 +145,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
                 textTransform: "none",
                 fontSize: "18px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
-                fontWeight: 500
+                fontWeight: 500,
               }}
             >
               Click here to start
@@ -166,14 +169,15 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
               fontSize: "10px",
               margin: "0 auto",
               fontFamily: `"ProximaNovaMedium", sans-serif`,
-              fontWeight: 500
+              fontWeight: 500,
             }}
           >
             Be sure to visit our{" "}
             <a
               style={{
-                color: "black", fontFamily: `"ProximaNovaMedium", sans-serif`,
-                fontWeight: 500
+                color: "black",
+                fontFamily: `"ProximaNovaMedium", sans-serif`,
+                fontWeight: 500,
               }}
               href="https://alterknitnewyork.com/services#faqs"
             >

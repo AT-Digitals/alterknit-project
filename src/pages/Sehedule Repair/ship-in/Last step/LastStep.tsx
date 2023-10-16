@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
@@ -7,10 +7,10 @@ import ServiceDetailsState from "../ServiceDetailsState";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
+import ShipInDetails from "../ShipInDetails";
 
 const StyledTableCell = styled.td`
   color: black;
-  width: 150px;
   font-weight: 600;
   font-family: "ProximaNovaSemibold", sans-serif;
 `;
@@ -28,7 +28,6 @@ const StyledTr2 = styled.tr`
 const StyledTableCellValue = styled.td`
   vertical-align: top;
   word-wrap: break-word;
-  width: 150px;
   font-weight: 400;
   font-family: "ProximaNovaRegular", sans-serif;
 `;
@@ -57,14 +56,25 @@ const StyledInput = styled.input`
 `;
 interface LaststepProps {
   serviceDetails: ServiceDetailsState[];
+  shipInDetails: ShipInDetails;
+  detailsEditClick: () => void;
+  itemEditClick: () => void;
 }
-export default function LastStep({ serviceDetails }: LaststepProps) {
+
+export default function LastStep({ serviceDetails, shipInDetails, detailsEditClick, itemEditClick }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
+
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
   const [isChecked1, setIsChecked1] = useState(false);
+
+  const [displayedEntry, setDisplayedEntry] = useState(0);
+
+  const handleDisplayEntry = (entry: number) => {
+    setDisplayedEntry(entry);
+  };
 
   const handleChecOtherkboxChange = () => {
     setIsChecked1(!isChecked1);
@@ -119,111 +129,9 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
               borderRadius={"20px"}
               maxWidth={"780px"}
               position={"relative"}
-              padding={"3rem"}>
-              <a href={routes.SHIPIN}>
-                <img
-                  style={{
-                    width: "24px",
-                    cursor: "pointer",
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    marginTop: "2rem",
-                    marginRight: "2rem",
-                  }}
-                  src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_edit.png"
-                  alt="edit icon"
-                  title="edit"
-                />
-              </a>
-              {serviceDetails.map((serviceData, index) => (
-                <>
-                  <ul style={{ listStyle: "none", padding: 0 }}>
-                    <li style={{ display: "inline" }}>
-                      <button
-                        style={{
-                          marginLeft: "22px",
-                          background: "#df7c6d",
-                          color: "white",
-                          padding: "5px 20px",
-                          border: "none",
-                          borderRadius: "5px",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          fontFamily: `"ProximaNovaMedium", sans-serif`,
-                          fontWeight: 500,
-                        }}
-                      >
-                        ITEM {index + 1}
-                      </button>
-                    </li>
-                  </ul>
-                  <table
-                    style={{
-                      width: "100%",
-                      borderSpacing: "2rem",
-                      tableLayout: "fixed",
-                    }}
-                  >
-                    <tbody>
-                      <div
-                        style={{
-                          marginTop: "-30px",
-                        }}
-                      >
-                        <StyledTr>
-                          <StyledTableCell>Service Needed</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.services}
-                          </StyledTableCellValue>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Brand</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.service_details.brand}
-                          </StyledTableCellValue>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Color</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.service_details.color}
-                          </StyledTableCellValue>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Age of Garment</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.service_details.howMany}
-                          </StyledTableCellValue>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell># of Holes</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.service_details.visible_holes}
-                          </StyledTableCellValue>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Brief Description</StyledTableCell>
-                          <StyledTableCellValue>
-                            {serviceData.service_details.brief}
-                          </StyledTableCellValue>
-                        </StyledTr>
-
-                      </div>
-                    </tbody>
-                  </table>
-                </>
-              ))}
-              <BeforeText label="Order Summary" />
-            </Box>
-
-            <Box
-              bgcolor={"#f8f1ec"}
-              border={"5px solid #df7c6d"}
-              borderRadius={"20px"}
-              position={"relative"}
-              padding={"3rem 2rem 3rem 3rem"}
+              padding={"3rem"}
             >
-              <a href={routes.CHECK_OUT}>
+              <Button onClick={itemEditClick}>
                 <img
                   style={{
                     width: "24px",
@@ -238,7 +146,31 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
                   alt="edit icon"
                   title="edit"
                 />
-              </a>
+              </Button>
+
+              <ul style={{ listStyle: "none", padding: 0 }}>
+                {serviceDetails.map((serviceData, index) => (
+                  <li style={{ display: "inline" }}>
+                    <button
+                      style={{
+                        marginLeft: "22px",
+                        background: "#df7c6d",
+                        color: "white",
+                        padding: "5px 20px",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        fontFamily: `"ProximaNovaMedium", sans-serif`,
+                        fontWeight: 500,
+                      }}
+                      onClick={() => handleDisplayEntry(index)}
+                    >
+                      ITEM {index + 1}
+                    </button>
+                  </li>
+                ))}
+              </ul>
 
               <table
                 style={{
@@ -247,43 +179,153 @@ export default function LastStep({ serviceDetails }: LaststepProps) {
                   tableLayout: "fixed",
                 }}
               >
-                <colgroup>
-                  <col style={{ width: "150px" }} />{" "}
-                  <col style={{ width: "150px" }} />
-                </colgroup>
                 <tbody>
-                  {serviceDetails.map((serviceData, index) => (
-                    <>
+                  <div
+                    style={{
+                      marginTop: "-30px",
+                    }}
+                  >
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <StyledTr>
+                          <StyledTableCell>Service Needed</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brand</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Color</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Age of Garment</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell># of Holes</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brief Description</StyledTableCell>
+                        </StyledTr>
+                      </Grid>
+                      {serviceDetails.length > 0 && (
+                        <Grid item xs={8}>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].services}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].service_details.brand}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].service_details.color}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].service_details.howMany}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].service_details.visible_holes}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCellValue>
+                              {serviceDetails[displayedEntry].service_details.brief}
+                            </StyledTableCellValue>
+                          </StyledTr>
+                        </Grid>
+                      )}
+                    </Grid>
+                  </div>
+                </tbody>
+              </table>
+              <BeforeText label="Order Summary" />
+            </Box>
+            <Box
+              bgcolor={"#f8f1ec"}
+              border={"5px solid #df7c6d"}
+              borderRadius={"20px"}
+              position={"relative"}
+              padding={"3rem 2rem 3rem 3rem"}
+            >
+              <Button onClick={detailsEditClick}>
+                <img
+                  style={{
+                    width: "24px",
+                    cursor: "pointer",
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    marginTop: "2rem",
+                    marginRight: "2rem",
+                  }}
+                  src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_edit.png"
+                  alt="edit icon"
+                  title="edit"
+                />
+              </Button>
+
+              <table
+                style={{
+                  width: "100%",
+                  borderSpacing: "2rem",
+                  tableLayout: "fixed",
+                }}
+              >
+                {/* <colgroup>
+                  <col style={{ width: "150px" }} />{" "}
+                  <col style={{ width: "150px" }} /> */}
+                {/* </colgroup> */}
+                <tbody>
+                  <Grid container>
+                    <Grid item xs={4}>
                       <StyledTr2>
                         <StyledTableCell>Name</StyledTableCell>
-                        <StyledTableCellValue>
-                          {serviceData.shipin_details.ShipInformation.firstName}
-                        </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>Address</StyledTableCell>
-                        <StyledTableCellValue>
-                          {serviceData.shipin_details.ShipInformation.streetAddress}
-                        </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>Phone Number</StyledTableCell>
-                        <StyledTableCellValue>
-                          {serviceData.shipin_details.ShipInformation.phone_number}
-                        </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>E-Mail Address</StyledTableCell>
-                        <StyledTableCellValue>
-                          {serviceData.shipin_details.ShipInformation.email}
-                        </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCell>Order Type</StyledTableCell>
+                      </StyledTr2>
+                    </Grid>
+                    <Grid item xs={8}>
+                      <StyledTr2>
+                        <StyledTableCellValue>
+                          {shipInDetails.ShipInformation.firstName + "" + shipInDetails.ShipInformation.lastName}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCellValue>
+                          {shipInDetails.ShipInformation.streetAddress + "" + shipInDetails.ShipInformation.apartment}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCellValue>
+                          {shipInDetails.ShipInformation.phone_number}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
+                        <StyledTableCellValue>
+                          {shipInDetails.ShipInformation.email}
+                        </StyledTableCellValue>
+                      </StyledTr2>
+                      <StyledTr2>
                         <StyledTableCellValue>shipin</StyledTableCellValue>
                       </StyledTr2>
-                    </>
-                  ))}
+                    </Grid>
+                  </Grid>
                 </tbody>
               </table>
               <BeforeText label="Delivery Information" />
