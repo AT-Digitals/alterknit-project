@@ -135,6 +135,10 @@ export default function ShipInDetailsPage() {
 
     console.log("after", serviceData);
 
+    const DataItem = serviceData.filter((obj, index) => {
+        return index === serviceData.findIndex(o => obj.services === o.services)
+    });
+
     const nextStep = () => {
         if (!status) {
             if (
@@ -166,12 +170,17 @@ export default function ShipInDetailsPage() {
             updateLastElement();
             setStep(step + 1);
         }
+        if (step === 6) {
+            setServiceData(DataItem);
+            setStep(step + 1);
+        } else if (step === 7) {
+            setServiceData(DataItem);
+            setStep(step + 1);
+        }
     };
     console.log("before", serviceData);
 
-    // const DataItem = serviceData.filter((obj, index) => {
-    //     return index === serviceData.findIndex(o => obj.services === o.services)
-    // });
+
 
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
