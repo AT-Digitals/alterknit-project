@@ -4,10 +4,10 @@ import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
 import CustomButton from "../../../../CommonComponent/CustomButton";
 import ServiceDetailsState from "../ServiceDetailsState";
+import ShipInDetails from "../ShipInDetails";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
-import ShipInDetails from "../ShipInDetails";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -38,22 +38,6 @@ const StyledButton = styled(CustomButton)({
     backgroundColor: "#f58977",
   },
 });
-const StyledInput = styled.input`
-  border: 1px solid black;
-  border-radius: 6px;
-  outline: 0;
-  padding: 8px;
-  font-family: "ProximaNovaSemibold", sans-serif;
-  font-weight: 600;
-  font-size: 21px;
-  width: 100%;
-  max-width: 270px;
-  height: 35px;
-
-  &::placeholder {
-    color: #999999;
-  }
-`;
 interface LaststepProps {
   serviceDetails: ServiceDetailsState[];
   shipInDetails: ShipInDetails;
@@ -61,9 +45,13 @@ interface LaststepProps {
   itemEditClick: () => void;
 }
 
-export default function LastStep({ serviceDetails, shipInDetails, detailsEditClick, itemEditClick }: LaststepProps) {
+export default function LastStep({
+  serviceDetails,
+  shipInDetails,
+  detailsEditClick,
+  itemEditClick,
+}: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
-
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -79,6 +67,7 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
   const handleChecOtherkboxChange = () => {
     setIsChecked1(!isChecked1);
   };
+
   return (
     <>
       <Box>
@@ -131,7 +120,7 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
               position={"relative"}
               padding={"3rem"}
             >
-              <Button onClick={itemEditClick}>
+              <Button style={{ display: "contents" }} onClick={itemEditClick}>
                 <img
                   style={{
                     width: "24px",
@@ -154,8 +143,10 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
                     <button
                       style={{
                         marginLeft: "22px",
-                        background: "#df7c6d",
-                        color: "white",
+                        background:
+                          displayedEntry === index ? "#df7c6d" : "white",
+
+                        color: displayedEntry === index ? "white" : "black",
                         padding: "5px 20px",
                         border: "none",
                         borderRadius: "5px",
@@ -215,27 +206,42 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
                           </StyledTr>
                           <StyledTr>
                             <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].service_details.brand}
+                              {
+                                serviceDetails[displayedEntry].service_details
+                                  .brand
+                              }
                             </StyledTableCellValue>
                           </StyledTr>
                           <StyledTr>
                             <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].service_details.color}
+                              {
+                                serviceDetails[displayedEntry].service_details
+                                  .color
+                              }
                             </StyledTableCellValue>
                           </StyledTr>
                           <StyledTr>
                             <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].service_details.howMany}
+                              {
+                                serviceDetails[displayedEntry].service_details
+                                  .howMany
+                              }
                             </StyledTableCellValue>
                           </StyledTr>
                           <StyledTr>
                             <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].service_details.visible_holes}
+                              {
+                                serviceDetails[displayedEntry].service_details
+                                  .visible_holes
+                              }
                             </StyledTableCellValue>
                           </StyledTr>
                           <StyledTr>
                             <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].service_details.brief}
+                              {
+                                serviceDetails[displayedEntry].service_details
+                                  .brief
+                              }
                             </StyledTableCellValue>
                           </StyledTr>
                         </Grid>
@@ -253,7 +259,10 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
               position={"relative"}
               padding={"3rem 2rem 3rem 3rem"}
             >
-              <Button onClick={detailsEditClick}>
+              <Button
+                style={{ display: "contents" }}
+                onClick={detailsEditClick}
+              >
                 <img
                   style={{
                     width: "24px",
@@ -303,12 +312,16 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
                     <Grid item xs={8}>
                       <StyledTr2>
                         <StyledTableCellValue>
-                          {shipInDetails.ShipInformation.firstName + "" + shipInDetails.ShipInformation.lastName}
+                          {shipInDetails.ShipInformation.firstName +
+                            "" +
+                            shipInDetails.ShipInformation.lastName}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCellValue>
-                          {shipInDetails.ShipInformation.streetAddress + "" + shipInDetails.ShipInformation.apartment}
+                          {shipInDetails.ShipInformation.streetAddress +
+                            "" +
+                            shipInDetails.ShipInformation.apartment}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
@@ -421,22 +434,7 @@ export default function LastStep({ serviceDetails, shipInDetails, detailsEditCli
               flexDirection={"column"}
               alignItems={"flex-start"}
               gap={"1.5rem"}
-            >
-              <Box width={"100%"} display={"flex"} gap={"30px"}>
-                <StyledInput placeholder="Apply coupon code" />
-                <StyledButton
-                  style={{
-                    background: "#df7c6d",
-                    textTransform: "capitalize",
-                    color: "black",
-                    fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    fontWeight: 500,
-                  }}
-                >
-                  Check Validity
-                </StyledButton>
-              </Box>
-            </Box>
+            ></Box>
           </Box>
         </Box>
       </Box>

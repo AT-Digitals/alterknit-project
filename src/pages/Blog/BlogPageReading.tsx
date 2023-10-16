@@ -62,6 +62,8 @@ export default function BlogPageReadingContent() {
             <a
               style={{ color: "#575656", textDecoration: "none" }}
               href="https://publications.parliament.uk/pa/cm201719/cmselect/cmenvaud/1952/full-report.html"
+              target="_blank"
+              rel="noreferrer"
             >
               <u>More than $500 billion</u>
             </a>{" "}
@@ -376,7 +378,7 @@ export default function BlogPageReadingContent() {
 
           <p style={{ color: "#575656", fontSize: "20px" }}>
             At{" "}
-            <a style={{ color: "#575656" }} href={routes.ROOT}>
+            <a style={{ color: "#575656" }} href={routes.HOME}>
               <u>Alterknit</u>
             </a>
             , we are committed to restoring your clothes to new. We provide
