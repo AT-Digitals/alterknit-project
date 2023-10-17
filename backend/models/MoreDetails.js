@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 const MoreDetailsSchema = new mongoose.Schema({
-  previous: {
-    type: String,
-  },
+  previous: { type: String },
   latest: { type: String },
 });
 

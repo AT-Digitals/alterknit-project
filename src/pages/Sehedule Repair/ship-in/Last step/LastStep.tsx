@@ -56,7 +56,7 @@ export default function LastStep({
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked1, setIsChecked1] = useState(true);
 
   const [displayedEntry, setDisplayedEntry] = useState(0);
 

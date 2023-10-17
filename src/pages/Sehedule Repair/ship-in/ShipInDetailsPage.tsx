@@ -10,14 +10,12 @@ import ServiceDetailsState from "./ServiceDetailsState";
 import ShipInDetails from "./ShipInDetails";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ServiceType from "./ServiceType";
-
 
 export default function ShipInDetailsPage() {
     const [step, setStep] = useState(1);
     const [selectedOption, setSelectedOption] = useState("");
-
 
     const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
         services: [],
@@ -36,7 +34,6 @@ export default function ShipInDetailsPage() {
 
     const [serviceData, setServiceData] = useState<ServiceDetailsState[]>([]);
 
-
     const [finalData, setFinalData] = useState<ServiceType[]>([]);
 
     const [selectedButtons, setSelectedButtons] = useState(
@@ -46,7 +43,6 @@ export default function ShipInDetailsPage() {
     const [serviceFormData, setServiceFormData] = useState(
         serviceDetails.service_details
     );
-
 
     const [moreDetails, setMoreDetails] = useState(serviceDetails.more_details);
 
@@ -72,7 +68,7 @@ export default function ShipInDetailsPage() {
             zipcode: "",
             apartment: "",
         },
-    },);
+    });
 
     const [status, setStatus] = useState(false);
 
@@ -108,11 +104,8 @@ export default function ShipInDetailsPage() {
         more_details: moreDetails,
     };
 
-
-
-
     const updateLastElement = () => {
-        setServiceData(prevArray => {
+        setServiceData((prevArray) => {
             if (prevArray.length > 0) {
                 const updatedArray = [...prevArray];
                 const lastElement = updatedArray[updatedArray.length - 1];
@@ -136,8 +129,9 @@ export default function ShipInDetailsPage() {
     console.log("after", serviceData);
 
     const DataItem = serviceData.filter((obj, index) => {
-        return index === serviceData.findIndex(o => obj.services === o.services)
+        return index === serviceData.findIndex((o) => obj.services === o.services);
     });
+
 
     const nextStep = () => {
         if (!status) {
@@ -157,7 +151,8 @@ export default function ShipInDetailsPage() {
                 const uniqueData = serviceData.filter(
                     (obj: { services: string[]; service_details: {} }, index: number) => {
                         return (
-                            index === serviceData.findIndex((o) => obj.services === o.services)
+                            index ===
+                            serviceData.findIndex((o) => obj.services === o.services)
                         );
                     }
                 );
@@ -180,8 +175,6 @@ export default function ShipInDetailsPage() {
     };
     console.log("before", serviceData);
 
-
-
     const prevStep = () => {
         if (step === 4 && selectedOption === "door-to-door") {
             setStep(2); // Go back to Step 2 if Option 2 was selected
@@ -195,12 +188,11 @@ export default function ShipInDetailsPage() {
 
     const itemEditClick = () => {
         setStep(6);
-    }
+    };
 
     const DetailsEditClick = () => {
         setStep(7);
-    }
-
+    };
 
     const selectOption = (option: string) => {
         setSelectedOption(option);
@@ -218,21 +210,35 @@ export default function ShipInDetailsPage() {
             });
             setMoreDetails({ previous_service: "", latest_service: "" });
             setStep(3);
+            setStatus(false);
         }
     };
 
-    const deleteFormData = (index: number) => {
-        console.log("index", index);
-        if (index !== -1) {
-            let newArray = serviceData.splice(index, 1);
-            console.log("delete", serviceData);
+    const deleteFormData = useCallback((value: ServiceDetailsState) => {
+
+        // var index = serviceDetails.indexOf(value);
+        // console.log("index", index);
+        // if (index > -1) {
+        //   serviceDetails.splice(index, 1);
+        // }
+        // setServiceDetails(serviceDetails);
+        // return serviceDetails;
+        console.log("value", value);
+        const objWithIdIndex = serviceData.findIndex((obj) => obj === value);
+        if (objWithIdIndex > -1) {
+            serviceData.splice(objWithIdIndex, 1);
         }
+        console.log("serviceDetails1", serviceData);
+        setServiceData(serviceData);
+        //return serviceDetails;
+    }, [serviceData])
 
-        //setServiceData(serviceData.filter(item => item.id !== index));
 
-        // const updatedItems = serviceData.filter(item => item.id !== index);
-        // setServiceData(updatedItems);
-    };
+    const onSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+
+
+    }
 
     switch (step) {
         case 1:
@@ -293,6 +299,7 @@ export default function ShipInDetailsPage() {
                     prevStep={prevStep}
                     addItem={addItem}
                     serviceDetails={serviceData}
+                    setServiceDetails={setServiceData}
                     onDelete={deleteFormData}
                 />
             );
@@ -307,9 +314,15 @@ export default function ShipInDetailsPage() {
                 />
             );
         case 8:
-            return <LastStep serviceDetails={serviceData} shipInDetails={shipDetails} itemEditClick={itemEditClick} detailsEditClick={DetailsEditClick} />;
+            return (
+                <LastStep
+                    serviceDetails={serviceData}
+                    shipInDetails={shipDetails}
+                    itemEditClick={itemEditClick}
+                    detailsEditClick={DetailsEditClick}
+                />
+            );
         default:
             return null;
     }
-
 }
