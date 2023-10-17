@@ -100,10 +100,10 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
   const handleClick = () => {
     setIsSelected(!isSelected);
   };
-  const handleReloadClick = () => {
-    window.location.reload();
-    window.scrollTo(0, 0);
-  };
+  // const handleReloadClick = () => {
+  //   window.location.reload();
+  //   window.scrollTo(0, 0);
+  // };
 
   const navigate = useNavigate();
 
@@ -201,7 +201,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
               {services.map((service, index) => (
                 <HeaderLink
                   href={service.url}
-                  onClick={handleReloadClick}
+                  // onClick={handleReloadClick}
                   key={index}
                   className="service-item"
                 >
