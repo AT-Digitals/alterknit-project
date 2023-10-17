@@ -5,6 +5,7 @@ const User = require("../models/Item");
 const Service = require("../models/Service");
 const ServiceDetails = require("../models/ServiceItem");
 const MoreDetails = require("../models/MoreDetails");
+const ServiceData = require("../models/ServiceDetails");
 
 const dotenv = require("dotenv");
 const ServiceItem = require("../models/Service");
@@ -52,26 +53,43 @@ app.get("/service-details", async (req, res) => {
   }
 });
 
-app.post("/service-details", async (req, resp) => {
-  try {
-    const user = new ServiceDetails(req.body);
-    let result = await user.save();
-    result = result.toObject();
-    if (result) {
-      delete result.password;
-      resp.send(req.body);
-      console.log(result);
-    } else {
-      console.log("service details saved successfully");
-    }
-  } catch (e) {
-    resp.send("Something Went Wrong");
-  }
-});
+// app.post("/service-details", async (req, resp) => {
+//   try {
+//     const user = new ServiceDetails(req.body);
+//     let result = await user.save();
+//     result = result.toObject();
+//     if (result) {
+//       delete result.password;
+//       resp.send(req.body);
+//       console.log(result);
+//     } else {
+//       console.log("service details saved successfully");
+//     }
+//   } catch (e) {
+//     resp.send("Something Went Wrong");
+//   }
+// });
 
-app.post("/more-details", async (req, resp) => {
+// app.post("/more-details", async (req, resp) => {
+//   try {
+//     const user = new MoreDetails(req.body);
+//     let result = await user.save();
+//     result = result.toObject();
+//     if (result) {
+//       delete result.password;
+//       resp.send(req.body);
+//       console.log(result);
+//     } else {
+//       console.log("service details saved successfully");
+//     }
+//   } catch (e) {
+//     resp.send("Something Went Wrong");
+//   }
+// });
+
+app.post("/service-data", async (req, resp) => {
   try {
-    const user = new MoreDetails(req.body);
+    const user = new ServiceData(req.body);
     let result = await user.save();
     result = result.toObject();
     if (result) {
@@ -79,7 +97,7 @@ app.post("/more-details", async (req, resp) => {
       resp.send(req.body);
       console.log(result);
     } else {
-      console.log("service details saved successfully");
+      console.log("service data saved successfully");
     }
   } catch (e) {
     resp.send("Something Went Wrong");

@@ -43,6 +43,7 @@ interface LaststepProps {
   shipInDetails: ShipInDetails;
   detailsEditClick: () => void;
   itemEditClick: () => void;
+  onSubmit: (e: { preventDefault: () => void; }) => void;
 }
 
 export default function LastStep({
@@ -50,6 +51,7 @@ export default function LastStep({
   shipInDetails,
   detailsEditClick,
   itemEditClick,
+  onSubmit,
 }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -451,6 +453,8 @@ export default function LastStep({
             fontWeight: 500,
             padding: "30px 40px ",
           }}
+          type="submit"
+          onClick={onSubmit}
         >
           Submit
         </StyledButton>{" "}
