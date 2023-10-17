@@ -17,6 +17,7 @@ import AppContainer from "../component/AppContainer";
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { auth } from "../firebase";
 import routes from "../routes/routes";
 
 const ServiceItem = styled(Link)`
@@ -119,9 +120,10 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
 
   const handleLogout = async () => {
     try {
+      clearCaches();
+      await auth.signOut();
       navigate(routes.ROOT);
       clearCaches();
-      console.log("cleared catches");
     } catch (error) {
       console.error("Logout error:", error);
     }
