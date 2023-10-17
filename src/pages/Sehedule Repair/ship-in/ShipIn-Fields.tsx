@@ -101,22 +101,24 @@ export default function ShipinFields({
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let result = await fetch(
-      "https://alterknit-backend.onrender.com/service-details",
-      {
-        method: "post",
-        body: JSON.stringify({
-          color: serviceFormData.color,
-          visibleHoles: serviceFormData.visible_holes,
-          brand: serviceFormData.brand,
-          howLong: serviceFormData.howMany,
-          brief: serviceFormData.brief,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    //   let result = await fetch(
+    //     // "https://alterknit-backend.onrender.com/service-details",
+    //     "http://localhost:3001/service-details",
+    //     {
+    //       method: "post",
+    //       body: JSON.stringify({
+    //         color: serviceFormData.color,
+    //         visibleHoles: serviceFormData.visible_holes,
+    //         brand: serviceFormData.brand,
+    //         howLong: serviceFormData.howMany,
+    //         brief: serviceFormData.brief,
+    //       }),
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   );
+    //   console.log("fielddata", result);
   };
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -282,60 +282,26 @@ export default function ShipInDetailsPage() {
 
   UseunSavedChangesListener(ask, onCancelChanges);
 
-  const onSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (serviceData.length > 0) {
-      let result = await fetch(
-        "https://alterknit-backend.onrender.com/service-data",
-        // "https://localhost:3001/service-data",
-        {
-          method: "post",
-          body: JSON.stringify({
-            service_details: serviceData,
-            //     services: serviceData,
-            //     service_data: {
-            //         color: serviceData.color,
-            //         visibleHoles: serviceFormData.visible_holes,
-            //         brand: serviceFormData.brand,
-            //         howLong: serviceFormData.howMany,
-            //         brief: serviceFormData.brief,
-            //     },
-            //     more_details: {
-            //         previous_service: moreDetails.previous_service,
-            //         latest_service: moreDetails.previous_service,
-            //     },
-            // }],
-            shipin_details: shipDetails,
-            //     ShipInformation: {
-            //         firstName: shipDetails.ShipInformation.firstName,
-            //         lastName: shipDetails.ShipInformation.lastName,
-            //         streetAddress: shipDetails.ShipInformation.streetAddress,
-            //         city: shipDetails.ShipInformation.city,
-            //         state: shipDetails.ShipInformation.state,
-            //         zipcode: shipDetails.ShipInformation.zipcode,
-            //         phone_number: shipDetails.ShipInformation.phone_number,
-            //         email: shipDetails.ShipInformation.email,
-            //         sameAddress: shipDetails.ShipInformation.sameAddress,
-            //         apartment: shipDetails.ShipInformation.apartment,
-            //     },
-            //     BillInformation: {
-            //         firstName: shipDetails.BillInformation.firstName,
-            //         lastName: shipDetails.BillInformation.lastName,
-            //         streetAddress: shipDetails.BillInformation.streetAddress,
-            //         city: shipDetails.BillInformation.city,
-            //         state: shipDetails.BillInformation.state,
-            //         zipcode: shipDetails.BillInformation.zipcode,
-            //         apartment: shipDetails.BillInformation.apartment,
-            //     },
-            // }
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
+
+    const onSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        if (serviceData.length > 0) {
+            let result = await fetch(
+                "https://alterknit-backend.onrender.com/service-data",
+                {
+                    method: "post",
+                    body: JSON.stringify({
+                        service_details: serviceData,
+                        shipin_details: shipDetails,
+                    }),
+                    headers: {
+                        "Content-Type": 'application/json',
+                    },
+                }
+            );
+            console.log("result", result)
+                setAsk(false);
         }
-      );
-      console.log("result", result);
-      setAsk(false);
     }
   };
 

@@ -27,102 +27,18 @@ mongoose
   .then(() => console.log("DB Connected!"))
   .catch((err) => console.log(err));
 
-app.post("/items", async (req, resp) => {
+app.post("/service-data", async (req, res) => {
   try {
-    const user = new User(req.body);
-    let result = await user.save();
-    result = result.toObject();
-    if (result) {
-      delete result.password;
-      resp.send(req.body);
-      console.log(result);
-    } else {
-      console.log("Contact details already saved");
-    }
-  } catch (e) {
-    resp.send("Something Went Wrong");
-  }
-});
-
-app.get("/service-details", async (req, res) => {
-  try {
-    const data = await ServiceDetails.find();
-    res.json(data);
+    let Service = req.body;
+    const document = new ServiceData(Service);
+    await document.save(); // Assuming the request body contains the updated schema
+    res.json({ message: "Schema updated successfully", data: Service });
+    // res.json({ message: "Schema updated successfully", data: result });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
   }
-});
-
-// app.post("/service-details", async (req, resp) => {
-//   try {
-//     const user = new ServiceDetails(req.body);
-//     let result = await user.save();
-//     result = result.toObject();
-//     if (result) {
-//       delete result.password;
-//       resp.send(req.body);
-//       console.log(result);
-//     } else {
-//       console.log("service details saved successfully");
-//     }
-//   } catch (e) {
-//     resp.send("Something Went Wrong");
-//   }
-// });
-
-// app.post("/more-details", async (req, resp) => {
-//   try {
-//     const user = new MoreDetails(req.body);
-//     let result = await user.save();
-//     result = result.toObject();
-//     if (result) {
-//       delete result.password;
-//       resp.send(req.body);
-//       console.log(result);
-//     } else {
-//       console.log("service details saved successfully");
-//     }
-//   } catch (e) {
-//     resp.send("Something Went Wrong");
-//   }
-// });
-
-app.post("/service-data", async (req, resp) => {
-  try {
-    const user = new ServiceData(req.body);
-    let result = await user.save();
-    result = result.toObject();
-    if (result) {
-      delete result.password;
-      resp.send(req.body);
-      console.log(result);
-    } else {
-      console.log("service data saved successfully");
-    }
-  } catch (e) {
-    resp.send("Something Went Wrong");
-  }
-});
-
-app.post("/service-item", async (req, res) => {
-  try {
-    const user = new Service({ strings: req.body.strings });
-    await user.save();
-    res.status(201).json({ message: "Strings stored successfully!" });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-  //   result = result.toObject();
-  //   if (result) {
-  //     delete result.password;
-  //     resp.send(req.body);
-  //     console.log(result);
-  //   } else {
-  //     console.log("selected items was saved");
-  //   }
-  // } catch (e) {
-  //   resp.send("Something Went Wrong");
-  // }
 });
 
 app.post("/send-email", (req, res) => {
