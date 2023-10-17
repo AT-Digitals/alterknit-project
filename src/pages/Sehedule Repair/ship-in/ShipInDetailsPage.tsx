@@ -12,8 +12,12 @@ import ServiceDetailsState from "./ServiceDetailsState";
 import ShipInDetails from "./ShipInDetails";
 import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
+import { useCallback, useEffect, useState } from "react";
+import ServiceType from "./ServiceType";
+import emailjs from 'emailjs-com';
 import { UseunSavedChangesListener } from "./useUnsavesListener";
 import { useNavigate } from "react-router-dom";
+
 
 export default function ShipInDetailsPage() {
   const [step, setStep] = useState(1);
@@ -279,24 +283,41 @@ export default function ShipInDetailsPage() {
     [ask]
   );
 
+
+    var templateParams = {
+        name: 'James',
+        notes: 'Check this out!'
+    };
+
+    const onSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        if (serviceData.length > 0) {
+            let result = await fetch(
+                "https://alterknit-backend.onrender.com/service-data",
+                {
+                    method: "post",
+                    body: JSON.stringify({
+                        service_details: serviceData,
+                        shipin_details: shipDetails,
+                    }),
+                    headers: {
+                        "Content-Type": 'application/json',
+                    },
+                }
+            )
+                .then(() => {
+                    emailjs.send('service_tby7lte', 'template_75cwzjr', shipDetails.ShipInformation, '-LdTea8wtr-aVA1x_')
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                        }, function (err) {
+                            console.log('FAILED...', err);
+                        });
+
+                })
+
+
   UseunSavedChangesListener(ask, onCancelChanges);
 
-  const onSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (serviceData.length > 0) {
-      let result = await fetch(
-        "https://alterknit-backend.onrender.com/service-data",
-        {
-          method: "post",
-          body: JSON.stringify({
-            service_details: serviceData,
-            shipin_details: shipDetails,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
       console.log("result", result);
       setAsk(false);
     }
