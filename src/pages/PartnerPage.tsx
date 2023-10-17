@@ -3,34 +3,21 @@ import {
   Button,
   Card,
   CardContent,
+  Modal,
   Stack,
   TextField,
   Typography,
   styled,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import float from "../assets/logo-flat.png";
 import image1 from "../assets/bg-top (1).svg";
 import image2 from "../assets/bg-bottom.svg";
 import image3 from "../assets/logo-3d.png";
 import image4 from "../assets/banner.jpg";
-
-const CustomTextField = styled(TextField)({
-  ".css-1qknc5a-MuiInputBase-root-MuiInput-root": {
-    fontSize: "1.6rem",
-    width: "600px",
-    padding: "6px 0px",
-  },
-  ".css-1vf0mvf-MuiFormHelperText-root": {
-    color: "#d32f2f",
-  },
-  ".css-1x51dt5-MuiInputBase-input-MuiInput-input::-webkit-input-placeholder": {
-    color: "#0a0a0a",
-    opacity: "1.42",
-  }
-});
+import alterknitImage from '../assets/alterknit.png'
 
 const getPersonalDetails = {
   firstname: "",
@@ -39,12 +26,30 @@ const getPersonalDetails = {
   phone: "",
 };
 
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "1px solid #fff",
+  boxShadow: 24,
+  p: 4,
+};
+
 export default function PartnerPage() {
   const [personalDetails, setPersonalDetails] = useState(getPersonalDetails);
   const [firstnameError, setFirstNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [companyError, setCompanyError] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   const residentDetails = {
     personalDetails: personalDetails,
@@ -71,13 +76,21 @@ export default function PartnerPage() {
   };
 
   const PhoneValidation = (name: string) => {
-    if (/^\d{10}$/.test(name)) {
+    const cleanedPhoneNumber = name.replace(/\D/g, "");
+    if (/^1\d{10}$/.test(cleanedPhoneNumber)) {
       setPhoneError("");
       return true;
-    } else {
-      setPhoneError("Phone number must have 10 digits");
-      return false;
     }
+
+    // Check for Indian phone numbers (country code +91)
+    if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
+      setPhoneError("");
+      return true;
+    }
+
+    // For any other input, show an error
+    setPhoneError("Invalid phone number");
+    return false;
   };
 
   const CompanyValidation = (name: string) => {
@@ -140,43 +153,42 @@ export default function PartnerPage() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch("/submit-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(personalDetails),
-      });
+    // try {
+    //   const response = await fetch("/submit-email", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(personalDetails),
+    //   });
 
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    //   const data = await response.json();
+    //   console.log(data);
+    // } catch (error) {
+    //   console.error("Error:", error);
+    // }
 
-    let result = await fetch("http://localhost:3001/items", {
-      method: "post",
-      body: JSON.stringify({
-        name: personalDetails.firstname,
-        email: personalDetails.email,
-        phone: personalDetails.phone,
-        company: personalDetails.company,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    // setPersonalDetails({ firstname: "", email: "", phone: "", company: '' })
-    result = await result.json();
-    console.warn(result);
-    if (result) {
-      setPersonalDetails(getPersonalDetails);
-    }
+    // let result = await fetch("http://localhost:3001/items", {
+    //   method: "post",
+    //   body: JSON.stringify({
+    //     name: personalDetails.firstname,
+    //     email: personalDetails.email,
+    //     phone: personalDetails.phone,
+    //     company: personalDetails.company,
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+    // // setPersonalDetails({ firstname: "", email: "", phone: "", company: '' })
+    // result = await result.json();
+    // console.warn(result);
+    // if (result) {
+    //   setPersonalDetails(getPersonalDetails);
+    // }
 
     // Initialize error variables
     let firstNameError = "";
-    let lastNameError = "";
     let emailError = "";
     let phoneError = "";
     let companyError = "";
@@ -211,6 +223,32 @@ export default function PartnerPage() {
     setEmailError(emailError);
     setPhoneError(phoneError);
     setCompanyError(companyError);
+
+    if (!firstNameError && !companyError && !emailError && !phoneError) {
+      // If there are no validation errors, proceed with sending the email
+      emailjs.sendForm('service_omm1b98', 'template_3apnrrq', e.target, 'F8jME07w_yK-qghF-')
+        .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+          // Clear the form fields or reset the form state as needed
+          // For example, if you're using React with state:
+          setPersonalDetails({
+            firstname: "",
+            email: "",
+            phone: "",
+            company: "", 
+          });
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
+          console.log(error.text);
+          // Handle email sending error if needed
+        });
+    } else {
+      // Handle the case where there are validation errors (e.g., show error messages).
+    }
+
+
     // Check if all errors are empty (i.e., inputs are valid)
     if (!firstNameError && !companyError && !emailError && !phoneError) {
       const data = {
@@ -495,6 +533,37 @@ export default function PartnerPage() {
             marginTop: "50px",
           }}
         >
+            <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box display={"flex"} justifyContent={"center"}>
+          <img
+                src={alterknitImage}
+                alt="logo"
+                width="30%"
+                height="15%"
+            />
+         </Box>
+         <Box display={"flex"} justifyContent={"center"}>
+      
+          <Typography color={"black"} fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+           Email Sent Successfully!
+          </Typography>
+          </Box>
+          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+            <Button style={{
+              height: "30px",
+              backgroundColor: "black",
+              color: "white",
+              marginTop: "10px",
+            }} onClick={closeModal}>OK</Button>
+          </Box>
+        </Box>
+      </Modal>
           <Stack
             display={"flex"}
             justifyContent={"center"}
@@ -508,6 +577,9 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
+                ".css-1vf0mvf-MuiFormHelperText-root": {
+                  color: "#d32f2f",
+                }
               }}
                 inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
@@ -527,6 +599,9 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
+                ".css-1vf0mvf-MuiFormHelperText-root": {
+                  color: "#d32f2f",
+                }
               }}
                 inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
@@ -554,6 +629,9 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
+                ".css-1vf0mvf-MuiFormHelperText-root": {
+                  color: "#d32f2f",
+                }
               }}
                 inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required
@@ -573,6 +651,9 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
+                ".css-1vf0mvf-MuiFormHelperText-root": {
+                  color: "#d32f2f",
+                }
               }}
                 inputProps={{ style: { fontSize: 24, padding: "6px 0px", color: "#0a0a0a", paddingBottom: "13px" } }} // font size of input text
                 required

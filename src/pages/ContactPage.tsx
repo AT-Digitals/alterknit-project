@@ -161,13 +161,7 @@ export default function FormFile() {
 
     if (!firstNameError && !emailError && !phoneError) {
       // If there are no validation errors, proceed with sending the email
-      emailjs
-        .sendForm(
-          "service_cley6kp",
-          "template_dbri1ch",
-          e.target,
-          "4ay7qWc-8EIGRlwMC"
-        )
+      emailjs.sendForm('service_nkotnk7', 'template_aywsnlj', e.target, '0gKbZgIdRii6odnyc')
         .then((result) => {
           console.log(result.text);
           console.log("message sent");
@@ -207,6 +201,11 @@ export default function FormFile() {
         phone: residentDetails.personalDetails.phone,
         passage: residentDetails.personalDetails.passage,
         selectedImage: residentDetails.personalDetails.selectedImage,
+        Attachments : [
+          {
+            name : "smtp.png",
+            path : residentDetails.personalDetails.selectedImage
+          }]
       };
 
       console.log(data);
