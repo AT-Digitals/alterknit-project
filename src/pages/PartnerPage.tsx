@@ -31,7 +31,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 250,
   bgcolor: "background.paper",
   border: "1px solid #fff",
   boxShadow: 24,
@@ -544,7 +544,7 @@ export default function PartnerPage() {
           <img
                 src={alterknitImage}
                 alt="logo"
-                width="30%"
+                width="40%"
                 height="15%"
             />
          </Box>
@@ -555,11 +555,14 @@ export default function PartnerPage() {
           </Typography>
           </Box>
           <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-            <Button style={{
+            <Button sx={{
               height: "30px",
               backgroundColor: "black",
               color: "white",
               marginTop: "10px",
+              ":hover": {
+                backgroundColor: "rgb(223, 124, 109)",
+              },
             }} onClick={closeModal}>OK</Button>
           </Box>
         </Box>
@@ -577,7 +580,7 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
-                ".css-1vf0mvf-MuiFormHelperText-root": {
+                ".MuiFormHelperText-root": {
                   color: "#d32f2f",
                 }
               }}
@@ -599,7 +602,7 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
-                ".css-1vf0mvf-MuiFormHelperText-root": {
+                ".MuiFormHelperText-root": {
                   color: "#d32f2f",
                 }
               }}
@@ -629,7 +632,7 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
-                ".css-1vf0mvf-MuiFormHelperText-root": {
+                ".MuiFormHelperText-root": {
                   color: "#d32f2f",
                 }
               }}
@@ -651,7 +654,7 @@ export default function PartnerPage() {
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
-                ".css-1vf0mvf-MuiFormHelperText-root": {
+                ".MuiFormHelperText-root": {
                   color: "#d32f2f",
                 }
               }}

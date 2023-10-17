@@ -7,9 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-
+import alterknitImage from '../assets/alterknit.png'
 import DeleteIcon from "@mui/icons-material/Delete";
-import alterknitImage from "../assets/alterknit.png";
 import emailjs from "@emailjs/browser";
 
 const style = {
@@ -17,7 +16,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 250,
   bgcolor: "background.paper",
   border: "1px solid #fff",
   boxShadow: 24,
@@ -158,6 +157,7 @@ export default function FormFile() {
     setFirstNameError(firstNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
+    
 
     if (!firstNameError && !emailError && !phoneError) {
       // If there are no validation errors, proceed with sending the email
@@ -183,6 +183,7 @@ export default function FormFile() {
     } else {
       // Handle the case where there are validation errors (e.g., show error messages).
     }
+  
 
     setSelectedImage(null);
     setShowDeleteIcon(false);
@@ -201,20 +202,16 @@ export default function FormFile() {
         phone: residentDetails.personalDetails.phone,
         passage: residentDetails.personalDetails.passage,
         selectedImage: residentDetails.personalDetails.selectedImage,
-        Attachments : [
-          {
-            name : "smtp.png",
-            path : residentDetails.personalDetails.selectedImage
-          }]
       };
 
       console.log(data);
     }
   };
+  
 
   const handleImageChange = (event: any) => {
     const selectedImage = event.target.files[0];
-    if (selectedImage) {
+  if (selectedImage) {
       setSelectedImage(selectedImage);
       setShowDeleteIcon(true);
       setPersonalDetails({
@@ -258,40 +255,40 @@ export default function FormFile() {
         onSubmit={handleSubmit}
         encType="multipart/form-data"
       >
-        <Modal
-          open={isModalOpen}
-          onClose={closeModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Box display={"flex"} justifyContent={"center"}>
-              <img src={alterknitImage} alt="logo" width="30%" height="15%" />
-            </Box>
-            <Box display={"flex"} justifyContent={"center"}>
-              <Typography
-                fontSize={"20px"}
-                id="modal-modal-description"
-                sx={{ mt: 2 }}
-              >
-                Email Sent Successfully!
-              </Typography>
-            </Box>
-            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-              <Button
-                style={{
-                  height: "30px",
-                  backgroundColor: "black",
-                  color: "white",
-                  marginTop: "10px",
-                }}
-                onClick={closeModal}
-              >
-                OK
-              </Button>
-            </Box>
+         <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box display={"flex"} justifyContent={"center"}>
+          <img
+                src={alterknitImage}
+                alt="logo"
+                width="40%"
+                height="15%"
+            />
+         </Box>
+         <Box display={"flex"} justifyContent={"center"}>
+      
+          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+           Email Sent Successfully!
+          </Typography>
           </Box>
-        </Modal>
+          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+            <Button sx={{
+              height: "30px",
+              backgroundColor: "black",
+              color: "white",
+              marginTop: "10px",
+              ":hover": {
+                backgroundColor: "rgb(223, 124, 109)",
+              },
+            }} onClick={closeModal}>OK</Button>
+          </Box>
+        </Box>
+      </Modal>
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
@@ -324,7 +321,7 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-bn26lx-MuiFormHelperText-root": {
+                  ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
@@ -415,7 +412,7 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-bn26lx-MuiFormHelperText-root": {
+                  ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
@@ -452,7 +449,7 @@ export default function FormFile() {
                   ".MuiOutlinedInput-input": {
                     width: "350px",
                   },
-                  ".css-bn26lx-MuiFormHelperText-root": {
+                  ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
@@ -493,7 +490,7 @@ export default function FormFile() {
                   width: "785px",
                   marginBottom: "130px",
                 },
-                ".css-1wc848c-MuiFormHelperText-root": {
+                ".MuiFormHelperText-root": {
                   color: "red",
                 },
                 ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
