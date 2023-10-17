@@ -60,10 +60,10 @@ export default function RepairPage({
 
 
 
-  useEffect(() => {
-    console.log("serviceDetails", serviceDetails);
+  // useEffect(() => {
+  //   console.log("serviceDetails", serviceDetails);
 
-  }, [serviceDetails, setServiceDetails])
+  // }, [serviceDetails, setServiceDetails])
 
 
   const handleDeleteClick = (value: ServiceDetailsState) => {
@@ -73,8 +73,6 @@ export default function RepairPage({
   };
 
   const handleDeleteConfirmed = (value: ServiceDetailsState) => {
-    console.log("fdsf", value);
-    //  deleteFormData(value);
     onDelete(value);
     setShowDeleteConfirmation(false);
   };
@@ -309,7 +307,7 @@ export default function RepairPage({
               </Grid>
               <Grid item xs={2}>
                 <Typography textAlign="center" variant="body2" paddingX={3}>
-                  {serviceData.service_details.visible_holes} + {index}
+                  {serviceData.service_details.visible_holes}
                 </Typography>
               </Grid>
               <Grid item xs={2.5}>

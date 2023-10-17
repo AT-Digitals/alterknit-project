@@ -97,7 +97,7 @@ export default function ShipInDetailsPage() {
         }));
     };
 
-    // console.log("shipindetails", shipDetails);
+
     const data = {
         services: selectedButtons,
         service_details: serviceFormData,
@@ -119,14 +119,8 @@ export default function ShipInDetailsPage() {
         });
     };
 
-    // const datavalue: ServiceType = {
-    //     serviceTypes: {},
-    //     shipin_Details: shipDetails,
-    // }
 
-    // const final = finalData.push(datavalue);
 
-    console.log("after", serviceData);
 
     const DataItem = serviceData.filter((obj, index) => {
         return index === serviceData.findIndex((o) => obj.services === o.services);
@@ -216,27 +210,64 @@ export default function ShipInDetailsPage() {
 
     const deleteFormData = useCallback((value: ServiceDetailsState) => {
 
-        // var index = serviceDetails.indexOf(value);
-        // console.log("index", index);
-        // if (index > -1) {
-        //   serviceDetails.splice(index, 1);
-        // }
-        // setServiceDetails(serviceDetails);
-        // return serviceDetails;
-        console.log("value", value);
         const objWithIdIndex = serviceData.findIndex((obj) => obj === value);
         if (objWithIdIndex > -1) {
             serviceData.splice(objWithIdIndex, 1);
         }
-        console.log("serviceDetails1", serviceData);
         setServiceData(serviceData);
         //return serviceDetails;
     }, [serviceData])
 
 
-    const onSubmit = (e: { preventDefault: () => void; }) => {
+    const onSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
+        let result = await fetch(
+            "https://alterknit-backend.onrender.com/service-data",
+            {
+                method: "post",
+                body: JSON.stringify({
+                    services: selectedButtons,
+                    service_details: {
+                        color: serviceFormData.color,
+                        visibleHoles: serviceFormData.visible_holes,
+                        brand: serviceFormData.brand,
+                        howLong: serviceFormData.howMany,
+                        brief: serviceFormData.brief,
+                    },
+                    more_details: {
+                        previous_service: moreDetails.previous_service,
+                        latest_service: moreDetails.previous_service,
+                    },
+                    shipin_details: {
+                        ShipInformation: {
+                            firstName: shipDetails.ShipInformation.firstName,
+                            lastName: shipDetails.ShipInformation.lastName,
+                            streetAddress: shipDetails.ShipInformation.streetAddress,
+                            city: shipDetails.ShipInformation.city,
+                            state: shipDetails.ShipInformation.state,
+                            zipcode: shipDetails.ShipInformation.zipcode,
+                            phone_number: shipDetails.ShipInformation.phone_number,
+                            email: shipDetails.ShipInformation.email,
+                            sameAddress: shipDetails.ShipInformation.sameAddress,
+                            apartment: shipDetails.ShipInformation.apartment,
+                        },
+                        BillInformation: {
+                            firstName: shipDetails.BillInformation.firstName,
+                            lastName: shipDetails.BillInformation.lastName,
+                            streetAddress: shipDetails.BillInformation.streetAddress,
+                            city: shipDetails.BillInformation.city,
+                            state: shipDetails.BillInformation.state,
+                            zipcode: shipDetails.BillInformation.zipcode,
+                            apartment: shipDetails.BillInformation.apartment,
+                        },
+                    }
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        console.log("result", result)
 
     }
 
@@ -320,6 +351,7 @@ export default function ShipInDetailsPage() {
                     shipInDetails={shipDetails}
                     itemEditClick={itemEditClick}
                     detailsEditClick={DetailsEditClick}
+                    onSubmit={onSubmit}
                 />
             );
         default:
