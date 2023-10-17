@@ -315,14 +315,14 @@ export default function LastStep({
                       <StyledTr2>
                         <StyledTableCellValue>
                           {shipInDetails.ShipInformation.firstName +
-                            "" +
+                            " " +
                             shipInDetails.ShipInformation.lastName}
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
                         <StyledTableCellValue>
                           {shipInDetails.ShipInformation.streetAddress +
-                            "" +
+                            " " +
                             shipInDetails.ShipInformation.apartment}
                         </StyledTableCellValue>
                       </StyledTr2>

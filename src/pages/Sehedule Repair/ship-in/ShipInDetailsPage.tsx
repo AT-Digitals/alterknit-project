@@ -12,6 +12,8 @@ import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { useCallback, useEffect, useState } from "react";
 import ServiceType from "./ServiceType";
+import emailjs from 'emailjs-com';
+
 
 export default function ShipInDetailsPage() {
     const [step, setStep] = useState(1);
@@ -218,6 +220,10 @@ export default function ShipInDetailsPage() {
         //return serviceDetails;
     }, [serviceData])
 
+    var templateParams = {
+        name: 'James',
+        notes: 'Check this out!'
+    };
 
     const onSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -234,8 +240,17 @@ export default function ShipInDetailsPage() {
                         "Content-Type": 'application/json',
                     },
                 }
-            );
-            console.log("result", result)
+            )
+                .then(() => {
+                    emailjs.send('service_tby7lte', 'template_75cwzjr', shipDetails.ShipInformation, '-LdTea8wtr-aVA1x_')
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                        }, function (err) {
+                            console.log('FAILED...', err);
+                        });
+
+                })
+
         }
 
 
