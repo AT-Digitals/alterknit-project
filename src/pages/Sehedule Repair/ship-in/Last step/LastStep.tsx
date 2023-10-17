@@ -141,7 +141,7 @@ export default function LastStep({
 
               <ul style={{ listStyle: "none", padding: 0 }}>
                 {serviceDetails.map((serviceData, index) => (
-                  <li style={{ display: "inline" }}>
+                  <li style={{ display: "inline" }} key={index}>
                     <button
                       style={{
                         marginLeft: "22px",
