@@ -1,9 +1,25 @@
-import { Box, Button, Stack, TextField, Typography, styled } from "@mui/material";
+import { Box, Button, Modal, Stack, TextField, Typography, styled } from "@mui/material";
 import Bug from "../../assets/bugs.png";
 import { Link } from "react-router-dom";
 import Alterknitimage from "../../assets/bug_03.png";
 import Colors from "../../CommonComponent/Colors";
 import routes from "../../routes/routes";
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import alterknitImage from '../../assets/alterknit.png'
+
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 250,
+  bgcolor: "background.paper",
+  border: "1px solid #fff",
+  boxShadow: 24,
+  p: 4,
+};
 
 const StyledButton = styled(Button)({
   position: "absolute",
@@ -24,7 +40,84 @@ const StyledButton = styled(Button)({
   }
 });
 
+
+const getPersonalDetail = {
+  subscribe: "",
+}
+
 export default function SubscribePage() {
+  const [personalDetails, setPersonalDetails] = useState(getPersonalDetail);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [subscribeError, setSubscribeError] = useState("");
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPersonalDetails({ ...personalDetails, [name]: value });
+  };
+
+  const EmailValidation = (name: string) => {
+    if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(name)) {
+      setSubscribeError("");
+      return true;
+    } else {
+      setSubscribeError("");
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    if (personalDetails.subscribe) {
+      EmailValidation(personalDetails.subscribe);
+    }
+    setPersonalDetails((personalDetails) => ({
+      ...personalDetails,
+      personalDetails: personalDetails.subscribe,
+    }));
+  }, [personalDetails.subscribe]);
+
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    let subscribeError = "";
+
+    if (!personalDetails.subscribe) {
+      subscribeError = "Email is required";
+    } else if (!EmailValidation(personalDetails.subscribe)) {
+      subscribeError = "Invalid email format";
+    }
+    setSubscribeError(subscribeError);
+
+    if (!subscribeError) {
+    emailjs.sendForm('service_h05cohb', 'template_36581gc', e.target, 'tzn_ZDm_QTX8jjQu6')
+    .then((result) => {
+      console.log(result.text);
+      console.log("message sent");
+      // Clear the form fields or reset the form state as needed
+      // For example, if you're using React with state:
+      setPersonalDetails({
+        subscribe: "",
+      });
+      setIsModalOpen(true);
+    })
+    .catch((error) => {
+      console.log(error.text);
+      // Handle email sending error if needed
+    });
+  } else {
+    // Handle the case where there are validation errors (e.g., show error messages).
+  }
+
+    const data = {
+      subscribe: personalDetails.subscribe,
+    };
+    console.log(data);
+  };
+
   return (
     <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
       <Box width={"100%"} marginTop={"90px"}>
@@ -74,6 +167,41 @@ export default function SubscribePage() {
                 ></Typography>
               </Box>
             </Typography>
+            <form onSubmit={handleSubmit}>
+            <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box display={"flex"} justifyContent={"center"}>
+          <img
+                src={alterknitImage}
+                alt="logo"
+                width="40%"
+                height="15%"
+            />
+         </Box>
+         <Box display={"flex"} justifyContent={"center"}>
+      
+          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+           Email Sent Successfully!
+          </Typography>
+          </Box>
+          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+            <Button sx={{
+              height: "30px",
+              backgroundColor: "black",
+              color: "white",
+              marginTop: "10px",
+              ":hover": {
+                backgroundColor: "rgb(223, 124, 109)",
+              },
+            }} onClick={closeModal}>OK</Button>
+          </Box>
+        </Box>
+      </Modal>
             <Box display={"flex"} justifyContent={"center"}>
               <TextField
                 sx={{
@@ -82,12 +210,20 @@ export default function SubscribePage() {
                     height: "40px",
                     border: "1px solid #df7c6d",
                   },
+                  ".MuiFormHelperText-root": {
+                    color: "#d32f2f",
+                  },
                   ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
                     fontSize: "20px",
                   },
-                }}
+                }} onChange={handleInputChange} 
+                value={personalDetails.subscribe}
+                error={personalDetails.subscribe ? !!subscribeError : false}
+                helperText={subscribeError}
                 variant="outlined"
                 placeholder="Your Email"
+                name="subscribe"
+                required
               ></TextField>
               <Button
                 sx={{
@@ -98,14 +234,16 @@ export default function SubscribePage() {
                   borderRadius: "0",
                   textTransform: "capitalize",
                   fontSize: "20px",
+                  height: "75px",
                   ":hover": {
                     backgroundColor: "#f58977",
                   }
-                }}
+                }} type="submit"
               >
                 Subscribe
               </Button>
             </Box>
+            </form>
             <Typography
               fontSize={"14px"}
               textAlign={"center"}
