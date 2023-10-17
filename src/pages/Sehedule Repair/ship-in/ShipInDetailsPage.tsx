@@ -223,21 +223,24 @@ export default function ShipInDetailsPage() {
         e.preventDefault();
         let result = await fetch(
             "https://alterknit-backend.onrender.com/service-data",
+            // "https://localhost:3001/service-data",
             {
                 method: "post",
                 body: JSON.stringify({
-                    services: selectedButtons,
-                    service_details: {
-                        color: serviceFormData.color,
-                        visibleHoles: serviceFormData.visible_holes,
-                        brand: serviceFormData.brand,
-                        howLong: serviceFormData.howMany,
-                        brief: serviceFormData.brief,
-                    },
-                    more_details: {
-                        previous_service: moreDetails.previous_service,
-                        latest_service: moreDetails.previous_service,
-                    },
+                    service_details: [{
+                        services: selectedButtons,
+                        service_data: {
+                            color: serviceFormData.color,
+                            visibleHoles: serviceFormData.visible_holes,
+                            brand: serviceFormData.brand,
+                            howLong: serviceFormData.howMany,
+                            brief: serviceFormData.brief,
+                        },
+                        more_details: {
+                            previous_service: moreDetails.previous_service,
+                            latest_service: moreDetails.previous_service,
+                        },
+                    }],
                     shipin_details: {
                         ShipInformation: {
                             firstName: shipDetails.ShipInformation.firstName,

@@ -37,10 +37,14 @@ const ShipInSchema = new mongoose.Schema({
   },
 });
 
-const ServiceDetailsSchema = new mongoose.Schema({
+const AllServiceSchema = new mongoose.Schema({
   services: { type: [String], default: [] },
-  service_details: { type: ServiceItemSchema, required: true },
+  service_data: { type: ServiceItemSchema, required: true },
   more_details: { type: MoreDetailsSchema, required: true },
+});
+
+const ServiceDetailsSchema = new mongoose.Schema({
+  service_details: [{ type: AllServiceSchema, required: true }],
   shipin_details: { type: ShipInSchema, required: true },
 });
 
