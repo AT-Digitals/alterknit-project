@@ -6,7 +6,6 @@ import DoorToDoorPage from "../DoorToDoorPage";
 import FixmePage from "../FixmePage";
 import LastStep from "./Last step/LastStep";
 import MoreDetailsPage from "./MoreDetailsPage";
-import NavigationPopup from "../../../Popup/NavigationPopup";
 import RepairPage from "./RepairPage";
 import ScheduleReapir from "../ScheduleRepair";
 import ServiceDetailsState from "./ServiceDetailsState";
@@ -20,7 +19,7 @@ export default function ShipInDetailsPage() {
   const [step, setStep] = useState(1);
   const [selectedOption, setSelectedOption] = useState("");
   const [ask, setAsk] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
   const [serviceDetails, setServiceDetails] = useState<ServiceDetailsState>({
     services: [],
     service_details: {
@@ -177,19 +176,19 @@ export default function ShipInDetailsPage() {
   console.log("clickd44", step);
   console.log("before", serviceData);
 
-  const HandleYesNavigation = () => {
-    console.log("User clicked 'Yes'");
-    setAsk(false);
-    setShowPopup(false);
-    if (router !== "") {
-      navigate(router);
-    }
-  };
+  // const HandleYesNavigation = () => {
+  //   console.log("User clicked 'Yes'");
+  //   setAsk(false);
+  //   setShowPopup(false);
+  //   if (router !== "") {
+  //     navigate(router);
+  //   }
+  // };
 
-  const HandleCancelNavigation = () => {
-    console.log("User clicked 'Cancel'");
-    setShowPopup(false);
-  };
+  // const HandleCancelNavigation = () => {
+  //   console.log("User clicked 'Cancel'");
+  //   setShowPopup(false);
+  // };
 
   const prevStep = () => {
     if (step === 4 && selectedOption === "door-to-door") {
@@ -277,39 +276,37 @@ export default function ShipInDetailsPage() {
       console.log(e);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [ask, showPopup]
+    [ask]
   );
 
   UseunSavedChangesListener(ask, onCancelChanges);
 
-
-    const onSubmit = async (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        if (serviceData.length > 0) {
-            let result = await fetch(
-                "https://alterknit-backend.onrender.com/service-data",
-                {
-                    method: "post",
-                    body: JSON.stringify({
-                        service_details: serviceData,
-                        shipin_details: shipDetails,
-                    }),
-                    headers: {
-                        "Content-Type": 'application/json',
-                    },
-                }
-            );
-            console.log("result", result)
-                setAsk(false);
+  const onSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (serviceData.length > 0) {
+      let result = await fetch(
+        "https://alterknit-backend.onrender.com/service-data",
+        {
+          method: "post",
+          body: JSON.stringify({
+            service_details: serviceData,
+            shipin_details: shipDetails,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
+      );
+      console.log("result", result);
+      setAsk(false);
     }
   };
 
-  <NavigationPopup
-    showcancelConfirmation={showPopup}
-    handleCancelled={HandleCancelNavigation}
-    handleYesConfirmed={HandleYesNavigation}
-  />;
+  // <NavigationPopup
+  //   showcancelConfirmation={showPopup}
+  //   handleCancelled={HandleCancelNavigation}
+  //   handleYesConfirmed={HandleYesNavigation}
+  // />;
 
   switch (step) {
     case 1:
