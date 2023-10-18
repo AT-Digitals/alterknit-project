@@ -114,7 +114,7 @@ export default function CheckOut({
     setSelectedOption("NO");
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setShipDetails(name as keyof ShipInDetails["ShipInformation"], value);
   };
@@ -366,7 +366,7 @@ export default function CheckOut({
                   }}
                   name="state"
                   value={shipDetails.ShipInformation.state}
-                  onChange={handleSelectChange}
+                  onChange={handleChange}
                   error={!!error.state}
                 >
                   {StateOptions.map((option) => (

@@ -74,7 +74,7 @@ export default function BillingForm({
     zipCode: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setBillInformation(name as keyof ShipInDetails["BillInformation"], value);
   };
@@ -200,7 +200,7 @@ export default function BillingForm({
               }}
               name="state"
               value={billInformation.BillInformation.state}
-              onChange={handleSelectChange}
+              onChange={handleChange}
             >
               {StateOptions.map((option: any) => (
                 <MenuItem key={option} value={option}>
