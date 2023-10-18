@@ -112,7 +112,7 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
       caches.keys().then(function (cacheNames) {
         cacheNames.forEach(function (cacheName) {
           caches.delete(cacheName);
-          console.log(cacheName, "cacheName");
+          console.log(`${cacheName} cache cleared`);
         });
       });
     }
@@ -121,9 +121,9 @@ export default function AlterknitHeader({ setActiveTab }: headerProps) {
   const handleLogout = async () => {
     try {
       clearCaches();
+      localStorage.removeItem("userToken");
       await auth.signOut();
       navigate(routes.ROOT);
-      clearCaches();
     } catch (error) {
       console.error("Logout error:", error);
     }
