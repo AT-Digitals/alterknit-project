@@ -14,6 +14,7 @@ import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { UseunSavedChangesListener } from "./useUnsavesListener";
 import emailjs from "emailjs-com";
+import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
 
 export default function ShipInDetailsPage() {
@@ -173,7 +174,6 @@ export default function ShipInDetailsPage() {
   };
   console.log("clickd44", step);
 
-
   const prevStep = () => {
     if (step === 4 && selectedOption === "door-to-door") {
       setStep(2);
@@ -249,6 +249,19 @@ export default function ShipInDetailsPage() {
           }
         } else {
           navigate(e);
+        }
+      } else if (e === "/schedule-repair") {
+        if (ask === true) {
+          const userConfirmed = window.confirm(
+            "Are you sure you want to leave this page? "
+          );
+
+          console.log("navigation url:", ask, e);
+          if (userConfirmed) {
+            setStep(1);
+          }
+        } else {
+          setStep(1);
         }
       }
       console.log(e);
