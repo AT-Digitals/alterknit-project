@@ -5,14 +5,6 @@ export function UseunSavedChangesListener(
   showCancelPopup: (e?: any) => void
 ) {
   useEffect(() => {
-    // const beforeUnloadListener = (e: BeforeUnloadEvent) => {
-    //   if (ask) {
-    //     e.preventDefault();
-
-    //     e.returnValue = 'hgvghc';
-    //   }
-    // };
-
     const handleClick = (event: MouseEvent) => {
       if (ask) {
         event.preventDefault();
@@ -37,11 +29,8 @@ export function UseunSavedChangesListener(
 
     updateNavigation(true);
 
-    // window.addEventListener("beforeunload", beforeUnloadListener);
-
     return () => {
       updateNavigation(false);
-      //   window.removeEventListener("beforeunload", beforeUnloadListener);
     };
   }, [ask, showCancelPopup]);
 }
