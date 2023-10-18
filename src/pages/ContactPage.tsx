@@ -70,18 +70,15 @@ export default function FormFile() {
 
   const PhoneValidation = (name: string) => {
     const cleanedPhoneNumber = name.replace(/\D/g, "");
-    if (/^1\d{10}$/.test(cleanedPhoneNumber)) {
+    if (
+      /^\d{10}$|^\d{3}[-.]?\d{3}[-.]?\d{4}$|^\(\d{3}\)\s?\d{3}[-.]?\d{4}$/.test(
+        cleanedPhoneNumber
+      )
+    ) {
       setPhoneError("");
       return true;
     }
 
-    // Check for Indian phone numbers (country code +91)
-    if (/^91\d{10}$/.test(cleanedPhoneNumber)) {
-      setPhoneError("");
-      return true;
-    }
-
-    // For any other input, show an error
     setPhoneError("Invalid phone number");
     return false;
   };
@@ -460,7 +457,6 @@ export default function FormFile() {
                   },
                 }}
                 id="outlined-basic"
-                type="number"
                 error={personalDetails.phone ? !!phoneError : false}
                 helperText={phoneError}
                 name="phone"
