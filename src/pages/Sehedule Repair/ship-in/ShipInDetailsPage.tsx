@@ -172,7 +172,7 @@ export default function ShipInDetailsPage() {
     }
   };
   console.log("clickd44", step);
-  console.log("before", serviceData);
+
 
   const prevStep = () => {
     if (step === 4 && selectedOption === "door-to-door") {
@@ -294,8 +294,6 @@ export default function ShipInDetailsPage() {
             }
           );
       });
-
-      console.log("result", result);
       setAsk(false);
     }
   };

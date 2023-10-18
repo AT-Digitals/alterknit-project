@@ -58,14 +58,6 @@ export default function RepairPage({
 }: repairprops) {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
-
-
-  // useEffect(() => {
-  //   console.log("serviceDetails", serviceDetails);
-
-  // }, [serviceDetails, setServiceDetails])
-
-
   const handleDeleteClick = (value: ServiceDetailsState) => {
     setShowDeleteConfirmation(true);
 
@@ -325,7 +317,7 @@ export default function RepairPage({
               <DeletePopup
                 showDeleteConfirmation={showDeleteConfirmation}
                 handleDeleteCancelled={handleDeleteCancelled}
-                handleDeleteConfirmed={() => { console.log("item", serviceData); handleDeleteConfirmed(newData) }}
+                handleDeleteConfirmed={() => handleDeleteConfirmed(newData)}
               />}
           </Typography>
         ))}

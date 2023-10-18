@@ -48,7 +48,6 @@ export default function MoreDetailsPage({
       previous: moreDetails.previous_service,
       recent: moreDetails.latest_service,
     };
-    console.log("data", values);
 
     if (!moreDetails.previous_service) {
       alert(
