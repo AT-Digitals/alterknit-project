@@ -39,7 +39,7 @@ export default function AppFooter({ activeTab }: footerProps) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
-    { name: "Home", url: routes.ROOT },
+    { name: "Home", url: routes.HOME },
     { name: "Services", url: routes.SERVICES },
     { name: "Our Story", url: routes.OUR_STORY },
     { name: "Portfolio", url: routes.PORTFOLIO },
