@@ -8,6 +8,7 @@ import ShipInDetails from "../ShipInDetails";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
+import SubmitPopup from "../../../../Popup/SubmitPopup";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -54,6 +55,20 @@ export default function LastStep({
   onSubmit,
 }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
+  const [showSubmit, setShowSubmit] = useState(false);
+
+  const handleSubmitClick = () => {
+    setShowSubmit(true);
+  };
+
+  const handleSubmitConfirmed = (e: { preventDefault: () => void; }) => {
+    onSubmit(e);
+    setShowSubmit(false);
+  };
+
+  const handleSubmitCancelled = () => {
+    setShowSubmit(false);
+  };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -454,11 +469,15 @@ export default function LastStep({
             padding: "30px 40px ",
           }}
           type="submit"
-          onClick={onSubmit}
+          onClick={handleSubmitClick}
         >
           Submit
         </StyledButton>{" "}
       </Box>
+      <SubmitPopup
+        showSubmitConfirmation={showSubmit}
+        handleSubmitCancelled={handleSubmitCancelled}
+        handleSubmitConfirmed={handleSubmitConfirmed} />
     </>
   );
 }
