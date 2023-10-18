@@ -1,4 +1,5 @@
 import {
+  Button,
   CircularProgress,
   Divider,
   IconButton,
@@ -110,22 +111,22 @@ export default function SignInForm() {
     }
   };
 
-  const handleFacebookLogin = async () => {
-    try {
-      await auth.signInWithPopup(facebookProvider);
-      navigate(routes.HOME);
-    } catch (error) {
-      console.error("Facebook login error:", error);
-    }
-  };
-  const handleTwitterLogin = async () => {
-    try {
-      await auth.signInWithPopup(twitterProvider);
-      navigate(routes.HOME);
-    } catch (error) {
-      console.error("twitter login error:", error);
-    }
-  };
+  // const handleFacebookLogin = async () => {
+  //   try {
+  //     await auth.signInWithPopup(facebookProvider);
+  //     navigate(routes.HOME);
+  //   } catch (error) {
+  //     console.error("Facebook login error:", error);
+  //   }
+  // };
+  // const handleTwitterLogin = async () => {
+  //   try {
+  //     await auth.signInWithPopup(twitterProvider);
+  //     navigate(routes.HOME);
+  //   } catch (error) {
+  //     console.error("twitter login error:", error);
+  //   }
+  // };
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -219,7 +220,7 @@ export default function SignInForm() {
       </Stack>
 
       <Divider>or</Divider>
-      <Stack
+      {/* <Stack
         direction="row"
         alignItems="center"
         justifyContent="center"
@@ -234,7 +235,29 @@ export default function SignInForm() {
         <IconButton onClick={handleTwitterLogin}>
           <TwitterIcon style={{ color: "black" }} />
         </IconButton>
-      </Stack>
+      </Stack> */}
+      {/* <Box display={"flex"} rowGap={4} flex={4}>
+        <GoogleIcon style={{ color: "black" }} />
+        <Typography> Continue with Google</Typography>
+      </Box> */}
+      <Button
+        onClick={handleGoogleLogin}
+        style={{
+          border: "1px solid black",
+        }}
+      >
+        <GoogleIcon style={{ color: "black" }} />
+        <span
+          style={{
+            marginLeft: "1rem",
+            textTransform: "capitalize",
+            color: "black",
+          }}
+        >
+          Continue with Google
+        </span>
+      </Button>
+
       {isDrawerOpen && (
         <CustomDialog
           isOpen={isDrawerOpen}
