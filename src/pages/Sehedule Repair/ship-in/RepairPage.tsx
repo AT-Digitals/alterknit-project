@@ -15,7 +15,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
 import sweater from "../../../assets/sweater_guy.png";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 
 const StyledButtom = styled(CustomButton)({
   fontSize: "22px",
@@ -29,14 +29,6 @@ const StyledButtom = styled(CustomButton)({
     color: Colors.WHITE,
   },
 });
-
-// interface Data {
-//   color: string;
-//   visibleHoles: string;
-//   brand: string;
-//   howLong: string;
-//   brief: string;
-// }
 
 interface repairprops {
   nextStep: (value: any) => void;

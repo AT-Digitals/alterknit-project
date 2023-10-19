@@ -245,10 +245,12 @@ export default function ShipInDetailsPage() {
 
           console.log("navigation url:", ask, e);
           if (userConfirmed) {
-            navigate(e);
+            // navigate(e);
+            window.location.href = e;
           }
         } else {
-          navigate(e);
+          // navigate(e);
+          window.location.href = e;
         }
       } else if (e === "/schedule-repair") {
         if (ask === true) {
@@ -259,6 +261,39 @@ export default function ShipInDetailsPage() {
           console.log("navigation url:", ask, e);
           if (userConfirmed) {
             setStep(1);
+            setSelectedButtons([]);
+            setServiceFormData({
+              color: "",
+              howMany: "",
+              visible_holes: "",
+              brief: "",
+              brand: "",
+            });
+            setMoreDetails({ previous_service: "", latest_service: "" });
+            setServiceData([]);
+            setShipDetails({
+              ShipInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+                phone_number: "",
+                email: "",
+                sameAddress: "",
+                apartment: "",
+              },
+              BillInformation: {
+                firstName: "",
+                lastName: "",
+                streetAddress: "",
+                city: "",
+                state: "",
+                zipcode: "",
+                apartment: "",
+              },
+            })
           }
         } else {
           setStep(1);

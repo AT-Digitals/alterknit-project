@@ -11,7 +11,7 @@ const BLOG_PAGE_CONTENT =
   "/threads-of-change-how-clothes-mending-impacts-sustainability/";
 const SCHEDULE_REPAIR = "/schedule-repair";
 const PRIVACY = "/privacy-policy";
-const PARTNER = "/partner-page";
+const PARTNER = "/become-a-partner";
 const FIXME = "/fixme";
 const OUR_STORY = "/our-story";
 const SERVICES = "/services";

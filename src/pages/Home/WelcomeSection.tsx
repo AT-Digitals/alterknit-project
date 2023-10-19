@@ -55,18 +55,19 @@ export default function WelcomeSection() {
                 </Typography>
             </Stack>
             <Box>
-                <Link to={routes.SCHEDULE_REPAIR}>
-                    <StyledButton
-                        sx={{
-                            fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
-                            fontWeight: 500,
-                            fontSize: "32px",
-                            textTransform: "lowercase",
-                        }}
-                    >
-                        Schedule a repair
-                    </StyledButton>
-                </Link>
+                {/* <Link to={routes.SCHEDULE_REPAIR}> */}
+                <StyledButton
+                    sx={{
+                        fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
+                        fontWeight: 500,
+                        fontSize: "32px",
+                        textTransform: "lowercase",
+                    }}
+                    onClick={() => { window.location.href = '/schedule-repair'; }}
+                >
+                    Schedule a repair
+                </StyledButton>
+                {/* </Link> */}
                 <img src={bug} alt="bug-01" width="100%" height="100%" />
             </Box>
         </Stack>

@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import SubmitPopup from "../../../../Popup/SubmitPopup";
 import alterknitImage from '../../../../assets/alterknit.png';
+import { useNavigate } from "react-router-dom";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -72,10 +73,14 @@ export default function LastStep({
   const [isChecked, setIsChecked] = useState(false);
   const [showSubmit, setShowSubmit] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const closeModal = () => {
     setIsModalOpen(false);
-    window.location.href = '/home';
+    // window.location.href = '/home';
+    navigate('/home');
   };
 
 
@@ -86,7 +91,10 @@ export default function LastStep({
   const handleSubmitConfirmed = (e: { preventDefault: () => void; }) => {
     onSubmit(e);
     setShowSubmit(false);
-    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 3000);
+
   };
 
   const handleSubmitCancelled = () => {
