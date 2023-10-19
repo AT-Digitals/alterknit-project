@@ -5,7 +5,7 @@ import routes from "../../routes/routes";
 
 export default function BlogPageReadingContent() {
   return (
-    <section style={{ padding: "5rem 0" }}>
+    <section style={{ padding: "0 2rem 0 0" }}>
       <AppContainer>
         <Stack maxWidth={1260}>
           <Typography
@@ -14,6 +14,8 @@ export default function BlogPageReadingContent() {
             textTransform={"capitalize"}
             fontWeight={500}
             color={"#0f0d0d"}
+            padding={"2rem 90px 0 0"}
+            lineHeight={1.1}
           >
             Threads Of Change: How Clothes Mending Impacts Sustainability
           </Typography>
@@ -41,6 +43,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             The Fast Fashion Conundrum
           </Typography>
@@ -78,6 +81,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Mending: A Sustainable Solution{" "}
           </Typography>
@@ -103,6 +107,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Reduced Resource Consumption{" "}
           </Typography>
@@ -127,6 +132,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Extended Garment Lifespan
           </Typography>
@@ -151,6 +157,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Waste Reduction
           </Typography>
@@ -175,6 +182,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Mitigation Of Textile Waste
           </Typography>
@@ -198,6 +206,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Promotion Of Mindful Consumption
           </Typography>
@@ -221,6 +230,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Local Economy Support
           </Typography>
@@ -244,6 +254,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Resistance To Throwaway Culture
           </Typography>
@@ -267,6 +278,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Awareness And Advocacy
           </Typography>
@@ -290,6 +302,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             The Mending Movement
           </Typography>
@@ -312,6 +325,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Social Media Platforms
           </Typography>
@@ -335,6 +349,7 @@ export default function BlogPageReadingContent() {
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             textTransform={"capitalize"}
             color={"#0f0d0d"}
+            lineHeight={1.1}
           >
             Collaborations With Fashion Brands
           </Typography>
