@@ -328,11 +328,9 @@ export default function RepairPage({
         alignItems="center"
         justifyContent="center"
       >
-        <Link onClick={prevStep}>
-          <StyledButtom bgColor={"#f8f1eb"} color={Colors.LINK}>
-            Back
-          </StyledButtom>
-        </Link>
+        <StyledButtom onClick={prevStep} bgColor={"#f8f1eb"} color={Colors.LINK} disabled={serviceDetails.length === 0 ? true : false}>
+          Back
+        </StyledButtom>
         <Link onClick={addItem}>
           <StyledButtom
             bgColor={"#f8f1eb"}

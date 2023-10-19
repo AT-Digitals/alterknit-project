@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Modal, Typography } from "@mui/material";
 
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
@@ -9,6 +9,7 @@ import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
 import SubmitPopup from "../../../../Popup/SubmitPopup";
+import alterknitImage from '../../../../assets/alterknit.png';
 
 const StyledTableCell = styled.td`
   color: black;
@@ -39,6 +40,20 @@ const StyledButton = styled(CustomButton)({
     backgroundColor: "#f58977",
   },
 });
+
+
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 250,
+  bgcolor: "background.paper",
+  border: "1px solid #fff",
+  boxShadow: 24,
+  p: 4,
+};
 interface LaststepProps {
   serviceDetails: ServiceDetailsState[];
   shipInDetails: ShipInDetails;
@@ -56,6 +71,13 @@ export default function LastStep({
 }: LaststepProps) {
   const [isChecked, setIsChecked] = useState(false);
   const [showSubmit, setShowSubmit] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    window.location.href = '/home';
+  };
+
 
   const handleSubmitClick = () => {
     setShowSubmit(true);
@@ -64,6 +86,7 @@ export default function LastStep({
   const handleSubmitConfirmed = (e: { preventDefault: () => void; }) => {
     onSubmit(e);
     setShowSubmit(false);
+    setIsModalOpen(true);
   };
 
   const handleSubmitCancelled = () => {
@@ -474,10 +497,48 @@ export default function LastStep({
           Submit
         </StyledButton>{" "}
       </Box>
-      <SubmitPopup
-        showSubmitConfirmation={showSubmit}
-        handleSubmitCancelled={handleSubmitCancelled}
-        handleSubmitConfirmed={handleSubmitConfirmed} />
+      {showSubmit &&
+        <SubmitPopup
+          showSubmitConfirmation={showSubmit}
+          handleSubmitCancelled={handleSubmitCancelled}
+          handleSubmitConfirmed={handleSubmitConfirmed} />}
+      {isModalOpen &&
+        <Modal
+          open={isModalOpen}
+          onClose={closeModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Box display={"flex"} justifyContent={"center"}>
+              <img
+                src={alterknitImage}
+                alt="logo"
+                width="40%"
+                height="15%"
+              />
+            </Box>
+            <Box display={"flex"} justifyContent={"center"}>
+
+              <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+                Your Order Details Successfully Sent your Email!
+              </Typography>
+            </Box>
+            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+              <Button sx={{
+                height: "30px",
+                backgroundColor: "black",
+                color: "white",
+                marginTop: "10px",
+                ":hover": {
+                  backgroundColor: "rgb(223, 124, 109)",
+                },
+              }} onClick={closeModal}>OK</Button>
+            </Box>
+          </Box>
+        </Modal>
+      }
     </>
+
   );
 }
