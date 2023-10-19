@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography, styled, useMediaQuery } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 import HoverCard from "./CardContent";
@@ -63,6 +63,7 @@ export default function CarePage() {
       setOpenNote1Index(index);
     }
   };
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <Box>
@@ -222,8 +223,9 @@ export default function CarePage() {
           <Box margin={"0 auto"} width={"100%"} maxWidth={1300}>
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "45px" : "80px"}
               fontWeight={500}
+              padding={"1rem"}
             >
               dear alterknit... (just asking)
             </Typography>
@@ -235,7 +237,7 @@ export default function CarePage() {
               gap={"3rem"}
               sx={{
                 "@media (max-width: 768px)": {
-                  flexDirection: "column-reverse",
+                  flexDirection: "column",
                   alignItems: "center",
                   gap: "2rem",
                   padding: "1rem",
@@ -259,7 +261,7 @@ export default function CarePage() {
                   >
                     <Typography
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                      fontSize={"48px"}
+                      fontSize={isXsScreen ? "30px" : "48px"}
                       fontWeight={500}
                       textTransform={"lowercase"}
                       color={"black"}
@@ -295,7 +297,7 @@ export default function CarePage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"48px"}
+                  fontSize={isXsScreen ? "30px" : "48px"}
                   color={"#df7c6d"}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -304,7 +306,7 @@ export default function CarePage() {
                 </Typography>
                 <Typography
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                  fontSize={isXsScreen ? "17px" : "22px"}
                   color={"#575656"}
                   p={"1rem 0 1rem 0"}
                   mt={"-1rem"}
@@ -336,7 +338,7 @@ export default function CarePage() {
                   >
                     <Typography
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                      fontSize={"48px"}
+                      fontSize={isXsScreen ? "30px" : "48px"}
                       color={"black"}
                       fontWeight={500}
                       textTransform={"lowercase"}
@@ -370,7 +372,7 @@ export default function CarePage() {
           alt="thems1"
         />
       </section>
-      <section style={{ padding: "3rem 0 0 0" }}>
+      <section style={{ padding: isXsScreen ? "3rem " : "" }}>
         <Box
           margin={"auto 0"}
           padding={"0 10rem"}
@@ -380,7 +382,7 @@ export default function CarePage() {
         >
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontSize={"80px"}
+            fontSize={isXsScreen ? "40px" : "80px"}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
             textTransform={"lowercase"}
@@ -399,7 +401,7 @@ export default function CarePage() {
         </Box>
       </section>
 
-      <section style={{ padding: "8rem 0 1rem 0" }}>
+      <section style={{ padding: isXsScreen ? "2rem" : "8rem 0 1rem 0" }}>
         <Box display={"flex"} justifyContent={"center"}>
           <Box
             maxWidth={"900px"}
