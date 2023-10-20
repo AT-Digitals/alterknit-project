@@ -1,25 +1,16 @@
-import { Box, Button, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  Typography,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
 import moreDetails from "./moreDetails";
-
-const StyleButtonNew = styled(Button)({
-  color: Colors.BLACK,
-  backgroundColor: Colors.HOME_BACKGROUND,
-  fontWeight: 500,
-  fontSize: "2.5rem",
-  fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
-  padding: "30px",
-  width: "270px",
-  height: "200px",
-  borderRadius: "30px",
-  textTransform: "lowercase",
-  ":hover": {
-    backgroundColor: Colors.LINK,
-  },
-});
 
 interface moreprops {
   nextStep: (value: any) => void;
@@ -40,6 +31,7 @@ export default function MoreDetailsPage({
   ) => {
     setMoreDetails({ ...moreDetails, [optionType]: option });
   };
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -60,6 +52,21 @@ export default function MoreDetailsPage({
     }
   };
 
+  const StyleButtonNew = styled(Button)({
+    color: Colors.BLACK,
+    backgroundColor: Colors.HOME_BACKGROUND,
+    fontWeight: 500,
+    fontSize: "2.5rem",
+    fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
+    padding: isXsScreen ? "15px" : "30px",
+    width: isXsScreen ? "90%" : "270px",
+    height: isXsScreen ? "90px" : "200px",
+    borderRadius: "30px",
+    textTransform: "lowercase",
+    ":hover": {
+      backgroundColor: Colors.LINK,
+    },
+  });
   return (
     <>
       <Stack
@@ -102,7 +109,8 @@ export default function MoreDetailsPage({
             another individual?
           </Typography>
           <Stack
-            direction="row"
+            width={isXsScreen ? "90%" : undefined}
+            direction={isXsScreen ? "column" : "row"}
             spacing={6}
             alignItems="center"
             justifyContent="center"
@@ -171,7 +179,8 @@ export default function MoreDetailsPage({
             </Typography>
           </Box>
           <Stack
-            direction="row"
+            width={isXsScreen ? "90%" : undefined}
+            direction={isXsScreen ? "column" : "row"}
             spacing={6}
             alignItems="center"
             justifyContent="center"

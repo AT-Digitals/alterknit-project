@@ -8,7 +8,7 @@ const CardContainer = styled.div`
   width: 100%;
   height: 450px;
   position: relative;
-  max-width: 340px;
+  max-width: 380px;
 `;
 
 const InnerCard = styled.div`
@@ -102,7 +102,7 @@ function HoverCard() {
   return (
     <Grid container spacing={8}>
       {TotalCards.map((cards, index) => (
-        <Grid item xs={12} md={4} key={index}>
+        <Grid item xs={12} md={6} sm={6} lg={4} key={index}>
           <CardContainer
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={handleCardLeave}
