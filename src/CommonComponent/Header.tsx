@@ -1,4 +1,4 @@
-import { Divider, Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import alterknitImage from "../assets/alterknit.png";
 
 export default function Header() {

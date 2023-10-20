@@ -6,6 +6,7 @@ import Layout from "../CommonComponent/Layout";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import routes from "../routes/routes";
+import AppHeader from "../AppHeader/AppHeader";
 
 export default function AppLayout({ children, ...props }: BoxProps) {
   const [activeTab, setActiveTab] = useState(localStorage.getItem('activeTab') || routes.HOME);
@@ -18,7 +19,7 @@ export default function AppLayout({ children, ...props }: BoxProps) {
   console.log("activeTab", activeTab);
   return (
     <Layout {...props}>
-      <AlterknitHeader setActiveTab={handleSelectMenu} activeTab={activeTab} />
+      <AppHeader setActiveTab={handleSelectMenu} activeTab={activeTab} />
       <Box display="flex" flexDirection="column" width="100%" flexGrow={1}>
         <Box display="flex" flexDirection="column" flexGrow={1}>
           <Box display="flex" flexDirection="column" flexGrow={1}>
