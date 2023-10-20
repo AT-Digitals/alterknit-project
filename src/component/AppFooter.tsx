@@ -7,9 +7,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
 import styled from "@emotion/styled";
+import { useLocation } from 'react-router-dom';
 
 interface footerProps {
   activeTab: string;
+  setActiveTab: (event: any) => void;
 }
 
 const StyleLink = styled(Link)({
@@ -35,7 +37,7 @@ const StyleLink1 = styled(Link)({
   },
 });
 
-export default function AppFooter({ activeTab }: footerProps) {
+export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
   const theme = useTheme();
   const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
@@ -49,6 +51,13 @@ export default function AppFooter({ activeTab }: footerProps) {
     { name: "Partners", url: routes.PARTNER },
     { name: "Contact us", url: routes.CONTACT_US },
   ];
+  const handleMenuClick = (menu: string) => {
+    localStorage.setItem(activeTab, menu);
+    setActiveTab(menu);
+  };
+  const defaultLink = routes.HOME;
+
+  const location = useLocation();
 
   return (
     <Box bgcolor={Colors.BLACK}>
@@ -93,7 +102,7 @@ export default function AppFooter({ activeTab }: footerProps) {
                       listStyleType: "none",
                     }}
                   >
-                    <StyleLink to={service.url}>{service.name}</StyleLink>
+                    <StyleLink to={service.url} onClick={() => handleMenuClick(service.url)} style={{ color: location.pathname === service.url ? Colors.WHITE : "" }}>{service.name}</StyleLink>
                   </li>
                 ))}
               </ul>
@@ -123,7 +132,7 @@ export default function AppFooter({ activeTab }: footerProps) {
                       listStyleType: "none",
                     }}
                   >
-                    <StyleLink to="tel:+12124736363"> 212 473 6363</StyleLink>
+                    <StyleLink to="tel:+12124736363" > 212 473 6363</StyleLink>
                   </li>
                 </ul>
               </Stack>
@@ -167,10 +176,24 @@ export default function AppFooter({ activeTab }: footerProps) {
             >
               AlterKnit New York 2023
             </Typography>
-          </Box>
-          <Box display={"flex"} gap={"1rem"}>
-            <StyleLink1 to={routes.PRIVACY}>Privacy Policy</StyleLink1>
-            <StyleLink1 to={routes.TERM}>Terms and Conditions</StyleLink1>
+
+            (<StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>)
+            (<StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>)
+          </Stack>
+          <Box display={"flex"} gap={"2rem"}>
+            <StyleLink1
+              to="https://www.facebook.com/AlterKnitNY/"
+              target="_blank"
+            >
+              {" "}
+              <FacebookIcon />
+            </StyleLink1>
+            <StyleLink1
+              to="https://www.instagram.com/alterknitnewyork/"
+              target="_blank"
+            >
+              <InstagramIcon />
+            </StyleLink1>
           </Box>
         </Stack>
         <Box display={"flex"} gap={"2rem"}>

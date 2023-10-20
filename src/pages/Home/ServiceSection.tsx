@@ -59,6 +59,7 @@ export default function ServiceSection() {
             justifyItems={"flex-start"}
             pt={2}
             maxWidth={350}
+            zIndex={1}
           >
             <Typography
               fontSize="80px"
@@ -150,7 +151,6 @@ export default function ServiceSection() {
           </Box>
         </Stack>
       </Box>
-
       <img src={bottomImage} alt="bottom" />
       <img
         style={{
