@@ -6,7 +6,6 @@ import BlogPageReadingContent from "../pages/Blog/BlogPageReading";
 import CarePage from "../pages/Care/CarePage";
 import ContactPage from "../pages/ContactPage";
 import HomePage from "../pages/Home/HomePage";
-import LastStep from "../pages/Sehedule Repair/ship-in/Last step/LastStep";
 import OurStoryPage from "../pages/our-tory/OurStoryPage";
 import PartnerPage from "../pages/PartnerPage";
 import PortfolioPage from "../pages/Portfolio/PortfolioPage";

@@ -55,14 +55,14 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
     localStorage.setItem(activeTab, menu);
     setActiveTab(menu);
   };
-  const defaultLink = routes.HOME;
+
 
   const location = useLocation();
 
   return (
     <Box bgcolor={Colors.BLACK}>
       <Box borderBottom="1px solid #272727">
-        <AppContainer paddingLeft={0}>
+        <AppContainer paddingLeft={0} paddingRight={0}>
           <Stack
             px={3}
             py={3}
@@ -185,6 +185,8 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               AlterKnit New York 2023
             </Typography>
+            <StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>
+            <StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>
           </Box>
 
           <Box display={"flex"} gap={"1rem"}>
@@ -206,7 +208,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             </StyleLink1>
           </Box>
         </Stack>
-        <Box display={"flex"} gap={"2rem"}>
+        {/* <Box display={"flex"} gap={"2rem"}>
           <StyleLink1
             to="https://www.facebook.com/AlterKnitNY/"
             target="_blank"
@@ -220,7 +222,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
           >
             <InstagramIcon />
           </StyleLink1>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );

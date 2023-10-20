@@ -14,7 +14,6 @@ import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { UseunSavedChangesListener } from "./useUnsavesListener";
 import emailjs from "emailjs-com";
-import routes from "../../../routes/routes";
 import { useNavigate } from "react-router-dom";
 
 export default function ShipInDetailsPage() {
@@ -305,10 +304,6 @@ export default function ShipInDetailsPage() {
     [ask]
   );
 
-  var templateParams = {
-    name: "James",
-    notes: "Check this out!",
-  };
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
