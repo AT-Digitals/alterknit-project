@@ -189,7 +189,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             <StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>
           </Box>
 
-          <Box display={"flex"} gap={"1rem"}>
+          {/* <Box display={"flex"} gap={"1rem"}>
             <StyleLink1
               to={routes.PRIVACY}
               style={{
@@ -206,9 +206,9 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               Terms and Conditions
             </StyleLink1>
-          </Box>
+          </Box> */}
         </Stack>
-        {/* <Box display={"flex"} gap={"2rem"}>
+        <Box display={"flex"} gap={"2rem"}>
           <StyleLink1
             to="https://www.facebook.com/AlterKnitNY/"
             target="_blank"
@@ -222,7 +222,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
           >
             <InstagramIcon />
           </StyleLink1>
-        </Box> */}
+        </Box>
       </Box>
     </Box>
   );
