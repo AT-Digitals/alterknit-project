@@ -34,9 +34,10 @@ export default function BlogPage() {
   return (
     <AppContainer>
       <Stack justifyContent={"flex-start"} paddingY={6}>
-        <Box p={2} mb={3}>
+        <Box paddingRight={"78px"} mb={3}>
           <Typography
             fontSize={"40px"}
+            lineHeight={1.1}
             fontFamily={`"ProximaNovaRegular", sans-serif`}
             color={"#0f0d0d"}
           >

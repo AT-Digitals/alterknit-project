@@ -62,7 +62,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
   return (
     <Box bgcolor={Colors.BLACK}>
       <Box borderBottom="1px solid #272727">
-        <AppContainer>
+        <AppContainer paddingLeft={0}>
           <Stack
             px={3}
             py={3}
@@ -141,21 +141,23 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
         </AppContainer>
       </Box>
 
-      <Box p={isSmScreen ? "2rem" : "4rem"} maxWidth={1340} margin="0 auto">
+      <Box
+        display={"flex"}
+        justifyContent={isSmScreen ? "center" : "flex-end"}
+        p={isSmScreen ? "2rem" : "4rem"}
+        maxWidth={1340}
+        gap={isSmScreen ? "2rem" : "18rem"}
+        margin="0 auto"
+        marginLeft={"-26px"}
+        flexWrap={"wrap"}
+      >
         <Stack
+          flexWrap={"wrap"}
+          gap={isSmScreen ? "1rem" : "3rem"}
+          justifyContent={"center"}
           direction="row"
-          spacing={35}
-          px={5}
-          alignItems="center"
-          justifyContent="flex-end"
         >
-          <Stack
-            spacing={3}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            direction="row"
-          >
+          <Box display={"flex"} gap={"1rem"}>
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
               fontFamily={`"ProximaNovaRegular", sans-serif`}
@@ -174,6 +176,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               AlterKnit New York 2023
             </Typography>
+
             (<StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>)
             (<StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>)
           </Stack>
@@ -193,6 +196,21 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             </StyleLink1>
           </Box>
         </Stack>
+        <Box display={"flex"} gap={"2rem"}>
+          <StyleLink1
+            to="https://www.facebook.com/AlterKnitNY/"
+            target="_blank"
+          >
+            {" "}
+            <FacebookIcon />
+          </StyleLink1>
+          <StyleLink1
+            to="https://www.instagram.com/alterknitnewyork/"
+            target="_blank"
+          >
+            <InstagramIcon />
+          </StyleLink1>
+        </Box>
       </Box>
     </Box>
   );

@@ -40,8 +40,9 @@ export default function OurStory() {
           justifyContent: "center",
           alignItems: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-          padding: "9.5rem 0",
+          backgroundSize: "cover",
+          padding: isXsScreen ? " 3.5rem 10px" : "9.5rem 0",
+          // padding: isXsScreen ? " 3.5rem 10px" : "9.5rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
@@ -57,11 +58,11 @@ export default function OurStory() {
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={"3rem 8rem"}
+            padding={isXsScreen ? "0" : "3rem 8rem"}
             textAlign="center"
           >
             <Typography
-              lineHeight={isLgScreen ? "1" : "2rem"}
+              lineHeight={isXsScreen ? "2.6rem" : "5rem"}
               fontSize={isLgScreen ? "78px" : "40px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
@@ -83,7 +84,8 @@ export default function OurStory() {
             textAlign={"center"}
           >
             <Typography
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "45px" : "80px"}
+              lineHeight={1.1}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               position={"relative"}
               zIndex={1}
@@ -95,9 +97,10 @@ export default function OurStory() {
             <Typography
               position={"relative"}
               zIndex={1}
-              fontSize={"22px"}
+              fontSize={isXsScreen ? "17px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               color={"#575656"}
+              margin={"0.5rem"}
             >
               We fix clothing that other companies turn away. And if we can't
               fix it to our standards, we tell you. Your happiness and
@@ -106,7 +109,7 @@ export default function OurStory() {
             </Typography>
             <img
               style={{
-                maxWidth: "550px",
+                maxWidth: isXsScreen ? "320px" : "550px",
                 marginTop: "-70px",
               }}
               src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bug_05.jpg"
@@ -133,7 +136,7 @@ export default function OurStory() {
             <Typography
               textAlign={"center"}
               mb={"3rem"}
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "41px" : "80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
@@ -145,8 +148,10 @@ export default function OurStory() {
               flexDirection={"column"}
               alignItems={"center"}
               gap={"5rem"}
+              padding={"1rem"}
             >
               <Box
+                textAlign={isXsScreen ? "center" : "start"}
                 maxWidth={980}
                 bgcolor={"white"}
                 p={"2rem"}
@@ -154,7 +159,7 @@ export default function OurStory() {
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
-                  fontSize={"48px"}
+                  fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -183,10 +188,11 @@ export default function OurStory() {
                 bgcolor={"white"}
                 p={"2rem"}
                 borderRadius={"20px"}
+                textAlign={isXsScreen ? "center" : "start"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
-                  fontSize={"48px"}
+                  fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -198,6 +204,7 @@ export default function OurStory() {
                   fontSize="16px"
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
                   lineHeight={1.2}
+                  padding={isXsScreen ? "12px" : "0px"}
                 >
                   We are also dedicated to doing our part to lessen the impact
                   of consumption on our planet's environment and resources. You
@@ -216,11 +223,12 @@ export default function OurStory() {
                 bgcolor={"white"}
                 p={"2rem"}
                 borderRadius={"20px"}
+                textAlign={isXsScreen ? "center" : "start"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
                   lineHeight={"1"}
-                  fontSize={"48px"}
+                  fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -233,6 +241,7 @@ export default function OurStory() {
                   fontSize={"16px"}
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
                   lineHeight={1.2}
+                  padding={isXsScreen ? "18px" : "0px"}
                 >
                   Your favorite clothes mean a lot to you and we know how much
                   you love them. We also know how upsetting it can be when you
@@ -255,19 +264,23 @@ export default function OurStory() {
         <Box width={"100%"} maxWidth={"1440px"} m={"0 auto"}>
           <Box maxWidth={1200} m={"0 auto"} textAlign={"center"}>
             <Typography
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "51px" : "80px"}
               fontFamily={`'IndustrialGothicBannerStd', sans-serif`}
               fontWeight={500}
+              lineHeight={1.1}
               textTransform={"lowercase"}
             >
               A MESSAGE FROM ALTERKNIT
             </Typography>
             <Typography
-              fontSize="22px"
+              fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
+              paddingLeft={isXsScreen ? "40px" : "0px"}
+              paddingRight={isXsScreen ? "40px" : "0px"}
               color={"#575656"}
               lineHeight={1.2}
+              mt={isXsScreen ? "2rem" : "0px"}
             >
               Alterknit launched officially in 2009 with a mini website
               advertising hand finishing and repairs on primarily hand knitted
@@ -278,9 +291,11 @@ export default function OurStory() {
               repairs being made on mass market knit and woven fabrics.
             </Typography>
             <Typography
-              fontSize="22px"
+              fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
+              paddingLeft={isXsScreen ? "33px" : "0px"}
+              paddingRight={isXsScreen ? "40px" : "0px"}
               color={"#575656"}
               lineHeight={1.2}
             >
@@ -295,7 +310,7 @@ export default function OurStory() {
             </Typography>
             <img
               style={{
-                maxWidth: "300px",
+                maxWidth: isXsScreen ? "200px" : "300px",
                 marginTop: "3rem",
               }}
               src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/signatures.png"
@@ -305,7 +320,7 @@ export default function OurStory() {
             <Typography>
               <em
                 style={{
-                  fontSize: "22px",
+                  fontSize: isXsScreen ? "17px" : "22px",
                   fontFamily: `"ProximaNovaMedium", sans-serif`,
                   color: "#575656",
                 }}
@@ -319,8 +334,9 @@ export default function OurStory() {
       <section>
         <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
           <Typography
-            fontSize={"80px"}
+            fontSize={isXsScreen ? "41px" : "80px"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+            lineHeight={1.1}
             textAlign={"center"}
             mb={"5rem"}
           >
