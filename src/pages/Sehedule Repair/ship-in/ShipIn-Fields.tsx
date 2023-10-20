@@ -1,4 +1,10 @@
-import { Box, TextField, Typography, styled } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Typography,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
 
 import AppContainer from "../../../component/AppContainer";
 import React from "react";
@@ -64,7 +70,6 @@ export default function ShipinFields({
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-
     let hasError = false;
     const newErrors = { ...initialErrors };
 
@@ -123,6 +128,7 @@ export default function ShipinFields({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <>
@@ -163,6 +169,7 @@ export default function ShipinFields({
                     display: "flex",
                     flexDirection: "column",
                     gap: "4rem",
+                    padding: isXsScreen ? "2rem" : undefined,
                   }}
                 >
                   {" "}

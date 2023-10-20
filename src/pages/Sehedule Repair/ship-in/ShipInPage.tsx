@@ -1,25 +1,16 @@
-import { Button, Grid, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
 import { useEffect } from "react";
-
-const StyleButtonNew = styled(Button)({
-  color: Colors.BLACK,
-  backgroundColor: Colors.HOME_BACKGROUND,
-  fontWeight: 500,
-  fontSize: "2.5rem",
-  fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
-  padding: "30px",
-  width: "270px",
-  height: "200px",
-  borderRadius: "30px",
-  lineHeight: 1,
-  textTransform: "lowercase",
-  ":hover": {
-    backgroundColor: Colors.LINK,
-  },
-});
 
 interface shipinprops {
   nextStep: () => void;
@@ -63,7 +54,24 @@ export default function ShipInPage({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const StyleButtonNew = styled(Button)({
+    color: Colors.BLACK,
+    backgroundColor: Colors.HOME_BACKGROUND,
+    fontWeight: 500,
+    fontSize: "2.5rem",
+    fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
+    padding: "30px",
+    width: isXsScreen ? "90%" : "270px",
+    height: isXsScreen ? "90px" : "200px",
+    borderRadius: isXsScreen ? "15px" : "30px",
+    lineHeight: 1,
+    textTransform: "lowercase",
+    ":hover": {
+      backgroundColor: Colors.LINK,
+    },
+    whiteSpace: isXsScreen ? "nowrap" : undefined,
+  });
   return (
     <Stack
       pt={7}
@@ -86,7 +94,7 @@ export default function ShipInPage({
       <Typography
         textAlign="center"
         maxWidth={670}
-        margin="0 auto"
+        margin={isXsScreen ? "1rem " : " 0 auto"}
         fontFamily={`"ProximaNovaMedium", sans-serif`}
         fontWeight={500}
         sx={{
@@ -108,8 +116,15 @@ export default function ShipInPage({
       >
         Please choose at least one service
       </Typography>
-      <Grid container rowGap={5} paddingX={3} pb={5} pt={2}>
-        <Grid item xs={3}>
+      <Grid
+        textAlign={"center"}
+        container
+        rowGap={5}
+        paddingX={3}
+        pb={5}
+        pt={2}
+      >
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for knits")}
             style={{
@@ -124,7 +139,7 @@ export default function ShipInPage({
             reknitting for knits
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for suits")}
             style={{
@@ -139,7 +154,7 @@ export default function ShipInPage({
             reweaving for suits
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("knit alteration")}
             style={{
@@ -154,7 +169,7 @@ export default function ShipInPage({
             knit alteration
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("other fabric repair")}
             style={{
@@ -169,7 +184,7 @@ export default function ShipInPage({
             other fabric repair
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("cleaning")}
             style={{
@@ -184,7 +199,7 @@ export default function ShipInPage({
             cleaning
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("restyling")}
             style={{
@@ -199,7 +214,7 @@ export default function ShipInPage({
             restyling
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("de-pilling")}
             style={{
@@ -214,7 +229,7 @@ export default function ShipInPage({
             de-pilling
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("custom knit work")}
             style={{
