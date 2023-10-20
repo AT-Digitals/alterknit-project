@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import ImageTop from "../../assets/services_services_bg_bottom.svg";
 import SpeakerImage from "../../assets/speaker.png";
 import StudioImage from "../../assets/studio.png";
@@ -16,24 +16,20 @@ export default function CardPage() {
             >
                 <Card
                     style={{
-                        width: 1140,
+                        width: "100%",
+                        maxWidth: "1140px",
                         marginBottom: "60px",
                         border: "1px solid white",
                         borderRadius: "20px",
+                        margin: "20px",
                     }}
                 >
                     <CardContent style={{
                         paddingTop: "25px",
                     }}>
-                        <Box
-                            margin={"5px 43px"}
-                            display={"flex"}
-                            alignItems={"center"}
-                            justifyContent={"space-between"}
-                        >
+                        <Stack direction={"row"} margin={"43px 43px"} spacing={19}>
                             <Typography
-                                marginTop={"45px"}
-                                lineHeight={"0.5"}
+                                lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"3rem"}
@@ -44,6 +40,7 @@ export default function CardPage() {
                                 <Typography
                                     color={"black"}
                                     fontWeight={"500"}
+                                    lineHeight={"0.9"}
                                     fontSize={"3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
@@ -56,6 +53,7 @@ export default function CardPage() {
                                     fontWeight={"500"}
                                     fontSize={"20px"}
                                     textTransform={"initial"}
+                                    paddingTop={"10px"}
                                 >
                                    It's just one hole!
                                 </Typography>
@@ -67,7 +65,7 @@ export default function CardPage() {
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={"22px"}
-                                marginRight={"37px"}
+                               
                             >
                                 We need to examine your entire item in our work studio because
                                 we have been doing this for a very long time and what might
@@ -75,8 +73,8 @@ export default function CardPage() {
                                 holes! So please let us do our job. Your garments' examination
                                 is complimentary.
                             </Typography>
-                        </Box>
-                        <Box display={"flex"} justifyContent={"right"}>
+                        </Stack>
+                        <Stack direction={"row"} justifyContent={"flex-end"}>
                             <Typography
                                 marginBottom={"36px"}
                                 marginRight={"48px"}
@@ -94,7 +92,7 @@ export default function CardPage() {
                                 look at your items. Once we check the entire garment we will
                                 call you with pricing for your approval.
                             </Typography>
-                        </Box>
+                        </Stack>
                     </CardContent>
                 </Card>
             </Box>
@@ -103,26 +101,23 @@ export default function CardPage() {
                 justifyContent={"center"}
                 sx={{
                     backgroundColor: "#df7c6d",
+                    paddingTop: "20px",
                 }}
             >
                 <Card
                     style={{
-                        width: 1140,
+                        width: "100%",
+                        maxWidth: "1140px",
                         border: "1px solid white",
                         borderRadius: "20px",
                         marginBottom: "60px",
+                        margin: "20px",
                     }}
                 >
                     <CardContent>
-                        <Box
-                            margin={"47px 43px"}
-                            marginBottom={"20px"}
-                            display={"flex"}
-                            alignItems={"center"}
-                            justifyContent={"space-between"}
-                        >
+                        <Stack direction={"row"} margin={"43px 43px"} spacing={11}>
                             <Typography
-                                lineHeight={"0.5"}
+                                lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"3rem"}
@@ -134,6 +129,7 @@ export default function CardPage() {
                                     color={"black"}
                                     fontWeight={"500"}
                                     fontSize={"3rem"}
+                                    lineHeight={"0.9"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
                                 >
@@ -145,6 +141,8 @@ export default function CardPage() {
                                     fontWeight={"500"}
                                     fontSize={"20px"}
                                     textTransform={"capitalize"}
+                                    paddingTop={"10px"}
+                                    lineHeight={"1.2"}
                                 >
                                     Queens, New York
                                 </Typography>
@@ -166,7 +164,7 @@ export default function CardPage() {
                                 to ensure the safety of your items so you can feel confident
                                 that your order has been received.
                             </Typography>
-                        </Box>
+                        </Stack>
                     </CardContent>
                 </Card>
             </Box>
@@ -175,28 +173,26 @@ export default function CardPage() {
                 justifyContent={"center"}
                 sx={{
                     backgroundColor: "#df7c6d",
+                    paddingTop: "20px",
                 }}
             >
                 <Card
                     style={{
-                        width: 1140,
+                        width: "100%",
+                        maxWidth: "1140px",
                         border: "1px solid white",
                         borderRadius: "20px",
                         marginBottom: "20px",
+                        margin: "20px",
                     }}
                 >
                     <CardContent style={{
                         paddingTop: "32px",
                     }}>
-                        <Box
-                            margin={"30px 43px"}
-                            display={"flex"}
-                            alignItems={"center"}
-                            justifyContent={"space-between"}
-                        >
+                          <Stack direction={"row"} margin={"43px 43px"} spacing={11}>
                             <Typography
                                 marginTop={"20px"}
-                                lineHeight={"0.5"}
+                                lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"3rem"}
@@ -207,6 +203,7 @@ export default function CardPage() {
                                 <Typography
                                     color={"black"}
                                     fontWeight={"500"}
+                                    lineHeight={"0.9"}
                                     fontSize={"3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
@@ -238,7 +235,7 @@ export default function CardPage() {
                                 please let a team member know when they call you to go over your
                                 order. We offer a rush service for an additional fee.
                             </Typography>
-                        </Box>
+                        </Stack>
                     </CardContent>
                 </Card>
             </Box>
@@ -248,6 +245,8 @@ export default function CardPage() {
                     justifyContent={"center"}
                     sx={{
                         backgroundColor: "#df7c6d",
+                        paddingTop: "20px",
+                        paddingBottom: "60px",
                     }}
                 >
                     <Box>
@@ -257,17 +256,20 @@ export default function CardPage() {
                     style={{
                         maxWidth: "120px",
                        position: "absolute",
-                       marginLeft: "-26px",
+                       marginLeft: "4px",
+                       marginTop: "-21px",
                     }}
                 />
                 </Box>
                     <Card
                         style={{
-                            width: 1140,
+                            width: "100%",
+                            maxWidth: "1140px",
                             border: "1px solid white",
                             borderRadius: "20px",
                             marginBottom: "150px",
                             marginTop: "40px",
+                            margin: "20px",
                            
                         }}
                     >

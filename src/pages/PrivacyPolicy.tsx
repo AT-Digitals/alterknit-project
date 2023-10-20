@@ -8,19 +8,22 @@ export default function PrivacyPolicy() {
   }, []);
     return (
         <>
-            <Box width={"100%"}>
+            <Box width={"100%"} maxWidth={"1310px"} margin={"0 auto"} padding={"0 8rem"}>
+                <Box>
                 <Typography
-                    marginTop={"50px"}
+                    paddingTop={"50px"}
                     textAlign={"center"}
                     color={"black"}
                     fontWeight={500}
                     fontSize={"5rem"}
+                    lineHeight={"1"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"
                 >
                     ALTERKNIT NEW YORK PRIVACY POLICY
                 </Typography>
-                <Box margin={"15px 150px"} maxWidth={"1200px"}>
+                </Box>
+                <Box margin={"15px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
@@ -38,7 +41,7 @@ export default function PrivacyPolicy() {
                         mobile devices.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -72,7 +75,7 @@ export default function PrivacyPolicy() {
                         specific person.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -101,7 +104,7 @@ export default function PrivacyPolicy() {
                         will mean that you accept the updates.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"400"}
@@ -136,7 +139,7 @@ export default function PrivacyPolicy() {
                         device.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -162,7 +165,7 @@ export default function PrivacyPolicy() {
                         tools from users in this age group.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -194,7 +197,7 @@ export default function PrivacyPolicy() {
                         tools, and to help us personalize and improve your experience:
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -226,7 +229,7 @@ export default function PrivacyPolicy() {
                         beacons.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -273,7 +276,7 @@ export default function PrivacyPolicy() {
                         </Typography>
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -317,7 +320,7 @@ export default function PrivacyPolicy() {
                         information.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -345,7 +348,7 @@ export default function PrivacyPolicy() {
                         direct communication from us.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -412,7 +415,7 @@ export default function PrivacyPolicy() {
                         report suspected illegal activity.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -439,7 +442,7 @@ export default function PrivacyPolicy() {
                         better, faster, and safer experience.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -468,7 +471,7 @@ export default function PrivacyPolicy() {
                         content.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -499,7 +502,7 @@ export default function PrivacyPolicy() {
                         that personal information will remain secure.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -526,7 +529,7 @@ export default function PrivacyPolicy() {
                         Terms and Conditions and take other actions permitted by law.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -556,7 +559,7 @@ export default function PrivacyPolicy() {
                         you disclose your personal information to others.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
@@ -586,7 +589,7 @@ export default function PrivacyPolicy() {
                         communicate any confidential information through these means.
                     </Typography>
                 </Box>
-                <Box margin={"50px 150px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1200px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}

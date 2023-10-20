@@ -144,7 +144,7 @@ export default function SubscribePage() {
           </Link>
           <img src={Alterknitimage} width={"650"} alt="bug1" />
         </Box>
-        <Stack direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
+        <Stack   display={{ xs: "block", sm: "flex" }} direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
           <Link to={""}>
             <img src={Bug} alt="bug-left" width={"300px"} />
           </Link>
