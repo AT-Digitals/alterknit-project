@@ -1,4 +1,4 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled, useMediaQuery } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
 import CustomButton from "../../../CommonComponent/CustomButton";
@@ -19,17 +19,18 @@ const StyledButtom = styled(CustomButton)({
 
 interface linkprops {
   onClick?: (event: any) => void;
-  // link?: string;
   onChange?: () => void;
 }
 export default function ShipCard({ onClick, onChange }: linkprops) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+
   return (
     <Stack
       direction="row"
-      spacing={10}
+      spacing={isXsScreen ? 4 : 10}
       margin="0 auto"
       alignItems="center"
       justifyContent="center"

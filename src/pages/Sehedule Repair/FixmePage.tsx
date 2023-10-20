@@ -14,9 +14,9 @@ import {
 
 import AppContainer from "../../component/AppContainer";
 import Colors from "../../CommonComponent/Colors";
+import CustomButton from "../../CommonComponent/CustomButton";
 import routes from "../../routes/routes";
 import { useEffect } from "react";
-import CustomButton from "../../CommonComponent/CustomButton";
 
 const StyleCard = styled(Card)({
   maxWidth: "550px",
@@ -38,12 +38,20 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+
   return (
     <Box marginY={10}>
-      <Stack mb={5} spacing={5} alignItems={"center"}>
+      <Stack
+        padding={isXsScreen ? "2rem" : undefined}
+        mb={5}
+        spacing={5}
+        alignItems={"center"}
+      >
         <Typography
           fontWeight={500}
-          fontSize="80px"
+          fontSize={isXsScreen ? "60px" : "80px"}
+          textAlign={isXsScreen ? "center" : undefined}
           textTransform={"lowercase"}
           variant={isSmScreen ? "h4" : "h3"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -51,12 +59,6 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
           WHICH OPTION WORKS BEST FOR YOU?{" "}
         </Typography>
         <AppContainer>
-          {/* <Stack
-            display={"flex"}
-            justifyContent={"space-around"}
-            direction={"row"}
-            spacing={4}
-          > */}
           <Grid
             container
             spacing={3}
@@ -70,7 +72,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
               <Link onClick={nextStep} sx={{ textDecoration: "none" }}>
                 <StyleCard>
                   <Stack
-                    gap={2}
+                    gap={4}
                     style={{ background: "#f8f1eb" }}
                     p={3}
                     direction={"column"}
@@ -110,10 +112,10 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       lineHeight={1.2}
                       margin={"10px 79px"}
                     >
-                      Available from all 50 states. You will receive a
-                      pre-paid shipping label via email and an order summary
-                      to print out and include with your item(s). If you are
-                      international, please contact us.
+                      Available from all 50 states. You will receive a pre-paid
+                      shipping label via email and an order summary to print out
+                      and include with your item(s). If you are international,
+                      please contact us.
                     </Typography>
                   </CardContent>
                 </StyleCard>
@@ -163,10 +165,27 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       lineHeight={1.2}
                       margin={"20px 79px"}
                     >
-                      Same day pick up service is available in <span style={{ fontFamily: `"ProximaNovaMedium", sans-serif`, fontWeight: 500, fontSize: "16px" }}
-                      >SELECT</span>{" "}
+                      Same day pick up service is available in{" "}
+                      <span
+                        style={{
+                          fontFamily: `"ProximaNovaMedium", sans-serif`,
+                          fontWeight: 500,
+                          fontSize: "16px",
+                        }}
+                      >
+                        SELECT
+                      </span>{" "}
                       zip codes within the 5 boroughs of NYC from{" "}
-                      <span style={{ fontFamily: `"ProximaNovaMedium", sans-serif`, fontWeight: 600, fontSize: "16px" }}>24HR RESIDENTIAL</span> doorman buildings.
+                      <span
+                        style={{
+                          fontFamily: `"ProximaNovaMedium", sans-serif`,
+                          fontWeight: 600,
+                          fontSize: "16px",
+                        }}
+                      >
+                        24HR RESIDENTIAL
+                      </span>{" "}
+                      doorman buildings.
                     </Typography>
                   </CardContent>
                 </StyleCard>
