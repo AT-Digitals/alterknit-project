@@ -179,7 +179,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
 
             (<StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>)
             (<StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>)
-          </Stack>
+          </Box>
           <Box display={"flex"} gap={"2rem"}>
             <StyleLink1
               to="https://www.facebook.com/AlterKnitNY/"
