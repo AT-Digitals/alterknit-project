@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Grid,
   Stack,
@@ -83,7 +82,7 @@ export default function ShipInPage({
     >
       <Typography
         fontWeight={500}
-        fontSize="80px"
+        fontSize={isXsScreen ? "50px" : "80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         textAlign="center"
         textTransform={"lowercase"}

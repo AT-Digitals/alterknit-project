@@ -72,7 +72,7 @@ export default function MoreDetailsPage({
       <Stack
         gap={22}
         sx={{
-          backgroundImage: `url(${bgmore})`,
+          backgroundImage: isXsScreen ? undefined : `url(${bgmore})`,
           backgroundSize: "104%",
           backgroundPosition: "center",
         }}
@@ -88,17 +88,19 @@ export default function MoreDetailsPage({
         >
           <Typography
             fontWeight={500}
-            fontSize="5rem"
+            fontSize={isXsScreen ? "48px" : "5rem"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textTransform={"lowercase"}
             textAlign="center"
+            lineHeight={isXsScreen ? 1 : 1.5}
             pb={3}
           >
             just a few more details...
           </Typography>
           <Typography
             fontWeight={500}
-            fontSize="3rem"
+            fontSize={isXsScreen ? "36px" : "3rem"}
+            padding={isXsScreen ? "10px" : undefined}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textAlign="center"
             lineHeight={1}
@@ -158,10 +160,12 @@ export default function MoreDetailsPage({
           <Box>
             <Typography
               fontWeight={500}
-              fontSize="3rem"
+              fontSize={isXsScreen ? "44px" : "3rem"}
+              padding={isXsScreen ? "10px" : undefined}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               textAlign="center"
               textTransform={"lowercase"}
+              lineHeight={isXsScreen ? 1 : 1.5}
             >
               9. has this garment been recently cleaned?
             </Typography>
@@ -172,6 +176,7 @@ export default function MoreDetailsPage({
               lineHeight={1.2}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               fontWeight={500}
+              padding={isXsScreen ? "10px" : undefined}
             >
               Cleaning will only make holes bigger and incur higher repair cost.
               Please let us examine your garment first. If the garment has

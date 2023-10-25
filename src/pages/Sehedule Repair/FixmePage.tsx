@@ -14,18 +14,7 @@ import {
 
 import AppContainer from "../../component/AppContainer";
 import Colors from "../../CommonComponent/Colors";
-import CustomButton from "../../CommonComponent/CustomButton";
-import routes from "../../routes/routes";
 import { useEffect } from "react";
-
-const StyleCard = styled(Card)({
-  maxWidth: "550px",
-  borderRadius: "50px",
-  height: "100%",
-  ":hover": {
-    border: `5px solid ${Colors.LINK}`,
-  },
-});
 
 interface shipinprops {
   nextStep: (value: any) => void;
@@ -40,8 +29,17 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
   }, []);
   const isXsScreen = useMediaQuery("(max-width:600px)");
 
+  const StyleCard = styled(Card)({
+    maxWidth: "550px",
+    borderRadius: isXsScreen ? "15px" : "50px",
+    height: "100%",
+    ":hover": {
+      border: `5px solid ${Colors.LINK}`,
+    },
+  });
+
   return (
-    <Box marginY={10}>
+    <Box marginY={isXsScreen ? 1 : 10}>
       <Stack
         padding={isXsScreen ? "2rem" : undefined}
         mb={5}
@@ -50,7 +48,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
       >
         <Typography
           fontWeight={500}
-          fontSize={isXsScreen ? "60px" : "80px"}
+          fontSize={isXsScreen ? "50px" : "80px"}
           textAlign={isXsScreen ? "center" : undefined}
           textTransform={"lowercase"}
           variant={isSmScreen ? "h4" : "h3"}
@@ -68,7 +66,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
             maxWidth={1200}
             margin="0 auto !important"
           >
-            <Grid item xs={12} sm={6}>
+            <Grid paddingLeft={"0px !important"} item xs={12} sm={6}>
               <Link onClick={nextStep} sx={{ textDecoration: "none" }}>
                 <StyleCard>
                   <Stack
@@ -82,13 +80,13 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       fontWeight={500}
                       variant={isSmScreen ? "h4" : "h3"}
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                      fontSize="3rem"
+                      fontSize={isXsScreen ? "2rem" : "3rem"}
                       textTransform={"lowercase"}
                     >
                       SHIP IN
                     </Typography>
                     <CardMedia
-                      sx={{ width: 70 }}
+                      sx={{ width: isXsScreen ? 48 : 70 }}
                       component="img"
                       src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_package.png"
                       alt="package"
@@ -110,7 +108,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontWeight={500}
                       lineHeight={1.2}
-                      margin={"10px 79px"}
+                      margin={isXsScreen ? undefined : "10px 79px"}
                     >
                       Available from all 50 states. You will receive a pre-paid
                       shipping label via email and an order summary to print out
@@ -121,7 +119,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                 </StyleCard>
               </Link>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid paddingLeft={"0px !important"} item xs={12} sm={6}>
               <Link onClick={secondNextStep} sx={{ textDecoration: "none" }}>
                 <StyleCard>
                   <Stack
@@ -135,13 +133,13 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       fontWeight={500}
                       variant={isSmScreen ? "h4" : "h3"}
                       fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                      fontSize="3rem"
+                      fontSize={isXsScreen ? "2rem" : "3rem"}
                       textTransform={"lowercase"}
                     >
                       DOOR TO DOOR{" "}
                     </Typography>
                     <CardMedia
-                      sx={{ width: 70 }}
+                      sx={{ width: isXsScreen ? 48 : 70 }}
                       component="img"
                       src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/icon_door.png"
                       alt="package"
@@ -163,7 +161,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
                       fontWeight={500}
                       lineHeight={1.2}
-                      margin={"20px 79px"}
+                      margin={isXsScreen ? undefined : "20px 79px"}
                     >
                       Same day pick up service is available in{" "}
                       <span
@@ -192,7 +190,6 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
               </Link>
             </Grid>
           </Grid>
-          {/* </Stack> */}
         </AppContainer>
       </Stack>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 
 import AppContainer from "./AppContainer";
 import Colors from "../CommonComponent/Colors";
@@ -38,7 +38,6 @@ const StyleLink1 = styled(Link)({
 });
 
 export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
-  const theme = useTheme();
   const isSmScreen = useMediaQuery("(max-width:950px)");
   const services = [
     { name: "Home", url: routes.HOME },
@@ -55,7 +54,6 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
     localStorage.setItem(activeTab, menu);
     setActiveTab(menu);
   };
-
 
   const location = useLocation();
 
@@ -166,7 +164,12 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
           justifyContent={"center"}
           direction="row"
         >
-          <Box display={"flex"} gap={isSmScreen ? "3rem" : "1rem"}>
+          <Box
+            flexWrap={"wrap"}
+            justifyContent={"center"}
+            display={"flex"}
+            gap={isSmScreen ? "1rem" : "1rem"}
+          >
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
               fontFamily={`"ProximaNovaRegular", sans-serif`}
@@ -185,11 +188,6 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               AlterKnit New York 2023
             </Typography>
-            <StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>
-            <StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>
-          </Box>
-
-          {/* <Box display={"flex"} gap={"1rem"}>
             <StyleLink1
               to={routes.PRIVACY}
               style={{
@@ -206,7 +204,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               Terms and Conditions
             </StyleLink1>
-          </Box> */}
+          </Box>
         </Stack>
         <Box display={"flex"} gap={"2rem"}>
           <StyleLink1
