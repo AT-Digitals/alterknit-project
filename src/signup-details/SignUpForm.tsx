@@ -46,7 +46,10 @@ export default function SignUpForm() {
   });
 
   return (
-    <Box marginTop="100px">
+    <Box
+      marginTop={{ lg: 0, xl: "100px" }}
+      padding={{ xs: "50px", sm: "50px", md: "50px", lg: "50px", xl: 0 }}
+    >
       <Stack direction="column" spacing={3}>
         <Typography variant="h4" textAlign="center">
           Create your account
@@ -59,9 +62,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -72,9 +75,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -85,9 +88,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
         <CustomTextField
@@ -98,9 +101,9 @@ export default function SignUpForm() {
           sx={{
             color: Colors.BLACK,
             ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: `${Colors.BLACK} !important`,
-              },
+            {
+              borderColor: `${Colors.BLACK} !important`,
+            },
           }}
         />
 

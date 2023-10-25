@@ -14,7 +14,7 @@ export default function SignUpPage() {
                 maxWidth="1200px"
                 margin="auto"
             >
-                <Grid item xs={12} sm={7}>
+                <Grid item xs={12} sm={12} md={12} lg={7}>
                     <img
                         src={background}
                         width={"100%"}
@@ -22,7 +22,7 @@ export default function SignUpPage() {
                         alt="background"
                     ></img>
                 </Grid>
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={12} md={12} lg={5}>
                     <SignUpForm />
                 </Grid>
             </Grid>

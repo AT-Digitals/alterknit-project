@@ -138,7 +138,12 @@ export default function SignInForm() {
     event.preventDefault();
   };
   return (
-    <Stack direction="column" spacing={3} marginTop="100px">
+    <Stack
+      direction="column"
+      spacing={3}
+      marginTop={{ lg: 0, xl: "100px" }}
+      padding={{ xs: "50px", sm: "50px", md: "50px", lg: "50px", xl: 0 }}
+    >
       <Typography variant="h4" textAlign="center">
         Welcome back!
       </Typography>
@@ -150,9 +155,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-md26zr-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
         onChange={setEmail}
       />
@@ -174,9 +179,9 @@ export default function SignInForm() {
         sx={{
           color: Colors.BLACK,
           ".css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-            {
-              borderColor: `${Colors.BLACK} !important`,
-            },
+          {
+            borderColor: `${Colors.BLACK} !important`,
+          },
         }}
       />
       {isLoading ? (
