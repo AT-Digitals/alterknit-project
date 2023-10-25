@@ -1,17 +1,24 @@
-import { Box, Button, Grid, Modal, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Modal,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
 import CustomButton from "../../../../CommonComponent/CustomButton";
+import Loading from "../../../../assets/loading.gif";
 import ServiceDetailsState from "../ServiceDetailsState";
 import ShipInDetails from "../ShipInDetails";
+import SubmitPopup from "../../../../Popup/SubmitPopup";
+import alterknitImage from "../../../../assets/alterknit.png";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
-import { useState } from "react";
-import SubmitPopup from "../../../../Popup/SubmitPopup";
-import alterknitImage from '../../../../assets/alterknit.png';
 import { useNavigate } from "react-router-dom";
-import Loading from "../../../../assets/loading.gif";
+import { useState } from "react";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -43,8 +50,6 @@ const StyledButton = styled(CustomButton)({
   },
 });
 
-
-
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -61,7 +66,7 @@ interface LaststepProps {
   shipInDetails: ShipInDetails;
   detailsEditClick: () => void;
   itemEditClick: () => void;
-  onSubmit: (e: { preventDefault: () => void; }) => void;
+  onSubmit: (e: { preventDefault: () => void }) => void;
 }
 
 export default function LastStep({
@@ -80,26 +85,24 @@ export default function LastStep({
 
   const closeModal = () => {
     setIsModalOpen(false);
-    window.location.href = '/schedule-repair';
+    window.location.href = "/schedule-repair";
     // navigate('/home');
   };
-
 
   const handleSubmitClick = () => {
     setShowSubmit(true);
   };
 
-  const handleSubmitConfirmed = (e: { preventDefault: () => void; }) => {
+  const handleSubmitConfirmed = (e: { preventDefault: () => void }) => {
     onSubmit(e);
     if (showSubmit) {
       setShowSubmit(false);
-      setIsLoading(true)
+      setIsLoading(true);
     }
     setTimeout(() => {
       setIsModalOpen(true);
-      setIsLoading(false)
+      setIsLoading(false);
     }, 3000);
-
   };
 
   const handleSubmitCancelled = () => {
@@ -120,6 +123,8 @@ export default function LastStep({
   const handleChecOtherkboxChange = () => {
     setIsChecked1(!isChecked1);
   };
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <>
@@ -150,7 +155,10 @@ export default function LastStep({
       <Box marginTop="6rem">
         <Box
           sx={{
-            backgroundImage: `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_last_step.svg')`,
+            padding: isXsScreen ? "10px" : undefined,
+            backgroundImage: isXsScreen
+              ? undefined
+              : `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_last_step.svg')`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "104%",
             backgroundPosition: "center",
@@ -160,18 +168,19 @@ export default function LastStep({
             display={"flex"}
             flexDirection={"column"}
             alignItems={"center"}
-            gap={"20rem"}
+            gap={isXsScreen ? "5rem" : "20rem"}
             maxWidth={780}
             width={"100%"}
             margin={"0 auto"}
           >
+            {isXsScreen ? <Typography>ORDER SUMMARY</Typography> : ""}
             <Box
               bgcolor={"#f8f1ec"}
               border={"5px solid #df7c6d"}
               borderRadius={"20px"}
               maxWidth={"780px"}
               position={"relative"}
-              padding={"3rem"}
+              padding={isXsScreen ? undefined : "3rem"}
             >
               <Button style={{ display: "contents" }} onClick={itemEditClick}>
                 <img
@@ -230,26 +239,28 @@ export default function LastStep({
                     }}
                   >
                     <Grid container>
-                      <Grid item xs={4}>
-                        <StyledTr>
-                          <StyledTableCell>Service Needed</StyledTableCell>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Brand</StyledTableCell>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Color</StyledTableCell>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Age of Garment</StyledTableCell>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell># of Holes</StyledTableCell>
-                        </StyledTr>
-                        <StyledTr>
-                          <StyledTableCell>Brief Description</StyledTableCell>
-                        </StyledTr>
-                      </Grid>
+                      {serviceDetails.length > 0 && (
+                        <Grid item xs={4}>
+                          <StyledTr>
+                            <StyledTableCell>Service Needed</StyledTableCell>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCell>Brand</StyledTableCell>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCell>Color</StyledTableCell>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCell>Age of Garment</StyledTableCell>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCell># of Holes</StyledTableCell>
+                          </StyledTr>
+                          <StyledTr>
+                            <StyledTableCell>Brief Description</StyledTableCell>
+                          </StyledTr>
+                        </Grid>
+                      )}
                       {serviceDetails.length > 0 && (
                         <Grid item xs={8}>
                           <StyledTr>
@@ -303,14 +314,17 @@ export default function LastStep({
                   </div>
                 </tbody>
               </table>
+
               <BeforeText label="Order Summary" />
             </Box>
+            {isXsScreen ? <Typography>ORDER SUMMARY</Typography> : ""}
+
             <Box
               bgcolor={"#f8f1ec"}
               border={"5px solid #df7c6d"}
               borderRadius={"20px"}
               position={"relative"}
-              padding={"3rem 2rem 3rem 3rem"}
+              padding={isXsScreen ? undefined : "3rem 2rem 3rem 3rem"}
             >
               <Button
                 style={{ display: "contents" }}
@@ -405,15 +419,20 @@ export default function LastStep({
           flexDirection={"column"}
           gap={"4rem"}
           maxWidth={1440}
-          width={"100%"}
+          // width={"100%"}
+          padding={isXsScreen ? "1rem" : "0 10rem"}
         >
-          <Box mt={15} padding={"0 10rem"} textAlign={"left"}>
+          <Box
+            mt={15}
+            // padding={isXsScreen ? "1rem" : "0 10rem"}
+            textAlign={"left"}
+          >
             <Box display={"flex"} justifyContent={"space-between"}>
               <label
                 style={{
                   fontFamily: "IndustrialGothicBannerStd",
                   textTransform: "lowercase",
-                  fontSize: "44px",
+                  fontSize: isXsScreen ? "30px" : "44px",
                   lineHeight: "4.5rem",
                   fontWeight: 500,
                   flex: 1,
@@ -432,6 +451,7 @@ export default function LastStep({
               fontSize={"16px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               fontWeight={500}
+              marginRight={isXsScreen ? "5.5rem" : undefined}
             >
               By checking this box, you agree to our{" "}
               <a
@@ -452,13 +472,13 @@ export default function LastStep({
             </Typography>
           </Box>
 
-          <Box padding={"0 10rem"} textAlign={"left"}>
+          <Box textAlign={"left"}>
             <Box display={"flex"} justifyContent={"space-between"}>
               <label
                 style={{
                   fontFamily: "IndustrialGothicBannerStd",
                   textTransform: "lowercase",
-                  fontSize: "44px",
+                  fontSize: isXsScreen ? "30px" : "44px",
                   lineHeight: "4.5rem",
                   fontWeight: 500,
                   flex: 1,
@@ -476,6 +496,7 @@ export default function LastStep({
             <Typography
               fontSize={"16px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
+              marginRight={isXsScreen ? "5.5rem" : undefined}
               fontWeight={500}
             >
               By checking this box, you agree to sign up for our newsletter.
@@ -509,17 +530,25 @@ export default function LastStep({
         >
           Submit
         </StyledButton>{" "}
-
       </Box>
-      {isLoading &&
-        <img src={Loading} alt="loader" width={100} height={100} style={{ margin: "0 auto" }} />}
-      {showSubmit &&
+      {isLoading && (
+        <img
+          src={Loading}
+          alt="loader"
+          width={100}
+          height={100}
+          style={{ margin: "0 auto" }}
+        />
+      )}
+      {showSubmit && (
         <SubmitPopup
           showSubmitConfirmation={showSubmit}
           handleSubmitCancelled={handleSubmitCancelled}
-          handleSubmitConfirmed={handleSubmitConfirmed} />}
+          handleSubmitConfirmed={handleSubmitConfirmed}
+        />
+      )}
 
-      {isModalOpen &&
+      {isModalOpen && (
         <Modal
           open={isModalOpen}
           onClose={closeModal}
@@ -528,34 +557,36 @@ export default function LastStep({
         >
           <Box sx={style}>
             <Box display={"flex"} justifyContent={"center"}>
-              <img
-                src={alterknitImage}
-                alt="logo"
-                width="40%"
-                height="15%"
-              />
+              <img src={alterknitImage} alt="logo" width="40%" height="15%" />
             </Box>
             <Box display={"flex"} justifyContent={"center"}>
-
-              <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+              <Typography
+                fontSize={"20px"}
+                id="modal-modal-description"
+                sx={{ mt: 2 }}
+              >
                 Your Order Details Successfully Sent your Email!
               </Typography>
             </Box>
             <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-              <Button sx={{
-                height: "30px",
-                backgroundColor: "black",
-                color: "white",
-                marginTop: "10px",
-                ":hover": {
-                  backgroundColor: "rgb(223, 124, 109)",
-                },
-              }} onClick={closeModal}>OK</Button>
+              <Button
+                sx={{
+                  height: "30px",
+                  backgroundColor: "black",
+                  color: "white",
+                  marginTop: "10px",
+                  ":hover": {
+                    backgroundColor: "rgb(223, 124, 109)",
+                  },
+                }}
+                onClick={closeModal}
+              >
+                OK
+              </Button>
             </Box>
           </Box>
         </Modal>
-      }
+      )}
     </>
-
   );
 }

@@ -280,9 +280,14 @@ export default function CheckOut({
             </Typography>
           </Box>
           <AppContainer maxWidth={1300} padding={0}>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              textAlign={isXsScreen ? "center" : undefined}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -297,9 +302,14 @@ export default function CheckOut({
                 helperText={error.firstName}
               />
             </Box>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              textAlign={isXsScreen ? "center" : undefined}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -314,9 +324,14 @@ export default function CheckOut({
                 helperText={error.lastName}
               />
             </Box>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              textAlign={isXsScreen ? "center" : undefined}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -337,9 +352,14 @@ export default function CheckOut({
                 onChange={handleChange}
               />
             </Box>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              textAlign={isXsScreen ? "center" : undefined}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -360,9 +380,12 @@ export default function CheckOut({
               flexWrap={"wrap"}
               spacing={5}
             >
-              <Box style={{ flex: 1 }}>
+              <Box
+                textAlign={isXsScreen ? "center" : undefined}
+                style={{ flex: 1 }}
+              >
                 <Typography
-                  fontSize={"45px"}
+                  fontSize={isXsScreen ? "35px" : "45px"}
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -388,9 +411,12 @@ export default function CheckOut({
                   ))}
                 </CustomSelect>
               </Box>
-              <Box style={{ flex: 1 }}>
+              <Box
+                textAlign={isXsScreen ? "center" : undefined}
+                style={{ flex: 1 }}
+              >
                 <Typography
-                  fontSize={"45px"}
+                  fontSize={isXsScreen ? "35px" : "45px"}
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                   fontWeight={500}
                   textTransform={"lowercase"}
@@ -407,9 +433,14 @@ export default function CheckOut({
                 />
               </Box>
             </Stack>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              textAlign={isXsScreen ? "center" : undefined}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -424,9 +455,14 @@ export default function CheckOut({
                 helperText={error.phone_number || phoneError}
               />
             </Box>
-            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Box
+              display={"flex"}
+              textAlign={isXsScreen ? "center" : undefined}
+              flexDirection={"column"}
+              gap={"2rem"}
+            >
               <Typography
-                fontSize={"45px"}
+                fontSize={isXsScreen ? "35px" : "45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                 fontWeight={500}
                 textTransform={"lowercase"}
@@ -465,6 +501,7 @@ export default function CheckOut({
           justifyContent={"center"}
           direction={isXsScreen ? "column" : "row"}
           spacing={5}
+          width={"90%"}
         >
           <StyleButtonNew
             sx={{
