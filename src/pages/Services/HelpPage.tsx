@@ -110,18 +110,19 @@ export default function HelpPage() {
   };
 
   return (
-    <Box bgcolor={"#f8f1eb"} paddingTop={"40px"} paddingBottom={"95px"}>
+    <Box bgcolor={"#f8f1eb"} padding={"20px"}>
       <Typography
         textAlign={"center"}
         color={"black"}
         fontWeight={500}
+        lineHeight={1}
         fontSize={"80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         textTransform={"lowercase"}
       >
         HOW WE CAN HELP
       </Typography>
-      <Box margin={"0 auto"} padding={"0 10rem"}>
+      <Box margin={"0 auto"} width={"100%"} maxWidth={"1200px"}>
         <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
           {Notes.map((notes, index) => (
             <Box
