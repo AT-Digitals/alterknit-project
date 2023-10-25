@@ -63,13 +63,13 @@ export default function CarePage() {
       setOpenNote1Index(index);
     }
   };
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:750px)");
 
   return (
     <Box>
       <section
         style={{
-          padding: "6.5rem",
+          padding: isXsScreen ? "1.5rem" : "6.5rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -88,13 +88,14 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"1rem 5.4rem"}
+            padding={isXsScreen ? "2rem" : "1rem 5.4rem"}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={"80px"}
               fontWeight={500}
               textTransform={"lowercase"}
+              lineHeight={isXsScreen ? 1 : 1}
               mt={"1rem"}
             >
               CARE THROUGH REPAIR
@@ -104,7 +105,7 @@ export default function CarePage() {
                 color: "#575656",
                 fontSize: "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
-                marginTop: "-6px",
+                marginTop: "6px",
               }}
             >
               Care is at the core of everything we do here at Alterknit.
@@ -112,10 +113,9 @@ export default function CarePage() {
             <p
               style={{
                 maxWidth: 690,
-                fontSize: "19px",
+                fontSize: isXsScreen ? "18px" : "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
-                marginBottom: "2.5rem",
                 color: "#575656",
               }}
             >
@@ -127,9 +127,9 @@ export default function CarePage() {
               style={{
                 color: "#575656",
                 maxWidth: 690,
-                fontSize: "19px",
+                fontSize: isXsScreen ? "18px" : "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
-                lineHeight: "1.4rem",
+                lineHeight: 1.4,
                 marginBottom: "2.5rem",
               }}
             >
@@ -146,14 +146,14 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={"40px"}
             textAlign={"center"}
-            padding={"2.5rem 5rem"}
+            padding={isXsScreen ? "1rem" : "2.5rem 5rem"}
             bgcolor={"black"}
             borderColor={"black"}
             color={"white"}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "45px" : "80px"}
               fontWeight={500}
               textTransform={"lowercase"}
             >
@@ -162,10 +162,9 @@ export default function CarePage() {
             <p
               style={{
                 maxWidth: 690,
-                fontSize: "19px",
+                fontSize: isXsScreen ? "18px" : "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
-                marginBottom: "2.5rem",
                 color: "white",
               }}
             >
@@ -178,10 +177,9 @@ export default function CarePage() {
             <p
               style={{
                 maxWidth: 690,
-                fontSize: "19px",
+                fontSize: isXsScreen ? "18px" : "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
-                marginBottom: "2.5rem",
                 color: "white",
               }}
             >
@@ -192,10 +190,9 @@ export default function CarePage() {
             <p
               style={{
                 maxWidth: 690,
-                fontSize: "19px",
+                fontSize: isXsScreen ? "18px" : "19px",
                 fontFamily: `"ProximaNovaMedium", sans-serif`,
                 lineHeight: "1.4rem",
-                marginBottom: "2.5rem",
                 color: "white",
               }}
             >
@@ -240,7 +237,7 @@ export default function CarePage() {
                   flexDirection: "column",
                   alignItems: "center",
                   gap: "2rem",
-                  padding: "1rem",
+                  padding: "3rem",
                 },
               }}
             >
@@ -251,6 +248,7 @@ export default function CarePage() {
                   p={" 1rem 2rem"}
                   alignItems={"center"}
                   key={index}
+                  width={isXsScreen ? "100%" : "90%"}
                   maxWidth={1240}
                 >
                   <StyledBox
@@ -293,6 +291,7 @@ export default function CarePage() {
                 borderRadius={"24px"}
                 p={" 1rem 2rem"}
                 alignItems={"center"}
+                width={isXsScreen ? "100%" : "90%"}
                 maxWidth={1240}
               >
                 <Typography
@@ -328,6 +327,7 @@ export default function CarePage() {
                   p={" 1rem 2rem"}
                   alignItems={"center"}
                   key={index}
+                  width={isXsScreen ? "100%" : "90%"}
                   maxWidth={1240}
                 >
                   <StyledBox
@@ -372,7 +372,7 @@ export default function CarePage() {
           alt="thems1"
         />
       </section>
-      <section style={{ padding: isXsScreen ? "3rem " : "" }}>
+      <section style={{ padding: isXsScreen ? "1rem " : "" }}>
         <Box
           margin={"auto 0"}
           padding={"0 10rem"}
@@ -401,7 +401,7 @@ export default function CarePage() {
         </Box>
       </section>
 
-      <section style={{ padding: isXsScreen ? "2rem" : "8rem 0 1rem 0" }}>
+      <section style={{ padding: isXsScreen ? "1rem" : "8rem 0 1rem 0" }}>
         <Box display={"flex"} justifyContent={"center"}>
           <Box
             maxWidth={"900px"}
@@ -448,12 +448,12 @@ export default function CarePage() {
             <Typography
               fontSize={"19px"}
               maxWidth={620}
-              mt={5}
+              mt={isXsScreen ? 2 : 5}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               color={"#575656"}
               sx={{
                 "@media (max-width: 768px)": {
-                  fontSize: "14px",
+                  fontSize: "18px",
                 },
               }}
             >

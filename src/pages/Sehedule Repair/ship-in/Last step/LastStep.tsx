@@ -11,6 +11,7 @@ import { useState } from "react";
 import SubmitPopup from "../../../../Popup/SubmitPopup";
 import alterknitImage from '../../../../assets/alterknit.png';
 import { useNavigate } from "react-router-dom";
+import Loading from "../../../../assets/loading.gif";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -75,12 +76,12 @@ export default function LastStep({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const closeModal = () => {
     setIsModalOpen(false);
-    // window.location.href = '/home';
-    navigate('/home');
+    window.location.href = '/schedule-repair';
+    // navigate('/home');
   };
 
 
@@ -90,9 +91,13 @@ export default function LastStep({
 
   const handleSubmitConfirmed = (e: { preventDefault: () => void; }) => {
     onSubmit(e);
-    setShowSubmit(false);
+    if (showSubmit) {
+      setShowSubmit(false);
+      setIsLoading(true)
+    }
     setTimeout(() => {
       setIsModalOpen(true);
+      setIsLoading(false)
     }, 3000);
 
   };
@@ -504,12 +509,16 @@ export default function LastStep({
         >
           Submit
         </StyledButton>{" "}
+
       </Box>
+      {isLoading &&
+        <img src={Loading} alt="loader" width={100} height={100} style={{ margin: "0 auto" }} />}
       {showSubmit &&
         <SubmitPopup
           showSubmitConfirmation={showSubmit}
           handleSubmitCancelled={handleSubmitCancelled}
           handleSubmitConfirmed={handleSubmitConfirmed} />}
+
       {isModalOpen &&
         <Modal
           open={isModalOpen}

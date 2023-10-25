@@ -1,13 +1,21 @@
-import { Box, Button, Modal, Stack, TextField, Typography, styled } from "@mui/material";
-import Bug from "../../assets/bugs.png";
-import { Link } from "react-router-dom";
-import Alterknitimage from "../../assets/bug_03.png";
-import Colors from "../../CommonComponent/Colors";
-import routes from "../../routes/routes";
+import {
+  Box,
+  Button,
+  Modal,
+  Stack,
+  TextField,
+  Typography,
+  styled,
+} from "@mui/material";
 import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
-import alterknitImage from '../../assets/alterknit.png'
 
+import Alterknitimage from "../../assets/bug_03.png";
+import Bug from "../../assets/bugs.png";
+import Colors from "../../CommonComponent/Colors";
+import { Link } from "react-router-dom";
+import alterknitImage from "../../assets/alterknit.png";
+import emailjs from "@emailjs/browser";
+import routes from "../../routes/routes";
 
 const style = {
   position: "absolute" as "absolute",
@@ -37,13 +45,12 @@ const StyledButton = styled(Button)({
   backgroundColor: Colors.BLACK,
   ":hover": {
     backgroundColor: Colors.LINK,
-  }
+  },
 });
-
 
 const getPersonalDetail = {
   subscribe: "",
-}
+};
 
 export default function SubscribePage() {
   const [personalDetails, setPersonalDetails] = useState(getPersonalDetail);
@@ -79,7 +86,6 @@ export default function SubscribePage() {
     }));
   }, [personalDetails.subscribe]);
 
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -93,24 +99,30 @@ export default function SubscribePage() {
     setSubscribeError(subscribeError);
 
     if (!subscribeError) {
-    emailjs.sendForm('service_h05cohb', 'template_36581gc', e.target, 'tzn_ZDm_QTX8jjQu6')
-    .then((result) => {
-      console.log(result.text);
-      console.log("message sent");
-      // Clear the form fields or reset the form state as needed
-      // For example, if you're using React with state:
-      setPersonalDetails({
-        subscribe: "",
-      });
-      setIsModalOpen(true);
-    })
-    .catch((error) => {
-      console.log(error.text);
-      // Handle email sending error if needed
-    });
-  } else {
-    // Handle the case where there are validation errors (e.g., show error messages).
-  }
+      emailjs
+        .sendForm(
+          "service_h05cohb",
+          "template_36581gc",
+          e.target,
+          "tzn_ZDm_QTX8jjQu6"
+        )
+        .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+          // Clear the form fields or reset the form state as needed
+          // For example, if you're using React with state:
+          setPersonalDetails({
+            subscribe: "",
+          });
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
+          console.log(error.text);
+          // Handle email sending error if needed
+        });
+    } else {
+      // Handle the case where there are validation errors (e.g., show error messages).
+    }
 
     const data = {
       subscribe: personalDetails.subscribe,
@@ -130,19 +142,33 @@ export default function SubscribePage() {
           fontWeight={500}
           textTransform="lowercase"
         >
-          EXTEND THE LIFE OF THE <br />  CLOTHES YOU LOVE
+          EXTEND THE LIFE OF THE <br /> CLOTHES YOU LOVE
         </Typography>
-        <Box marginTop={"30px"} marginBottom={20} display={"flex"} justifyContent={"center"}>
+        <Box
+          marginTop={"30px"}
+          marginBottom={20}
+          display={"flex"}
+          justifyContent={"center"}
+        >
           <Link to={routes.SCHEDULE_REPAIR}>
             <StyledButton
               sx={{
-                fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`, fontWeight: 500, textTransform: "lowercase",
+                fontFamily: `"IndustrialGothicBannerStd", sans-serif !important`,
+                fontWeight: 500,
+                textTransform: "lowercase",
               }}
             >
               Schedule a repair
             </StyledButton>
           </Link>
-          <img src={Alterknitimage} width={"650"} alt="bug1" />
+          <img
+            src={Alterknitimage}
+            width={"100%"}
+            style={{
+              maxWidth: 650,
+            }}
+            alt="bug1"
+          />
         </Box>
         <Stack   display={{ xs: "block", sm: "flex" }} direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
           <Link to={""}>
@@ -159,7 +185,8 @@ export default function SubscribePage() {
               lineHeight={1}
               textTransform="lowercase"
             >
-              JOIN OUR MAILING LIST & GET 10% OF YOUR FIRST REPAIRED ORDER <br />  WITH US*
+              JOIN OUR MAILING LIST & GET 10% OF YOUR FIRST REPAIRED ORDER{" "}
+              <br /> WITH US*
               <Box display={"flex"} justifyContent={"center"} mt={1}>
                 <Typography
                   width={"520px"}
@@ -168,87 +195,103 @@ export default function SubscribePage() {
               </Box>
             </Typography>
             <form onSubmit={handleSubmit}>
-            <Modal
-        open={isModalOpen}
-        onClose={closeModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Box display={"flex"} justifyContent={"center"}>
-          <img
-                src={alterknitImage}
-                alt="logo"
-                width="40%"
-                height="15%"
-            />
-         </Box>
-         <Box display={"flex"} justifyContent={"center"}>
-      
-          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
-           Email Sent Successfully!
-          </Typography>
-          </Box>
-          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-            <Button sx={{
-              height: "30px",
-              backgroundColor: "black",
-              color: "white",
-              marginTop: "10px",
-              ":hover": {
-                backgroundColor: "rgb(223, 124, 109)",
-              },
-            }} onClick={closeModal}>OK</Button>
-          </Box>
-        </Box>
-      </Modal>
-            <Box display={"flex"} justifyContent={"center"}>
-              <TextField
-                sx={{
-                  ".MuiOutlinedInput-input": {
-                    width: "470px",
-                    height: "40px",
-                    border: "1px solid #df7c6d",
-                  },
-                  ".MuiFormHelperText-root": {
-                    color: "#d32f2f",
-                  },
-                  ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
-                    fontSize: "20px",
-                  },
-                }} onChange={handleInputChange} 
-                value={personalDetails.subscribe}
-                error={personalDetails.subscribe ? !!subscribeError : false}
-                helperText={subscribeError}
-                variant="outlined"
-                placeholder="Your Email"
-                name="subscribe"
-                required
-              ></TextField>
-              <Button
-                sx={{
-                  backgroundColor: "#df7c6d",
-                  border: "1px solid #df7c6d",
-                  color: "white",
-                  padding: "10px 26px",
-                  borderRadius: "0",
-                  textTransform: "capitalize",
-                  fontSize: "20px",
-                  height: "75px",
-                  ":hover": {
-                    backgroundColor: "#f58977",
-                  }
-                }} type="submit"
+              <Modal
+                open={isModalOpen}
+                onClose={closeModal}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
               >
-                Subscribe
-              </Button>
-            </Box>
+                <Box sx={style}>
+                  <Box display={"flex"} justifyContent={"center"}>
+                    <img
+                      src={alterknitImage}
+                      alt="logo"
+                      width="40%"
+                      height="15%"
+                    />
+                  </Box>
+                  <Box display={"flex"} justifyContent={"center"}>
+                    <Typography
+                      fontSize={"20px"}
+                      id="modal-modal-description"
+                      sx={{ mt: 2 }}
+                    >
+                      Email Sent Successfully!
+                    </Typography>
+                  </Box>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"center"}
+                    padding={"9px 0px"}
+                  >
+                    <Button
+                      sx={{
+                        height: "30px",
+                        backgroundColor: "black",
+                        color: "white",
+                        marginTop: "10px",
+                        ":hover": {
+                          backgroundColor: "rgb(223, 124, 109)",
+                        },
+                      }}
+                      onClick={closeModal}
+                    >
+                      OK
+                    </Button>
+                  </Box>
+                </Box>
+              </Modal>
+              <Box display={"flex"} justifyContent={"center"}>
+                <TextField
+                  sx={{
+                    ".MuiOutlinedInput-input": {
+                      width: "470px",
+                      height: "40px",
+                      border: "1px solid #df7c6d",
+                    },
+                    ".MuiFormHelperText-root": {
+                      color: "#d32f2f",
+                    },
+                    ".css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root": {
+                      fontSize: "20px",
+                    },
+                  }}
+                  onChange={handleInputChange}
+                  value={personalDetails.subscribe}
+                  error={personalDetails.subscribe ? !!subscribeError : false}
+                  helperText={subscribeError}
+                  variant="outlined"
+                  placeholder="Your Email"
+                  name="subscribe"
+                  required
+                ></TextField>
+                <Button
+                  sx={{
+                    backgroundColor: "#df7c6d",
+                    border: "1px solid #df7c6d",
+                    color: "white",
+                    padding: "10px 26px",
+                    borderRadius: "0",
+                    textTransform: "capitalize",
+                    fontSize: "20px",
+                    height: "75px",
+                    ":hover": {
+                      backgroundColor: "#f58977",
+                    },
+                  }}
+                  type="submit"
+                >
+                  Subscribe
+                </Button>
+              </Box>
             </form>
             <Typography
               fontSize={"14px"}
               textAlign={"center"}
               marginTop={"20px"}
-              fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500} color={Colors.BLACK_TEXT}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontWeight={500}
+              color={Colors.BLACK_TEXT}
             >
               *Code must be applied at check out. Please check your email!
             </Typography>
@@ -264,9 +307,7 @@ export default function SubscribePage() {
             />
           </Link>
         </Stack>
-
       </Box>
-
     </Box>
   );
 }

@@ -26,7 +26,7 @@ const StyledButton = styled(Button)({
 export default function WelcomeSection() {
     return (
         <Stack
-            direction="row"
+            direction={{ lg: "column", xl: "row" }}
             maxWidth={1300}
             justifyContent="space-between"
             alignItems="center"
@@ -39,6 +39,7 @@ export default function WelcomeSection() {
                         fontWeight: 500,
                         fontSize: "80px",
                         fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
+                        paddingTop: { lg: "20px", xl: 0 }
                     }}
                 >
                     welcome to real repair
@@ -49,6 +50,7 @@ export default function WelcomeSection() {
                     lineHeight={1.3}
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
                     fontWeight={500}
+                    textAlign={{ md: "center", lg: "center", xl: "start" }}
                 >
                     We save the clothing that you, your tailor, <br /> or dry cleaner
                     can't.

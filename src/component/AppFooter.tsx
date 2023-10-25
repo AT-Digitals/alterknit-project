@@ -7,7 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import routes from "../routes/routes";
 import styled from "@emotion/styled";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 interface footerProps {
   activeTab: string;
@@ -39,7 +39,7 @@ const StyleLink1 = styled(Link)({
 
 export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
   const theme = useTheme();
-  const isSmScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmScreen = useMediaQuery("(max-width:950px)");
   const services = [
     { name: "Home", url: routes.HOME },
     { name: "Services", url: routes.SERVICES },
@@ -55,14 +55,14 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
     localStorage.setItem(activeTab, menu);
     setActiveTab(menu);
   };
-  const defaultLink = routes.HOME;
+
 
   const location = useLocation();
 
   return (
     <Box bgcolor={Colors.BLACK}>
       <Box borderBottom="1px solid #272727">
-        <AppContainer paddingLeft={0}>
+        <AppContainer paddingLeft={0} paddingRight={0}>
           <Stack
             px={3}
             py={3}
@@ -102,7 +102,16 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
                       listStyleType: "none",
                     }}
                   >
-                    <StyleLink to={service.url} onClick={() => handleMenuClick(service.url)} style={{ color: location.pathname === service.url ? Colors.WHITE : "" }}>{service.name}</StyleLink>
+                    <StyleLink
+                      to={service.url}
+                      onClick={() => handleMenuClick(service.url)}
+                      style={{
+                        color:
+                          location.pathname === service.url ? Colors.WHITE : "",
+                      }}
+                    >
+                      {service.name}
+                    </StyleLink>
                   </li>
                 ))}
               </ul>
@@ -132,7 +141,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
                       listStyleType: "none",
                     }}
                   >
-                    <StyleLink to="tel:+12124736363" > 212 473 6363</StyleLink>
+                    <StyleLink to="tel:+12124736363"> 212 473 6363</StyleLink>
                   </li>
                 </ul>
               </Stack>
@@ -157,7 +166,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
           justifyContent={"center"}
           direction="row"
         >
-          <Box display={"flex"} gap={"1rem"}>
+          <Box display={"flex"} gap={isSmScreen ? "3rem" : "1rem"}>
             <Typography
               fontSize={isSmScreen ? "16px" : "18px"}
               fontFamily={`"ProximaNovaRegular", sans-serif`}
@@ -176,25 +185,28 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
             >
               AlterKnit New York 2023
             </Typography>
+            <StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>
+            <StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>
+          </Box>
 
-            (<StyleLink1 to={routes.PRIVACY} style={{ color: location.pathname === routes.PRIVACY ? "#787878" : "" }}>Privacy Policy</StyleLink1>)
-            (<StyleLink1 to={routes.TERM} style={{ color: location.pathname === routes.TERM ? "#787878" : "" }}>Terms and Conditions</StyleLink1>)
-          </Box>
-          <Box display={"flex"} gap={"2rem"}>
+          {/* <Box display={"flex"} gap={"1rem"}>
             <StyleLink1
-              to="https://www.facebook.com/AlterKnitNY/"
-              target="_blank"
+              to={routes.PRIVACY}
+              style={{
+                color: location.pathname === routes.PRIVACY ? "#787878" : "",
+              }}
             >
-              {" "}
-              <FacebookIcon />
+              Privacy Policy
             </StyleLink1>
             <StyleLink1
-              to="https://www.instagram.com/alterknitnewyork/"
-              target="_blank"
+              to={routes.TERM}
+              style={{
+                color: location.pathname === routes.TERM ? "#787878" : "",
+              }}
             >
-              <InstagramIcon />
+              Terms and Conditions
             </StyleLink1>
-          </Box>
+          </Box> */}
         </Stack>
         <Box display={"flex"} gap={"2rem"}>
           <StyleLink1

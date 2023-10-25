@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
+import DragHandleIcon from '@mui/icons-material/DragHandle';
 
 
 import Alterknit from "../assets/alterknit.png";
@@ -158,7 +159,7 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
       top={0}
       zIndex={100}
     >
-      <AppContainer>
+      <AppContainer display={{ xs: "none", xl: "flex" }}>
         <Stack
           pt={isSmallScreen ? 3 : 4.5}
           pb={4}
@@ -176,7 +177,7 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
               />
             </Link>
           </Box>
-          {isSmallScreen ? (
+          {/* {isSmallScreen ? (
             <Box>
               <IconButton
                 aria-controls="mobile-menu"
@@ -188,9 +189,9 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
                   right: "10px",
                 }}
               >
-                <MenuIcon />
-              </IconButton>
-              <Menu
+                <DragHandleIcon />
+              </IconButton> */}
+          {/* <Menu
                 id="mobile-menu"
                 anchorEl={anchorEl}
                 keepMounted
@@ -207,35 +208,55 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
                         {service.linkname}
                       </Typography>
                     </ServiceItem>
-                  </MenuItem>
+                  </MenuItem> */}
+          {/* //     <Stack
+                  //     direction={isSmallScreen ? "column" : "row"}
+                  //     spacing={3}
+                  //     alignItems="center"
+                  //   >
+                  //     <Link to={routes.SCHEDULE_REPAIR} onClick={() => handleMenuClick(routes.SCHEDULE_REPAIR)}>
+                  //       <StyledButton
+                  //         bgColor={activeTab === routes.SCHEDULE_REPAIR ? Colors.LINK : Colors.BLACK}
+                  //         onClick={handleClick}
+                  //       >
+                  //         Schedule your repair
+                  //       </StyledButton>
+                  //     </Link>
+                  //     {/* <Link to={routes.ROOT}> */}
+          {/* //     <StyledButton onClick={handleLogout} bgColor={Colors.BLACK}>
+                  //       Logout
+                  //     </StyledButton>
+                  //     {/* </Link> */}
+          {/* //   </Stack>
+                  // </Stack>
                 ))}
               </Menu>
             </Box>
-          ) : (
-            <Stack
-              whiteSpace="nowrap"
-              alignItems="center"
-              spacing={isSmallScreen ? 2 : 6}
-              direction={isSmallScreen ? "column" : "row"}
-            >
-              {services.map((service, index) => (
-                <HeaderLink
-                  href={service.url}
-                  onClick={() => handleMenuClick(service.url)}
-                  key={index}
-                  className="service-item"
+          ) : (  */}
+          <Stack
+            whiteSpace="nowrap"
+            alignItems="center"
+            spacing={isSmallScreen ? 2 : 6}
+            direction={isSmallScreen ? "column" : "row"}
+          >
+            {services.map((service, index) => (
+              <HeaderLink
+                href={service.url}
+                onClick={() => handleMenuClick(service.url)}
+                key={index}
+                className="service-item"
+              >
+                <Typography
+                  fontSize="22px"
+                  fontFamily={`"ProximaNovaRegular", sans-serif`}
+                  fontWeight={400}
                 >
-                  <Typography
-                    fontSize="22px"
-                    fontFamily={`"ProximaNovaRegular", sans-serif`}
-                    fontWeight={400}
-                  >
-                    {service.linkname}
-                  </Typography>
-                </HeaderLink>
-              ))}
-            </Stack>
-          )}
+                  {service.linkname}
+                </Typography>
+              </HeaderLink>
+            ))}
+          </Stack>
+          {/* )} */}
           <Stack
             direction={isSmallScreen ? "column" : "row"}
             spacing={3}
