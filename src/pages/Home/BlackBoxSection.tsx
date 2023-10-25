@@ -3,9 +3,9 @@ import Colors from "../../CommonComponent/Colors";
 
 export default function BlackBoxSection() {
     return (
-        <Stack width="100%" maxWidth={1300} margin="0 auto" paddingX={10}>
+        <Stack width="100%" maxWidth={{ xs: 600, md: 900, lg: 1200, xl: 1300 }} margin="0 auto" paddingX={{ xs: 3, md: 10 }}>
             <Stack
-                direction="row"
+                direction={{ xs: "column", md: "row" }}
                 // alignItems="center"
                 justifyContent="space-between"
                 sx={{ backgroundColor: Colors.BLACK, borderRadius: "20px" }}
@@ -18,7 +18,7 @@ export default function BlackBoxSection() {
                     fontWeight={500}
                     // textTransform="uppercase"
                     color={Colors.WHITE}
-                    maxWidth="470px"
+                    // maxWidth="470px"
                     lineHeight={1}
                 >
                     this will only hurt a little
@@ -28,7 +28,7 @@ export default function BlackBoxSection() {
                     lineHeight={1.2}
                     marginY={3}
                     color={Colors.WHITE}
-                    maxWidth="430px"
+                    // maxWidth="430px"
                     marginRight={6}
                     fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500}
                 >
