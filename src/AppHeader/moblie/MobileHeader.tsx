@@ -27,7 +27,7 @@ export default function MoblieHeader({
 
     return (
         <>
-            <Box alignItems="center" display={{ lg: "flex", xl: "none" }} paddingY={3} paddingX={4} width="100%">
+            <Box alignItems="center" display={{ lg: "flex", xl: "none" }} paddingY={3} paddingX={3} width="100%">
                 <Stack direction="row" alignItems="center" justifyContent="space-between" width="100%">
                     <Link to={routes.HOME} >
                         <img

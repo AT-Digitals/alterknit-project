@@ -14,7 +14,7 @@ export default function ClothSection() {
             alignItems="center"
             margin="0 auto"
             paddingY={10}
-            paddingX={4}
+            paddingX={3}
         >
             <Grid container rowGap={5}>
                 <Grid item xs={12} md={12} xl={7} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>

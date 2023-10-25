@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import routes from "../routes/routes";
 import AppHeader from "../AppHeader/AppHeader";
+import Colors from "../CommonComponent/Colors";
 
 export default function AppLayout({ children, ...props }: BoxProps) {
   const [activeTab, setActiveTab] = useState(localStorage.getItem('activeTab') || routes.HOME);
@@ -22,7 +23,10 @@ export default function AppLayout({ children, ...props }: BoxProps) {
       <AppHeader setActiveTab={handleSelectMenu} activeTab={activeTab} />
       <Box display="flex" flexDirection="column" width="100%" flexGrow={1}>
         <Box display="flex" flexDirection="column" flexGrow={1}>
-          <Box display="flex" flexDirection="column" flexGrow={1}>
+          <Box sx={{
+            backgroundColor: Colors.WHITE,
+          }} display="flex" flexDirection="column" flexGrow={1}>
+
             <Outlet />
           </Box>
           <AppFooter activeTab={activeTab} setActiveTab={handleSelectMenu} />
