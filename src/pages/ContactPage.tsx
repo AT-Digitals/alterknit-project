@@ -229,8 +229,6 @@ export default function FormFile() {
 
   return (
     <Box
-      width={"100%"}
-      height={"970px"}
       style={{
         backgroundColor: "#f8f1eb",
         backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_care.png')`,
@@ -238,6 +236,7 @@ export default function FormFile() {
       }}
       display={"flex"}
       justifyContent={"center"}
+      margin={"30px"}
     >
       <form
         style={{
@@ -246,7 +245,8 @@ export default function FormFile() {
           backgroundColor: "#f8f1eb",
           marginTop: "60px",
           marginBottom: "30px",
-          position: "absolute",
+          width: "100%",
+          maxWidth: "900px",
         }}
         ref={form}
         onSubmit={handleSubmit}
@@ -301,8 +301,8 @@ export default function FormFile() {
             Contact us
           </Typography>
 
-          <Stack margin={"30px"} direction="row" display="flex" spacing={3}>
-            <Box>
+          <Stack margin={"30px"} alignItems={"center"}  direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} spacing={2}>
+            <Box width={"100%"} maxWidth={"390px"}>
               <Typography
                 marginLeft={"5px"}
                 marginBottom={"12px"}
@@ -315,9 +315,8 @@ export default function FormFile() {
               </Typography>
               <TextField
                 sx={{
-                  ".MuiOutlinedInput-input": {
-                    width: "350px",
-                  },
+                  width: "100%",
+                  maxWidth: "390px",
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -339,15 +338,13 @@ export default function FormFile() {
                 required
               />
             </Box>
-            <Stack direction={"row"} spacing={2}>
+            <Stack direction={"row"} spacing={0}>
               <Box>
                 <Button
                   sx={{
                     backgroundColor: "#df7c6d",
                     color: "#fff",
-                    marginLeft: "90px",
                     fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    marginTop: "40px",
                     padding: "12px 40px",
                     letterSpacing: "2px",
                     ":hover": {
@@ -406,9 +403,8 @@ export default function FormFile() {
 
               <TextField
                 sx={{
-                  ".MuiOutlinedInput-input": {
-                    width: "350px",
-                  },
+                  width: "100%",
+                 maxWidth: "390px",
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -443,9 +439,8 @@ export default function FormFile() {
               </Typography>
               <TextField
                 sx={{
-                  ".MuiOutlinedInput-input": {
-                    width: "350px",
-                  },
+                 width: "100%",
+                 maxWidth: "390px",
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -482,8 +477,9 @@ export default function FormFile() {
 
             <TextField
               sx={{
+                width: "100%",
+                maxWidth: "785px",
                 ".MuiOutlinedInput-input": {
-                  width: "785px",
                   marginBottom: "130px",
                 },
                 ".MuiFormHelperText-root": {
