@@ -70,15 +70,15 @@ export default function MoreDetailsPage({
   return (
     <>
       <Stack
-        gap={22}
+        gap={isXsScreen ? "3rem" : 22}
         sx={{
           backgroundImage: isXsScreen ? undefined : `url(${bgmore})`,
-          backgroundSize: "104%",
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <Stack
-          paddingY={6}
+          paddingY={isXsScreen ? undefined : 6}
           maxWidth={1300}
           margin="0 auto"
           justifyContent="center"
@@ -149,7 +149,7 @@ export default function MoreDetailsPage({
         </Stack>
         <Stack
           pb={5}
-          pt={10}
+          pt={isXsScreen ? undefined : 10}
           maxWidth={1300}
           margin="0 auto"
           justifyContent="center"
