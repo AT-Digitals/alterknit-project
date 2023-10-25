@@ -156,7 +156,7 @@ export default function FaqPage() {
       <img style={{
          backgroundColor: "#fff",
       }} src={Top} alt="top-file" />
-      <Box bgcolor={"#f8f1eb"}>
+      <Box bgcolor={"#f8f1eb"} padding={"20px"}>
         <Typography
           textAlign={"center"}
           color={"black"}
@@ -167,7 +167,7 @@ export default function FaqPage() {
         >
           FAQ'S
         </Typography>
-        <Box margin={"0 auto"} padding={"0 10rem"}>
+        <Box margin={"0 auto"} width={"100%"} maxWidth={"1200px"}>
           <Box marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
             {Notes.map((notes, index) => (
               <Box

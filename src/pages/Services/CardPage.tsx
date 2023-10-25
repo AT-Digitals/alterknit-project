@@ -27,7 +27,7 @@ export default function CardPage() {
                     <CardContent style={{
                         paddingTop: "25px",
                     }}>
-                        <Stack direction={"row"} margin={"43px 43px"} spacing={19}>
+                        <Stack direction= {{ xs: 'column', sm:'row' }} margin={"43px 43px"} justifyContent={"space-between"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -65,6 +65,7 @@ export default function CardPage() {
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={"22px"}
+                                paddingRight={"30px"}
                                
                             >
                                 We need to examine your entire item in our work studio because
@@ -115,7 +116,7 @@ export default function CardPage() {
                     }}
                 >
                     <CardContent>
-                        <Stack direction={"row"} margin={"43px 43px"} spacing={11}>
+                        <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={"43px 43px"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -189,7 +190,7 @@ export default function CardPage() {
                     <CardContent style={{
                         paddingTop: "32px",
                     }}>
-                          <Stack direction={"row"} margin={"43px 43px"} spacing={11}>
+                          <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={"43px 43px"} spacing={3}>
                             <Typography
                                 marginTop={"20px"}
                                 lineHeight={"0.9"}
