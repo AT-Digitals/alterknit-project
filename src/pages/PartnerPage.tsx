@@ -8,6 +8,7 @@ import {
   TextField,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -261,6 +262,7 @@ export default function PartnerPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <Box
@@ -271,7 +273,7 @@ export default function PartnerPage() {
       <section
         style={{
           position: "relative",
-          padding: "12rem 0",
+          padding: "3rem 0",
         }}
       >
         <img
@@ -300,23 +302,21 @@ export default function PartnerPage() {
           src={image1}
           alt="bg-top"
         />
-        <Box
+        <Stack marginTop={"140px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }}
           sx={{
             position: "relative",
             zIndex: "3",
           }}
-          width={"100%"}
-          maxWidth={"1230px"}
+          maxWidth={"1520px"}
         >
           <Typography
-            marginTop={"-179px"}
-            marginLeft={"313px"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
             color={"black"}
             fontWeight={"500"}
-            fontSize={"5.2rem"}
+            lineHeight={1}
+            fontSize={isXsScreen ? "50px" : "80px"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
             textTransform={"lowercase"}
           >
@@ -329,16 +329,17 @@ export default function PartnerPage() {
               }}
               fontFamily={`"Jaceline", sans-serif`}
               fontSize={"22rem"}
+              lineHeight={"0.5"}
             >
               for you!
             </Typography>
           </Typography>
-        </Box>
+        </Stack>
         <Box
           sx={{
             position: "relative",
             zIndex: "2",
-            marginTop: "-94px",
+            marginTop: "83px",
             marginLeft: "-4px",
             padding: "20px",
           }}
@@ -459,24 +460,23 @@ export default function PartnerPage() {
         />
       </section>
       <section>
+        <Stack marginBottom={"30px"} justifyContent={"center"} alignItems={"center"} direction= {{ xs: 'column', sm:'row' }}>
         <Typography
-          marginBottom={"-105px"}
-          marginTop={"-170px"}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
           color={"black"}
           fontWeight={"400"}
           fontSize={"5.2rem"}
           lineHeight={"0.9"}
-          padding={"0px 20px"}
+          padding={"0px 2px"}
           fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
         >
           PARTNER WITH THE
-          <Typography
+         
+        </Typography>
+        <Typography
             fontSize={"20rem"}
             fontFamily={`"Jaceline", sans-serif`}
             marginLeft={"18px"}
+            lineHeight={0.5}
           >
             best
           </Typography>
@@ -488,7 +488,7 @@ export default function PartnerPage() {
               maxWidth: "124px",
             }}
           />
-        </Typography>
+        </Stack>
         <img src={image4} width={"100%"} alt="banner" />
         <Box
           marginBottom={"90px"}
@@ -519,13 +519,14 @@ export default function PartnerPage() {
       </section>
       <section>
         <Box padding={"2rem 0"}>
-          <Typography textAlign={"center"} color={"black"} fontWeight={"500"} fontSize={"100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
+          <Typography textAlign={"center"} lineHeight={1} color={"black"} fontWeight={"500"} fontSize={"100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
           <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} paddingTop={"5px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
         </Box>
         <form
           onSubmit={handleSubmit}
           style={{
             marginTop: "50px",
+            padding: "20px",
           }}
         >
             <Modal
@@ -564,14 +565,15 @@ export default function PartnerPage() {
       </Modal>
           <Stack
             display={"flex"}
-            justifyContent={"center"}
-            spacing={12}
+            justifyContent={"space-evenly"}
+            spacing={3}
             marginBottom={"40px"}
-            direction={"row"}
+            direction= {{ xs: 'column', sm:'row' }}
           >
-            <Box>
+            <Box width={"100%"} maxWidth={"600px"}>
               <TextField sx={{
-                width: "600px",
+                width: "100%",
+                maxWidth: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
@@ -591,9 +593,10 @@ export default function PartnerPage() {
                 onChange={handleInputChange}
               />
             </Box>
-            <Box>
+            <Box width={"100%"} maxWidth={"600px"}>
               <TextField sx={{
-                width: "600px",
+              width: "100%",
+              maxWidth: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
@@ -616,14 +619,15 @@ export default function PartnerPage() {
           </Stack>
           <Stack
             display={"flex"}
-            justifyContent={"center"}
-            spacing={12}
+            justifyContent={"space-evenly"}
+            spacing={3}
             marginBottom={"40px"}
-            direction={"row"}
+            direction= {{ xs: 'column', sm:'row' }}
           >
-            <Box>
+            <Box width={"100%"} maxWidth={"600px"}>
               <TextField sx={{
-                width: "600px",
+               width: "100%",
+               maxWidth: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
                 },
@@ -643,9 +647,10 @@ export default function PartnerPage() {
                 onChange={handleInputChange}
               />
             </Box>
-            <Box>
+            <Box width={"100%"} maxWidth={"600px"}>
               <TextField sx={{
-                width: "600px",
+             width: "100%",
+             maxWidth: "600px",
                 "& input::placeholder": {
                   opacity: "1.42",
                 },

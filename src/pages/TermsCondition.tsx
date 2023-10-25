@@ -9,12 +9,13 @@ export default function TermsCondition() {
  
     return (
         <>
-            <Box width={"100%"} maxWidth={"1310px"} margin={"0 auto"} padding={"0 8rem"}>
+            <Box maxWidth={"1310px"} margin={"0 auto"} padding={"10px"}>
                 <Typography
                     paddingTop={"50px"}
                     textAlign={"center"}
                     color={"black"}
                     fontWeight={"500"}
+                    lineHeight={1}
                     fontSize={"4.5rem"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"

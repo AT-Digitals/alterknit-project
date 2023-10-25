@@ -18,7 +18,7 @@ export default function ServiceHeader() {
           backgroundSize: "cover",
           padding: isXsScreen ? " 3.5rem 10px" : "15.5rem 0",
           // padding: isXsScreen ? " 3.5rem 10px" : "9.5rem 0",
-          backgroundImage: `url(http://localhost:3000/static/media/bg_services.f9e222d4fbfe26c645b7.jpg)`,
+          backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_services.jpg)`,
           backgroundPosition: "center",
         }}
       >

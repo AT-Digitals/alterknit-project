@@ -11,7 +11,7 @@ export default function BoxCreation() {
         backgroundColor: "#fff",
         marginBottom: "80px",
       }}>
-        <Box margin={"0px 150px"} paddingTop={"125px"}>
+        <Stack direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={"0px 15px"} paddingTop={"125px"}>
           <Typography
             lineHeight={"0.9"}
             color={"black"}
@@ -34,8 +34,8 @@ export default function BoxCreation() {
               WHEN EVALUATING
             </Typography>
           </Typography>
-        </Box>
-        <Stack spacing={8} margin={"0px 95px"} direction={"row"} paddingBottom={"65px"}>
+        </Stack>
+        <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }} paddingBottom={"65px"}>
           <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
@@ -149,7 +149,7 @@ export default function BoxCreation() {
             </Card>
           </Stack>
         </Stack>
-        <Stack spacing={8} margin={"0px 95px"} direction={"row"}>
+        <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }}>
           <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{

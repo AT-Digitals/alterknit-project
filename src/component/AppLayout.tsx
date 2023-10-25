@@ -22,9 +22,7 @@ export default function AppLayout({ children, ...props }: BoxProps) {
       <AppHeader setActiveTab={handleSelectMenu} activeTab={activeTab} />
       <Box display="flex" flexDirection="column" width="100%" flexGrow={1}>
         <Box display="flex" flexDirection="column" flexGrow={1}>
-          <Box sx={{
-             backgroundColor: "#f8f1eb",
-          }} display="flex" flexDirection="column" flexGrow={1}>
+          <Box display="flex" flexDirection="column" flexGrow={1}>
             <Outlet />
           </Box>
           <AppFooter activeTab={activeTab} setActiveTab={handleSelectMenu} />

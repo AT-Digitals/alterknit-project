@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
   }, []);
     return (
         <>
-            <Box width={"100%"} maxWidth={"1310px"} margin={"0 auto"} padding={"0 8rem"}>
+            <Box maxWidth={"1310px"} margin={"0 auto"} padding={"10px"}>
                 <Box>
                 <Typography
                     paddingTop={"50px"}
