@@ -1,5 +1,6 @@
 import {
   Box,
+  CardMedia,
   List,
   ListItem,
   ListItemText,
@@ -15,6 +16,7 @@ import bugImage from "../../assets/bug_02.png";
 import topImage from "../../assets/home_services_bg_top.svg";
 import routes from "../../routes/routes";
 import { Link } from "react-router-dom";
+import styled from "@emotion/styled";
 
 const listItemStyle = {
   fontSize: "22px",
@@ -30,6 +32,7 @@ const customMarkerStyle = {
   marginBottom: "30px",
 };
 
+
 export default function ServiceSection() {
   return (
     <section
@@ -43,13 +46,13 @@ export default function ServiceSection() {
       <Box bgcolor={Colors.HOME_BACKGROUND}>
         <Stack
           bgcolor={Colors.HOME_BACKGROUND}
-          direction={"row"}
+          direction={{ xs: "column", xl: "row" }}
           maxWidth={1300}
           margin="0 auto"
           justifyContent="space-around"
           paddingY={8}
           paddingX={15}
-
+          alignItems={{ xs: "center", xl: "" }}
         >
           <Box
             alignItems={"flex-start"}
@@ -152,17 +155,18 @@ export default function ServiceSection() {
         </Stack>
       </Box>
       <img src={bottomImage} alt="bottom" />
-      <img
-        style={{
+      <CardMedia
+        component="img"
+        image={bugImage}
+        alt="Paella dish"
+        sx={{
           maxWidth: 375,
           position: "absolute",
           left: 0,
           bottom: 0,
           marginBottom: "-13%",
+          display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" }
         }}
-        src={bugImage}
-        alt="bug"
-        loading="lazy"
       />
     </section>
   );

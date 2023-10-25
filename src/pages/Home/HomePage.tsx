@@ -17,7 +17,7 @@ export default function HomePage() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <Stack>
+    <Stack >
       <WelcomeSection />
       <Stack direction="column" spacing={2} width="100%">
         <Divider sx={{ borderColor: Colors.BLACK }} />

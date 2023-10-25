@@ -13,18 +13,20 @@ export default function ClothSection() {
             justifyContent="space-between"
             alignItems="center"
             margin="0 auto"
-            padding={10}
+            paddingY={10}
+            paddingX={4}
         >
-            <Grid container>
-                <Grid item xs={7}>
+            <Grid container rowGap={5}>
+                <Grid item xs={12} md={12} xl={7} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>
                     <img src={clothImage} alt="clothes" />
                 </Grid>
-                <Grid item xs={5}>
+                <Grid item xs={12} md={12} xl={5} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>
                     <Typography
                         fontSize="80px"
                         lineHeight={1}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         fontWeight={500}
+
                     >
                         don't settle for inferior solutions!
                     </Typography>
@@ -35,7 +37,7 @@ export default function ClothSection() {
                         lineHeight={1.5}
                         mt={"20px"}
                         mb={4}
-                        maxWidth={420}
+                        // maxWidth={420}
                         color="#575656"
                     >
                         Alterknit is the home of invisible repair. We don't patch and we
