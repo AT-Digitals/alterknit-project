@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import routes from "../../../routes/routes";
 import styled from "@emotion/styled";
@@ -29,8 +29,9 @@ interface DoorProps {
   prevStep: () => void;
 }
 
-
 export default function DarnIt({ prevStep }: DoorProps) {
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+
   return (
     <Box
       mt={"2rem"}
@@ -67,18 +68,20 @@ export default function DarnIt({ prevStep }: DoorProps) {
       <LinkWrapper>
         <StyledLink onClick={prevStep}>OK! I will ship it</StyledLink>
       </LinkWrapper>
-      <img
-        style={{
-          position: "absolute",
-          right: "-85px",
-          top: "0px",
-          objectFit: "contain",
-          height: "530px",
-          transform: "translateX(62%)",
-        }}
-        alt="door-to-door"
-        src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/moskitooz.png"
-      ></img>
+      {isXsScreen ? undefined : (
+        <img
+          style={{
+            position: "absolute",
+            right: "-85px",
+            top: "0px",
+            objectFit: "contain",
+            height: "530px",
+            transform: "translateX(62%)",
+          }}
+          alt="door-to-door"
+          src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/moskitooz.png"
+        ></img>
+      )}
     </Box>
   );
 }
