@@ -13,7 +13,7 @@ export default function BoxCreation() {
       }}>
         <Box margin={"0px 150px"} paddingTop={"125px"}>
           <Typography
-            lineHeight={"0.5"}
+            lineHeight={"0.9"}
             color={"black"}
             fontWeight={500}
             fontSize={"80px"}
@@ -25,6 +25,7 @@ export default function BoxCreation() {
               color={"black"}
               fontWeight={500}
               fontSize={"80px"}
+              lineHeight={"0.9"}
               textTransform={"lowercase"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               marginBottom={"20px"}
@@ -34,8 +35,8 @@ export default function BoxCreation() {
             </Typography>
           </Typography>
         </Box>
-        <Stack margin={"0px 95px"} direction={"row"} paddingBottom={"65px"}>
-          <Box margin={"30px 60px"} width={"100%"} maxWidth={"590px"}>
+        <Stack spacing={8} margin={"0px 95px"} direction={"row"} paddingBottom={"65px"}>
+          <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -69,7 +70,7 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"10px"}
-                lineHeight={"0.5"}
+                lineHeight={"0.9"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
@@ -81,6 +82,7 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
+                  lineHeight={"0.9"}
                   fontSize={"48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
@@ -89,8 +91,8 @@ export default function BoxCreation() {
                 </Typography>
               </Typography>
             </Card>
-          </Box>
-          <Box margin={"30px 0px"}  width={"100%"} maxWidth={"590px"}>
+          </Stack>
+          <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -124,7 +126,7 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"15px"}
-                lineHeight={"0.5"}
+                lineHeight={"0.9"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
@@ -136,6 +138,7 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
+                  lineHeight={"0.9"}
                   fontSize={"48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
@@ -144,10 +147,10 @@ export default function BoxCreation() {
                 </Typography>
               </Typography>
             </Card>
-          </Box>
+          </Stack>
         </Stack>
-        <Stack margin={"0px 95px"} direction={"row"}>
-          <Box margin={"30px 60px"}  width={"100%"} maxWidth={"590px"}>
+        <Stack spacing={8} margin={"0px 95px"} direction={"row"}>
+          <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -181,7 +184,7 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"15px"}
-                lineHeight={"0.5"}
+                lineHeight={"0.9"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
@@ -194,6 +197,7 @@ export default function BoxCreation() {
                   color={"black"}
                   fontWeight={500}
                   fontSize={"48px"}
+                  lineHeight={"0.9"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
                 >
@@ -201,8 +205,8 @@ export default function BoxCreation() {
                 </Typography>
               </Typography>
             </Card>
-          </Box>
-          <Box margin={"30px 0px"}  width={"100%"} maxWidth={"590px"}>
+          </Stack>
+          <Stack width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -236,7 +240,7 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"4px"}
-                lineHeight={"0.5"}
+                lineHeight={"0.9"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
@@ -248,6 +252,7 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
+                  lineHeight={"0.9"}
                   fontSize={"48px"}
                   textTransform={"lowercase"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
@@ -258,7 +263,7 @@ export default function BoxCreation() {
                 </Typography>
               </Typography>
             </Card>
-          </Box>
+          </Stack>
         </Stack>
       </Box>
     </>

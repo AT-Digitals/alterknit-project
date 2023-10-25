@@ -97,7 +97,7 @@ export default function PorfolioHeader() {
                 margin={"0 auto"}
                 padding={"0 10rem"}
             >
-                <Box position={"relative"}>
+                <Box display={{ xs: "block", sm: "flex" }}>
                     <Box
                         padding={"8rem 0 14rem 0"}
                         maxWidth={"620px"}
@@ -152,9 +152,9 @@ export default function PorfolioHeader() {
                     <img
                         style={{
                             marginRight: "-69px",
-                            marginTop: "-79px",
+                            marginTop: "55px",
                             top: 0,
-                            right: 237,
+                            right: 120,
                             position: "absolute",
                             maxWidth: "840px",
                         }}
