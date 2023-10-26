@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import { useEffect } from "react";
 
@@ -6,6 +6,7 @@ export default function TermsCondition() {
  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
  
     return (
         <>
@@ -16,9 +17,10 @@ export default function TermsCondition() {
                     color={"black"}
                     fontWeight={"500"}
                     lineHeight={1}
-                    fontSize={"4.5rem"}
+                    fontSize={isXsScreen ? "2.2rem" : "4.55rem"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"
+                    paddingBottom={isXsScreen ? "10px" : "30px"}
                 >
                     TERMS AND CONDITIONS
                 </Typography>

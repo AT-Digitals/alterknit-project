@@ -7,6 +7,7 @@ import {
   TextField,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -131,15 +132,17 @@ export default function SubscribePage() {
     console.log(data);
   };
 
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+
   return (
     <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
-      <Box width={"100%"} marginTop={"90px"}>
+      <Box width={"100%"} marginTop={isXsScreen ? "40px" : "90px"}>
         <Typography
           lineHeight={1}
           textAlign={"center"}
           fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           color={"black"}
-          fontSize={"48px"}
+          fontSize={isXsScreen ? "30px" : "48px"}
           fontWeight={500}
           textTransform="lowercase"
         >
@@ -172,6 +175,8 @@ export default function SubscribePage() {
           />
         </Box>
         <Stack display={{ xs: "block", sm: "flex" }} direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
+          <Box  display={{ xs: "none", md: "flex" }}>
+
           <Link to={""}>
             {/* <img src={Bug} alt="bug-left" width={"300px"} /> */}
             <CardMedia
@@ -183,7 +188,8 @@ export default function SubscribePage() {
 
             />
           </Link>
-          <Stack direction="column" spacing={4}>
+          </Box>
+          <Stack direction="column" width={"100%"} spacing={4}>
             <Typography
               marginTop={"100px"}
               color={"black"}
@@ -308,6 +314,7 @@ export default function SubscribePage() {
               *Code must be applied at check out. Please check your email!
             </Typography>
           </Stack>
+          <Box  display={{ xs: "none", md: "flex" }}>
           <Link to={""}>
             {/* <img
               src={Bug}
@@ -325,6 +332,7 @@ export default function SubscribePage() {
               sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" } }}
             />
           </Link>
+          </Box>
         </Stack>
       </Box>
     </Box>

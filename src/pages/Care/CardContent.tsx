@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "@emotion/styled";
 
@@ -20,6 +20,7 @@ const InnerCard = styled.div`
   transform: ${(props: { isFlipped: any }) =>
     props.isFlipped ? "rotateY(0deg)" : " rotateY(180deg)"};
   margin-bottom: 20px;
+  animation: flipCard 3s ease infinite;
 `;
 
 const CardFace = styled.div`
@@ -98,6 +99,17 @@ function HoverCard() {
   const handleCardLeave = () => {
     setHoveredCard(null);
   };
+
+  useEffect(() => {
+    // Automatically flip cards every 2 seconds
+    const interval = setInterval(() => {
+      setHoveredCard((prevIndex: any) =>
+        prevIndex < TotalCards.length - 1 ? prevIndex + 1 : 0
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Grid container spacing={8}>

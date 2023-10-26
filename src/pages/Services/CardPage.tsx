@@ -1,13 +1,14 @@
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
+import { Box, Card, CardContent, Stack, Typography, useMediaQuery } from "@mui/material";
 import ImageTop from "../../assets/services_services_bg_bottom.svg";
 import SpeakerImage from "../../assets/speaker.png";
 import StudioImage from "../../assets/studio.png";
 
 export default function CardPage() {
+    const isXsScreen = useMediaQuery("(max-width:600px)");
     return (
         <>
             <img src={ImageTop} alt="top" />
-            <Box paddingTop={"56px"}
+            <Box paddingTop={"56px"} paddingBottom={"5px"}
                 display={"flex"}
                 justifyContent={"center"}
                 sx={{
@@ -27,12 +28,12 @@ export default function CardPage() {
                     <CardContent style={{
                         paddingTop: "25px",
                     }}>
-                        <Stack direction= {{ xs: 'column', sm:'row' }} margin={"43px 43px"} justifyContent={"space-between"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', sm:'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"3rem"}
+                                fontSize={isXsScreen ? "2rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                             >
@@ -41,7 +42,7 @@ export default function CardPage() {
                                     color={"black"}
                                     fontWeight={"500"}
                                     lineHeight={"0.9"}
-                                    fontSize={"3rem"}
+                                    fontSize={isXsScreen ? "2rem" : "3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
                                 >
@@ -51,7 +52,7 @@ export default function CardPage() {
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={"20px"}
+                                    fontSize={isXsScreen ? "15px" : "20px"}
                                     textTransform={"initial"}
                                     paddingTop={"10px"}
                                 >
@@ -64,7 +65,7 @@ export default function CardPage() {
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                fontSize={"22px"}
+                                fontSize={isXsScreen ? "20px" : "22px"}
                                 paddingRight={"30px"}
                                
                             >
@@ -77,14 +78,15 @@ export default function CardPage() {
                         </Stack>
                         <Stack direction={"row"} justifyContent={"flex-end"}>
                             <Typography
-                                marginBottom={"36px"}
+                                marginBottom={isXsScreen ? "20px" : "36px"}
                                 marginRight={"48px"}
+                                marginLeft={isXsScreen ? "20px" : "0px"}
                                 lineHeight={"1.3"}
                                 maxWidth={"706px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                fontSize={"22px"}
+                                fontSize={isXsScreen ? "20px" : "22px"}
                             >
                                 Our repair service starts at $45.00. Bear in mind that this is
                                 the minimum you can expect to pay for a repair. There are
@@ -100,6 +102,7 @@ export default function CardPage() {
             <Box
                 display={"flex"}
                 justifyContent={"center"}
+                paddingBottom={"5px"}
                 sx={{
                     backgroundColor: "#df7c6d",
                     paddingTop: "20px",
@@ -111,17 +114,16 @@ export default function CardPage() {
                         maxWidth: "1140px",
                         border: "1px solid white",
                         borderRadius: "20px",
-                        marginBottom: "60px",
                         margin: "20px",
                     }}
                 >
                     <CardContent>
-                        <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={"43px 43px"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"3rem"}
+                                fontSize={isXsScreen ? "2rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                             >
@@ -129,7 +131,7 @@ export default function CardPage() {
                                 <Typography
                                     color={"black"}
                                     fontWeight={"500"}
-                                    fontSize={"3rem"}
+                                    fontSize={isXsScreen ? "2rem" : "3rem"}
                                     lineHeight={"0.9"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
@@ -140,7 +142,7 @@ export default function CardPage() {
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={"20px"}
+                                    fontSize={isXsScreen ? "15px" : "20px"}
                                     textTransform={"capitalize"}
                                     paddingTop={"10px"}
                                     lineHeight={"1.2"}
@@ -149,14 +151,14 @@ export default function CardPage() {
                                 </Typography>
                             </Typography>
                             <Typography
-                                marginBottom={"20px"}
+                                marginBottom={isXsScreen ? "10px" : "20px"}
                                 lineHeight={"1.3"}
                                 maxWidth={"714px"}
                                 marginTop={"4px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                fontSize={"22px"}
+                                fontSize={isXsScreen ? "20px" : "22px"}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -172,6 +174,7 @@ export default function CardPage() {
             <Box
                 display={"flex"}
                 justifyContent={"center"}
+                paddingBottom={"5px"}
                 sx={{
                     backgroundColor: "#df7c6d",
                     paddingTop: "20px",
@@ -183,20 +186,17 @@ export default function CardPage() {
                         maxWidth: "1140px",
                         border: "1px solid white",
                         borderRadius: "20px",
-                        marginBottom: "20px",
                         margin: "20px",
                     }}
                 >
-                    <CardContent style={{
-                        paddingTop: "32px",
-                    }}>
-                          <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={"43px 43px"} spacing={3}>
+                    <CardContent>
+                          <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 marginTop={"20px"}
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"3rem"}
+                                fontSize={isXsScreen ? "2rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                             >
@@ -205,17 +205,18 @@ export default function CardPage() {
                                     color={"black"}
                                     fontWeight={"500"}
                                     lineHeight={"0.9"}
-                                    fontSize={"3rem"}
+                                    fontSize={isXsScreen ? "2rem" : "3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
                                 >
                                     IT TAKE?
                                 </Typography>{" "}
                                 <Typography
+                                    marginTop={isXsScreen ? "7px" : "10px"}
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={"20px"}
+                                    fontSize={isXsScreen ? "15px" : "20px"}
                                     textTransform={"capitalize"}
                                 >
                                     Typically 4-6 Weeks
@@ -223,7 +224,7 @@ export default function CardPage() {
                             </Typography>
                             <Typography
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                fontSize={"22px"}
+                                fontSize={isXsScreen ? "20px" : "22px"}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
                                 maxWidth={"676px"}
@@ -268,7 +269,6 @@ export default function CardPage() {
                             maxWidth: "1140px",
                             border: "1px solid white",
                             borderRadius: "20px",
-                            marginBottom: "150px",
                             marginTop: "40px",
                             margin: "20px",
                            
@@ -282,7 +282,7 @@ export default function CardPage() {
                                     lineHeight={"0.5"}
                                     color={"black"}
                                     fontWeight={"500"}
-                                    fontSize={"3rem"}
+                                    fontSize={isXsScreen ? "2.3rem" : "3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
                                 >
@@ -293,9 +293,10 @@ export default function CardPage() {
                                         borderBottom={"1px dashed black"}
                                         color={"black"}
                                         fontWeight={"500"}
-                                        fontSize={"2.5rem"}
+                                        fontSize={isXsScreen ? "1.5rem" : "2.5rem"}
                                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                         textTransform={"lowercase"}
+                                        lineHeight={1.1}
                                     >
                                         PRICE OF REPIARS ARE NOT BASED ON THE ORIGINAL COST OF
                                         GARMENT.
@@ -308,14 +309,14 @@ export default function CardPage() {
                                     color={"black"}
                                     fontWeight={"500"}
                                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                    fontSize={"22px"}
+                                    fontSize={isXsScreen ? "18px" : "22px"}
                                 >
                                     Repair quotes are based on the time and required solution.
                                     <Typography
                                         color={"black"}
                                         fontWeight={"500"}
                                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                        fontSize={"22px"}
+                                        fontSize={isXsScreen ? "18px" : "22px"}
                                     >
                                         Estimates are for labor only and do not include material
                                         costs, shipping/delivery fees, or additional services. Every

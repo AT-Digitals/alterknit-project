@@ -107,13 +107,13 @@ export default function CheckOut({
   const [phoneError, setPhoneError] = useState("");
   const [zipcodeError, setZipcodeError] = useState("");
 
-  const handleSelectChange = (e: any) => {
-    const { name, value } = e.target;
-    setSelectedOption((prevData: any) => ({
-      ...prevData,
-      [name as string]: value,
-    }));
-  };
+  // const handleSelectChange = (e: any) => {
+  //   const { name, value } = e.target;
+  //   setSelectedOption((prevData: any) => ({
+  //     ...prevData,
+  //     [name as string]: value,
+  //   }));
+  // };
 
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
