@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  CardMedia,
   Modal,
   Stack,
   TextField,
@@ -173,10 +174,19 @@ export default function SubscribePage() {
             alt="bug1"
           />
         </Box>
-        <Stack direction="row" justifyContent={"center"} pb={8} maxWidth={1300} margin="0 auto">
+        <Stack display={{ xs: "block", sm: "flex" }} direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
           <Box  display={{ xs: "none", md: "flex" }}>
+
           <Link to={""}>
-            <img src={Bug} alt="bug-left" width={"300px"} />
+            {/* <img src={Bug} alt="bug-left" width={"300px"} /> */}
+            <CardMedia
+              component="img"
+              // height="194"
+              image={Bug}
+              alt="bug-left"
+              sx={{ display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" } }}
+
+            />
           </Link>
           </Box>
           <Stack direction="column" width={"100%"} spacing={4}>
@@ -190,8 +200,7 @@ export default function SubscribePage() {
               lineHeight={1}
               textTransform="lowercase"
             >
-              JOIN OUR MAILING LIST & GET 10% OF YOUR FIRST REPAIRED ORDER{" "}
-              <br /> WITH US*
+              JOIN OUR MAILING LIST & GET 10% OF YOUR FIRST REPAIRED ORDER WITH US*
               <Box display={"flex"} justifyContent={"center"} mt={1}>
                 <Typography
                   width={"520px"}
@@ -246,11 +255,13 @@ export default function SubscribePage() {
                   </Box>
                 </Box>
               </Modal>
-              <Box display={"flex"} justifyContent={"center"}>
+              <Box display={{ xs: "block", sm: "flex" }} width="100%" maxWidth={500} justifyContent={"center"}>
                 <TextField
+                  fullWidth
                   sx={{
+                    marginBottom: { xs: 3, sm: 0 },
                     ".MuiOutlinedInput-input": {
-                      width: "470px",
+                      // width: { xs: 300, sm: 470 },
                       height: "40px",
                       border: "1px solid #df7c6d",
                     },
@@ -271,7 +282,9 @@ export default function SubscribePage() {
                   required
                 ></TextField>
                 <Button
+                  fullWidth
                   sx={{
+                    // width: { xs: 330, sm: 470 },
                     backgroundColor: "#df7c6d",
                     border: "1px solid #df7c6d",
                     color: "white",
@@ -303,13 +316,20 @@ export default function SubscribePage() {
           </Stack>
           <Box  display={{ xs: "none", md: "flex" }}>
           <Link to={""}>
-            <img
+            {/* <img
               src={Bug}
               alt="bug-right"
               width={"300px"}
               style={{
                 transform: "scaleX(-1)",
               }}
+            /> */}
+            <CardMedia
+              component="img"
+              // height="194"
+              image={Bug}
+              alt="bug-right"
+              sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" } }}
             />
           </Link>
           </Box>
