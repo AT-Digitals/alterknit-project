@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography, styled, useMediaQuery } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useState } from "react";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
@@ -150,6 +150,7 @@ export default function FaqPage() {
       setOpenNote5Index(index);
     }
   };
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <>
@@ -161,7 +162,7 @@ export default function FaqPage() {
           textAlign={"center"}
           color={"black"}
           fontWeight={"500"}
-          fontSize={"5rem"}
+          fontSize={isXsScreen ? "50px" : "80px"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           textTransform={"lowercase"}
         >
@@ -187,7 +188,7 @@ export default function FaqPage() {
                 >
                   <Typography
                      fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                    fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -197,13 +198,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}
@@ -239,7 +240,7 @@ export default function FaqPage() {
                 >
                   <Typography
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                      fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -249,13 +250,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}
@@ -291,7 +292,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                    fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -301,13 +302,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}
@@ -343,7 +344,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                    fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -353,13 +354,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}
@@ -395,7 +396,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                    fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -405,13 +406,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}
@@ -447,7 +448,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"32px"}
+                    fontSize={isXsScreen ? "20px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -457,13 +458,13 @@ export default function FaqPage() {
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   ) : (
                     <AddCircleIcon
                       style={{
-                        fontSize: "62px",
+                        fontSize: isXsScreen ? "32px" : "62px",
                       }}
                     />
                   )}

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 import { useEffect } from "react";
 
@@ -6,6 +6,7 @@ export default function PrivacyPolicy() {
     useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:600px)");
     return (
         <>
             <Box maxWidth={"1310px"} margin={"0 auto"} padding={"10px"}>
@@ -15,10 +16,11 @@ export default function PrivacyPolicy() {
                     textAlign={"center"}
                     color={"black"}
                     fontWeight={500}
-                    fontSize={"5rem"}
+                    fontSize={isXsScreen ? "2.5rem" : "5rem"}
                     lineHeight={"1"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"
+                    paddingBottom={isXsScreen ? "10px" : "20px"}
                 >
                     ALTERKNIT NEW YORK PRIVACY POLICY
                 </Typography>

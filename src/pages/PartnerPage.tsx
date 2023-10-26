@@ -263,6 +263,7 @@ export default function PartnerPage() {
     window.scrollTo(0, 0);
   }, []);
   const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isYsScreen = useMediaQuery("(max-width:1200px)");
 
   return (
     <Box
@@ -273,7 +274,7 @@ export default function PartnerPage() {
       <section
         style={{
           position: "relative",
-          padding: "3rem 0",
+          padding: isXsScreen ? "1rem 0" : "3rem 0",
         }}
       >
         <img
@@ -302,7 +303,7 @@ export default function PartnerPage() {
           src={image1}
           alt="bg-top"
         />
-        <Stack marginTop={"140px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }}
+        <Stack marginTop={"140px"} justifyContent={"center"} direction="row"
           sx={{
             position: "relative",
             zIndex: "3",
@@ -316,7 +317,7 @@ export default function PartnerPage() {
             color={"black"}
             fontWeight={"500"}
             lineHeight={1}
-            fontSize={isXsScreen ? "50px" : "80px"}
+            fontSize={isXsScreen ? "30px" : "80px"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
             textTransform={"lowercase"}
           >
@@ -324,11 +325,11 @@ export default function PartnerPage() {
             <Typography
               style={{
                 marginLeft: "33px",
-                marginTop: "-75px",
-                wordSpacing: "-65px",
+                marginTop: "-50px",
+                wordSpacing:  isXsScreen ? "-30px" : "-55px",
               }}
               fontFamily={`"Jaceline", sans-serif`}
-              fontSize={"22rem"}
+              fontSize={isYsScreen ? "150px" : "320px"}
               lineHeight={"0.5"}
             >
               for you!
@@ -339,7 +340,7 @@ export default function PartnerPage() {
           sx={{
             position: "relative",
             zIndex: "2",
-            marginTop: "83px",
+            marginTop: "74px",
             marginLeft: "-4px",
             padding: "20px",
           }}
@@ -460,11 +461,11 @@ export default function PartnerPage() {
         />
       </section>
       <section>
-        <Stack marginBottom={"30px"} justifyContent={"center"} alignItems={"center"} direction= {{ xs: 'column', sm:'row' }}>
+        <Stack marginBottom={"30px"} justifyContent={"center"} alignItems={"center"} direction="row">
         <Typography
           color={"black"}
           fontWeight={"400"}
-          fontSize={"5.2rem"}
+          fontSize={isXsScreen ? "32px" : "80px"}
           lineHeight={"0.9"}
           padding={"0px 2px"}
           fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
@@ -473,7 +474,7 @@ export default function PartnerPage() {
          
         </Typography>
         <Typography
-            fontSize={"20rem"}
+             fontSize={isXsScreen ? "120px" : "220px"}
             fontFamily={`"Jaceline", sans-serif`}
             marginLeft={"18px"}
             lineHeight={0.5}
@@ -482,10 +483,10 @@ export default function PartnerPage() {
           </Typography>
           <img
             src={image3}
-            width={"100%"}
             alt="logo"
             style={{
               maxWidth: "124px",
+              width: isXsScreen ? "90%" : "270px",
             }}
           />
         </Stack>
@@ -518,14 +519,14 @@ export default function PartnerPage() {
         </Box>
       </section>
       <section>
-        <Box padding={"2rem 0"}>
+        <Box padding={isXsScreen ? "0rem 0" : "2rem 0"}>
           <Typography textAlign={"center"} lineHeight={1} color={"black"} fontWeight={"500"} fontSize={"100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
-          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} paddingTop={"5px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
+          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} padding={"10px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
         </Box>
         <form
           onSubmit={handleSubmit}
           style={{
-            marginTop: "50px",
+            marginTop: isXsScreen ? "5px" : "50px",
             padding: "20px",
           }}
         >
@@ -688,7 +689,7 @@ export default function PartnerPage() {
               }
             }} type="submit">Submit</Button>
           </Box>
-          <Typography paddingTop={"15px"} paddingBottom={"100px"} textAlign={"center"} color={"#000000"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#000000"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
+          <Typography paddingTop={"15px"} paddingBottom={isXsScreen ? "30px" : "100px"} textAlign={"center"} color={"#000000"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#000000"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
             textDecoration: "none",
             color: "#df7c6d",
 
