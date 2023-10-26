@@ -13,19 +13,20 @@ export default function CustomSection() {
 
         // margin="0 auto"
         >
-            <Grid container columnSpacing={15} rowGap={{ xs: 4 }}>
+            <Grid container columnSpacing={15} rowGap={{ xs: 5 }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6} textAlign={{ sm: "center", md: "center", xl: "start" }} >
                     <Stack
                         direction="column"
-                        alignItems={{ sm: "center", md: "center", xl: "start" }}
-                        spacing={{ xs: 2, md: 0 }}
+                        alignItems={{ xs: "center", sm: "center", md: "center", xl: "start" }}
+                        spacing={{ xs: 2, sm: 0 }}
                     >
                         <Typography
-                            fontSize={{ xs: "55px", sm: "80px" }}
+                            fontSize={{ xs: "3rem", sm: "80px" }}
                             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                             fontWeight={500}
                             textTransform="lowercase"
                             lineHeight={{ xs: "3.5rem", sm: 1.5 }}
+                            textAlign={{ xs: "center" }}
 
                         >
                             We reap what we sew
@@ -34,10 +35,10 @@ export default function CustomSection() {
                             fontSize={{ xs: "17.5px", sm: "22px" }}
                             mb={3}
                             color={Colors.Text_COLOR}
-                            maxWidth={550}
+                            maxWidth={{ sm: 470, xl: 550 }}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
                             fontWeight={500}
-                            textAlign={{ lg: "center", xl: "start" }}
+                            textAlign={{ xs: "center", lg: "center", xl: "start" }}
                         >
                             All of the fibers used in your repair are harvested and grafted from
                             your garment itself.
@@ -49,14 +50,16 @@ export default function CustomSection() {
                     <Stack
                         direction="column"
                         ml={{ xs: 0, xl: 7 }}
-                        alignItems={{ sm: "center", md: "center", xl: "none" }}
-                        spacing={{ xs: 2, md: 0 }}
+                        alignItems={{ xs: "center", sm: "center", md: "center", xl: "none" }}
+                        spacing={{ xs: 2, sm: 0 }}
+
                     >
                         <Typography
-                            fontSize={{ xs: "55px", sm: "80px" }}
+                            fontSize={{ xs: "3rem", sm: "80px" }}
                             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                             fontWeight={500}
                             lineHeight={{ xs: "3.5rem", sm: 1.5 }}
+                            textAlign={{ xs: "center" }}
                         >
                             custom jobs for all
                         </Typography>
@@ -65,10 +68,10 @@ export default function CustomSection() {
 
                             mr={3}
                             color={Colors.Text_COLOR}
-                            maxWidth={500}
+                            maxWidth={{ sm: 470, xl: 550 }}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
                             fontWeight={500}
-                            textAlign={{ lg: "center", xl: "start" }}
+                            textAlign={{ xs: "center", lg: "center", xl: "start" }}
                         >
                             All of our repairs are performed by skilled human beings working with
                             very tiny needles and really big magnifiers.

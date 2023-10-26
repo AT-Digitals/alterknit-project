@@ -6,6 +6,7 @@ import {
   ListItemText,
   Stack,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 
 import Colors from "../../CommonComponent/Colors";
@@ -20,7 +21,7 @@ import styled from "@emotion/styled";
 
 const listItemStyle = {
   fontSize: "22px",
-  marginBottom: "30px",
+  // marginBottom: "30px",
 };
 
 const customMarkerStyle = {
@@ -32,8 +33,15 @@ const customMarkerStyle = {
   marginBottom: "30px",
 };
 
+const customMarkerStyle2 = {
+  borderTop: "1px dashed black",
+  paddingTop: "20px",
+}
+
+
 
 export default function ServiceSection() {
+  const isXsScreen = useMediaQuery("(max-width:1200px)");
   return (
     <section
       style={{
@@ -47,31 +55,40 @@ export default function ServiceSection() {
         <Stack
           bgcolor={Colors.HOME_BACKGROUND}
           direction={{ xs: "column", xl: "row" }}
-          maxWidth={1300}
-          margin="0 auto"
+
           justifyContent="space-around"
           paddingY={8}
-          paddingX={15}
+          paddingX={{ xs: 3, lg: 15 }}
           alignItems={{ xs: "center", xl: "" }}
         >
           <Box
-            alignItems={"flex-start"}
+            alignItems={{ xs: "center", lg: "flex-start" }}
             flex={1}
             display={"flex"}
             flexDirection={"column"}
             justifyItems={"flex-start"}
             pt={2}
-            maxWidth={350}
+            // maxWidth={350}
             zIndex={1}
+            mb={{ xs: 4, sm: 4, md: 4 }}
+            paddingX={{ xl: "13%" }}
           >
-            <Typography
-              fontSize="80px"
+            {isXsScreen ? <Typography
+              fontSize={{ xs: "3rem", sm: "80px" }}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               fontWeight={500}
               lineHeight={1}
             >
-              holes? <br /> we fix them
+              holes? we fix them
             </Typography>
+              : <Typography
+                fontSize={{ xs: "3rem", sm: "80px" }}
+                fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                fontWeight={500}
+                lineHeight={1}
+              >
+                holes?  <br /> we fix them
+              </Typography>}
             <Link to={routes.SERVICES}>
               <CustomButton
                 bgColor={Colors.BLACK}
@@ -103,52 +120,90 @@ export default function ServiceSection() {
               }}
             >
               <ListItem style={listItemStyle}>
-                <ListItemIcon style={{ minWidth: 0 }}>
-                  <div style={customMarkerStyle}></div>
-                </ListItemIcon>
-                <ListItemText>
-                  <Typography
-                    lineHeight={1.3}
-                    fontSize={"22px"}
-                    fontWeight={500}
-                    fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  >
-                    We work with you to determine the scope of service you need.
-                  </Typography>
-                </ListItemText>
+                {isXsScreen ?
+                  <>
+                    <ListItemText style={customMarkerStyle2}>
+                      <Typography
+                        lineHeight={1.3}
+                        fontSize={{ xs: "17.5px", sm: "22px" }}
+                        fontWeight={500}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        textAlign={{ xs: "center", md: "center" }}
+                      >
+                        We work with you to determine the scope of service you need.
+                      </Typography>
+                    </ListItemText> </> : <> <ListItemIcon style={{ minWidth: 0 }}>
+                      <div style={customMarkerStyle}></div>
+                    </ListItemIcon>
+                    <ListItemText >
+                      <Typography
+                        lineHeight={1.3}
+                        fontSize={"22px"}
+                        fontWeight={500}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+
+                      >
+                        We work with you to determine the scope of service you need.
+                      </Typography>
+                    </ListItemText> </>}
               </ListItem>
 
               <ListItem style={listItemStyle}>
-                <ListItemIcon style={{ minWidth: 0 }}>
-                  <div style={customMarkerStyle}></div>
-                </ListItemIcon>
-                <ListItemText>
-                  <Typography
-                    lineHeight={1.3}
-                    fontSize={"22px"}
-                    fontWeight={500}
-                    fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  >
-                    Our unmatched team works diligently to restore your items.
-                  </Typography>
-                </ListItemText>
+                {isXsScreen ?
+                  <>
+                    <ListItemText style={customMarkerStyle2}>
+                      <Typography
+                        lineHeight={1.3}
+                        fontSize={{ xs: "17.5px", sm: "22px" }}
+                        fontWeight={500}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                        textAlign={{ xs: "center", md: "center" }}
+                      >
+                        Our unmatched team works diligently to restore your items.
+                      </Typography>
+                    </ListItemText> </> : <><ListItemIcon style={{ minWidth: 0 }}>
+                      <div style={customMarkerStyle}></div>
+                    </ListItemIcon>
+                    <ListItemText>
+                      <Typography
+                        lineHeight={1.3}
+                        fontSize={"22px"}
+                        fontWeight={500}
+                        fontFamily={`"ProximaNovaMedium", sans-serif`}
+                      >
+                        Our unmatched team works dilightly to restore your items.
+                      </Typography>
+                    </ListItemText></>}
               </ListItem>
 
               <ListItem style={listItemStyle}>
-                <ListItemIcon style={{ minWidth: 0 }}>
-                  <div style={customMarkerStyle}></div>
-                </ListItemIcon>
-                <ListItemText>
-                  <Typography
-                    lineHeight={1.3}
-                    fontSize={"22px"}
-                    fontWeight={500}
-                    fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  >
-                    Your items come back to you repaired and ready to enjoy
-                    again.
-                  </Typography>
-                </ListItemText>
+                {isXsScreen ? <>
+                  <ListItemText style={customMarkerStyle2}>
+                    <Typography
+                      lineHeight={1.3}
+                      fontSize={{ xs: "17.5px", sm: "22px" }}
+                      fontWeight={500}
+                      fontFamily={`"ProximaNovaMedium", sans-serif`}
+                      textAlign={{ xs: "center", md: "center" }}
+                    >
+                      Your items come back to you repaired and ready to enjoy
+                      again.
+                    </Typography>
+                  </ListItemText></> : <>
+                  <ListItemIcon style={{ minWidth: 0 }}>
+                    <div style={customMarkerStyle}></div>
+                  </ListItemIcon>
+                  <ListItemText >
+                    <Typography
+                      lineHeight={1.3}
+                      fontSize={"22px"}
+                      fontWeight={500}
+                      fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    >
+                      Your items come back to you repaired and ready to enjoy
+                      again.
+                    </Typography>
+                  </ListItemText></>}
               </ListItem>
             </List>{" "}
           </Box>

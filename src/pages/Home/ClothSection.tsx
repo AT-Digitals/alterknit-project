@@ -1,4 +1,4 @@
-import { Stack, Grid, Typography } from "@mui/material";
+import { Stack, Grid, Typography, CardMedia } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
 import CustomButton from "../../CommonComponent/CustomButton";
 import clothImage from "../../assets/before_after.jpg";
@@ -9,20 +9,26 @@ export default function ClothSection() {
     return (
         <Stack
             direction="row"
-            maxWidth={1300}
             justifyContent="space-between"
             alignItems="center"
-            margin="0 auto"
             paddingY={10}
             paddingX={3}
+            margin="0 auto"
+            maxWidth={1300}
         >
             <Grid container rowGap={5}>
                 <Grid item xs={12} md={12} xl={7} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>
-                    <img src={clothImage} alt="clothes" />
+                    {/* <img src=  /> */}
+                    <CardMedia
+                        component="img"
+                        // height="194"
+                        image={clothImage}
+                        alt="clothes"
+                    />
                 </Grid>
                 <Grid item xs={12} md={12} xl={5} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>
                     <Typography
-                        fontSize="80px"
+                        fontSize={{ xs: "3rem", sm: "80px" }}
                         lineHeight={1}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         fontWeight={500}
@@ -31,7 +37,7 @@ export default function ClothSection() {
                         don't settle for inferior solutions!
                     </Typography>
                     <Typography
-                        fontSize="22px"
+                        fontSize={{ xs: "17.5px", sm: "22px" }}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
                         fontWeight={500}
                         lineHeight={1.5}
