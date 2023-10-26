@@ -17,7 +17,6 @@ import SubmitPopup from "../../../../Popup/SubmitPopup";
 import alterknitImage from "../../../../assets/alterknit.png";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const StyledTableCell = styled.td`
@@ -439,10 +438,7 @@ export default function LastStep({
           maxWidth={1440}
           padding={isXsScreen ? "1rem" : "0 10rem"}
         >
-          <Box
-            mt={15}
-            textAlign={"left"}
-          >
+          <Box mt={15} textAlign={"left"}>
             <Box display={"flex"} justifyContent={"space-between"}>
               <label
                 style={{

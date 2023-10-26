@@ -6,12 +6,12 @@ import {
   TextField,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 
 import AppContainer from "../../../component/AppContainer";
 import ShipInDetails from "../ship-in/ShipInDetails";
 import StateOptions from "./StateOptions";
-import { useState } from "react";
 
 const CustomTextField = styled(TextField)`
   && {
@@ -64,38 +64,40 @@ export default function BillingForm({
   billInformation,
   setBillInformation,
 }: BillProps) {
-  const [formdata, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    streetAddress: "",
-    apartment: "",
-    city: "",
-    state: "",
-    zipCode: "",
-  });
+  // const [formdata, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   streetAddress: "",
+  //   apartment: "",
+  //   city: "",
+  //   state: "",
+  //   zipCode: "",
+  // });
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setBillInformation(name as keyof ShipInDetails["BillInformation"], value);
   };
 
-  const handleSelectChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name as string]: value,
-    }));
-  };
+  // const handleSelectChange = (e: any) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name as string]: value,
+  //   }));
+  // };
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <>
       <AppContainer
         mt={"8rem"}
         maxWidth={850}
-        width={"100%"}
+        width={isXsScreen ? "90%" : "100%"}
         display={"flex"}
         justifyContent={"center"}
         flexWrap={"wrap"}
+        padding={0}
       >
         <h3
           style={{
@@ -103,7 +105,7 @@ export default function BillingForm({
             borderRadius: "30px",
             padding: "3rem",
             marginBottom: "3rem",
-            fontSize: "48px",
+            fontSize: isXsScreen ? "35px" : "48px",
             fontFamily: "IndustrialGothicBannerStd, sans-serif",
             fontWeight: 500,
 
@@ -113,7 +115,12 @@ export default function BillingForm({
           Billing Information
         </h3>
       </AppContainer>
-      <AppContainer maxWidth={1300} textAlign={"start"}>
+      <AppContainer
+        padding={0}
+        width={isXsScreen ? "90%" : "100%"}
+        maxWidth={1300}
+        textAlign={isXsScreen ? "center" : "start"}
+      >
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
           <Typography
             fontSize={"45px"}
@@ -181,7 +188,7 @@ export default function BillingForm({
           />
         </Box>
 
-        <Stack direction={"row"} spacing={5}>
+        <Stack direction={isXsScreen ? "column" : "row"} spacing={5}>
           <Box style={{ flex: 1 }}>
             <Typography
               fontSize={"45px"}
