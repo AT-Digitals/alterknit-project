@@ -34,21 +34,18 @@ const StyledTr2 = styled.tr`
   gap: 2rem;
   margin-top: 2rem;
 `;
-
 const StyledTableCellValue = styled.td`
   vertical-align: top;
   word-wrap: break-word;
   font-weight: 400;
   font-family: "ProximaNovaRegular", sans-serif;
 `;
-
 const StyledButton = styled(CustomButton)({
   borderRadius: "8px",
   ":hover": {
     backgroundColor: "#f58977",
   },
 });
-
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -67,7 +64,6 @@ interface LaststepProps {
   itemEditClick: () => void;
   onSubmit: (e: { preventDefault: () => void }) => void;
 }
-
 export default function LastStep({
   serviceDetails,
   shipInDetails,
@@ -79,19 +75,15 @@ export default function LastStep({
   const [showSubmit, setShowSubmit] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
   // const navigate = useNavigate();
-
   const closeModal = () => {
     setIsModalOpen(false);
     window.location.href = "/schedule-repair";
     // navigate('/home');
   };
-
   const handleSubmitClick = () => {
     setShowSubmit(true);
   };
-
   const handleSubmitConfirmed = (e: { preventDefault: () => void }) => {
     onSubmit(e);
     if (showSubmit) {
@@ -103,22 +95,17 @@ export default function LastStep({
       setIsLoading(false);
     }, 3000);
   };
-
   const handleSubmitCancelled = () => {
     setShowSubmit(false);
   };
-
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
   const [isChecked1, setIsChecked1] = useState(true);
-
   const [displayedEntry, setDisplayedEntry] = useState(0);
-
   const handleDisplayEntry = (entry: number) => {
     setDisplayedEntry(entry);
   };
-
   const handleChecOtherkboxChange = () => {
     setIsChecked1(!isChecked1);
   };
@@ -150,8 +137,7 @@ export default function LastStep({
           alt="background"
         ></img>
       </Box>
-
-      <Box marginTop="6rem">
+      <Box marginTop={isXsScreen ? "2rem" : "6rem"}>
         <Box
           sx={{
             padding: isXsScreen ? "10px" : undefined,
@@ -206,7 +192,6 @@ export default function LastStep({
                   title="edit"
                 />
               </Button>
-
               <ul style={{ listStyle: "none", padding: 0 }}>
                 {serviceDetails.map((serviceData, index) => (
                   <li style={{ display: "inline" }} key={index}>
@@ -215,7 +200,6 @@ export default function LastStep({
                         marginLeft: "22px",
                         background:
                           displayedEntry === index ? "#df7c6d" : "white",
-
                         color: displayedEntry === index ? "white" : "black",
                         padding: "5px 20px",
                         border: "none",
@@ -232,7 +216,6 @@ export default function LastStep({
                   </li>
                 ))}
               </ul>
-
               <table
                 style={{
                   width: "100%",
@@ -267,7 +250,6 @@ export default function LastStep({
                           <StyledTableCell>Brief Description</StyledTableCell>
                         </StyledTr>
                       </Grid>
-
                       {serviceDetails.length > 0 && (
                         <Grid item xs={6}>
                           <StyledTr>
@@ -333,7 +315,6 @@ export default function LastStep({
             ) : (
               ""
             )}
-
             <Box
               bgcolor={"#f8f1ec"}
               border={"5px solid #df7c6d"}
@@ -360,7 +341,6 @@ export default function LastStep({
                   title="edit"
                 />
               </Button>
-
               <table
                 style={{
                   width: "100%",
@@ -483,7 +463,6 @@ export default function LastStep({
               </a>
             </Typography>
           </Box>
-
           <Box textAlign={"left"}>
             <Box display={"flex"} justifyContent={"space-between"}>
               <label
@@ -559,7 +538,6 @@ export default function LastStep({
           handleSubmitConfirmed={handleSubmitConfirmed}
         />
       )}
-
       {isModalOpen && (
         <Modal
           open={isModalOpen}

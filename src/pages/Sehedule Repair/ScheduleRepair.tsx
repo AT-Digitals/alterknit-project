@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import React, { useEffect } from "react";
 
 import Colors from "../../CommonComponent/Colors";
@@ -34,9 +34,10 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isXsScreen = useMediaQuery("(max-width:890px)");
 
   return (
-    <Stack direction={"row"}>
+    <Stack direction={{ xs: "column", md: "row" }}>
       <Box
         display="flex"
         justifyContent="center"
@@ -46,7 +47,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           backgroundImage: `url('https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/knitting.png')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          width: "67%",
+          width: { xs: "100%", md: "67%" },
           display: "flex",
           justifyContent: "center",
           position: "relative",
@@ -59,42 +60,44 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           textTransform={"lowercase"}
           sx={{
             fontFamily: "IndustrialGothicBannerStd, sans-serif",
-            fontSize: "9.5em",
+            fontSize: { xs: "4.5rem", md: "9.5em" },
             lineHeight: 1,
             textAlign: "center",
-            padding: "0 150px 0 5rem",
+            padding: { xs: "2rem", md: "0 150px 0 5rem" },
           }}
         >
           WELCOME TO REAL REPAIR.
         </Typography>
-        <Box
-          sx={{
-            backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_left.svg')`,
-            backgroundRepeat: "no-repeat",
-            backgroundPositionX: "right",
-            width: 150,
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            content: '""',
-            marginRight: "-1px",
-            top: 0,
-            right: 0,
-          }}
-        ></Box>
+        {isXsScreen ? undefined : (
+          <Box
+            sx={{
+              backgroundImage: `url('	https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_syr_left.svg')`,
+              backgroundRepeat: "no-repeat",
+              backgroundPositionX: "right",
+              width: 150,
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              position: "absolute",
+              content: '""',
+              marginRight: "-1px",
+              top: 0,
+              right: 0,
+            }}
+          ></Box>
+        )}
       </Box>
       <Box
-        width={"35%"}
+        width={{ xs: "100%", md: "35%" }}
         bgcolor={"#df7c6d"}
         color={"black"}
         textAlign={"center"}
-        padding={"4rem 4rem 3rem 1rem"}
+        padding={{ xs: "2rem 0 0 0", md: "4rem 4rem 3rem 1rem" }}
         position={"relative"}
       >
         <Typography
           variant="h3"
-          fontSize="60px"
+          fontSize={{ xs: "40px", md: "60px" }}
           fontWeight={500}
           fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           textTransform={"lowercase"}
@@ -103,14 +106,14 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
         </Typography>
         <Stack spacing={2} mt={2}>
           <Typography
-            fontSize={"20px"}
+            fontSize={{ xs: "16px", md: "20px" }}
             fontFamily={`"ProximaNovaMedium", sans-serif`}
             fontWeight={500}
           >
             Access our shipping portal to create your order!
           </Typography>
           <Typography
-            fontSize={"20px"}
+            fontSize={{ xs: "16px", md: "20px" }}
             lineHeight={1}
             fontFamily={`"ProximaNovaMedium", sans-serif`}
             fontWeight={500}
@@ -119,7 +122,6 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
             straight to your inbox for you to use.
           </Typography>
         </Stack>
-        {/* <Link to={routes.FIXME}> */}
         <Button
           style={
             isHovered ? { ...buttonStyle, ...buttonHoverStyle } : buttonStyle
@@ -152,9 +154,8 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
             </span>
           </Box>
         </Button>
-        {/* </Link> */}
 
-        <Box mt={"70px"}>
+        <Box mt={{ xs: 1, md: "70px" }}>
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
@@ -172,7 +173,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
               fontWeight: 500,
             }}
           >
-            Be sure to visit our{" "}
+            Be sure to visit our
             <a
               style={{
                 color: "black",
@@ -185,18 +186,20 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
             </a>{" "}
             on our Service page to find out all the answers to your questions.
           </p>
-          <img
-            style={{
-              maxWidth: "260px",
-              position: "absolute",
-              right: 0,
-              bottom: 0,
-              marginBottom: "-30px",
-              pointerEvents: "none",
-            }}
-            src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bug_07.png"
-            alt="bug"
-          ></img>
+          {isXsScreen ? undefined : (
+            <img
+              style={{
+                maxWidth: "260px",
+                position: "absolute",
+                right: 0,
+                bottom: 0,
+                marginBottom: "-30px",
+                pointerEvents: "none",
+              }}
+              src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bug_07.png"
+              alt="bug"
+            ></img>
+          )}
         </Box>
       </Box>
     </Stack>

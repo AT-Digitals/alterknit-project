@@ -69,7 +69,7 @@ export default function CarePage() {
     <Box>
       <section
         style={{
-          padding: isXsScreen ? "1.5rem" : "6.5rem",
+          padding: isXsScreen ? "0.5rem" : "6.5rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -232,6 +232,7 @@ export default function CarePage() {
               display={"flex"}
               flexDirection={"column"}
               gap={"3rem"}
+              alignItems={"center"}
               sx={{
                 "@media (max-width: 768px)": {
                   flexDirection: "column",
@@ -385,6 +386,7 @@ export default function CarePage() {
             fontSize={isXsScreen ? "40px" : "80px"}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
+            textAlign={isXsScreen ? "center" : undefined}
             textTransform={"lowercase"}
           >
             HEY,DID YOU KNOW...
@@ -417,19 +419,21 @@ export default function CarePage() {
               },
             }}
           >
-            <img
-              style={{
-                maxWidth: "105px",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                marginLeft: "38%",
-                marginTop: "-63px",
-              }}
-              src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo-3d.png"
-              alt="logo"
-              loading="lazy"
-            />
+            {isXsScreen ? undefined : (
+              <img
+                style={{
+                  maxWidth: "105px",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  marginLeft: "38%",
+                  marginTop: "-63px",
+                }}
+                src="https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/logo-3d.png"
+                alt="logo"
+                loading="lazy"
+              />
+            )}
             <Typography
               fontSize={"80px"}
               lineHeight={"3rem"}

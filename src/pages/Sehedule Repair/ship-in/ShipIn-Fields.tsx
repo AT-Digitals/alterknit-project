@@ -98,26 +98,6 @@ export default function ShipinFields({
     if (!hasError) {
       nextStep();
     }
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    //   let result = await fetch(
-    //     // "https://alterknit-backend.onrender.com/service-details",
-    //     "http://localhost:3001/service-details",
-    //     {
-    //       method: "post",
-    //       body: JSON.stringify({
-    //         color: serviceFormData.color,
-    //         visibleHoles: serviceFormData.visible_holes,
-    //         brand: serviceFormData.brand,
-    //         howLong: serviceFormData.howMany,
-    //         brief: serviceFormData.brief,
-    //       }),
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   );
-    //   console.log("fielddata", result);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -266,6 +246,7 @@ export default function ShipinFields({
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
+                    textAlign={{ xs: "center" }}
                     textTransform={"lowercase"}
                     marginBottom={3}
                   >
@@ -330,7 +311,6 @@ export default function ShipinFields({
                         paddingLeft: "1rem",
                         paddingRight: "1rem",
                       },
-                      padding: "1rem",
                       backgroundColor: "#f8f1ec",
                       borderRadius: "30px",
                       fontFamily: `"ProximaNovaSemibold", sans-serif !important`,

@@ -12,7 +12,6 @@ const StyledButton = styled.button`
   max-width: 200px;
   color: white;
   margin-bottom: 50px;
-  margin-left: 10px;
   text-transform: none;
   font-size: 18px;
   border: none;
@@ -32,7 +31,7 @@ export default function BlogPage() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <AppContainer>
+    <AppContainer paddingLeft={"15px"}>
       <Stack justifyContent={"flex-start"} paddingY={6}>
         <Box paddingRight={"78px"} mb={3}>
           <Typography

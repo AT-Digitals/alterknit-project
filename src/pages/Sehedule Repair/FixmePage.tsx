@@ -63,6 +63,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
             justifyContent="center"
             alignItems="center"
             width="100%"
+            gap={isXsScreen ? "2rem" : undefined}
             maxWidth={1200}
             margin="0 auto !important"
           >

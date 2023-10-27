@@ -107,13 +107,6 @@ export default function CheckOut({
   const [phoneError, setPhoneError] = useState("");
   const [zipcodeError, setZipcodeError] = useState("");
 
-  // const handleSelectChange = (e: any) => {
-  //   const { name, value } = e.target;
-  //   setSelectedOption((prevData: any) => ({
-  //     ...prevData,
-  //     [name as string]: value,
-  //   }));
-  // };
 
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -255,21 +248,21 @@ export default function CheckOut({
           alt="background"
         ></img>
       </Box>
-      <Box mb={3} padding={"5rem 0 0 0"}>
+      <Box mb={3} padding={isXsScreen ? "2rem 0 0 0" : "5rem 0 0 0"}>
         <Box maxWidth={1440} margin={"0 auto"} padding={"20px"}>
           <Box
             display={"flex"}
             flexWrap={"wrap"}
             justifyContent={"center"}
             gap={"6rem"}
-            padding={"1rem 0 8rem 0"}
+            padding={"1rem 0 3rem 0"}
           >
             <Typography
               textAlign={"center"}
               border={"7px dashed black"}
               maxWidth={700}
               width={"100%"}
-              padding={"2rem"}
+              padding={"1rem"}
               borderRadius={"30px"}
               fontSize={isXsScreen ? "39px" : "50px"}
               fontWeight={500}
