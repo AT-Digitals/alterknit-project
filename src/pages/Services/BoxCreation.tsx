@@ -12,12 +12,12 @@ export default function BoxCreation() {
         backgroundColor: "#fff",
         marginBottom: "80px",
       }}>
-        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={isXsScreen ? "0px 15px" : "0px 15px"} paddingTop={"125px"}>
+        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={isXsScreen ? "0px 0px" : "0px 15px"} paddingTop={isXsScreen ? "30px" : "125px"}>
           <Typography
             lineHeight={"1"}
             color={"black"}
             fontWeight={500}
-            fontSize={isXsScreen ? "75px" : "80px"}
+            fontSize={isXsScreen ? "45px" : "80px"}
             textTransform={"lowercase"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           >
@@ -25,7 +25,7 @@ export default function BoxCreation() {
             <Typography
               color={"black"}
               fontWeight={500}
-              fontSize={isXsScreen ? "75px" : "80px"}
+              fontSize={isXsScreen ? "45px" : "80px"}
               lineHeight={"1"}
               textTransform={"lowercase"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
@@ -37,7 +37,7 @@ export default function BoxCreation() {
           </Typography>
         </Stack>
         <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }} paddingBottom={"65px"}>
-          <Stack width={"100%"} maxWidth={"590px"}>
+          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -49,6 +49,7 @@ export default function BoxCreation() {
                 sx={{
                   borderBottom: "1px dashed black",
                   margin: "30px 40px",
+                  
                 }}
               >
                 <img
@@ -93,7 +94,7 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Stack>
-          <Stack width={"100%"} maxWidth={"590px"}>
+          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -151,7 +152,7 @@ export default function BoxCreation() {
           </Stack>
         </Stack>
         <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }}>
-          <Stack width={"100%"} maxWidth={"590px"}>
+          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -207,7 +208,7 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Stack>
-          <Stack width={"100%"} maxWidth={"590px"}>
+          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",

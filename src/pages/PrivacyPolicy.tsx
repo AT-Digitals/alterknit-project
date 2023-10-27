@@ -9,14 +9,14 @@ export default function PrivacyPolicy() {
   const isXsScreen = useMediaQuery("(max-width:600px)");
     return (
         <>
-            <Box maxWidth={"1310px"} margin={"0 auto"} padding={"10px"}>
+            <Box maxWidth={"1310px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
                 <Box>
                 <Typography
                     paddingTop={"50px"}
                     textAlign={"center"}
                     color={"black"}
                     fontWeight={500}
-                    fontSize={isXsScreen ? "2.5rem" : "5rem"}
+                    fontSize={isXsScreen ? "2.2rem" : "4.5rem"}
                     lineHeight={"1"}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"
