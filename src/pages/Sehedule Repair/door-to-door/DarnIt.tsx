@@ -36,7 +36,7 @@ export default function DarnIt({ prevStep }: DoorProps) {
     <Box
       mt={"2rem"}
       textAlign={"center"}
-      padding={"40px 50px"}
+      padding={"40px 30px"}
       border={"1px solid black"}
       borderRadius={"30px"}
       bgcolor={"white"}
@@ -44,7 +44,7 @@ export default function DarnIt({ prevStep }: DoorProps) {
       position={"relative"}
     >
       <Typography
-        fontSize={"100px"}
+        fontSize={{ xs: "40px", md: "100px" }}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         fontWeight={500}
         textTransform={"lowercase"}
