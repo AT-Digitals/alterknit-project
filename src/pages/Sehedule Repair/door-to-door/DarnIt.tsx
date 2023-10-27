@@ -1,6 +1,5 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
-import routes from "../../../routes/routes";
 import styled from "@emotion/styled";
 
 const LinkWrapper = styled.div`

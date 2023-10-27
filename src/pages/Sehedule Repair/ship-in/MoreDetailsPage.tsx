@@ -36,10 +36,10 @@ export default function MoreDetailsPage({
   const handleNextButtonClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const values = {
-      previous: moreDetails.previous_service,
-      recent: moreDetails.latest_service,
-    };
+    // const values = {
+    //   previous: moreDetails.previous_service,
+    //   recent: moreDetails.latest_service,
+    // };
 
     if (!moreDetails.previous_service) {
       alert(

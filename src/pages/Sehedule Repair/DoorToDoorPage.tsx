@@ -115,10 +115,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
         </Stack>
         <img src={background} alt="border" />
         <Stack
+          mt={"2rem"}
           width="100%"
-          // maxWidth={1300}
           margin="0 auto"
-          padding={isXsScreen ? "0" : 5}
           alignItems="center"
           direction="row"
           justifyContent="center"
@@ -141,13 +140,12 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
                 textTransform={"lowercase"}
                 fontWeight="500"
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                fontSize="6rem"
+                fontSize={{ xs: "40px", md: "6rem" }}
               >
                 new yorkers!
               </Typography>
             </Box>
             <Typography
-              // width={500}
               textTransform={"lowercase"}
               fontWeight={500}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
