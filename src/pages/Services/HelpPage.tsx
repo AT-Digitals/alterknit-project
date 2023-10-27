@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, Typography, styled, useMediaQuery } from "@mui/material";
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
@@ -108,6 +108,7 @@ export default function HelpPage() {
       setOpenNote3Index(index);
     }
   };
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <Box bgcolor={"#f8f1eb"} padding={"20px"}>
@@ -116,7 +117,7 @@ export default function HelpPage() {
         color={"black"}
         fontWeight={500}
         lineHeight={1}
-        fontSize={"80px"}
+        fontSize={isXsScreen ? "50px" : "80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         textTransform={"lowercase"}
       >
@@ -142,7 +143,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3rem"}
+                  fontSize={isXsScreen ? "2rem" : "3rem"}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -152,13 +153,13 @@ export default function HelpPage() {
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 )}
@@ -194,7 +195,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3rem"}
+                  fontSize={isXsScreen ? "2rem" : "3rem"}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -204,13 +205,13 @@ export default function HelpPage() {
                 {openNote1Index === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 )}
@@ -246,7 +247,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3rem"}
+                  fontSize={isXsScreen ? "2rem" : "3rem"}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -256,13 +257,13 @@ export default function HelpPage() {
                 {openNote2Index === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 )}
@@ -298,7 +299,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={"3rem"}
+                  fontSize={isXsScreen ? "2rem" : "3rem"}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -308,13 +309,13 @@ export default function HelpPage() {
                 {openNote3Index === index ? (
                   <RemoveCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 ) : (
                   <AddCircleIcon
                     style={{
-                      fontSize: "62px",
+                      fontSize: isXsScreen ? "32px" : "62px",
                     }}
                   />
                 )}

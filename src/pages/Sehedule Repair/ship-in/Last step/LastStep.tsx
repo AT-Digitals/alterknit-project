@@ -17,7 +17,6 @@ import SubmitPopup from "../../../../Popup/SubmitPopup";
 import alterknitImage from "../../../../assets/alterknit.png";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const StyledTableCell = styled.td`
@@ -124,7 +123,7 @@ export default function LastStep({
     setIsChecked1(!isChecked1);
   };
 
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:1000px)");
 
   return (
     <>
@@ -137,7 +136,7 @@ export default function LastStep({
         >
           <Box margin={"0 auto"} textAlign={"center"} maxWidth={900}>
             <Typography
-              fontSize={"80px"}
+              fontSize={isXsScreen ? "50px" : "80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform="lowercase"
@@ -168,12 +167,21 @@ export default function LastStep({
             display={"flex"}
             flexDirection={"column"}
             alignItems={"center"}
-            gap={isXsScreen ? "5rem" : "20rem"}
+            gap={isXsScreen ? "3rem" : "20rem"}
             maxWidth={780}
             width={"100%"}
             margin={"0 auto"}
           >
-            {isXsScreen ? <Typography>ORDER SUMMARY</Typography> : ""}
+            {isXsScreen ? (
+              <Typography
+                fontSize={"30px"}
+                fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              >
+                ORDER SUMMARY
+              </Typography>
+            ) : (
+              ""
+            )}
             <Box
               bgcolor={"#f8f1ec"}
               border={"5px solid #df7c6d"}
@@ -239,30 +247,29 @@ export default function LastStep({
                     }}
                   >
                     <Grid container>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCell>Service Needed</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brand</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Color</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Age of Garment</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell># of Holes</StyledTableCell>
+                        </StyledTr>
+                        <StyledTr>
+                          <StyledTableCell>Brief Description</StyledTableCell>
+                        </StyledTr>
+                      </Grid>
+
                       {serviceDetails.length > 0 && (
-                        <Grid item xs={4}>
-                          <StyledTr>
-                            <StyledTableCell>Service Needed</StyledTableCell>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCell>Brand</StyledTableCell>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCell>Color</StyledTableCell>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCell>Age of Garment</StyledTableCell>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCell># of Holes</StyledTableCell>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCell>Brief Description</StyledTableCell>
-                          </StyledTr>
-                        </Grid>
-                      )}
-                      {serviceDetails.length > 0 && (
-                        <Grid item xs={8}>
+                        <Grid item xs={6}>
                           <StyledTr>
                             <StyledTableCellValue>
                               {serviceDetails[displayedEntry].services}
@@ -314,10 +321,18 @@ export default function LastStep({
                   </div>
                 </tbody>
               </table>
-
-              <BeforeText label="Order Summary" />
+              {isXsScreen ? undefined : <BeforeText label="Order Summary" />}
             </Box>
-            {isXsScreen ? <Typography>ORDER SUMMARY</Typography> : ""}
+            {isXsScreen ? (
+              <Typography
+                fontSize={"30px"}
+                fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              >
+                DELIVERY INFORMATION
+              </Typography>
+            ) : (
+              ""
+            )}
 
             <Box
               bgcolor={"#f8f1ec"}
@@ -353,13 +368,9 @@ export default function LastStep({
                   tableLayout: "fixed",
                 }}
               >
-                {/* <colgroup>
-                  <col style={{ width: "150px" }} />{" "}
-                  <col style={{ width: "150px" }} /> */}
-                {/* </colgroup> */}
                 <tbody>
                   <Grid container>
-                    <Grid item xs={4}>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCell>Name</StyledTableCell>
                       </StyledTr2>
@@ -376,7 +387,7 @@ export default function LastStep({
                         <StyledTableCell>Order Type</StyledTableCell>
                       </StyledTr2>
                     </Grid>
-                    <Grid item xs={8}>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCellValue>
                           {shipInDetails.ShipInformation.firstName +
@@ -397,7 +408,11 @@ export default function LastStep({
                         </StyledTableCellValue>
                       </StyledTr2>
                       <StyledTr2>
-                        <StyledTableCellValue>
+                        <StyledTableCellValue
+                          style={{
+                            wordBreak: "break-word",
+                          }}
+                        >
                           {shipInDetails.ShipInformation.email}
                         </StyledTableCellValue>
                       </StyledTr2>
@@ -408,7 +423,9 @@ export default function LastStep({
                   </Grid>
                 </tbody>
               </table>
-              <BeforeText label="Delivery Information" />
+              {isXsScreen ? undefined : (
+                <BeforeText label="Delivery Information" />
+              )}
             </Box>
           </Box>
         </Box>
@@ -419,14 +436,9 @@ export default function LastStep({
           flexDirection={"column"}
           gap={"4rem"}
           maxWidth={1440}
-          // width={"100%"}
           padding={isXsScreen ? "1rem" : "0 10rem"}
         >
-          <Box
-            mt={15}
-            // padding={isXsScreen ? "1rem" : "0 10rem"}
-            textAlign={"left"}
-          >
+          <Box mt={15} textAlign={"left"}>
             <Box display={"flex"} justifyContent={"space-between"}>
               <label
                 style={{

@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, styled } from "@mui/material";
+import { Box, Stack, Typography, styled, useMediaQuery } from "@mui/material";
 import Bug from "../../assets/bug_08.png";
 import image1 from "../../assets/1679605614091_H&M.png";
 import image2 from "../../assets/1679605690207_Britches.jpg";
@@ -89,33 +89,30 @@ const StyledTypography = styled(Typography)({
 });
 
 export default function PorfolioHeader() {
+    const isXsScreen = useMediaQuery("(max-width:600px)");
+
     return (
-        <>
-            <Box
-                width={"100%"}
-                maxWidth={"1440px"}
-                margin={"0 auto"}
-                padding={"0 10rem"}
-            >
-                <Box display={{ xs: "block", sm: "flex" }}>
-                    <Box
-                        padding={"8rem 0 14rem 0"}
+        <Stack>
+            <Stack marginTop={"70px"} direction="row" justifyContent={"space-around"} maxWidth={"1200px"}>
+                    <Stack direction={"column"}
+                        padding={isXsScreen ? "0rem 0 7rem 0" : "0rem 0 11rem 0"}
                         maxWidth={"620px"}
                         position={"relative"}
                         zIndex={"1"}
+                        margin={"20px"}
                     >
                         <Typography
-                            lineHeight={"0.5"}
+                            lineHeight={"1"}
                             color={"black"}
                             fontWeight={"500"}
-                            fontSize={"80px"}
+                            fontSize={isXsScreen ? "60px" : "80px"}
                             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                             textTransform="lowercase"
                         >
                             SEEING IS BELEIVING
                         </Typography>
                         <Typography
-                            margin={"50px 2px"}
+                            margin={isXsScreen ? "10px 2px" : "50px 2px"}
                             color={"#575656"}
                             fontWeight={"500"}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
@@ -138,7 +135,7 @@ export default function PorfolioHeader() {
                             style={{ textDecoration: "none" }}
                         >
                             <StyledTypography
-                                lineHeight={"0"}
+                                lineHeight={"1"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={"2.3rem"}
@@ -148,28 +145,28 @@ export default function PorfolioHeader() {
                                 REPAIR IT WITH A CLICK. WE DARE YOu
                             </StyledTypography>
                         </Link>
-                    </Box>
+                    </Stack>
+                    <Box display={{ xs: "none", md: "flex" }}>
                     <img
                         style={{
-                            marginRight: "-69px",
+                            marginRight: "-30px",
                             marginTop: "55px",
                             top: 0,
-                            right: 120,
+                            right: "120px",
                             position: "absolute",
                             maxWidth: "840px",
                         }}
                         src={Bug}
-                        width={"100%"}
                         alt="bug-image"
+                        width={"100%"}
                     />
-                </Box>
-            </Box>
-            <Box position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"} marginTop={"-79px"}>
-                <Box
-                    width={"100%"}
+                    </Box>
+            </Stack>
+            <Box width={"115%"} position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"} marginTop={"-102px"}>
+                <Stack direction={"column"}
                     maxWidth={"1440px"}
                     margin={"0 auto"}
-                    padding={"0 10rem"}
+                    padding={"20px"}
                 >
                     <Stack
                         marginBottom={"20px"}
@@ -1096,8 +1093,8 @@ export default function PorfolioHeader() {
                             />
                         </Box>
                     </Stack>
-                </Box>
+                </Stack>
             </Box>
-        </>
+        </Stack>
     );
 }

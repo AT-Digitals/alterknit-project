@@ -1,22 +1,23 @@
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
+import { Box, Card, CardContent, Stack, Typography, useMediaQuery } from "@mui/material";
 import Tape from "../../assets/tape.png";
 import Yarn from "../../assets/yarn.png";
 import weight from "../../assets/weight.png";
 import dress from "../../assets/damage.png";
 
 export default function BoxCreation() {
+  const isXsScreen = useMediaQuery("(max-width:600px)");
   return (
     <>
       <Box sx={{
         backgroundColor: "#fff",
         marginBottom: "80px",
       }}>
-        <Stack direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={"0px 15px"} paddingTop={"125px"}>
+        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={isXsScreen ? "0px 15px" : "0px 15px"} paddingTop={"125px"}>
           <Typography
-            lineHeight={"0.9"}
+            lineHeight={"1"}
             color={"black"}
             fontWeight={500}
-            fontSize={"80px"}
+            fontSize={isXsScreen ? "75px" : "80px"}
             textTransform={"lowercase"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
           >
@@ -24,8 +25,8 @@ export default function BoxCreation() {
             <Typography
               color={"black"}
               fontWeight={500}
-              fontSize={"80px"}
-              lineHeight={"0.9"}
+              fontSize={isXsScreen ? "75px" : "80px"}
+              lineHeight={"1"}
               textTransform={"lowercase"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               marginBottom={"20px"}
@@ -70,11 +71,11 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"10px"}
-                lineHeight={"0.9"}
+                lineHeight={"1"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
-                fontSize={"48px"}
+                fontSize={isXsScreen ? "35px" : "48px"}
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                 textTransform={"lowercase"}
               >
@@ -82,8 +83,8 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
-                  lineHeight={"0.9"}
-                  fontSize={"48px"}
+                  lineHeight={"1"}
+                  fontSize={isXsScreen ? "35px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
                 >
@@ -126,11 +127,11 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"15px"}
-                lineHeight={"0.9"}
+                lineHeight={"1"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
-                fontSize={"48px"}
+                fontSize={isXsScreen ? "35px" : "48px"}
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                 textTransform={"lowercase"}
               >
@@ -138,8 +139,8 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
-                  lineHeight={"0.9"}
-                  fontSize={"48px"}
+                  lineHeight={"1"}
+                  fontSize={isXsScreen ? "35px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
                 >
@@ -184,11 +185,11 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"15px"}
-                lineHeight={"0.9"}
+                lineHeight={"1"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
-                fontSize={"48px"}
+                fontSize={isXsScreen ? "35px" : "48px"}
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                 textTransform={"lowercase"}
               >
@@ -196,8 +197,8 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
-                  fontSize={"48px"}
-                  lineHeight={"0.9"}
+                  fontSize={isXsScreen ? "35px" : "48px"}
+                  lineHeight={"1"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   textTransform={"lowercase"}
                 >
@@ -240,11 +241,11 @@ export default function BoxCreation() {
               </Typography>
               <Typography
                 paddingBottom={"4px"}
-                lineHeight={"0.9"}
+                lineHeight={"1"}
                 margin={"10px 40px"}
                 color={"black"}
                 fontWeight={500}
-                fontSize={"48px"}
+                fontSize={isXsScreen ? "30px" : "48px"}
                 textTransform={"lowercase"}
                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               >
@@ -252,8 +253,8 @@ export default function BoxCreation() {
                 <Typography
                   color={"black"}
                   fontWeight={500}
-                  lineHeight={"0.9"}
-                  fontSize={"48px"}
+                  lineHeight={"1"}
+                  fontSize={isXsScreen ? "30px" : "48px"}
                   textTransform={"lowercase"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   marginLeft={"4px"}

@@ -5,6 +5,7 @@ import {
   Stack,
   TextField,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import alterknitImage from '../assets/alterknit.png'
@@ -226,6 +227,8 @@ export default function FormFile() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <Box
@@ -236,17 +239,18 @@ export default function FormFile() {
       }}
       display={"flex"}
       justifyContent={"center"}
-      margin={"30px"}
+      paddingTop={"30px"}
+      paddingBottom={"20px"}
     >
       <form
         style={{
           borderRadius: "50px",
           border: "5px solid #df7c6d",
           backgroundColor: "#f8f1eb",
-          marginTop: "60px",
-          marginBottom: "30px",
+          margin: "30px",
           width: "100%",
           maxWidth: "900px",
+          paddingBottom: "20px"
         }}
         ref={form}
         onSubmit={handleSubmit}
@@ -301,7 +305,7 @@ export default function FormFile() {
             Contact us
           </Typography>
 
-          <Stack margin={"30px"} alignItems={"center"}  direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} spacing={2}>
+          <Stack margin={"30px"} alignItems={"center"}  direction= {isXsScreen ? "column" : "row"} justifyContent={"space-between"} spacing={2}>
             <Box width={"100%"} maxWidth={"390px"}>
               <Typography
                 marginLeft={"5px"}
@@ -340,12 +344,12 @@ export default function FormFile() {
             </Box>
             <Stack direction={"row"} spacing={0}>
               <Box>
-                <Button
+              {isXsScreen ? "" :  <Button
                   sx={{
                     backgroundColor: "#df7c6d",
                     color: "#fff",
                     fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    padding: "12px 40px",
+                    padding: isXsScreen ? "10px 10px" : "12px 40px",
                     letterSpacing: "2px",
                     ":hover": {
                       backgroundColor: "#f58977",
@@ -363,6 +367,7 @@ export default function FormFile() {
                     onChange={handleImageChange}
                   />
                 </Button>
+                      }
               </Box>
               <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
                 {selectedImage && (
@@ -394,6 +399,7 @@ export default function FormFile() {
                 marginLeft={"5px"}
                 marginBottom={"12px"}
                 fontSize={"16px"}
+                marginTop={isXsScreen ? "-26px" : "0px"}
                 color="black"
                 fontWeight={"500"}
                 fontFamily={`"ProximaNovaMedium", sans-serif`}
@@ -517,6 +523,29 @@ export default function FormFile() {
             >
               Submit
             </Button>
+            {isXsScreen ?  <Button
+                  sx={{
+                    backgroundColor: "#df7c6d",
+                    color: "#fff",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
+                    padding: isXsScreen ? "10px 10px" : "12px 40px",
+                    letterSpacing: "2px",
+                    ":hover": {
+                      backgroundColor: "#f58977",
+                    },
+                  }}
+                  component="label"
+                  variant="contained"
+                >
+                  Click To Attach A Photo
+                  <input
+                    type="file"
+                    hidden
+                    name="selectedImage"
+                    accept="image"
+                    onChange={handleImageChange}
+                  />
+                </Button> : ""}
           </Box>
         </Box>
       </form>
