@@ -361,8 +361,8 @@ export default function PartnerPage() {
           >
             <CardContent>
 
-              <Typography paddingTop={"30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PREMIUM SOLUTIONS</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} fontWeight={"400"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={"15px"} lineHeight={"1"}>to your customer restored and ready to wear.</Typography></Typography>
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>PREMIUM SOLUTIONS</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We specialize in invisible repair. The garment is returned<Typography color={"black"} fontWeight={"500"} fontSize={isXsScreen ? "12px" : "16px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>to your customer restored and ready to wear.</Typography></Typography>
             </CardContent>
           </Card>
           <Card
@@ -376,25 +376,8 @@ export default function PartnerPage() {
             }}
           >
             <CardContent>
-              <Typography paddingTop={"30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SERVICE SIMPLIFIED</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} fontWeight={"400"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"400"} fontSize={"15px"} marginRight={"22px"} lineHeight={"1"}>we handle everything from logistics to customer service.</Typography></Typography>
-            </CardContent>
-          </Card>
-          <Card
-            style={{
-              backgroundColor: "#fff",
-              textAlign: "center",
-              border: "4px dashed black",
-              width: "100%",
-              maxWidth: "790px",
-              borderRadius: "23px",
-            }}
-          >
-            <CardContent>
-
-              <Typography paddingTop={"30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>CUSTOMER RETENTION</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} fontWeight={"400"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"400"} fontSize={"15px"} lineHeight={"1"}>and comes back to you for their next purchase.</Typography></Typography>
-
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SERVICE SIMPLIFIED</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Take the stress away from your team and your customer,<Typography color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} marginRight={"22px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>we handle everything from logistics to customer service.</Typography></Typography>
             </CardContent>
           </Card>
           <Card
@@ -409,8 +392,8 @@ export default function PartnerPage() {
           >
             <CardContent>
 
-              <Typography paddingTop={"30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>ADDITIONAL REVENUE</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} fontWeight={"400"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"400"} fontSize={"15px"} lineHeight={"1"}>your service offering.</Typography></Typography>
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>CUSTOMER RETENTION</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>We make sure your customer is blown away by the result<Typography color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>and comes back to you for their next purchase.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -426,8 +409,8 @@ export default function PartnerPage() {
           >
             <CardContent>
 
-              <Typography paddingTop={"30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>FULLY SCALABLE</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} lineHeight={"1"} marginRight={"22px"} fontWeight={"400"} fontSize={"16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"400"} fontSize={"15px"} lineHeight={"1"}>your needs.</Typography></Typography>
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>ADDITIONAL REVENUE</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>Gain a new source of income while expanding<Typography color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>your service offering.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -442,8 +425,25 @@ export default function PartnerPage() {
             }}
           >
             <CardContent>
-              <Typography paddingTop={"30px"} lineHeight={"0.9"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={"5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SUSTAINABLE BY DEFAULT</Typography>
-              <Typography paddingBottom={"21px"} color={"#000000"} fontWeight={"400"} fontSize={"16px"} marginRight={"28px"} fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1"}>We're proud to give garments a second chance while<Typography color={"black"} fontWeight={"400"} fontSize={"15px"} lineHeight={"1"}>maintaining sustainability in our practices.</Typography></Typography>
+
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.2"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>FULLY SCALABLE</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} lineHeight={"1"} marginRight={"22px"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} fontFamily={`"ProximaNovaMedium", sans-serif`}>As your business grows, we'll work with you to meet<Typography color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>your needs.</Typography></Typography>
+
+            </CardContent>
+          </Card>
+          <Card
+            style={{
+              backgroundColor: "#fff",
+              textAlign: "center",
+              border: "4px dashed black",
+              width: "100%",
+              maxWidth: "790px",
+              borderRadius: "23px",
+            }}
+          >
+            <CardContent>
+              <Typography paddingTop={isXsScreen ? "10px" : "30px"} lineHeight={"1.3"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "2.5rem" : "5.2rem"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`}>SUSTAINABLE BY DEFAULT</Typography>
+              <Typography paddingBottom={isXsScreen ? "11px" : "21px"} color={"#000000"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} marginRight={"28px"} fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1"}>We're proud to give garments a second chance while<Typography color={"black"} fontWeight={"400"} fontSize={isXsScreen ? "12px" : "16px"} lineHeight={"1"} fontFamily={`"ProximaNovaMedium", sans-serif`}>maintaining sustainability in our practices.</Typography></Typography>
 
             </CardContent>
           </Card>
@@ -492,7 +492,7 @@ export default function PartnerPage() {
         </Stack>
         <img src={image4} width={"100%"} alt="banner" />
         <Box
-          marginBottom={"90px"}
+          marginBottom={isXsScreen ? "20px" : "90px"}
           marginTop={"-190px"}
           display={"flex"}
           justifyContent={"center"}
@@ -520,8 +520,8 @@ export default function PartnerPage() {
       </section>
       <section>
         <Box padding={isXsScreen ? "0rem 0" : "2rem 0"}>
-          <Typography textAlign={"center"} lineHeight={1} color={"black"} fontWeight={"500"} fontSize={"100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
-          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} padding={"10px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={"24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
+          <Typography textAlign={"center"} lineHeight={1} color={"black"} fontWeight={"500"} fontSize={isXsScreen ? "50px" : "100px"} letterSpacing={"3"} fontFamily={`"IndustrialGothicBannerStd", sans-serif`} textTransform={"lowercase"}>BECOME A PARTNER</Typography>
+          <Typography fontFamily={`"ProximaNovaMedium", sans-serif`} lineHeight={"1.5"} padding={"15px"} fontWeight={"400"} maxWidth={"590px"} textAlign={"center"} fontSize={isXsScreen ? "19px" : "24px"} margin={"0 auto"}>We're excited to talk to you. To connect with us, please submit an inquiry below and a member of our team will get back to you shortly.</Typography>
         </Box>
         <form
           onSubmit={handleSubmit}
@@ -689,7 +689,7 @@ export default function PartnerPage() {
               }
             }} type="submit">Submit</Button>
           </Box>
-          <Typography paddingTop={"15px"} paddingBottom={isXsScreen ? "30px" : "100px"} textAlign={"center"} color={"#000000"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#000000"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
+          <Typography paddingTop={isXsScreen ? "0px" : "15px"} paddingBottom={isXsScreen ? "10px" : "100px"} textAlign={"center"} color={"#000000"} fontWeight={"500"} fontSize={"15px"}>If you run into problems accessing the portal or need<Typography color={"#000000"} fontWeight={"500"} fontSize={"15px"}>additional assistance, please reach out to <Link style={{
             textDecoration: "none",
             color: "#df7c6d",
 
