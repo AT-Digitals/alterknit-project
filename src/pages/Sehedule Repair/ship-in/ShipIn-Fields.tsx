@@ -246,6 +246,7 @@ export default function ShipinFields({
                     fontSize={{ xs: "28px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
+                    textAlign={{ xs: "center" }}
                     textTransform={"lowercase"}
                     marginBottom={3}
                   >
@@ -310,7 +311,6 @@ export default function ShipinFields({
                         paddingLeft: "1rem",
                         paddingRight: "1rem",
                       },
-                      padding: "1rem",
                       backgroundColor: "#f8f1ec",
                       borderRadius: "30px",
                       fontFamily: `"ProximaNovaSemibold", sans-serif !important`,
