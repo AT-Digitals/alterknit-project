@@ -3,34 +3,36 @@ import Colors from "../../CommonComponent/Colors";
 
 export default function BlackBoxSection() {
     return (
-        <Stack width="100%" maxWidth={{ xs: 600, md: 900, lg: 1200, xl: 1300 }} margin="0 auto" paddingX={{ xs: 3, md: 10 }}>
+        <Stack paddingX={{ xs: 3, sm: 6, md: 6, lg: 13 }}>
             <Stack
-                direction={{ xs: "column", md: "row" }}
-                // alignItems="center"
+                direction={{ xs: "column", lg: "row" }}
+                alignItems="center"
                 justifyContent="space-between"
                 sx={{ backgroundColor: Colors.BLACK, borderRadius: "20px" }}
                 paddingX={6}
                 paddingY={8}
             >
                 <Typography
-                    fontSize="80px"
+                    fontSize={{ xs: "3rem", sm: "80px" }}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     fontWeight={500}
-                    // textTransform="uppercase"
                     color={Colors.WHITE}
-                    // maxWidth="470px"
+                    maxWidth="470px"
                     lineHeight={1}
+                    textAlign={{ xs: "center", md: "center", lg: "start" }}
                 >
                     this will only hurt a little
                 </Typography>
                 <Typography
-                    fontSize="22px"
+                    fontSize={{ xs: "17.5px", sm: "22px" }}
                     lineHeight={1.2}
-                    marginY={3}
+                    marginBottom={{ lg: 3 }}
+                    marginTop={{ xs: 3, sm: 3, md: 3, lg: 0 }}
                     color={Colors.WHITE}
-                    // maxWidth="430px"
-                    marginRight={6}
+                    maxWidth="430px"
+                    marginRight={{ xs: 0, lg: 6 }}
                     fontFamily={`"ProximaNovaMedium", sans-serif`} fontWeight={500}
+                    textAlign={{ xs: "center", md: "center", lg: "start" }}
                 >
                     Parting with your darlings is painful, but they are in good hands.
                     We'll give a no-charge thorough examination and report back on how we

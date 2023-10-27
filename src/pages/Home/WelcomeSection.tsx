@@ -1,4 +1,4 @@
-import { Stack, Typography, Box, styled, Button } from "@mui/material";
+import { Stack, Typography, Box, styled, Button, CardMedia } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
 import bug from "../../assets/bug_01.png";
 import { Link } from "react-router-dom";
@@ -109,7 +109,13 @@ export default function WelcomeSection() {
                     Schedule a repair
                 </StyledButton>
                 {/* </Link> */}
-                <img src={bug} alt="bug-01" width="100%" height="100%" />
+                {/* <img src={bug} alt="bug-01" width="100%" height="100%" /> */}
+                <CardMedia
+                    component="img"
+                    // height="194"
+                    image={bug}
+                    alt="bug-01"
+                />
             </Box>
         </Stack>
     );

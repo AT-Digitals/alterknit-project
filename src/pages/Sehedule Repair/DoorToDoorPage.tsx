@@ -6,6 +6,7 @@ import {
   TextField,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -63,6 +64,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const isXsScreen = useMediaQuery("(max-width:1000px)");
+
   return (
     <>
       <Stack direction="column">
@@ -71,28 +75,31 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             direction="column"
             alignItems="center"
             justifyContent="center"
-            paddingX={10}
-            paddingY={7}
+            paddingX={isXsScreen ? 0 : 10}
+            paddingY={isXsScreen ? 0 : 7}
             width="100%"
             maxWidth={1300}
             margin="0 auto"
           >
             <Typography
+              padding={isXsScreen ? "1rem 3rem 1rem 3rem" : undefined}
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize="5rem"
+              fontSize={isXsScreen ? "60px" : "5rem"}
               color={Colors.LINK}
+              textAlign={isXsScreen ? "center" : undefined}
               lineHeight={1}
             >
               door to door{" "}
               <span style={{ color: Colors.BLACK }}> at your service</span>
             </Typography>
             <Typography
+              padding={isXsScreen ? "1rem " : undefined}
               fontSize="16px"
               variant="body2"
               textAlign="center"
-              width={780}
+              maxWidth={780}
               mb={2}
               mt={1}
               lineHeight={1.2}
@@ -109,9 +116,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
         <img src={background} alt="border" />
         <Stack
           width="100%"
-          maxWidth={1300}
+          // maxWidth={1300}
           margin="0 auto"
-          padding={5}
+          padding={isXsScreen ? "0" : 5}
           alignItems="center"
           direction="row"
           justifyContent="center"
@@ -120,7 +127,8 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             direction="column"
             spacing={2}
             alignItems="center"
-            width="500px"
+            width={isXsScreen ? "60%" : "auto"}
+            maxWidth={isXsScreen ? "none" : "600px"}
             sx={{
               padding: "70px 50px",
               border: `1px solid ${Colors.BLACK}`,
@@ -128,7 +136,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             }}
           >
             <Box sx={{ textAlign: "center" }} lineHeight={0}>
-              <img src={Hello} alt="hello" width={200} height={90} />
+              <img src={Hello} alt="hello" height={90} />
               <Typography
                 textTransform={"lowercase"}
                 fontWeight="500"
@@ -139,7 +147,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               </Typography>
             </Box>
             <Typography
-              width={500}
+              // width={500}
               textTransform={"lowercase"}
               fontWeight={500}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -165,7 +173,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               Available from 24 Hour Doorman Buildings. <br />
               Do we have service in your area?
             </Typography>
-            <Box display={"flex"} justifyContent={"center"} width={500}>
+            <Box display={"flex"} justifyContent={"center"}>
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
@@ -202,17 +210,19 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               </Button>
             </Box>
           </Stack>
-          <img
-            src={logo}
-            alt="doortodor"
-            width={300}
-            height={530}
-            style={{
-              position: "absolute",
-              right: "20%",
-              transform: `translate(${37}%, ${-13}%)`,
-            }}
-          />
+          {isXsScreen ? undefined : (
+            <img
+              src={logo}
+              alt="doortodor"
+              width={300}
+              height={530}
+              style={{
+                position: "absolute",
+                right: "20%",
+                transform: `translate(${37}%, ${-13}%)`,
+              }}
+            />
+          )}
         </Stack>
         <Link
           onClick={prevStep}

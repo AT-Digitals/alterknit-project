@@ -109,7 +109,9 @@ export default function LastStep({
   const handleChecOtherkboxChange = () => {
     setIsChecked1(!isChecked1);
   };
+
   const isXsScreen = useMediaQuery("(max-width:1000px)");
+
   return (
     <>
       <Box>

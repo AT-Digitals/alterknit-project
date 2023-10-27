@@ -107,6 +107,7 @@ export default function CheckOut({
   const [phoneError, setPhoneError] = useState("");
   const [zipcodeError, setZipcodeError] = useState("");
 
+
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = { ...initialErrors };
