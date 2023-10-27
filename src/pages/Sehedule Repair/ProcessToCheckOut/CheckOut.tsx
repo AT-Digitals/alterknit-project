@@ -247,14 +247,14 @@ export default function CheckOut({
           alt="background"
         ></img>
       </Box>
-      <Box mb={3} padding={"5rem 0 0 0"}>
+      <Box mb={3} padding={isXsScreen ? "2rem 0 0 0" : "5rem 0 0 0"}>
         <Box maxWidth={1440} margin={"0 auto"} padding={"20px"}>
           <Box
             display={"flex"}
             flexWrap={"wrap"}
             justifyContent={"center"}
             gap={"6rem"}
-            padding={"1rem 0 5rem 0"}
+            padding={"1rem 0 3rem 0"}
           >
             <Typography
               textAlign={"center"}

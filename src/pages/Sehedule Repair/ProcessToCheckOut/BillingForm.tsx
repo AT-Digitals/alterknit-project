@@ -91,7 +91,7 @@ export default function BillingForm({
   return (
     <>
       <AppContainer
-        mt={"8rem"}
+        mt={isXsScreen ? "3rem" : "8rem"}
         maxWidth={850}
         width={isXsScreen ? "90%" : "100%"}
         display={"flex"}
@@ -123,7 +123,7 @@ export default function BillingForm({
       >
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
           <Typography
-            fontSize={"45px"}
+            fontSize={isXsScreen ? "35px" : "45px"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
             textTransform={"lowercase"}
@@ -138,7 +138,7 @@ export default function BillingForm({
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
           <Typography
-            fontSize={"45px"}
+            fontSize={isXsScreen ? "35px" : "45px"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
             textTransform={"lowercase"}
@@ -153,7 +153,7 @@ export default function BillingForm({
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
           <Typography
-            fontSize={"45px"}
+            fontSize={isXsScreen ? "35px" : "45px"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
             textTransform={"lowercase"}
@@ -174,7 +174,7 @@ export default function BillingForm({
         </Box>
         <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
           <Typography
-            fontSize={"45px"}
+            fontSize={isXsScreen ? "35px" : "45px"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}
             textTransform={"lowercase"}
@@ -191,7 +191,7 @@ export default function BillingForm({
         <Stack direction={isXsScreen ? "column" : "row"} spacing={5}>
           <Box style={{ flex: 1 }}>
             <Typography
-              fontSize={"45px"}
+              fontSize={isXsScreen ? "35px" : "45px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
@@ -218,7 +218,7 @@ export default function BillingForm({
           </Box>
           <Box style={{ flex: 1 }}>
             <Typography
-              fontSize={"45px"}
+              fontSize={isXsScreen ? "35px" : "45px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
