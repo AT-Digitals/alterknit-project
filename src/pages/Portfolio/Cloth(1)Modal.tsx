@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import image1 from "../../assets/1679605614091_H&M.png";
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import image2 from "../../assets/1679605614091_H&M (1).png"
 
@@ -11,6 +11,8 @@ export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
     <>
@@ -27,9 +29,9 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Stack sx={{
+        <Stack direction= 'row' sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} height={"480px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} marginTop={"130px"} spacing={6} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
        
          <Box style={{
                    width: "480px",

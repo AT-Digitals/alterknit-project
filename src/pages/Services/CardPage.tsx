@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Stack, Typography, useMediaQuery } from "@mui/material";
 import ImageTop from "../../assets/services_services_bg_bottom.svg";
 import SpeakerImage from "../../assets/speaker.png";
 import StudioImage from "../../assets/studio.png";
@@ -33,26 +33,19 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "2rem" : "3rem"}
+                                fontSize={isXsScreen ? "2.2rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
+                                marginRight={isXsScreen ? "15px" : "0px"}
+                                textAlign={isXsScreen ? "center" : "left"}
+                               
                             >
-                                CAN I GET A{" "}
-                                <Typography
-                                    color={"black"}
-                                    fontWeight={"500"}
-                                    lineHeight={"0.9"}
-                                    fontSize={isXsScreen ? "2rem" : "3rem"}
-                                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                                    textTransform={"lowercase"}
-                                >
-                                    BALLPARK?
-                                </Typography>{" "}
+                                CAN I GET A BALLPARK?{" "}
                                 <Typography
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "15px" : "20px"}
+                                    fontSize={isXsScreen ? "17px" : "20px"}
                                     textTransform={"initial"}
                                     paddingTop={"10px"}
                                 >
@@ -67,6 +60,7 @@ export default function CardPage() {
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
                                 paddingRight={"30px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                                
                             >
                                 We need to examine your entire item in our work studio because
@@ -87,6 +81,7 @@ export default function CardPage() {
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
                                 Our repair service starts at $45.00. Bear in mind that this is
                                 the minimum you can expect to pay for a repair. There are
@@ -123,26 +118,18 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "2rem" : "3rem"}
+                                fontSize={isXsScreen ? "1.8rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
+                                marginRight={isXsScreen ? "15px" : "0px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
-                                WHERE ARE YOU
-                                <Typography
-                                    color={"black"}
-                                    fontWeight={"500"}
-                                    fontSize={isXsScreen ? "2rem" : "3rem"}
-                                    lineHeight={"0.9"}
-                                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                                    textTransform={"lowercase"}
-                                >
-                                    LOCATED?
-                                </Typography>{" "}
+                                WHERE ARE YOU LOCATED?{" "}
                                 <Typography
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "15px" : "20px"}
+                                    fontSize={isXsScreen ? "17px" : "20px"}
                                     textTransform={"capitalize"}
                                     paddingTop={"10px"}
                                     lineHeight={"1.2"}
@@ -159,6 +146,7 @@ export default function CardPage() {
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -196,27 +184,19 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "2rem" : "3rem"}
+                                fontSize={isXsScreen ? "1.8rem" : "3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
+                                marginRight={isXsScreen ? "15px" : "0px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
-                                HOW LONG WILL
-                                <Typography
-                                    color={"black"}
-                                    fontWeight={"500"}
-                                    lineHeight={"0.9"}
-                                    fontSize={isXsScreen ? "2rem" : "3rem"}
-                                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                                    textTransform={"lowercase"}
-                                >
-                                    IT TAKE?
-                                </Typography>{" "}
+                                HOW LONG WILL IT TAKE?{" "}
                                 <Typography
                                     marginTop={isXsScreen ? "7px" : "10px"}
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "15px" : "20px"}
+                                    fontSize={isXsScreen ? "17px" : "20px"}
                                     textTransform={"capitalize"}
                                 >
                                     Typically 4-6 Weeks
@@ -231,6 +211,7 @@ export default function CardPage() {
                                 color={"black"}
                                 fontWeight={"500"}
                                 marginRight={"37px"}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
                                 We are working on a 4-6 week turnaround time. However, if you
                                 have an upcoming event, vacation, or you can't live without it,
@@ -251,15 +232,17 @@ export default function CardPage() {
                         paddingBottom: "60px",
                     }}
                 >
-                    <Box>
-                     <img
+                    <Box display={{ xs: "none", md: "flex" }}>
+                     <CardMedia
+                     component="img"
                     src={SpeakerImage}
                     alt="speaker"
-                    style={{
+                    sx={{
                         maxWidth: "120px",
                        position: "absolute",
                        marginLeft: "4px",
                        marginTop: "-21px",
+                       display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }
                     }}
                 />
                 </Box>
@@ -285,10 +268,11 @@ export default function CardPage() {
                                     fontSize={isXsScreen ? "2.3rem" : "3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
+                                    textAlign={isXsScreen ? "center" : "left"}
                                 >
                                     HEADS UP!
                                     <Typography
-                                        marginTop={"8px"}
+                                        marginTop={isXsScreen ? "18px" : "8px"}
                                         paddingBottom={"15px"}
                                         borderBottom={"1px dashed black"}
                                         color={"black"}
@@ -310,6 +294,7 @@ export default function CardPage() {
                                     fontWeight={"500"}
                                     fontFamily={`"ProximaNovaMedium", sans-serif`}
                                     fontSize={isXsScreen ? "18px" : "22px"}
+                                    textAlign={isXsScreen ? "center" : "left"}
                                 >
                                     Repair quotes are based on the time and required solution.
                                     <Typography
@@ -317,6 +302,7 @@ export default function CardPage() {
                                         fontWeight={"500"}
                                         fontFamily={`"ProximaNovaMedium", sans-serif`}
                                         fontSize={isXsScreen ? "18px" : "22px"}
+                                        textAlign={isXsScreen ? "center" : "left"}
                                     >
                                         Estimates are for labor only and do not include material
                                         costs, shipping/delivery fees, or additional services. Every

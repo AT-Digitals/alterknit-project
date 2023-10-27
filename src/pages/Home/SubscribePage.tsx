@@ -184,7 +184,7 @@ export default function SubscribePage() {
               // height="194"
               image={Bug}
               alt="bug-left"
-              sx={{ display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" } }}
+              sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" } }}
 
             />
           </Link>
@@ -208,7 +208,10 @@ export default function SubscribePage() {
                 ></Typography>
               </Box>
             </Typography>
-            <form onSubmit={handleSubmit}>
+            <form style={{
+              display: "flex",
+              justifyContent: "center",
+            }} onSubmit={handleSubmit}>
               <Modal
                 open={isModalOpen}
                 onClose={closeModal}
@@ -329,7 +332,7 @@ export default function SubscribePage() {
               // height="194"
               image={Bug}
               alt="bug-right"
-              sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "none", xl: "flex" } }}
+              sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" } }}
             />
           </Link>
           </Box>

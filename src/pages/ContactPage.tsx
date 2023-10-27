@@ -250,7 +250,7 @@ export default function FormFile() {
           margin: "30px",
           width: "100%",
           maxWidth: "900px",
-          paddingBottom: "20px"
+          
         }}
         ref={form}
         onSubmit={handleSubmit}
@@ -503,6 +503,30 @@ export default function FormFile() {
               placeholder="Please enter query..."
             />
           </Box>
+          {isXsScreen ?  <Button
+                  sx={{
+                    backgroundColor: "#df7c6d",
+                    color: "#fff",
+                    fontFamily: `"ProximaNovaMedium", sans-serif`,
+                    padding: isXsScreen ? "10px 10px" : "12px 40px",
+                    letterSpacing: "2px",
+                    margin: isXsScreen ? "-10px 28px 10px 28px" : "0px 0px",
+                    ":hover": {
+                      backgroundColor: "#f58977",
+                    },
+                  }}
+                  component="label"
+                  variant="contained"
+                >
+                  Click To Attach A Photo
+                  <input
+                    type="file"
+                    hidden
+                    name="selectedImage"
+                    accept="image"
+                    onChange={handleImageChange}
+                  />
+                </Button> : ""}
           <Box textAlign={"center"}>
             <Button
               sx={{
@@ -523,29 +547,6 @@ export default function FormFile() {
             >
               Submit
             </Button>
-            {isXsScreen ?  <Button
-                  sx={{
-                    backgroundColor: "#df7c6d",
-                    color: "#fff",
-                    fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    padding: isXsScreen ? "10px 10px" : "12px 40px",
-                    letterSpacing: "2px",
-                    ":hover": {
-                      backgroundColor: "#f58977",
-                    },
-                  }}
-                  component="label"
-                  variant="contained"
-                >
-                  Click To Attach A Photo
-                  <input
-                    type="file"
-                    hidden
-                    name="selectedImage"
-                    accept="image"
-                    onChange={handleImageChange}
-                  />
-                </Button> : ""}
           </Box>
         </Box>
       </form>

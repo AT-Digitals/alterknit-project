@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, styled, useMediaQuery } from "@mui/material";
+import { Box, CardMedia, Stack, Typography, styled, useMediaQuery } from "@mui/material";
 import Bug from "../../assets/bug_08.png";
 import image1 from "../../assets/1679605614091_H&M.png";
 import image2 from "../../assets/1679605690207_Britches.jpg";
@@ -105,26 +105,31 @@ export default function PorfolioHeader() {
                             lineHeight={"1"}
                             color={"black"}
                             fontWeight={"500"}
-                            fontSize={isXsScreen ? "60px" : "80px"}
+                            fontSize={isXsScreen ? "45px" : "80px"}
                             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                             textTransform="lowercase"
+                            textAlign={isXsScreen ? "center" : "left"}
                         >
                             SEEING IS BELEIVING
                         </Typography>
                         <Typography
-                            margin={isXsScreen ? "10px 2px" : "50px 2px"}
+                            margin={isXsScreen ? "15px 2px" : "50px 2px"}
                             color={"#575656"}
                             fontWeight={"500"}
+                            lineHeight={1.2}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
-                            fontSize={"22px"}
+                            fontSize={isXsScreen? "19px" : "22px"}
+                            textAlign={isXsScreen ? "center" : "left"}
                         >
                             Don't think we can fix what you've got?
                             <Typography
                                 color={"#575656"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
-                                fontSize={"22px"}
+                                fontSize={isXsScreen ? "20px" : "22px"}
                                 paddingTop={"5px"}
+                                lineHeight={1.2}
+                                textAlign={isXsScreen ? "center" : "left"}
                             >
                                 Check out our gallery of before and afters to see what magic we
                                 can work on any garment in any condition.
@@ -138,24 +143,28 @@ export default function PorfolioHeader() {
                                 lineHeight={"1"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={"2.3rem"}
+                                fontSize={isXsScreen ? "2.23rem" : "2.3rem"}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform="lowercase"
+                                textAlign={isXsScreen ? "center" : "left"}
+                                marginTop={isXsScreen ? "10px" : "0px"}
                             >
-                                REPAIR IT WITH A CLICK. WE DARE YOu
+                                REPAIR IT WITH A CLICK. WE DARE YOU.
                             </StyledTypography>
                         </Link>
                     </Stack>
                     <Box display={{ xs: "none", md: "flex" }}>
-                    <img
-                        style={{
+                    <CardMedia
+                        sx={{
                             marginRight: "-30px",
                             marginTop: "55px",
                             top: 0,
                             right: "120px",
                             position: "absolute",
                             maxWidth: "840px",
+                            display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }
                         }}
+                        component="img"
                         src={Bug}
                         alt="bug-image"
                         width={"100%"}
@@ -163,18 +172,18 @@ export default function PorfolioHeader() {
                     </Box>
             </Stack>
             <Box width={"115%"} position={"relative"} z-zIndex={"1"} marginBottom={"-5rem"} marginTop={"-102px"}>
-                <Stack direction={"column"}
+                <Stack
                     maxWidth={"1440px"}
                     margin={"0 auto"}
                     padding={"20px"}
                 >
                     <Stack
-                        marginBottom={"20px"}
                         height={"1525px"}
                         gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
                         gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-                        display={"grid"}
                         gap={"20px"}
+                       display={isXsScreen ? "column" : "grid"}
+                       margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
                     >
                         <Box
                             sx={{
@@ -356,10 +365,12 @@ export default function PorfolioHeader() {
                     <Stack
                         marginBottom={"20px"}
                         height={"1525px"}
+                        paddingTop={isXsScreen ? "0px" : "20px"}
                         gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
                         gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-                        display={"grid"}
                         gap={"20px"}
+                        display={isXsScreen ? "column" : "grid"}
+                        margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
                     >
                         <Box
                             sx={{
@@ -543,8 +554,10 @@ export default function PorfolioHeader() {
                         height={"1525px"}
                         gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
                         gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-                        display={"grid"}
+                        display={isXsScreen ? "column" : "grid"}
+                        margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
                         gap={"20px"}
+                        paddingTop={isXsScreen ? "0px" : "20px"}
                     >
                         <Box
                             sx={{
@@ -728,8 +741,10 @@ export default function PorfolioHeader() {
                         height={"1525px"}
                         gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
                         gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-                        display={"grid"}
+                        display={isXsScreen ? "column" : "grid"}
+                        margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
                         gap={"20px"}
+                        paddingTop={isXsScreen ? "0px" : "20px"}
                     >
                         <Box
                             sx={{
@@ -913,8 +928,10 @@ export default function PorfolioHeader() {
                         height={"1525px"}
                         gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
                         gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-                        display={"grid"}
+                        display={isXsScreen ? "column" : "grid"}
+                        margin={isXsScreen ? "0px 84px 40px 20px" : "0px 0px 40px 0px"}
                         gap={"20px"}
+                        paddingTop={isXsScreen ? "0px" : "20px"}
                     >
                         <Box
                             sx={{
