@@ -6,7 +6,7 @@ import routes from "../../routes/routes";
 export default function BlogPageReadingContent() {
   return (
     <section style={{ padding: "0 2rem 0 0" }}>
-      <AppContainer>
+      <AppContainer mb={3}>
         <Stack maxWidth={1260}>
           <Typography
             fontSize={"38px"}

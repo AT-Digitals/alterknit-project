@@ -107,14 +107,6 @@ export default function CheckOut({
   const [phoneError, setPhoneError] = useState("");
   const [zipcodeError, setZipcodeError] = useState("");
 
-  const handleSelectChange = (e: any) => {
-    const { name, value } = e.target;
-    setSelectedOption((prevData: any) => ({
-      ...prevData,
-      [name as string]: value,
-    }));
-  };
-
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = { ...initialErrors };
@@ -262,14 +254,14 @@ export default function CheckOut({
             flexWrap={"wrap"}
             justifyContent={"center"}
             gap={"6rem"}
-            padding={"1rem 0 8rem 0"}
+            padding={"1rem 0 5rem 0"}
           >
             <Typography
               textAlign={"center"}
               border={"7px dashed black"}
               maxWidth={700}
               width={"100%"}
-              padding={"2rem"}
+              padding={"1rem"}
               borderRadius={"30px"}
               fontSize={isXsScreen ? "39px" : "50px"}
               fontWeight={500}

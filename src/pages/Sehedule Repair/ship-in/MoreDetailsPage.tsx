@@ -87,6 +87,7 @@ export default function MoreDetailsPage({
           alignItems="center"
         >
           <Typography
+            pt={isXsScreen ? "2rem" : undefined}
             fontWeight={500}
             fontSize={isXsScreen ? "48px" : "5rem"}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
