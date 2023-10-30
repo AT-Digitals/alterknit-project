@@ -1,5 +1,6 @@
 import {
   Box,
+  CardMedia,
   Grid,
   IconButton,
   Link,
@@ -86,15 +87,15 @@ export default function RepairPage({
     <Stack
       paddingY={6}
       maxWidth={1300}
-      margin="0 auto"
+      // margin="0 auto"
       justifyContent="center"
       direction="column"
-      paddingX={3}
+      paddingX={13}
       spacing={8}
     >
-      <Stack direction="row" spacing={3}>
-        <img src={sweater} alt="" width={250} height={250} />
-        <Box>
+
+      <Box display={{ xs: "flex", sm: "flex", md: "flex", lg: 'none' }} paddingX={7}>
+        <Stack direction="column" spacing={2} alignItems="center" justifyContent="center">
           <Typography
             fontWeight={500}
             fontSize="5rem"
@@ -117,18 +118,63 @@ export default function RepairPage({
             filled in to the best of your ability. We look forward to receiving
             your garment shortly.
           </Typography>
-        </Box>
-        <img
-          src={sweater}
-          alt=""
-          width={250}
-          height={250}
-          style={{
-            transform: "scaleX(-1)",
-          }}
-        />
-      </Stack>
+        </Stack>
+      </Box>
+      <Box display={{ xs: "none", sm: "none", md: "none", lg: 'flex' }}>
+        <Stack direction="row" spacing={3}>
+          <img src={sweater} alt="" width={250} height={250} />
+          {/* <CardMedia
+          component="img"
+
+          height="250"
+          image={sweater}
+          alt="bug-right"
+          sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex", }, width: "100%", maxWidth: "250px" }}
+        /> */}
+          <Box>
+            <Typography
+              fontWeight={500}
+              fontSize="5rem"
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              textAlign="center"
+              textTransform={"lowercase"}
+              lineHeight={1.3}
+            >
+              repair cart review
+            </Typography>
+            <Typography
+              textAlign="center"
+              maxWidth={700}
+              fontSize="16px"
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontWeight={500}
+            >
+              This is the preview of all current repairs in the order. Please make
+              sure all information is correct and any missing information is
+              filled in to the best of your ability. We look forward to receiving
+              your garment shortly.
+            </Typography>
+          </Box>
+          <img
+            src={sweater}
+            alt=""
+            width={250}
+            height={250}
+            style={{
+              transform: "scaleX(-1)",
+            }}
+          />
+          {/* <CardMedia
+          component="img"
+          height="250"
+          image={sweater}
+          alt="bug-right"
+          sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }, width: "100%", maxWidth: "250px" }}
+        /> */}
+        </Stack>
+      </Box>
       <Stack
+        display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
         direction="column"
         spacing={3}
         sx={{
