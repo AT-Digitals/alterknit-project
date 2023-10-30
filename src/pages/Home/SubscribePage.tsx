@@ -135,7 +135,7 @@ export default function SubscribePage() {
   const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
-    <Box margin={"0px 30px"} display={"flex"} justifyContent={"center"}>
+    <Box display={"flex"} justifyContent={"center"} paddingX={4}>
       <Box width={"100%"} marginTop={isXsScreen ? "40px" : "90px"}>
         <Typography
           lineHeight={1}
@@ -175,21 +175,21 @@ export default function SubscribePage() {
           />
         </Box>
         <Stack display={{ xs: "block", sm: "flex" }} direction="row" justifyContent={"space-between"} pb={8} maxWidth={1300} margin="0 auto">
-          <Box  display={{ xs: "none", md: "flex" }}>
+          <Box display={{ xs: "none", md: "flex" }}>
 
-          <Link to={""}>
-            {/* <img src={Bug} alt="bug-left" width={"300px"} /> */}
-            <CardMedia
-              component="img"
-              // height="194"
-              image={Bug}
-              alt="bug-left"
-              sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" } }}
+            <Link to={""}>
+              {/* <img src={Bug} alt="bug-left" width={"300px"} /> */}
+              <CardMedia
+                component="img"
+                // height="194"
+                image={Bug}
+                alt="bug-left"
+                sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }, width: { xl: 290 } }}
 
-            />
-          </Link>
+              />
+            </Link>
           </Box>
-          <Stack direction="column" width={"100%"} spacing={4}>
+          <Stack direction="column" width={"100%"} maxWidth={{ xl: 620 }} spacing={4}>
             <Typography
               marginTop={"100px"}
               color={"black"}
@@ -258,13 +258,13 @@ export default function SubscribePage() {
                   </Box>
                 </Box>
               </Modal>
-              <Box display={{ xs: "block", sm: "flex" }} width="100%" maxWidth={500} justifyContent={"center"}>
+              <Box display={{ xs: "block", sm: "flex" }} width="100%" maxWidth={500}>
                 <TextField
                   fullWidth
                   sx={{
                     marginBottom: { xs: 3, sm: 0 },
                     ".MuiOutlinedInput-input": {
-                      // width: { xs: 300, sm: 470 },
+                      width: { sm: 470, xl: 470 },
                       height: "40px",
                       border: "1px solid #df7c6d",
                     },
@@ -287,7 +287,7 @@ export default function SubscribePage() {
                 <Button
                   fullWidth
                   sx={{
-                    // width: { xs: 330, sm: 470 },
+                    width: { sm: 200, xl: 200 },
                     backgroundColor: "#df7c6d",
                     border: "1px solid #df7c6d",
                     color: "white",
@@ -317,9 +317,9 @@ export default function SubscribePage() {
               *Code must be applied at check out. Please check your email!
             </Typography>
           </Stack>
-          <Box  display={{ xs: "none", md: "flex" }}>
-          <Link to={""}>
-            {/* <img
+          <Box display={{ xs: "none", md: "flex" }} width={{ xl: 290 }}>
+            <Link to={""}>
+              {/* <img
               src={Bug}
               alt="bug-right"
               width={"300px"}
@@ -327,14 +327,14 @@ export default function SubscribePage() {
                 transform: "scaleX(-1)",
               }}
             /> */}
-            <CardMedia
-              component="img"
-              // height="194"
-              image={Bug}
-              alt="bug-right"
-              sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" } }}
-            />
-          </Link>
+              <CardMedia
+                component="img"
+                // height="194"
+                image={Bug}
+                alt="bug-right"
+                sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }, width: { xl: 290 } }}
+              />
+            </Link>
           </Box>
         </Stack>
       </Box>
