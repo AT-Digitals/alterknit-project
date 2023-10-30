@@ -69,7 +69,7 @@ export default function CarePage() {
     <Box>
       <section
         style={{
-          padding: isXsScreen ? "0.5rem" : "6.5rem",
+          padding: isXsScreen ? "1rem" : "3.5rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -84,15 +84,17 @@ export default function CarePage() {
         >
           <Box
             maxWidth={900}
+            mt={{ xs: "2rem", sm: "2rem", md: "2rem" }}
             bgcolor={"#f8f1ec"}
             border={"5px solid #df7c6d"}
-            borderRadius={"40px"}
+            borderRadius={{ xs: "16px", md: "40px", sm: "40px" }}
             textAlign={"center"}
-            padding={isXsScreen ? "2rem" : "1rem 5.4rem"}
+            // padding={isXsScreen ? "2rem" : "1rem 5.4rem"}
+            padding={{ xs: "2rem", sm: "1rem 3rem", md: "1rem,3rem" }}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={"80px"}
+              fontSize={{ xs: "80px", sm: "70px", md: "70px", lg: "80px" }}
               fontWeight={500}
               textTransform={"lowercase"}
               lineHeight={isXsScreen ? 1 : 1}
@@ -222,7 +224,9 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={isXsScreen ? "45px" : "80px"}
               fontWeight={500}
-              padding={"1rem"}
+              padding={{ xs: "1rem", sm: "3rem", md: "3rem" }}
+              lineHeight={1}
+              mb={isXsScreen ? "-50px" : undefined}
             >
               dear alterknit... (just asking)
             </Typography>
@@ -238,9 +242,10 @@ export default function CarePage() {
                   flexDirection: "column",
                   alignItems: "center",
                   gap: "2rem",
-                  padding: "3rem",
+                  // padding: "2rem",
                 },
               }}
+              padding={{ xs: "3rem", sm: "2rem", md: "2rem" }}
             >
               {Notes.map((notes, index) => (
                 <Box
@@ -383,10 +388,16 @@ export default function CarePage() {
         >
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontSize={isXsScreen ? "40px" : "80px"}
+            fontSize={{ xs: "50px", md: "80px" }}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
-            textAlign={isXsScreen ? "center" : undefined}
+            // textAlign={isXsScreen ? "center" : undefined}
+            textAlign={{
+              xs: "center",
+              sm: "center",
+              md: "start",
+              lg: "start",
+            }}
             textTransform={"lowercase"}
           >
             HEY,DID YOU KNOW...

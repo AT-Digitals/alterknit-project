@@ -31,7 +31,6 @@ export default function OurStory() {
   }, []);
 
   const isXsScreen = useMediaQuery("(max-width:600px)");
-  const isLgScreen = useMediaQuery("(min-width:961px)");
   return (
     <>
       <section
@@ -42,7 +41,6 @@ export default function OurStory() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           padding: isXsScreen ? " 3.5rem 10px" : "9.5rem 0",
-          // padding: isXsScreen ? " 3.5rem 10px" : "9.5rem 0",
           backgroundImage: `url(https://alterknitnewyork.com/wp-content/themes/alterknit/assets/img/bg_our_story.jpg)`,
           backgroundPosition: "center",
         }}
@@ -51,23 +49,23 @@ export default function OurStory() {
           width={"100%"}
           maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={isXsScreen ? "0 1rem" : "0 13rem"}
+          padding={{ xs: "0 1rem", sm: "0 3rem", md: "0 10rem" }}
         >
           <Box
             bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={isXsScreen ? "0" : "3rem 8rem"}
+            padding={{ xs: 0, sm: "3rem 4rem", md: "3rem 8rem" }}
             textAlign="center"
           >
             <Typography
               lineHeight={isXsScreen ? "2.6rem" : "5rem"}
-              fontSize={isLgScreen ? "78px" : "40px"}
+              fontSize={{ xs: "40px", sm: "80px", md: "80px" }}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
-              padding={3}
+              padding={{ xs: 3 }}
             >
               We built this company on the promise of providing the best quality
               repair available.
@@ -148,7 +146,7 @@ export default function OurStory() {
               flexDirection={"column"}
               alignItems={"center"}
               gap={"5rem"}
-              padding={"1rem"}
+              padding={{ xs: "1.5rem", sm: "2rem", md: "3rem" }}
             >
               <Box
                 textAlign={isXsScreen ? "center" : "start"}
@@ -162,6 +160,12 @@ export default function OurStory() {
                   fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
+                  textAlign={{
+                    xs: "center",
+                    sm: "center",
+                    md: "center",
+                    lg: "start",
+                  }}
                   textTransform={"lowercase"}
                 >
                   HONEST REPAIR
@@ -171,6 +175,12 @@ export default function OurStory() {
                   fontSize="16px"
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
                   lineHeight={1.2}
+                  textAlign={{
+                    xs: "center",
+                    sm: "center",
+                    md: "center",
+                    lg: "start",
+                  }}
                 >
                   In order to make good on that promise to you, we have spent
                   decades honing our craft and assembling a team of highly
@@ -192,6 +202,12 @@ export default function OurStory() {
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
+                  textAlign={{
+                    xs: "center",
+                    sm: "center",
+                    md: "center",
+                    lg: "start",
+                  }}
                   fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
@@ -232,6 +248,12 @@ export default function OurStory() {
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
                   textTransform={"lowercase"}
+                  textAlign={{
+                    xs: "center",
+                    sm: "center",
+                    md: "center",
+                    lg: "start",
+                  }}
                 >
                   NOW YOU SEE IT , <br /> NOW YOU DONT'T{" "}
                 </Typography>
@@ -262,7 +284,12 @@ export default function OurStory() {
       </section>
       <section style={{ padding: "6rem 0" }}>
         <Box width={"100%"} maxWidth={"1440px"} m={"0 auto"}>
-          <Box maxWidth={1200} m={"0 auto"} textAlign={"center"}>
+          <Box
+            padding={{ xs: "0 32px", sm: "0 32px", md: "0 32px" }}
+            maxWidth={1200}
+            m={"0 auto"}
+            textAlign={"center"}
+          >
             <Typography
               fontSize={isXsScreen ? "51px" : "80px"}
               fontFamily={`'IndustrialGothicBannerStd', sans-serif`}
@@ -273,11 +300,10 @@ export default function OurStory() {
               A MESSAGE FROM ALTERKNIT
             </Typography>
             <Typography
+              marginTop={{ sm: "2rem" }}
               fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
-              paddingLeft={isXsScreen ? "40px" : "0px"}
-              paddingRight={isXsScreen ? "40px" : "0px"}
               color={"#575656"}
               lineHeight={1.2}
               mt={isXsScreen ? "2rem" : "0px"}
@@ -294,8 +320,6 @@ export default function OurStory() {
               fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               mb={"3rem"}
-              paddingLeft={isXsScreen ? "33px" : "0px"}
-              paddingRight={isXsScreen ? "40px" : "0px"}
               color={"#575656"}
               lineHeight={1.2}
             >
