@@ -105,7 +105,6 @@ export default function MoreDetailsPage({
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textAlign="center"
             lineHeight={1}
-            maxWidth={900}
             textTransform={"lowercase"}
           >
             8. has this garment been previously repaired by a dry cleaner or

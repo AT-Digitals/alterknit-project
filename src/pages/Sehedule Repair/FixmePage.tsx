@@ -41,15 +41,15 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
   return (
     <Box marginY={isXsScreen ? 1 : 10}>
       <Stack
-        padding={isXsScreen ? "2rem" : undefined}
+        padding={{ xs: "1rem", md: "2rem" }}
         mb={5}
         spacing={5}
         alignItems={"center"}
       >
         <Typography
           fontWeight={500}
-          fontSize={isXsScreen ? "50px" : "80px"}
-          textAlign={isXsScreen ? "center" : undefined}
+          fontSize={isXsScreen ? "45px" : "85px"}
+          textAlign={"center"}
           textTransform={"lowercase"}
           variant={isSmScreen ? "h4" : "h3"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -63,11 +63,20 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
             justifyContent="center"
             alignItems="center"
             width="100%"
-            gap={isXsScreen ? "2rem" : undefined}
+            gap={{ xs: "2rem", md: "2rem", lg: 0 }}
             maxWidth={1200}
             margin="0 auto !important"
           >
-            <Grid paddingLeft={"0px !important"} item xs={12} sm={6}>
+            <Grid
+              display={"flex"}
+              justifyContent={"center"}
+              paddingLeft={"0px !important"}
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={6}
+            >
               <Link onClick={nextStep} sx={{ textDecoration: "none" }}>
                 <StyleCard>
                   <Stack
@@ -120,7 +129,16 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
                 </StyleCard>
               </Link>
             </Grid>
-            <Grid paddingLeft={"0px !important"} item xs={12} sm={6}>
+            <Grid
+              display={"flex"}
+              justifyContent={"center"}
+              paddingLeft={"0px !important"}
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={6}
+            >
               <Link onClick={secondNextStep} sx={{ textDecoration: "none" }}>
                 <StyleCard>
                   <Stack

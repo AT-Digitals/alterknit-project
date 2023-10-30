@@ -114,7 +114,7 @@ export default function ShipinFields({
         <Box
           maxWidth={1440}
           m={"0 auto"}
-          padding={{ xs: "0 1rem", md: "0 10rem" }}
+          padding={{ xs: "0 2rem", md: "0 5rem", lg: "0 10rem" }}
         >
           <Typography
             textAlign={"center"}
@@ -135,7 +135,15 @@ export default function ShipinFields({
       <Box padding={"6rem 0 2rem 0"}>
         <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
           <AppContainer pl={0}>
-            <Box maxWidth={1440} padding={{ xs: "0 1rem" }}>
+            <Box
+              maxWidth={1440}
+              padding={{
+                xs: "0 1rem",
+                sm: "0 3rem",
+                md: "0 3rem",
+                lg: "0 5rem",
+              }}
+            >
               <form
                 style={{
                   display: "flex",
@@ -150,7 +158,7 @@ export default function ShipinFields({
                   alignItems={"center"}
                 >
                   <Typography
-                    fontSize={{ xs: "28px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
                     fontWeight={500}
                     textTransform={"lowercase"}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -181,7 +189,7 @@ export default function ShipinFields({
                   alignItems={"center"}
                 >
                   <Typography
-                    fontSize={{ xs: "28px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
                     textTransform={"lowercase"}
@@ -212,7 +220,7 @@ export default function ShipinFields({
                   alignItems={"center"}
                 >
                   <Typography
-                    fontSize={{ xs: "28px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
                     textTransform={"lowercase"}
@@ -243,7 +251,7 @@ export default function ShipinFields({
                   alignItems={"center"}
                 >
                   <Typography
-                    fontSize={{ xs: "28px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
                     textAlign={{ xs: "center" }}
@@ -277,7 +285,7 @@ export default function ShipinFields({
                 >
                   <Typography
                     textAlign={"center"}
-                    fontSize={{ xs: "28px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
                     textTransform={"lowercase"}

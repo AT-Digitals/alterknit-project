@@ -107,7 +107,6 @@ export default function CheckOut({
   const [phoneError, setPhoneError] = useState("");
   const [zipcodeError, setZipcodeError] = useState("");
 
-
   const handleNextClick = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors = { ...initialErrors };
@@ -261,7 +260,7 @@ export default function CheckOut({
               textAlign={"center"}
               border={"7px dashed black"}
               maxWidth={700}
-              width={"100%"}
+              width={{ xs: "100%", sm: "85%", md: "85%" }}
               padding={"1rem"}
               borderRadius={"30px"}
               fontSize={isXsScreen ? "39px" : "50px"}
@@ -272,7 +271,11 @@ export default function CheckOut({
               SHIPING INFORMATION
             </Typography>
           </Box>
-          <AppContainer maxWidth={1300} padding={0}>
+          <AppContainer
+            width={{ xs: "100%", sm: "85%", md: "85%" }}
+            maxWidth={1300}
+            padding={0}
+          >
             <Box
               textAlign={isXsScreen ? "center" : undefined}
               display={"flex"}
@@ -482,6 +485,7 @@ export default function CheckOut({
         textAlign={"center"}
       >
         <Typography
+          width={{ xs: "85%", sm: "85%", md: "85%" }}
           fontSize={isXsScreen ? "30px" : "48px"}
           lineHeight={isXsScreen ? 1 : 1.5}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -494,7 +498,7 @@ export default function CheckOut({
           justifyContent={"center"}
           direction={isXsScreen ? "column" : "row"}
           spacing={5}
-          width={"90%"}
+          width={{ xs: "85%", sm: "85%", md: "85%" }}
         >
           <StyleButtonNew
             sx={{
