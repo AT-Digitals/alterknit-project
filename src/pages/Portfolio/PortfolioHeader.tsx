@@ -89,7 +89,7 @@ const StyledTypography = styled(Typography)({
 });
 
 export default function PorfolioHeader() {
-    const isXsScreen = useMediaQuery("(max-width:600px)");
+    const isXsScreen = useMediaQuery("(max-width:900px)");
 
     return (
         <Stack>
@@ -109,6 +109,7 @@ export default function PorfolioHeader() {
                             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                             textTransform="lowercase"
                             textAlign={isXsScreen ? "center" : "left"}
+                           marginBottom={"15px"}
                         >
                             SEEING IS BELEIVING
                         </Typography>
