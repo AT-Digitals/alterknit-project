@@ -93,7 +93,7 @@ export default function BillingForm({
       <AppContainer
         mt={isXsScreen ? "3rem" : "8rem"}
         maxWidth={850}
-        width={isXsScreen ? "90%" : "100%"}
+        width={{ xs: "85%", sm: "85%", md: "85%" }}
         display={"flex"}
         justifyContent={"center"}
         flexWrap={"wrap"}
@@ -117,7 +117,7 @@ export default function BillingForm({
       </AppContainer>
       <AppContainer
         padding={0}
-        width={isXsScreen ? "90%" : "100%"}
+        width={{ xs: "85%", sm: "85%", md: "85%" }}
         maxWidth={1300}
         textAlign={isXsScreen ? "center" : "start"}
       >

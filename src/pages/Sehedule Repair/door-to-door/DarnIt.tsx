@@ -41,6 +41,8 @@ export default function DarnIt({ prevStep }: DoorProps) {
       bgcolor={"white"}
       margin={"auto"}
       position={"relative"}
+      width={{ sm: "60%", lg: "90%" }}
+      left={{ xs: 0, sm: "-80px", md: "-80px", lg: 0 }}
     >
       <Typography
         fontSize={{ xs: "40px", md: "100px" }}

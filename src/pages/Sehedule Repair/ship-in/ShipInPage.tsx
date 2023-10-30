@@ -123,7 +123,7 @@ export default function ShipInPage({
         pb={5}
         pt={2}
       >
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for knits")}
             style={{
@@ -138,7 +138,7 @@ export default function ShipInPage({
             reknitting for knits
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("reweaving for suits")}
             style={{
@@ -153,7 +153,7 @@ export default function ShipInPage({
             reweaving for suits
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("knit alteration")}
             style={{
@@ -168,7 +168,7 @@ export default function ShipInPage({
             knit alteration
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("other fabric repair")}
             style={{
@@ -183,7 +183,7 @@ export default function ShipInPage({
             other fabric repair
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("cleaning")}
             style={{
@@ -198,7 +198,7 @@ export default function ShipInPage({
             cleaning
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("restyling")}
             style={{
@@ -213,7 +213,7 @@ export default function ShipInPage({
             restyling
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("de-pilling")}
             style={{
@@ -228,7 +228,7 @@ export default function ShipInPage({
             de-pilling
           </StyleButtonNew>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <StyleButtonNew
             onClick={() => handleButtonClick("custom knit work")}
             style={{
