@@ -155,7 +155,7 @@ export default function LastStep({
             alignItems={"center"}
             gap={isXsScreen ? "3rem" : "20rem"}
             maxWidth={780}
-            width={"100%"}
+            width={{ xs: "90%", sm: "90%" }}
             margin={"0 auto"}
           >
             {isXsScreen ? (
@@ -503,7 +503,7 @@ export default function LastStep({
           </Box>
         </Box>
       </Box>
-      <Box mb={6} mt={10} textAlign={"center"}>
+      <Box mb={6} textAlign={"center"}>
         <StyledButton
           style={{
             background: "#df7c6d",

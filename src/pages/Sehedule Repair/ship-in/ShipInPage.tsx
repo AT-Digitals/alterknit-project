@@ -58,7 +58,7 @@ export default function ShipInPage({
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
     fontWeight: 500,
-    fontSize: "2.5rem",
+    fontSize: "1.5rem",
     fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
     padding: "30px",
     width: isXsScreen ? "90%" : "270px",
@@ -109,7 +109,7 @@ export default function ShipInPage({
       <Typography
         variant="body1"
         textAlign="center"
-        pt={10}
+        pt={7}
         fontFamily={`"ProximaNovaMedium", sans-serif`}
         fontWeight={500}
       >
