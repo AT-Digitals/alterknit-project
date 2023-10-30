@@ -7,6 +7,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
+import AppContainer from "../../../component/AppContainer";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
 import bgmore from "../../../assets/bg_syr_more_info.svg";
@@ -98,54 +99,56 @@ export default function MoreDetailsPage({
           >
             just a few more details...
           </Typography>
-          <Typography
-            fontWeight={500}
-            fontSize={isXsScreen ? "36px" : "3rem"}
-            padding={isXsScreen ? "10px" : undefined}
-            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            textAlign="center"
-            lineHeight={1}
-            textTransform={"lowercase"}
-          >
-            8. has this garment been previously repaired by a dry cleaner or
-            another individual?
-          </Typography>
-          <Stack
-            width={isXsScreen ? "90%" : undefined}
-            direction={isXsScreen ? "column" : "row"}
-            spacing={6}
-            alignItems="center"
-            justifyContent="center"
-            pt={3}
-            pb={3}
-          >
-            <StyleButtonNew
-              value="yes"
-              defaultChecked={moreDetails.previous_service === "yes"}
-              onClick={() => handleOptionClick("previous_service", "yes")}
-              style={{
-                backgroundColor:
-                  moreDetails.previous_service === "yes" ? Colors.LINK : "",
-                transform:
-                  moreDetails.previous_service === "yes" ? `scale(1.05)` : "",
-              }}
+          <Box padding={{ xs: "0 2rem", sm: "0 6em", md: "0 5rem" }}>
+            <Typography
+              fontWeight={500}
+              fontSize={isXsScreen ? "36px" : "3rem"}
+              padding={isXsScreen ? "10px" : undefined}
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              textAlign="center"
+              lineHeight={1}
+              textTransform={"lowercase"}
             >
-              Yes
-            </StyleButtonNew>
-            <StyleButtonNew
-              value="no"
-              style={{
-                backgroundColor:
-                  moreDetails.previous_service === "no" ? Colors.LINK : "",
-                transform:
-                  moreDetails.previous_service === "no" ? `scale(1.05)` : "",
-              }}
-              defaultChecked={moreDetails.previous_service === "no"}
-              onClick={() => handleOptionClick("previous_service", "no")}
+              8. has this garment been previously repaired by a dry cleaner or
+              another individual?
+            </Typography>
+            <Stack
+              width={isXsScreen ? "90%" : undefined}
+              direction={isXsScreen ? "column" : "row"}
+              spacing={6}
+              alignItems="center"
+              justifyContent="center"
+              pt={3}
+              pb={3}
             >
-              NO
-            </StyleButtonNew>
-          </Stack>
+              <StyleButtonNew
+                value="yes"
+                defaultChecked={moreDetails.previous_service === "yes"}
+                onClick={() => handleOptionClick("previous_service", "yes")}
+                style={{
+                  backgroundColor:
+                    moreDetails.previous_service === "yes" ? Colors.LINK : "",
+                  transform:
+                    moreDetails.previous_service === "yes" ? `scale(1.05)` : "",
+                }}
+              >
+                Yes
+              </StyleButtonNew>
+              <StyleButtonNew
+                value="no"
+                style={{
+                  backgroundColor:
+                    moreDetails.previous_service === "no" ? Colors.LINK : "",
+                  transform:
+                    moreDetails.previous_service === "no" ? `scale(1.05)` : "",
+                }}
+                defaultChecked={moreDetails.previous_service === "no"}
+                onClick={() => handleOptionClick("previous_service", "no")}
+              >
+                NO
+              </StyleButtonNew>
+            </Stack>
+          </Box>
         </Stack>
         <Stack
           pb={5}
@@ -157,7 +160,7 @@ export default function MoreDetailsPage({
           spacing={3}
           alignItems="center"
         >
-          <Box>
+          <Box padding={{ xs: "0 2rem", sm: "0 6em", md: "0 5rem" }}>
             <Typography
               fontWeight={500}
               fontSize={isXsScreen ? "44px" : "3rem"}

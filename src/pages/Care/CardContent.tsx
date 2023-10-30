@@ -114,7 +114,16 @@ function HoverCard() {
   return (
     <Grid container spacing={8}>
       {TotalCards.map((cards, index) => (
-        <Grid item xs={12} md={6} sm={6} lg={4} key={index}>
+        <Grid
+          display={"flex"}
+          justifyContent={"center"}
+          item
+          xs={12}
+          md={12}
+          sm={12}
+          lg={4}
+          key={index}
+        >
           <CardContainer
             onMouseEnter={() => handleCardHover(index)}
             onMouseLeave={handleCardLeave}

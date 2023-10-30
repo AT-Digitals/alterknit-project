@@ -11,7 +11,6 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
   const buttonStyle = {
     backgroundColor: Colors.HOME_BACKGROUND,
     width: 220,
-    marginTop: "30px",
     transition: "background-color 0.3s, color 0.3s",
     borderRadius: "20px",
   };
@@ -104,7 +103,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
         >
           WE MAKE IT EASY!
         </Typography>
-        <Stack spacing={2} mt={2}>
+        <Stack padding={"2rem"} spacing={2}>
           <Typography
             fontSize={{ xs: "16px", md: "20px" }}
             fontFamily={`"ProximaNovaMedium", sans-serif`}
@@ -132,7 +131,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
         >
           <Box minWidth={290} p={"15px 20px 5px"}>
             <Typography
-              fontSize="60px"
+              fontSize={{ xs: "45px", sm: "45px", md: "60px" }}
               fontWeight={500}
               color={isHovered ? "white" : "black"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
