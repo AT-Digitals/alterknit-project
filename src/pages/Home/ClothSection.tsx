@@ -24,6 +24,7 @@ export default function ClothSection() {
                         // height="194"
                         image={clothImage}
                         alt="clothes"
+                        sx={{ width: "100%", maxWidth: "716px", margin: "0 auto" }}
                     />
                 </Grid>
                 <Grid item xs={12} md={12} xl={5} textAlign={{ xs: "center", md: "center", lg: "center", xl: "start" }}>

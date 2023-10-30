@@ -24,39 +24,39 @@ const StyledButton = styled(Button)(({ theme }) => ({
     [theme.breakpoints.up('xs')]: {
         width: 152,
         height: 152,
-        top: "62%",
+        // top: "38%",
         fontSize: "30px",
-        left: "45px",
-        transform: `translate(${-28}%, ${150}%)`,
+        left: "25%",
+        transform: `translate(${-28}%, ${113}%)`,
     },
     [theme.breakpoints.up('sm')]: {
         width: 190,
         height: 190,
-        top: "25%",
+        // top: "-7",
         fontSize: "30px",
-        transform: `translate(${50}%, ${150}%)`,
+        transform: `translate(${-15}%, ${150}%)`,
     },
     [theme.breakpoints.up('md')]: {
         width: 190,
         height: 190,
-        top: "20%",
+        // top: "20%",
         fontSize: "35px",
         transform: `translate(${101}%, ${150}%)`,
     },
     [theme.breakpoints.up('lg')]: {
         width: 190,
         height: 190,
-        top: "35%",
+        // top: "35%",
         fontSize: "30px",
-        transform: `translate(${195}%, ${150}%)`,
+        transform: `translate(${-25}%, ${127}%)`,
     },
-    [theme.breakpoints.up('xl')]: {
-        width: 190,
-        height: 190,
-        right: "34%",
-        fontSize: "35px",
-        transform: `translate(${415}%, ${60}%)`,
-    },
+    // [theme.breakpoints.up('xl')]: {
+    //     width: 190,
+    //     height: 190,
+    //     right: "34%",
+    //     fontSize: "35px",
+    //     transform: `translate(${415}%, ${60}%)`,
+    // },
 }));
 
 export default function WelcomeSection() {
@@ -95,7 +95,7 @@ export default function WelcomeSection() {
                     can't.
                 </Typography>
             </Stack>
-            <Box>
+            <Box position="relative" flex={1}>
                 {/* <Link to={routes.SCHEDULE_REPAIR}> */}
                 <StyledButton
                     sx={{
