@@ -4,7 +4,7 @@ import SpeakerImage from "../../assets/speaker.png";
 import StudioImage from "../../assets/studio.png";
 
 export default function CardPage() {
-    const isXsScreen = useMediaQuery("(max-width:600px)");
+    const isXsScreen = useMediaQuery("(max-width:915px)");
     return (
         <>
             <img src={ImageTop} alt="top" />
@@ -28,7 +28,7 @@ export default function CardPage() {
                     <CardContent style={{
                         paddingTop: "25px",
                     }}>
-                        <Stack direction= {{ xs: 'column', sm:'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', md:'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -113,7 +113,7 @@ export default function CardPage() {
                     }}
                 >
                     <CardContent>
-                        <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', md:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -178,7 +178,7 @@ export default function CardPage() {
                     }}
                 >
                     <CardContent>
-                          <Stack direction= {{ xs: 'column', sm:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
+                          <Stack direction= {{ xs: 'column', md:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 marginTop={"20px"}
                                 lineHeight={"0.9"}

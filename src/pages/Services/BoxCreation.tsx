@@ -5,14 +5,14 @@ import weight from "../../assets/weight.png";
 import dress from "../../assets/damage.png";
 
 export default function BoxCreation() {
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:915px)");
   return (
     <>
       <Box sx={{
         backgroundColor: "#fff",
         marginBottom: "80px",
       }}>
-        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={isXsScreen ? "0px 0px" : "0px 15px"} paddingTop={isXsScreen ? "30px" : "125px"}>
+        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} direction={"row"} justifyContent={"center"} width={"100%"} maxWidth={"770px"} margin={isXsScreen ? "0px 0px" : "0px 0px"} paddingTop={isXsScreen ? "30px" : "125px"}>
           <Typography
             lineHeight={"1"}
             color={"black"}
@@ -36,8 +36,10 @@ export default function BoxCreation() {
             </Typography>
           </Typography>
         </Stack>
-        <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }} paddingBottom={"65px"}>
-          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
+        <Stack spacing={8} margin={isXsScreen ? "0px 2rem" : "0"} justifyContent={"center"} direction= {{ xs: 'column', md:'row' }} paddingBottom={isXsScreen ? "0px" : "65px"}>
+          <Stack style={{
+            margin: isXsScreen ? "0 auto" : "0"
+          }}  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -94,7 +96,9 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Stack>
-          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
+          <Stack style={{
+            margin: isXsScreen ? "60px auto" : "0px 60px"
+          }} textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -151,8 +155,10 @@ export default function BoxCreation() {
             </Card>
           </Stack>
         </Stack>
-        <Stack spacing={8} margin={"0px 15px"} justifyContent={"center"} direction= {{ xs: 'column', sm:'row' }}>
-          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
+        <Stack spacing={8} margin={isXsScreen ? "0px 2rem" : "0"} justifyContent={"center"} direction= {{ xs: 'column', md:'row' }}>
+          <Stack style={{
+            margin: isXsScreen ? "0 auto" : "0"
+          }} textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",
@@ -208,7 +214,9 @@ export default function BoxCreation() {
               </Typography>
             </Card>
           </Stack>
-          <Stack  textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
+          <Stack style={{
+            margin: isXsScreen ? "60px auto" : "0px 60px"
+          }} textAlign={isXsScreen ? "center" : "left"} width={"100%"} maxWidth={"590px"}>
             <Card
               sx={{
                 border: "1px solid black",

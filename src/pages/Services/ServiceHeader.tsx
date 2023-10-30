@@ -24,21 +24,24 @@ export default function ServiceHeader() {
       >
         <Box
           width={"100%"}
-          maxWidth={"1440px"}
+          maxWidth={"1050px"}
           margin={"0 auto"}
-          padding={isXsScreen ? "0 1rem" : "0 14rem"}
+          padding={isXsScreen ? "0 1rem" : "0 5rem"}
         >
           <Box
             bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
-            borderRadius={"40px"}
+            borderRadius={isXsScreen ? "20px" : "40px"}
             margin={"0 auto"}
             padding={isXsScreen ? "0" : "2rem 8rem"}
             textAlign="center"
+            sx={{
+              borderWidth: isXsScreen ? "3px" : "5px"
+            }}
           >
             <Typography
-              lineHeight={isXsScreen ? "2.6rem" : "5rem"}
-              fontSize={isLgScreen ? "78px" : "40px"}
+              lineHeight={isXsScreen ? "1" : "1"}
+              fontSize={isLgScreen ? "78px" : "50px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}

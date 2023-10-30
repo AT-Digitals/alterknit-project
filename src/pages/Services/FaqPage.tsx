@@ -150,7 +150,7 @@ export default function FaqPage() {
       setOpenNote5Index(index);
     }
   };
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:915px)");
 
   return (
     <>
@@ -162,7 +162,7 @@ export default function FaqPage() {
           textAlign={"center"}
           color={"black"}
           fontWeight={"500"}
-          fontSize={isXsScreen ? "50px" : "80px"}
+          fontSize={isXsScreen ? "60px" : "80px"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           textTransform={"lowercase"}
         >
@@ -188,7 +188,7 @@ export default function FaqPage() {
                 >
                   <Typography
                      fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "20px" : "32px"}
+                    fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -240,7 +240,7 @@ export default function FaqPage() {
                 >
                   <Typography
                       fontFamily={`"ProximaNovaMedium", sans-serif`}
-                      fontSize={isXsScreen ? "20px" : "32px"}
+                      fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -292,7 +292,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "20px" : "32px"}
+                    fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -344,7 +344,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "20px" : "32px"}
+                    fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -396,7 +396,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "20px" : "32px"}
+                    fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -448,7 +448,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "20px" : "32px"}
+                    fontSize={isXsScreen ? "26px" : "32px"}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
