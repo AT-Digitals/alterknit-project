@@ -41,7 +41,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
         height: 190,
         // top: "20%",
         fontSize: "35px",
-        transform: `translate(${101}%, ${150}%)`,
+        transform: `translate(${-20}%, ${130}%)`,
     },
     [theme.breakpoints.up('lg')]: {
         width: 190,
