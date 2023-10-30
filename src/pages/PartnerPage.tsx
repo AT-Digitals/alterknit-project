@@ -262,7 +262,7 @@ export default function PartnerPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:915px)");
   const isYsScreen = useMediaQuery("(max-width:1200px)");
 
   return (
