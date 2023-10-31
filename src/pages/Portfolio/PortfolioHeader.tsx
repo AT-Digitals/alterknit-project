@@ -157,7 +157,7 @@ export default function PorfolioHeader() {
       >
         <Stack
           direction={"column"}
-          padding={isXsScreen ? "0rem 0 7rem 0" : "0rem 0 11rem 0"}
+          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 11rem 0"}
           maxWidth={"620px"}
           position={"relative"}
           zIndex={"1"}
@@ -239,7 +239,7 @@ export default function PorfolioHeader() {
         </Box>
       </Stack>
       {isImageScreen ? (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} padding={"0px 30px"}>
           {images.map((image, index) => (
             <Grid item xs={6} sm={6} md={3} key={index}>
               <div

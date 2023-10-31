@@ -41,7 +41,7 @@ export default function ServiceHeader() {
           >
             <Typography
               lineHeight={isXsScreen ? "1" : "1"}
-              fontSize={isLgScreen ? "78px" : "50px"}
+              fontSize={isXsScreen ? "50px" : "78px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}

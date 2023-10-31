@@ -4,7 +4,8 @@ import SpeakerImage from "../../assets/speaker.png";
 import StudioImage from "../../assets/studio.png";
 
 export default function CardPage() {
-    const isXsScreen = useMediaQuery("(max-width:915px)");
+    const isXsScreen = useMediaQuery("(max-width:1300px)");
+    const isLgScreen = useMediaQuery("(min-width:1300px)");
     return (
         <>
             <img src={ImageTop} alt="top" />
@@ -19,16 +20,15 @@ export default function CardPage() {
                     style={{
                         width: "100%",
                         maxWidth: "1140px",
-                        marginBottom: "60px",
                         border: "1px solid white",
                         borderRadius: "20px",
-                        margin: "20px",
+                        margin: "20px 20px 20px 17px",
                     }}
                 >
                     <CardContent style={{
                         paddingTop: "25px",
                     }}>
-                        <Stack direction= {{ xs: 'column', md:'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', sm: 'column', md:'column', lg: 'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -37,7 +37,7 @@ export default function CardPage() {
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                
                             >
                                 CAN I GET A BALLPARK?{" "}
@@ -52,15 +52,16 @@ export default function CardPage() {
                                    It's just one hole!
                                 </Typography>
                             </Typography>
+                            <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
                             <Typography
                                 lineHeight={"1.3"}
-                                maxWidth={"676px"}
+                                maxWidth={isXsScreen ? "none" : "676px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
                                 paddingRight={"30px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                
                             >
                                 We need to examine your entire item in our work studio because
@@ -69,19 +70,15 @@ export default function CardPage() {
                                 holes! So please let us do our job. Your garments' examination
                                 is complimentary.
                             </Typography>
-                        </Stack>
-                        <Stack direction={"row"} justifyContent={"flex-end"}>
                             <Typography
-                                marginBottom={isXsScreen ? "20px" : "36px"}
-                                marginRight={"48px"}
-                                marginLeft={isXsScreen ? "20px" : "0px"}
+                                marginBottom={isXsScreen ? "20px" : "6px"}
                                 lineHeight={"1.3"}
-                                maxWidth={"706px"}
+                                maxWidth={isXsScreen ? "none" : "706px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                             >
                                 Our repair service starts at $45.00. Bear in mind that this is
                                 the minimum you can expect to pay for a repair. There are
@@ -90,6 +87,7 @@ export default function CardPage() {
                                 look at your items. Once we check the entire garment we will
                                 call you with pricing for your approval.
                             </Typography>
+                            </Box>
                         </Stack>
                     </CardContent>
                 </Card>
@@ -113,7 +111,7 @@ export default function CardPage() {
                     }}
                 >
                     <CardContent>
-                        <Stack direction= {{ xs: 'column', md:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
+                        <Stack direction= {{ xs: 'column', sm: 'column', md:'column', lg: 'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 lineHeight={"0.9"}
                                 color={"black"}
@@ -122,7 +120,7 @@ export default function CardPage() {
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                             >
                                 WHERE ARE YOU LOCATED?{" "}
                                 <Typography
@@ -140,13 +138,13 @@ export default function CardPage() {
                             <Typography
                                 marginBottom={isXsScreen ? "10px" : "20px"}
                                 lineHeight={"1.3"}
-                                maxWidth={"714px"}
+                                maxWidth={isXsScreen ? "none" : "714px"}
                                 marginTop={"4px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                             >
                                 Can I drop by? Our work studio is located in Astoria, Queens,
                                 New York. We know you would like to visit but due to the high
@@ -178,7 +176,7 @@ export default function CardPage() {
                     }}
                 >
                     <CardContent>
-                          <Stack direction= {{ xs: 'column', md:'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
+                          <Stack direction= {{ xs: 'column', sm: 'column', md:'column', lg: 'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 marginTop={"20px"}
                                 lineHeight={"0.9"}
@@ -188,7 +186,7 @@ export default function CardPage() {
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                             >
                                 HOW LONG WILL IT TAKE?{" "}
                                 <Typography
@@ -207,11 +205,11 @@ export default function CardPage() {
                                 fontSize={isXsScreen ? "20px" : "22px"}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
-                                maxWidth={"676px"}
+                                maxWidth={isXsScreen ? "none" : "676px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 marginRight={"37px"}
-                                textAlign={isXsScreen ? "center" : "left"}
+                                textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                             >
                                 We are working on a 4-6 week turnaround time. However, if you
                                 have an upcoming event, vacation, or you can't live without it,
@@ -268,7 +266,7 @@ export default function CardPage() {
                                     fontSize={isXsScreen ? "2.3rem" : "3rem"}
                                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                     textTransform={"lowercase"}
-                                    textAlign={isXsScreen ? "center" : "left"}
+                                    textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                 >
                                     HEADS UP!
                                     <Typography
@@ -294,7 +292,7 @@ export default function CardPage() {
                                     fontWeight={"500"}
                                     fontFamily={`"ProximaNovaMedium", sans-serif`}
                                     fontSize={isXsScreen ? "18px" : "22px"}
-                                    textAlign={isXsScreen ? "center" : "left"}
+                                    textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                 >
                                     Repair quotes are based on the time and required solution.
                                     <Typography
@@ -302,7 +300,7 @@ export default function CardPage() {
                                         fontWeight={"500"}
                                         fontFamily={`"ProximaNovaMedium", sans-serif`}
                                         fontSize={isXsScreen ? "18px" : "22px"}
-                                        textAlign={isXsScreen ? "center" : "left"}
+                                        textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                     >
                                         Estimates are for labor only and do not include material
                                         costs, shipping/delivery fees, or additional services. Every
