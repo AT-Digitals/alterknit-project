@@ -1,12 +1,11 @@
 import {
   Box,
-  CardMedia,
   Grid,
   IconButton,
   Link,
   Stack,
   Typography,
-  styled,
+  useMediaQuery,
 } from "@mui/material";
 
 import Colors from "../../../CommonComponent/Colors";
@@ -17,8 +16,27 @@ import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
 import sweater from "../../../assets/sweater_guy.png";
 import { useState } from "react";
+import styled from "@emotion/styled";
 
-const StyledButtom = styled(CustomButton)({
+const StyledTableCell = styled.td`
+  color: black;
+  font-weight: 600;
+  font-family: "ProximaNovaSemibold", sans-serif;
+`;
+const StyledTr = styled.tr`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+`;
+
+const StyledTableCellValue = styled.td`
+  vertical-align: top;
+
+  font-weight: 400;
+  font-family: "ProximaNovaRegular", sans-serif;
+`;
+
+const StyledButton = styled(CustomButton)({
   fontSize: "22px",
   borderRadius: "8px",
   padding: "10px 20px",
@@ -47,14 +65,13 @@ export default function RepairPage({
   serviceDetails,
   setServiceDetails,
   onDelete,
-
 }: repairprops) {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const handleDeleteClick = (value: ServiceDetailsState) => {
     setShowDeleteConfirmation(true);
 
-    setNewData(value)
+    setNewData(value);
   };
 
   const handleDeleteConfirmed = (value: ServiceDetailsState) => {
@@ -70,6 +87,11 @@ export default function RepairPage({
   const [newData, setNewData] = useState<ServiceDetailsState>();
 
   const isServiceDetailsEmpty = serviceDetails.length === 0;
+
+  const [displayedEntry, setDisplayedEntry] = useState(0);
+  const handleDisplayEntry = (entry: number) => {
+    setDisplayedEntry(entry);
+  };
 
   const handleProceedToCheckout = () => {
     if (isServiceDetailsEmpty) {
@@ -87,18 +109,26 @@ export default function RepairPage({
     <Stack
       paddingY={6}
       maxWidth={1300}
-      // margin="0 auto"
+      //margin="0 auto"
       justifyContent="center"
       direction="column"
-      paddingX={13}
+      paddingX={{ xs: 3, sm: 6, lg: 13 }}
       spacing={8}
     >
-
-      <Box display={{ xs: "flex", sm: "flex", md: "flex", lg: 'none' }} paddingX={7}>
-        <Stack direction="column" spacing={2} alignItems="center" justifyContent="center">
+      <Box
+        display={{ xs: "flex", sm: "flex", md: "flex", lg: "none" }}
+        paddingX={{ xs: 0, sm: 2, md: 7, lg: 7 }}
+        margin="0 auto"
+      >
+        <Stack
+          direction="column"
+          spacing={2}
+          alignItems="center"
+          justifyContent="center"
+        >
           <Typography
             fontWeight={500}
-            fontSize="5rem"
+            fontSize={{ xs: "45px", sm: "5rem" }}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             textAlign="center"
             textTransform={"lowercase"}
@@ -120,17 +150,9 @@ export default function RepairPage({
           </Typography>
         </Stack>
       </Box>
-      <Box display={{ xs: "none", sm: "none", md: "none", lg: 'flex' }}>
+      <Box display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}>
         <Stack direction="row" spacing={3}>
           <img src={sweater} alt="" width={250} height={250} />
-          {/* <CardMedia
-          component="img"
-
-          height="250"
-          image={sweater}
-          alt="bug-right"
-          sx={{ display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex", }, width: "100%", maxWidth: "250px" }}
-        /> */}
           <Box>
             <Typography
               fontWeight={500}
@@ -149,10 +171,10 @@ export default function RepairPage({
               fontFamily={`"ProximaNovaMedium", sans-serif`}
               fontWeight={500}
             >
-              This is the preview of all current repairs in the order. Please make
-              sure all information is correct and any missing information is
-              filled in to the best of your ability. We look forward to receiving
-              your garment shortly.
+              This is the preview of all current repairs in the order. Please
+              make sure all information is correct and any missing information
+              is filled in to the best of your ability. We look forward to
+              receiving your garment shortly.
             </Typography>
           </Box>
           <img
@@ -164,14 +186,171 @@ export default function RepairPage({
               transform: "scaleX(-1)",
             }}
           />
-          {/* <CardMedia
-          component="img"
-          height="250"
-          image={sweater}
-          alt="bug-right"
-          sx={{ transform: "scaleX(-1)", display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }, width: "100%", maxWidth: "250px" }}
-        /> */}
         </Stack>
+      </Box>
+      <Box
+        display={{ xs: "block", sm: "block", md: "block", lg: "none" }}
+        bgcolor={"#f8f1ec"}
+        margin={{ xs: 0, sm: 0, md: "64px auto 0" }}
+        border={"5px solid #df7c6d"}
+        borderRadius={"20px"}
+        maxWidth={"780px"}
+        position={"relative"}
+        padding={{ xs: "1rem", sm: "3rem" }}
+      >
+        <ul style={{ listStyle: "none", padding: 0 }}>
+          {serviceDetails.map((serviceData, index) => (
+            <li style={{ display: "inline" }} key={index}>
+              <button
+                style={{
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                  background: displayedEntry === index ? "#df7c6d" : "white",
+                  color: displayedEntry === index ? "white" : "black",
+                  padding: "5px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  fontFamily: `"ProximaNovaMedium", sans-serif`,
+                  fontWeight: 500,
+                }}
+                onClick={() => handleDisplayEntry(index)}
+              >
+                ITEM {index + 1}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <table
+          style={{
+            width: "100%",
+            borderSpacing: "2rem",
+            tableLayout: "fixed",
+          }}
+        >
+          <tbody>
+            <div
+              style={{
+                marginTop: "-30px",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {serviceDetails[displayedEntry].services}
+                    </StyledTableCellValue>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell>Brand</StyledTableCell>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {serviceDetails[displayedEntry].service_details.brand}
+                    </StyledTableCellValue>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell>Color</StyledTableCell>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {serviceDetails[displayedEntry].service_details.color}
+                    </StyledTableCellValue>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell>Age of Garment</StyledTableCell>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {serviceDetails[displayedEntry].service_details.howMany}
+                    </StyledTableCellValue>
+                  </StyledTr> </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell># of Holes</StyledTableCell>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {
+                        serviceDetails[displayedEntry].service_details
+                          .visible_holes
+                      }
+                    </StyledTableCellValue>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCell>Brief Description</StyledTableCell>
+                  </StyledTr>
+                </Grid>
+                <Grid item xs={6}>
+                  <StyledTr>
+                    <StyledTableCellValue>
+                      {serviceDetails[displayedEntry].service_details.brief}
+                    </StyledTableCellValue>
+                  </StyledTr>
+                </Grid>
+              </Grid>
+              {/* {serviceDetails.length > 0 && (
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {serviceDetails[displayedEntry].services}
+                      </StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {serviceDetails[displayedEntry].service_details.brand}
+                      </StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {serviceDetails[displayedEntry].service_details.color}
+                      </StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {serviceDetails[displayedEntry].service_details.howMany}
+                      </StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {
+                          serviceDetails[displayedEntry].service_details
+                            .visible_holes
+                        }
+                      </StyledTableCellValue>
+                    </StyledTr>
+                    <StyledTr>
+                      <StyledTableCellValue>
+                        {serviceDetails[displayedEntry].service_details.brief}
+                      </StyledTableCellValue>
+                    </StyledTr>
+                  </Grid>
+                )} */}
+              {/* </Grid> */}
+            </div>
+          </tbody>
+        </table>
       </Box>
       <Stack
         display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
@@ -313,7 +492,7 @@ export default function RepairPage({
           </Grid>
         </Grid>
         {serviceDetails.map((serviceData, index) => (
-          <Typography >
+          <Typography>
             <Grid container columnGap={3} flexWrap="nowrap" mb={3} key={index}>
               <Grid item xs={2}>
                 <Typography textAlign="center" variant="body2" paddingX={3}>
@@ -351,49 +530,63 @@ export default function RepairPage({
                 </IconButton>
               </Grid>
             </Grid>
-            {newData &&
+            {newData && (
               <DeletePopup
                 showDeleteConfirmation={showDeleteConfirmation}
                 handleDeleteCancelled={handleDeleteCancelled}
                 handleDeleteConfirmed={() => handleDeleteConfirmed(newData)}
-              />}
+              />
+            )}
           </Typography>
         ))}
       </Stack>
       <Stack
-        direction="row"
-        spacing={8}
+        direction={{ xs: "column", sm: "row", md: "row" }}
+        spacing={{ xs: 3, sm: 6, md: 8 }}
         alignItems="center"
         justifyContent="center"
       >
-        <StyledButtom onClick={prevStep} bgColor={"#f8f1eb"} color={Colors.LINK} disabled={serviceDetails.length === 0 ? true : false}>
+        <StyledButton
+          onClick={prevStep}
+          bgColor={"#f8f1eb"}
+          color={Colors.LINK}
+          disabled={serviceDetails.length === 0 ? true : false}
+        >
           Back
-        </StyledButtom>
+        </StyledButton>
         <Link onClick={addItem}>
-          <StyledButtom
+          <StyledButton
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
             sx={{
-              width: "270px",
+              minWidth: {
+                xs: "270px !important",
+                sm: "150px !important",
+                md: "270px !important",
+              },
               fontFamily: `"ProximaNovaRegular", sans-serif`,
               fontWeight: 400,
             }}
           >
             Add Another Item
-          </StyledButtom>
+          </StyledButton>
         </Link>
         <Link onClick={handleProceedToCheckout}>
-          <StyledButtom
+          <StyledButton
             bgColor={"#f8f1eb"}
             color={Colors.BLACK}
             sx={{
-              width: "270px",
+              minWidth: {
+                xs: "270px !important",
+                sm: "150px !important",
+                md: "270px !important",
+              },
               fontWeight: 600,
               fontFamily: `"ProximaNovaSemibold", sans-serif`,
             }}
           >
             Proceed to Checkout
-          </StyledButtom>
+          </StyledButton>
         </Link>
       </Stack>
       <CustomDialog
