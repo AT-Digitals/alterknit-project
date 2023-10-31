@@ -66,7 +66,7 @@ export default function CarePage() {
   const isXsScreen = useMediaQuery("(max-width:750px)");
 
   return (
-    <Box >
+    <Box>
       <section
         style={{
           padding: isXsScreen ? "2rem" : "3.5rem",
@@ -89,8 +89,7 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={{ xs: "16px", md: "40px", sm: "40px" }}
             textAlign={"center"}
-            // padding={isXsScreen ? "2rem" : "1rem 5.4rem"}
-            padding={{ xs: "2rem", sm: "1rem 3rem", md: "1rem,3rem" }}
+            padding={{ xs: "2rem", sm: "2.5rem 3rem", md: "2.5rem 5rem" }}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -148,7 +147,7 @@ export default function CarePage() {
             border={"5px solid #df7c6d"}
             borderRadius={{ xs: "16px", sm: "40px" }}
             textAlign={"center"}
-            padding={isXsScreen ? "1rem" : "2.5rem 5rem"}
+            padding={{ xs: "2rem", sm: "2.5rem 3rem", md: "2.5rem 5rem" }}
             bgcolor={"black"}
             borderColor={"black"}
             color={"white"}
@@ -218,7 +217,11 @@ export default function CarePage() {
           alt="thems1"
           style={{ width: "100%", height: "auto" }}
         />
-        <Box bgcolor={"#df7c6d"} paddingBottom={"0 10rem"} paddingX={{ xs: 3, sm: 6 }}>
+        <Box
+          bgcolor={"#df7c6d"}
+          paddingBottom={"0 10rem"}
+          paddingX={{ xs: 3, sm: 6 }}
+        >
           <Box margin={"0 auto"} width={"100%"} maxWidth={1300}>
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -452,7 +455,6 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
-
             >
               IN ALTERKNIT WE TRUST
             </Typography>
