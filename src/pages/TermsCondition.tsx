@@ -3,11 +3,11 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import { useEffect } from "react";
 
 export default function TermsCondition() {
- useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const isXsScreen = useMediaQuery("(max-width:600px)");
- 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    const isXsScreen = useMediaQuery("(max-width:600px)");
+
     return (
         <>
             <Box maxWidth={"1310px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
@@ -17,10 +17,10 @@ export default function TermsCondition() {
                     color={"black"}
                     fontWeight={"500"}
                     lineHeight={1}
-                    fontSize={isXsScreen ? "2.2rem" : "4.5rem"}
+                    fontSize={{ xs: "45px", sm: "80px" }}
                     fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                     textTransform="lowercase"
-                    paddingBottom={isXsScreen ? "10px" : "30px"}
+                    paddingBottom={isXsScreen ? "20px" : "30px"}
                 >
                     TERMS AND CONDITIONS
                 </Typography>
@@ -59,7 +59,7 @@ export default function TermsCondition() {
                         CHANGES TO TERMS AND CONDITIONS
                     </Typography>
                     <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`} fontSize={"22px"} letterSpacing={"0px"}
-                        lineHeight={"1.2"}  paddingTop={"3px"}>
+                        lineHeight={"1.2"} paddingTop={"3px"}>
                         You can review the most current version of the Terms and Conditions
                         at any time on this page. We reserve the right from time to time,
                         with or without notice to you, to change these Terms and Conditions

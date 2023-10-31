@@ -155,7 +155,7 @@ export default function FormFile() {
     setFirstNameError(firstNameError);
     setEmailError(emailError);
     setPhoneError(phoneError);
-    
+
 
     if (!firstNameError && !emailError && !phoneError) {
       // If there are no validation errors, proceed with sending the email
@@ -181,7 +181,7 @@ export default function FormFile() {
     } else {
       // Handle the case where there are validation errors (e.g., show error messages).
     }
-  
+
 
     setSelectedImage(null);
     setShowDeleteIcon(false);
@@ -205,11 +205,11 @@ export default function FormFile() {
       console.log(data);
     }
   };
-  
+
 
   const handleImageChange = (event: any) => {
     const selectedImage = event.target.files[0];
-  if (selectedImage) {
+    if (selectedImage) {
       setSelectedImage(selectedImage);
       setShowDeleteIcon(true);
       setPersonalDetails({
@@ -227,7 +227,7 @@ export default function FormFile() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
@@ -250,46 +250,46 @@ export default function FormFile() {
           margin: "30px",
           width: "100%",
           maxWidth: "900px",
-          
+
         }}
         ref={form}
         onSubmit={handleSubmit}
         encType="multipart/form-data"
       >
-         <Modal
-        open={isModalOpen}
-        onClose={closeModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Box display={"flex"} justifyContent={"center"}>
-          <img
+        <Modal
+          open={isModalOpen}
+          onClose={closeModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Box display={"flex"} justifyContent={"center"}>
+              <img
                 src={alterknitImage}
                 alt="logo"
                 width="40%"
                 height="15%"
-            />
-         </Box>
-         <Box display={"flex"} justifyContent={"center"}>
-      
-          <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
-           Email Sent Successfully!
-          </Typography>
+              />
+            </Box>
+            <Box display={"flex"} justifyContent={"center"}>
+
+              <Typography fontSize={"20px"} id="modal-modal-description" sx={{ mt: 2 }}>
+                Email Sent Successfully!
+              </Typography>
+            </Box>
+            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
+              <Button sx={{
+                height: "30px",
+                backgroundColor: "black",
+                color: "white",
+                marginTop: "10px",
+                ":hover": {
+                  backgroundColor: "rgb(223, 124, 109)",
+                },
+              }} onClick={closeModal}>OK</Button>
+            </Box>
           </Box>
-          <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-            <Button sx={{
-              height: "30px",
-              backgroundColor: "black",
-              color: "white",
-              marginTop: "10px",
-              ":hover": {
-                backgroundColor: "rgb(223, 124, 109)",
-              },
-            }} onClick={closeModal}>OK</Button>
-          </Box>
-        </Box>
-      </Modal>
+        </Modal>
         <Box marginTop={"50px"}>
           <Typography
             marginTop={"20px"}
@@ -305,7 +305,7 @@ export default function FormFile() {
             Contact us
           </Typography>
 
-          <Stack margin={"30px"} alignItems={"center"}  direction= {isXsScreen ? "column" : "row"} justifyContent={"space-between"} spacing={2}>
+          <Stack margin={"30px"} alignItems={"center"} direction={isXsScreen ? "column" : "row"} justifyContent={"space-between"} spacing={2}>
             <Box width={"100%"} maxWidth={"390px"}>
               <Typography
                 marginLeft={"5px"}
@@ -344,7 +344,7 @@ export default function FormFile() {
             </Box>
             <Stack direction={"row"} spacing={0}>
               <Box>
-              {isXsScreen ? "" :  <Button
+                {isXsScreen ? "" : <Button
                   sx={{
                     backgroundColor: "#df7c6d",
                     color: "#fff",
@@ -367,7 +367,7 @@ export default function FormFile() {
                     onChange={handleImageChange}
                   />
                 </Button>
-                      }
+                }
               </Box>
               <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
                 {selectedImage && (
@@ -410,7 +410,7 @@ export default function FormFile() {
               <TextField
                 sx={{
                   width: "100%",
-                 maxWidth: "390px",
+                  maxWidth: "390px",
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -445,8 +445,8 @@ export default function FormFile() {
               </Typography>
               <TextField
                 sx={{
-                 width: "100%",
-                 maxWidth: "390px",
+                  width: "100%",
+                  maxWidth: "390px",
                   ".MuiFormHelperText-root": {
                     color: "#d32f2f",
                   },
@@ -503,30 +503,30 @@ export default function FormFile() {
               placeholder="Please enter query..."
             />
           </Box>
-          {isXsScreen ?  <Button
-                  sx={{
-                    backgroundColor: "#df7c6d",
-                    color: "#fff",
-                    fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    padding: isXsScreen ? "10px 10px" : "12px 40px",
-                    letterSpacing: "2px",
-                    margin: isXsScreen ? "-10px 28px 10px 28px" : "0px 0px",
-                    ":hover": {
-                      backgroundColor: "#f58977",
-                    },
-                  }}
-                  component="label"
-                  variant="contained"
-                >
-                  Click To Attach A Photo
-                  <input
-                    type="file"
-                    hidden
-                    name="selectedImage"
-                    accept="image"
-                    onChange={handleImageChange}
-                  />
-                </Button> : ""}
+          {isXsScreen ? <Button
+            sx={{
+              backgroundColor: "#df7c6d",
+              color: "#fff",
+              fontFamily: `"ProximaNovaMedium", sans-serif`,
+              padding: isXsScreen ? "10px 10px" : "12px 40px",
+              letterSpacing: "2px",
+              margin: isXsScreen ? "-10px 28px 30px 28px" : "0px 0px",
+              ":hover": {
+                backgroundColor: "#f58977",
+              },
+            }}
+            component="label"
+            variant="contained"
+          >
+            Click To Attach A Photo
+            <input
+              type="file"
+              hidden
+              name="selectedImage"
+              accept="image"
+              onChange={handleImageChange}
+            />
+          </Button> : ""}
           <Box textAlign={"center"}>
             <Button
               sx={{
@@ -543,7 +543,7 @@ export default function FormFile() {
               }}
               variant="contained"
               type="submit"
-              // onClick={handleSubmit}
+            // onClick={handleSubmit}
             >
               Submit
             </Button>

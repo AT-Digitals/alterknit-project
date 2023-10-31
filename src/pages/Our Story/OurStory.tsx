@@ -49,23 +49,21 @@ export default function OurStory() {
           width={"100%"}
           maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={{ xs: "0 1rem", sm: "0 3rem", md: "0 10rem" }}
+          padding={{ xs: "0 1rem", sm: "0 3rem", md: "0 5rem", lg: "0 13rem" }}
         >
           <Box
             bgcolor={"#f8f1ec"}
             border={"4px dashed black"}
             borderRadius={"40px"}
             margin={"0 auto"}
-            padding={{ xs: 0, sm: "3rem 4rem", md: "3rem 8rem" }}
-            textAlign="center"
-          >
+            padding={{ xs: "1.5rem 2rem", sm: "3rem 4rem", md: "3rem 4rem", lg: "4rem 8rem" }}
+            textAlign="center"          >
             <Typography
               lineHeight={isXsScreen ? "2.6rem" : "5rem"}
               fontSize={{ xs: "40px", sm: "80px", md: "80px" }}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
-              padding={{ xs: 3 }}
             >
               We built this company on the promise of providing the best quality
               repair available.
@@ -152,7 +150,7 @@ export default function OurStory() {
                 textAlign={isXsScreen ? "center" : "start"}
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"2rem"}
+                p={"2.5rem"}
                 borderRadius={"20px"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
@@ -167,6 +165,7 @@ export default function OurStory() {
                     lg: "start",
                   }}
                   textTransform={"lowercase"}
+                  mb={1.5}
                 >
                   HONEST REPAIR
                 </Typography>
@@ -196,7 +195,7 @@ export default function OurStory() {
               <Box
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"2rem"}
+                p={"2.5rem"}
                 borderRadius={"20px"}
                 textAlign={isXsScreen ? "center" : "start"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
@@ -212,6 +211,7 @@ export default function OurStory() {
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                   fontWeight={500}
                   textTransform={"lowercase"}
+                  mb={1.5}
                 >
                   INHERENTLY SUSTAINABLE
                 </Typography>
@@ -237,12 +237,13 @@ export default function OurStory() {
               <Box
                 maxWidth={980}
                 bgcolor={"white"}
-                p={"2rem"}
+                p={"2.5rem"}
                 borderRadius={"20px"}
                 textAlign={isXsScreen ? "center" : "start"}
                 sx={{ transition: "opacity .35s ease-in-out" }}
               >
                 <Typography
+                  mb={1.5}
                   lineHeight={"1"}
                   fontSize={isXsScreen ? "30px" : "48px"}
                   fontFamily={`"IndustrialGothicBannerStd", sans-serif`}

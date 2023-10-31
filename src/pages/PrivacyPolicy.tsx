@@ -4,26 +4,26 @@ import { useEffect } from "react";
 
 export default function PrivacyPolicy() {
     useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+        window.scrollTo(0, 0);
+    }, []);
+    const isXsScreen = useMediaQuery("(max-width:600px)");
     return (
         <>
             <Box maxWidth={"1310px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
                 <Box>
-                <Typography
-                    paddingTop={"50px"}
-                    textAlign={"center"}
-                    color={"black"}
-                    fontWeight={500}
-                    fontSize={isXsScreen ? "2.2rem" : "4.5rem"}
-                    lineHeight={"1"}
-                    fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
-                    textTransform="lowercase"
-                    paddingBottom={isXsScreen ? "10px" : "20px"}
-                >
-                    ALTERKNIT NEW YORK PRIVACY POLICY
-                </Typography>
+                    <Typography
+                        padding="3rem 1rem 1rem"
+                        textAlign={"center"}
+                        color={"black"}
+                        fontWeight={500}
+                        fontSize={{ xs: "45px", sm: "80px" }}
+                        lineHeight={"1"}
+                        fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
+                        textTransform="lowercase"
+                    // paddingBottom={isXsScreen ? "10px" : "20px"}
+                    >
+                        ALTERKNIT NEW YORK PRIVACY POLICY
+                    </Typography>
                 </Box>
                 <Box margin={"15px 20px"} maxWidth={"1200px"}>
                     <Typography
