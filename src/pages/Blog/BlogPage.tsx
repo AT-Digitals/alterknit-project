@@ -30,8 +30,12 @@ export default function BlogPage() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    // <AppContainer paddingLeft={"15px"}>
-    <Stack padding={"0 20px"} justifyContent={"flex-start"} paddingY={6}>
+    <Stack
+      maxWidth={1310}
+      margin={"0 auto"}
+      padding={"20px"}
+      justifyContent={"flex-start"}
+    >
       <Box mb={3}>
         <Typography
           fontSize={"40px"}
@@ -75,6 +79,5 @@ export default function BlogPage() {
         </StyledButton>
       </Link>
     </Stack>
-    // </AppContainer>
   );
 }

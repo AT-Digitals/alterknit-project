@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 import styled from "@emotion/styled";
@@ -111,6 +111,8 @@ function HoverCard() {
     return () => clearInterval(interval);
   }, []);
 
+  const isXsScreen = useMediaQuery("(max-width:1280px)");
+
   return (
     <Grid container spacing={8}>
       {TotalCards.map((cards, index) => (
@@ -119,9 +121,9 @@ function HoverCard() {
           justifyContent={"center"}
           item
           xs={12}
-          md={12}
+          md={6}
           sm={12}
-          lg={4}
+          lg={isXsScreen ? 6 : 4}
           key={index}
         >
           <CardContainer
