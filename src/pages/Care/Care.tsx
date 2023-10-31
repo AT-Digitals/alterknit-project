@@ -66,10 +66,10 @@ export default function CarePage() {
   const isXsScreen = useMediaQuery("(max-width:750px)");
 
   return (
-    <Box>
+    <Box >
       <section
         style={{
-          padding: isXsScreen ? "1rem" : "3.5rem",
+          padding: isXsScreen ? "2rem" : "3.5rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -94,7 +94,7 @@ export default function CarePage() {
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={{ xs: "80px", sm: "70px", md: "70px", lg: "80px" }}
+              fontSize={{ xs: "78px", sm: "80px" }}
               fontWeight={500}
               textTransform={"lowercase"}
               lineHeight={isXsScreen ? 1 : 1}
@@ -146,7 +146,7 @@ export default function CarePage() {
           <Box
             maxWidth={900}
             border={"5px solid #df7c6d"}
-            borderRadius={"40px"}
+            borderRadius={{ xs: "16px", sm: "40px" }}
             textAlign={"center"}
             padding={isXsScreen ? "1rem" : "2.5rem 5rem"}
             bgcolor={"black"}
@@ -155,7 +155,7 @@ export default function CarePage() {
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={isXsScreen ? "45px" : "80px"}
+              fontSize={{ xs: "45px", sm: "80px" }}
               fontWeight={500}
               textTransform={"lowercase"}
             >
@@ -218,11 +218,11 @@ export default function CarePage() {
           alt="thems1"
           style={{ width: "100%", height: "auto" }}
         />
-        <Box bgcolor={"#df7c6d"} paddingBottom={"0 10rem"}>
+        <Box bgcolor={"#df7c6d"} paddingBottom={"0 10rem"} paddingX={{ xs: 3, sm: 6 }}>
           <Box margin={"0 auto"} width={"100%"} maxWidth={1300}>
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={isXsScreen ? "45px" : "80px"}
+              fontSize={{ xs: "45px", sm: "80px" }}
               fontWeight={500}
               padding={{ xs: "1rem", sm: "3rem", md: "3rem" }}
               lineHeight={1}
@@ -237,21 +237,21 @@ export default function CarePage() {
               flexDirection={"column"}
               gap={"3rem"}
               alignItems={"center"}
-              sx={{
-                "@media (max-width: 768px)": {
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "2rem",
-                  // padding: "2rem",
-                },
-              }}
-              padding={{ xs: "3rem", sm: "2rem", md: "2rem" }}
+              // sx={{
+              //   "@media (max-width: 768px)": {
+              //     flexDirection: "column",
+              //     alignItems: "center",
+              //     gap: "2rem",
+              //     // padding: "2rem",
+              //   },
+              // }}
+              padding={"2rem"}
             >
               {Notes.map((notes, index) => (
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 2rem"}
+                  p={"1.5rem 2.5rem"}
                   alignItems={"center"}
                   key={index}
                   width={isXsScreen ? "100%" : "90%"}
@@ -275,7 +275,7 @@ export default function CarePage() {
                     {openNoteIndex === index ? (
                       <RemoveIcon sx={{ width: 48, height: 48 }} />
                     ) : (
-                      <AddIcon sx={{ width: 48, height: 48 }} />
+                      <AddIcon sx={{ width: 45, height: 45 }} />
                     )}
                   </StyledBox>
                   {openNoteIndex === index && (
@@ -295,7 +295,7 @@ export default function CarePage() {
               <Box
                 bgcolor={"#f8f1ec"}
                 borderRadius={"24px"}
-                p={" 1rem 2rem"}
+                p={"1.5rem 2.5rem"}
                 alignItems={"center"}
                 width={isXsScreen ? "100%" : "90%"}
                 maxWidth={1240}
@@ -330,7 +330,7 @@ export default function CarePage() {
                 <Box
                   bgcolor={"#f8f1ec"}
                   borderRadius={"24px"}
-                  p={" 1rem 2rem"}
+                  p={"1.5rem 2.5rem"}
                   alignItems={"center"}
                   key={index}
                   width={isXsScreen ? "100%" : "90%"}
@@ -388,7 +388,7 @@ export default function CarePage() {
         >
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontSize={{ xs: "50px", md: "80px" }}
+            fontSize={{ xs: "50px", sm: "80px" }}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
             // textAlign={isXsScreen ? "center" : undefined}
@@ -414,13 +414,13 @@ export default function CarePage() {
         </Box>
       </section>
 
-      <section style={{ padding: isXsScreen ? "1rem" : "8rem 0 1rem 0" }}>
+      <section style={{ padding: isXsScreen ? "2rem" : "8rem 0 1rem 0" }}>
         <Box display={"flex"} justifyContent={"center"}>
           <Box
             maxWidth={"900px"}
             bgcolor={"#f8f1ec"}
             border={"5px solid #df7c6d"}
-            borderRadius={"40px"}
+            borderRadius={{ xs: "16px", sm: "40px" }}
             textAlign={"center"}
             padding={"5rem 6rem 4rem 6rem"}
             position={"relative"}
@@ -446,17 +446,13 @@ export default function CarePage() {
               />
             )}
             <Typography
-              fontSize={"80px"}
+              fontSize={{ xs: "45px", sm: "80px" }}
               lineHeight={"3rem"}
               margin={"1.25rem 0"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
-              sx={{
-                "@media (max-width: 768px)": {
-                  fontSize: "36px",
-                },
-              }}
+
             >
               IN ALTERKNIT WE TRUST
             </Typography>

@@ -232,25 +232,79 @@ export default function LastStep({
                     <Grid container>
                       <Grid item xs={6}>
                         <StyledTr>
-                          <StyledTableCell>Service Needed</StyledTableCell>
+                          <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {serviceDetails[displayedEntry].services}
+                          </StyledTableCellValue>
                         </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell>Brand</StyledTableCell>
                         </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {serviceDetails[displayedEntry].service_details.brand}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell>Color</StyledTableCell>
                         </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {serviceDetails[displayedEntry].service_details.color}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell>Age of Garment</StyledTableCell>
                         </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {serviceDetails[displayedEntry].service_details.howMany}
+                          </StyledTableCellValue>
+                        </StyledTr> </Grid>
+                      <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell># of Holes</StyledTableCell>
                         </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .visible_holes
+                            }
+                          </StyledTableCellValue>
+                        </StyledTr>
+                      </Grid>
+                      <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell>Brief Description</StyledTableCell>
                         </StyledTr>
                       </Grid>
-                      {serviceDetails.length > 0 && (
+                      <Grid item xs={6}>
+                        <StyledTr>
+                          <StyledTableCellValue>
+                            {serviceDetails[displayedEntry].service_details.brief}
+                          </StyledTableCellValue>
+                        </StyledTr>
+                      </Grid>
+                    </Grid>
+                    {/* {serviceDetails.length > 0 && (
                         <Grid item xs={6}>
                           <StyledTr>
                             <StyledTableCellValue>
@@ -298,8 +352,8 @@ export default function LastStep({
                             </StyledTableCellValue>
                           </StyledTr>
                         </Grid>
-                      )}
-                    </Grid>
+                      )} */}
+                    {/* </Grid> */}
                   </div>
                 </tbody>
               </table>
