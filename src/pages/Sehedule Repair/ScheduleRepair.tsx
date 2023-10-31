@@ -154,7 +154,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
           </Box>
         </Button>
 
-        <Box mt={{ xs: 1, md: "70px" }}>
+        <Box mt={{ xs: 1, md: "70px" }} mb={"2rem"}>
           <Typography
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
             fontWeight={500}

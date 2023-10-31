@@ -1,8 +1,5 @@
 import {
   Box,
-  IconButton,
-  Menu,
-  MenuItem,
   Stack,
   Typography,
   styled,
@@ -10,37 +7,34 @@ import {
   useTheme,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
-import DragHandleIcon from '@mui/icons-material/DragHandle';
-
+import React, { useState } from "react";
 
 import Alterknit from "../assets/alterknit.png";
 import AppContainer from "../component/AppContainer";
 import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { auth } from "../firebase";
 import routes from "../routes/routes";
 
-const ServiceItem = styled(Link)`
-  text-decoration: none;
-  position: relative;
-  color: graytext;
+// const ServiceItem = styled(Link)`
+//   text-decoration: none;
+//   position: relative;
+//   color: graytext;
 
-  &:hover {
-    color: black;
-  }
+//   &:hover {
+//     color: black;
+//   }
 
-  &:hover::before {
-    content: "•";
-    color: black;
-    position: absolute;
-    top: 50%;
-    left: -25px;
-    transform: translateY(-50%);
-    font-size: 40px;
-  }
-`;
+//   &:hover::before {
+//     content: "•";
+//     color: black;
+//     position: absolute;
+//     top: 50%;
+//     left: -25px;
+//     transform: translateY(-50%);
+//     font-size: 40px;
+//   }
+// `;
 
 const HeaderLink = styled("a")`
   text-decoration: none;
@@ -77,7 +71,10 @@ interface headerProps {
   activeTab: string;
 }
 
-export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps) {
+export default function AlterknitHeader({
+  setActiveTab,
+  activeTab,
+}: headerProps) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const services = [
@@ -99,8 +96,6 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
     setAnchorEl(null);
   };
 
-
-
   const handleMenuClick = (menu: string) => {
     localStorage.setItem(activeTab, menu);
     setActiveTab(menu);
@@ -112,7 +107,6 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
   //     setActiveTab(storedMenu);
   //   }
   // }, [setActiveTab, activeTab]);
-
 
   const handleClick = () => {
     if (activeTab === routes.SCHEDULE_REPAIR) {
@@ -139,7 +133,7 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
   }
 
   const handleLogout = async () => {
-    localStorage.setItem('activeTab', activeTab);
+    localStorage.setItem("activeTab", activeTab);
     try {
       clearCaches();
       localStorage.removeItem("userToken");
@@ -262,9 +256,16 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
             spacing={3}
             alignItems="center"
           >
-            <Link to={routes.SCHEDULE_REPAIR} onClick={() => handleMenuClick(routes.SCHEDULE_REPAIR)}>
+            <Link
+              to={routes.SCHEDULE_REPAIR}
+              onClick={() => handleMenuClick(routes.SCHEDULE_REPAIR)}
+            >
               <StyledButton
-                bgColor={activeTab === routes.SCHEDULE_REPAIR ? Colors.LINK : Colors.BLACK}
+                bgColor={
+                  activeTab === routes.SCHEDULE_REPAIR
+                    ? Colors.LINK
+                    : Colors.BLACK
+                }
                 onClick={handleClick}
               >
                 Schedule your repair
@@ -281,4 +282,3 @@ export default function AlterknitHeader({ setActiveTab, activeTab }: headerProps
     </Box>
   );
 }
-
