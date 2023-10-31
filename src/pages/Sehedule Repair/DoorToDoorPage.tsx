@@ -65,7 +65,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
     setIsModalOpen(false);
   };
 
-  const isXsScreen = useMediaQuery("(max-width:1200px)");
+  const isXsScreen = useMediaQuery("(max-width:1280px)");
 
   return (
     <>
@@ -82,11 +82,12 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             margin="0 auto"
           >
             <Typography
+              mt={"0.5rem"}
               padding={isXsScreen ? "1rem 3rem 1rem 3rem" : undefined}
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={isXsScreen ? "60px" : "5rem"}
+              fontSize={{ xs: "55px", sm: "55px", md: "60px", lg: "5rem" }}
               color={Colors.LINK}
               textAlign={isXsScreen ? "center" : undefined}
               lineHeight={1}
@@ -115,7 +116,6 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
         </Stack>
         <img src={background} alt="border" />
         <Stack
-          mt={"2rem"}
           width="100%"
           margin="0 auto"
           alignItems="center"
@@ -123,6 +123,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
           justifyContent="center"
         >
           <Stack
+            mt={"3rem"}
             direction="column"
             spacing={2}
             alignItems="center"

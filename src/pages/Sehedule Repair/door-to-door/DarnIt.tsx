@@ -35,27 +35,28 @@ export default function DarnIt({ prevStep }: DoorProps) {
     <Box
       mt={"2rem"}
       textAlign={"center"}
-      padding={"40px 30px"}
+      padding={{ xs: "40px 30px", sm: "40px 40px", md: "40px 30px" }}
       border={"1px solid black"}
       borderRadius={"30px"}
       bgcolor={"white"}
       margin={"auto"}
       position={"relative"}
-      width={{ sm: "60%", lg: "90%" }}
+      width={{ sm: "68%", lg: "90%" }}
       left={{ xs: 0, sm: "-80px", md: "-80px", lg: 0 }}
     >
       <Typography
-        fontSize={{ xs: "40px", md: "100px" }}
+        fontSize={{ xs: "40px", sm: "60px", md: "60px", lg: "100px" }}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         fontWeight={500}
         textTransform={"lowercase"}
+        padding={{ xs: 0, sm: "20px", md: "20px", lg: "20px" }}
       >
         DARN IT!
       </Typography>
       <Typography
         borderTop={"1px solid #333"}
         textAlign={"center"}
-        fontSize={"42px"}
+        fontSize={{ xs: "47px", sm: "37px", md: "42px" }}
         fontWeight={500}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         borderBottom={"1px solid #333"}

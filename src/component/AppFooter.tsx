@@ -153,7 +153,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
         justifyContent={isSmScreen ? "center" : "flex-end"}
         p={isSmScreen ? "2rem" : "4rem"}
         maxWidth={1340}
-        gap={isSmScreen ? "2rem" : "18rem"}
+        gap={{ xs: "2rem", sm: "2rem", md: "15rem", lg: "18rem" }}
         margin="0 auto"
         marginLeft={"-26px"}
         flexWrap={"wrap"}

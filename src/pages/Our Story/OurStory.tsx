@@ -49,7 +49,7 @@ export default function OurStory() {
           width={"100%"}
           maxWidth={"1440px"}
           margin={"0 auto"}
-          padding={{ xs: "0 1rem", sm: "0 3rem", md: "0 10rem" }}
+          padding={{ xs: "0 1rem", sm: "0 3rem", md: "0 10rem", lg: "0 13rem" }}
         >
           <Box
             bgcolor={"#f8f1ec"}
