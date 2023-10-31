@@ -86,7 +86,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={isXsScreen ? "60px" : "5rem"}
+              fontSize={isXsScreen ? "58px" : "5rem"}
               color={Colors.LINK}
               textAlign={isXsScreen ? "center" : undefined}
               lineHeight={1}
