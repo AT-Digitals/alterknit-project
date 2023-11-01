@@ -36,6 +36,7 @@ const customMarkerStyle = {
 const customMarkerStyle2 = {
   borderTop: "1px dashed black",
   paddingTop: "20px",
+  paddingBottom: "20px",
 }
 
 
@@ -58,7 +59,8 @@ export default function ServiceSection() {
 
           justifyContent="space-around"
           paddingY={8}
-          paddingX={{ xs: 3, lg: 15 }}
+          paddingLeft={{ xs: 3, lg: 15 }}
+          paddingRight={{ xs: 3, lg: 27 }}
           alignItems={{ xs: "center", xl: "" }}
         >
           <Box
@@ -119,7 +121,7 @@ export default function ServiceSection() {
                 fontSize: "20px",
               }}
             >
-              <ListItem style={listItemStyle}>
+              <ListItem style={listItemStyle} sx={{ paddingY: { xs: 0, lg: 3 } }}>
                 {isXsScreen ?
                   <>
                     <ListItemText style={customMarkerStyle2}>
@@ -148,7 +150,7 @@ export default function ServiceSection() {
                     </ListItemText> </>}
               </ListItem>
 
-              <ListItem style={listItemStyle}>
+              <ListItem style={listItemStyle} sx={{ paddingY: { xs: 0, lg: 3 } }}>
                 {isXsScreen ?
                   <>
                     <ListItemText style={customMarkerStyle2}>
@@ -176,7 +178,7 @@ export default function ServiceSection() {
                     </ListItemText></>}
               </ListItem>
 
-              <ListItem style={listItemStyle}>
+              <ListItem style={listItemStyle} sx={{ paddingY: { xs: 0, lg: 3 } }}>
                 {isXsScreen ? <>
                   <ListItemText style={customMarkerStyle2}>
                     <Typography

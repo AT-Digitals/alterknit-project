@@ -81,7 +81,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             margin="0 auto"
           >
             <Typography
-              padding={isXsScreen ? "1rem 3rem 1rem 3rem" : undefined}
+              padding={isXsScreen ? "2.5rem 3rem 1rem 3rem" : undefined}
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -115,9 +115,8 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
         </Stack>
         <img src={background} alt="border" />
         <Stack
-          mt={"2rem"}
           width="100%"
-          margin="0 auto"
+          margin="2rem auto"
           alignItems="center"
           direction="row"
           justifyContent="center"
@@ -126,7 +125,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             direction="column"
             spacing={2}
             alignItems="center"
-            width={isXsScreen ? "60%" : "auto"}
+            width={isXsScreen ? "60%" : "60%"}
             maxWidth={isXsScreen ? "none" : "600px"}
             mt={"2rem"}
             padding={{ xs: "50px 30px", sm: "70px 50px" }}
@@ -219,7 +218,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               height={530}
               style={{
                 position: "absolute",
-                right: "23%",
+                right: "17%",
                 transform: `translate(${37}%, ${-13}%)`,
               }}
             />

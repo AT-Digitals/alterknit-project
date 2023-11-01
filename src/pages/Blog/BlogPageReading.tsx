@@ -5,7 +5,7 @@ import routes from "../../routes/routes";
 export default function BlogPageReadingContent() {
   return (
     <section style={{ padding: "0 22px", marginBottom: "3rem" }}>
-      <Stack margin={"0 auto"} maxWidth={1260}>
+      <Stack margin={"0 auto"} maxWidth={1310}>
         <Typography
           fontSize={"38px"}
           fontFamily={`"ProximaNovaMedium", sans-serif`}
