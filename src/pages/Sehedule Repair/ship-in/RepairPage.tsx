@@ -234,8 +234,9 @@ export default function RepairPage({
               style={{
                 marginTop: "-30px",
               }}
-            >
+            >{serviceDetails.length > 0 && (
               <Grid container>
+
                 <Grid item xs={6}>
                   <StyledTr>
                     <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
@@ -309,7 +310,7 @@ export default function RepairPage({
                     </StyledTableCellValue>
                   </StyledTr>
                 </Grid>
-              </Grid>
+              </Grid>)}
               {/* {serviceDetails.length > 0 && (
                   <Grid item xs={6}>
                     <StyledTr>
