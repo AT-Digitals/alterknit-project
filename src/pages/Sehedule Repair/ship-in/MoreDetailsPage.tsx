@@ -74,7 +74,8 @@ export default function MoreDetailsPage({
         gap={isXsScreen ? "3rem" : 22}
         sx={{
           backgroundImage: isXsScreen ? undefined : `url(${bgmore})`,
-          backgroundSize: "cover",
+          backgroundSize: "104%",
+          backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
       >
@@ -99,10 +100,10 @@ export default function MoreDetailsPage({
           >
             just a few more details...
           </Typography>
-          <Box padding={{ xs: "0 2rem", sm: "0 6em", md: "0 5rem" }}>
+          <Box padding={{ xs: 0, sm: "0 4rem", md: "0 12rem" }}>
             <Typography
               fontWeight={500}
-              fontSize={isXsScreen ? "36px" : "3rem"}
+              fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
               padding={isXsScreen ? "10px" : undefined}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               textAlign="center"
@@ -160,10 +161,10 @@ export default function MoreDetailsPage({
           spacing={3}
           alignItems="center"
         >
-          <Box padding={{ xs: "0 2rem", sm: "0 6em", md: "0 5rem" }}>
+          <Box padding={{ xs: 0, sm: "0 4rem", md: "0 12rem" }}>
             <Typography
               fontWeight={500}
-              fontSize={isXsScreen ? "44px" : "3rem"}
+              fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
               padding={isXsScreen ? "10px" : undefined}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               textAlign="center"
