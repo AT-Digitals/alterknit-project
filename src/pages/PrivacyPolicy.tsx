@@ -9,14 +9,14 @@ export default function PrivacyPolicy() {
     const isXsScreen = useMediaQuery("(max-width:600px)");
     return (
         <>
-            <Box maxWidth={"1310px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
+            <Box maxWidth={"1340px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
                 <Box>
                     <Typography
                         padding="3rem 1rem 1rem"
                         textAlign={"center"}
                         color={"black"}
                         fontWeight={500}
-                        fontSize={{ xs: "45px", sm: "80px" }}
+                        fontSize={isXsScreen ? "40px" : "80px"}
                         lineHeight={"1"}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
@@ -25,12 +25,12 @@ export default function PrivacyPolicy() {
                         ALTERKNIT NEW YORK PRIVACY POLICY
                     </Typography>
                 </Box>
-                <Box margin={"15px 20px"} maxWidth={"1200px"}>
+                <Box margin={"15px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                     >
@@ -43,11 +43,11 @@ export default function PrivacyPolicy() {
                         mobile devices.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -77,11 +77,11 @@ export default function PrivacyPolicy() {
                         specific person.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -106,11 +106,11 @@ export default function PrivacyPolicy() {
                         will mean that you accept the updates.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"400"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -141,11 +141,11 @@ export default function PrivacyPolicy() {
                         device.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -155,7 +155,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -167,11 +167,11 @@ export default function PrivacyPolicy() {
                         tools from users in this age group.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -181,7 +181,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -199,11 +199,11 @@ export default function PrivacyPolicy() {
                         tools, and to help us personalize and improve your experience:
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -213,7 +213,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -231,11 +231,11 @@ export default function PrivacyPolicy() {
                         beacons.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -245,7 +245,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -265,10 +265,10 @@ export default function PrivacyPolicy() {
                         policies (for example, we may ask you to send us an ID or bill to
                         verify your address, or to answer additional questions online to
                         help verify your identity).
-                        <Typography color={"#575656"} fontWeight={"500"} fontSize={"20px"} letterSpacing={"0px"} lineHeight={"1.2"}>
+                        <Typography color={"#575656"} fontWeight={"500"} fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }} letterSpacing={"0px"} lineHeight={"1.2"}>
                             Information from other sources
                         </Typography>
-                        <Typography color={"#575656"} fontWeight={"500"} fontSize={"20px"} letterSpacing={"0px"} lineHeight={"1.2"}>
+                        <Typography color={"#575656"} fontWeight={"500"} fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }} letterSpacing={"0px"} lineHeight={"1.2"}>
                             We may receive or collect supplemental information about you from
                             third party sources and add it to your account information. This
                             may include, but is not limited to, demographic, navigation
@@ -278,11 +278,11 @@ export default function PrivacyPolicy() {
                         </Typography>
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -292,7 +292,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -322,11 +322,11 @@ export default function PrivacyPolicy() {
                         information.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -336,7 +336,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -350,11 +350,11 @@ export default function PrivacyPolicy() {
                         direct communication from us.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -364,7 +364,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -417,11 +417,11 @@ export default function PrivacyPolicy() {
                         report suspected illegal activity.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -432,7 +432,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -444,11 +444,11 @@ export default function PrivacyPolicy() {
                         better, faster, and safer experience.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -458,7 +458,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -473,11 +473,11 @@ export default function PrivacyPolicy() {
                         content.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -487,7 +487,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -504,11 +504,11 @@ export default function PrivacyPolicy() {
                         that personal information will remain secure.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -518,7 +518,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -531,11 +531,11 @@ export default function PrivacyPolicy() {
                         Terms and Conditions and take other actions permitted by law.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -545,7 +545,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -561,11 +561,11 @@ export default function PrivacyPolicy() {
                         you disclose your personal information to others.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -575,7 +575,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -591,11 +591,11 @@ export default function PrivacyPolicy() {
                         communicate any confidential information through these means.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -605,7 +605,7 @@ export default function PrivacyPolicy() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"5px"}
@@ -619,7 +619,7 @@ export default function PrivacyPolicy() {
                             marginTop={"50px"}
                             color={"#575656"}
                             fontWeight={"500"}
-                            fontSize={"20px"}
+                            fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                             fontStyle={"italic"}
                             mb={16}
                         >

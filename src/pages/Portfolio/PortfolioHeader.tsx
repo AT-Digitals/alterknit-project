@@ -257,6 +257,7 @@ export default function PorfolioHeader() {
                   }}
                   src={image}
                   alt={`Image ${index + 1}`}
+                  
                 />
               </div>
             </Grid>

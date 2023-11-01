@@ -12,26 +12,29 @@ export default function BoxCreation() {
         backgroundColor: "#fff",
         marginBottom: "80px",
       }}>
-        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} maxWidth={isXsScreen ? "none" : "770px"} direction={"row"} justifyContent={"center"} width={"100%"} margin={isXsScreen ? "0px 0px" : "0px 0px"} paddingTop={isXsScreen ? "30px" : "125px"}>
+        <Stack paddingBottom={isXsScreen ? "20px" : "50px"} maxWidth={isXsScreen ? "none" : "800px"} direction={"row"} justifyContent={"center"} width={"100%"} margin={isXsScreen ? "0px 0px" : "0px 0px"} paddingTop={{ xs: '90px', sm: '90px', md: '90px', lg: '90px' }}>
           <Typography
             lineHeight={"1"}
             color={"black"}
             fontWeight={500}
-            fontSize={isXsScreen ? "60px" : "80px"}
+            fontSize={{ xs: '45px', sm: '75px', md: '75px', lg: '80px' }}
             textTransform={"lowercase"}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
             padding={isXsScreen ? "0px 10px" : "0px 0px"}
+            marginBottom={{ xs: '30px', sm: '40px', md: '40px', lg: '0px' }}
+            textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
           >
             FACTORS WE CONSIDER
             <Typography
               color={"black"}
               fontWeight={500}
-              fontSize={isXsScreen ? "60px" : "80px"}
+              fontSize={{ xs: '45px', sm: '75px', md: '75px', lg: '80px' }}
               lineHeight={"1"}
               textTransform={"lowercase"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               marginBottom={"20px"}
               padding={isXsScreen ? "0px 2px" : "0px 0px"}
+              textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
             >
               {" "}
               WHEN EVALUATING
