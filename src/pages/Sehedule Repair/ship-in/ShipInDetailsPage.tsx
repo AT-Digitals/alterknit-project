@@ -307,39 +307,39 @@ export default function ShipInDetailsPage() {
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (serviceData.length > 0) {
-      let result = await fetch(
-        "https://alterknit-backend.onrender.com/service-data",
-        {
-          method: "post",
-          body: JSON.stringify({
-            service_details: serviceData,
-            shipin_details: shipDetails,
-          }),
-          headers: {
-            "Content-Type": "application/json",
+    // if (serviceData.length > 0) {
+    let result = await fetch(
+      "https://alterknit-backend.onrender.com/service-data",
+      {
+        method: "post",
+        body: JSON.stringify({
+          service_details: serviceData,
+          shipin_details: shipDetails,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(() => {
+      emailjs
+        .send(
+          "service_tby7lte",
+          "template_75cwzjr",
+          shipDetails.ShipInformation,
+          "-LdTea8wtr-aVA1x_"
+        )
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
           },
-        }
-      ).then(() => {
-        emailjs
-          .send(
-            "service_tby7lte",
-            "template_75cwzjr",
-            shipDetails.ShipInformation,
-            "-LdTea8wtr-aVA1x_"
-          )
-          .then(
-            function (response) {
-              console.log("SUCCESS!", response.status, response.text);
-            },
-            function (err) {
-              console.log("FAILED...", err);
-            }
-          );
-      });
-      setAsk(false);
-    }
-  };
+          function (err) {
+            console.log("FAILED...", err);
+          }
+        );
+    });
+    setAsk(false);
+  }
+  // };
   // this listener is used for when user comes inside schedule repair  cant navigate ask popup
   UseunSavedChangesListener(ask, onCancelChanges);
 
