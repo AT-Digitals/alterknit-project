@@ -121,6 +121,7 @@ export default function MoreDetailsPage({
               justifyContent="center"
               pt={3}
               pb={3}
+              mt={3}
             >
               <StyleButtonNew
                 value="yes"

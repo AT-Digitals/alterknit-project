@@ -237,7 +237,7 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].services}
+                            {serviceDetails[displayedEntry].services.join(", ")}
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
