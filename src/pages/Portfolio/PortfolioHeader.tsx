@@ -150,14 +150,14 @@ export default function PorfolioHeader() {
   return (
     <Stack>
       <Stack
-        marginTop={"50px"}
+        marginTop={"70px"}
         direction="row"
         justifyContent={"space-around"}
-        maxWidth={"1200px"}
+        maxWidth={"1050px"}
       >
         <Stack
           direction={"column"}
-          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 4rem 0"}
+          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 11rem 0"}
           maxWidth={"620px"}
           position={"relative"}
           zIndex={"1"}
@@ -176,7 +176,7 @@ export default function PorfolioHeader() {
             SEEING IS BELEIVING
           </Typography>
           <Typography
-            margin={isXsScreen ? "15px 2px" : "50px 2px"}
+            margin={isXsScreen ? "15px 2px" : "27px 2px"}
             color={"#575656"}
             fontWeight={"500"}
             lineHeight={1.2}
@@ -217,7 +217,7 @@ export default function PorfolioHeader() {
         <Box display={{ xs: "none", md: "flex" }}>
           <CardMedia
             sx={{
-              marginRight: "-30px",
+              marginRight: "-40px",
               marginTop: "55px",
               top: 0,
               right: "120px",
@@ -257,7 +257,6 @@ export default function PorfolioHeader() {
                   }}
                   src={image}
                   alt={`Image ${index + 1}`}
-                  
                 />
               </div>
             </Grid>
@@ -271,7 +270,7 @@ export default function PorfolioHeader() {
           marginBottom={"-5rem"}
           marginTop={"-102px"}
         >
-          <Stack maxWidth={"1440px"} margin={"0 auto"} padding={"20px"}>
+          <Stack maxWidth={"1515px"} margin={"0 auto"} padding={"20px"}>
             <Stack
               height={"1525px"}
               gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
