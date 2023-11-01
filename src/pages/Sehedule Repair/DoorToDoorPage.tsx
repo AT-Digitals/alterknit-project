@@ -75,7 +75,6 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             direction="column"
             alignItems="center"
             justifyContent="center"
-            paddingX={isXsScreen ? 0 : 10}
             paddingY={isXsScreen ? 0 : 7}
             width="100%"
             maxWidth={1300}
@@ -86,12 +85,13 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontSize={isXsScreen ? "58px" : "5rem"}
+              fontSize={{ xs: "48px", sm: "80px", md: "80px", lg: "5rem" }}
               color={Colors.LINK}
               textAlign={isXsScreen ? "center" : undefined}
               lineHeight={1}
+              mt={{ xs: "2rem", sm: "2rem", md: 0 }}
             >
-              door to door{" "}
+              door to door
               <span style={{ color: Colors.BLACK }}> at your service</span>
             </Typography>
             <Typography
@@ -128,8 +128,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             alignItems="center"
             width={isXsScreen ? "60%" : "auto"}
             maxWidth={isXsScreen ? "none" : "600px"}
+            mt={"2rem"}
+            padding={{ xs: "50px 30px", sm: "70px 50px" }}
             sx={{
-              padding: "70px 50px",
               border: `1px solid ${Colors.BLACK}`,
               borderRadius: "30px",
             }}
@@ -140,7 +141,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
                 textTransform={"lowercase"}
                 fontWeight="500"
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                fontSize={{ xs: "40px", md: "6rem" }}
+                fontSize={{ xs: "40px", sm: "60px", md: "6rem" }}
               >
                 new yorkers!
               </Typography>
@@ -148,7 +149,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             <Typography
               textTransform={"lowercase"}
               fontWeight={500}
-              width={{ sm: "80%", xs: undefined }}
+              width={"100%"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize="2.5rem"
               lineHeight={1}
@@ -176,8 +177,9 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               <TextField
                 sx={{
                   ".MuiOutlinedInput-input": {
-                    width: "200px",
+                    width: "100%",
                     height: "10px",
+                    maxWidth: "200px",
                     border: `1px solid ${Colors.BLACK}`,
                     borderTopLeftRadius: "10px",
                     borderBottomLeftRadius: "10px",
