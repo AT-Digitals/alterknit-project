@@ -33,7 +33,7 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "2.2rem" : "3rem"}
+                                fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
@@ -45,7 +45,7 @@ export default function CardPage() {
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "17px" : "20px"}
+                                    fontSize={{ xs: '17px', sm: '21px', md: '23px', lg: '22px' }}
                                     textTransform={"initial"}
                                     paddingTop={"10px"}
                                 >
@@ -55,12 +55,11 @@ export default function CardPage() {
                             <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
                             <Typography
                                 lineHeight={"1.3"}
-                                maxWidth={isXsScreen ? "none" : "676px"}
+                                maxWidth={isXsScreen ? "none" : "700px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
                                 fontSize={isXsScreen ? "20px" : "22px"}
-                                paddingRight={"30px"}
                                 textAlign={{xs: "center", sm: "center", md: "center", lg: "left"}}
                                
                             >
@@ -73,7 +72,7 @@ export default function CardPage() {
                             <Typography
                                 marginBottom={isXsScreen ? "20px" : "6px"}
                                 lineHeight={"1.3"}
-                                maxWidth={isXsScreen ? "none" : "706px"}
+                                maxWidth={isXsScreen ? "none" : "800px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontFamily={`"ProximaNovaMedium", sans-serif`}
@@ -116,7 +115,7 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "1.8rem" : "3rem"}
+                                fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
@@ -127,7 +126,7 @@ export default function CardPage() {
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "17px" : "20px"}
+                                    fontSize={{ xs: '17px', sm: '21px', md: '23px', lg: '22px' }}
                                     textTransform={"capitalize"}
                                     paddingTop={"10px"}
                                     lineHeight={"1.2"}
@@ -182,7 +181,7 @@ export default function CardPage() {
                                 lineHeight={"0.9"}
                                 color={"black"}
                                 fontWeight={"500"}
-                                fontSize={isXsScreen ? "1.8rem" : "3rem"}
+                                fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
                                 fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                 textTransform={"lowercase"}
                                 marginRight={isXsScreen ? "15px" : "0px"}
@@ -194,7 +193,7 @@ export default function CardPage() {
                                     fontStyle={"italic"}
                                     color={"#575656"}
                                     fontWeight={"500"}
-                                    fontSize={isXsScreen ? "17px" : "20px"}
+                                    fontSize={{ xs: '17px', sm: '21px', md: '23px', lg: '22px' }}
                                     textTransform={"capitalize"}
                                 >
                                     Typically 4-6 Weeks
@@ -205,7 +204,7 @@ export default function CardPage() {
                                 fontSize={isXsScreen ? "20px" : "22px"}
                                 marginBottom={"20px"}
                                 lineHeight={"1.3"}
-                                maxWidth={isXsScreen ? "none" : "676px"}
+                                maxWidth={isXsScreen ? "none" : "709px"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 marginRight={"37px"}
@@ -275,7 +274,7 @@ export default function CardPage() {
                                         borderBottom={"1px dashed black"}
                                         color={"black"}
                                         fontWeight={"500"}
-                                        fontSize={isXsScreen ? "1.5rem" : "2.5rem"}
+                                        fontSize={{ xs: '1.5rem', sm: '2.3rem', md: '2.4rem', lg: '2.5rem' }}
                                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                                         textTransform={"lowercase"}
                                         lineHeight={1.1}

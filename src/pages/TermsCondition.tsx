@@ -10,7 +10,7 @@ export default function TermsCondition() {
 
     return (
         <>
-            <Box maxWidth={"1310px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
+            <Box maxWidth={"1340px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
                 <Typography
                     paddingTop={"50px"}
                     textAlign={"center"}
@@ -24,12 +24,12 @@ export default function TermsCondition() {
                 >
                     TERMS AND CONDITIONS
                 </Typography>
-                <Box margin={"10px 20px"} maxWidth={"1200px"}>
+                <Box margin={"10px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                     >
@@ -48,17 +48,17 @@ export default function TermsCondition() {
                         please contact us at request@alterknitnewyork.com.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
                         CHANGES TO TERMS AND CONDITIONS
                     </Typography>
-                    <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`} fontSize={"22px"} letterSpacing={"0px"}
+                    <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`}  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }} letterSpacing={"0px"}
                         lineHeight={"1.2"} paddingTop={"3px"}>
                         You can review the most current version of the Terms and Conditions
                         at any time on this page. We reserve the right from time to time,
@@ -73,11 +73,11 @@ export default function TermsCondition() {
                         by such changes, so please review it frequently.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -87,7 +87,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -98,11 +98,11 @@ export default function TermsCondition() {
                         practices.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -112,7 +112,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -160,7 +160,7 @@ export default function TermsCondition() {
                             color={"#575656"}
                             fontWeight={"bold"}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
-                            fontSize={"22px"}
+                            fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                             letterSpacing={"0px"}
                         >
                             Garment repair services – loss
@@ -170,7 +170,7 @@ export default function TermsCondition() {
                             color={"#575656"}
                             fontWeight={"500"}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
-                            fontSize={"22px"}
+                            fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                             letterSpacing={"0px"}
                             lineHeight={"1.2"}
                         >
@@ -187,11 +187,11 @@ export default function TermsCondition() {
                         </Typography>
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -201,7 +201,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -228,11 +228,11 @@ export default function TermsCondition() {
                         are final sale.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -242,7 +242,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -256,11 +256,11 @@ export default function TermsCondition() {
                         CONDITION/AESTHETIC.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -270,7 +270,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -286,11 +286,11 @@ export default function TermsCondition() {
                         garment, which is the Industry standard.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -300,7 +300,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -331,11 +331,11 @@ export default function TermsCondition() {
                         OF YOUR CLAIM.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -345,7 +345,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -357,11 +357,11 @@ export default function TermsCondition() {
                         weeks.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -371,7 +371,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -384,11 +384,11 @@ export default function TermsCondition() {
                         your item is unrepairable pick up fees will apply.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -398,7 +398,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -415,11 +415,11 @@ export default function TermsCondition() {
                         Services.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -429,7 +429,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -441,11 +441,11 @@ export default function TermsCondition() {
                         with any other offers or promotions.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -455,7 +455,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -520,11 +520,11 @@ export default function TermsCondition() {
                         any unredeemed Rewards accumulated by Referrer are forfeited.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -534,7 +534,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -551,11 +551,11 @@ export default function TermsCondition() {
                         you will meet your expectations.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -565,7 +565,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -582,11 +582,11 @@ export default function TermsCondition() {
                         your requests whenever possible.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -596,7 +596,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -617,11 +617,11 @@ export default function TermsCondition() {
                         the Service or on any related website has been modified or updated.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -631,7 +631,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -650,11 +650,11 @@ export default function TermsCondition() {
                         and with this Agreement.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -664,7 +664,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -689,11 +689,11 @@ export default function TermsCondition() {
                         the content of any User Comments you make.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -703,7 +703,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -718,11 +718,11 @@ export default function TermsCondition() {
                         content therein.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -732,7 +732,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -753,11 +753,11 @@ export default function TermsCondition() {
                         immediately on written notice from us.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -767,7 +767,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -799,7 +799,7 @@ export default function TermsCondition() {
                             color={"#575656"}
                             fontWeight={"500"}
                             fontFamily={`"ProximaNovaMedium", sans-serif`}
-                            fontSize={"22px"}
+                            fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                             letterSpacing={"0px"}
                             lineHeight={"1.2"}
                             paddingTop={"3px"}
@@ -840,11 +840,11 @@ export default function TermsCondition() {
                         </Typography>
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -854,7 +854,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -867,11 +867,11 @@ export default function TermsCondition() {
                         applicable local laws.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -881,7 +881,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -895,11 +895,11 @@ export default function TermsCondition() {
                         or right.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -909,7 +909,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -928,11 +928,11 @@ export default function TermsCondition() {
                         barred.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -942,7 +942,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -955,11 +955,11 @@ export default function TermsCondition() {
                         or otherwise through use of your account.
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={"500"}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -969,7 +969,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
@@ -988,11 +988,11 @@ export default function TermsCondition() {
                         (or any part thereof).
                     </Typography>
                 </Box>
-                <Box margin={"50px 20px"} maxWidth={"1200px"}>
+                <Box margin={"50px 20px"} maxWidth={"1300px"}>
                     <Typography
                         color={"black"}
                         fontWeight={500}
-                        fontSize={"30px"}
+                        fontSize={{ xs: '28px', sm: '28px', md: '28px', lg: '30px' }}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"
                     >
@@ -1002,7 +1002,7 @@ export default function TermsCondition() {
                         color={"#575656"}
                         fontWeight={"500"}
                         fontFamily={`"ProximaNovaMedium", sans-serif`}
-                        fontSize={"22px"}
+                        fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                         letterSpacing={"0px"}
                         lineHeight={"1.2"}
                         paddingTop={"3px"}
