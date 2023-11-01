@@ -41,21 +41,22 @@ export default function DarnIt({ prevStep }: DoorProps) {
       bgcolor={"white"}
       margin={"auto"}
       position={"relative"}
-      width={{ sm: "60%", lg: "90%" }}
+      width={{ xs: "70%", sm: "68%", lg: "90%" }}
       left={{ xs: 0, sm: "-80px", md: "-80px", lg: 0 }}
     >
       <Typography
-        fontSize={{ xs: "40px", md: "100px" }}
+        fontSize={{ xs: "40px", sm: "69px", md: "100px" }}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         fontWeight={500}
         textTransform={"lowercase"}
+        mb={{ xs: 0, sm: "40px", md: 0 }}
       >
         DARN IT!
       </Typography>
       <Typography
         borderTop={"1px solid #333"}
         textAlign={"center"}
-        fontSize={"42px"}
+        fontSize={{ xs: "40px", sm: "36px", md: "42px" }}
         fontWeight={500}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         borderBottom={"1px solid #333"}

@@ -286,7 +286,7 @@ export default function ShipinFields({
                 >
                   <Typography
                     textAlign={"center"}
-                    fontSize={{ xs: "28px", sm: "45px", md: "45px" }}
+                    fontSize={{ xs: "28px", sm: "43px", md: "45px" }}
                     fontFamily={"IndustrialGothicBannerStd, sans-serif"}
                     fontWeight={500}
                     textTransform={"lowercase"}

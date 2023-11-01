@@ -90,7 +90,11 @@ export default function CarePage() {
             borderRadius={{ xs: "16px", md: "40px", sm: "40px" }}
             textAlign={"center"}
             // padding={isXsScreen ? "2rem" : "1rem 5.4rem"}
-            padding={{ xs: "2.5rem 3rem", sm: "2.5rem 3rem", md: "2.5rem 3rem" }}
+            padding={{
+              xs: "2.5rem 3rem",
+              sm: "2.5rem 3rem",
+              md: "2.5rem 3rem",
+            }}
           >
             <Typography
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -387,7 +391,7 @@ export default function CarePage() {
           margin={"auto 0"}
           padding={"0 10rem"}
           sx={{
-            padding: { xs: "10px", md: "0 11rem" },
+            padding: { xs: "10px", md: "0 7rem" },
           }}
         >
           <Typography
@@ -395,7 +399,6 @@ export default function CarePage() {
             fontSize={{ xs: "50px", sm: "80px" }}
             lineHeight={"1.25rem 0"}
             fontWeight={500}
-            // textAlign={isXsScreen ? "center" : undefined}
             textAlign={{
               xs: "center",
               sm: "center",
