@@ -150,14 +150,14 @@ export default function PorfolioHeader() {
   return (
     <Stack>
       <Stack
-        marginTop={"70px"}
+        marginTop={"50px"}
         direction="row"
         justifyContent={"space-around"}
         maxWidth={"1200px"}
       >
         <Stack
           direction={"column"}
-          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 11rem 0"}
+          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 4rem 0"}
           maxWidth={"620px"}
           position={"relative"}
           zIndex={"1"}
