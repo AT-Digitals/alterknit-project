@@ -52,6 +52,7 @@ export default function FixmePage({ nextStep, secondNextStep }: shipinprops) {
           textTransform={"lowercase"}
           variant={isSmScreen ? "h4" : "h3"}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+          pb={4}
         >
           WHICH OPTION WORKS BEST FOR YOU?{" "}
         </Typography>

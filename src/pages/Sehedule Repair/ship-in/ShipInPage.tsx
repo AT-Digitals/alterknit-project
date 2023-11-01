@@ -58,7 +58,7 @@ export default function ShipInPage({
     color: Colors.BLACK,
     backgroundColor: Colors.HOME_BACKGROUND,
     fontWeight: 500,
-    fontSize: "1.5rem",
+    //fontSize: "2.5rem",
     fontFamily: `"IndustrialGothicBannerStd", sans-serif`,
     padding: "30px",
     width: isXsScreen ? "90%" : "270px",
@@ -133,7 +133,9 @@ export default function ShipInPage({
               transform: selectedButtons.includes("reweaving for knits")
                 ? `scale(1.05)`
                 : "",
+
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             reknitting for knits
           </StyleButtonNew>
@@ -149,6 +151,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             reweaving for suits
           </StyleButtonNew>
@@ -164,6 +167,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             knit alteration
           </StyleButtonNew>
@@ -179,6 +183,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             other fabric repair
           </StyleButtonNew>
@@ -194,6 +199,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             cleaning
           </StyleButtonNew>
@@ -209,6 +215,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             restyling
           </StyleButtonNew>
@@ -224,6 +231,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             de-pilling
           </StyleButtonNew>
@@ -239,6 +247,7 @@ export default function ShipInPage({
                 ? `scale(1.05)`
                 : "",
             }}
+            sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
           >
             custom knit work
           </StyleButtonNew>
