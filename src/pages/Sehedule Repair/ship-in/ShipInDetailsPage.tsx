@@ -14,7 +14,6 @@ import ShipInPage from "./ShipInPage";
 import ShipinFields from "./ShipIn-Fields";
 import { UseunSavedChangesListener } from "./useUnsavesListener";
 import emailjs from "emailjs-com";
-import { useNavigate } from "react-router-dom";
 
 export default function ShipInDetailsPage() {
   const [step, setStep] = useState(1);
@@ -232,7 +231,7 @@ export default function ShipInDetailsPage() {
     },
     [serviceData]
   );
-  const navigate = useNavigate();
+
 
   const onCancelChanges = useCallback(
     (e?: any) => {

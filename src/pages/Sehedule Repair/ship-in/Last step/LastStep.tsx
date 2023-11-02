@@ -1,12 +1,7 @@
 import {
   Box,
   Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Grid,
-  Modal,
   Typography,
   useMediaQuery,
 } from "@mui/material";
@@ -19,7 +14,6 @@ import Loading from "../../../../assets/loading.gif";
 import ServiceDetailsState from "../ServiceDetailsState";
 import ShipInDetails from "../ShipInDetails";
 import SubmitPopup from "../../../../Popup/SubmitPopup";
-import alterknitImage from "../../../../assets/alterknit.png";
 import routes from "../../../../routes/routes";
 import styled from "@emotion/styled";
 import { useState } from "react";
@@ -51,17 +45,17 @@ const StyledButton = styled(CustomButton)({
     backgroundColor: "#f58977",
   },
 });
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 250,
-  bgcolor: "background.paper",
-  border: "1px solid #fff",
-  boxShadow: 24,
-  p: 4,
-};
+// const style = {
+//   position: "absolute" as "absolute",
+//   top: "50%",
+//   left: "50%",
+//   transform: "translate(-50%, -50%)",
+//   width: 250,
+//   bgcolor: "background.paper",
+//   border: "1px solid #fff",
+//   boxShadow: 24,
+//   p: 4,
+// };
 interface LaststepProps {
   serviceDetails: ServiceDetailsState[];
   shipInDetails: ShipInDetails;

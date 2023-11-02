@@ -1,8 +1,7 @@
 import { Stack, Typography, Box, styled, Button, CardMedia } from "@mui/material";
 import Colors from "../../CommonComponent/Colors";
 import bug from "../../assets/bug_01.png";
-import { Link } from "react-router-dom";
-import routes from "../../routes/routes";
+
 
 const StyledButton = styled(Button)(({ theme }) => ({
     position: "absolute",
@@ -27,14 +26,14 @@ const StyledButton = styled(Button)(({ theme }) => ({
         // top: "38%",
         fontSize: "30px",
         left: "25%",
-        transform: `translate(${-28}%, ${113}%)`,
+        transform: `translate(${-40}%, ${88}%)`,
     },
     [theme.breakpoints.up('sm')]: {
         width: 190,
         height: 190,
         // top: "-7",
         fontSize: "30px",
-        transform: `translate(${-15}%, ${150}%)`,
+        transform: `translate(${-15}%, ${140}%)`,
     },
     [theme.breakpoints.up('md')]: {
         width: 190,

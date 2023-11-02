@@ -7,7 +7,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import AppContainer from "../../../component/AppContainer";
 import Colors from "../../../CommonComponent/Colors";
 import ShipCard from "./ShipCard";
 import bgmore from "../../../assets/bg_syr_more_info.svg";

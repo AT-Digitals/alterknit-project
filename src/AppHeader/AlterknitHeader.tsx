@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Alterknit from "../assets/alterknit.png";
 import AppContainer from "../component/AppContainer";
@@ -15,26 +15,6 @@ import Colors from "../CommonComponent/Colors";
 import CustomButton from "../CommonComponent/CustomButton";
 import { auth } from "../firebase";
 import routes from "../routes/routes";
-
-// const ServiceItem = styled(Link)`
-//   text-decoration: none;
-//   position: relative;
-//   color: graytext;
-
-//   &:hover {
-//     color: black;
-//   }
-
-//   &:hover::before {
-//     content: "•";
-//     color: black;
-//     position: absolute;
-//     top: 50%;
-//     left: -25px;
-//     transform: translateY(-50%);
-//     font-size: 40px;
-//   }
-// `;
 
 const HeaderLink = styled("a")`
   text-decoration: none;
@@ -85,16 +65,16 @@ export default function AlterknitHeader({
     { linkname: "Blog", url: routes.BLOG_PAGE },
   ];
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  // const [anchorEl, setAnchorEl] = useState(null);
   const [isSelected, setIsSelected] = useState(Colors.BLACK);
 
-  const handleMenuOpen = (event: any) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleMenuOpen = (event: any) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   const handleMenuClick = (menu: string) => {
     localStorage.setItem(activeTab, menu);
