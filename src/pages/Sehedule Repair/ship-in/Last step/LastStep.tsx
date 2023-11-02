@@ -1,6 +1,10 @@
 import {
   Box,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Grid,
   Modal,
   Typography,
@@ -10,6 +14,7 @@ import {
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
 import CustomButton from "../../../../CommonComponent/CustomButton";
+import CustomDialog from "../../../../Popup/Popup";
 import Loading from "../../../../assets/loading.gif";
 import ServiceDetailsState from "../ServiceDetailsState";
 import ShipInDetails from "../ShipInDetails";
@@ -75,11 +80,9 @@ export default function LastStep({
   const [showSubmit, setShowSubmit] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  // const navigate = useNavigate();
   const closeModal = () => {
     setIsModalOpen(false);
     window.location.href = "/schedule-repair";
-    // navigate('/home');
   };
   const handleSubmitClick = () => {
     setShowSubmit(true);
@@ -232,7 +235,8 @@ export default function LastStep({
                     <Grid container>
                       <Grid item xs={6}>
                         <StyledTr>
-                          <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
+                          <StyledTableCell>Service Needed</StyledTableCell>
+                        </StyledTr>
                       </Grid>
                       <Grid item xs={6}>
                         <StyledTr>
@@ -249,7 +253,10 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.brand}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .brand
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
@@ -261,7 +268,10 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.color}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .color
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
@@ -273,9 +283,13 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.howMany}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .howMany
+                            }
                           </StyledTableCellValue>
-                        </StyledTr> </Grid>
+                        </StyledTr>{" "}
+                      </Grid>
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell># of Holes</StyledTableCell>
@@ -299,61 +313,14 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.brief}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .brief
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
                     </Grid>
-                    {/* {serviceDetails.length > 0 && (
-                        <Grid item xs={6}>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].services}
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .brand
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .color
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .howMany
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .visible_holes
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .brief
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                        </Grid>
-                      )} */}
-                    {/* </Grid> */}
                   </div>
                 </tbody>
               </table>
@@ -593,43 +560,11 @@ export default function LastStep({
         />
       )}
       {isModalOpen && (
-        <Modal
-          open={isModalOpen}
+        <CustomDialog
+          isOpen={isModalOpen}
           onClose={closeModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Box display={"flex"} justifyContent={"center"}>
-              <img src={alterknitImage} alt="logo" width="40%" height="15%" />
-            </Box>
-            <Box display={"flex"} justifyContent={"center"}>
-              <Typography
-                fontSize={"20px"}
-                id="modal-modal-description"
-                sx={{ mt: 2 }}
-              >
-                Your Order Details Successfully Sent your Email!
-              </Typography>
-            </Box>
-            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-              <Button
-                sx={{
-                  height: "30px",
-                  backgroundColor: "black",
-                  color: "white",
-                  marginTop: "10px",
-                  ":hover": {
-                    backgroundColor: "rgb(223, 124, 109)",
-                  },
-                }}
-                onClick={closeModal}
-              >
-                OK
-              </Button>
-            </Box>
-          </Box>
-        </Modal>
+          message={"Your Order Details Successfully Sent your Email!"}
+        />
       )}
     </>
   );
