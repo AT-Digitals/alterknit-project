@@ -149,9 +149,6 @@ export default function AlterknitHeader({
       bgcolor={"white"}
       width="100%"
       borderBottom={"1px solid black"}
-      position="sticky"
-      top={0}
-      zIndex={1}
     >
       <AppContainer display={{ xs: "none", xl: "flex" }}>
         <Stack
