@@ -157,20 +157,18 @@ export default function PorfolioHeader() {
       >
         <Stack
           direction={"column"}
-          padding={isXsScreen ? "0rem 0 2rem 0" : "0rem 0 11rem 0"}
+          padding={{ xs: "0rem 0 2rem 0", sm: "0rem 0 2rem 0", md: "0rem 0 2rem 0", lg: "0rem 0 11rem 0" }}
           maxWidth={"620px"}
-          position={"relative"}
-          zIndex={"1"}
-          margin={"20px"}
+          margin={{ xs: "20px", sm: "0 auto", md: "0 auto", lg: "20px" }}
         >
           <Typography
             lineHeight={"1"}
             color={"black"}
             fontWeight={"500"}
-            fontSize={isXsScreen ? "45px" : "80px"}
+            fontSize={{ xs: "45px", sm: "75px", md: "75px", lg: "80px" }}
             fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
             textTransform="lowercase"
-            textAlign={isXsScreen ? "center" : "left"}
+            textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
             marginBottom={"15px"}
           >
             SEEING IS BELEIVING
@@ -182,7 +180,7 @@ export default function PorfolioHeader() {
             lineHeight={1.2}
             fontFamily={`"ProximaNovaMedium", sans-serif`}
             fontSize={isXsScreen ? "19px" : "22px"}
-            textAlign={isXsScreen ? "center" : "left"}
+            textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
           >
             Don't think we can fix what you've got?
             <Typography
@@ -192,10 +190,19 @@ export default function PorfolioHeader() {
               fontSize={isXsScreen ? "20px" : "22px"}
               paddingTop={"5px"}
               lineHeight={1.2}
-              textAlign={isXsScreen ? "center" : "left"}
+              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
             >
-              Check out our gallery of before and afters to see what magic we
-              can work on any garment in any condition.
+              Check out our gallery of before and afters to see what magic 
+              <Typography 
+              color={"#575656"}
+              fontWeight={"500"}
+              fontFamily={`"ProximaNovaMedium", sans-serif`}
+              fontSize={isXsScreen ? "20px" : "22px"}
+              paddingTop={"5px"}
+              lineHeight={1.2}
+              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}> 
+                we can work on any garment in any condition.
+              </Typography>
             </Typography>
           </Typography>
           <Link to={routes.SCHEDULE_REPAIR} style={{ textDecoration: "none" }}>
@@ -206,7 +213,7 @@ export default function PorfolioHeader() {
               fontSize={isXsScreen ? "2.23rem" : "2.3rem"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               textTransform="lowercase"
-              textAlign={isXsScreen ? "center" : "left"}
+              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
               marginTop={isXsScreen ? "10px" : "0px"}
             >
               REPAIR IT WITH A CLICK. WE DARE YOU.
@@ -217,7 +224,7 @@ export default function PorfolioHeader() {
         <Box display={{ xs: "none", md: "flex" }}>
           <CardMedia
             sx={{
-              marginRight: "-40px",
+              marginRight: "-35px",
               marginTop: "55px",
               top: 0,
               right: "120px",
@@ -527,6 +534,7 @@ export default function PorfolioHeader() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
+                  
                   }}
                   src={image11}
                   alt="image11"
