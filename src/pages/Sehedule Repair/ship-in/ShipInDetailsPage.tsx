@@ -308,19 +308,6 @@ export default function ShipInDetailsPage() {
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // if (serviceData.length > 0) {
-    // await fetch(
-    //   "https://alterknit-backend.onrender.com/service-data",
-    //   {
-    //     method: "post",
-    //     body: JSON.stringify({
-    //       service_details: serviceData,
-    //       shipin_details: shipDetails,
-    //     }),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // ).then(() => {
     emailjs
       .send(
         "service_tby7lte",
@@ -336,10 +323,22 @@ export default function ShipInDetailsPage() {
           console.log("FAILED...", err);
         }
       );
-    // });
+
+    await fetch(
+      "https://alterknit-backend.onrender.com/service-data",
+      {
+        method: "post",
+        body: JSON.stringify({
+          service_details: serviceData,
+          shipin_details: shipDetails,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
     setAsk(false);
   }
-  // };
   // this listener is used for when user comes inside schedule repair  cant navigate ask popup
   UseunSavedChangesListener(ask, onCancelChanges);
 
