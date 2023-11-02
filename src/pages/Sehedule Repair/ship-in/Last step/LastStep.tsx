@@ -1,6 +1,10 @@
 import {
   Box,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Grid,
   Modal,
   Typography,
@@ -10,6 +14,7 @@ import {
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
 import CustomButton from "../../../../CommonComponent/CustomButton";
+import CustomDialog from "../../../../Popup/Popup";
 import Loading from "../../../../assets/loading.gif";
 import ServiceDetailsState from "../ServiceDetailsState";
 import ShipInDetails from "../ShipInDetails";
@@ -75,11 +80,9 @@ export default function LastStep({
   const [showSubmit, setShowSubmit] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  // const navigate = useNavigate();
   const closeModal = () => {
     setIsModalOpen(false);
     window.location.href = "/schedule-repair";
-    // navigate('/home');
   };
   const handleSubmitClick = () => {
     setShowSubmit(true);
@@ -557,43 +560,11 @@ export default function LastStep({
         />
       )}
       {isModalOpen && (
-        <Modal
-          open={isModalOpen}
+        <CustomDialog
+          isOpen={isModalOpen}
           onClose={closeModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Box display={"flex"} justifyContent={"center"}>
-              <img src={alterknitImage} alt="logo" width="40%" height="15%" />
-            </Box>
-            <Box display={"flex"} justifyContent={"center"}>
-              <Typography
-                fontSize={"20px"}
-                id="modal-modal-description"
-                sx={{ mt: 2 }}
-              >
-                Your Order Details Successfully Sent your Email!
-              </Typography>
-            </Box>
-            <Box display={"flex"} justifyContent={"center"} padding={"9px 0px"}>
-              <Button
-                sx={{
-                  height: "30px",
-                  backgroundColor: "black",
-                  color: "white",
-                  marginTop: "10px",
-                  ":hover": {
-                    backgroundColor: "rgb(223, 124, 109)",
-                  },
-                }}
-                onClick={closeModal}
-              >
-                OK
-              </Button>
-            </Box>
-          </Box>
-        </Modal>
+          message={"Your Order Details Successfully Sent your Email!"}
+        />
       )}
     </>
   );

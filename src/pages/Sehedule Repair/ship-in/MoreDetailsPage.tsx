@@ -119,8 +119,7 @@ export default function MoreDetailsPage({
               spacing={6}
               alignItems="center"
               justifyContent="center"
-              pt={3}
-              pb={3}
+              padding={" 24px"}
               mt={3}
             >
               <StyleButtonNew
