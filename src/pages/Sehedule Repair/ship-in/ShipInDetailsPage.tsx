@@ -308,7 +308,7 @@ export default function ShipInDetailsPage() {
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     // if (serviceData.length > 0) {
-    let result = await fetch(
+    await fetch(
       "https://alterknit-backend.onrender.com/service-data",
       {
         method: "post",
