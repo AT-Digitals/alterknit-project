@@ -232,7 +232,8 @@ export default function LastStep({
                     <Grid container>
                       <Grid item xs={6}>
                         <StyledTr>
-                          <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
+                          <StyledTableCell>Service Needed</StyledTableCell>
+                        </StyledTr>
                       </Grid>
                       <Grid item xs={6}>
                         <StyledTr>
@@ -249,7 +250,10 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.brand}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .brand
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
@@ -261,7 +265,10 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.color}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .color
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
@@ -273,9 +280,13 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.howMany}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .howMany
+                            }
                           </StyledTableCellValue>
-                        </StyledTr> </Grid>
+                        </StyledTr>{" "}
+                      </Grid>
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCell># of Holes</StyledTableCell>
@@ -299,61 +310,14 @@ export default function LastStep({
                       <Grid item xs={6}>
                         <StyledTr>
                           <StyledTableCellValue>
-                            {serviceDetails[displayedEntry].service_details.brief}
+                            {
+                              serviceDetails[displayedEntry].service_details
+                                .brief
+                            }
                           </StyledTableCellValue>
                         </StyledTr>
                       </Grid>
                     </Grid>
-                    {/* {serviceDetails.length > 0 && (
-                        <Grid item xs={6}>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {serviceDetails[displayedEntry].services}
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .brand
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .color
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .howMany
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .visible_holes
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                          <StyledTr>
-                            <StyledTableCellValue>
-                              {
-                                serviceDetails[displayedEntry].service_details
-                                  .brief
-                              }
-                            </StyledTableCellValue>
-                          </StyledTr>
-                        </Grid>
-                      )} */}
-                    {/* </Grid> */}
                   </div>
                 </tbody>
               </table>
