@@ -92,6 +92,7 @@ import image7 from "../../assets/1679605654400_Blanket.png";
 import image8 from "../../assets/1679605674930_Boss.png";
 import image9 from "../../assets/1679605754885_Dear Cashmere.png";
 import routes from "../../routes/routes";
+import { useState } from "react";
 
 const StyledTypography = styled(Typography)({
   ":hover": {
@@ -146,6 +147,7 @@ const images = [
 export default function PorfolioHeader() {
   const isXsScreen = useMediaQuery("(max-width:900px)");
   const isImageScreen = useMediaQuery("(max-width:1250px)");
+
 
   return (
     <Stack>

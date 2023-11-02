@@ -155,14 +155,14 @@ export default function FaqPage() {
   return (
     <>
       <img style={{
-         backgroundColor: "#fff",
+        backgroundColor: "#fff",
       }} src={Top} alt="top-file" />
       <Box bgcolor={"#f8f1eb"} padding={"20px"}>
         <Typography
           textAlign={"center"}
           color={"black"}
           fontWeight={"500"}
-          fontSize={isXsScreen ? "60px" : "80px"}
+          fontSize={{ xs: "45px", sm: "80px" }}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           textTransform={"lowercase"}
         >
@@ -187,8 +187,8 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "26px" : "32px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -211,8 +211,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNoteIndex === index && (
                   <Typography
-                  fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -239,8 +239,8 @@ export default function FaqPage() {
                   paddingBottom={"25px"}
                 >
                   <Typography
-                      fontFamily={`"ProximaNovaMedium", sans-serif`}
-                      fontSize={isXsScreen ? "26px" : "32px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -263,8 +263,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote1Index === index && (
                   <Typography
-                  fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -292,7 +292,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "26px" : "32px"}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -315,8 +315,8 @@ export default function FaqPage() {
                 </StyledBox>
                 {openNote2Index === index && (
                   <Typography
-                  fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                    fontFamily={`"ProximaNovaMedium", sans-serif`}
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -344,7 +344,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "26px" : "32px"}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -396,7 +396,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "26px" : "32px"}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}
@@ -420,7 +420,7 @@ export default function FaqPage() {
                 {openNote4Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"} 
+                    fontSize={"22px"}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -448,7 +448,7 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={isXsScreen ? "26px" : "32px"}
+                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
                     fontWeight={"500"}
                     textTransform={"capitalize"}

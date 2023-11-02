@@ -117,9 +117,11 @@ export default function HelpPage() {
         color={"black"}
         fontWeight={500}
         lineHeight={1}
-        fontSize={isXsScreen ? "50px" : "80px"}
+        fontSize={"80px"}
         fontFamily={"IndustrialGothicBannerStd, sans-serif"}
         textTransform={"lowercase"}
+        mt={2}
+        mb={8}
       >
         HOW WE CAN HELP
       </Typography>

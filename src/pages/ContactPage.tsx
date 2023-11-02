@@ -175,6 +175,7 @@ export default function FormFile() {
           setIsModalOpen(true);
         })
         .catch((error) => {
+          alert(error.text);
           console.log(error.text);
           // Handle email sending error if needed
         });
