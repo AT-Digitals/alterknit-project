@@ -229,7 +229,7 @@ export default function FormFile() {
     window.scrollTo(0, 0);
   }, []);
 
-  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isXsScreen = useMediaQuery("(max-width:1100px)");
 
   return (
     <Box
@@ -307,7 +307,7 @@ export default function FormFile() {
           </Typography>
 
           <Stack margin={"30px"} alignItems={"center"} direction={isXsScreen ? "column" : "row"} justifyContent={"space-between"} spacing={2}>
-            <Box width={"100%"} maxWidth={"390px"}>
+            <Box width={"100%"} maxWidth={{ xs: 'none', sm: 'none', md: 'none', lg: '390px' }}>
               <Typography
                 marginLeft={"5px"}
                 marginBottom={"12px"}
@@ -343,14 +343,13 @@ export default function FormFile() {
                 required
               />
             </Box>
-            <Stack direction={"row"} spacing={0}>
-              <Box>
+            <Stack direction={"row"} spacing={0} alignItems={"center"}>
+              <Box  padding={{ xs: '10px 10px', sm: '12px 15px', md: '12px 15px', lg: '12px 15px' }}>
                 {isXsScreen ? "" : <Button
                   sx={{
                     backgroundColor: "#df7c6d",
                     color: "#fff",
                     fontFamily: `"ProximaNovaMedium", sans-serif`,
-                    padding: isXsScreen ? "10px 10px" : "12px 40px",
                     letterSpacing: "2px",
                     ":hover": {
                       backgroundColor: "#f58977",
@@ -370,7 +369,9 @@ export default function FormFile() {
                 </Button>
                 }
               </Box>
+              {isXsScreen ? "" :
               <Box paddingTop={"9px"} display={"flex"} alignItems={"center"}>
+            
                 {selectedImage && (
                   <img
                     src={URL.createObjectURL(selectedImage)}
@@ -391,6 +392,7 @@ export default function FormFile() {
                   />
                 )}
               </Box>
+                }
             </Stack>
           </Stack>
 
@@ -504,14 +506,14 @@ export default function FormFile() {
               placeholder="Please enter query..."
             />
           </Box>
-          {isXsScreen ? <Button
+          {isXsScreen ? 
+          <Box display={"flex"} justifyContent={"center"} padding={{ xs: '5px 10px', sm: '12px 15px', md: '12px 15px', lg: '12px 15px' }}>
+          <Button
             sx={{
               backgroundColor: "#df7c6d",
               color: "#fff",
               fontFamily: `"ProximaNovaMedium", sans-serif`,
-              padding: isXsScreen ? "10px 10px" : "12px 40px",
               letterSpacing: "2px",
-              margin: isXsScreen ? "-10px 28px 30px 28px" : "0px 0px",
               ":hover": {
                 backgroundColor: "#f58977",
               },
@@ -527,7 +529,33 @@ export default function FormFile() {
               accept="image"
               onChange={handleImageChange}
             />
-          </Button> : ""}
+          </Button>
+          </Box>
+           : ""}
+          {isXsScreen ? 
+              <Box paddingTop={"4px"} marginBottom={"10px"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+            
+                {selectedImage && (
+                  <img
+                    src={URL.createObjectURL(selectedImage)}
+                    alt="Selected"
+                    style={{
+                      width: "120px",
+                      height: "100px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                )}
+                {showDeleteIcon && (
+                  <DeleteIcon
+                    style={{
+                      color: "#df7c6d",
+                    }}
+                    onClick={handleImageDelete}
+                  />
+                )}
+              </Box>
+                : ""}
           <Box textAlign={"center"}>
             <Button
               sx={{
