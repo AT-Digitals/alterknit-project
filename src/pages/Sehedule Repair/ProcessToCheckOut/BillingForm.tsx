@@ -92,7 +92,7 @@ export default function BillingForm({
     <>
       <AppContainer
         mt={isXsScreen ? "3rem" : "8rem"}
-        maxWidth={850}
+        maxWidth={1300}
         width={{ xs: "85%", sm: "85%", md: "85%" }}
         display={"flex"}
         justifyContent={"center"}
@@ -117,122 +117,124 @@ export default function BillingForm({
       </AppContainer>
       <AppContainer
         padding={0}
-        width={{ xs: "85%", sm: "85%", md: "85%" }}
+        width={"100%"}
         maxWidth={1300}
         textAlign={isXsScreen ? "center" : "start"}
       >
-        <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
-          <Typography
-            fontSize={isXsScreen ? "35px" : "45px"}
-            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontWeight={500}
-            textTransform={"lowercase"}
-          >
-            FIRST NAME
-          </Typography>
-          <CustomTextField
-            name="firstName"
-            value={billInformation.BillInformation.firstName}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
-          <Typography
-            fontSize={isXsScreen ? "35px" : "45px"}
-            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontWeight={500}
-            textTransform={"lowercase"}
-          >
-            LAST NAME
-          </Typography>
-          <CustomTextField
-            name="lastName"
-            value={billInformation.BillInformation.lastName}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
-          <Typography
-            fontSize={isXsScreen ? "35px" : "45px"}
-            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontWeight={500}
-            textTransform={"lowercase"}
-          >
-            STREET ADDRESS
-          </Typography>
-          <CustomTextField
-            name="streetAddress"
-            value={billInformation.BillInformation.streetAddress}
-            onChange={handleChange}
-          />
-          <CustomTextField
-            name="apartment"
-            placeholder="Apartment/Suite"
-            value={billInformation.BillInformation.apartment}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
-          <Typography
-            fontSize={isXsScreen ? "35px" : "45px"}
-            fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-            fontWeight={500}
-            textTransform={"lowercase"}
-          >
-            CITY
-          </Typography>
-          <CustomTextField
-            name="city"
-            value={billInformation.BillInformation.city}
-            onChange={handleChange}
-          />
-        </Box>
-
-        <Stack direction={isXsScreen ? "column" : "row"} spacing={5}>
-          <Box style={{ flex: 1 }}>
+        <Box padding={"24px"}>
+          <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
             <Typography
               fontSize={isXsScreen ? "35px" : "45px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform={"lowercase"}
             >
-              STATE
-            </Typography>
-            <CustomSelect
-              style={{
-                width: "100%",
-                background: "#f8f1ec",
-                padding: "1rem",
-                borderRadius: "30px",
-              }}
-              name="state"
-              value={billInformation.BillInformation.state}
-              onChange={handleChange}
-            >
-              {StateOptions.map((option: any) => (
-                <MenuItem key={option} value={option}>
-                  {option}
-                </MenuItem>
-              ))}
-            </CustomSelect>
-          </Box>
-          <Box style={{ flex: 1 }}>
-            <Typography
-              fontSize={isXsScreen ? "35px" : "45px"}
-              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-              fontWeight={500}
-              textTransform={"lowercase"}
-            >
-              ZIP CODE
+              FIRST NAME
             </Typography>
             <CustomTextField
-              style={{ width: "100%" }}
-              name="zipcode"
-              value={billInformation.BillInformation.zipcode}
+              name="firstName"
+              value={billInformation.BillInformation.firstName}
               onChange={handleChange}
             />
           </Box>
-        </Stack>
+          <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Typography
+              fontSize={isXsScreen ? "35px" : "45px"}
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontWeight={500}
+              textTransform={"lowercase"}
+            >
+              LAST NAME
+            </Typography>
+            <CustomTextField
+              name="lastName"
+              value={billInformation.BillInformation.lastName}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Typography
+              fontSize={isXsScreen ? "35px" : "45px"}
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontWeight={500}
+              textTransform={"lowercase"}
+            >
+              STREET ADDRESS
+            </Typography>
+            <CustomTextField
+              name="streetAddress"
+              value={billInformation.BillInformation.streetAddress}
+              onChange={handleChange}
+            />
+            <CustomTextField
+              name="apartment"
+              placeholder="Apartment/Suite"
+              value={billInformation.BillInformation.apartment}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box display={"flex"} flexDirection={"column"} gap={"2rem"}>
+            <Typography
+              fontSize={isXsScreen ? "35px" : "45px"}
+              fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+              fontWeight={500}
+              textTransform={"lowercase"}
+            >
+              CITY
+            </Typography>
+            <CustomTextField
+              name="city"
+              value={billInformation.BillInformation.city}
+              onChange={handleChange}
+            />
+          </Box>
+
+          <Stack direction={isXsScreen ? "column" : "row"} spacing={5}>
+            <Box style={{ flex: 1 }}>
+              <Typography
+                fontSize={isXsScreen ? "35px" : "45px"}
+                fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
+              >
+                STATE
+              </Typography>
+              <CustomSelect
+                style={{
+                  width: "100%",
+                  background: "#f8f1ec",
+                  padding: "1rem",
+                  borderRadius: "30px",
+                }}
+                name="state"
+                value={billInformation.BillInformation.state}
+                onChange={handleChange}
+              >
+                {StateOptions.map((option: any) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </CustomSelect>
+            </Box>
+            <Box style={{ flex: 1 }}>
+              <Typography
+                fontSize={isXsScreen ? "35px" : "45px"}
+                fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform={"lowercase"}
+              >
+                ZIP CODE
+              </Typography>
+              <CustomTextField
+                style={{ width: "100%" }}
+                name="zipcode"
+                value={billInformation.BillInformation.zipcode}
+                onChange={handleChange}
+              />
+            </Box>
+          </Stack>
+        </Box>
       </AppContainer>
     </>
   );

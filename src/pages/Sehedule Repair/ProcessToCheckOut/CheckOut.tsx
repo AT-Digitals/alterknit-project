@@ -272,7 +272,8 @@ export default function CheckOut({
             </Typography>
           </Box>
           <AppContainer
-            width="100%"
+            // width={{ xs: "85%", sm: "85%", md: "90%" }}
+            width={"100%"}
             maxWidth={1300}
             padding={0}
           >
