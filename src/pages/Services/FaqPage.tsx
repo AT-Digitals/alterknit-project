@@ -168,8 +168,9 @@ export default function FaqPage() {
         >
           FAQ'S
         </Typography>
-        <Box margin={"0 auto"} width={"100%"} maxWidth={"1200px"}>
-          <Box  padding={{xs: "10px", sm: "30px", md: "30px", lg: "10px"}} marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
+
+        <Box margin={"0 auto"} width={"100%"} maxWidth={"1300px"}>
+          <Box marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
             {Notes.map((notes, index) => (
               <Box
                 bgcolor={"#f8f1ec"}

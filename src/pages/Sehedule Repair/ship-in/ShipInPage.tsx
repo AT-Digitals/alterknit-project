@@ -109,7 +109,7 @@ export default function ShipInPage({
       <Typography
         variant="body1"
         textAlign="center"
-        pt={7}
+        pt={{ xs: 4, sm: 9 }}
         fontFamily={`"ProximaNovaMedium", sans-serif`}
         fontWeight={500}
       >
@@ -118,8 +118,8 @@ export default function ShipInPage({
       <Grid
         textAlign={"center"}
         container
-        rowGap={5}
-        paddingX={{ xs: 6, sm: 6, md: 3 }}
+        rowGap={{ xs: 3, sm: 5 }}
+        paddingX={{ xs: 3, sm: 6, md: 0 }}
         pb={5}
         pt={2}
       >

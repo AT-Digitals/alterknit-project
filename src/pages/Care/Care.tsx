@@ -232,28 +232,29 @@ export default function CarePage() {
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontSize={{ xs: "45px", sm: "80px" }}
               fontWeight={500}
-              padding={{ xs: "1rem", sm: "3rem", md: "3rem" }}
+              // padding={{ xs: "1rem", sm: "3rem", md: "3rem" }}
               lineHeight={1}
-              mb={isXsScreen ? "-50px" : undefined}
+              mb="5rem"
+
             >
               dear alterknit... (just asking)
             </Typography>
             <Box
               mb={"6rem"}
-              mt={4}
+              // mt={4}
               display={"flex"}
               flexDirection={"column"}
-              gap={"3rem"}
-              alignItems={"center"}
-              // sx={{
-              //   "@media (max-width: 768px)": {
-              //     flexDirection: "column",
-              //     alignItems: "center",
-              //     gap: "2rem",
-              //     // padding: "2rem",
-              //   },
-              // }}
-              padding={"2rem"}
+              gap={"2rem"}
+
+            // sx={{
+            //   "@media (max-width: 768px)": {
+            //     flexDirection: "column",
+            //     alignItems: "center",
+            //     gap: "2rem",
+            //     // padding: "2rem",
+            //   },
+            // }}
+            // paddingY={"3rem"}
             >
               {Notes.map((notes, index) => (
                 <Box
@@ -262,8 +263,6 @@ export default function CarePage() {
                   p={"1.5rem 2.5rem"}
                   alignItems={"center"}
                   key={index}
-                  width={isXsScreen ? "100%" : "90%"}
-                  maxWidth={1240}
                 >
                   <StyledBox
                     display={"flex"}
@@ -305,8 +304,6 @@ export default function CarePage() {
                 borderRadius={"24px"}
                 p={"1.5rem 2.5rem"}
                 alignItems={"center"}
-                width={isXsScreen ? "100%" : "90%"}
-                maxWidth={1240}
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -314,6 +311,7 @@ export default function CarePage() {
                   color={"#df7c6d"}
                   fontWeight={500}
                   textTransform={"lowercase"}
+                  mb="1rem"
                 >
                   WHEN BAD THINGS HAPPEN TO GOOD SWEATERS
                 </Typography>
@@ -323,7 +321,7 @@ export default function CarePage() {
                   color={"#575656"}
                   p={"1rem 0 1rem 0"}
                   mt={"-1rem"}
-                  maxWidth={"76%"}
+                  maxWidth={"85%"}
                 >
                   We've seen it all over here and fixed it too: your favorite
                   office cardigan caught in a desk chair wheel with blown out
@@ -341,8 +339,6 @@ export default function CarePage() {
                   p={"1.5rem 2.5rem"}
                   alignItems={"center"}
                   key={index}
-                  width={isXsScreen ? "100%" : "90%"}
-                  maxWidth={1240}
                 >
                   <StyledBox
                     display={"flex"}

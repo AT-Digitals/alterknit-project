@@ -81,7 +81,6 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
             margin="0 auto"
           >
             <Typography
-              padding={isXsScreen ? "2.5rem 3rem 1rem 3rem" : undefined}
               textTransform={"lowercase"}
               fontWeight="500"
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -89,7 +88,7 @@ export default function DoorToDoorPage({ nextStep, prevStep }: doorpageprops) {
               color={Colors.LINK}
               textAlign={isXsScreen ? "center" : undefined}
               lineHeight={1}
-              mt={{ xs: "2rem", sm: "2rem", md: 0 }}
+              mt={{ xs: "3rem", sm: "3rem", lg: 0 }}
             >
               door to door
               <span style={{ color: Colors.BLACK }}> at your service</span>

@@ -99,15 +99,16 @@ export default function MoreDetailsPage({
           >
             just a few more details...
           </Typography>
-          <Box padding={{ xs: 0, sm: "0 4rem", md: "0 12rem" }}>
+          <Box >
             <Typography
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
-              padding={isXsScreen ? "10px" : undefined}
+              padding={isXsScreen ? "20px" : undefined}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               textAlign="center"
               lineHeight={1}
               textTransform={"lowercase"}
+              width={{ sm: 700, md: 900 }}
             >
               8. has this garment been previously repaired by a dry cleaner or
               another individual?
@@ -118,7 +119,6 @@ export default function MoreDetailsPage({
               spacing={6}
               alignItems="center"
               justifyContent="center"
-              padding={" 24px"}
               mt={3}
             >
               <StyleButtonNew
@@ -160,7 +160,7 @@ export default function MoreDetailsPage({
           spacing={3}
           alignItems="center"
         >
-          <Box padding={{ xs: 0, sm: "0 4rem", md: "0 12rem" }}>
+          <Box >
             <Typography
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
