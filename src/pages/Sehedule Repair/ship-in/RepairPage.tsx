@@ -107,7 +107,8 @@ export default function RepairPage({
 
   return (
     <Stack
-      paddingY={6}
+      paddingBottom={6}
+      pt={{ xs: 6, sm: 6, md: 6, lg: 0 }}
       maxWidth={1300}
       //margin="0 auto"
       justifyContent="center"

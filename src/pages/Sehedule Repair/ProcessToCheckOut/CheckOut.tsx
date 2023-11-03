@@ -248,7 +248,7 @@ export default function CheckOut({
         ></img>
       </Box>
       <Box mb={3} padding={isXsScreen ? "2rem 0 0 0" : "5rem 0 0 0"}>
-        <Box maxWidth={1440} margin={"0 auto"} padding={"20px"}>
+        <Box maxWidth={1300} margin={"0 auto"} padding={"24px"}>
           <Box
             display={"flex"}
             flexWrap={"wrap"}
@@ -272,7 +272,7 @@ export default function CheckOut({
             </Typography>
           </Box>
           <AppContainer
-            width={{ xs: "100%", sm: "85%", md: "85%" }}
+            width="100%"
             maxWidth={1300}
             padding={0}
           >
@@ -487,7 +487,7 @@ export default function CheckOut({
         <Typography
           width={{ xs: "85%", sm: "85%", md: "85%" }}
           fontSize={isXsScreen ? "30px" : "48px"}
-          lineHeight={isXsScreen ? 1 : 1.5}
+          lineHeight={1}
           fontFamily={"IndustrialGothicBannerStd, sans-serif"}
           fontWeight={500}
           textTransform={"lowercase"}

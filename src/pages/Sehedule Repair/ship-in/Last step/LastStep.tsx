@@ -114,7 +114,7 @@ export default function LastStep({
         >
           <Box margin={"0 auto"} textAlign={"center"} maxWidth={900}>
             <Typography
-              fontSize={isXsScreen ? "50px" : "80px"}
+              fontSize={{ xs: "45px", sm: "80px" }}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
               textTransform="lowercase"
@@ -151,8 +151,10 @@ export default function LastStep({
           >
             {isXsScreen ? (
               <Typography
-                fontSize={"30px"}
+                fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform="lowercase"
               >
                 ORDER SUMMARY
               </Typography>
@@ -316,8 +318,10 @@ export default function LastStep({
             </Box>
             {isXsScreen ? (
               <Typography
-                fontSize={"30px"}
+                fontSize={"45px"}
                 fontFamily={"IndustrialGothicBannerStd, sans-serif"}
+                fontWeight={500}
+                textTransform="lowercase"
               >
                 DELIVERY INFORMATION
               </Typography>
@@ -442,7 +446,7 @@ export default function LastStep({
           flexDirection={"column"}
           gap={"4rem"}
           maxWidth={1440}
-          padding={isXsScreen ? "1rem" : "0 10rem"}
+          padding={{ xs: "2rem", sm: "2rem", md: "2rem", lg: "0 10rem" }}
         >
           <Box mt={15} textAlign={"left"}>
             <Box display={"flex"} justifyContent={"space-between"}>
@@ -496,7 +500,7 @@ export default function LastStep({
                   fontFamily: "IndustrialGothicBannerStd",
                   textTransform: "lowercase",
                   fontSize: isXsScreen ? "30px" : "44px",
-                  lineHeight: "4.5rem",
+                  //lineHeight: "4.5rem",
                   fontWeight: 500,
                   flex: 1,
                   textDecoration: "underline",

@@ -119,7 +119,7 @@ export default function MoreDetailsPage({
               spacing={6}
               alignItems="center"
               justifyContent="center"
-              mt={3}
+              mt={6}
             >
               <StyleButtonNew
                 value="yes"
