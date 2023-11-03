@@ -99,7 +99,7 @@ export default function MoreDetailsPage({
           >
             just a few more details...
           </Typography>
-          <Box >
+          <Box>
             <Typography
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
@@ -114,7 +114,7 @@ export default function MoreDetailsPage({
               another individual?
             </Typography>
             <Stack
-              width={isXsScreen ? "90%" : undefined}
+              width={"100%"}
               direction={isXsScreen ? "column" : "row"}
               spacing={6}
               alignItems="center"
@@ -160,7 +160,7 @@ export default function MoreDetailsPage({
           spacing={3}
           alignItems="center"
         >
-          <Box >
+          <Box>
             <Typography
               fontWeight={500}
               fontSize={{ xs: "30px", sm: "48px", md: "3rem", lg: "3rem" }}
@@ -187,7 +187,7 @@ export default function MoreDetailsPage({
             </Typography>
           </Box>
           <Stack
-            width={isXsScreen ? "90%" : undefined}
+            width={"100%"}
             direction={isXsScreen ? "column" : "row"}
             spacing={6}
             alignItems="center"
