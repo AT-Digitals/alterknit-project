@@ -248,7 +248,7 @@ export default function FaqPage() {
                   >
                     {notes.title}
                   </Typography>
-                  {openNoteIndex === index ? (
+                  {openNote1Index === index ? (
                     <RemoveCircleIcon
                     sx={{
                       fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
@@ -299,7 +299,7 @@ export default function FaqPage() {
                   >
                     {notes.title}
                   </Typography>
-                  {openNoteIndex === index ? (
+                  {openNote2Index === index ? (
                     <RemoveCircleIcon
                     sx={{
                       fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
@@ -350,7 +350,7 @@ export default function FaqPage() {
                   >
                     {notes.title}
                   </Typography>
-                  {openNoteIndex === index ? (
+                  {openNote3Index === index ? (
                     <RemoveCircleIcon
                     sx={{
                       fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
@@ -401,7 +401,7 @@ export default function FaqPage() {
                   >
                     {notes.title}
                   </Typography>
-                  {openNoteIndex === index ? (
+                  {openNote4Index === index ? (
                     <RemoveCircleIcon
                     sx={{
                       fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
@@ -452,7 +452,7 @@ export default function FaqPage() {
                   >
                     {notes.title}
                   </Typography>
-                  {openNoteIndex === index ? (
+                  {openNote5Index === index ? (
                     <RemoveCircleIcon
                     sx={{
                       fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
