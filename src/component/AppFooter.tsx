@@ -62,8 +62,7 @@ export default function AppFooter({ activeTab, setActiveTab }: footerProps) {
       <Box borderBottom="1px solid #272727">
         <AppContainer paddingLeft={0} paddingRight={0}>
           <Stack
-            px={3}
-            py={3}
+            padding={"4rem 2rem"}
             direction={isSmScreen ? "column" : "row"}
             justifyContent={isSmScreen ? "center" : "space-between"}
             alignItems="center"
