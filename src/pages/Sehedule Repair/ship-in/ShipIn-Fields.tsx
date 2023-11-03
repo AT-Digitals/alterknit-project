@@ -109,7 +109,9 @@ export default function ShipinFields({
         bgcolor={"#f8f1ec"}
         display={"flex"}
         flexDirection={"column"}
-        padding={"2rem 0 0 0"}
+        paddingTop={"3rem"}
+        pb={{ xs: 2, sm: 1 }}
+
       >
         <Box
           maxWidth={1440}
@@ -118,7 +120,7 @@ export default function ShipinFields({
         >
           <Typography
             textAlign={"center"}
-            fontSize={{ xs: "40px", sm: "80px", md: "80px" }}
+            fontSize={{ xs: "45px", sm: "80px", md: "80px" }}
             lineHeight={1}
             fontWeight={500}
             fontFamily={"IndustrialGothicBannerStd, sans-serif"}
@@ -133,16 +135,16 @@ export default function ShipinFields({
         alt="background"
         style={{ width: "100%" }}
       />
-      <Box padding={"6rem 0 2rem 0"}>
+      <Box paddingTop={{ xs: "3rem", sm: "6rem" }} pb="2rem">
         <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
-          <AppContainer pl={0}>
+          <AppContainer pl={0} pr={0}>
             <Box
               maxWidth={1440}
-              padding={{
-                xs: "0 1rem",
-                sm: "0 3rem",
-                md: "0 3rem",
-                lg: "0 5rem",
+              paddingX={{
+                xs: 3,
+                sm: 3,
+                md: 3,
+                lg: 0,
               }}
             >
               <form
@@ -302,7 +304,7 @@ export default function ShipinFields({
                     name="brief"
                     fullWidth
                     multiline
-                    rows={4}
+                    rows={6}
                     placeholder="i.e. My grandmother made this for me, I got married in this suit, please fix my baby blanket even though I'm now 38, I bought this second-hand and I found a hole, or I just love it and can't live without it!"
                     variant="outlined"
                     sx={{
@@ -312,6 +314,7 @@ export default function ShipinFields({
                         fontWeight: 500,
                         paddingLeft: "1rem",
                         paddingRight: "1rem",
+                        paddingTop: "20px"
                       },
                       "& .MuiOutlinedInput-input": {
                         fontSize: "22px",
@@ -319,6 +322,7 @@ export default function ShipinFields({
                         fontWeight: 500,
                         paddingLeft: "1rem",
                         paddingRight: "1rem",
+                        //paddingTop: "20px"
                       },
                       backgroundColor: "#f8f1ec",
                       borderRadius: "30px",

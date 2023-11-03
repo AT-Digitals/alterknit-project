@@ -193,7 +193,7 @@ export default function ShipInDetailsPage() {
 
   const selectOption = (option: string) => {
     setSelectedOption(option);
-    if (option === "ship-in" || option === "door-to-door") {
+    if (option === "ship-in") {
       setAsk(true);
       console.log("its clicked now");
     }
