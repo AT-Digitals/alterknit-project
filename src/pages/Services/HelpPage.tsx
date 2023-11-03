@@ -145,7 +145,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={isXsScreen ? "2rem" : "3rem"}
+                  fontSize={{ xs: '1.8rem', sm: '2.8rem', md: '2.8rem', lg: '3rem' }}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -154,25 +154,24 @@ export default function HelpPage() {
                 </Typography>
                 {openNoteIndex === index ? (
                   <RemoveCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
+                    sx={{
+                      fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
                     }}
                   />
                 ) : (
                   <AddCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 )}
               </StyledBox>
               {openNoteIndex === index && (
                 <Typography
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
-                  paddingRight={"8rem"}
                 >
                   {notes.paragraph}
                 </Typography>
@@ -197,7 +196,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={isXsScreen ? "2rem" : "3rem"}
+                  fontSize={{ xs: '1.8rem', sm: '2.8rem', md: '2.8rem', lg: '3rem' }}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -206,25 +205,24 @@ export default function HelpPage() {
                 </Typography>
                 {openNote1Index === index ? (
                   <RemoveCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 ) : (
                   <AddCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 )}
               </StyledBox>
               {openNote1Index === index && (
                 <Typography
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
-                  paddingRight={"8rem"}
                 >
                   {notes.paragraph}
                 </Typography>
@@ -249,7 +247,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={isXsScreen ? "2rem" : "3rem"}
+                  fontSize={{ xs: '1.8rem', sm: '2.8rem', md: '2.8rem', lg: '3rem' }}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -258,25 +256,24 @@ export default function HelpPage() {
                 </Typography>
                 {openNote2Index === index ? (
                   <RemoveCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 ) : (
                   <AddCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 )}
               </StyledBox>
               {openNote2Index === index && (
                 <Typography
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
-                  paddingRight={"8rem"}
                 >
                   {notes.paragraph}
                 </Typography>
@@ -301,7 +298,7 @@ export default function HelpPage() {
               >
                 <Typography
                   fontFamily={"IndustrialGothicBannerStd, sans-serif"}
-                  fontSize={isXsScreen ? "2rem" : "3rem"}
+                  fontSize={{ xs: '1.8rem', sm: '2.8rem', md: '2.8rem', lg: '3rem' }}
                   color={"black"}
                   fontWeight={"500"}
                   textTransform={"lowercase"}
@@ -310,25 +307,24 @@ export default function HelpPage() {
                 </Typography>
                 {openNote3Index === index ? (
                   <RemoveCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 ) : (
                   <AddCircleIcon
-                    style={{
-                      fontSize: isXsScreen ? "32px" : "62px",
-                    }}
+                  sx={{
+                    fontSize: { xs: '30px', sm: '55px', md: '55px', lg: '62px' }
+                  }}
                   />
                 )}
               </StyledBox>
               {openNote3Index === index && (
                 <Typography
                   fontFamily={`"ProximaNovaMedium", sans-serif`}
-                  fontSize={"22px"}
+                  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                   color={"#0f0d0d"}
                   paddingTop={"15px"}
-                  paddingRight={"8rem"}
                 >
                   {notes.paragraph}
                 </Typography>

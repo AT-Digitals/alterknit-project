@@ -14,9 +14,9 @@ import CustomDialog from "../../../Popup/Popup";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DeletePopup from "../../../Popup/DeletePoup";
 import ServiceDetailsState from "./ServiceDetailsState";
+import styled from "@emotion/styled";
 import sweater from "../../../assets/sweater_guy.png";
 import { useState } from "react";
-import styled from "@emotion/styled";
 
 const StyledTableCell = styled.td`
   color: black;
@@ -234,105 +234,63 @@ export default function RepairPage({
               style={{
                 marginTop: "-30px",
               }}
-            >{serviceDetails.length > 0 && (
-              <Grid container>
-
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell>Service Needed</StyledTableCell></StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {serviceDetails[displayedEntry].services.join(", ")}
-                    </StyledTableCellValue>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell>Brand</StyledTableCell>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {serviceDetails[displayedEntry].service_details.brand}
-                    </StyledTableCellValue>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell>Color</StyledTableCell>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {serviceDetails[displayedEntry].service_details.color}
-                    </StyledTableCellValue>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell>Age of Garment</StyledTableCell>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {serviceDetails[displayedEntry].service_details.howMany}
-                    </StyledTableCellValue>
-                  </StyledTr> </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell># of Holes</StyledTableCell>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {
-                        serviceDetails[displayedEntry].service_details
-                          .visible_holes
-                      }
-                    </StyledTableCellValue>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCell>Brief Description</StyledTableCell>
-                  </StyledTr>
-                </Grid>
-                <Grid item xs={6}>
-                  <StyledTr>
-                    <StyledTableCellValue>
-                      {serviceDetails[displayedEntry].service_details.brief}
-                    </StyledTableCellValue>
-                  </StyledTr>
-                </Grid>
-              </Grid>)}
-              {/* {serviceDetails.length > 0 && (
+            >
+              {serviceDetails.length > 0 && (
+                <Grid container>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell>Service Needed</StyledTableCell>
+                    </StyledTr>
+                  </Grid>
                   <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
-                        {serviceDetails[displayedEntry].services}
+                        {serviceDetails[displayedEntry].services.join(", ")}
                       </StyledTableCellValue>
                     </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell>Brand</StyledTableCell>
+                    </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
                         {serviceDetails[displayedEntry].service_details.brand}
                       </StyledTableCellValue>
                     </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell>Color</StyledTableCell>
+                    </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
                         {serviceDetails[displayedEntry].service_details.color}
                       </StyledTableCellValue>
                     </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell>Age of Garment</StyledTableCell>
+                    </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
                         {serviceDetails[displayedEntry].service_details.howMany}
                       </StyledTableCellValue>
+                    </StyledTr>{" "}
+                  </Grid>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell># of Holes</StyledTableCell>
                     </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
                         {
@@ -341,14 +299,21 @@ export default function RepairPage({
                         }
                       </StyledTableCellValue>
                     </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <StyledTr>
+                      <StyledTableCell>Brief Description</StyledTableCell>
+                    </StyledTr>
+                  </Grid>
+                  <Grid item xs={6}>
                     <StyledTr>
                       <StyledTableCellValue>
                         {serviceDetails[displayedEntry].service_details.brief}
                       </StyledTableCellValue>
                     </StyledTr>
                   </Grid>
-                )} */}
-              {/* </Grid> */}
+                </Grid>
+              )}
             </div>
           </tbody>
         </table>
