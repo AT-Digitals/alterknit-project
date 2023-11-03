@@ -131,7 +131,7 @@ export default function OurStory() {
           <Box width={"100%"} maxWidth={1440} m={"0 auto"}>
             <Typography
               textAlign={"center"}
-              mb={"3rem"}
+              mb={"1rem"}
               fontSize={isXsScreen ? "41px" : "80px"}
               fontFamily={"IndustrialGothicBannerStd, sans-serif"}
               fontWeight={500}
@@ -143,7 +143,7 @@ export default function OurStory() {
               display={"flex"}
               flexDirection={"column"}
               alignItems={"center"}
-              gap={"5rem"}
+              gap={"3rem"}
               padding={{ xs: "1.5rem", sm: "2rem", md: "3rem" }}
             >
               <Box
@@ -304,7 +304,7 @@ export default function OurStory() {
               marginTop={{ sm: "2rem" }}
               fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
-              mb={"3rem"}
+              mb={"2rem"}
               color={"#575656"}
               lineHeight={1.2}
               mt={isXsScreen ? "2rem" : "0px"}
@@ -320,9 +320,9 @@ export default function OurStory() {
             <Typography
               fontSize={isXsScreen ? "16px" : "22px"}
               fontFamily={`"ProximaNovaMedium", sans-serif`}
-              mb={"3rem"}
               color={"#575656"}
               lineHeight={1.2}
+              mb="1rem"
             >
               We have set a high bar for Alterknit. It is our commitment to
               being the best at what we do that is reflected in the beautiful
@@ -374,6 +374,7 @@ export default function OurStory() {
             justifyContent={"center"}
             gap={"4rem"}
             mt={"-3rem"}
+            pb={{ xs: "40px" }}
           >
             {InstagramBoxNavigation.map((items, index) => (
               <Box

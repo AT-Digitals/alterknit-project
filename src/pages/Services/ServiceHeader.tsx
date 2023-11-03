@@ -5,11 +5,11 @@ import Service from "../../assets/services_services_bg_top.svg";
 
 export default function ServiceHeader() {
 
-    const isXsScreen = useMediaQuery("(max-width:600px)");
-    const isLgScreen = useMediaQuery("(min-width:961px)");
-    return (
-        <Box bgcolor={"#f8f1eb"}>
-            <section
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+  const isLgScreen = useMediaQuery("(min-width:961px)");
+  return (
+    <Box bgcolor={"#f8f1eb"}>
+      <section
         style={{
           display: "flex",
           justifyContent: "center",
@@ -33,7 +33,7 @@ export default function ServiceHeader() {
             border={"4px dashed black"}
             borderRadius={isXsScreen ? "20px" : "40px"}
             margin={"0 auto"}
-            padding={isXsScreen ? "0" : "2rem 8rem"}
+            padding={{ xs: 0, sm: "2rem 3rem", md: "2rem 4rem" }}
             textAlign="center"
             sx={{
               borderWidth: isXsScreen ? "3px" : "5px"
@@ -47,14 +47,14 @@ export default function ServiceHeader() {
               textTransform={"lowercase"}
               padding={3}
             >
-           HAPPINESS 100% GUARENTEED
+              HAPPINESS 100% GUARENTEED
             </Typography>
           </Box>
         </Box>
       </section>
-            <img style={{
-                marginTop: "-10%",
-            }} src={Service} alt="service-header" />
-        </Box>
-    );
+      <img style={{
+        marginTop: "-10%",
+      }} src={Service} alt="service-header" />
+    </Box>
+  );
 }

@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
                         textAlign={"center"}
                         color={"black"}
                         fontWeight={500}
-                        fontSize={isXsScreen ? "40px" : "80px"}
+                        fontSize={isXsScreen ? "45px" : "80px"}
                         lineHeight={"1"}
                         fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
                         textTransform="lowercase"

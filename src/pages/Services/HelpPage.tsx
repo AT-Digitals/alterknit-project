@@ -111,7 +111,7 @@ export default function HelpPage() {
   const isXsScreen = useMediaQuery("(max-width:600px)");
 
   return (
-    <Box bgcolor={"#f8f1eb"} padding={"20px"}>
+    <Box bgcolor={"#f8f1eb"} paddingX={"20px"} paddingTop={{ xs: 5, sm: 15 }} paddingBottom={{ xs: 10, sm: 15 }}>
       <Typography
         textAlign={"center"}
         color={"black"}
@@ -125,7 +125,7 @@ export default function HelpPage() {
       >
         HOW WE CAN HELP
       </Typography>
-      <Box margin={"0 auto"} width={"100%"} maxWidth={"1200px"}>
+      <Box margin={"0 auto"} width={"100%"} maxWidth={"1300px"}>
         <Box mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
           {Notes.map((notes, index) => (
             <Box

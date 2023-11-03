@@ -30,7 +30,7 @@ export default function CardPage() {
                     }}>
                         <Stack direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'row' }} margin={isXsScreen ? "35px 20px" : "43px 43px"} justifyContent={"space-between"} spacing={3}>
                             <Typography
-                                lineHeight={"0.9"}
+                                lineHeight={"1"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
@@ -112,7 +112,7 @@ export default function CardPage() {
                     <CardContent>
                         <Stack direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
-                                lineHeight={"0.9"}
+                                lineHeight={"1"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
@@ -178,7 +178,7 @@ export default function CardPage() {
                         <Stack direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'row' }} justifyContent={"space-between"} margin={isXsScreen ? "35px 20px" : "43px 43px"} spacing={3}>
                             <Typography
                                 marginTop={"20px"}
-                                lineHeight={"0.9"}
+                                lineHeight={"1"}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={{ xs: '1.8rem', sm: '2.9rem', md: '2.9rem', lg: '3rem' }}
@@ -237,7 +237,7 @@ export default function CardPage() {
                         sx={{
                             maxWidth: "120px",
                             position: "absolute",
-                            marginLeft: "4px",
+                            marginLeft: "-4px",
                             marginTop: "-21px",
                             display: { xs: "none", sm: "none", md: "none", lg: "flex", xl: "flex" }
                         }}
@@ -260,7 +260,7 @@ export default function CardPage() {
                     }}>
                         <Box margin={"37px 30px"}>
                             <Typography
-                                lineHeight={"0.5"}
+                                lineHeight={1}
                                 color={"black"}
                                 fontWeight={"500"}
                                 fontSize={isXsScreen ? "2.3rem" : "3rem"}

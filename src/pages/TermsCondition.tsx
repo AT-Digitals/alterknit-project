@@ -12,7 +12,7 @@ export default function TermsCondition() {
         <>
             <Box maxWidth={"1340px"} margin={isXsScreen ? "0px" : "0 auto"} padding={"10px"}>
                 <Typography
-                    paddingTop={"50px"}
+                    paddingTop={"40px"}
                     textAlign={"center"}
                     color={"black"}
                     fontWeight={"500"}
@@ -58,7 +58,7 @@ export default function TermsCondition() {
                     >
                         CHANGES TO TERMS AND CONDITIONS
                     </Typography>
-                    <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`}  fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }} letterSpacing={"0px"}
+                    <Typography color={"#575656"} fontWeight={"500"} fontFamily={`"ProximaNovaMedium", sans-serif`} fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }} letterSpacing={"0px"}
                         lineHeight={"1.2"} paddingTop={"3px"}>
                         You can review the most current version of the Terms and Conditions
                         at any time on this page. We reserve the right from time to time,
