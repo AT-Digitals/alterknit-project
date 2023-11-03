@@ -169,7 +169,7 @@ export default function FaqPage() {
           FAQ'S
         </Typography>
         <Box margin={"0 auto"} width={"100%"} maxWidth={"1200px"}>
-          <Box marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
+          <Box  padding={{xs: "10px", sm: "30px", md: "30px", lg: "10px"}} marginBottom={"10px"} mt={4} display={"flex"} flexDirection={"column"} gap={"3rem"}>
             {Notes.map((notes, index) => (
               <Box
                 bgcolor={"#f8f1ec"}
@@ -188,31 +188,31 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
                     color={"black"}
-                    fontWeight={"500"}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNoteIndex === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
                     paddingRight={"8rem"}
@@ -240,34 +240,33 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     color={"black"}
-                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNote1Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
-                    paddingRight={"8rem"}
                   >
                     {notes.paragraph}
                   </Typography>
@@ -292,34 +291,33 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     color={"black"}
-                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNote2Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
-                    paddingRight={"8rem"}
                   >
                     {notes.paragraph}
                   </Typography>
@@ -344,34 +342,33 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     color={"black"}
-                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNote3Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
-                    paddingRight={"8rem"}
                   >
                     {notes.paragraph}
                   </Typography>
@@ -396,34 +393,33 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     color={"black"}
-                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNote4Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
-                    paddingRight={"8rem"}
                   >
                     {notes.paragraph}
                   </Typography>
@@ -448,34 +444,33 @@ export default function FaqPage() {
                 >
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={{ xs: "21px", sm: "32px" }}
+                    fontSize={{ xs: '20px', sm: '32px', md: '32px', lg: '32px' }}
+                    fontWeight={{ xs: '600', sm: '600', md: '600', lg: '500' }}
                     color={"black"}
-                    fontWeight={"500"}
                     textTransform={"capitalize"}
                   >
                     {notes.title}
                   </Typography>
                   {openNoteIndex === index ? (
                     <RemoveCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   ) : (
                     <AddCircleIcon
-                      style={{
-                        fontSize: isXsScreen ? "32px" : "62px",
-                      }}
+                    sx={{
+                      fontSize: { xs: '35px', sm: '55px', md: '55px', lg: '62px' }
+                    }}
                     />
                   )}
                 </StyledBox>
                 {openNote5Index === index && (
                   <Typography
                     fontFamily={`"ProximaNovaMedium", sans-serif`}
-                    fontSize={"22px"}
+                    fontSize={{ xs: '18px', sm: '21px', md: '23px', lg: '22px' }}
                     color={"#575656"}
                     paddingTop={"15px"}
-                    paddingRight={"8rem"}
                   >
                     {notes.paragraph}
                   </Typography>
