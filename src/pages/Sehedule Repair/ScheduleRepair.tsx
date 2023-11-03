@@ -33,7 +33,8 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const isXsScreen = useMediaQuery("(max-width:890px)");
+  const isXsScreen = useMediaQuery("(max-width:1100px)");
+  const isXsImageScreen = useMediaQuery("(max-width:890px)");
 
   return (
     <Stack direction={{ xs: "column", md: "row" }}>
@@ -185,7 +186,7 @@ export default function ScheduleReapir({ nextStep }: shipinprops) {
             </a>{" "}
             on our Service page to find out all the answers to your questions.
           </p>
-          {isXsScreen ? undefined : (
+          {isXsImageScreen ? undefined : (
             <img
               style={{
                 maxWidth: "260px",
