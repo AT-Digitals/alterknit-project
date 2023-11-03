@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import BeforeText from "./BeforeText";
 import CheckBox from "./CheckBox";
@@ -369,18 +363,6 @@ export default function LastStep({
                       <StyledTr2>
                         <StyledTableCell>Name</StyledTableCell>
                       </StyledTr2>
-                      <StyledTr2>
-                        <StyledTableCell>Address</StyledTableCell>
-                      </StyledTr2>
-                      <StyledTr2>
-                        <StyledTableCell>Phone Number</StyledTableCell>
-                      </StyledTr2>
-                      <StyledTr2>
-                        <StyledTableCell>E-Mail Address</StyledTableCell>
-                      </StyledTr2>
-                      <StyledTr2>
-                        <StyledTableCell>Order Type</StyledTableCell>
-                      </StyledTr2>
                     </Grid>
                     <Grid item xs={6}>
                       <StyledTr2>
@@ -390,6 +372,13 @@ export default function LastStep({
                             shipInDetails.ShipInformation.lastName}
                         </StyledTableCellValue>
                       </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <StyledTr2>
+                        <StyledTableCell>Address</StyledTableCell>
+                      </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCellValue>
                           {shipInDetails.ShipInformation.streetAddress +
@@ -397,11 +386,25 @@ export default function LastStep({
                             shipInDetails.ShipInformation.apartment}
                         </StyledTableCellValue>
                       </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <StyledTr2>
+                        <StyledTableCell>Phone Number</StyledTableCell>
+                      </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCellValue>
                           {shipInDetails.ShipInformation.phone_number}
                         </StyledTableCellValue>
                       </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <StyledTr2>
+                        <StyledTableCell>E-Mail Address</StyledTableCell>
+                      </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCellValue
                           style={{
@@ -411,6 +414,14 @@ export default function LastStep({
                           {shipInDetails.ShipInformation.email}
                         </StyledTableCellValue>
                       </StyledTr2>
+                    </Grid>
+
+                    <Grid item xs={6}>
+                      <StyledTr2>
+                        <StyledTableCell>Order Type</StyledTableCell>
+                      </StyledTr2>
+                    </Grid>
+                    <Grid item xs={6}>
                       <StyledTr2>
                         <StyledTableCellValue>shipin</StyledTableCellValue>
                       </StyledTr2>
