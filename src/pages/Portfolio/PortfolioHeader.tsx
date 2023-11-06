@@ -92,62 +92,59 @@ import image7 from "../../assets/1679605654400_Blanket.png";
 import image8 from "../../assets/1679605674930_Boss.png";
 import image9 from "../../assets/1679605754885_Dear Cashmere.png";
 import routes from "../../routes/routes";
-import { useState } from "react";
 
 const StyledTypography = styled(Typography)({
   ":hover": {
     color: "#df7c6d",
   },
 });
-const images = [
-  // Your existing image paths
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-  image18,
-  image19,
-  image20,
-  image21,
-  image22,
-  image23,
-  image24,
-  image25,
-  image26,
-  image27,
-  image28,
-  image29,
-  image30,
-  image31,
-  image32,
-  image33,
-  image34,
-  image35,
-  image36,
-  image37,
-  image38,
-  image39,
-  image40,
-  // Add any additional image paths as needed
-];
+// const images = [
+//   // Your existing image paths
+//   image1,
+//   image2,
+//   image3,
+//   image4,
+//   image5,
+//   image6,
+//   image7,
+//   image8,
+//   image9,
+//   image10,
+//   image11,
+//   image12,
+//   image13,
+//   image14,
+//   image15,
+//   image16,
+//   image17,
+//   image18,
+//   image19,
+//   image20,
+//   image21,
+//   image22,
+//   image23,
+//   image24,
+//   image25,
+//   image26,
+//   image27,
+//   image28,
+//   image29,
+//   image30,
+//   image31,
+//   image32,
+//   image33,
+//   image34,
+//   image35,
+//   image36,
+//   image37,
+//   image38,
+//   image39,
+//   image40,
+//   // Add any additional image paths as needed
+// ];
 
 export default function PorfolioHeader() {
-  const isXsScreen = useMediaQuery("(max-width:900px)");
-  const isImageScreen = useMediaQuery("(max-width:1250px)");
-
+  const isXsScreen = useMediaQuery("(max-width:1280px)");
 
   return (
     <Stack>
@@ -159,7 +156,12 @@ export default function PorfolioHeader() {
       >
         <Stack
           direction={"column"}
-          padding={{ xs: "0rem 0 2rem 0", sm: "0rem 0 2rem 0", md: "0rem 0 2rem 0", lg: "0rem 0 11rem 0" }}
+          padding={{
+            xs: "0rem 0 2rem 0",
+            sm: "0rem 0 2rem 0",
+            md: "0rem 0 2rem 0",
+            lg: "0rem 0 11rem 0",
+          }}
           maxWidth={"620px"}
           margin={{ xs: "20px", sm: "0 auto", md: "0 auto", lg: "20px" }}
         >
@@ -192,17 +194,28 @@ export default function PorfolioHeader() {
               fontSize={isXsScreen ? "20px" : "22px"}
               paddingTop={"5px"}
               lineHeight={1.2}
-              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
+              textAlign={{
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "left",
+              }}
             >
-              Check out our gallery of before and afters to see what magic 
-              <Typography 
-              color={"#575656"}
-              fontWeight={"500"}
-              fontFamily={`"ProximaNovaMedium", sans-serif`}
-              fontSize={isXsScreen ? "20px" : "22px"}
-              paddingTop={"5px"}
-              lineHeight={1.2}
-              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}> 
+              Check out our gallery of before and afters to see what magic
+              <Typography
+                color={"#575656"}
+                fontWeight={"500"}
+                fontFamily={`"ProximaNovaMedium", sans-serif`}
+                fontSize={isXsScreen ? "20px" : "22px"}
+                paddingTop={"5px"}
+                lineHeight={1.2}
+                textAlign={{
+                  xs: "center",
+                  sm: "center",
+                  md: "center",
+                  lg: "left",
+                }}
+              >
                 we can work on any garment in any condition.
               </Typography>
             </Typography>
@@ -215,7 +228,12 @@ export default function PorfolioHeader() {
               fontSize={isXsScreen ? "2.23rem" : "2.3rem"}
               fontFamily={`"IndustrialGothicBannerStd", sans-serif`}
               textTransform="lowercase"
-              textAlign={{ xs: "center", sm: "center", md: "center", lg: "left" }}
+              textAlign={{
+                xs: "center",
+                sm: "center",
+                md: "center",
+                lg: "left",
+              }}
               marginTop={isXsScreen ? "10px" : "0px"}
             >
               REPAIR IT WITH A CLICK. WE DARE YOU.
@@ -247,7 +265,7 @@ export default function PorfolioHeader() {
           />
         </Box>
       </Stack>
-      {isImageScreen ? (
+      {/* {isImageScreen ? (
         <Grid container spacing={2} padding={"0px 30px"}>
           {images.map((image, index) => (
             <Grid item xs={6} sm={6} md={3} key={index}>
@@ -270,24 +288,149 @@ export default function PorfolioHeader() {
               </div>
             </Grid>
           ))}
-        </Grid>
-      ) : (
-        <Box
-          width={"115%"}
-          position={"relative"}
-          z-zIndex={"1"}
-          marginBottom={"-5rem"}
-          marginTop={"-102px"}
+        </Grid> */}
+      {/* // ) : ( */}
+      <Box
+        width={isXsScreen ? "100%" : undefined}
+        position={"relative"}
+        z-zIndex={"1"}
+        marginBottom={"3rem"}
+      >
+        <Stack
+          height={isXsScreen ? undefined : "1525px"}
+          gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+          gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr "}
+          gap={"20px"}
+          width={"80%"}
+          margin={" 0 auto"}
+          padding={"10px"}
+          display={isXsScreen ? "column" : "grid"}
         >
-          <Stack maxWidth={"1515px"} margin={"0 auto"} padding={"20px"}>
-            <Stack
-              height={"1525px"}
-              gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gap={"20px"}
-              display={isXsScreen ? "column" : "grid"}
-              margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
-            >
+          {isXsScreen ? (
+            <Grid container rowGap={2} columnSpacing={2}>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "3",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <BasicModal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "2",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <BaseModal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "3",
+                    gridRowEnd: "5",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth1Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "2",
+                    gridRowEnd: "4",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <ClothModal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "4",
+                    gridColumnStart: "5",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <BasisModal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "4",
+                    gridRowEnd: "5",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth2Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "4",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth3Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "4",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth4Modal />
+                </Box>
+              </Grid>
+            </Grid>
+          ) : (
+            <>
               <Box
                 sx={{
                   gridRowStart: "1",
@@ -464,17 +607,145 @@ export default function PorfolioHeader() {
                   alt="imag8"
                 />
               </Box>
-            </Stack>
-            <Stack
-              marginBottom={"20px"}
-              height={"1525px"}
-              paddingTop={isXsScreen ? "0px" : "20px"}
-              gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gap={"20px"}
-              display={isXsScreen ? "column" : "grid"}
-              margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
-            >
+            </>
+          )}
+        </Stack>
+
+        <Stack
+          height={isXsScreen ? undefined : "1525px"}
+          gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+          gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr "}
+          gap={"20px"}
+          width={"80%"}
+          margin={" 0 auto"}
+          padding={"10px"}
+          display={isXsScreen ? "column" : "grid"}
+        >
+          {isXsScreen ? (
+            <Grid container rowGap={2} columnSpacing={2}>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "3",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth5Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "2",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth6Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "3",
+                    gridRowEnd: "5",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth9Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "2",
+                    gridRowEnd: "4",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth8Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "4",
+                    gridColumnStart: "5",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth7Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "4",
+                    gridRowEnd: "5",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth10Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "4",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth11Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "4",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth11Modal />
+                </Box>
+              </Grid>
+            </Grid>
+          ) : (
+            <>
               <Box
                 sx={{
                   gridRowStart: "1",
@@ -536,7 +807,6 @@ export default function PorfolioHeader() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                  
                   }}
                   src={image11}
                   alt="image11"
@@ -652,17 +922,150 @@ export default function PorfolioHeader() {
                   alt="image16"
                 />
               </Box>
-            </Stack>
-            <Stack
-              marginBottom={"20px"}
-              height={"1525px"}
-              gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              display={isXsScreen ? "column" : "grid"}
-              margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
-              gap={"20px"}
-              paddingTop={isXsScreen ? "0px" : "20px"}
-            >
+            </>
+          )}
+        </Stack>
+
+        <Stack
+          height={isXsScreen ? undefined : "1525px"}
+          gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+          gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr "}
+          gap={"20px"}
+          width={"80%"}
+          margin={" 0 auto"}
+          padding={"10px"}
+          display={isXsScreen ? "column" : "grid"}
+        >
+          {isXsScreen ? (
+            <>
+              <Grid container rowGap={2} columnSpacing={2}>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "3",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "3",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth13Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "2",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "5",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth14Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "4",
+                      gridColumnStart: "5",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth15Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "2",
+                      gridRowEnd: "4",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "5",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth16Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "3",
+                      gridRowEnd: "5",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "3",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth17Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "4",
+                      gridRowEnd: "5",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth18Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "5",
+                      gridRowEnd: "7",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "4",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth19Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "5",
+                      gridRowEnd: "7",
+                      gridColumnStart: "4",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth20Modal />
+                  </Box>
+                </Grid>
+              </Grid>
+            </>
+          ) : (
+            <>
               <Box
                 sx={{
                   gridRowStart: "1",
@@ -839,17 +1242,150 @@ export default function PorfolioHeader() {
                   alt="image24"
                 />
               </Box>
-            </Stack>
-            <Stack
-              marginBottom={"20px"}
-              height={"1525px"}
-              gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              display={isXsScreen ? "column" : "grid"}
-              margin={isXsScreen ? "0px 84px 20px 20px" : "0px 0px 0px 0px"}
-              gap={"20px"}
-              paddingTop={isXsScreen ? "0px" : "20px"}
-            >
+            </>
+          )}
+        </Stack>
+        <Stack
+          height={isXsScreen ? undefined : "1525px"}
+          gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+          gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr "}
+          gap={"20px"}
+          width={"80%"}
+          margin={" 0 auto"}
+          padding={"10px"}
+          display={isXsScreen ? "column" : "grid"}
+        >
+          {isXsScreen ? (
+            <>
+              <Grid container rowGap={2} columnSpacing={2}>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "3",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "3",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth21Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "2",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "5",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth22Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "1",
+                      gridRowEnd: "4",
+                      gridColumnStart: "5",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth23Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "2",
+                      gridRowEnd: "4",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "5",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth25Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  {" "}
+                  <Box
+                    sx={{
+                      gridRowStart: "3",
+                      gridRowEnd: "5",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "3",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth24Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "4",
+                      gridRowEnd: "5",
+                      gridColumnStart: "3",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth26Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "5",
+                      gridRowEnd: "7",
+                      gridColumnStart: "1",
+                      gridColumnEnd: "4",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth27Modal />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                  <Box
+                    sx={{
+                      gridRowStart: "5",
+                      gridRowEnd: "7",
+                      gridColumnStart: "4",
+                      gridColumnEnd: "6",
+                    }}
+                    overflow={"hidden"}
+                    border={"6px solid #df7c6d"}
+                    borderRadius={"20px"}
+                  >
+                    <Cloth26Modal />
+                  </Box>
+                </Grid>
+              </Grid>
+            </>
+          ) : (
+            <>
               <Box
                 sx={{
                   gridRowStart: "1",
@@ -1026,17 +1562,144 @@ export default function PorfolioHeader() {
                   alt="image32"
                 />
               </Box>
-            </Stack>
-            <Stack
-              marginBottom={"80px"}
-              height={"1525px"}
-              gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr 1fr"}
-              display={isXsScreen ? "column" : "grid"}
-              margin={isXsScreen ? "0px 84px 40px 20px" : "0px 0px 40px 0px"}
-              gap={"20px"}
-              paddingTop={isXsScreen ? "0px" : "20px"}
-            >
+            </>
+          )}
+        </Stack>
+        <Stack
+          height={isXsScreen ? undefined : "1525px"}
+          gridTemplateRows={"1fr 1fr 1fr 1fr 1fr 1fr"}
+          gridTemplateColumns={"1fr 1fr 1fr 1fr 1fr "}
+          gap={"20px"}
+          width={"80%"}
+          margin={" 0 auto"}
+          padding={"10px"}
+          display={isXsScreen ? "column" : "grid"}
+        >
+          {isXsScreen ? (
+            <Grid container rowGap={2} columnSpacing={2}>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "3",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth28Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "2",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth29Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "1",
+                    gridRowEnd: "4",
+                    gridColumnStart: "5",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth30Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "2",
+                    gridRowEnd: "4",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "5",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth31Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "3",
+                    gridRowEnd: "5",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "3",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth32Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "4",
+                    gridRowEnd: "5",
+                    gridColumnStart: "3",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth33Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "1",
+                    gridColumnEnd: "4",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth34Modal />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Box
+                  sx={{
+                    gridRowStart: "5",
+                    gridRowEnd: "7",
+                    gridColumnStart: "4",
+                    gridColumnEnd: "6",
+                  }}
+                  overflow={"hidden"}
+                  border={"6px solid #df7c6d"}
+                  borderRadius={"20px"}
+                >
+                  <Cloth35Modal />
+                </Box>
+              </Grid>
+            </Grid>
+          ) : (
+            <>
               <Box
                 sx={{
                   gridRowStart: "1",
@@ -1213,10 +1876,10 @@ export default function PorfolioHeader() {
                   alt="image40"
                 />
               </Box>
-            </Stack>
-          </Stack>
-        </Box>
-      )}
+            </>
+          )}
+        </Stack>
+      </Box>
     </Stack>
   );
 }
