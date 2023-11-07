@@ -15,11 +15,13 @@ export default function Cloth19Modal() {
 
   return (
     <>
+    <Box marginTop={{xs: "-20px", sm: "-59px", md: "-68px", lg:" 0px"}} marginBottom={{xs: "-35px", sm: "-65px", md: "-75px", lg:" 0px"}}>
       <img style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover"
                 }} onClick={handleOpen} src={image1} alt="imag1" />
+                </Box>
                 
       <Modal
         open={open}
