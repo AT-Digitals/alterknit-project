@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import image1 from "../../assets/1679605977956_Lord & Taylor.jpeg"
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import image2 from "../../assets/1679605977956_Lord & Taylor (1).jpeg";
 
@@ -10,6 +10,9 @@ export default function Cloth18Modal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const isXsScreen = useMediaQuery("(max-width:600px)");
+
 
   return (
     <>
@@ -24,13 +27,11 @@ export default function Cloth18Modal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Stack sx={{
+        <Stack direction= 'row' sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} height={"480px"} marginTop={"130px"} direction={"row"} spacing={6} display={"flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} paddingLeft={{xs: "35px", sm: "0px", md: "0px", lg: "0px"}} marginTop={{xs: "80px", sm: '130px', md: "130px", lg: "130px"}} gap={"40px"} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
        
-         <Box style={{
-                    width: "480px",
-                    height: "550px",
+         <Box width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -71,9 +72,7 @@ export default function Cloth18Modal() {
                 <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>LORD & TAYLOR</Typography>
                 </Box>
                 </Box>
-                <Box style={{
-                   width: "480px",
-                   height: "550px",
+                <Box marginTop={{xs: "30px", sm: "-40px", md: "-40px", lg: "-40px"}} width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
@@ -81,8 +80,6 @@ export default function Cloth18Modal() {
                    backgroundColor: "#df7c6d",
                    padding: "7px",
                    border: "0px solid white",
-                   marginTop: "-40px",
-                   
                 }}   overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
                     <Box height={"480px"} sx={{
                         backgroundColor: "white",
@@ -115,14 +112,14 @@ export default function Cloth18Modal() {
                 </Box>
                 </Box>
                 <Box>
-                <CloseIcon style={{
+                <CloseIcon sx={{
                     position: "absolute",
-                    marginLeft: "-75px",
+                    marginLeft: {xs: "275px", sm: "-75px", md: "-75px", lg: "-75px"},
                     fontSize: "25px",
                     borderRadius: "17px",
                     backgroundColor: "#df7c6d",
                     padding: "5px 5px",
-                    marginTop: "-48px",
+                    marginTop: {xs: "-405px", sm: "-48px", md: "-48px", lg: "-48px"},
                 }} onClick={handleClose} />
                 </Box>
                 </Stack>
