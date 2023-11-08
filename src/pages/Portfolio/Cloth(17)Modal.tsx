@@ -28,7 +28,7 @@ export default function Cloth13Modal() {
       >
         <Stack direction= 'row' sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} height={"480px"} paddingLeft={{xs: "35px", sm: "0px", md: "0px", lg: "0px"}} marginTop={{xs: "40px", sm: '130px', md: "130px", lg: "130px"}} gap={"40px"} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} paddingLeft={{xs: "35px", sm: "40px", md: "40px", lg: "0px"}} marginTop={{xs: "40px", sm: '130px', md: "130px", lg: "130px"}} gap={"40px"} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
        
          <Box padding={{xs: '5px', sm: "6px", md: "6px", lg: "7px"}} width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
                    display: "flex",
