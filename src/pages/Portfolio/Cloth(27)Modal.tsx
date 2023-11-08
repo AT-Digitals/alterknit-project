@@ -28,15 +28,14 @@ export default function Cloth23Modal() {
       >
         <Stack direction= 'row' sx={{
             backgroundColor: "#f8f1eb",
-        }} padding={"10px"} height={"480px"} paddingLeft={{xs: "35px", sm: "0px", md: "0px", lg: "0px"}} marginTop={{xs: "80px", sm: '130px', md: "130px", lg: "130px"}} gap={"40px"} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
+        }} padding={"10px"} height={"480px"} paddingLeft={{xs: "35px", sm: "0px", md: "0px", lg: "0px"}} marginTop={{xs: "40px", sm: '130px', md: "130px", lg: "130px"}} gap={"40px"} display={isXsScreen ? "block" : "flex"} justifyContent={"center"}>
        
-         <Box width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
+         <Box padding={{xs: '5px', sm: "6px", md: "6px", lg: "7px"}} width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
                    position: "relative",
                    backgroundColor: "#df7c6d",
-                   padding: "7px",
                    border: "0px solid white",
                    marginTop: "-40px",
                    
@@ -71,13 +70,12 @@ export default function Cloth23Modal() {
                 <Typography fontFamily={`"ProximaNovaMedium", sans-serif`}  color={"black"} fontSize={"22px"} fontWeight={"600"}>TAYLOR STITCH</Typography>
                 </Box>
                 </Box>
-                <Box marginTop={{xs: "30px", sm: "-40px", md: "-40px", lg: "-40px"}} width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
+                <Box padding={{xs: '5px', sm: "6px", md: "6px", lg: "7px"}} marginTop={{xs: "30px", sm: "-40px", md: "-40px", lg: "-40px"}} width={{xs: "290px", sm: "480px", md: "480px", lg: "480px"}} height={{xs: "390px", sm: "550px", md: "550px", lg: "550px"}} style={{
                    display: "flex",
                    flexDirection: "column",
                    borderRadius: "30px",
                    position: "relative",
                    backgroundColor: "#df7c6d",
-                   padding: "7px",
                    border: "0px solid white",
                    
                 }}  overflow={"hidden"} border={"6px solid #df7c6d"} borderRadius={"20px"}>
